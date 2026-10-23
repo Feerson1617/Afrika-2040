@@ -1,0 +1,38 @@
+
+> afrika-2040@0.1.0 test:e2e
+> playwright test
+
+[WebServer] (node:8489) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:8502) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:8528) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 14 tests using 2 workers
+
+(node:8540) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:8541) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 tests/browser/game.spec.ts:110:1 › partial and incorrect feedback, two-attempt explanation, three hints and transfer (2.8s)
+  ✓   1 tests/browser/game.spec.ts:27:1 › complete mouse flow, route changes, all times, both valid recommendations and restart (3.6s)
+  ✓   4 tests/browser/game.spec.ts:202:1 › open decision feedback recognizes a partial argument without rejecting the route (1.8s)
+  ✓   3 tests/browser/game.spec.ts:163:1 › free text is stored locally, never keyword-graded, escaped and editable after reload (2.7s)
+  ✓   6 tests/browser/game.spec.ts:257:1 › keyboard can operate start, SVG paths, radio groups, checking and word help (1.3s)
+  ✓   5 tests/browser/game.spec.ts:226:1 › rapid clicks cannot skip tasks and restart requires a deliberate confirmation (1.6s)
+  ✓   8 tests/browser/game.spec.ts:317:1 › production assets work under the GitHub Pages repository prefix (824ms)
+  ✓   7 tests/browser/game.spec.ts:293:1 › blocked session storage does not prevent the full workflow (2.1s)
+  ✓   9 tests/browser/game.spec.ts:335:1 › axe finds no WCAG A/AA issues in start, task, expanded help, decision and ending (5.7s)
+  ✓  10 tests/browser/game.spec.ts:377:1 › all closed feedback colors and the neutral decision remain accessible (5.8s)
+  ✓  11 tests/browser/game.spec.ts:417:3 › touch layout and complete supported play at desktop (2.4s)
+  ✓  12 tests/browser/game.spec.ts:417:3 › touch layout and complete supported play at ipad-landscape (2.3s)
+  ✓  13 tests/browser/game.spec.ts:417:3 › touch layout and complete supported play at ipad-portrait (2.1s)
+  ✓  14 tests/browser/game.spec.ts:417:3 › touch layout and complete supported play at phone (1.9s)
+
+  14 passed (21.3s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

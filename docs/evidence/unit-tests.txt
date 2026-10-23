@@ -1,0 +1,36 @@
+
+> afrika-2040@0.1.0 test
+> node --test tests/*.test.ts
+
+✔ all four journeys include the right walk and boarding point (2.242744ms)
+✔ route change benefits Amina by 12 minutes and costs David 6 (0.364481ms)
+✔ missing choices are prompts, not failed attempts (0.368053ms)
+✔ step 1 distinguishes all combinations and both partial answers (0.206129ms)
+✔ benefit and disadvantage use distinct criteria (0.225157ms)
+✔ second failed attempt explains and permits continuation in every closed task (0.367292ms)
+✔ both routes are legitimate; only relevant evidence completes a structured answer (1.960805ms)
+✔ partial reasoning acknowledges what fits and requests the missing perspective (0.348889ms)
+✔ unexpected phrasing and even contradictory free text are never keyword-graded (0.485753ms)
+✔ no false saved claim when storage is blocked (0.394954ms)
+✔ navigation guards cannot skip an unprocessed task, even under repeated clicks (2.765307ms)
+✔ two failures unlock explanation, not endless rated guesses (2.011044ms)
+✔ hints are voluntary, monotonic, and do not consume attempts (0.288251ms)
+✔ back preserves work and explicit rework resets only the current task (0.306419ms)
+✔ transfer gives a second-attempt explanation and keeps the model unchanged (0.244061ms)
+✔ changing evidence or text invalidates an already checked recommendation (0.331009ms)
+✔ restart deletes all answers, hints and progress (0.813727ms)
+✔ session round trip and corrupted data are handled (0.643129ms)
+✔ blocked session storage never prevents play (0.484986ms)
+ℹ tests 19
+ℹ suites 0
+ℹ pass 19
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 148.410527
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice
