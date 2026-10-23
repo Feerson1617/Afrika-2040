@@ -1,19 +1,59 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { evidenceFor, evidenceIds, journey } from '../src/model.ts';
+import {
+  evidenceFor,
+  evidenceIds,
+  evidenceLabel,
+  journey,
+  journeyParts,
+  lineDuration,
+  differentPeople,
+} from '../src/model.ts';
 import { evaluateClosed, evaluateDecision } from '../src/feedback.ts';
+import { persons, routes } from '../src/content.ts';
 
-test('all four journeys include the right walk and boarding point', () => {
-  assert.deepEqual(journey('amina', 'direct'), {
-    walk: 12,
-    bus: 10,
-    total: 22,
-  });
-  assert.deepEqual(journey('amina', 'north'), { walk: 2, bus: 8, total: 10 });
-  assert.deepEqual(journey('david', 'direct'), { walk: 2, bus: 10, total: 12 });
-  assert.deepEqual(journey('david', 'north'), { walk: 2, bus: 16, total: 18 });
+test('all nine prescribed journeys include the actual walk and the ridden bus sections', () => {
+  const expected = {
+    amina: { direct: [12, 10, 22], north: [2, 8, 10], south: [12, 16, 28] },
+    david: { direct: [2, 10, 12], north: [2, 16, 18], south: [2, 16, 18] },
+    leila: { direct: [12, 10, 22], north: [12, 16, 28], south: [2, 8, 10] },
+  };
+  for (const person of persons)
+    for (const route of routes) {
+      const [walk, bus, total] = expected[person][route];
+      assert.deepEqual(
+        journey(person, route),
+        { walk, bus, total },
+        `${person}/${route}`,
+      );
+    }
 });
-test('route change benefits Amina by 12 minutes and costs David 6', () => {
+test('full route lengths and boarding determine all bus sections', () => {
+  assert.deepEqual(routes.map(lineDuration), [10, 16, 16]);
+  assert.deepEqual(journeyParts('amina', 'north'), {
+    board: 'nord',
+    walk: 2,
+    segments: ['nordZentrum'],
+  });
+  assert.deepEqual(journeyParts('leila', 'south'), {
+    board: 'sued',
+    walk: 2,
+    segments: ['suedZentrum'],
+  });
+  assert.deepEqual(journeyParts('amina', 'south').segments, [
+    'platzSued',
+    'suedZentrum',
+  ]);
+  assert.deepEqual(journeyParts('leila', 'north').segments, [
+    'platzNord',
+    'nordZentrum',
+  ]);
+  assert.deepEqual(journeyParts('david', 'south').segments, [
+    'platzSued',
+    'suedZentrum',
+  ]);
+});
+test('the original Phase-1 advantages remain unchanged', () => {
   assert.equal(
     journey('amina', 'direct').total - journey('amina', 'north').total,
     12,
@@ -24,32 +64,22 @@ test('route change benefits Amina by 12 minutes and costs David 6', () => {
   );
 });
 test('missing choices are prompts, not failed attempts', () => {
-  for (const step of [0, 1, 2] as const) {
+  for (const step of [0, 1, 2, 4] as const) {
     const f = evaluateClosed(step, {}, 0);
     assert.equal(f.failed, false);
-    assert.equal(f.feedback.kind, 'hint');
     assert.equal(f.feedback.complete, false);
   }
 });
-test('step 1 distinguishes all combinations and both partial answers', () => {
-  assert.equal(
-    evaluateClosed(0, { foot: 'platz', bus: 'direct' }, 0).feedback.kind,
-    'correct',
-  );
-  assert.equal(
-    evaluateClosed(0, { foot: 'platz', bus: 'north' }, 0).feedback.kind,
-    'partial',
-  );
-  assert.equal(
-    evaluateClosed(0, { foot: 'nord', bus: 'direct' }, 0).feedback.kind,
-    'partial',
-  );
-  assert.equal(
-    evaluateClosed(0, { foot: 'nord', bus: 'north' }, 0).feedback.kind,
-    'incorrect',
-  );
+test('all four original route-part combinations retain correct, partial and wrong feedback', () => {
+  for (const [foot, bus, kind] of [
+    ['platz', 'direct', 'correct'],
+    ['platz', 'north', 'partial'],
+    ['nord', 'direct', 'partial'],
+    ['nord', 'north', 'incorrect'],
+  ] as const)
+    assert.equal(evaluateClosed(0, { foot, bus }, 0).feedback.kind, kind);
 });
-test('benefit and disadvantage use distinct criteria', () => {
+test('benefit and disadvantage use distinct perspectives', () => {
   assert.equal(
     evaluateClosed(1, { person: 'amina' }, 0).feedback.kind,
     'correct',
@@ -67,7 +97,7 @@ test('benefit and disadvantage use distinct criteria', () => {
     'incorrect',
   );
 });
-test('second failed attempt explains and permits continuation in every closed task', () => {
+test('the second failed attempt still explains every original closed task', () => {
   for (const step of [0, 1, 2] as const) {
     const f = evaluateClosed(
       step,
@@ -81,26 +111,114 @@ test('second failed attempt explains and permits continuation in every closed ta
     assert.match(f.text, /Minuten/);
   }
 });
-test('both routes are legitimate; only relevant evidence completes a structured answer', () => {
-  for (const route of ['direct', 'north'] as const)
+test('all evidence labels name the person and both comparison routes unambiguously', () => {
+  assert.equal(evidenceIds.length, 18);
+  assert.equal(new Set(evidenceIds).size, 18);
+  assert.equal(
+    evidenceLabel('leila-south-direct'),
+    'Leila: Über Süd 10 statt Direkt 22 Minuten.',
+  );
+  assert.equal(
+    evidenceLabel('david-north-south'),
+    'David: Über Nord 18 statt Über Süd 18 Minuten.',
+  );
+});
+test('all 972 evidence pairs are judged by truth, reference route and different people; every recommendation remains neutral', () => {
+  const allowed = {
+    direct: {
+      good: [
+        'david-direct-north',
+        'david-direct-south',
+        'amina-direct-south',
+        'leila-direct-north',
+      ],
+      bad: ['amina-direct-north', 'leila-direct-south'],
+    },
+    north: {
+      good: ['amina-north-direct', 'amina-north-south'],
+      bad: ['david-north-direct', 'leila-north-direct', 'leila-north-south'],
+    },
+    south: {
+      good: ['leila-south-direct', 'leila-south-north'],
+      bad: ['david-south-direct', 'amina-south-direct', 'amina-south-north'],
+    },
+  };
+  for (const route of routes)
     for (const advantage of evidenceIds)
       for (const disadvantage of evidenceIds) {
         const f = evaluateDecision(
-          { route, advantage, disadvantage, text: '' },
+          { route, criterion: 'tradeoff', advantage, disadvantage, text: '' },
           true,
         );
-        const expected = evidenceFor(route);
+        const expected =
+          allowed[route].good.includes(advantage) &&
+          allowed[route].bad.includes(disadvantage) &&
+          advantage.split('-')[0] !== disadvantage.split('-')[0];
         assert.equal(f.kind, 'neutral');
         assert.equal(
           f.complete,
-          advantage === expected.advantage &&
-            disadvantage === expected.disadvantage,
+          expected,
+          `${route}: ${advantage}/${disadvantage}`,
         );
       }
 });
-test('partial reasoning acknowledges what fits and requests the missing perspective', () => {
+test('different valid weightings and comparison references are accepted', () => {
+  for (const route of routes) {
+    assert.equal(
+      evaluateDecision(
+        { route, criterion: 'tradeoff', ...evidenceFor(route), text: '' },
+        true,
+      ).complete,
+      true,
+    );
+  }
+  assert.equal(
+    evaluateDecision(
+      {
+        route: 'direct',
+        criterion: 'school',
+        advantage: 'amina-direct-south',
+        disadvantage: 'leila-direct-south',
+        text: '',
+      },
+      true,
+    ).complete,
+    true,
+  );
+  assert.equal(
+    differentPeople('amina-direct-south', 'amina-direct-north'),
+    false,
+  );
+  assert.equal(
+    evaluateDecision(
+      {
+        route: 'direct',
+        criterion: 'school',
+        advantage: 'amina-direct-south',
+        disadvantage: 'amina-direct-north',
+        text: '',
+      },
+      true,
+    ).complete,
+    false,
+  );
+});
+test('a named criterion is required, including when a free text is recorded', () => {
+  for (const text of ['', 'mein Ziel ist wichtig'])
+    assert.equal(
+      evaluateDecision({ route: 'south', ...evidenceFor('south'), text }, true)
+        .complete,
+      false,
+    );
+});
+test('correct incomplete reasoning is acknowledged without rejecting a route', () => {
   const f = evaluateDecision(
-    { route: 'north', advantage: 'amina-north', text: '' },
+    {
+      route: 'north',
+      criterion: 'school',
+      advantage: 'amina-north-direct',
+      text: '',
+    },
     true,
   );
   assert.equal(f.kind, 'neutral');
@@ -108,15 +226,18 @@ test('partial reasoning acknowledges what fits and requests the missing perspect
   assert.match(f.text, /Du belegst den Vorteil/);
   assert.match(f.text, /Nachteil/);
 });
-test('unexpected phrasing and even contradictory free text are never keyword-graded', () => {
+test('unusual or contradictory free text is saved without keyword grading', () => {
   for (const text of [
     'amina gut',
     'kp bus',
     'NICHT kürzer',
-    'Amina braucht 999 Minuten',
+    'Leila braucht 999 Minuten',
     '<script>alert(1)</script>',
   ]) {
-    const f = evaluateDecision({ route: 'direct', text }, true);
+    const f = evaluateDecision(
+      { route: 'south', criterion: 'training', text },
+      true,
+    );
     assert.equal(f.kind, 'neutral');
     assert.equal(f.complete, true);
     assert.match(f.text, /kann sie nicht sicher prüfen/);
@@ -124,7 +245,10 @@ test('unexpected phrasing and even contradictory free text are never keyword-gra
   }
 });
 test('no false saved claim when storage is blocked', () => {
-  const f = evaluateDecision({ route: 'north', text: 'Meine Gedanken' }, false);
+  const f = evaluateDecision(
+    { route: 'north', criterion: 'school', text: 'Meine Gedanken' },
+    false,
+  );
   assert.match(f.text, /erlaubt kein Speichern/);
   assert.doesNotMatch(f.text, /wurde gespeichert/);
 });

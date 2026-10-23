@@ -1,0 +1,14 @@
+
+> afrika-2040@0.1.0 build
+> tsc --noEmit && vite build
+
+vite v8.3.5 building client environment for production...
+transforming...
+✓ 11 modules transformed.
+rendering chunks...
+computing gzip size...
+dist/index.html                  0.77 kB │ gzip:  0.46 kB
+dist/assets/index-ByUIkshL.css  20.43 kB │ gzip:  5.44 kB
+dist/assets/index-NhfO3ce8.js   47.81 kB │ gzip: 16.23 kB
+
+✓ built in 63ms

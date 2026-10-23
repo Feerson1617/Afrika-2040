@@ -67,18 +67,19 @@ test('transfer gives a second-attempt explanation and keeps the model unchanged'
 });
 test('changing evidence or text invalidates an already checked recommendation', () => {
   let s = initialState();
-  s.step = 3;
+  s.step = 5;
   s.decision = {
+    criterion: 'tradeoff',
     route: 'direct',
-    advantage: 'david-direct',
-    disadvantage: 'amina-direct',
+    advantage: 'david-direct-north',
+    disadvantage: 'amina-direct-north',
     text: '',
   };
   s = reduce(s, { type: 'check', persisted: true });
-  assert.equal(s.progress[3].complete, true);
+  assert.equal(s.progress[5].complete, true);
   s = reduce(s, { type: 'text', value: 'Neue Begründung' });
-  assert.equal(s.progress[3].complete, false);
-  assert.equal(s.progress[3].feedback, undefined);
+  assert.equal(s.progress[5].complete, false);
+  assert.equal(s.progress[5].feedback, undefined);
 });
 test('restart deletes all answers, hints and progress', () => {
   const s = initialState();

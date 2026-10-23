@@ -1,9 +1,10 @@
-import { initialState } from './state.ts';
+import { initialState, normalizeView } from './state.ts';
 import type { State } from './state.ts';
-
-export const storageKey = 'afrika-2040:kenia-bus:v1';
+import { criteria, persons, routes, tasks } from './content.ts';
+import { evidenceIds, explanationChoices } from './model.ts';
+export const storageKey = 'afrika-2040:kenia-bus:v2a';
+const legacyStorageKey = 'afrika-2040:kenia-bus:v1';
 type Store = Pick<Storage, 'getItem' | 'setItem' | 'removeItem'>;
-
 export function saveSession(state: State, storage?: Store): boolean {
   try {
     if (!storage) return false;
@@ -14,10 +15,12 @@ export function saveSession(state: State, storage?: Store): boolean {
   }
 }
 export function clearSession(storage?: Store) {
-  try {
-    storage?.removeItem(storageKey);
-  } catch {
-    /* The in-memory reset still works. */
+  for (const key of [storageKey, legacyStorageKey]) {
+    try {
+      storage?.removeItem(key);
+    } catch {
+      /* In-memory reset still works. */
+    }
   }
 }
 export function readSession(storage?: Store): State {
@@ -26,6 +29,9 @@ export function readSession(storage?: Store): State {
     if (!raw) return initialState();
     const s = JSON.parse(raw);
     const oneOf = (v: unknown, values: unknown[]) => values.includes(v);
+    const optional = (v: unknown, values: unknown[]) =>
+      v === undefined || oneOf(v, values);
+    const text = (v: unknown) => typeof v === 'string' && v.length <= 1500;
     const feedback = (f: any) =>
       f === undefined ||
       (f &&
@@ -36,52 +42,60 @@ export function readSession(storage?: Store): State {
     if (
       !s ||
       !oneOf(s.screen, ['start', 'game', 'end']) ||
-      !oneOf(s.step, [0, 1, 2, 3]) ||
-      !oneOf(s.route, ['direct', 'north']) ||
+      !oneOf(s.step, [0, 1, 2, 3, 4, 5]) ||
+      !oneOf(s.route, routes) ||
       typeof s.words !== 'boolean' ||
-      !oneOf(s.highlight, [undefined, 'amina', 'david'])
+      !optional(s.highlight, persons) ||
+      !optional(s.firstRoute, ['direct', 'north'])
     )
       return initialState();
     if (
       !Array.isArray(s.progress) ||
-      s.progress.length !== 4 ||
+      s.progress.length !== tasks.length ||
       !s.progress.every(
         (p: any) =>
           p &&
           oneOf(p.failures, [0, 1, 2]) &&
           oneOf(p.help, [0, 1, 2, 3]) &&
           typeof p.complete === 'boolean' &&
-          oneOf(p.foot, [undefined, 'platz', 'nord']) &&
-          oneOf(p.bus, [undefined, 'direct', 'north']) &&
-          oneOf(p.person, [undefined, 'amina', 'david']) &&
-          oneOf(p.transfer, [undefined, 'yes', 'no']) &&
+          optional(p.supported, [true, false]) &&
+          optional(p.foot, ['platz', 'nord', 'sued']) &&
+          optional(p.bus, routes) &&
+          optional(p.person, persons) &&
+          optional(p.prediction, routes) &&
+          optional(p.routeAnswer, routes) &&
+          Array.isArray(p.explored) &&
+          p.explored.length <= routes.length &&
+          new Set(p.explored).size === p.explored.length &&
+          p.explored.every((r: unknown) => oneOf(r, routes)) &&
+          optional(p.transfer, ['yes', 'no']) &&
           oneOf(p.transferFailures, [0, 1, 2]) &&
           feedback(p.feedback) &&
           feedback(p.transferFeedback),
       )
     )
       return initialState();
-    const d = s.decision;
-    const facts = [
-      undefined,
-      'amina-direct',
-      'amina-north',
-      'david-direct',
-      'david-north',
-    ];
+    const e = s.explanation,
+      d = s.decision;
     if (
-      !d ||
-      !oneOf(d.route, [undefined, 'direct', 'north']) ||
-      !oneOf(d.advantage, facts) ||
-      !oneOf(d.disadvantage, facts) ||
-      !oneOf(d.supported, [undefined, true, false]) ||
-      typeof d.text !== 'string' ||
-      d.text.length > 1500
+      !e ||
+      !optional(e.cause, Object.keys(explanationChoices.cause)) ||
+      !optional(e.effect, Object.keys(explanationChoices.effect)) ||
+      !text(e.text) ||
+      !optional(e.supported, [true, false])
     )
       return initialState();
-    // Older saved games can contain the previous task's route after going back.
-    if (s.step === 0) s.route = 'direct';
-    return s as State;
+    if (
+      !d ||
+      !optional(d.route, routes) ||
+      !optional(d.criterion, Object.keys(criteria)) ||
+      !optional(d.advantage, evidenceIds) ||
+      !optional(d.disadvantage, evidenceIds) ||
+      !optional(d.supported, [true, false]) ||
+      !text(d.text)
+    )
+      return initialState();
+    return normalizeView(s as State);
   } catch {
     return initialState();
   }

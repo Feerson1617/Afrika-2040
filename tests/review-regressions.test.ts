@@ -40,37 +40,39 @@ test('R1: legacy saved north state in task 1 is normalized; renderer is safe ind
 for (const route of ['direct', 'north'] as const) {
   test(`R2: ${route} gets concrete support after two wrong evidence checks and deliberate adoption`, () => {
     let s = initialState();
-    s.step = 3;
+    s.step = 5;
     s.decision =
       route === 'north'
         ? {
+            criterion: 'tradeoff',
             route,
-            advantage: 'amina-north',
-            disadvantage: 'amina-direct',
+            advantage: 'amina-north-direct',
+            disadvantage: 'amina-direct-north',
             text: '',
           }
         : {
+            criterion: 'tradeoff',
             route,
-            advantage: 'david-direct',
-            disadvantage: 'david-north',
+            advantage: 'david-direct-north',
+            disadvantage: 'david-north-direct',
             text: '',
           };
     s = reduce(s, { type: 'check', persisted: true });
-    assert.equal(s.progress[3].failures, 1);
-    assert.equal(s.progress[3].complete, false);
+    assert.equal(s.progress[5].failures, 1);
+    assert.equal(s.progress[5].complete, false);
     for (let i = 0; i < 3; i++)
       s = reduce(s, { type: 'check', persisted: true });
-    assert.equal(s.progress[3].failures, 2);
-    assert.equal(s.progress[3].help, 3);
-    assert.equal(s.progress[3].complete, false);
-    assert.equal(s.progress[3].feedback?.kind, 'neutral');
+    assert.equal(s.progress[5].failures, 2);
+    assert.equal(s.progress[5].help, 3);
+    assert.equal(s.progress[5].complete, false);
+    assert.equal(s.progress[5].feedback?.kind, 'neutral');
     const wrong = s.decision.disadvantage;
     s = reduce(s, { type: 'use-example', persisted: true });
     assert.equal(s.decision.supported, true);
-    assert.equal(s.progress[3].complete, true);
+    assert.equal(s.progress[5].complete, true);
     assert.notEqual(s.decision.disadvantage, wrong);
-    assert.equal(s.progress[3].feedback?.kind, 'neutral');
-    assert.match(s.progress[3].feedback!.text, /Beispiel übernommen/);
+    assert.equal(s.progress[5].feedback?.kind, 'neutral');
+    assert.match(s.progress[5].feedback!.text, /Beispiel übernommen/);
     s = reduce(s, { type: 'next' });
     assert.equal(s.screen, 'end');
   });
@@ -78,22 +80,23 @@ for (const route of ['direct', 'north'] as const) {
 
 test('R2: voluntary help 3 offers adoption without failures, route change and rework stay safe', () => {
   let s = initialState();
-  s.step = 3;
+  s.step = 5;
   s = reduce(s, { type: 'use-example', persisted: true });
-  assert.equal(s.progress[3].complete, false);
+  assert.equal(s.progress[5].complete, false);
   s = reduce(s, { type: 'decision-route', value: 'north' });
+  s = reduce(s, { type: 'criterion', value: 'tradeoff' });
   for (const level of [1, 2, 3]) s = reduce(s, { type: 'help', value: level });
-  assert.equal(s.progress[3].failures, 0);
-  assert.equal(s.progress[3].complete, false);
+  assert.equal(s.progress[5].failures, 0);
+  assert.equal(s.progress[5].complete, false);
   s = reduce(s, { type: 'use-example', persisted: true });
-  assert.equal(s.decision.advantage, 'amina-north');
-  assert.equal(s.decision.disadvantage, 'david-north');
+  assert.equal(s.decision.advantage, 'amina-north-direct');
+  assert.equal(s.decision.disadvantage, 'david-north-direct');
   s = reduce(s, { type: 'decision-route', value: 'direct' });
   assert.equal(s.decision.supported, undefined);
-  assert.equal(s.progress[3].complete, false);
+  assert.equal(s.progress[5].complete, false);
   s = reduce(s, { type: 'use-example', persisted: true });
-  assert.equal(s.decision.advantage, 'david-direct');
-  assert.equal(s.decision.disadvantage, 'amina-direct');
+  assert.equal(s.decision.advantage, 'david-direct-north');
+  assert.equal(s.decision.disadvantage, 'amina-direct-north');
   const restored = readSession({
     getItem: () => JSON.stringify(s),
     setItem() {},
@@ -101,23 +104,28 @@ test('R2: voluntary help 3 offers adoption without failures, route change and re
   });
   assert.equal(restored.decision.supported, true);
   s = reduce(restored, { type: 'reset-task' });
-  assert.equal(s.progress[3].failures, 0);
+  assert.equal(s.progress[5].failures, 0);
   assert.equal(s.decision.supported, undefined);
 });
 
 test('R2: unclear free text and correct-but-incomplete evidence never consume failures', () => {
   for (const text of ['???', 'amina 999 Minuten', '<b>bus</b>', '']) {
     let s = initialState();
-    s.step = 3;
-    s.decision = { route: 'north', advantage: 'amina-north', text };
+    s.step = 5;
+    s.decision = {
+      criterion: 'tradeoff',
+      route: 'north',
+      advantage: 'amina-north-direct',
+      text,
+    };
     // With text present, even an incorrect selected fact must not grade the text.
-    if (text) s.decision.disadvantage = 'amina-direct';
+    if (text) s.decision.disadvantage = 'amina-direct-north';
     for (let i = 0; i < 4; i++)
       s = reduce(s, { type: 'check', persisted: true });
-    assert.equal(s.progress[3].failures, 0);
-    assert.equal(s.progress[3].help, 0);
-    assert.equal(s.progress[3].feedback?.kind, 'neutral');
-    if (text) assert.match(s.progress[3].feedback!.text, /nicht sicher prüfen/);
+    assert.equal(s.progress[5].failures, 0);
+    assert.equal(s.progress[5].help, 0);
+    assert.equal(s.progress[5].feedback?.kind, 'neutral');
+    if (text) assert.match(s.progress[5].feedback!.text, /nicht sicher prüfen/);
   }
 });
 

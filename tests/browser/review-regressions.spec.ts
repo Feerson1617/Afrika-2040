@@ -1,25 +1,7 @@
 import { test, expect, type Page, type Locator } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
-const key = 'afrika-2040:kenia-bus:v1';
-const choices = {
-  direct: {
-    name: 'Direkt',
-    advantage: 'david-direct',
-    disadvantage: 'amina-direct',
-    wrong: 'david-north',
-    benefit: '12 statt 18',
-    cost: '22 statt 10',
-  },
-  north: {
-    name: 'Über Nord',
-    advantage: 'amina-north',
-    disadvantage: 'david-north',
-    wrong: 'amina-direct',
-    benefit: '10 statt 22',
-    cost: '18 statt 12',
-  },
-} as const;
+import { key, routeChoices as choices, finish2A } from './phase2a-helpers.ts';
 
 async function saved(page: Page) {
   return page.evaluate((k) => JSON.parse(sessionStorage.getItem(k)!), key);
@@ -41,6 +23,7 @@ async function toDecision(page: Page, touch = false) {
     await act(page.getByRole('button', { name: 'Weg prüfen', exact: true }));
     await act(page.getByRole('button', { name: 'Weiter →', exact: true }));
   }
+  await finish2A(page, touch);
 }
 async function assertDirectStartingMap(page: Page) {
   await expect(
@@ -91,7 +74,7 @@ test('R1: direct visible times survive back, rework, reload and a legacy saved n
   await page.reload();
   await assertDirectStartingMap(page);
   await page.screenshot({
-    path: 'docs/evidence/review-R1-restored.png',
+    path: '/workspace/scratch/phase2a-browser/review-R1-restored.png',
     fullPage: true,
   });
   await page.getByRole('radio', { name: /Zum Platz/ }).check();
@@ -119,7 +102,7 @@ for (const route of ['direct', 'north'] as const) {
       await expect(page.locator('[data-feedback]')).toContainText(
         'Du belegst den Vorteil',
       );
-      expect((await saved(page)).progress[3].failures).toBe(Math.min(2, i));
+      expect((await saved(page)).progress[5].failures).toBe(Math.min(2, i));
       await expect(
         page.getByRole('button', { name: 'Zum Abschluss' }),
       ).toHaveCount(0);
@@ -143,7 +126,7 @@ for (const route of ['direct', 'north'] as const) {
       page.getByRole('button', { name: 'Dieses Beispiel übernehmen' }),
     ).toBeVisible();
     await page.screenshot({
-      path: `docs/evidence/review-R2-${route}-explanation.png`,
+      path: `/workspace/scratch/phase2a-browser/review-R2-${route}-explanation.png`,
       fullPage: true,
     });
     const axe = await new AxeBuilder({ page })
@@ -199,9 +182,9 @@ test('R2: all voluntary hints and a changed proposal offer the matching example 
     'Dein Vorschlag: Direkt',
   );
   await expect(page.locator('.help-panel')).toContainText(
-    'David braucht 12 statt 18 Minuten',
+    'David: Direkt 12 statt Über Nord 18 Minuten',
   );
-  expect((await saved(page)).progress[3].failures).toBe(0);
+  expect((await saved(page)).progress[5].failures).toBe(0);
   await page
     .getByRole('button', { name: 'Dieses Beispiel übernehmen' })
     .click();
@@ -214,8 +197,12 @@ test('R2: unclear free text is never counted as a failed evidence check or silen
 }) => {
   await toDecision(page);
   await page.getByRole('radio', { name: 'Über Nord', exact: true }).check();
-  await page.getByLabel('Ein Vorteil mit Beleg').selectOption('amina-north');
-  await page.getByLabel('Ein Nachteil mit Beleg').selectOption('amina-direct');
+  await page
+    .getByLabel('Ein Vorteil mit Beleg')
+    .selectOption('amina-north-direct');
+  await page
+    .getByLabel('Ein Nachteil mit Beleg')
+    .selectOption('amina-north-direct');
   await page.getByText('Mit eigenen Worten', { exact: false }).click();
   for (const text of ['???', 'amina 999 Minuten', '<b>bus???</b>']) {
     await page.getByLabel('Ich schlage diesen Busweg vor, weil …').fill(text);
@@ -224,7 +211,7 @@ test('R2: unclear free text is never counted as a failed evidence check or silen
     await expect(page.locator('[data-feedback]')).toContainText(
       'nicht sicher prüfen',
     );
-    expect((await saved(page)).progress[3].failures).toBe(0);
+    expect((await saved(page)).progress[5].failures).toBe(0);
   }
   await page.getByRole('button', { name: 'Zum Abschluss' }).click();
   await expect(page.locator('.recommendation')).toContainText(
@@ -339,7 +326,7 @@ for (const viewport of [
       for (const time of [22, 10, 12, 18])
         await expect(page.locator('.comparison')).toContainText(`${time} Min.`);
       await page.screenshot({
-        path: `docs/evidence/review-${viewport.name}-${route}.png`,
+        path: `/workspace/scratch/phase2a-browser/review-${viewport.name}-${route}.png`,
         fullPage: true,
       });
       for (const name of ['Amina', 'David']) {
@@ -349,9 +336,13 @@ for (const viewport of [
         );
         await act(page.getByRole('button', { name: 'Weiter →', exact: true }));
       }
+      await finish2A(page, viewport.touch);
       await act(
         page.getByRole('radio', { name: choices[route].name, exact: true }),
       );
+      await page
+        .getByLabel('Mein Ziel oder Kriterium')
+        .selectOption('tradeoff');
       await page
         .getByLabel('Ein Vorteil mit Beleg')
         .selectOption(choices[route].advantage);
@@ -377,6 +368,9 @@ for (const viewport of [
         page.getByRole('radio', { name: choices[route].name, exact: true }),
       );
       await page
+        .getByLabel('Mein Ziel oder Kriterium')
+        .selectOption('tradeoff');
+      await page
         .getByLabel('Ein Vorteil mit Beleg')
         .selectOption(choices[route].advantage);
       await page
@@ -392,7 +386,7 @@ for (const viewport of [
       expect(box!.height).toBeGreaterThanOrEqual(44);
       if (viewport.name === 'ipad-landscape' && route === 'north')
         await page.screenshot({
-          path: 'docs/evidence/review-ipad-supported.png',
+          path: '/workspace/scratch/phase2a-browser/review-ipad-supported.png',
           fullPage: true,
         });
       await act(support);

@@ -1,58 +1,62 @@
-# Architektur und Prüfregeln – Phase 1
+# Architektur und Prüfregeln – Phase 2A
 
-## Umfang
+## Umfang und Module
 
-Vite, TypeScript, semantisches HTML/CSS und eine lokale SVG-Karte. Keine Spiele-Engine, Konten, Laufzeitdienste, externen Fonts, Analytics oder KI-Bewertung. GitHub Pages wird durch relative Buildpfade vorbereitet, nicht veröffentlicht. Die Oberfläche verwendet eine ruhige, atlasartige Gestaltung: Papierfarben, dunkles Grün, zurückhaltendes Terrakotta, Serifenschrift für Fragen, klare serifenlose Leseschrift für Bedienung. Bewegung ist auf unmittelbare Zustandswechsel begrenzt.
+Die bestehende Architektur bleibt erhalten: Vite, TypeScript, semantisches HTML/CSS und eine lokale SVG-Modellkarte. Papierfarben, dunkles Grün und Terrakotta, Serifenschrift für Fragen und serifenlose Leseschrift für die Bedienung. Die südliche Erweiterung wird erst nach dem bisherigen Zweipersonenvergleich sichtbar. Keine neue Engine, Abhängigkeit, Laufzeit-API, Animation, Konten, externen Fonts oder Deployment-Pipeline.
 
-## Module
+- `src/content.ts`: zentrale Fuß- und Buszeiten, Linienabschnitte und Haltestellenfolgen, Einstieg je Person/Linie, Aufträge, Kriterien und Wörter.
+- `src/model.ts`: summiert dieselben Abschnitte für vollständige Linien und tatsächlich gefahrene Teilstrecken. Liefert Reisezeiten, eindeutige Vergleichsbelege und Satzbausteine aus diesen Daten.
+- `src/feedback.ts`: explizite Kriterien für geschlossene Aufgaben, angeleitete Erklärungen und Belege. Die Empfehlung bleibt neutral, eigene Texte bleiben unbewertet.
+- `src/state.ts`: reine Zustandsübergänge mit sechs Schritten, Navigation, Versuchsgrenzen, freiwilligen Hilfen, ausdrücklicher Beispielübernahme und Neustart.
+- `src/storage.ts`: validierter, fehlertoleranter Tab-Speicher. Neues Schema ohne automatische Umdeutung alter Phase-1-Lernprodukte.
+- `src/map.ts`: dieselbe SVG-Karte mit später eingeblendetem Süden. Bei drei Routen erscheinen nur die gewählte Linie, der aktuelle Fußweg und die tatsächlich gefahrenen Busabschnitte einer Person. Andere Personen und Haltestellen bleiben als räumliche Bezugspunkte sichtbar.
+- `src/main.ts` und `src/style.css`: DOM-Bedienung, responsive Oberfläche, Fokus, Live-Rückmeldungen, Textescaping und optionale Vertiefung.
 
-- `src/content.ts`: Episode, Aufträge, Hilfen, Wörter und zentrale Minutenwerte. Spätere Inhalte können dieses Muster aufnehmen; Ghana/Marokko sind noch nicht implementiert.
-- `src/model.ts`: reine Wegberechnung und belegbare Aussagen. Keine UI-Abhängigkeit.
-- `src/feedback.ts`: explizite Kriterien je Aufgabe; neutrale Empfehlungsauswertung; Freitext bleibt unbewertet.
-- `src/state.ts`: reine Zustandsübergänge, Versuche, Hilfen, Navigation, erneute Bearbeitung, Transfer und Neustart.
-- `src/storage.ts`: fehlertoleranter Tab-Speicher; beschädigte/unerwartete Daten starten einen neuen Zustand. Keine serverseitige Speicherung.
-- `src/map.ts`: eine SVG-Modellkarte mit identischen Zahlen zum Rechenmodell. Auswählbare Wege und Personen sind per Tastatur erreichbar; HTML-Bedienelemente bieten eine größere Alternative.
-- `src/main.ts`: DOM-Oberfläche, Ereignisse, Fokus, Textescaping, lokale Speicherung.
-- `src/style.css`: responsive Oberfläche, Touchflächen, Kontraste und reduzierte Bewegung.
+## Gemeinsames Modell
 
-## Modellannahmen und verbindliche Werte
+| Person             | Direkt: Fuß + Bus | Über Nord: Fuß + Bus | Über Süd: Fuß + Bus |
+| ------------------ | ----------------- | -------------------- | ------------------- |
+| Amina → Schule     | 12 + 10 = **22**  | 2 + 8 = **10**       | 12 + 16 = **28**    |
+| David → Markt      | 2 + 10 = **12**   | 2 + 16 = **18**      | 2 + 16 = **18**     |
+| Leila → Ausbildung | 12 + 10 = **22**  | 12 + 16 = **28**     | 2 + 8 = **10**      |
 
-| Person                    | Direkt: Fuß + Bus        | Über Nord: Fuß + Bus       |
-| ------------------------- | ------------------------ | -------------------------- |
-| Amina → Schule im Zentrum | 12 + 10 = **22** Minuten | 2 + 8 = **10** Minuten     |
-| David → Markt im Zentrum  | 2 + 10 = **12** Minuten  | 2 + 8 + 8 = **18** Minuten |
+Alle Angaben in Minuten. Direkt: Platz → Zentrum, 10 Minuten. Nord: Platz → Nord → Zentrum, zweimal 8 Minuten. Süd: Platz → Süd → Zentrum, zweimal 8 Minuten. Amina steigt bei Nord erst in Nord ein, Leila bei Süd erst in Süd. Auf den anderen Linien gehen beide zum Platz. David steigt immer am Platz ein. Die Ziele liegen modellhaft an der Haltestelle Zentrum. Wartezeiten, Fahrpreise und Kapazitäten werden nicht berechnet. Das Modell ist keine wirkliche Stadtkarte Nairobis und keine Prognose.
 
-Amina steigt bei „Über Nord“ erst in Nord ein. Die gesamte Linie benötigt 16 Minuten, Aminas Busfahrt nur 8. Beide Ziele liegen modellhaft unmittelbar an der Haltestelle Zentrum; eine zusätzliche letzte Gehstrecke wird nicht berechnet. Wartezeiten, Fahrpreise und Kapazität werden nicht verglichen/berechnet. Es gibt keine Zuverlässigkeits-, Sicherheits-, CO₂- oder Nachhaltigkeitskennzahl. Die Karte ist schematisch, nicht maßstabsgetreu, und zeigt keine wirkliche Nachbarschaft Nairobis. Die Hilfs-Transferaufgabe verändert nicht die Hauptdaten: neues Beispiel mit 3 Minuten Fußweg + 10 Minuten Bus = 13 Minuten.
+Karte, sichtbare Summen, Erklärungen und Vergleichsbelege beziehen ihre Zeiten aus `content.ts` und `model.ts`. Ein Beleg benennt Person, gewählte Linie und Vergleichslinie, beispielsweise `leila-south-direct`: „Leila: Über Süd 10 statt Direkt 22 Minuten.“ Ein Gleichstand ist weder Zeitvorteil noch Zeitnachteil. Ein wahrer Vorteil und Nachteil derselben Person genügen nicht für die geforderte andere Perspektive. Mehrere zutreffende Belegpaare und alle drei Empfehlungen bleiben zulässig.
 
-## Feedback-Vertrag
+## Lernfolge
 
-| Fall                           | Technisch überprüfbares Kriterium                                | Rückmeldung                                                                                               |
-| ------------------------------ | ---------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------- |
-| A: richtig                     | Passende Teilstrecken bzw. richtige betroffene Person            | Grün, Text und Zeichen, Zusammenhang erklären                                                             |
-| B: falsch                      | Vollständige Auswahl verfehlt das Kriterium                      | Rot, konkreter Hinweis; beim ersten Versuch keine vollständige Auflösung                                  |
-| C: teilweise                   | Genau ein passender Teil in Aufgabe 1                            | Gelb, richtigen Teil nennen, fehlenden Teil benennen                                                      |
-| D: offene Entscheidung         | Vorteil mit Zahlenbeleg und Nachteil passen zum gewählten Busweg | Neutral, beide Wege zulässig; fehlende/falsche Belege sachlich ansprechen                                 |
-| E: unklarer Freitext           | Nur Vorhandensein eines nicht leeren Textes ist feststellbar     | Neutral, Speicherung bestätigen, wenn sie tatsächlich gelang; fachliche Prüfung ausdrücklich offen lassen |
-| F: wiederholte Schwierigkeiten | Zwei erfolglose bewertete Versuche                               | Gelbe Erklärung, Hilfe 3, freiwilliger kurzer Transfer, Weiterweg ohne Sperre                             |
+1. Ausgangsweg: Aminas Fußweg zum Platz und direkte Busfahrt zusammensetzen. Beim Rücksprung und Neuladen ist ausschließlich die direkte Ausgangsroute aktiv; die alternative Nord-Teilfahrt bleibt als Auswahl sichtbar.
+2. Vorteil: Amina auf Direkt und Nord vergleichen.
+3. Nachteil: Davids veränderte Zeit untersuchen.
+4. Erklären: Fußweg-Verkürzung und Folge für die Gesamtzeit mit zusammenhängenden Satzbausteinen oder eigenem Text erklären. Die ganze Nordlinie ab Platz ist länger; Amina nutzt nur den letzten Busabschnitt. Danach kann eine erste Empfehlung freiwillig festgehalten werden.
+5. Erweitern: Leila und Süd werden eingeführt. Eine erste Vermutung wird ohne Bewertung festgehalten. Anschließend Leilas drei Wege tatsächlich ansehen; erst dann folgt die Zuordnung des für Leila schnellsten Weges. Der Besuch anderer Personen täuscht keine Leila-Untersuchung vor. Hilfe erlaubt einen ausdrücklich unterstützten Abschluss ohne erfundene Vermutung oder erfundene Kartenbesuche.
+6. Entscheiden: gewählte Linie, ausdrücklich genanntes Ziel/Kriterium, zutreffender Vorteil und Nachteil einer anderen Person. Alternativ eigener Text bei benanntem Ziel und Linie; sein fachlicher Gehalt bleibt ausdrücklich ungeprüft. Der Wechsel der Linie allein ist kein Abschluss und keine Erfolgsmeldung. Erste Idee, endgültiger Vorschlag, Erklärung und Vermutung bleiben lokal einsehbar.
 
-Fehlende Pflichtauswahl ist kein bewerteter Versuch. Freiwillige Hilfe verbraucht keinen Versuch. Die Bausteine prüfen nur die gewählten Belege; sie belegen keine tatsächlich selbstständig erreichte Kompetenz und ersetzen keine Prüfung der eigenen Gewichtung. Ein Abschluss mit Freitext ist möglich, ohne ihn als richtig auszugeben. Bei widersprüchlichen Bausteinen plus Freitext bleiben die fraglichen Belege auch im Abschluss als zu prüfen markiert.
+Die anfängliche 2×2-Übersicht bleibt erhalten. Nach der Erweiterung ersetzt ein Personeninspektor die große Zahlenmatrix: ein Fußweg, die gefahrene Teilstrecke und eine verständliche Summe. Die drei Linien wechseln über HTML-Schaltflächen. Im anfänglichen Zweilinienvergleich sind zusätzlich beide SVG-Pfade auswählbar. Personen wechseln über Marker und gleichwertige HTML-Schaltflächen. Keine Bedienhandlung verlangt Drag-and-drop.
 
-Nach der unabhängigen Prüfung ergänzt: Ein richtiger vorhandener Teil bei noch fehlendem zweitem Teil wird in Aufgabe 1 gelb anerkannt, ohne einen Fehlversuch zu zählen. In Aufgabe 4 zählen nur tatsächlich unpassende ausgewählte Belege bei gewählter Linie und ohne Freitext als erfolglose strukturierte Prüfung. Fehlende Auswahl, ein passender Beleg mit noch fehlendem Gegenbeleg und unklarer Freitext zählen nicht als Fehlversuch. Nach höchstens zwei unpassenden Belegprüfungen erscheint automatisch Hilfe 3 mit einer konkreten Erklärung zur gewählten Linie. Die falschen Belege bleiben zunächst unverändert. Erst „Dieses Beispiel übernehmen“ setzt bewusst die passenden Belege und ermöglicht den unterstützten Abschluss. Feedback bleibt neutral; das Lernprodukt kennzeichnet die Übernahme als Hilfe. Derselbe Weiterweg steht bei freiwilliger Hilfe 3 zur Verfügung. Ein Linienwechsel aktualisiert das Beispiel, eine eigene Änderung der Belegauswahl entfernt die Übernahmekennzeichnung.
+## Feedback, Hilfen und Herkunft
 
-## Daten und Zustände
+Richtige geschlossene Antworten erscheinen grün mit Erklärung, falsche rot, richtige Teilgedanken gelb mit gezieltem nächsten Schritt. Eine unvollständige Antwort verbraucht keinen Fehlversuch. Eine passende Bausteinerklärung wird ausdrücklich als **angeleitet** bestätigt. Fachliche Selbstständigkeit wird daraus nicht abgeleitet.
 
-Antworten werden unter `afrika-2040:kenia-bus:v1` ausschließlich im `sessionStorage` desselben Browser-Tabs gesichert. Browser können Tab-Sitzungen wiederherstellen; Neustart entfernt den gespeicherten Spielzustand ausdrücklich. Bei gesperrtem Speicher funktioniert das Spiel bis zum Neuladen im Arbeitsspeicher weiter und behauptet keine dauerhafte Speicherung. Eigene Texte werden vor HTML-Ausgabe escaped und auf 1500 Zeichen begrenzt. Es gibt keinen Fetch/Beacon, keine Fernbewertung und keine Schülerkennungen. Der Entwicklungsserver ist nur ein Entwicklungswerkzeug; die gebaute Anwendung benötigt keinen Anwendungsserver.
+Alle Versuche bleiben auf höchstens zwei begrenzt. Die drei ursprünglichen geschlossenen Aufgaben behalten den erklärten Weiterweg aus Phase 1. Bei den neuen Aufgaben und der Empfehlung wird Hilfe 3 nach zwei erfolglosen vollständigen Prüfungen sichtbar; „Dieses Beispiel übernehmen“ muss bewusst bedient werden. Freiwillige Hilfe 3 bietet denselben Weg. Die ursprünglichen Antworten werden nicht bereits beim Anzeigen der Hilfe ersetzt. Nach einer eigenen Änderung kann das Beispiel erneut übernommen werden.
 
-Ein Schritt wird erst nach korrekter geschlossener Lösung, vollständiger Erklärung oder bearbeiteter offener Empfehlung fortgesetzt. Zurück erhält die Arbeit; „Aufgabe neu bearbeiten“ setzt nur den aktuellen Schritt zurück. Neustart während des Spiels fragt zur Vermeidung versehentlicher Löschung lokal nach. Schnell wiederholte Klicks dürfen keine unbearbeiteten Schritte überspringen.
+Die Empfehlung bleibt auch bei zutreffenden Belegen neutral. Nur eine vollständig ausgewählte, objektiv unpassende Belegkombination ohne Freitext zählt als Fehlversuch. Kriterium, Linie oder Beleg fehlen: kein Fehlversuch. Freitext vorhanden: keine Schlüsselwortbewertung, keine Fehlversuche wegen der Formulierung. Widersprüchliche ausgewählte Belege bleiben als zu prüfen markiert. Eigene Texte ermöglichen eine unbewertete Abgabe, aber keinen automatisch bestätigten Kompetenznachweis.
 
-Aufgabe 1 erzwingt stets die direkte Ausgangsroute, auch nach Rücksprung und beim Lesen alter gespeicherter Nord-Zustände. Die Kartendarstellung schützt diese Bedingung zusätzlich selbst; Antworten und Bearbeitungsstände anderer Aufgaben bleiben erhalten. Das optionale Merkmal `decision.supported` sichert die Herkunft übernommener Beispielbelege über Neuladen hinweg; ältere Spielstände ohne dieses Merkmal bleiben lesbar.
+`progress.supported` dokumentiert die genutzte Unterstützung pro Aufgabe bis zum ausdrücklichen Neubearbeiten dieser Aufgabe. `explanation.supported` und `decision.supported` beschreiben die aktuelle Beispielübernahme und werden bei eigener Änderung der Bausteine/Belege entfernt. So bleibt die Hilfe im Lernprodukt sichtbar, auch wenn das übernommene Beispiel anschließend bearbeitet wird. Unterstützung wird nicht als Misserfolg markiert.
 
-## Prüfregeln
+Der freiwillige Transfer aus Phase 1 bleibt ein separat bezeichnetes Amina-Beispiel (3 Minuten Fußweg + 10 Minuten Bus = 13 Minuten). Er ändert keine Hauptdaten und implementiert nicht das spätere Ereignis zu Leilas verändertem Fußweg.
 
-1. Alle vier Reisezeiten sowie der Unterschied zwischen Linienlänge und Aminas Teilfahrt müssen stimmen.
-2. Richtige/falsche/teilrichtige/leere Antworten, zwei Fehlversuche, alle Hilfen, Transfer, Neustart, Rückkehr und erneute Bearbeitung prüfen.
-3. Für beide Empfehlungen sämtliche Bausteinkombinationen prüfen. Freitext auch mit ungewöhnlicher Formulierung, falschen Zahlen und HTML-Zeichen testen. Keine Schlüsselwortbenotung.
-4. Tatsächlich gestarteten Produktionsbuild im Browser bis zum Abschluss durchlaufen. Pfade zusätzlich unter `/Afrika-2040/` durch einen statischen Mount prüfen.
-5. Maus, Tastatur, Touch-Simulation; Desktop, iPad quer/hoch und schmale Ansicht prüfen. Screenshots ansehen. Kontrast-/ARIA-Prüfung mit axe ist eine Ergänzung, kein vollständiger Barrierefreiheitsnachweis.
-6. Sprache, Informationsmenge, Kartenlegende, offene Entscheidung, Modellkennzeichnung und Grenzen der curricularen Abdeckung intern prüfen.
-7. Tests mit nachvollziehbaren Anzahlen und ausgeführten Befehlen berichten. Ungeprüfte Safari-/Hardware- und Unterrichtserfahrungen ausdrücklich offen lassen. Eigene Tests ersetzen die unabhängige Prüfung durch ChatGPT/Work nicht.
+## Speicher, Rückkehr und Sicherheit
+
+`afrika-2040:kenia-bus:v2a` sichert sechs Fortschrittseinträge, beide Texte, Belegreferenzen, Kriterium, Unterstützung und echte Erkundungen im `sessionStorage` des Tabs. Phase-1-Daten unter `v1` werden nicht als Phase-2A-Abschluss interpretiert. Neustart entfernt beide projektspezifischen Schlüssel. Bei blockiertem Speicher läuft das Spiel bis zum Neuladen im Arbeitsspeicher weiter und behauptet keine Speicherung. Texte werden auf 1500 Zeichen begrenzt und bei der HTML-Ausgabe escaped. Keine Kennungen, Fernbewertung, Fetch-/Beacon-Aufrufe oder Übertragung von Schülerantworten.
+
+Zurück erhält Bearbeitungen. Neubearbeitung setzt nur die aktuelle Aufgabe zurück. Rückkehr vor Leilas Einführung blendet sie und Süd wieder aus; der nächste Vergleich zeigt passende Strecken und Beschriftungen. Zurück zu Aufgabe 1 erzwingt zusätzlich die direkte Linie. Schnelle Mehrfachklicks überspringen keine unbearbeiteten Aufgaben. Nach der Vermutungswahl erhält der gespeicherte Hinweis den Fokus; die ersetzte Radioauswahl hinterlässt keinen verlorenen Tastaturfokus.
+
+## Prüfverfahren
+
+`npm test` führt die Fälle mit Nodes `--experimental-test-isolation=none` im selben Prozess aus. In dieser Cloud-Laufzeit lieferte der isolierte Runner zunächst nur Dateihüllen ohne einzelne Testfälle. Die konfigurierte Variante führt die einzelnen Fälle sichtbar aus. Das ist eine Anpassung des Prüfskripts, keine neue Abhängigkeit; das Lockfile bleibt unverändert.
+
+Die Logikprüfung umfasst neun Zeiten, Einstieg und Teilabschnitte, 972 strukturierte Belegkombinationen, zulässige alternative Gewichtungen, Teilantworten, höchstens zwei Fehlversuche, unterstützte Abschlüsse, ungewöhnliche Freitexte und Speicher/Navigation. Die Browserprüfung spielt die komplette Episode auf dem Produktionsbuild durch: drei Empfehlungen auf Desktop und simulierten iPads quer/hoch, echte Touch-Ereignisse, Tastatur, Kartenwerte, Kennzeichnung, Neuladen, Wiederbearbeitung und Neustart. Historische R1–R3-Prüfungen bleiben mit den erweiterten Schritten und expliziten Vergleichsreferenzen erhalten. Die statischen Ressourcen werden zusätzlich unter `/Afrika-2040/` geprüft; dies veröffentlicht nichts.
+
+Screenshots werden tatsächlich angesehen. Gemessene Zeit-Schriftgröße und Badge-Inhalt sind eine begrenzte Lesbarkeitsprüfung. axe ergänzt die DOM-Prüfung und beweist weder vollständige Barrierefreiheit noch SVG-Kontrast. Aktuelle Ergebnisse und Grenzen: [phase2a-handover.md](phase2a-handover.md).

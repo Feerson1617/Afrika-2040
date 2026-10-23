@@ -1,20 +1,25 @@
-import type { Foot, Person, Route, Step } from './content.ts';
-import type { Evidence } from './model.ts';
-import type { Feedback } from './feedback.ts';
+import type { Criterion, Foot, Person, Route, Step } from './content.ts';
+import { tasks, visiblePersons, visibleRoutes } from './content.ts';
+import type { Cause, Effect, Evidence } from './model.ts';
+import { evidenceFor } from './model.ts';
+import type { Decision, Explanation, Feedback } from './feedback.ts';
 import {
   evaluateClosed,
   evaluateDecision,
+  evaluateExplanation,
   hasIncorrectDecisionEvidence,
 } from './feedback.ts';
-import { evidenceFor } from './model.ts';
-
 export interface Progress {
   foot?: Foot;
   bus?: Route;
   person?: Person;
+  prediction?: Route;
+  routeAnswer?: Route;
+  explored: Route[];
   failures: number;
   help: number;
   complete: boolean;
+  supported?: boolean;
   feedback?: Feedback;
   transfer?: 'yes' | 'no';
   transferFailures: number;
@@ -25,28 +30,45 @@ export interface State {
   step: Step;
   route: Route;
   progress: Progress[];
-  decision: {
-    route?: Route;
-    advantage?: Evidence;
-    disadvantage?: Evidence;
-    text: string;
-    supported?: boolean;
-  };
+  explanation: Explanation;
+  firstRoute?: Route;
+  decision: Decision;
   words: boolean;
   highlight?: Person;
 }
 export function newProgress(): Progress {
-  return { failures: 0, help: 0, complete: false, transferFailures: 0 };
+  return {
+    failures: 0,
+    help: 0,
+    complete: false,
+    transferFailures: 0,
+    explored: [],
+  };
 }
 export function initialState(): State {
   return {
     screen: 'start',
     step: 0,
     route: 'direct',
-    progress: Array.from({ length: 4 }, newProgress),
+    progress: Array.from({ length: tasks.length }, newProgress),
+    explanation: { text: '' },
     decision: { text: '' },
     words: false,
   };
+}
+export function selectedPerson(s: State): Person {
+  return (
+    s.highlight ?? (s.step === 2 ? 'david' : s.step >= 4 ? 'leila' : 'amina')
+  );
+}
+export function normalizeView(s: State): State {
+  if (s.step === 0) s.route = 'direct';
+  else if (!visibleRoutes(s.step).includes(s.route)) s.route = 'north';
+  if (s.highlight && !visiblePersons(s.step).includes(s.highlight))
+    s.highlight = undefined;
+  if (s.step === 4 && !s.progress[4].prediction && !s.progress[4].supported)
+    s.route = 'direct';
+  return s;
 }
 export type Action =
   | {
@@ -59,21 +81,43 @@ export type Action =
         | 'words'
         | 'check-transfer';
     }
-  | { type: 'route'; value: Route }
+  | {
+      type:
+        | 'route'
+        | 'decision-route'
+        | 'prediction'
+        | 'route-answer'
+        | 'first-route';
+      value: Route;
+    }
   | { type: 'foot'; value: Foot }
   | { type: 'bus'; value: Route }
   | { type: 'person' | 'highlight'; value: Person }
   | { type: 'help'; value: number }
-  | { type: 'decision-route'; value: Route }
   | { type: 'advantage' | 'disadvantage'; value?: Evidence }
-  | { type: 'text'; value: string }
+  | { type: 'criterion'; value?: Criterion }
+  | { type: 'cause'; value?: Cause }
+  | { type: 'effect'; value?: Effect }
+  | { type: 'text' | 'explanation-text'; value: string }
   | { type: 'transfer'; value: 'yes' | 'no' }
   | { type: 'check' | 'use-example'; persisted: boolean };
-
 export function reduce(current: State, action: Action): State {
   if (action.type === 'restart') return initialState();
-  const s = structuredClone(current);
-  const p = s.progress[s.step];
+  const s = structuredClone(current),
+    p = s.progress[s.step];
+  const invalidate = () => {
+    p.feedback = undefined;
+    p.complete = false;
+  };
+  const trackLeila = () => {
+    if (
+      s.step === 4 &&
+      (p.prediction || p.supported) &&
+      selectedPerson(s) === 'leila' &&
+      !p.explored.includes(s.route)
+    )
+      p.explored.push(s.route);
+  };
   switch (action.type) {
     case 'start':
       s.screen = 'game';
@@ -82,89 +126,145 @@ export function reduce(current: State, action: Action): State {
       s.words = !s.words;
       break;
     case 'route':
-      s.route = s.step === 0 ? 'direct' : action.value;
+      if (
+        s.step > 0 &&
+        visibleRoutes(s.step).includes(action.value) &&
+        !(s.step === 4 && !p.prediction && !p.supported)
+      )
+        s.route = action.value;
+      trackLeila();
       break;
     case 'highlight':
-      s.highlight = action.value;
+      if (visiblePersons(s.step).includes(action.value))
+        s.highlight = action.value;
+      trackLeila();
       break;
     case 'foot':
-      p.foot = action.value;
-      if (p.help < 3 && p.failures < 2) {
-        p.feedback = undefined;
-        p.complete = false;
-      }
-      break;
     case 'bus':
-      p.bus = action.value;
-      if (p.help < 3 && p.failures < 2) {
-        p.feedback = undefined;
-        p.complete = false;
+    case 'person':
+      if (s.step > 2 || p.complete) break;
+      if (action.type === 'foot') p.foot = action.value;
+      if (action.type === 'bus') p.bus = action.value;
+      if (action.type === 'person') p.person = action.value;
+      invalidate();
+      break;
+    case 'first-route':
+      if (s.step === 3 && action.value !== 'south') s.firstRoute = action.value;
+      break;
+    case 'prediction':
+      if (s.step === 4 && !p.prediction) {
+        p.prediction = action.value;
+        s.route = 'direct';
+        s.highlight = 'leila';
+        trackLeila();
       }
       break;
-    case 'person':
-      p.person = action.value;
-      if (p.help < 3 && p.failures < 2) {
-        p.feedback = undefined;
-        p.complete = false;
+    case 'route-answer':
+      if (s.step === 4) {
+        p.routeAnswer = action.value;
+        invalidate();
+      }
+      break;
+    case 'cause':
+    case 'effect':
+      if (s.step === 3) {
+        if (action.type === 'cause') s.explanation.cause = action.value;
+        else s.explanation.effect = action.value;
+        s.explanation.supported = undefined;
+        invalidate();
       }
       break;
     case 'help':
       p.help = Math.max(p.help, Math.min(3, action.value));
-      if (p.help === 3 && s.step < 3) p.complete = true;
+      if (p.help === 3 && s.step < 3) {
+        p.complete = true;
+        p.supported = true;
+      }
       break;
     case 'check': {
-      if (s.step === 3) {
+      if (s.step === 5) {
         p.feedback = evaluateDecision(s.decision, action.persisted);
         p.complete = p.feedback.complete;
-        if (hasIncorrectDecisionEvidence(s.decision)) {
+        if (hasIncorrectDecisionEvidence(s.decision))
           p.failures = Math.min(2, p.failures + 1);
-          if (p.failures >= 2) {
-            p.help = 3;
-            p.feedback.title = 'Deine Belege gemeinsam prüfen';
-            p.feedback.text += ' Die Erklärung unten hilft dir weiter.';
-          }
-        }
-      } else if (p.failures < 2 && !p.complete) {
-        const result = evaluateClosed(s.step, p, p.failures);
-        p.feedback = result.feedback;
-        p.complete = result.feedback.complete;
-        if (result.failed) p.failures++;
-        if (p.failures >= 2) p.help = 3;
+      } else if (s.step === 3) {
+        const evaluated = evaluateExplanation(
+          s.explanation,
+          p.failures,
+          action.persisted,
+        );
+        p.feedback = evaluated.feedback;
+        p.complete = p.feedback.complete;
+        if (evaluated.failed) p.failures = Math.min(2, p.failures + 1);
+      } else if (!p.complete) {
+        const evaluated = evaluateClosed(s.step, p, p.failures);
+        p.feedback = evaluated.feedback;
+        p.complete = p.feedback.complete;
+        if (evaluated.failed) p.failures = Math.min(2, p.failures + 1);
+      }
+      if (p.failures >= 2) {
+        p.help = 3;
+        if (s.step < 3) p.supported = true;
       }
       break;
     }
     case 'use-example':
-      if (s.step === 3 && p.help === 3 && s.decision.route) {
+      if (p.help !== 3) break;
+      if (s.step === 3) {
+        Object.assign(s.explanation, {
+          cause: 'shorter',
+          effect: 'total',
+          supported: true,
+        });
+        p.feedback = evaluateExplanation(
+          s.explanation,
+          0,
+          action.persisted,
+        ).feedback;
+      } else if (s.step === 4) {
+        p.routeAnswer = 'south';
+        p.feedback = {
+          kind: 'hint',
+          title: '→ Mit Unterstützung verglichen',
+          text: 'Du hast das erklärte Beispiel zu Leilas Wegen übernommen. Du kannst die Wege weiter auf der Karte testen.',
+          complete: true,
+        };
+      } else if (s.step === 5 && s.decision.route) {
         Object.assign(s.decision, evidenceFor(s.decision.route), {
+          criterion: s.decision.criterion ?? 'tradeoff',
           supported: true,
         });
         p.feedback = evaluateDecision(s.decision, action.persisted);
-        p.complete = p.feedback.complete;
-      }
+      } else break;
+      p.supported = true;
+      p.complete = p.feedback.complete;
       break;
     case 'decision-route':
-      s.decision.route = action.value;
-      s.decision.supported = undefined;
-      p.feedback = undefined;
-      p.complete = false;
+      if (s.step === 5) {
+        s.decision.route = action.value;
+        s.decision.advantage = undefined;
+        s.decision.disadvantage = undefined;
+        s.decision.supported = undefined;
+        invalidate();
+      }
       break;
+    case 'criterion':
     case 'advantage':
-      s.decision.advantage = action.value;
-      s.decision.supported = undefined;
-      p.feedback = undefined;
-      p.complete = false;
-      break;
     case 'disadvantage':
-      s.decision.disadvantage = action.value;
-      s.decision.supported = undefined;
-      p.feedback = undefined;
-      p.complete = false;
+      if (s.step === 5) {
+        if (action.type === 'criterion') s.decision.criterion = action.value;
+        else s.decision[action.type] = action.value;
+        s.decision.supported = undefined;
+        invalidate();
+      }
       break;
     case 'text':
-      s.decision.text = action.value.slice(0, 1500);
-      p.feedback = undefined;
-      p.complete = false;
+    case 'explanation-text': {
+      const target = action.type === 'text' ? s.decision : s.explanation;
+      target.text = action.value.slice(0, 1500);
+      invalidate();
       break;
+    }
     case 'transfer':
       p.transfer = action.value;
       p.transferFeedback = undefined;
@@ -197,9 +297,13 @@ export function reduce(current: State, action: Action): State {
       break;
     case 'next':
       if (p.complete) {
-        if (s.step < 3) {
+        if (s.step < tasks.length - 1) {
           s.step = (s.step + 1) as Step;
           s.highlight = undefined;
+          if (s.step === 4) {
+            s.route = 'direct';
+            s.highlight = 'leila';
+          }
         } else s.screen = 'end';
       }
       break;
@@ -212,10 +316,16 @@ export function reduce(current: State, action: Action): State {
       break;
     case 'reset-task':
       s.progress[s.step] = newProgress();
-      if (s.step === 3) s.decision = { text: '' };
+      if (s.step === 3) {
+        s.explanation = { text: '' };
+        s.firstRoute = undefined;
+      }
+      if (s.step === 4) {
+        s.route = 'direct';
+        s.highlight = 'leila';
+      }
+      if (s.step === 5) s.decision = { text: '' };
       break;
   }
-  // Task 1 always uses the direct starting route, including navigation/rework.
-  if (s.step === 0) s.route = 'direct';
-  return s;
+  return normalizeView(s);
 }

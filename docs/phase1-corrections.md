@@ -1,3 +1,5 @@
+**Historischer Phase-1-Bericht. Aktuelle Entwicklung:** [Phase 2A](phase2a-handover.md).
+
 # Phase 1 – gezielte Korrekturen nach unabhängiger Prüfung
 
 ## Stand und Umfang

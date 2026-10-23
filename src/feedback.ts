@@ -1,8 +1,14 @@
-import type { Foot, Person, Route, Step } from './content.ts';
-import { routeNames, tasks } from './content.ts';
-import { evidenceFor, evidenceLabel } from './model.ts';
-import type { Evidence } from './model.ts';
-
+import type { Criterion, Foot, Person, Route, Step } from './content.ts';
+import { criteria, routeNames, routes, tasks } from './content.ts';
+import {
+  differentPeople,
+  evidenceFits,
+  evidenceFor,
+  evidenceLabel,
+  explanationText,
+  journey,
+} from './model.ts';
+import type { Cause, Effect, Evidence } from './model.ts';
 export type FeedbackKind =
   'correct' | 'incorrect' | 'partial' | 'hint' | 'neutral';
 export interface Feedback {
@@ -15,161 +21,282 @@ export interface Evaluation {
   feedback: Feedback;
   failed: boolean;
 }
-
+const result = (
+  kind: FeedbackKind,
+  title: string,
+  text: string,
+  complete = false,
+  failed = false,
+): Evaluation => ({ feedback: { kind, title, text, complete }, failed });
+export function explainTask(step: Step): string {
+  const a = journey('amina', 'direct'),
+    n = journey('amina', 'north');
+  const d = journey('david', 'direct'),
+    dn = journey('david', 'north');
+  if (step === 0)
+    return `Amina geht ${a.walk} Minuten zum Platz. Dann fährt sie ${a.bus} Minuten im Bus. Zusammen sind das ${a.total} Minuten.`;
+  if (step === 1)
+    return `Für Amina wird der Weg kürzer: über Nord ${n.walk} + ${n.bus} = ${n.total} Minuten, direkt ${a.walk} + ${a.bus} = ${a.total} Minuten.`;
+  if (step === 2)
+    return `Für David dauert es länger: über Nord ${dn.walk} + ${dn.bus} = ${dn.total} Minuten, direkt ${d.walk} + ${d.bus} = ${d.total} Minuten.`;
+  if (step === 3) return explanationText();
+  const ld = journey('leila', 'direct'),
+    ln = journey('leila', 'north'),
+    ls = journey('leila', 'south');
+  return `Leila braucht direkt ${ld.total}, über Nord ${ln.total} und über Süd ${ls.walk} + ${ls.bus} = ${ls.total} Minuten. Über Süd steigt sie erst in Süd ein. Das hilft Leila. David braucht dann ${journey('david', 'south').total} statt ${d.total} Minuten. Amina braucht ${journey('amina', 'south').total} statt ${a.total} Minuten. Mehr Haltestellen machen den Weg also nicht für alle besser.`;
+}
 export function evaluateClosed(
   step: Step,
-  answer: { foot?: Foot; bus?: Route; person?: Person },
+  answer: {
+    foot?: Foot;
+    bus?: Route;
+    person?: Person;
+    routeAnswer?: Route;
+    prediction?: Route;
+    explored?: Route[];
+  },
   failures: number,
 ): Evaluation {
+  if (step === 4) {
+    if (
+      !answer.prediction ||
+      !routes.every((r) => answer.explored?.includes(r))
+    )
+      return result(
+        'hint',
+        'Teste Leilas Wege',
+        'Vermute zuerst. Sieh dann Leilas ganzen Weg auf allen drei Linien an. Dafür gibt es keine Fehlversuche.',
+      );
+    if (!answer.routeAnswer)
+      return result(
+        'hint',
+        'Dein Vergleich fehlt noch',
+        'Welcher Busweg ist für Leila am schnellsten?',
+      );
+    if (answer.routeAnswer === 'south')
+      return result(
+        'correct',
+        '✓ Leilas Weg wird kürzer',
+        explainTask(4),
+        true,
+      );
+    if (failures >= 1)
+      return result(
+        'hint',
+        '→ Wir vergleichen gemeinsam',
+        'Die Erklärung unten vergleicht Leilas drei Wege. Du kannst das erklärte Beispiel übernehmen.',
+        false,
+        true,
+      );
+    return result(
+      'incorrect',
+      '↺ Prüfe den Einstieg',
+      'Leila kann am Platz oder in Süd einsteigen. Vergleiche ihren Fußweg und ihre Busfahrt zusammen.',
+      false,
+      true,
+    );
+  }
   const empty = step === 0 ? !answer.foot || !answer.bus : !answer.person;
   if (
     step === 0 &&
     empty &&
     (answer.foot === 'platz' || answer.bus === 'direct')
   )
-    return {
-      feedback: {
-        kind: 'partial',
-        title: '◐ Ein Teil passt schon',
-        text:
-          answer.foot === 'platz'
-            ? 'Der Fußweg zum Platz passt. Wähle jetzt noch die Busfahrt.'
-            : 'Die direkte Busfahrt passt. Wähle jetzt noch den Fußweg.',
-        complete: false,
-      },
-      failed: false,
-    };
+    return result(
+      'partial',
+      '◐ Ein Teil passt schon',
+      answer.foot === 'platz'
+        ? 'Der Fußweg zum Platz passt. Wähle jetzt noch die Busfahrt.'
+        : 'Die direkte Busfahrt passt. Wähle jetzt noch den Fußweg.',
+    );
   if (empty)
-    return {
-      feedback: {
-        kind: 'hint',
-        title: 'Noch eine Auswahl',
-        text:
-          step === 0
-            ? answer.foot
-              ? 'Wähle jetzt noch die Busfahrt. Dann prüfen wir beide Teile.'
-              : answer.bus
-                ? 'Wähle jetzt noch den Fußweg. Dann prüfen wir beide Teile.'
-                : 'Wähle einen Fußweg und eine Busfahrt.'
-            : 'Wähle Amina oder David.',
-        complete: false,
-      },
-      failed: false,
-    };
-  const correctParts =
+    return result(
+      'hint',
+      'Noch eine Auswahl',
+      step === 0
+        ? answer.foot
+          ? 'Wähle jetzt noch die Busfahrt. Dann prüfen wir beide Teile.'
+          : answer.bus
+            ? 'Wähle jetzt noch den Fußweg. Dann prüfen wir beide Teile.'
+            : 'Wähle einen Fußweg und eine Busfahrt.'
+        : 'Wähle Amina oder David.',
+    );
+  const parts =
     step === 0
       ? Number(answer.foot === 'platz') + Number(answer.bus === 'direct')
       : Number(answer.person === (step === 1 ? 'amina' : 'david'));
-  const correct = correctParts === (step === 0 ? 2 : 1);
-  if (correct)
-    return {
-      feedback: {
-        kind: 'correct',
-        title: '✓ Das passt',
-        text: tasks[step].hints[2],
-        complete: true,
-      },
-      failed: false,
-    };
+  if (parts === (step === 0 ? 2 : 1))
+    return result('correct', '✓ Das passt', explainTask(step), true);
   if (failures >= 1)
-    return {
-      feedback: {
-        kind: 'hint',
-        title: '→ Wir schauen es gemeinsam an',
-        text: tasks[step].hints[2],
-        complete: true,
-      },
-      failed: true,
-    };
-  if (step === 0 && correctParts === 1)
-    return {
-      feedback: {
-        kind: 'partial',
-        title: '◐ Ein Teil passt schon',
-        complete: false,
-        text:
-          answer.foot === 'platz'
-            ? 'Der Fußweg zum Platz passt. Prüfe jetzt, wo der direkte Bus hinfährt.'
-            : 'Die direkte Busfahrt passt. Prüfe jetzt den Fußweg zu ihrer Haltestelle.',
-      },
-      failed: true,
-    };
-  return {
-    feedback: {
-      kind: 'incorrect',
-      title: '↺ Das passt noch nicht',
-      text: tasks[step].hints[0],
-      complete: false,
-    },
-    failed: true,
-  };
+    return result(
+      'hint',
+      '→ Wir schauen es gemeinsam an',
+      explainTask(step),
+      true,
+      true,
+    );
+  if (step === 0 && parts === 1)
+    return result(
+      'partial',
+      '◐ Ein Teil passt schon',
+      answer.foot === 'platz'
+        ? 'Der Fußweg zum Platz passt. Prüfe jetzt, wo der direkte Bus hinfährt.'
+        : 'Die direkte Busfahrt passt. Prüfe jetzt den Fußweg zu ihrer Haltestelle.',
+      false,
+      true,
+    );
+  return result(
+    'incorrect',
+    '↺ Das passt noch nicht',
+    tasks[step].hints[0],
+    false,
+    true,
+  );
 }
-
+export interface Explanation {
+  cause?: Cause;
+  effect?: Effect;
+  text: string;
+  supported?: boolean;
+}
+function textNotice(persisted: boolean) {
+  return (
+    (persisted
+      ? 'Deine Antwort wurde gespeichert.'
+      : 'Deine Antwort bleibt für dieses Spiel erhalten. Der Browser erlaubt kein Speichern.') +
+    ' Das Spiel kann sie nicht sicher prüfen. Zeige deinen Beleg auf der Karte.'
+  );
+}
+export function evaluateExplanation(
+  answer: Explanation,
+  failures: number,
+  persisted: boolean,
+): Evaluation {
+  if (answer.text.trim())
+    return result(
+      'neutral',
+      'Deine eigene Erklärung',
+      textNotice(persisted),
+      true,
+    );
+  const cause = answer.cause === 'shorter',
+    effect = answer.effect === 'total';
+  if (cause && effect)
+    return result(
+      answer.supported ? 'hint' : 'correct',
+      answer.supported
+        ? '→ Mit Unterstützung erklärt'
+        : '✓ Angeleitete Erklärung passt',
+      explanationText(),
+      true,
+    );
+  const acknowledged = cause
+    ? 'Der Satz zum kürzeren Fußweg passt. '
+    : effect
+      ? 'Der Satz zur kürzeren Gesamtzeit passt. '
+      : '';
+  if (!answer.cause || !answer.effect)
+    return result(
+      acknowledged ? 'partial' : 'hint',
+      acknowledged ? '◐ Ein Satz passt schon' : 'Ergänze deine Erklärung',
+      acknowledged +
+        (!answer.cause
+          ? 'Wähle jetzt den Satz zum Fußweg.'
+          : 'Wähle jetzt den Satz zur Gesamtzeit.'),
+    );
+  if (failures >= 1)
+    return result(
+      'hint',
+      '→ Den Zusammenhang gemeinsam erklären',
+      'Die Erklärung unten zeigt dir Fußweg, Einstieg und Gesamtzeit. Du kannst das erklärte Beispiel übernehmen.',
+      false,
+      true,
+    );
+  return result(
+    acknowledged ? 'partial' : 'incorrect',
+    acknowledged ? '◐ Ein Satz passt schon' : '↺ Untersuche den Zusammenhang',
+    acknowledged +
+      (cause
+        ? 'Prüfe die Folge für den ganzen Weg. Auch der Fußweg zählt.'
+        : 'Prüfe, wie sich Aminas Fußweg zur Haltestelle ändert.'),
+    false,
+    true,
+  );
+}
 export interface Decision {
   route?: Route;
+  criterion?: Criterion;
   advantage?: Evidence;
   disadvantage?: Evidence;
   text: string;
   supported?: boolean;
 }
-
 export function hasIncorrectDecisionEvidence(answer: Decision): boolean {
-  if (!answer.route || answer.text.trim()) return false;
-  const expected = evidenceFor(answer.route);
-  return Boolean(
-    (answer.advantage && answer.advantage !== expected.advantage) ||
-    (answer.disadvantage && answer.disadvantage !== expected.disadvantage),
+  if (
+    !answer.route ||
+    !answer.criterion ||
+    !answer.advantage ||
+    !answer.disadvantage ||
+    answer.text.trim()
+  )
+    return false;
+  return (
+    !evidenceFits(answer.advantage, answer.route, 'advantage') ||
+    !evidenceFits(answer.disadvantage, answer.route, 'disadvantage') ||
+    !differentPeople(answer.advantage, answer.disadvantage)
   );
 }
-
 export function explainDecision(route: Route): string {
   const expected = evidenceFor(route);
-  return `Dein Vorschlag: ${routeNames[route]}. Vorteil: ${evidenceLabel(expected.advantage)} Nachteil: ${evidenceLabel(expected.disadvantage)} Du kannst dieses erklärte Beispiel übernehmen. Überlege danach: Welche Folge ist dir wichtiger?`;
+  return `Dein Vorschlag: ${routeNames[route]}. Ein mögliches Ziel: ${criteria.tradeoff}. Vorteil: ${evidenceLabel(expected.advantage)} Nachteil: ${evidenceLabel(expected.disadvantage)} Du kannst dieses erklärte Beispiel übernehmen. Überlege danach: Welche Folge ist dir wichtiger?`;
 }
 export function evaluateDecision(
   answer: Decision,
   persisted: boolean,
 ): Feedback {
   if (!answer.route)
-    return {
-      kind: 'neutral',
-      title: 'Dein Vorschlag fehlt noch',
-      text: 'Wähle zuerst den Busweg, den du vorschlägst.',
-      complete: false,
-    };
-  const expected = evidenceFor(answer.route);
-  const good = answer.advantage === expected.advantage;
-  const downside = answer.disadvantage === expected.disadvantage;
+    return result(
+      'neutral',
+      'Dein Vorschlag fehlt noch',
+      'Wähle zuerst den Busweg, den du vorschlägst.',
+    ).feedback;
+  const good = evidenceFits(answer.advantage, answer.route, 'advantage');
+  const downside = evidenceFits(
+    answer.disadvantage,
+    answer.route,
+    'disadvantage',
+  );
+  const distinct = differentPeople(answer.advantage, answer.disadvantage);
   const hasText = Boolean(answer.text.trim());
   const parts: string[] = [];
+  if (!answer.criterion) parts.push('Wähle noch dein Ziel oder Kriterium.');
   if (answer.supported) parts.push('Du hast das erklärte Beispiel übernommen.');
   if (good)
-    parts.push(`Du belegst den Vorteil: ${evidenceLabel(expected.advantage)}`);
+    parts.push(`Du belegst den Vorteil: ${evidenceLabel(answer.advantage!)}`);
   else if (answer.advantage)
     parts.push(
-      'Prüfe deinen Vorteil: Wer braucht bei deinem Busweg weniger Zeit?',
+      'Prüfe deinen Vorteil: Zeigt der Beleg bei deinem Busweg weniger Zeit als bei der Vergleichslinie?',
     );
+  else if (!hasText) parts.push('Wähle einen Vorteil mit Zeitangabe.');
   if (downside)
     parts.push(
-      `Du beachtest auch den Nachteil: ${evidenceLabel(expected.disadvantage)}`,
+      `Du beachtest auch den Nachteil: ${evidenceLabel(answer.disadvantage!)}`,
     );
   else if (answer.disadvantage)
     parts.push(
-      'Prüfe deinen Nachteil: Wer braucht bei deinem Busweg mehr Zeit?',
+      'Prüfe deinen Nachteil: Zeigt der Beleg bei deinem Busweg mehr Zeit als bei der Vergleichslinie?',
     );
-  if (hasText)
+  else if (!hasText)
+    parts.push('Ergänze auch einen Nachteil für eine andere Person.');
+  if (good && downside && !distinct)
     parts.push(
-      persisted
-        ? 'Deine Antwort wurde gespeichert. Das Spiel kann sie nicht sicher prüfen. Zeige deinen Beleg auf der Karte.'
-        : 'Deine Antwort bleibt für dieses Spiel erhalten. Der Browser erlaubt kein Speichern. Das Spiel kann sie nicht sicher prüfen. Zeige deinen Beleg auf der Karte.',
+      'Beide Belege betreffen dieselbe Person. Ergänze den Nachteil für eine andere Person.',
     );
-  if (!good && !answer.advantage && !hasText)
-    parts.push('Wähle einen Vorteil mit Zeitangabe.');
-  if (!downside && !answer.disadvantage && !hasText)
-    parts.push('Ergänze auch einen Nachteil für die andere Person.');
-  if (good && downside)
+  if (hasText) parts.push(textNotice(persisted));
+  const structured = good && downside && distinct && Boolean(answer.criterion);
+  if (structured)
     parts.push(
-      'Du kannst beide Folgen abwägen. Was ist dir bei deinem Vorschlag besonders wichtig?',
+      'Die ausgewählten Belege passen. Erkläre nun, warum dir dein Ziel wichtig ist.',
     );
   return {
     kind: 'neutral',
@@ -177,10 +304,10 @@ export function evaluateDecision(
       ? 'Mit Unterstützung begründet'
       : hasText
         ? 'Deine Gedanken'
-        : good && downside
-          ? 'Dein Vorschlag ist begründet'
+        : structured
+          ? 'Deine ausgewählten Belege passen'
           : 'Deine Belege prüfen',
     text: parts.join(' '),
-    complete: (good && downside) || hasText,
+    complete: Boolean(answer.criterion) && (structured || hasText),
   };
 }

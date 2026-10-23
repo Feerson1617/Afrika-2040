@@ -1,6 +1,8 @@
-# Übergabe – Phase 1
+# Historische Erstübergabe – Phase 1
 
-**Aktueller Korrekturstand nach unabhängiger Prüfung:** [Gezielte Korrekturen R1–R4, neue Prüfergebnisse und Grenzen](phase1-corrections.md). Die nachstehenden Angaben dokumentieren die historische Erstübergabe von Commit `5e82afceeae39c0566797ab04cf2ee9ae4da1736`; sie sind keine Freigabe und keine aktuelle Testzusammenfassung.
+**Aktueller Entwicklungsstand:** [Phase 2A – Übergabe](phase2a-handover.md). Die nachfolgenden Angaben sind historisch.
+
+**Korrekturstand der Phase 1 nach unabhängiger Prüfung:** [Gezielte Korrekturen R1–R4, neue Prüfergebnisse und Grenzen](phase1-corrections.md). Die nachstehenden Angaben dokumentieren die historische Erstübergabe von Commit `5e82afceeae39c0566797ab04cf2ee9ae4da1736`; sie sind keine Freigabe und keine aktuelle Testzusammenfassung.
 
 Stand: 23. Oktober 2026. Repository `Feerson1617/Afrika-2040`, Entwicklungsbranch **`feat/phase1-kenia`**, Ausgangscommit `b07f8244ab64763aea9c3f96ce3358fab3c1cf78`. Den aktuellen überprüfbaren Commit zeigt `git rev-parse HEAD`. Kein Merge nach `main`, kein Push und keine Veröffentlichung auf GitHub Pages. Phase 2 wurde nicht begonnen.
 
