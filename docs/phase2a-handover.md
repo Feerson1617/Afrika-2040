@@ -1,3 +1,5 @@
+> Historischer Ausgangsstand `f6d922407bacf0af7e592520b7f502ac61501a9e` vor der unabhängigen Gegenprüfung. Aktuelle Korrektur und Ergebnisse: [phase2a-corrections.md](phase2a-corrections.md).
+
 # Übergabe Phase 2A – drei Personen, drei Buswege
 
 Stand: 23. Oktober 2026. Interner Entwicklungs- und Prüfbericht für die anschließende unabhängige Prüfung durch ChatGPT Work. **Keine eigenständige didaktische Freigabe.**

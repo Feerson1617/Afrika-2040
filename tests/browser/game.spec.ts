@@ -1,7 +1,8 @@
+import { evidencePath } from './artifacts.ts';
+import { chooseRoute, ownTextPanel, panel, selectEvidence, weightSelected } from './phase2a-helpers.ts';
 import { finish2A } from './phase2a-helpers.ts';
 import { test, expect, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
-import { mkdir } from 'node:fs/promises';
 
 async function start(page: Page) {
   await page.goto('/');
@@ -80,9 +81,10 @@ test('complete mouse flow, route changes, all times, all three valid recommendat
     ['Über Nord', 'amina-north-direct', 'david-north-direct'],
     ['Über Süd', 'leila-south-direct', 'david-south-direct'],
   ]) {
-    await page.getByRole('radio', { name: route, exact: true }).check();
-    await page.getByLabel('Ein Vorteil mit Beleg').selectOption(advantage);
-    await page.getByLabel('Ein Nachteil mit Beleg').selectOption(disadvantage);
+    await chooseRoute(page, route);
+    await selectEvidence(page, 'advantage', advantage);
+    await selectEvidence(page, 'disadvantage', disadvantage);
+    await weightSelected(page);
     await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
     await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
     await expect(page.locator('[data-feedback]')).toContainText(
@@ -100,9 +102,9 @@ test('complete mouse flow, route changes, all times, all three valid recommendat
   await page
     .getByRole('button', { name: 'Empfehlung noch einmal ansehen' })
     .click();
-  await expect(
-    page.getByRole('radio', { name: 'Über Süd', exact: true }),
-  ).toBeChecked();
+  await panel(page, 'plan');
+  await expect(page.getByRole('radio', { name: 'Über Süd', exact: true })).toBeChecked();
+  await panel(page, 'weigh');
   await page.getByRole('button', { name: 'Zum Abschluss' }).click();
   await page.getByRole('button', { name: 'Neu spielen', exact: true }).click();
   await expect(
@@ -173,10 +175,12 @@ test('free text is stored locally, never keyword-graded, escaped and editable af
     if (!r.url().startsWith('http://127.0.0.1:')) outbound.push(r.url());
   });
   await toDecision(page);
-  await page.getByRole('radio', { name: 'Direkt', exact: true }).check();
+  await chooseRoute(page, 'Direkt');
+  await ownTextPanel(page);
   await page.getByText('Mit eigenen Worten', { exact: false }).click();
   const text = '<img src=x onerror=alert(1)> amina gut bus???';
   await page.getByLabel('Ich schlage diesen Busweg vor, weil …').fill(text);
+  await weightSelected(page);
   await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
   await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
   await expect(page.locator('[data-feedback]')).toContainText(
@@ -185,6 +189,7 @@ test('free text is stored locally, never keyword-graded, escaped and editable af
   await expect(page.locator('[data-feedback]')).toContainText(
     'wurde gespeichert',
   );
+  await page.getByRole('button', { name: 'Eigenen Text unbewertet abgeben' }).click();
   await page.reload();
   await expect(
     page.getByLabel('Ich schlage diesen Busweg vor, weil …'),
@@ -208,10 +213,9 @@ test('open decision feedback recognizes a partial argument without rejecting the
   page,
 }) => {
   await toDecision(page);
-  await page.getByRole('radio', { name: 'Über Nord', exact: true }).check();
-  await page
-    .getByLabel('Ein Vorteil mit Beleg')
-    .selectOption('amina-north-direct');
+  await chooseRoute(page, 'Über Nord');
+  await selectEvidence(page, 'advantage', 'amina-north-direct');
+  await weightSelected(page);
   await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
   await expect(page.locator('[data-feedback]')).toContainText(
     'Du belegst den Vorteil',
@@ -220,9 +224,8 @@ test('open decision feedback recognizes a partial argument without rejecting the
     'Ergänze auch einen Nachteil',
   );
   await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
-  await page
-    .getByLabel('Ein Nachteil mit Beleg')
-    .selectOption('amina-north-direct');
+  await selectEvidence(page, 'disadvantage', 'amina-north-direct');
+  await weightSelected(page);
   await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
   await expect(page.locator('[data-feedback]')).toContainText(
     'Prüfe deinen Nachteil',
@@ -310,15 +313,16 @@ test('blocked session storage does not prevent the full workflow', async ({
     }),
   );
   await toDecision(page);
-  await page.getByRole('radio', { name: 'Direkt', exact: true }).check();
+  await chooseRoute(page, 'Direkt');
+  await ownTextPanel(page);
   await page.getByText('Mit eigenen Worten', { exact: false }).click();
   await page
     .getByLabel('Ich schlage diesen Busweg vor, weil …')
     .fill('David ist schneller.');
+  await weightSelected(page);
   await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
-  await expect(page.locator('[data-feedback]')).toContainText(
-    'erlaubt kein Speichern',
-  );
+  await expect(page.locator('[data-feedback]')).toContainText('erlaubt kein Speichern');
+  await page.getByRole('button', { name: 'Eigenen Text unbewertet abgeben' }).click();
   await page.getByRole('button', { name: 'Zum Abschluss' }).click();
   await expect(page.locator('.saved-text')).toHaveText('David ist schneller.');
 });
@@ -367,13 +371,10 @@ test('axe finds no WCAG A/AA issues in start, task, expanded help, decision and 
       await finish2A(page);
     }
     if (stage === 'end') {
-      await page.getByRole('radio', { name: 'Direkt', exact: true }).check();
-      await page
-        .getByLabel('Ein Vorteil mit Beleg')
-        .selectOption('david-direct-north');
-      await page
-        .getByLabel('Ein Nachteil mit Beleg')
-        .selectOption('amina-direct-north');
+      await chooseRoute(page, 'Direkt');
+      await selectEvidence(page, 'advantage', 'david-direct-north');
+      await selectEvidence(page, 'disadvantage', 'amina-direct-north');
+      await weightSelected(page);
       await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
       await page.getByRole('button', { name: 'Zum Abschluss' }).click();
     }
@@ -412,10 +413,9 @@ test('all closed feedback colors and the neutral decision remain accessible', as
   await page.getByRole('button', { name: 'Weiter →', exact: true }).click();
   for (let i = 0; i < 2; i++) await explainAndNext(page);
   await finish2A(page);
-  await page.getByRole('radio', { name: 'Direkt', exact: true }).check();
-  await page
-    .getByLabel('Ein Vorteil mit Beleg')
-    .selectOption('david-direct-north');
+  await chooseRoute(page, 'Direkt');
+  await selectEvidence(page, 'advantage', 'david-direct-north');
+  await weightSelected(page);
   await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
   await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
   await scan();
@@ -439,9 +439,8 @@ for (const viewport of [
     await page.goto('http://127.0.0.1:4173');
     await noHorizontalOverflow(page);
     if (viewport.name === 'desktop') {
-      await mkdir('/workspace/scratch/phase2a-browser', { recursive: true });
       await page.screenshot({
-        path: '/workspace/scratch/phase2a-browser/start-desktop.png',
+        path: evidencePath('start-desktop.png'),
         fullPage: true,
       });
     }
@@ -469,7 +468,7 @@ for (const viewport of [
     await page.getByRole('radio', { name: 'Amina', exact: true }).tap();
     await page.getByRole('button', { name: 'Weg prüfen', exact: true }).tap();
     await page.screenshot({
-      path: `/workspace/scratch/phase2a-browser/map-${viewport.name}.png`,
+      path: evidencePath(`map-${viewport.name}.png`),
       fullPage: true,
     });
     await page.getByRole('button', { name: 'Weiter →', exact: true }).tap();
@@ -477,14 +476,11 @@ for (const viewport of [
     await page.getByRole('button', { name: 'Weg prüfen', exact: true }).tap();
     await page.getByRole('button', { name: 'Weiter →', exact: true }).tap();
     await finish2A(page, true);
-    await page.getByRole('radio', { name: 'Über Nord', exact: true }).tap();
-    await page
-      .getByLabel('Ein Vorteil mit Beleg')
-      .selectOption('amina-north-direct');
-    await page
-      .getByLabel('Ein Nachteil mit Beleg')
-      .selectOption('david-north-direct');
+    await chooseRoute(page, 'Über Nord', true);
+    await selectEvidence(page, 'advantage', 'amina-north-direct');
+    await selectEvidence(page, 'disadvantage', 'david-north-direct');
     await noHorizontalOverflow(page);
+    await weightSelected(page);
     await page.getByRole('button', { name: 'Empfehlung prüfen' }).tap();
     await page.getByRole('button', { name: 'Zum Abschluss' }).tap();
     await expect(page.locator('.recommendation')).toContainText('Über Nord');

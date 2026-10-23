@@ -65,3 +65,44 @@ export async function fullToDecision(page: Page, touch = false) {
   }
   await finish2A(page, touch);
 }
+
+export async function panel(page: Page, value: 'plan' | 'advantage' | 'disadvantage' | 'weigh', touch = false) {
+  await actOn(touch)(page.locator(`.decision-tabs [data-value="${value}"]`));
+}
+export async function selectEvidence(page: Page, kind: 'advantage' | 'disadvantage', id: string, touch = false) {
+  await panel(page, kind, touch);
+  const other = id.split('-')[2];
+  await actOn(touch)(page.locator(`#${kind}-other-${other}`));
+  await actOn(touch)(page.locator(`#${kind}-${id}`));
+  await panel(page, 'weigh', touch);
+}
+export async function weightSelected(page: Page, touch = false) {
+  await panel(page, 'weigh', touch);
+  const choice = page.locator('input[name="weighting"]');
+  if (await choice.count()) await actOn(touch)(choice);
+}
+export async function openDecisionMap(page: Page) {
+  const details = page.locator('#decision-map');
+  if (await details.count() && !(await details.getAttribute('open') !== null))
+    await details.locator(':scope > summary').click();
+}
+/** Real native keyboard events, never selectOption. Mac sequence is unverified here. */
+export async function nativeFirstOption(page: Page, id: string) {
+  await page.locator('#' + id).focus();
+  if (process.platform === 'darwin') await page.keyboard.press('Space');
+  await page.keyboard.press('Home');
+  await page.keyboard.press('ArrowDown');
+  await page.keyboard.press('Enter');
+}
+
+export async function chooseRoute(page: Page, name: string, touch = false) {
+  if (await page.locator('.decision-tabs').count()) await panel(page, 'plan', touch);
+  await actOn(touch)(page.getByRole('radio', { name, exact: true }));
+}
+export async function setGoal(page: Page, value: string) {
+  await panel(page, 'plan');
+  await page.getByLabel('Mein Ziel oder Kriterium').selectOption(value);
+}
+export async function ownTextPanel(page: Page) {
+  if (await page.locator('.decision-tabs').count()) await panel(page, 'weigh');
+}

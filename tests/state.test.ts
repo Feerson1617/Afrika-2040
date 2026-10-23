@@ -72,6 +72,7 @@ test('changing evidence or text invalidates an already checked recommendation', 
     criterion: 'tradeoff',
     route: 'direct',
     advantage: 'david-direct-north',
+    weighting: 'david-direct-north',
     disadvantage: 'amina-direct-north',
     text: '',
   };

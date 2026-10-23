@@ -1550,3 +1550,39 @@ summary span {
 .neighborhood.expanded {
   max-height: 520px;
 }
+
+/* Final recommendation: one short reasoning step beside its own evidence. */
+.decision-screen .game-layout { display: flex; flex-direction: column; max-width: 900px; margin-inline: auto; gap: 16px; }
+.decision-screen .task-panel { display: block; order: 0; width: 100%; max-width: none; }
+.decision-map { width: 100%; order: 1; border: 1px solid var(--line); border-radius: 12px; padding: 0 18px; }
+.decision-map > summary { min-height: 52px; cursor: pointer; padding-block: 15px; }
+.decision-map .map-column { padding-bottom: 18px; }
+.decision-screen .task-prompt { padding-bottom: 16px; }
+.decision-screen .task-work { border: 0; padding-top: 0; }
+.decision-tabs { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
+.decision-tabs button { flex: 1; min-height: 44px; padding: 8px; border: 1px solid var(--line); border-radius: 6px; }
+.decision-tabs [aria-current="step"] { background: #e3eadb; font-weight: 700; border-color: #45644c; }
+.decision-context { display: flex; flex-wrap: wrap; gap: 6px 24px; padding: 12px; background: #eef0e5; font-size: 15px; margin-bottom: 16px; border-radius: 6px; }
+.decision-context span { flex: 1 1 200px; }
+.decision-part h3 { font-size: 20px; margin: 0 0 16px; }
+.decision-screen .three-choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.decision-screen .choice { min-height: 52px; padding: 12px; }
+.evidence-heading { display: grid; grid-template-columns: 1.2fr 1fr 1fr; padding: 8px 12px 8px 44px; font-size: 15px; gap: 10px; }
+.evidence-rows .choice > span { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 10px; flex: 1; }
+.evidence-rows .choice { display: flex; gap: 12px; margin-bottom: 8px; }
+.evidence-rows legend small { display: block; font-weight: 400; margin-top: 4px; }
+.chosen-evidence { padding: 12px; border: 1px solid var(--line); border-radius: 6px; font-size: 15px; line-height: 1.6; }
+.chosen-evidence p + p { margin-top: 8px; }
+.goal-note { padding: 14px; background: #edf0e6; border-left: 3px solid #62795a; line-height: 1.6; margin-block: 16px; }
+.weighting .button { margin-bottom: 10px; }
+.weighting .choice { line-height: 1.6; }
+.decision-screen .task-actions { margin-top: 18px; }
+@media (max-width: 600px) {
+  .decision-screen .three-choices { grid-template-columns: 1fr; }
+  .decision-tabs button { flex-basis: 40%; }
+  .evidence-heading { font-size: 14px; }
+}
+.decision-screen .field-intro, .decision-screen legend, .decision-screen .choice, .decision-screen .goal-note { font-size: 16px; }
+.decision-screen .small-note, .decision-screen .instruction, .decision-screen .chosen-evidence { font-size: 15px; }
+.decision-screen .task-prompt { border: 0; background: transparent; padding: 0 0 16px; }
+.decision-screen .field-intro { margin-bottom: 14px; line-height: 1.5; }

@@ -1,9 +1,10 @@
+import { decisionExample, goalMessage, goalStatus, hasWeighting, weightingProduct } from './decision.ts';
+import type { DecisionPanel } from './decision.ts';
 import type { Criterion, Foot, Person, Route, Step } from './content.ts';
-import { criteria, routeNames, routes, tasks } from './content.ts';
+import { routeNames, routes, tasks } from './content.ts';
 import {
   differentPeople,
   evidenceFits,
-  evidenceFor,
   evidenceLabel,
   explanationText,
   journey,
@@ -230,6 +231,12 @@ export interface Decision {
   disadvantage?: Evidence;
   text: string;
   supported?: boolean;
+  panel?: DecisionPanel;
+  advantageOther?: Route;
+  disadvantageOther?: Route;
+  weighting?: Evidence;
+  acceptConflict?: boolean;
+  ungraded?: boolean;
 }
 export function hasIncorrectDecisionEvidence(answer: Decision): boolean {
   if (
@@ -246,9 +253,10 @@ export function hasIncorrectDecisionEvidence(answer: Decision): boolean {
     !differentPeople(answer.advantage, answer.disadvantage)
   );
 }
-export function explainDecision(route: Route): string {
-  const expected = evidenceFor(route);
-  return `Dein Vorschlag: ${routeNames[route]}. Ein mögliches Ziel: ${criteria.tradeoff}. Vorteil: ${evidenceLabel(expected.advantage)} Nachteil: ${evidenceLabel(expected.disadvantage)} Du kannst dieses erklärte Beispiel übernehmen. Überlege danach: Welche Folge ist dir wichtiger?`;
+export function explainDecision(answer: Decision): string {
+  const example = decisionExample(answer);
+  if (!example) return 'Wähle zuerst deinen Busweg und dein Ziel. Dann zeigen wir ein Beispiel für genau diese Auswahl.';
+  return `Beispiel für ${routeNames[example.route!]} und dein gewähltes Ziel: Vorteil: ${evidenceLabel(example.advantage!)} Nachteil: ${evidenceLabel(example.disadvantage!)} ${weightingProduct(example)} Du übernimmst damit auch diese Gewichtung. Dein Ziel und dein eigener Text bleiben erhalten.`;
 }
 export function evaluateDecision(
   answer: Decision,
@@ -293,21 +301,28 @@ export function evaluateDecision(
       'Beide Belege betreffen dieselbe Person. Ergänze den Nachteil für eine andere Person.',
     );
   if (hasText) parts.push(textNotice(persisted));
-  const structured = good && downside && distinct && Boolean(answer.criterion);
+  const conflict = goalStatus(answer)?.conflict;
+  if (answer.criterion && answer.criterion !== 'tradeoff') parts.push(goalMessage(answer));
+  const needsWeighting = conflict || answer.criterion === 'tradeoff';
+  const connected = !needsWeighting || hasWeighting(answer);
+  if (needsWeighting && !connected)
+    parts.push('Dein Argument ist noch nicht verbunden. Ändere dein Ziel oder wähle konkret, welche Folge dir wichtiger ist.');
+  if (hasWeighting(answer)) parts.push(weightingProduct(answer));
+  const structured = good && downside && distinct && Boolean(answer.criterion) && connected;
   if (structured)
     parts.push(
-      'Die ausgewählten Belege passen. Erkläre nun, warum dir dein Ziel wichtig ist.',
+      'Die ausgewählten Belege und dein Ziel sind verbunden. Mit Bausteinen begründet; selbstständiges Urteilen ist damit noch nicht nachgewiesen.',
     );
   return {
     kind: 'neutral',
     title: answer.supported
       ? 'Mit Unterstützung begründet'
       : hasText
-        ? 'Deine Gedanken'
+        ? answer.ungraded ? 'Bewusst unbewertet abgegeben' : 'Deine Gedanken – noch prüfen'
         : structured
           ? 'Deine ausgewählten Belege passen'
           : 'Deine Belege prüfen',
     text: parts.join(' '),
-    complete: Boolean(answer.criterion) && (structured || hasText),
+    complete: Boolean(answer.criterion) && (structured || (hasText && answer.ungraded === true)),
   };
 }

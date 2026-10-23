@@ -1,0 +1,41 @@
+{
+  "base_commit": "f6d922407bacf0af7e592520b7f502ac61501a9e",
+  "branch": "feat/phase2a-kenia-drei-wege",
+  "environment": {
+    "os": "Linux",
+    "arch": "x86_64",
+    "node": "v24.19.0",
+    "npm": "11.9.0",
+    "chromium": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)"
+  },
+  "sha256": {
+    "index.html": "049015c4c2ea9793547f66d4be5a14a99255d15dac51e2a320955d5596019cb4",
+    "package-lock.json": "fbcb1ed6afb5dc250da1d683d642702af36b068d9a8fbb1f01f9409728570be8",
+    "package.json": "ae0bf6c18602fa5f270552de3c47095109610fe52bf216bcb32f384c1bd2c948",
+    "playwright.config.ts": "a6214a52cf3ad45bac9e7a96403c25dbbe5701b0541eaaf9a5f30a7eb626c328",
+    "src/content.ts": "9f8e066aa483e8c836961cd8274ce89717b03719027f878512dc2d9a5f3a4a52",
+    "src/decision.ts": "c51f814f6f5b2e785aa5cf2f4a5e1210b3406326cec58fff5ab42f20aa45f5b6",
+    "src/feedback.ts": "6338cf6da50a1a742d8ceb6c585fe94fb92dc160b28e323cac5ca6c24dceef26",
+    "src/main.ts": "f5ed2e7cde334382e5ab8f40aab0128c4d34f04ef85223de5e85c26a2bf39ea1",
+    "src/map.ts": "c5f692198aa520cfc6c6ac6326a9806c2915916de0875c6f3895ec4d6b3d19bd",
+    "src/model.ts": "95b221782e9311dab3e69707dba2ccdbfb5ef26b011efe78a8f0648be55d996e",
+    "src/state.ts": "9328aac572f487c1c4d36fa04c758ca8baab5e8e0a518bf4293e4410a2a581d8",
+    "src/storage.ts": "ddab38c3bf83f8402b62ede6eb3c6427c93c65efd04a3c8cba7e9178fe2d3385",
+    "src/style.css": "2958e583209a86b0f597b6cd1c7611610a1105be3897cd576197c7f9ea439e7d",
+    "src/vite-env.d.ts": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+    "tests/browser/artifacts.ts": "84ffa26ef402167139936f625ea1309b21254aa9bb139efb7296e43d8f8cde2e",
+    "tests/browser/game.spec.ts": "df03ed394404827514b8652455d1d858f393c6a642006e2c8fc559e3b578b520",
+    "tests/browser/phase2a-corrections.spec.ts": "3ffad0a2627ddedb763481dae7bc96f4654578c44c2672a498d91d08b9cc60cf",
+    "tests/browser/phase2a-helpers.ts": "69983c4084fb46da6b9cd2f2f4ed584b4a9378a1e3c0c1300198acb297deabad",
+    "tests/browser/phase2a.spec.ts": "c5253e46c261ec88e8fab5ced6f13ecd87fc5336703b3481ae48e9845aacb97a",
+    "tests/browser/review-regressions.spec.ts": "65688fc5a182d6f54f339d558c6a4f5be7dc60fd9ce5054a1a963440a4cd8e34",
+    "tests/model.test.ts": "25787188d417f634cb127a74fbcdf301be9a52ec1c452d450240ea12067dfad5",
+    "tests/pages-server.mjs": "6803c8df19f0cf0b6e5cbff1a10c2da5525ad28791e7ebc1fd9886de509ff709",
+    "tests/phase2a-corrections.test.ts": "1166d437393c4168626ec6af8448fc07461a56c54f9788be64c14c4e8696b16e",
+    "tests/phase2a.test.ts": "8becefa228b0d6b22cf4542980127cded355560997d064c4539e806a5a444a3d",
+    "tests/review-regressions.test.ts": "918a8dc2656660d6903fa48643f30f1ed0456da6b6d837804282971621112688",
+    "tests/state.test.ts": "ba8ebf1639822cae419699af42d072f8af4dea7183afe9e71672bf2ce19155e0",
+    "tsconfig.json": "cd64d82fe0e20a43d121884a40cdfa669215b8386fc4f4b3dadd278b3b19cc4e",
+    "vite.config.ts": "bb36496b3441d0fa953144a7b5362734fad945c5480a6c4003b30c4e69225a01"
+  }
+}

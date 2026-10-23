@@ -1,3 +1,5 @@
+import { evidencePath } from './artifacts.ts';
+import { chooseRoute, setGoal, ownTextPanel, panel, selectEvidence, weightSelected, openDecisionMap, nativeFirstOption } from './phase2a-helpers.ts';
 import { test, expect, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import {
@@ -47,7 +49,9 @@ for (const device of [
       page.on('pageerror', (e) => errors.push(e.message));
       const act = actOn(device.touch);
       await fullToDecision(page, device.touch);
+      await openDecisionMap(page);
       for (const r of ['direct', 'north', 'south'] as const) {
+        await openDecisionMap(page);
         await act(page.locator(`#route-${r}`));
         for (const person of ['amina', 'david', 'leila'] as const) {
           await act(page.locator(`#inspect-${person}`));
@@ -84,6 +88,7 @@ for (const device of [
         }
       }
       const c = routeChoices[route];
+      await openDecisionMap(page);
       await act(page.locator(`#route-${route}`));
       await act(
         page.locator(
@@ -137,22 +142,19 @@ for (const device of [
         ),
       ).toBe(true);
       await page.locator('.map-column').screenshot({
-        path: `docs/evidence/phase2a/map-${device.name}-${route}.png`,
+        path: evidencePath(`map-${device.name}-${route}.png`),
       });
-      await act(page.getByRole('radio', { name: c.name, exact: true }));
-      await page
-        .getByLabel('Mein Ziel oder Kriterium')
-        .selectOption(
+      await chooseRoute(page, c.name);
+      await setGoal(page,
           route === 'north'
             ? 'school'
             : route === 'south'
               ? 'training'
               : 'market',
         );
-      await page.getByLabel('Ein Vorteil mit Beleg').selectOption(c.advantage);
-      await page
-        .getByLabel('Ein Nachteil mit Beleg')
-        .selectOption(c.disadvantage);
+      await selectEvidence(page, 'advantage', c.advantage);
+      await selectEvidence(page, 'disadvantage', c.disadvantage);
+      await weightSelected(page);
       await act(
         page.getByRole('button', { name: 'Empfehlung prüfen', exact: true }),
       );
@@ -166,7 +168,7 @@ for (const device of [
       await expect(page.locator('[data-supported]')).toHaveCount(0);
       if (device.name === 'desktop')
         await page.screenshot({
-          path: `docs/evidence/phase2a/end-${route}.png`,
+          path: evidencePath(`end-${route}.png`),
           fullPage: true,
         });
       await page.reload();
@@ -175,14 +177,14 @@ for (const device of [
         page.getByRole('button', { name: 'Empfehlung noch einmal ansehen' }),
       );
       await act(page.getByRole('button', { name: 'Aufgabe neu bearbeiten' }));
-      await act(page.getByRole('radio', { name: c.name, exact: true }));
-      await page
-        .getByLabel('Mein Ziel oder Kriterium')
-        .selectOption('tradeoff');
-      await page.getByLabel('Ein Vorteil mit Beleg').selectOption(c.advantage);
-      await page.getByLabel('Ein Nachteil mit Beleg').selectOption(c.wrong);
-      for (let i = 0; i < 2; i++)
+      await chooseRoute(page, c.name);
+      await setGoal(page, 'tradeoff');
+      await selectEvidence(page, 'advantage', c.advantage);
+      await selectEvidence(page, 'disadvantage', c.wrong);
+      for (let i = 0; i < 2; i++) {
+        await weightSelected(page);
         await act(page.getByRole('button', { name: 'Empfehlung prüfen' }));
+        }
       await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
       await expect(
         page.getByRole('button', { name: 'Zum Abschluss' }),
@@ -193,7 +195,7 @@ for (const device of [
       await expect(support).toBeVisible();
       if (device.name === 'ipad-landscape' && route === 'south')
         await page.screenshot({
-          path: 'docs/evidence/phase2a/ipad-supported-south.png',
+          path: evidencePath('ipad-supported-south.png'),
           fullPage: true,
         });
       await act(support);
@@ -235,7 +237,7 @@ test('Phase2A explanation: partial feedback, two errors, accessible support and 
   ).toHaveCount(0);
   await expect(page.locator('.help-panel')).toContainText('erst in Nord');
   await page.screenshot({
-    path: 'docs/evidence/phase2a/explanation-support.png',
+    path: evidencePath('explanation-support.png'),
     fullPage: true,
   });
   const results = await new AxeBuilder({ page })
@@ -261,6 +263,7 @@ test('Phase2A free explanation is preserved, escaped and never graded even with 
   page,
 }) => {
   await toExplanation(page);
+  await ownTextPanel(page);
   await page.getByText('Mit eigenen Worten', { exact: false }).click();
   for (const text of [
     '???',
@@ -282,13 +285,10 @@ test('Phase2A free explanation is preserved, escaped and never graded even with 
     page.getByLabel('Warum ist Aminas ganzer Weg über Nord kürzer?'),
   ).toHaveValue('<img src=x onerror=alert(1)> bus flupp');
   await finish2A(page);
-  await page.getByRole('radio', { name: 'Über Süd', exact: true }).check();
-  await page
-    .getByLabel('Ein Vorteil mit Beleg')
-    .selectOption(routeChoices.south.advantage);
-  await page
-    .getByLabel('Ein Nachteil mit Beleg')
-    .selectOption(routeChoices.south.disadvantage);
+  await chooseRoute(page, 'Über Süd');
+  await selectEvidence(page, 'advantage', routeChoices.south.advantage);
+  await selectEvidence(page, 'disadvantage', routeChoices.south.disadvantage);
+  await weightSelected(page);
   await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
   await page.getByRole('button', { name: 'Zum Abschluss' }).click();
   await page
@@ -308,10 +308,10 @@ test('Phase2A prediction, Leila errors and repeated visits retain an honest supp
   await page.getByRole('button', { name: 'Erklärung prüfen' }).click();
   await page.getByRole('button', { name: 'Weiter →', exact: true }).click();
   await expect(page.locator('#route-south')).toBeDisabled();
-  await page.getByRole('radio', { name: 'Direkt', exact: true }).click();
+  await chooseRoute(page, 'Direkt');
   for (const name of ['Über Nord', 'Über Süd'])
     await page.getByRole('button', { name, exact: true }).click();
-  await page.getByRole('radio', { name: 'Über Nord', exact: true }).check();
+  await chooseRoute(page, 'Über Nord');
   for (let i = 0; i < 2; i++)
     await page.getByRole('button', { name: 'Weg prüfen', exact: true }).click();
   expect((await saved(page)).progress[4].prediction).toBe('direct');
@@ -319,6 +319,7 @@ test('Phase2A prediction, Leila errors and repeated visits retain an honest supp
     .getByRole('button', { name: 'Dieses Beispiel übernehmen' })
     .click();
   await page.getByRole('button', { name: 'Weiter →', exact: true }).click();
+  await openDecisionMap(page);
   await page.locator('#route-south').click();
   await page.getByRole('button', { name: '← Zurück', exact: true }).click();
   await expect(page.locator('.leila-intro')).toContainText('Direkt');
@@ -338,10 +339,7 @@ test('Phase2A keyboard operates new sentence blocks, the South line, person sele
 }) => {
   await toExplanation(page);
   for (const id of ['cause', 'effect']) {
-    await page.locator('#' + id).focus();
-    await page.keyboard.press('Home');
-    await page.keyboard.press('ArrowDown');
-    await page.keyboard.press('Enter');
+    await nativeFirstOption(page, id);
   }
   await page.getByRole('button', { name: 'Erklärung prüfen' }).focus();
   await page.keyboard.press('Enter');
@@ -361,6 +359,8 @@ test('Phase2A keyboard operates new sentence blocks, the South line, person sele
   await page.keyboard.press('Enter');
   await page.getByRole('button', { name: 'Weiter →', exact: true }).focus();
   await page.keyboard.press('Enter');
+  await page.locator('#decision-map > summary').focus();
+  await page.keyboard.press('Enter');
   await page.locator('#route-south').focus();
   await page.keyboard.press('Space');
   await page.locator('#inspect-leila').focus();
@@ -368,6 +368,7 @@ test('Phase2A keyboard operates new sentence blocks, the South line, person sele
   await expect(page.locator('[data-time="total"]')).toHaveText('10');
   await page.getByRole('radio', { name: 'Über Süd', exact: true }).focus();
   await page.keyboard.press('Space');
+  await nativeFirstOption(page, 'criterion');
   for (const name of [
     'Ich brauche einen Hinweis',
     'Genauer zeigen',
@@ -386,17 +387,15 @@ test('Phase2A new map and recommendation remain accessible with expanded words a
   page,
 }) => {
   await fullToDecision(page);
+  await openDecisionMap(page);
   await page.locator('#route-south').click();
-  await page.getByRole('radio', { name: 'Über Süd', exact: true }).check();
+  await chooseRoute(page, 'Über Süd');
   await page.getByRole('button', { name: 'Wörter erklären' }).click();
   for (const stage of ['decision', 'end']) {
     if (stage === 'end') {
-      await page
-        .getByLabel('Ein Vorteil mit Beleg')
-        .selectOption(routeChoices.south.advantage);
-      await page
-        .getByLabel('Ein Nachteil mit Beleg')
-        .selectOption(routeChoices.south.disadvantage);
+      await selectEvidence(page, 'advantage', routeChoices.south.advantage);
+      await selectEvidence(page, 'disadvantage', routeChoices.south.disadvantage);
+      await weightSelected(page);
       await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
       await page.getByRole('button', { name: 'Zum Abschluss' }).click();
     }
@@ -411,16 +410,14 @@ test('Phase2A an explicitly named goal is required without guessing it from free
   page,
 }) => {
   await fullToDecision(page);
-  await page.getByLabel('Mein Ziel oder Kriterium').selectOption('');
-  await page.getByRole('radio', { name: 'Über Süd', exact: true }).check();
-  await page
-    .getByLabel('Ein Vorteil mit Beleg')
-    .selectOption('david-south-direct');
-  await page
-    .getByLabel('Ein Nachteil mit Beleg')
-    .selectOption('leila-south-direct');
-  for (let i = 0; i < 3; i++)
+  await setGoal(page, '');
+  await chooseRoute(page, 'Über Süd');
+  await selectEvidence(page, 'advantage', 'david-south-direct');
+  await selectEvidence(page, 'disadvantage', 'leila-south-direct');
+  for (let i = 0; i < 3; i++) {
+    await weightSelected(page);
     await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
+    }
   expect((await saved(page)).progress[5].failures).toBe(0);
   await expect(page.locator('[data-feedback]')).toContainText(
     'Ziel oder Kriterium',
@@ -428,45 +425,45 @@ test('Phase2A an explicitly named goal is required without guessing it from free
   await expect(page.getByRole('button', { name: 'Zum Abschluss' })).toHaveCount(
     0,
   );
+  await ownTextPanel(page);
   await page.getByText('Mit eigenen Worten', { exact: false }).click();
   await page
     .getByLabel('Ich schlage diesen Busweg vor, weil …')
     .fill('MEIN ZIEL: Leila?? 999');
+  await weightSelected(page);
   await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
   await expect(page.getByRole('button', { name: 'Zum Abschluss' })).toHaveCount(
     0,
   );
-  await page.getByLabel('Mein Ziel oder Kriterium').selectOption('training');
+  await setGoal(page, 'training');
+  await weightSelected(page);
   await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
   await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
   await expect(page.locator('[data-feedback]')).toContainText(
     'nicht sicher prüfen',
   );
-  await expect(
-    page.getByRole('button', { name: 'Zum Abschluss' }),
-  ).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Zum Abschluss' })).toHaveCount(0);
+  await page.getByRole('button', { name: 'Eigenen Text unbewertet abgeben' }).click();
+  await expect(page.getByRole('button', { name: 'Zum Abschluss' })).toBeVisible();
 });
 test('Phase2A alternative valid evidence and a different weighting are accepted; a changed route alone never completes the task', async ({
   page,
 }) => {
   await fullToDecision(page);
-  await page.getByRole('radio', { name: 'Direkt', exact: true }).check();
-  await page.getByLabel('Mein Ziel oder Kriterium').selectOption('school');
-  await page
-    .getByLabel('Ein Vorteil mit Beleg')
-    .selectOption('amina-direct-south');
-  await page
-    .getByLabel('Ein Nachteil mit Beleg')
-    .selectOption('leila-direct-south');
+  await chooseRoute(page, 'Direkt');
+  await setGoal(page, 'training');
+  await selectEvidence(page, 'advantage', 'amina-direct-south');
+  await selectEvidence(page, 'disadvantage', 'leila-direct-south');
+  await weightSelected(page);
   await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
   await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
   await expect(
     page.getByRole('button', { name: 'Zum Abschluss' }),
   ).toBeVisible();
-  await page.getByRole('radio', { name: 'Über Nord', exact: true }).check();
+  await chooseRoute(page, 'Über Nord');
   await expect(page.getByRole('button', { name: 'Zum Abschluss' })).toHaveCount(
     0,
   );
-  await expect(page.getByLabel('Ein Vorteil mit Beleg')).toHaveValue('');
+  expect((await saved(page)).decision.advantage).toBeUndefined();
   expect((await saved(page)).progress[5].failures).toBe(0);
 });

@@ -1,3 +1,5 @@
+import { evidencePath } from './artifacts.ts';
+import { chooseRoute, setGoal, ownTextPanel, panel, selectEvidence, weightSelected } from './phase2a-helpers.ts';
 import { test, expect, type Page, type Locator } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 
@@ -74,7 +76,7 @@ test('R1: direct visible times survive back, rework, reload and a legacy saved n
   await page.reload();
   await assertDirectStartingMap(page);
   await page.screenshot({
-    path: '/workspace/scratch/phase2a-browser/review-R1-restored.png',
+    path: evidencePath('review-R1-restored.png'),
     fullPage: true,
   });
   await page.getByRole('radio', { name: /Zum Platz/ }).check();
@@ -93,10 +95,11 @@ for (const route of ['direct', 'north'] as const) {
   }) => {
     const c = choices[route];
     await toDecision(page);
-    await page.getByRole('radio', { name: c.name, exact: true }).check();
-    await page.getByLabel('Ein Vorteil mit Beleg').selectOption(c.advantage);
-    await page.getByLabel('Ein Nachteil mit Beleg').selectOption(c.wrong);
+    await chooseRoute(page, c.name);
+    await selectEvidence(page, 'advantage', c.advantage);
+    await selectEvidence(page, 'disadvantage', c.wrong);
     for (let i = 1; i <= 4; i++) {
+      await weightSelected(page);
       await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
       await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
       await expect(page.locator('[data-feedback]')).toContainText(
@@ -108,7 +111,7 @@ for (const route of ['direct', 'north'] as const) {
       ).toHaveCount(0);
       if (i >= 2) {
         await expect(page.locator('.help-panel')).toContainText(
-          `Dein Vorschlag: ${c.name}`,
+          `Beispiel für ${c.name}`,
         );
         await expect(page.locator('.help-panel')).toContainText(c.benefit);
         await expect(page.locator('.help-panel')).toContainText(c.cost);
@@ -118,15 +121,13 @@ for (const route of ['direct', 'north'] as const) {
       }
     }
     // Merely showing an explanation must not silently correct the selected wrong fact.
-    await expect(page.getByLabel('Ein Nachteil mit Beleg')).toHaveValue(
-      c.wrong,
-    );
+    expect((await saved(page)).decision.disadvantage).toBe(c.wrong);
     await page.reload();
     await expect(
       page.getByRole('button', { name: 'Dieses Beispiel übernehmen' }),
     ).toBeVisible();
     await page.screenshot({
-      path: `/workspace/scratch/phase2a-browser/review-R2-${route}-explanation.png`,
+      path: evidencePath(`review-R2-${route}-explanation.png`),
       fullPage: true,
     });
     const axe = await new AxeBuilder({ page })
@@ -137,9 +138,7 @@ for (const route of ['direct', 'north'] as const) {
       .getByRole('button', { name: 'Dieses Beispiel übernehmen' })
       .focus();
     await page.keyboard.press('Enter');
-    await expect(page.getByLabel('Ein Nachteil mit Beleg')).toHaveValue(
-      c.disadvantage,
-    );
+    expect((await saved(page)).decision.disadvantage).toBe(c.disadvantage);
     await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
     await expect(page.locator('[data-feedback]')).toContainText(
       'Mit Unterstützung begründet',
@@ -173,13 +172,13 @@ test('R2: all voluntary hints and a changed proposal offer the matching example 
   await expect(
     page.getByRole('button', { name: 'Dieses Beispiel übernehmen' }),
   ).toHaveCount(0);
-  await page.getByRole('radio', { name: 'Über Nord', exact: true }).check();
+  await chooseRoute(page, 'Über Nord');
   await expect(page.locator('.help-panel')).toContainText(
-    'Dein Vorschlag: Über Nord',
+    'Beispiel für Über Nord',
   );
-  await page.getByRole('radio', { name: 'Direkt', exact: true }).check();
+  await chooseRoute(page, 'Direkt');
   await expect(page.locator('.help-panel')).toContainText(
-    'Dein Vorschlag: Direkt',
+    'Beispiel für Direkt',
   );
   await expect(page.locator('.help-panel')).toContainText(
     'David: Direkt 12 statt Über Nord 18 Minuten',
@@ -196,16 +195,14 @@ test('R2: unclear free text is never counted as a failed evidence check or silen
   page,
 }) => {
   await toDecision(page);
-  await page.getByRole('radio', { name: 'Über Nord', exact: true }).check();
-  await page
-    .getByLabel('Ein Vorteil mit Beleg')
-    .selectOption('amina-north-direct');
-  await page
-    .getByLabel('Ein Nachteil mit Beleg')
-    .selectOption('amina-north-direct');
+  await chooseRoute(page, 'Über Nord');
+  await selectEvidence(page, 'advantage', 'amina-north-direct');
+  await selectEvidence(page, 'disadvantage', 'amina-north-direct');
+  await ownTextPanel(page);
   await page.getByText('Mit eigenen Worten', { exact: false }).click();
   for (const text of ['???', 'amina 999 Minuten', '<b>bus???</b>']) {
     await page.getByLabel('Ich schlage diesen Busweg vor, weil …').fill(text);
+    await weightSelected(page);
     await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
     await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
     await expect(page.locator('[data-feedback]')).toContainText(
@@ -213,6 +210,8 @@ test('R2: unclear free text is never counted as a failed evidence check or silen
     );
     expect((await saved(page)).progress[5].failures).toBe(0);
   }
+  await expect(page.locator('#next-step')).toHaveCount(0);
+  await page.getByRole('button', { name: 'Eigenen Text unbewertet abgeben' }).click();
   await page.getByRole('button', { name: 'Zum Abschluss' }).click();
   await expect(page.locator('.recommendation')).toContainText(
     'Diesen Beleg musst du noch prüfen',
@@ -326,7 +325,7 @@ for (const viewport of [
       for (const time of [22, 10, 12, 18])
         await expect(page.locator('.comparison')).toContainText(`${time} Min.`);
       await page.screenshot({
-        path: `/workspace/scratch/phase2a-browser/review-${viewport.name}-${route}.png`,
+        path: evidencePath(`review-${viewport.name}-${route}.png`),
         fullPage: true,
       });
       for (const name of ['Amina', 'David']) {
@@ -337,18 +336,11 @@ for (const viewport of [
         await act(page.getByRole('button', { name: 'Weiter →', exact: true }));
       }
       await finish2A(page, viewport.touch);
-      await act(
-        page.getByRole('radio', { name: choices[route].name, exact: true }),
-      );
-      await page
-        .getByLabel('Mein Ziel oder Kriterium')
-        .selectOption('tradeoff');
-      await page
-        .getByLabel('Ein Vorteil mit Beleg')
-        .selectOption(choices[route].advantage);
-      await page
-        .getByLabel('Ein Nachteil mit Beleg')
-        .selectOption(choices[route].disadvantage);
+      await chooseRoute(page, choices[route].name);
+      await setGoal(page, 'tradeoff');
+      await selectEvidence(page, 'advantage', choices[route].advantage);
+      await selectEvidence(page, 'disadvantage', choices[route].disadvantage);
+      await weightSelected(page);
       await act(page.getByRole('button', { name: 'Empfehlung prüfen' }));
       await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
       await act(page.getByRole('button', { name: 'Zum Abschluss' }));
@@ -364,20 +356,14 @@ for (const viewport of [
         page.getByRole('button', { name: 'Empfehlung noch einmal ansehen' }),
       );
       await act(page.getByRole('button', { name: 'Aufgabe neu bearbeiten' }));
-      await act(
-        page.getByRole('radio', { name: choices[route].name, exact: true }),
-      );
-      await page
-        .getByLabel('Mein Ziel oder Kriterium')
-        .selectOption('tradeoff');
-      await page
-        .getByLabel('Ein Vorteil mit Beleg')
-        .selectOption(choices[route].advantage);
-      await page
-        .getByLabel('Ein Nachteil mit Beleg')
-        .selectOption(choices[route].wrong);
-      for (let i = 0; i < 2; i++)
+      await chooseRoute(page, choices[route].name);
+      await setGoal(page, 'tradeoff');
+      await selectEvidence(page, 'advantage', choices[route].advantage);
+      await selectEvidence(page, 'disadvantage', choices[route].wrong);
+      for (let i = 0; i < 2; i++) {
+        await weightSelected(page);
         await act(page.getByRole('button', { name: 'Empfehlung prüfen' }));
+        }
       const support = page.getByRole('button', {
         name: 'Dieses Beispiel übernehmen',
       });
@@ -386,7 +372,7 @@ for (const viewport of [
       expect(box!.height).toBeGreaterThanOrEqual(44);
       if (viewport.name === 'ipad-landscape' && route === 'north')
         await page.screenshot({
-          path: '/workspace/scratch/phase2a-browser/review-ipad-supported.png',
+          path: evidencePath('review-ipad-supported.png'),
           fullPage: true,
         });
       await act(support);

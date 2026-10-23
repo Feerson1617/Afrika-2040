@@ -1,3 +1,4 @@
+import { decisionPanels, goalMessage, goalStatus, hasWeighting, weightingChoice, weightingProduct } from './decision.ts';
 import './style.css';
 import {
   episode,
@@ -11,10 +12,9 @@ import {
   visibleRoutes,
   visiblePersons,
 } from './content.ts';
-import type { Route } from './content.ts';
+import type { Person, Route } from './content.ts';
 import {
   evidenceFits,
-  evidenceIds,
   evidenceLabel,
   evidenceParts,
   differentPeople,
@@ -146,7 +146,7 @@ function comparison() {
 function ownWords(explanation = false) {
   const text = explanation ? state.explanation.text : state.decision.text;
   const id = explanation ? 'explanation-text' : 'own-text';
-  return `<details id="own-words" class="own-words" ${text ? 'open' : ''}><summary>Mit eigenen Worten <span>freiwillig</span></summary><label for="${id}">${explanation ? 'Warum ist Aminas ganzer Weg über Nord kürzer?' : 'Ich schlage diesen Busweg vor, weil …'}</label><textarea id="${id}" name="${explanation ? 'explanation-text' : 'text'}" rows="4" maxlength="1500">${esc(text)}</textarea><p class="small-note">Das Spiel bewertet deinen Text nicht. Zeige deinen Beleg auf der Karte.</p></details>`;
+  return `<details id="own-words" class="own-words" ${text ? 'open' : ''}><summary>Mit eigenen Worten <span>freiwillig</span></summary><label for="${id}">${explanation ? 'Warum ist Aminas ganzer Weg über Nord kürzer?' : 'Ich schlage diesen Busweg vor, weil …'}</label><textarea id="${id}" name="${explanation ? 'explanation-text' : 'text'}" rows="4" maxlength="1500">${esc(text)}</textarea><p class="small-note">Das Spiel bewertet deinen Text nicht. ${explanation ? 'Zeige deinen Beleg auf der Karte.' : 'Die Zeitbelege stehen oben.'}</p>${!explanation ? button('Eigenen Text unbewertet abgeben', 'submit-ungraded', 'button secondary', text.trim() ? '' : 'disabled') : ''}</details>`;
 }
 function explanationInput() {
   const e = state.explanation;
@@ -230,34 +230,23 @@ function explorationInput() {
           .join('')}</div></fieldset>`
   }`;
 }
+const shortGoals = { school: 'Amina: kurzer Schulweg', market: 'David: kurzer Weg zum Markt', training: 'Leila: kurzer Weg zur Ausbildung', tradeoff: 'Verschiedene Interessen abwägen' };
 function decisionInput() {
-  const d = state.decision;
-  const select = (type: 'advantage' | 'disadvantage', label: string) =>
-    `<label class="select-label" for="${type}">${label}<select id="${type}" name="${type}" ${!d.route ? 'disabled' : ''}><option value="">Beleg auswählen</option>${evidenceIds
-      .filter((id) => evidenceParts(id).route === d.route)
-      .map(
-        (id) =>
-          `<option value="${id}" ${d[type] === id ? 'selected' : ''}>${esc(evidenceLabel(id))}</option>`,
-      )
-      .join(
-        '',
-      )}</select></label>${d[type] ? `<p class="sentence-preview">${esc(evidenceLabel(d[type]!))}</p>` : ''}`;
-  return `${state.firstRoute ? `<p class="first-idea-note">Deine erste Idee war: ${routeNames[state.firstRoute]}. Du darfst sie beibehalten oder ändern.</p>` : ''}<fieldset><legend>Mein Vorschlag</legend><div class="three-choices">${visibleRoutes(
-    5,
-  )
-    .map((r) => radio('decision-route', r, routeNames[r], d.route === r))
-    .join(
-      '',
-    )}</div></fieldset><label class="select-label" for="criterion">Mein Ziel oder Kriterium<select id="criterion" name="criterion"><option value="">Ziel auswählen</option>${Object.entries(
-    criteria,
-  )
-    .map(
-      ([key, label]) =>
-        `<option value="${key}" ${d.criterion === key ? 'selected' : ''}>${label}</option>`,
-    )
-    .join(
-      '',
-    )}</select></label>${d.criterion ? `<p class="sentence-preview">${criteria[d.criterion]}</p>` : ''}<p class="field-intro">Nutze die Belege oder schreibe selbst. Jeder Beleg nennt die Vergleichslinie.</p>${select('advantage', 'Ein Vorteil mit Beleg')}${select('disadvantage', 'Ein Nachteil mit Beleg')}${ownWords()}<details id="deeper" class="deeper"><summary>Weiterdenken</summary><p>Vergleiche zwei Interessen. Warum ist dir eines besonders wichtig? Welche Angaben fehlen, um einen echten Busweg zu planen?</p></details>`;
+  const d = state.decision, panel = d.panel ?? 'plan';
+  const titles = ['Vorschlag', 'Vorteil', 'Nachteil', 'Gewichtung'];
+  const context = `<div class="decision-context" aria-label="Deine aktuelle Auswahl"><span>Buslinie: <strong>${d.route ? routeNames[d.route] : 'noch wählen'}</strong></span><span>Ziel: <strong>${d.criterion ? shortGoals[d.criterion] : 'noch wählen'}</strong></span></div>`;
+  const nav = `<nav class="decision-tabs" aria-label="Schritte der Begründung">${decisionPanels.map((p, i) => button(`${i + 1}. ${titles[i]}`, 'decision-panel', 'text-button', `data-value="${p}" aria-current="${panel === p ? 'step' : 'false'}"`)).join('')}</nav>`;
+  let body = '';
+  if (panel === 'plan') {
+    body = `${state.firstRoute ? `<p class="small-note">Deine erste Idee: ${routeNames[state.firstRoute]}. Du darfst anders entscheiden.</p>` : ''}<fieldset><legend>Welche Buslinie schlägst du vor?</legend><div class="three-choices">${visibleRoutes(5).map(r => radio('decision-route', r, routeNames[r], d.route === r)).join('')}</div></fieldset><label class="select-label" for="criterion">Mein Ziel oder Kriterium<select id="criterion" name="criterion"><option value="">Ziel auswählen</option>${Object.entries(shortGoals).map(([k, label]) => `<option value="${k}" ${d.criterion === k ? 'selected' : ''}>${label}</option>`).join('')}</select></label>${button('Weiter zum Vorteil →', 'decision-panel', 'button secondary', 'data-value="advantage"')}`;
+  } else if (panel === 'advantage' || panel === 'disadvantage') {
+    const other = d[panel] ? evidenceParts(d[panel]!).other : d[panel === 'advantage' ? 'advantageOther' : 'disadvantageOther'];
+    body = !d.route ? `<p>Wähle zuerst deine Buslinie.</p>${button('Zum Vorschlag', 'decision-panel', 'button secondary', 'data-value="plan"')}` : `<p class="field-intro">${panel === 'advantage' ? 'Wer braucht mit deinem Vorschlag weniger Zeit?' : 'Wer braucht mit deinem Vorschlag mehr Zeit? Wähle eine andere Person als beim Vorteil.'}</p><fieldset><legend>Mit welcher Linie vergleichst du?</legend><div class="person-choices">${visibleRoutes(5).filter(r => r !== d.route).map(r => radio(panel + '-other', r, routeNames[r], other === r)).join('')}</div></fieldset>${other ? `<fieldset class="evidence-rows"><legend>${panel === 'advantage' ? 'Wähle den Vorteil' : 'Wähle den Nachteil'} <small>ganzer Weg in Minuten</small></legend><div class="evidence-heading"><span>Person</span><span>${routeNames[d.route]}</span><span>${routeNames[other]}</span></div>${(['amina', 'david', 'leila'] as Person[]).map(person => radio(panel, `${person}-${d.route}-${other}`, `<span class="evidence-person">${personNames[person]}</span><strong>${journey(person, d.route!).total}</strong><strong>${journey(person, other).total}</strong>`, d[panel] === `${person}-${d.route}-${other}`).replace('<input ', `<input aria-label="${esc(evidenceLabel(`${person}-${d.route!}-${other}`))}" `)).join('')}</fieldset>` : '<p class="small-note">Wähle eine Vergleichslinie. Dann siehst du die Zeiten direkt hier.</p>'}${button(panel === 'advantage' ? 'Weiter zum Nachteil →' : 'Weiter zur Gewichtung →', 'decision-panel', 'button secondary', `data-value="${panel === 'advantage' ? 'disadvantage' : 'weigh'}"`)}`;
+  } else {
+    const conflict = goalStatus(d)?.conflict;
+    body = `<div class="chosen-evidence"><p><strong>Dein Vorteil:</strong> ${d.advantage ? esc(evidenceLabel(d.advantage)) : 'noch wählen'}</p><p><strong>Dein Nachteil:</strong> ${d.disadvantage ? esc(evidenceLabel(d.disadvantage)) : 'noch wählen'}</p></div>${goalMessage(d) ? `<p class="goal-note">${esc(goalMessage(d))}</p>` : ''}${conflict || d.criterion === 'tradeoff' ? `<fieldset class="weighting"><legend>${conflict ? 'Was ist dir bei deiner Entscheidung wichtiger?' : 'Welche Folge ist dir wichtiger?'}</legend>${conflict ? button('Ich möchte mein Ziel ändern', 'decision-panel', 'button secondary', 'data-value="plan"') : ''}${weightingChoice(d) ? radio('weighting', d.advantage!, esc(weightingChoice(d)), hasWeighting(d)) : '<p class="small-note">Wähle einen zutreffenden Vorteil für eine andere Person. Dann kannst du diese Folge stärker gewichten.</p>'}${d.weighting ? button('Gewichtung noch einmal öffnen', 'clear-weighting', 'text-button') : ''}</fieldset>` : ''}${ownWords()}<details id="deeper" class="deeper"><summary>Weiterdenken</summary><p>Warum ist dir diese Folge besonders wichtig? Was müsste man für einen echten Busweg noch wissen?</p></details>`;
+  }
+  return `${nav}${context}<section class="decision-part" data-decision-panel="${panel}" aria-labelledby="decision-title"><h3 id="decision-title" tabindex="-1">${decisionPanels.indexOf(panel) + 1}. ${titles[decisionPanels.indexOf(panel)]}</h3>${body}</section>`;
 }
 
 function currentHint() {
@@ -265,9 +254,15 @@ function currentHint() {
   if (p.help === 3)
     return state.step === 5
       ? state.decision.route
-        ? explainDecision(state.decision.route)
+        ? explainDecision(state.decision)
         : 'Wähle zuerst deinen Busweg. Dann zeigen wir dir ein passendes Beispiel.'
       : explainTask(state.step);
+  if (state.step === 5) {
+    if (!state.decision.route || !state.decision.criterion)
+      return 'Wähle zuerst deine Buslinie und dein Ziel im Schritt „Vorschlag“.';
+    if (p.help === 1) return 'Ein Vorteil heißt: weniger Zeit. Ein Nachteil heißt: mehr Zeit. Vergleiche zwei Linien für dieselbe Person.';
+    return `${goalMessage(state.decision)} Prüfe deinen Vorteil und den Nachteil für eine andere Person. Bei der Gewichtung entscheidest du, welche Folge dir wichtiger ist.`;
+  }
   return tasks[state.step].hints[Math.max(0, p.help - 1) as 0 | 1];
 }
 
@@ -275,7 +270,7 @@ function help() {
   const p = state.progress[state.step];
   if (!p.help) return '';
   return `<aside class="help-panel" aria-label="Aufgabenhilfe"><h3 id="help-title" tabindex="-1">→ Hilfe ${p.help} von 3</h3><p>${currentHint()}</p>
-    ${state.step >= 3 && p.help === 3 && (state.step !== 5 || state.decision.route) && (state.step === 3 ? !state.explanation.supported : state.step === 5 ? !state.decision.supported : !p.complete) ? button('Dieses Beispiel übernehmen', 'use-example', 'button secondary', 'id="decision-example-button"') : ''}
+    ${state.step >= 3 && p.help === 3 && (state.step !== 5 || (state.decision.route && state.decision.criterion)) && (state.step === 3 ? !state.explanation.supported : state.step === 5 ? !state.decision.supported : !p.complete) ? button('Dieses Beispiel übernehmen', 'use-example', 'button secondary', 'id="decision-example-button"') : ''}
     ${
       p.help < 3
         ? button(
@@ -296,16 +291,16 @@ function help() {
 function game() {
   const task = tasks[state.step];
   const p = state.progress[state.step];
-  return `${header()}<main id="main" class="game-screen" tabindex="-1">
+  return `${header()}<main id="main" class="game-screen ${state.step === 5 ? 'decision-screen' : ''}" tabindex="-1">
     <div class="episode-heading"><div><p class="eyebrow">Deine erste Zukunftsfrage</p><h1>${episode.title}</h1></div>${button('Wörter erklären', 'words', 'button quiet', `id="words-toggle" aria-expanded="${state.words}" aria-controls="word-help"`)}</div>
     ${state.words ? `<aside id="word-help" class="word-help" aria-label="Wörter erklärt"><h2>Wörter für deinen Weg</h2><dl>${glossary.map(([term, meaning]) => `<div><dt>${term}</dt><dd>${meaning}</dd></div>`).join('')}</dl>${button('Wörter schließen', 'words', 'text-button')}</aside>` : ''}
-    <div class="game-layout"><div class="map-column">${state.step === 4 ? explorationIntro() : ''}${renderMap(state)}${state.step > 0 ? routeSwitch() + (state.step >= 4 ? journeyExplorer() : comparison()) : '<p class="map-context"><strong>Amina</strong> fährt zur Schule. <strong>David</strong> fährt zum Markt. Beide Ziele liegen im Zentrum.</p>'}<p class="model-note">${episode.modelNote} Wartezeiten, Fahrpreise und Kapazitäten werden hier nicht berechnet.</p></div>
+    <div class="game-layout">${state.step === 5 ? '<details id="decision-map" class="decision-map"><summary>Karte und ganze Wege ansehen</summary>' : ''}<div class="map-column">${state.step === 4 ? explorationIntro() : ''}${renderMap(state)}${state.step > 0 ? routeSwitch() + (state.step >= 4 ? journeyExplorer() : comparison()) : '<p class="map-context"><strong>Amina</strong> fährt zur Schule. <strong>David</strong> fährt zum Markt. Beide Ziele liegen im Zentrum.</p>'}<p class="model-note">${episode.modelNote} Wartezeiten, Fahrpreise und Kapazitäten werden hier nicht berechnet.</p></div>${state.step === 5 ? '</details>' : ''}
     <section class="task-panel" aria-labelledby="task-title"><div class="task-prompt"><div class="task-step"><span>0${state.step + 1} <span aria-hidden="true">/</span> 06</span><span>${task.label}</span></div><div class="step-rule" aria-hidden="true">${tasks.map((_, i) => `<i class="${i <= state.step ? 'filled' : ''}"></i>`).join('')}</div>
-      <h2 id="task-title" tabindex="-1">${task.question}</h2><p class="instruction">${task.instruction}</p></div><div class="task-work">
+      <h2 id="task-title" tabindex="-1">${state.step === 5 ? 'Deine Empfehlung' : task.question}</h2><p class="instruction">${state.step === 5 ? 'Wähle selbst. Belege deinen Vorteil und den Nachteil für eine andere Person.' : task.instruction}</p></div><div class="task-work">
       ${state.step === 5 ? decisionInput() : state.step === 4 ? explorationInput() : state.step === 3 ? explanationInput() : closedInput()}
       ${feedback(p.feedback)}${help()}${state.step === 3 && p.complete ? firstIdea() : ''}
-      <div class="task-actions">${!p.complete || state.step === 5 || state.step === 3 ? button(state.step === 5 ? 'Empfehlung prüfen' : state.step === 3 ? 'Erklärung prüfen' : 'Weg prüfen', 'check', 'button primary', `id="check-answer" ${p.complete && state.step !== 3 && state.step !== 5 ? 'disabled' : ''}`) : ''}
-      ${p.complete ? button(state.step === 5 ? 'Zum Abschluss →' : 'Weiter →', 'next', 'button primary', 'id="next-step"') : ''}
+      <div class="task-actions">${(state.step === 5 ? state.decision.panel === 'weigh' : !p.complete || state.step === 3) ? button(state.step === 5 ? 'Empfehlung prüfen' : state.step === 3 ? 'Erklärung prüfen' : 'Weg prüfen', 'check', 'button primary', `id="check-answer" ${p.complete && state.step !== 3 && state.step !== 5 ? 'disabled' : ''}`) : ''}
+      ${p.complete && (state.step !== 5 || state.decision.panel === 'weigh') ? button(state.step === 5 ? 'Zum Abschluss →' : 'Weiter →', 'next', 'button primary', 'id="next-step"') : ''}
       ${p.help === 0 ? button('Ich brauche einen Hinweis', 'help', 'text-button help-button', 'data-value="1"') : ''}</div>
       <div class="task-navigation">${button('← Zurück', 'back', 'text-button')}${button('Aufgabe neu bearbeiten', 'reset-task', 'text-button')}</div>
     </div></section></div>
@@ -318,6 +313,7 @@ function end() {
     e = state.explanation;
   return `${header()}<main id="main" class="end-screen" tabindex="-1"><p class="eyebrow">Dein Blick auf die Wege</p><span class="end-symbol" aria-hidden="true">${arrow}</span><h1>Ein Busweg.<br>Drei Perspektiven.</h1><p class="takeaway">Ein Busweg kann einer Person helfen und einer anderen einen Nachteil bringen. Auch der Weg zur Haltestelle zählt.</p>
     <section class="recommendation" aria-label="Dein Lernprodukt"><p class="eyebrow">Deine Empfehlung</p><h2>${d.route ? routeNames[d.route] : 'Dein Busweg'}</h2>${state.firstRoute ? `<p><strong>Deine erste Idee:</strong> ${routeNames[state.firstRoute]}</p>` : ''}<p><strong>Dein Ziel oder Kriterium:</strong> ${d.criterion ? criteria[d.criterion] : 'Noch offen'}</p>${d.advantage ? `<p><strong>Dein Beleg zum Vorteil:</strong> ${esc(evidenceLabel(d.advantage))}</p>${d.route && !evidenceFits(d.advantage, d.route, 'advantage') ? '<p class="small-note">Diesen Beleg musst du noch prüfen: Er zeigt keinen Vorteil deines Vorschlags.</p>' : ''}` : ''}${d.disadvantage ? `<p><strong>Dein Beleg zum Nachteil:</strong> ${esc(evidenceLabel(d.disadvantage))}</p>${d.route && (!evidenceFits(d.disadvantage, d.route, 'disadvantage') || (d.advantage && !differentPeople(d.advantage, d.disadvantage))) ? '<p class="small-note">Diesen Beleg musst du noch prüfen: Gefragt ist ein Nachteil für eine andere Person.</p>' : ''}` : ''}${d.text ? `<p class="saved-text">${esc(d.text)}</p><p class="small-note">Dein eigener Text wurde nicht automatisch fachlich geprüft. Prüfe: Hast du einen zutreffenden Beleg und einen Nachteil für eine andere Person genannt?</p>` : ''}
+    ${weightingProduct(d) ? `<p class="weighting-product"><strong>Deine Gewichtung:</strong> ${esc(weightingProduct(d))}</p>` : ''}${d.ungraded ? '<p class="small-note" data-ungraded>Bewusst unbewertet abgegeben. Die Verbindung von Ziel, Belegen und Gewichtung ist damit nicht bestätigt.</p>' : '<p class="small-note">Mit Bausteinen begründet. Das ist kein Nachweis vollständig selbstständiger Urteilskompetenz.</p>'}
     <details id="learning-process"><summary>Deine Erklärung und deine Vermutung</summary><h3>Aminas Weg erklären</h3>${e.cause ? `<p>${esc(explanationChoices.cause[e.cause])}</p>` : ''}${e.effect ? `<p>${esc(explanationChoices.effect[e.effect])}</p>` : ''}${e.text ? `<p class="saved-explanation saved-text">${esc(e.text)}</p><p class="small-note">Deine eigene Erklärung wurde nicht automatisch fachlich geprüft.</p>` : `<p class="small-note">Mit Satzbausteinen erklärt.${e.cause !== 'shorter' || e.effect !== 'total' ? ' Prüfe die Sätze noch einmal.' : ''}</p>`}${state.progress[4].prediction ? `<p>Deine erste Vermutung für Leila: ${routeNames[state.progress[4].prediction!]}.</p>` : ''}</details>
     ${state.progress.map((p, i) => (p.supported ? `<p class="small-note" data-supported>Mit Hilfe erstellt: Bei „${tasks[i].label}“ hast du ${i < 3 ? 'die Erklärung genutzt' : 'das erklärte Beispiel übernommen'}.</p>` : '')).join('')}
     <p class="reflection">Zeige jemandem deinen Vorschlag. Erkläre: Welche Folge ist dir besonders wichtig?</p></section><p class="end-model">Dieses Modell ist erfunden. Daraus folgen keine allgemeinen Aussagen über Nairobi oder Kenia. Wartezeiten, Fahrpreise und Kapazitäten fehlen. Ein Vergleich der Zeiten ist noch keine umfassende Nachhaltigkeitsbewertung. Die Zeiten sind keine Vorhersage für das Jahr 2040.</p><div class="end-actions">${button('Empfehlung noch einmal ansehen', 'back', 'button secondary')}${button('Neu spielen', 'restart', 'button primary')}</div><p class="privacy-note">Neustart löscht deine Antworten in diesem Tab.</p></main>`;
@@ -345,7 +341,7 @@ function render(focusId?: string) {
   if (focusId)
     document
       .getElementById(focusId)
-      ?.focus({ preventScroll: !['task-title', 'main'].includes(focusId) });
+      ?.focus({ preventScroll: !['task-title', 'main', 'decision-title', 'feedback-title'].includes(focusId) });
 }
 
 function dispatch(action: Action) {
@@ -356,11 +352,11 @@ function dispatch(action: Action) {
     restartPending = false;
   } else saveSession(state, storage);
   const navigate = ['start', 'restart', 'next', 'back'].includes(action.type);
-  const report = ['check', 'check-transfer', 'use-example'].includes(
+  const report = ['check', 'check-transfer', 'use-example', 'submit-ungraded'].includes(
     action.type,
   );
   render(
-    navigate
+    action.type === 'decision-panel' ? 'decision-title' : navigate
       ? state.screen === 'game'
         ? 'task-title'
         : 'main'
@@ -384,6 +380,8 @@ function dispatch(action: Action) {
         ? state.progress[state.step].transferFeedback
         : state.progress[state.step].feedback
       )?.text ?? '';
+  if (action.type === 'decision-panel')
+    document.querySelector('.decision-tabs')?.scrollIntoView({ block: 'start', behavior: 'instant' });
   if (action.type === 'prediction')
     announcer.textContent = `Deine Vermutung: ${routeNames[state.progress[4].prediction!]}. Teste nun Leilas Wege.`;
   if (action.type === 'route' || action.type === 'highlight') {
@@ -407,7 +405,8 @@ function activate(el: Element) {
     render();
     return;
   }
-  if (name === 'check' || name === 'use-example') {
+  if (name === 'clear-weighting') { dispatch({ type: 'weighting', value: undefined }); return; }
+  if (name === 'check' || name === 'use-example' || name === 'submit-ungraded') {
     dispatch({ type: name, persisted: saveSession(state, storage) });
     return;
   }
@@ -415,7 +414,7 @@ function activate(el: Element) {
     dispatch({ type: 'help', value: Number(value) });
     return;
   }
-  if (['route', 'foot', 'bus', 'person', 'highlight'].includes(name)) {
+  if (['route', 'foot', 'bus', 'person', 'highlight', 'decision-panel'].includes(name)) {
     // A solved task stays available for inspection; explicit rework resets it.
     if (
       state.step === 0 &&
@@ -463,6 +462,9 @@ app.addEventListener('change', (event) => {
       'cause',
       'effect',
       'criterion',
+      'advantage-other',
+      'disadvantage-other',
+      'weighting',
     ].includes(el.name)
   )
     dispatch({ type: el.name, value: el.value || undefined } as Action);
@@ -474,6 +476,8 @@ app.addEventListener('input', (event) => {
   saveSession(state, storage);
   document.querySelector('[data-feedback]')?.remove();
   document.getElementById('next-step')?.remove();
+  const ungraded = document.querySelector<HTMLButtonElement>('[data-action="submit-ungraded"]');
+  if (ungraded && el.name === 'text') ungraded.disabled = !el.value.trim();
 });
 
 // Do not rely on previous tasks' services or an existing in-memory state.

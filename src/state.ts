@@ -1,7 +1,8 @@
 import type { Criterion, Foot, Person, Route, Step } from './content.ts';
 import { tasks, visiblePersons, visibleRoutes } from './content.ts';
 import type { Cause, Effect, Evidence } from './model.ts';
-import { evidenceFor } from './model.ts';
+import { decisionExample } from './decision.ts';
+import type { DecisionPanel } from './decision.ts';
 import type { Decision, Explanation, Feedback } from './feedback.ts';
 import {
   evaluateClosed,
@@ -96,6 +97,10 @@ export type Action =
   | { type: 'help'; value: number }
   | { type: 'advantage' | 'disadvantage'; value?: Evidence }
   | { type: 'criterion'; value?: Criterion }
+  | { type: 'decision-panel'; value: DecisionPanel }
+  | { type: 'advantage-other' | 'disadvantage-other'; value: Route }
+  | { type: 'weighting'; value?: Evidence }
+  | { type: 'submit-ungraded'; persisted: boolean }
   | { type: 'cause'; value?: Cause }
   | { type: 'effect'; value?: Effect }
   | { type: 'text' | 'explanation-text'; value: string }
@@ -108,6 +113,13 @@ export function reduce(current: State, action: Action): State {
   const invalidate = () => {
     p.feedback = undefined;
     p.complete = false;
+  };
+  const invalidateDecision = () => {
+    s.decision.supported = undefined;
+    s.decision.ungraded = undefined;
+    s.decision.weighting = undefined;
+    s.decision.acceptConflict = undefined;
+    invalidate();
   };
   const trackLeila = () => {
     if (
@@ -181,6 +193,13 @@ export function reduce(current: State, action: Action): State {
         p.supported = true;
       }
       break;
+    case 'submit-ungraded':
+      if (s.step !== 5 || !s.decision.text.trim()) break;
+      s.decision.ungraded = Boolean(s.decision.route && s.decision.criterion);
+      // Deliberate ungraded submission never marks the structured argument as verified.
+      p.feedback = evaluateDecision(s.decision, action.persisted);
+      p.complete = p.feedback.complete;
+      break;
     case 'check': {
       if (s.step === 5) {
         p.feedback = evaluateDecision(s.decision, action.persisted);
@@ -229,23 +248,42 @@ export function reduce(current: State, action: Action): State {
           text: 'Du hast das erklärte Beispiel zu Leilas Wegen übernommen. Du kannst die Wege weiter auf der Karte testen.',
           complete: true,
         };
-      } else if (s.step === 5 && s.decision.route) {
-        Object.assign(s.decision, evidenceFor(s.decision.route), {
-          criterion: s.decision.criterion ?? 'tradeoff',
-          supported: true,
-        });
+      } else if (s.step === 5 && decisionExample(s.decision)) {
+        Object.assign(s.decision, decisionExample(s.decision));
         p.feedback = evaluateDecision(s.decision, action.persisted);
       } else break;
       p.supported = true;
       p.complete = p.feedback.complete;
       break;
+    case 'decision-panel':
+      if (s.step === 5) s.decision.panel = action.value;
+      break;
+    case 'weighting':
+      if (s.step === 5) {
+        s.decision.weighting = action.value;
+        s.decision.acceptConflict = action.value ? true : undefined;
+        s.decision.supported = undefined;
+        s.decision.ungraded = undefined;
+        invalidate();
+      }
+      break;
+    case 'advantage-other':
+    case 'disadvantage-other':
+      if (s.step === 5 && action.value !== s.decision.route) {
+        const field = action.type === 'advantage-other' ? 'advantage' : 'disadvantage';
+        s.decision[field === 'advantage' ? 'advantageOther' : 'disadvantageOther'] = action.value;
+        s.decision[field] = undefined;
+        invalidateDecision();
+      }
+      break;
     case 'decision-route':
       if (s.step === 5) {
         s.decision.route = action.value;
+        s.decision.advantageOther = undefined;
+        s.decision.disadvantageOther = undefined;
         s.decision.advantage = undefined;
         s.decision.disadvantage = undefined;
-        s.decision.supported = undefined;
-        invalidate();
+        invalidateDecision();
       }
       break;
     case 'criterion':
@@ -254,14 +292,14 @@ export function reduce(current: State, action: Action): State {
       if (s.step === 5) {
         if (action.type === 'criterion') s.decision.criterion = action.value;
         else s.decision[action.type] = action.value;
-        s.decision.supported = undefined;
-        invalidate();
+        invalidateDecision();
       }
       break;
     case 'text':
     case 'explanation-text': {
       const target = action.type === 'text' ? s.decision : s.explanation;
       target.text = action.value.slice(0, 1500);
+      if (action.type === 'text') { s.decision.supported = undefined; s.decision.ungraded = undefined; }
       invalidate();
       break;
     }

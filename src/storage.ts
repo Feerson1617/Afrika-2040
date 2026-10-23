@@ -1,3 +1,5 @@
+import { decisionPanels } from './decision.ts';
+import { evaluateDecision } from './feedback.ts';
 import { initialState, normalizeView } from './state.ts';
 import type { State } from './state.ts';
 import { criteria, persons, routes, tasks } from './content.ts';
@@ -92,9 +94,25 @@ export function readSession(storage?: Store): State {
       !optional(d.advantage, evidenceIds) ||
       !optional(d.disadvantage, evidenceIds) ||
       !optional(d.supported, [true, false]) ||
+      !optional(d.panel, [...decisionPanels]) ||
+      !optional(d.advantageOther, routes) ||
+      !optional(d.disadvantageOther, routes) ||
+      !optional(d.weighting, evidenceIds) ||
+      !optional(d.acceptConflict, [true, false]) ||
+      !optional(d.ungraded, [true, false]) ||
       !text(d.text)
     )
       return initialState();
+    // Recheck old or edited completion flags; preserve the actual draft and history.
+    if (s.progress[5].complete || s.screen === 'end') {
+      const checked = evaluateDecision(d, true);
+      s.progress[5].complete = checked.complete;
+      s.progress[5].feedback = checked;
+      if (!checked.complete) {
+        if (s.screen === 'end') { s.screen = 'game'; s.step = 5; }
+        d.panel = 'weigh';
+      }
+    }
     return normalizeView(s as State);
   } catch {
     return initialState();

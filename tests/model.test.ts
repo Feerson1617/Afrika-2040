@@ -147,7 +147,7 @@ test('all 972 evidence pairs are judged by truth, reference route and different 
     for (const advantage of evidenceIds)
       for (const disadvantage of evidenceIds) {
         const f = evaluateDecision(
-          { route, criterion: 'tradeoff', advantage, disadvantage, text: '' },
+          { route, criterion: 'tradeoff', advantage, disadvantage, weighting: advantage, text: '' },
           true,
         );
         const expected =
@@ -166,7 +166,7 @@ test('different valid weightings and comparison references are accepted', () => 
   for (const route of routes) {
     assert.equal(
       evaluateDecision(
-        { route, criterion: 'tradeoff', ...evidenceFor(route), text: '' },
+        { route, criterion: 'tradeoff', ...evidenceFor(route), weighting: evidenceFor(route).advantage, text: '' },
         true,
       ).complete,
       true,
@@ -176,7 +176,9 @@ test('different valid weightings and comparison references are accepted', () => 
     evaluateDecision(
       {
         route: 'direct',
-        criterion: 'school',
+        criterion: 'training',
+        weighting: 'amina-direct-south',
+        acceptConflict: true,
         advantage: 'amina-direct-south',
         disadvantage: 'leila-direct-south',
         text: '',
@@ -235,7 +237,7 @@ test('unusual or contradictory free text is saved without keyword grading', () =
     '<script>alert(1)</script>',
   ]) {
     const f = evaluateDecision(
-      { route: 'south', criterion: 'training', text },
+      { route: 'south', criterion: 'training', text, ungraded: true },
       true,
     );
     assert.equal(f.kind, 'neutral');
