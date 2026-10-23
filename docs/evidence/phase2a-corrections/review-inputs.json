@@ -1,0 +1,17 @@
+[
+  {
+    "file": "Gegenpruefung-Phase2A.md",
+    "bytes": 22073,
+    "sha256": "4c652a431b68fe4b2f6014f1d9cdfde3e2a6113d02d0d519e451e2150c841b23"
+  },
+  {
+    "file": "Korrekturprompt-Phase2A.txt",
+    "bytes": 5572,
+    "sha256": "81e01187701fab7d4694c24e4b6eb75e48aa2b9604ec9c86271e309288dad763"
+  },
+  {
+    "file": "Pruefpaket-Phase2A.zip",
+    "bytes": 4685505,
+    "sha256": "9851891d2a9c347a3658d88c5c1c5feb0b42005753a0ab928c777b892acd9694"
+  }
+]

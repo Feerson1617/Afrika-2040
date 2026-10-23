@@ -1,0 +1,668 @@
+[
+  {
+    "file": "Fachanforderungen Geographie Sekundarstufe (2015).pdf",
+    "sha256": "68a06c168ac13ac3f4915cb2c77293927b821d93bc91fbceb9896893b696f6fb",
+    "pages": 60,
+    "all_pages_text_accessible": true,
+    "new_full_render": false,
+    "prior_render_audit": "docs/source-access.json",
+    "page_audit": [
+      {
+        "page": 1,
+        "text_chars": 201
+      },
+      {
+        "page": 2,
+        "text_chars": 1000
+      },
+      {
+        "page": 3,
+        "text_chars": 93
+      },
+      {
+        "page": 4,
+        "text_chars": 3468
+      },
+      {
+        "page": 5,
+        "text_chars": 2709
+      },
+      {
+        "page": 6,
+        "text_chars": 3814
+      },
+      {
+        "page": 7,
+        "text_chars": 2100
+      },
+      {
+        "page": 8,
+        "text_chars": 4029
+      },
+      {
+        "page": 9,
+        "text_chars": 4199
+      },
+      {
+        "page": 10,
+        "text_chars": 1808
+      },
+      {
+        "page": 11,
+        "text_chars": 4498
+      },
+      {
+        "page": 12,
+        "text_chars": 3162
+      },
+      {
+        "page": 13,
+        "text_chars": 2406
+      },
+      {
+        "page": 14,
+        "text_chars": 2746
+      },
+      {
+        "page": 15,
+        "text_chars": 3746
+      },
+      {
+        "page": 16,
+        "text_chars": 1887
+      },
+      {
+        "page": 17,
+        "text_chars": 4221
+      },
+      {
+        "page": 18,
+        "text_chars": 3489
+      },
+      {
+        "page": 19,
+        "text_chars": 3714
+      },
+      {
+        "page": 20,
+        "text_chars": 2862
+      },
+      {
+        "page": 21,
+        "text_chars": 2489
+      },
+      {
+        "page": 22,
+        "text_chars": 3119
+      },
+      {
+        "page": 23,
+        "text_chars": 3268
+      },
+      {
+        "page": 24,
+        "text_chars": 1558
+      },
+      {
+        "page": 25,
+        "text_chars": 2207
+      },
+      {
+        "page": 26,
+        "text_chars": 1784
+      },
+      {
+        "page": 27,
+        "text_chars": 1287
+      },
+      {
+        "page": 28,
+        "text_chars": 2248
+      },
+      {
+        "page": 29,
+        "text_chars": 2857
+      },
+      {
+        "page": 30,
+        "text_chars": 1770
+      },
+      {
+        "page": 31,
+        "text_chars": 1283
+      },
+      {
+        "page": 32,
+        "text_chars": 2857
+      },
+      {
+        "page": 33,
+        "text_chars": 2123
+      },
+      {
+        "page": 34,
+        "text_chars": 1939
+      },
+      {
+        "page": 35,
+        "text_chars": 2455
+      },
+      {
+        "page": 36,
+        "text_chars": 2668
+      },
+      {
+        "page": 37,
+        "text_chars": 2646
+      },
+      {
+        "page": 38,
+        "text_chars": 2544
+      },
+      {
+        "page": 39,
+        "text_chars": 2573
+      },
+      {
+        "page": 40,
+        "text_chars": 2579
+      },
+      {
+        "page": 41,
+        "text_chars": 2634
+      },
+      {
+        "page": 42,
+        "text_chars": 2587
+      },
+      {
+        "page": 43,
+        "text_chars": 2597
+      },
+      {
+        "page": 44,
+        "text_chars": 2600
+      },
+      {
+        "page": 45,
+        "text_chars": 1144
+      },
+      {
+        "page": 46,
+        "text_chars": 1966
+      },
+      {
+        "page": 47,
+        "text_chars": 2191
+      },
+      {
+        "page": 48,
+        "text_chars": 2250
+      },
+      {
+        "page": 49,
+        "text_chars": 1643
+      },
+      {
+        "page": 50,
+        "text_chars": 2394
+      },
+      {
+        "page": 51,
+        "text_chars": 1118
+      },
+      {
+        "page": 52,
+        "text_chars": 4168
+      },
+      {
+        "page": 53,
+        "text_chars": 4126
+      },
+      {
+        "page": 54,
+        "text_chars": 3479
+      },
+      {
+        "page": 55,
+        "text_chars": 3419
+      },
+      {
+        "page": 56,
+        "text_chars": 2761
+      },
+      {
+        "page": 57,
+        "text_chars": 1218
+      },
+      {
+        "page": 58,
+        "text_chars": 32
+      },
+      {
+        "page": 59,
+        "text_chars": 0
+      },
+      {
+        "page": 60,
+        "text_chars": 0
+      }
+    ]
+  },
+  {
+    "file": "Leitfaden_zu_den_Fachanforderungen_Geographie-2.pdf",
+    "sha256": "eaf6aece327198fa2c1d1fb6c7b615b3f0881fa6b1e55f298ff044f8da4fe326",
+    "pages": 92,
+    "all_pages_text_accessible": true,
+    "new_full_render": false,
+    "prior_render_audit": "docs/source-access.json",
+    "page_audit": [
+      {
+        "page": 1,
+        "text_chars": 207
+      },
+      {
+        "page": 2,
+        "text_chars": 999
+      },
+      {
+        "page": 3,
+        "text_chars": 80
+      },
+      {
+        "page": 4,
+        "text_chars": 3779
+      },
+      {
+        "page": 5,
+        "text_chars": 3003
+      },
+      {
+        "page": 6,
+        "text_chars": 3665
+      },
+      {
+        "page": 7,
+        "text_chars": 48
+      },
+      {
+        "page": 8,
+        "text_chars": 3589
+      },
+      {
+        "page": 9,
+        "text_chars": 2796
+      },
+      {
+        "page": 10,
+        "text_chars": 1441
+      },
+      {
+        "page": 11,
+        "text_chars": 2676
+      },
+      {
+        "page": 12,
+        "text_chars": 1079
+      },
+      {
+        "page": 13,
+        "text_chars": 2874
+      },
+      {
+        "page": 14,
+        "text_chars": 1602
+      },
+      {
+        "page": 15,
+        "text_chars": 583
+      },
+      {
+        "page": 16,
+        "text_chars": 1563
+      },
+      {
+        "page": 17,
+        "text_chars": 907
+      },
+      {
+        "page": 18,
+        "text_chars": 3077
+      },
+      {
+        "page": 19,
+        "text_chars": 2528
+      },
+      {
+        "page": 20,
+        "text_chars": 3358
+      },
+      {
+        "page": 21,
+        "text_chars": 1804
+      },
+      {
+        "page": 22,
+        "text_chars": 1464
+      },
+      {
+        "page": 23,
+        "text_chars": 2815
+      },
+      {
+        "page": 24,
+        "text_chars": 2361
+      },
+      {
+        "page": 25,
+        "text_chars": 1154
+      },
+      {
+        "page": 26,
+        "text_chars": 1662
+      },
+      {
+        "page": 27,
+        "text_chars": 1226
+      },
+      {
+        "page": 28,
+        "text_chars": 2729
+      },
+      {
+        "page": 29,
+        "text_chars": 2581
+      },
+      {
+        "page": 30,
+        "text_chars": 3337
+      },
+      {
+        "page": 31,
+        "text_chars": 1975
+      },
+      {
+        "page": 32,
+        "text_chars": 1908
+      },
+      {
+        "page": 33,
+        "text_chars": 1350
+      },
+      {
+        "page": 34,
+        "text_chars": 1629
+      },
+      {
+        "page": 35,
+        "text_chars": 927
+      },
+      {
+        "page": 36,
+        "text_chars": 1971
+      },
+      {
+        "page": 37,
+        "text_chars": 1366
+      },
+      {
+        "page": 38,
+        "text_chars": 2387
+      },
+      {
+        "page": 39,
+        "text_chars": 1071
+      },
+      {
+        "page": 40,
+        "text_chars": 1987
+      },
+      {
+        "page": 41,
+        "text_chars": 1168
+      },
+      {
+        "page": 42,
+        "text_chars": 2357
+      },
+      {
+        "page": 43,
+        "text_chars": 1226
+      },
+      {
+        "page": 44,
+        "text_chars": 2650
+      },
+      {
+        "page": 45,
+        "text_chars": 1688
+      },
+      {
+        "page": 46,
+        "text_chars": 3073
+      },
+      {
+        "page": 47,
+        "text_chars": 1808
+      },
+      {
+        "page": 48,
+        "text_chars": 2225
+      },
+      {
+        "page": 49,
+        "text_chars": 1673
+      },
+      {
+        "page": 50,
+        "text_chars": 1665
+      },
+      {
+        "page": 51,
+        "text_chars": 1507
+      },
+      {
+        "page": 52,
+        "text_chars": 1598
+      },
+      {
+        "page": 53,
+        "text_chars": 1398
+      },
+      {
+        "page": 54,
+        "text_chars": 1461
+      },
+      {
+        "page": 55,
+        "text_chars": 1274
+      },
+      {
+        "page": 56,
+        "text_chars": 1908
+      },
+      {
+        "page": 57,
+        "text_chars": 1506
+      },
+      {
+        "page": 58,
+        "text_chars": 1597
+      },
+      {
+        "page": 59,
+        "text_chars": 1641
+      },
+      {
+        "page": 60,
+        "text_chars": 1648
+      },
+      {
+        "page": 61,
+        "text_chars": 1084
+      },
+      {
+        "page": 62,
+        "text_chars": 2491
+      },
+      {
+        "page": 63,
+        "text_chars": 49
+      },
+      {
+        "page": 64,
+        "text_chars": 2740
+      },
+      {
+        "page": 65,
+        "text_chars": 1653
+      },
+      {
+        "page": 66,
+        "text_chars": 2489
+      },
+      {
+        "page": 67,
+        "text_chars": 2936
+      },
+      {
+        "page": 68,
+        "text_chars": 2828
+      },
+      {
+        "page": 69,
+        "text_chars": 1185
+      },
+      {
+        "page": 70,
+        "text_chars": 2523
+      },
+      {
+        "page": 71,
+        "text_chars": 1648
+      },
+      {
+        "page": 72,
+        "text_chars": 2607
+      },
+      {
+        "page": 73,
+        "text_chars": 1539
+      },
+      {
+        "page": 74,
+        "text_chars": 2414
+      },
+      {
+        "page": 75,
+        "text_chars": 2324
+      },
+      {
+        "page": 76,
+        "text_chars": 2368
+      },
+      {
+        "page": 77,
+        "text_chars": 1552
+      },
+      {
+        "page": 78,
+        "text_chars": 3727
+      },
+      {
+        "page": 79,
+        "text_chars": 718
+      },
+      {
+        "page": 80,
+        "text_chars": 788
+      },
+      {
+        "page": 81,
+        "text_chars": 1003
+      },
+      {
+        "page": 82,
+        "text_chars": 846
+      },
+      {
+        "page": 83,
+        "text_chars": 378
+      },
+      {
+        "page": 84,
+        "text_chars": 1204
+      },
+      {
+        "page": 85,
+        "text_chars": 1378
+      },
+      {
+        "page": 86,
+        "text_chars": 2562
+      },
+      {
+        "page": 87,
+        "text_chars": 1473
+      },
+      {
+        "page": 88,
+        "text_chars": 706
+      },
+      {
+        "page": 89,
+        "text_chars": 49
+      },
+      {
+        "page": 90,
+        "text_chars": 49
+      },
+      {
+        "page": 91,
+        "text_chars": 0
+      },
+      {
+        "page": 92,
+        "text_chars": 0
+      }
+    ]
+  },
+  {
+    "file": "Fachinternes Curriculum Geographie.pdf",
+    "sha256": "0ea706083d438aee052d79a1be8675c642509ad9097c0e9eea0d031e942a7b0f",
+    "pages": 7,
+    "all_pages_text_accessible": true,
+    "new_full_render": false,
+    "prior_render_audit": "docs/source-access.json",
+    "page_audit": [
+      {
+        "page": 1,
+        "text_chars": 2456
+      },
+      {
+        "page": 2,
+        "text_chars": 1641
+      },
+      {
+        "page": 3,
+        "text_chars": 1447
+      },
+      {
+        "page": 4,
+        "text_chars": 1626
+      },
+      {
+        "page": 5,
+        "text_chars": 1852
+      },
+      {
+        "page": 6,
+        "text_chars": 995
+      },
+      {
+        "page": 7,
+        "text_chars": 1559
+      }
+    ]
+  }
+]

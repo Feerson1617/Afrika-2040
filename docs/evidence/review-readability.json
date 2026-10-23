@@ -1,0 +1,38 @@
+[
+  {
+    "viewport": "desktop",
+    "route": "direct",
+    "minimumCssPixels": 16,
+    "labelsFit": true
+  },
+  {
+    "viewport": "desktop",
+    "route": "north",
+    "minimumCssPixels": 16,
+    "labelsFit": true
+  },
+  {
+    "viewport": "ipad-landscape",
+    "route": "direct",
+    "minimumCssPixels": 14.47,
+    "labelsFit": true
+  },
+  {
+    "viewport": "ipad-landscape",
+    "route": "north",
+    "minimumCssPixels": 14.47,
+    "labelsFit": true
+  },
+  {
+    "viewport": "ipad-portrait",
+    "route": "direct",
+    "minimumCssPixels": 17.82,
+    "labelsFit": true
+  },
+  {
+    "viewport": "ipad-portrait",
+    "route": "north",
+    "minimumCssPixels": 17.82,
+    "labelsFit": true
+  }
+]
