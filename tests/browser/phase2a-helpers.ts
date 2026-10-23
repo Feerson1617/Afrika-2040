@@ -66,10 +66,19 @@ export async function fullToDecision(page: Page, touch = false) {
   await finish2A(page, touch);
 }
 
-export async function panel(page: Page, value: 'plan' | 'advantage' | 'disadvantage' | 'weigh', touch = false) {
+export async function panel(
+  page: Page,
+  value: 'plan' | 'advantage' | 'disadvantage' | 'weigh',
+  touch = false,
+) {
   await actOn(touch)(page.locator(`.decision-tabs [data-value="${value}"]`));
 }
-export async function selectEvidence(page: Page, kind: 'advantage' | 'disadvantage', id: string, touch = false) {
+export async function selectEvidence(
+  page: Page,
+  kind: 'advantage' | 'disadvantage',
+  id: string,
+  touch = false,
+) {
   await panel(page, kind, touch);
   const other = id.split('-')[2];
   await actOn(touch)(page.locator(`#${kind}-other-${other}`));
@@ -83,20 +92,38 @@ export async function weightSelected(page: Page, touch = false) {
 }
 export async function openDecisionMap(page: Page) {
   const details = page.locator('#decision-map');
-  if (await details.count() && !(await details.getAttribute('open') !== null))
+  if (
+    (await details.count()) &&
+    !((await details.getAttribute('open')) !== null)
+  )
     await details.locator(':scope > summary').click();
 }
-/** Real native keyboard events, never selectOption. Mac sequence is unverified here. */
+/** Native keyboard input only; verify the actual selected value before grading any answer.
+ * Linux is tested in this environment. macOS opens its native popup explicitly;
+ * its result assertion must pass on a macOS runner before claiming platform coverage.
+ */
 export async function nativeFirstOption(page: Page, id: string) {
-  await page.locator('#' + id).focus();
-  if (process.platform === 'darwin') await page.keyboard.press('Space');
-  await page.keyboard.press('Home');
+  const select = page.locator('#' + id);
+  const expected = await select.evaluate(
+    (el: HTMLSelectElement) => el.options[1].value,
+  );
+  await select.focus();
+  if (process.platform === 'darwin') {
+    await page.keyboard.press('Space');
+  } else {
+    await page.keyboard.press('Home');
+  }
   await page.keyboard.press('ArrowDown');
   await page.keyboard.press('Enter');
+  await expect(
+    select,
+    `Native keyboard selection on ${process.platform}: ${id}`,
+  ).toHaveValue(expected);
 }
 
 export async function chooseRoute(page: Page, name: string, touch = false) {
-  if (await page.locator('.decision-tabs').count()) await panel(page, 'plan', touch);
+  if (await page.locator('.decision-tabs').count())
+    await panel(page, 'plan', touch);
   await actOn(touch)(page.getByRole('radio', { name, exact: true }));
 }
 export async function setGoal(page: Page, value: string) {

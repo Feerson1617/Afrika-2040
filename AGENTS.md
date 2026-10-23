@@ -1,6 +1,6 @@
 # Afrika 2040 – Projektregeln
 
-1. Lernwirksamkeit geht vor Grafik, Animationen und technischem Umfang. Jede Handlung braucht ein Lernziel. Der freigegebene Umfang endet nach Phase 2A beim Vergleich von drei Buswegen in Kenia. Phase 2B und weitere Episoden erst nach ausdrücklicher Freigabe.
+1. Lernwirksamkeit geht vor Grafik, Animationen und technischem Umfang. Jede Handlung braucht ein Lernziel. Der freigegebene Umfang endet nach Phase 2B beim Fußweg-Ereignis und der erneuten Prüfung der Kenia-Empfehlung. Weitere Phasen und Episoden erst nach ausdrücklicher Freigabe.
 2. Fachliche Richtigkeit ist zwingend. Reale Ortsangaben, erfundene Inhalte und Modellannahmen sichtbar unterscheiden. Alle Zeiten aus `src/content.ts` und `src/model.ts` ableiten. Quellen mit Seiten belegen.
 3. Kurze, einfache und präzise deutsche Sätze verwenden. Fachbegriffe konkret erklären, nicht streichen. Jeden neuen Schülertext auf Verständlichkeit prüfen.
 4. Gleiche geographische Herausforderung, freiwillige Hilfen und unterschiedliche Begründungstiefe. Keine sichtbaren Leistungsgruppen und kein Punktabzug. Individuelle Förderpläne werden durch das Spiel nicht ersetzt.
@@ -11,6 +11,6 @@
 9. Schülerantworten niemals an externe Bewertungsdienste übertragen. Freitext nicht anhand von Schlüsselwörtern bewerten. Unsicheres transparent unbewertet lassen. Speicherung nur im aktuellen Browser-Tab, mit fehlertoleranter Speicherbehandlung und Löschung beim Neustart.
 10. Pro Phase technische, funktionale und didaktische Prüfung dokumentieren. Modell-/Feedbacktests, Produktionsbuild, echte Browserdurchläufe, Touch-/Tastaturtests und Screenshots gehören zur Abnahme. Eigene Tests ersetzen keine unabhängige Prüfung durch ChatGPT/Work oder einen Unterrichtstest.
 
-Curriculare Grundlage und Abwägungen: `docs/curriculum.md`. Architektur und Prüfkriterien: `docs/development.md`. Aktuelle Übergabe: `docs/handover.md`.
+Curriculare Grundlage und Abwägungen: `docs/curriculum.md`. Architektur und Prüfkriterien: `docs/development.md`. Aktuelle Übergabe: `docs/phase2b-handover.md`.
 
-Arbeite im vorhandenen isolierten Checkout. Keine zusätzlichen Git-Worktrees ohne ausdrücklichen Wunsch. Entwicklungsbranch verwenden und bestehende Änderungen erhalten. Keine Arbeitsblätter oder Lehrkräftehandreichungen in Phase 1 oder Phase 2A erstellen.
+Arbeite im vorhandenen isolierten Checkout. Keine zusätzlichen Git-Worktrees ohne ausdrücklichen Wunsch. Entwicklungsbranch verwenden und bestehende Änderungen erhalten. Keine Arbeitsblätter oder Lehrkräftehandreichungen in Phase 1, Phase 2A oder Phase 2B erstellen.

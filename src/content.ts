@@ -153,3 +153,10 @@ export const glossary = [
     'Ein vereinfachtes Beispiel. Es zeigt ausgewählte Zusammenhänge. Es bildet nicht alles ab.',
   ],
 ] as const;
+
+export type Situation = 'before' | 'now';
+export const roadEvent = {
+  person: 'leila',
+  stop: 'platz',
+  extraWalk: 6,
+} as const;

@@ -1,0 +1,40 @@
+
+> afrika-2040@0.1.0 test:e2e
+> playwright test --project=webkit --grep Phase2B native keyboard --output=/workspace/scratch/phase2b-webkit-final-artifacts --reporter=list
+
+[WebServer] (node:49246) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:49271) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 1 test using 1 worker
+
+(node:49283) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  1 [webkit] › tests/browser/phase2b.spec.ts:384:1 › Phase2B native keyboard operates localisation, comparison, actual selected cause, explicit revision and report (2ms)
+
+
+  1) [webkit] › tests/browser/phase2b.spec.ts:384:1 › Phase2B native keyboard operates localisation, comparison, actual selected cause, explicit revision and report 
+
+    Error: browserType.launch: Executable doesn't exist at /workspace/.cache/ms-playwright/webkit-2370/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ../scratch/phase2b-webkit-final-artifacts/phase2b-Phase2B-native-key-838c7-xplicit-revision-and-report-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../scratch/phase2b-webkit-final-artifacts/phase2b-Phase2B-native-key-838c7-xplicit-revision-and-report-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../scratch/phase2b-webkit-final-artifacts/phase2b-Phase2B-native-key-838c7-xplicit-revision-and-report-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [webkit] › tests/browser/phase2b.spec.ts:384:1 › Phase2B native keyboard operates localisation, comparison, actual selected cause, explicit revision and report 

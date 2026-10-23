@@ -1,4 +1,13 @@
-import type { Criterion, Foot, Person, Route, Step } from './content.ts';
+import { effectsMatch, evaluateRevision, revisionDraft } from './event.ts';
+import type { EventPath, RoadState } from './event.ts';
+import type {
+  Criterion,
+  Foot,
+  Person,
+  Route,
+  Situation,
+  Step,
+} from './content.ts';
 import { tasks, visiblePersons, visibleRoutes } from './content.ts';
 import type { Cause, Effect, Evidence } from './model.ts';
 import { decisionExample } from './decision.ts';
@@ -9,6 +18,8 @@ import {
   evaluateDecision,
   evaluateExplanation,
   hasIncorrectDecisionEvidence,
+  evaluateEventFind,
+  evaluateEventEffects,
 } from './feedback.ts';
 export interface Progress {
   foot?: Foot;
@@ -27,7 +38,8 @@ export interface Progress {
   transferFeedback?: Feedback;
 }
 export interface State {
-  screen: 'start' | 'game' | 'end';
+  screen: 'start' | 'game' | 'end' | import('./event.ts').EventScreen;
+  road?: RoadState;
   step: Step;
   route: Route;
   progress: Progress[];
@@ -71,7 +83,19 @@ export function normalizeView(s: State): State {
     s.route = 'direct';
   return s;
 }
+export type RoadAction =
+  | { type: 'event-start' | 'event-next' | 'event-back' | 'event-reset' }
+  | { type: 'event-view'; value: Situation }
+  | { type: 'event-path'; value: EventPath }
+  | { type: 'event-answer'; route: Route; value: 'longer' | 'same' }
+  | { type: 'event-connection'; value?: RoadState['connection'] }
+  | { type: 'event-cause'; value?: RoadState['cause'] }
+  | { type: 'event-text'; value: string }
+  | { type: 'event-change-evidence'; value: Route }
+  | { type: 'event-reason'; value: 'goal' | 'priority' }
+  | { type: 'event-submit-explanation'; persisted: boolean };
 export type Action =
+  | RoadAction
   | {
       type:
         | 'start'
@@ -108,6 +132,8 @@ export type Action =
   | { type: 'check' | 'use-example'; persisted: boolean };
 export function reduce(current: State, action: Action): State {
   if (action.type === 'restart') return initialState();
+  if (current.screen.startsWith('event-') || action.type.startsWith('event-'))
+    return reduceRoad(current, action);
   const s = structuredClone(current),
     p = s.progress[s.step];
   const invalidate = () => {
@@ -270,8 +296,11 @@ export function reduce(current: State, action: Action): State {
     case 'advantage-other':
     case 'disadvantage-other':
       if (s.step === 5 && action.value !== s.decision.route) {
-        const field = action.type === 'advantage-other' ? 'advantage' : 'disadvantage';
-        s.decision[field === 'advantage' ? 'advantageOther' : 'disadvantageOther'] = action.value;
+        const field =
+          action.type === 'advantage-other' ? 'advantage' : 'disadvantage';
+        s.decision[
+          field === 'advantage' ? 'advantageOther' : 'disadvantageOther'
+        ] = action.value;
         s.decision[field] = undefined;
         invalidateDecision();
       }
@@ -299,7 +328,10 @@ export function reduce(current: State, action: Action): State {
     case 'explanation-text': {
       const target = action.type === 'text' ? s.decision : s.explanation;
       target.text = action.value.slice(0, 1500);
-      if (action.type === 'text') { s.decision.supported = undefined; s.decision.ungraded = undefined; }
+      if (action.type === 'text') {
+        s.decision.supported = undefined;
+        s.decision.ungraded = undefined;
+      }
       invalidate();
       break;
     }
@@ -366,4 +398,293 @@ export function reduce(current: State, action: Action): State {
       break;
   }
   return normalizeView(s);
+}
+
+export function currentProgress(s: State): Progress {
+  if (s.road && s.screen.startsWith('event-'))
+    return s.screen === 'event-find'
+      ? s.road.find
+      : s.screen === 'event-effects'
+        ? s.road.effects
+        : s.road.revision;
+  return s.progress[s.step];
+}
+export function currentDecision(s: State): Decision {
+  return s.road && (s.screen === 'event-review' || s.screen === 'event-end')
+    ? s.road.review
+    : s.decision;
+}
+function reduceRoad(current: State, action: Action): State {
+  const s = structuredClone(current);
+  if (action.type === 'event-start') {
+    if (
+      s.screen !== 'end' ||
+      !s.progress[5].complete ||
+      !evaluateDecision(s.decision, true).complete
+    )
+      return s;
+    s.road ??= {
+      original: structuredClone(s.decision),
+      originalSupported: Boolean(s.progress[5].supported),
+      view: 'before',
+      find: newProgress(),
+      effects: newProgress(),
+      revision: newProgress(),
+      answers: {},
+      compared: false,
+      explanationText: '',
+      review: revisionDraft(s.decision),
+    };
+    s.screen = !s.road.find.complete
+      ? 'event-find'
+      : !s.road.effects.complete
+        ? 'event-effects'
+        : 'event-review';
+    s.route = s.road.original.route!;
+    s.highlight = 'leila';
+    if (s.screen !== 'event-find') s.road.view = 'now';
+    return s;
+  }
+  const r = s.road;
+  if (!r || !s.screen.startsWith('event-')) return s;
+  const p = currentProgress(s);
+  const invalidate = () => {
+    p.complete = false;
+    p.feedback = undefined;
+  };
+  const editReview = () => {
+    r.review.supported = undefined;
+    r.review.ungraded = undefined;
+    r.review.weighting = undefined;
+    r.review.acceptConflict = undefined;
+    r.reason = undefined;
+    invalidate();
+  };
+  switch (action.type) {
+    case 'words':
+      s.words = !s.words;
+      break;
+    case 'route':
+      s.route = action.value;
+      break;
+    case 'highlight':
+      s.highlight = action.value;
+      break;
+    case 'event-view':
+      if (
+        s.screen === 'event-effects' ||
+        (s.screen === 'event-find' && (r.find.complete || r.find.help === 3))
+      )
+        r.view = action.value;
+      break;
+    case 'event-path':
+      if (s.screen === 'event-find') {
+        r.path = action.value;
+        invalidate();
+      }
+      break;
+    case 'event-answer':
+      if (s.screen === 'event-effects') {
+        r.answers[action.route] = action.value;
+        r.compared = false;
+        r.explanationSupported = undefined;
+        r.explanationUngraded = undefined;
+        r.revision.complete = false;
+        invalidate();
+      }
+      break;
+    case 'event-connection':
+    case 'event-cause':
+      if (s.screen === 'event-effects') {
+        if (action.type === 'event-connection') r.connection = action.value;
+        else r.cause = action.value;
+        r.explanationSupported = undefined;
+        r.explanationUngraded = undefined;
+        invalidate();
+      }
+      break;
+    case 'event-text':
+      r.explanationText = action.value.slice(0, 1500);
+      r.explanationUngraded = undefined;
+      r.explanationSupported = undefined;
+      invalidate();
+      break;
+    case 'event-submit-explanation':
+      if (
+        s.screen === 'event-effects' &&
+        r.explanationText.trim() &&
+        r.compared &&
+        effectsMatch(r)
+      ) {
+        r.explanationUngraded = true;
+        p.feedback = evaluateEventEffects(r, action.persisted).feedback;
+        p.complete = p.feedback.complete;
+      }
+      break;
+    case 'check': {
+      if (s.screen === 'event-review') {
+        p.feedback = evaluateRevision(r, action.persisted);
+        p.complete = p.feedback.complete;
+        if (hasIncorrectDecisionEvidence(r.review, 'now'))
+          p.failures = Math.min(2, p.failures + 1);
+      } else if (s.screen === 'event-find' || s.screen === 'event-effects') {
+        const evaluated =
+          s.screen === 'event-find'
+            ? evaluateEventFind(r.path, p.failures)
+            : evaluateEventEffects(r, action.persisted);
+        p.feedback = evaluated.feedback;
+        p.complete = p.feedback.complete;
+        if (evaluated.failed) p.failures = Math.min(2, p.failures + 1);
+        if (s.screen === 'event-effects' && effectsMatch(r)) r.compared = true;
+        if (s.screen === 'event-find' && p.complete) r.view = 'now';
+      }
+      if (p.failures >= 2) {
+        p.help = 3;
+        if (s.screen === 'event-find') r.view = 'now';
+      }
+      break;
+    }
+    case 'help':
+      p.help = Math.max(p.help, Math.min(3, action.value));
+      break;
+    case 'use-example':
+      if (p.help !== 3) break;
+      if (s.screen === 'event-find') {
+        r.path = 'leila-platz';
+        r.view = 'now';
+        p.feedback = {
+          kind: 'hint',
+          title: '→ Mit Hilfe gefunden',
+          text: evaluateEventFind(r.path, 0).feedback.text,
+          complete: true,
+        };
+      } else if (s.screen === 'event-effects') {
+        r.answers = { direct: 'longer', north: 'longer', south: 'same' };
+        r.compared = true;
+        r.connection = 'sued';
+        r.cause = 'unchanged';
+        r.explanationSupported = true;
+        r.explanationUngraded = undefined;
+        p.feedback = evaluateEventEffects(r, action.persisted).feedback;
+      } else if (s.screen === 'event-review') {
+        const example = decisionExample(r.review, 'now');
+        if (!example) break;
+        Object.assign(r.review, example);
+        r.changeEvidence = r.review.route;
+        r.reason = 'priority';
+        p.feedback = evaluateRevision(r, action.persisted);
+      } else break;
+      p.supported = true;
+      p.complete = p.feedback.complete;
+      break;
+    case 'decision-route':
+      if (s.screen === 'event-review') {
+        r.review.route = action.value;
+        r.review.advantage = undefined;
+        r.review.disadvantage = undefined;
+        r.review.advantageOther = undefined;
+        r.review.disadvantageOther = undefined;
+        r.changeEvidence = undefined;
+        editReview();
+      }
+      break;
+    case 'criterion':
+    case 'advantage':
+    case 'disadvantage':
+      if (s.screen === 'event-review') {
+        if (action.type === 'criterion') r.review.criterion = action.value;
+        else r.review[action.type] = action.value;
+        editReview();
+      }
+      break;
+    case 'advantage-other':
+    case 'disadvantage-other':
+      if (s.screen === 'event-review' && action.value !== r.review.route) {
+        const field =
+          action.type === 'advantage-other' ? 'advantage' : 'disadvantage';
+        r.review[field] = undefined;
+        r.review[
+          field === 'advantage' ? 'advantageOther' : 'disadvantageOther'
+        ] = action.value;
+        editReview();
+      }
+      break;
+    case 'event-change-evidence':
+      r.changeEvidence = action.value;
+      r.review.ungraded = undefined;
+      r.review.supported = undefined;
+      invalidate();
+      break;
+    case 'event-reason':
+      r.reason = action.value;
+      r.review.weighting =
+        action.value === 'priority' ? r.review.advantage : undefined;
+      r.review.acceptConflict = action.value === 'priority' ? true : undefined;
+      r.review.supported = undefined;
+      r.review.ungraded = undefined;
+      invalidate();
+      break;
+    case 'weighting':
+      r.review.weighting = action.value;
+      r.review.acceptConflict = action.value ? true : undefined;
+      r.review.supported = undefined;
+      r.reason = action.value ? 'priority' : undefined;
+      invalidate();
+      break;
+    case 'text':
+      r.review.text = action.value.slice(0, 1500);
+      r.review.supported = undefined;
+      r.review.ungraded = undefined;
+      invalidate();
+      break;
+    case 'submit-ungraded':
+      if (r.review.text.trim()) {
+        r.review.ungraded = Boolean(r.review.route && r.review.criterion);
+        p.feedback = evaluateRevision(r, action.persisted);
+        p.complete = p.feedback.complete;
+      }
+      break;
+    case 'event-next':
+      if (!p.complete) break;
+      if (s.screen === 'event-find') {
+        s.screen = 'event-effects';
+        r.view = 'now';
+      } else if (s.screen === 'event-effects') {
+        s.screen = 'event-review';
+        r.view = 'now';
+      } else if (s.screen === 'event-review') s.screen = 'event-end';
+      break;
+    case 'event-back':
+      if (s.screen === 'event-find') s.screen = 'end';
+      else if (s.screen === 'event-effects') s.screen = 'event-find';
+      else if (s.screen === 'event-review') s.screen = 'event-effects';
+      else if (s.screen === 'event-end') s.screen = 'event-review';
+      if (s.screen === 'event-review') r.view = 'now';
+      break;
+    case 'event-reset':
+      if (s.screen === 'event-find') {
+        r.find = newProgress();
+        r.path = undefined;
+        r.view = 'before';
+        r.effects.complete = false;
+        r.revision.complete = false;
+      } else if (s.screen === 'event-effects') {
+        r.effects = newProgress();
+        r.answers = {};
+        r.compared = false;
+        r.connection = undefined;
+        r.cause = undefined;
+        r.explanationText = '';
+        r.explanationSupported = undefined;
+        r.explanationUngraded = undefined;
+        r.revision.complete = false;
+      } else if (s.screen === 'event-review') {
+        r.revision = newProgress();
+        r.review = revisionDraft(r.original);
+        r.changeEvidence = undefined;
+        r.reason = undefined;
+      }
+      break;
+  }
+  return s;
 }
