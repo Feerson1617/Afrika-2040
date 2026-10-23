@@ -1,5 +1,5 @@
 import type { Foot, Person, Route, Step } from './content.ts';
-import { tasks } from './content.ts';
+import { routeNames, tasks } from './content.ts';
 import { evidenceFor, evidenceLabel } from './model.ts';
 import type { Evidence } from './model.ts';
 
@@ -22,6 +22,23 @@ export function evaluateClosed(
   failures: number,
 ): Evaluation {
   const empty = step === 0 ? !answer.foot || !answer.bus : !answer.person;
+  if (
+    step === 0 &&
+    empty &&
+    (answer.foot === 'platz' || answer.bus === 'direct')
+  )
+    return {
+      feedback: {
+        kind: 'partial',
+        title: '◐ Ein Teil passt schon',
+        text:
+          answer.foot === 'platz'
+            ? 'Der Fußweg zum Platz passt. Wähle jetzt noch die Busfahrt.'
+            : 'Die direkte Busfahrt passt. Wähle jetzt noch den Fußweg.',
+        complete: false,
+      },
+      failed: false,
+    };
   if (empty)
     return {
       feedback: {
@@ -29,7 +46,11 @@ export function evaluateClosed(
         title: 'Noch eine Auswahl',
         text:
           step === 0
-            ? 'Wähle einen Fußweg und eine Busfahrt.'
+            ? answer.foot
+              ? 'Wähle jetzt noch die Busfahrt. Dann prüfen wir beide Teile.'
+              : answer.bus
+                ? 'Wähle jetzt noch den Fußweg. Dann prüfen wir beide Teile.'
+                : 'Wähle einen Fußweg und eine Busfahrt.'
             : 'Wähle Amina oder David.',
         complete: false,
       },
@@ -89,6 +110,21 @@ export interface Decision {
   advantage?: Evidence;
   disadvantage?: Evidence;
   text: string;
+  supported?: boolean;
+}
+
+export function hasIncorrectDecisionEvidence(answer: Decision): boolean {
+  if (!answer.route || answer.text.trim()) return false;
+  const expected = evidenceFor(answer.route);
+  return Boolean(
+    (answer.advantage && answer.advantage !== expected.advantage) ||
+    (answer.disadvantage && answer.disadvantage !== expected.disadvantage),
+  );
+}
+
+export function explainDecision(route: Route): string {
+  const expected = evidenceFor(route);
+  return `Dein Vorschlag: ${routeNames[route]}. Vorteil: ${evidenceLabel(expected.advantage)} Nachteil: ${evidenceLabel(expected.disadvantage)} Du kannst dieses erklärte Beispiel übernehmen. Überlege danach: Welche Folge ist dir wichtiger?`;
 }
 export function evaluateDecision(
   answer: Decision,
@@ -106,6 +142,7 @@ export function evaluateDecision(
   const downside = answer.disadvantage === expected.disadvantage;
   const hasText = Boolean(answer.text.trim());
   const parts: string[] = [];
+  if (answer.supported) parts.push('Du hast das erklärte Beispiel übernommen.');
   if (good)
     parts.push(`Du belegst den Vorteil: ${evidenceLabel(expected.advantage)}`);
   else if (answer.advantage)
@@ -136,11 +173,13 @@ export function evaluateDecision(
     );
   return {
     kind: 'neutral',
-    title: hasText
-      ? 'Deine Gedanken'
-      : good && downside
-        ? 'Dein Vorschlag ist begründet'
-        : 'Deine Belege prüfen',
+    title: answer.supported
+      ? 'Mit Unterstützung begründet'
+      : hasText
+        ? 'Deine Gedanken'
+        : good && downside
+          ? 'Dein Vorschlag ist begründet'
+          : 'Deine Belege prüfen',
     text: parts.join(' '),
     complete: (good && downside) || hasText,
   };

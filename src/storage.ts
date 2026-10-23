@@ -74,10 +74,13 @@ export function readSession(storage?: Store): State {
       !oneOf(d.route, [undefined, 'direct', 'north']) ||
       !oneOf(d.advantage, facts) ||
       !oneOf(d.disadvantage, facts) ||
+      !oneOf(d.supported, [undefined, true, false]) ||
       typeof d.text !== 'string' ||
       d.text.length > 1500
     )
       return initialState();
+    // Older saved games can contain the previous task's route after going back.
+    if (s.step === 0) s.route = 'direct';
     return s as State;
   } catch {
     return initialState();

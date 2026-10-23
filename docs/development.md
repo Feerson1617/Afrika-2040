@@ -37,11 +37,15 @@ Amina steigt bei „Über Nord“ erst in Nord ein. Die gesamte Linie benötigt 
 
 Fehlende Pflichtauswahl ist kein bewerteter Versuch. Freiwillige Hilfe verbraucht keinen Versuch. Die Bausteine prüfen nur die gewählten Belege; sie belegen keine tatsächlich selbstständig erreichte Kompetenz und ersetzen keine Prüfung der eigenen Gewichtung. Ein Abschluss mit Freitext ist möglich, ohne ihn als richtig auszugeben. Bei widersprüchlichen Bausteinen plus Freitext bleiben die fraglichen Belege auch im Abschluss als zu prüfen markiert.
 
+Nach der unabhängigen Prüfung ergänzt: Ein richtiger vorhandener Teil bei noch fehlendem zweitem Teil wird in Aufgabe 1 gelb anerkannt, ohne einen Fehlversuch zu zählen. In Aufgabe 4 zählen nur tatsächlich unpassende ausgewählte Belege bei gewählter Linie und ohne Freitext als erfolglose strukturierte Prüfung. Fehlende Auswahl, ein passender Beleg mit noch fehlendem Gegenbeleg und unklarer Freitext zählen nicht als Fehlversuch. Nach höchstens zwei unpassenden Belegprüfungen erscheint automatisch Hilfe 3 mit einer konkreten Erklärung zur gewählten Linie. Die falschen Belege bleiben zunächst unverändert. Erst „Dieses Beispiel übernehmen“ setzt bewusst die passenden Belege und ermöglicht den unterstützten Abschluss. Feedback bleibt neutral; das Lernprodukt kennzeichnet die Übernahme als Hilfe. Derselbe Weiterweg steht bei freiwilliger Hilfe 3 zur Verfügung. Ein Linienwechsel aktualisiert das Beispiel, eine eigene Änderung der Belegauswahl entfernt die Übernahmekennzeichnung.
+
 ## Daten und Zustände
 
 Antworten werden unter `afrika-2040:kenia-bus:v1` ausschließlich im `sessionStorage` desselben Browser-Tabs gesichert. Browser können Tab-Sitzungen wiederherstellen; Neustart entfernt den gespeicherten Spielzustand ausdrücklich. Bei gesperrtem Speicher funktioniert das Spiel bis zum Neuladen im Arbeitsspeicher weiter und behauptet keine dauerhafte Speicherung. Eigene Texte werden vor HTML-Ausgabe escaped und auf 1500 Zeichen begrenzt. Es gibt keinen Fetch/Beacon, keine Fernbewertung und keine Schülerkennungen. Der Entwicklungsserver ist nur ein Entwicklungswerkzeug; die gebaute Anwendung benötigt keinen Anwendungsserver.
 
 Ein Schritt wird erst nach korrekter geschlossener Lösung, vollständiger Erklärung oder bearbeiteter offener Empfehlung fortgesetzt. Zurück erhält die Arbeit; „Aufgabe neu bearbeiten“ setzt nur den aktuellen Schritt zurück. Neustart während des Spiels fragt zur Vermeidung versehentlicher Löschung lokal nach. Schnell wiederholte Klicks dürfen keine unbearbeiteten Schritte überspringen.
+
+Aufgabe 1 erzwingt stets die direkte Ausgangsroute, auch nach Rücksprung und beim Lesen alter gespeicherter Nord-Zustände. Die Kartendarstellung schützt diese Bedingung zusätzlich selbst; Antworten und Bearbeitungsstände anderer Aufgaben bleiben erhalten. Das optionale Merkmal `decision.supported` sichert die Herkunft übernommener Beispielbelege über Neuladen hinweg; ältere Spielstände ohne dieses Merkmal bleiben lesbar.
 
 ## Prüfregeln
 

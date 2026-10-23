@@ -11,6 +11,7 @@ import { evidenceFor, evidenceIds, evidenceLabel, journey } from './model.ts';
 import { initialState, reduce } from './state.ts';
 import type { Action } from './state.ts';
 import type { Feedback } from './feedback.ts';
+import { explainDecision } from './feedback.ts';
 import { renderMap } from './map.ts';
 import { clearSession, readSession, saveSession } from './storage.ts';
 
@@ -122,10 +123,20 @@ function decisionInput() {
     <details id="deeper" class="deeper"><summary>Weiterdenken</summary><p>Welche Folge ist dir wichtiger? Begründe deine Wahl. Welche Angaben fehlen, um einen echten Busweg zu planen?</p></details>`;
 }
 
+function currentHint() {
+  const p = state.progress[state.step];
+  if (state.step === 3 && p.help === 3)
+    return state.decision.route
+      ? explainDecision(state.decision.route)
+      : 'Wähle zuerst deinen Busweg. Dann zeigen wir dir ein passendes Beispiel.';
+  return tasks[state.step].hints[p.help - 1];
+}
+
 function help() {
   const p = state.progress[state.step];
   if (!p.help) return '';
-  return `<aside class="help-panel" aria-label="Aufgabenhilfe"><h3 id="help-title" tabindex="-1">→ Hilfe ${p.help} von 3</h3><p>${tasks[state.step].hints[p.help - 1]}</p>
+  return `<aside class="help-panel" aria-label="Aufgabenhilfe"><h3 id="help-title" tabindex="-1">→ Hilfe ${p.help} von 3</h3><p>${currentHint()}</p>
+    ${state.step === 3 && p.help === 3 && state.decision.route && !state.decision.supported ? button('Dieses Beispiel übernehmen', 'use-example', 'button secondary', 'id="decision-example-button"') : ''}
     ${
       p.help < 3
         ? button(
@@ -166,7 +177,7 @@ function game() {
 function end() {
   const d = state.decision;
   return `${header()}<main id="main" class="end-screen" tabindex="-1"><p class="eyebrow">Dein Blick auf die Wege</p><span class="end-symbol" aria-hidden="true">${arrow}</span><h1>Ein Busweg.<br>Zwei Perspektiven.</h1><p class="takeaway">Ein kurzer Busweg ist nicht für alle der schnellste Weg. Auch der Weg zur Haltestelle zählt.</p>
-    <section class="recommendation" aria-label="Dein Lernprodukt"><p class="eyebrow">Deine Empfehlung</p><h2>${d.route ? esc(routeNames[d.route]) : 'Dein Busweg'}</h2>${d.advantage ? `<p><strong>Dein Beleg zum Vorteil:</strong> ${esc(evidenceLabel(d.advantage))}</p>${d.route && d.advantage !== evidenceFor(d.route).advantage ? '<p class="small-note">Diesen Beleg musst du noch prüfen: Er zeigt keinen Vorteil deines Vorschlags.</p>' : ''}` : ''}${d.disadvantage ? `<p><strong>Dein Beleg zum Nachteil:</strong> ${esc(evidenceLabel(d.disadvantage))}</p>${d.route && d.disadvantage !== evidenceFor(d.route).disadvantage ? '<p class="small-note">Diesen Beleg musst du noch prüfen: Er zeigt keinen Nachteil deines Vorschlags.</p>' : ''}` : ''}${d.text ? `<p class="saved-text">${esc(d.text)}</p><p class="small-note">Dein eigener Text wurde nicht automatisch fachlich geprüft.</p>` : ''}<p class="reflection">Zeige jemandem deinen Vorschlag. Erkläre: Welche Folge ist dir besonders wichtig?</p></section>
+    <section class="recommendation" aria-label="Dein Lernprodukt"><p class="eyebrow">Deine Empfehlung</p><h2>${d.route ? esc(routeNames[d.route]) : 'Dein Busweg'}</h2>${d.advantage ? `<p><strong>Dein Beleg zum Vorteil:</strong> ${esc(evidenceLabel(d.advantage))}</p>${d.route && d.advantage !== evidenceFor(d.route).advantage ? '<p class="small-note">Diesen Beleg musst du noch prüfen: Er zeigt keinen Vorteil deines Vorschlags.</p>' : ''}` : ''}${d.disadvantage ? `<p><strong>Dein Beleg zum Nachteil:</strong> ${esc(evidenceLabel(d.disadvantage))}</p>${d.route && d.disadvantage !== evidenceFor(d.route).disadvantage ? '<p class="small-note">Diesen Beleg musst du noch prüfen: Er zeigt keinen Nachteil deines Vorschlags.</p>' : ''}` : ''}${d.supported ? '<p class="small-note" data-supported>Mit Hilfe erstellt: Du hast das erklärte Beispiel übernommen.</p>' : ''}${d.text ? `<p class="saved-text">${esc(d.text)}</p><p class="small-note">Dein eigener Text wurde nicht automatisch fachlich geprüft.</p>` : ''}<p class="reflection">Zeige jemandem deinen Vorschlag. Erkläre: Welche Folge ist dir besonders wichtig?</p></section>
     <p class="end-model">Dieses Beispiel ist erfunden. In einer echten Stadt spielen weitere Dinge eine Rolle, zum Beispiel Wartezeit und Fahrpreis. Die Zeiten sind keine Vorhersage für das Jahr 2040.</p>
     <div class="end-actions">${button('Empfehlung noch einmal ansehen', 'back', 'button secondary')}${button('Neu spielen', 'restart', 'button primary')}</div><p class="privacy-note">Neustart löscht deine Antworten in diesem Tab.</p>
   </main>`;
@@ -205,7 +216,9 @@ function dispatch(action: Action) {
     restartPending = false;
   } else saveSession(state, storage);
   const navigate = ['start', 'restart', 'next', 'back'].includes(action.type);
-  const report = ['check', 'check-transfer'].includes(action.type);
+  const report = ['check', 'check-transfer', 'use-example'].includes(
+    action.type,
+  );
   render(
     navigate
       ? state.screen === 'game'
@@ -230,8 +243,7 @@ function dispatch(action: Action) {
         : state.progress[state.step].feedback
       )?.text ?? '';
   if (action.type === 'help') {
-    announcer.textContent =
-      tasks[state.step].hints[state.progress[state.step].help - 1];
+    announcer.textContent = currentHint();
     document
       .querySelector<HTMLElement>('.help-panel')
       ?.scrollIntoView({ block: 'nearest', behavior: 'instant' });
@@ -246,8 +258,8 @@ function activate(el: Element) {
     render();
     return;
   }
-  if (name === 'check') {
-    dispatch({ type: 'check', persisted: saveSession(state, storage) });
+  if (name === 'check' || name === 'use-example') {
+    dispatch({ type: name, persisted: saveSession(state, storage) });
     return;
   }
   if (name === 'help') {

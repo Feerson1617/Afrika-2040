@@ -7,12 +7,12 @@ const tree = (x: number, y: number, size = 1) =>
 const block = (x: number, y: number, w: number, h: number, angle = -8) =>
   `<g transform="translate(${x} ${y}) rotate(${angle})"><rect width="${w}" height="${h}" rx="5" fill="#c8cbbb"/><rect x="-3" y="-4" width="${w}" height="${h}" rx="5" fill="#dedfd0" stroke="#c3c7b5" stroke-width="1.5"/><path d="M4 ${h / 2}H${w - 8}" stroke="#c7cbb9" stroke-width="2"/></g>`;
 const badge = (x: number, y: number, text: string, style = '') =>
-  `<g class="map-badge ${style}" transform="translate(${x} ${y})"><rect x="-36" y="-16" width="72" height="32" rx="9"/><text text-anchor="middle" dy="6">${text}</text></g>`;
+  `<g class="map-badge ${style}" transform="translate(${x} ${y})"><rect x="-42" y="-18" width="84" height="36" rx="9"/><text text-anchor="middle" dy="7">${text}</text></g>`;
 
 export function renderMap(s: State) {
   const p = s.progress[s.step];
   const choosing = s.step === 0;
-  const direct = s.route === 'direct';
+  const direct = choosing || s.route === 'direct';
   const spotlight = p.help >= 2;
   const amina = s.highlight === 'amina' || (spotlight && s.step !== 2);
   const david = s.highlight === 'david' || (spotlight && s.step === 2);

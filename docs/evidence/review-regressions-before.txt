@@ -1,0 +1,144 @@
+✖ R1: back and rework restore the direct starting route without losing other answers (5.727115ms)
+✖ R1: legacy saved north state in task 1 is normalized; renderer is safe independently (0.728267ms)
+✖ R2: direct gets concrete support after two wrong evidence checks and deliberate adoption (0.759114ms)
+✖ R2: north gets concrete support after two wrong evidence checks and deliberate adoption (0.280152ms)
+✖ R2: voluntary help 3 offers adoption without failures, route change and rework stay safe (0.796299ms)
+✔ R2: unclear free text and correct-but-incomplete evidence never consume failures (0.943551ms)
+✖ R3: either correct incomplete part is explicitly recognized without a failed attempt (0.531691ms)
+✔ R3: incorrect incomplete choices are not confirmed or counted as failures (0.352862ms)
+ℹ tests 8
+ℹ suites 0
+ℹ pass 2
+ℹ fail 6
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 185.443368
+
+✖ failing tests:
+
+test at tests/review-regressions.test.ts:8:1
+✖ R1: back and rework restore the direct starting route without losing other answers (5.727115ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'north' !== 'direct'
+
+      at TestContext.<anonymous> (file:///workspace/Afrika-2040/tests/review-regressions.test.ts:13:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.start (node:internal/test_runner/test:1242:17)
+      at startSubtestAfterBootstrap (node:internal/test_runner/harness:387:17) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'north',
+    expected: 'direct',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/review-regressions.test.ts:19:1
+✖ R1: legacy saved north state in task 1 is normalized; renderer is safe independently (0.728267ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'north' !== 'direct'
+
+      at TestContext.<anonymous> (file:///workspace/Afrika-2040/tests/review-regressions.test.ts:23:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'north',
+    expected: 'direct',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/review-regressions.test.ts:32:3
+✖ R2: direct gets concrete support after two wrong evidence checks and deliberate adoption (0.759114ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///workspace/Afrika-2040/tests/review-regressions.test.ts:38:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/review-regressions.test.ts:32:3
+✖ R2: north gets concrete support after two wrong evidence checks and deliberate adoption (0.280152ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  0 !== 1
+
+      at TestContext.<anonymous> (file:///workspace/Afrika-2040/tests/review-regressions.test.ts:38:12)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/review-regressions.test.ts:52:1
+✖ R2: voluntary help 3 offers adoption without failures, route change and rework stay safe (0.796299ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  + actual - expected
+
+  + undefined
+  - 'amina-north'
+
+      at TestContext.<anonymous> (file:///workspace/Afrika-2040/tests/review-regressions.test.ts:59:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: 'amina-north',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/review-regressions.test.ts:83:1
+✖ R3: either correct incomplete part is explicitly recognized without a failed attempt (0.531691ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+
+  'hint' !== 'partial'
+
+      at TestContext.<anonymous> (file:///workspace/Afrika-2040/tests/review-regressions.test.ts:85:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 'hint',
+    expected: 'partial',
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

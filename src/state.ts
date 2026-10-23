@@ -1,7 +1,12 @@
 import type { Foot, Person, Route, Step } from './content.ts';
 import type { Evidence } from './model.ts';
 import type { Feedback } from './feedback.ts';
-import { evaluateClosed, evaluateDecision } from './feedback.ts';
+import {
+  evaluateClosed,
+  evaluateDecision,
+  hasIncorrectDecisionEvidence,
+} from './feedback.ts';
+import { evidenceFor } from './model.ts';
 
 export interface Progress {
   foot?: Foot;
@@ -25,6 +30,7 @@ export interface State {
     advantage?: Evidence;
     disadvantage?: Evidence;
     text: string;
+    supported?: boolean;
   };
   words: boolean;
   highlight?: Person;
@@ -62,7 +68,7 @@ export type Action =
   | { type: 'advantage' | 'disadvantage'; value?: Evidence }
   | { type: 'text'; value: string }
   | { type: 'transfer'; value: 'yes' | 'no' }
-  | { type: 'check'; persisted: boolean };
+  | { type: 'check' | 'use-example'; persisted: boolean };
 
 export function reduce(current: State, action: Action): State {
   if (action.type === 'restart') return initialState();
@@ -110,6 +116,14 @@ export function reduce(current: State, action: Action): State {
       if (s.step === 3) {
         p.feedback = evaluateDecision(s.decision, action.persisted);
         p.complete = p.feedback.complete;
+        if (hasIncorrectDecisionEvidence(s.decision)) {
+          p.failures = Math.min(2, p.failures + 1);
+          if (p.failures >= 2) {
+            p.help = 3;
+            p.feedback.title = 'Deine Belege gemeinsam prüfen';
+            p.feedback.text += ' Die Erklärung unten hilft dir weiter.';
+          }
+        }
       } else if (p.failures < 2 && !p.complete) {
         const result = evaluateClosed(s.step, p, p.failures);
         p.feedback = result.feedback;
@@ -119,18 +133,30 @@ export function reduce(current: State, action: Action): State {
       }
       break;
     }
+    case 'use-example':
+      if (s.step === 3 && p.help === 3 && s.decision.route) {
+        Object.assign(s.decision, evidenceFor(s.decision.route), {
+          supported: true,
+        });
+        p.feedback = evaluateDecision(s.decision, action.persisted);
+        p.complete = p.feedback.complete;
+      }
+      break;
     case 'decision-route':
       s.decision.route = action.value;
+      s.decision.supported = undefined;
       p.feedback = undefined;
       p.complete = false;
       break;
     case 'advantage':
       s.decision.advantage = action.value;
+      s.decision.supported = undefined;
       p.feedback = undefined;
       p.complete = false;
       break;
     case 'disadvantage':
       s.decision.disadvantage = action.value;
+      s.decision.supported = undefined;
       p.feedback = undefined;
       p.complete = false;
       break;
@@ -189,5 +215,7 @@ export function reduce(current: State, action: Action): State {
       if (s.step === 3) s.decision = { text: '' };
       break;
   }
+  // Task 1 always uses the direct starting route, including navigation/rework.
+  if (s.step === 0) s.route = 'direct';
   return s;
 }

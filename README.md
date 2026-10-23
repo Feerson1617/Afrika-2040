@@ -32,6 +32,7 @@ Für eine lokale Prüfung des fertigen Builds: `npm run preview`. Relative Resso
 - [Curriculare Prüfung mit Seitenbelegen und Abwägungen](docs/curriculum.md)
 - [Architektur, Lernmodell und Prüfregeln](docs/development.md)
 - [Konkrete Ergebnisse, Selbstevaluation und offene Punkte](docs/handover.md)
+- [Korrekturen nach unabhängiger Phase-1-Prüfung und erneute Prüfergebnisse](docs/phase1-corrections.md)
 - [Langfristige Projektregeln](AGENTS.md)
 
 Schülerantworten werden nur in diesem Browser-Tab gespeichert, niemals an Bewertungsdienste geschickt. Freitext wird nicht automatisch fachlich bewertet. Der Prototyp ersetzt keine vollständige Afrika-Unterrichtsreihe und keine unabhängige didaktische Prüfung.
