@@ -1,3 +1,15 @@
+import { demandEpisode, measureNames } from './demand-content.ts';
+import {
+  demandScenario,
+  trialMatches,
+  demandAdvantage,
+  demandDisadvantage,
+  demandConflict,
+  demandPriority,
+  demandFactLabels,
+  demandExample,
+  demandProduct,
+} from './demand.ts';
 import {
   decisionExample,
   goalMessage,
@@ -496,6 +508,162 @@ export function evaluateEventEffects(
     part +
       'Die Baustelle betrifft den Fußweg zum Platz. Prüfe Leilas Einstieg für die Linie über Süd. Die Busse fahren wie zuvor.',
     false,
+    true,
+  );
+}
+
+// Episode 2 shares the same Evaluation contract, feedback colours and Progress
+// counters as Episode 1. Correct positions are never inferred from free text.
+export function evaluateDemandCheck(
+  d: import('./demand.ts').DemandState,
+): Evaluation {
+  const s = demandScenario();
+  const acknowledged =
+    d.enough === 'no'
+      ? 'Richtig: Die Plätze reichen nicht für alle. '
+      : d.later === s.later
+        ? `Richtig: ${s.later} Personen müssen später fahren. `
+        : '';
+  if (!d.route || !d.seenNow || !d.enough || d.later === undefined)
+    return result(
+      acknowledged ? 'partial' : 'hint',
+      'Noch eine Angabe',
+      acknowledged +
+        (!d.route
+          ? 'Wähle eine Ausgangslinie.'
+          : !d.seenNow
+            ? 'Sieh dir die Situation „Jetzt“ an.'
+            : 'Wähle, ob die Plätze reichen und wie viele Personen später fahren müssen.'),
+    );
+  if (d.enough === 'no' && d.later === s.later)
+    return result(
+      'correct',
+      d.check.supported
+        ? '→ Mit Hilfe verglichen'
+        : '✓ Nachfrage und Plätze verglichen',
+      `${s.people} Menschen möchten fahren. Es gibt ${s.capacity} Plätze. ${s.later} Menschen müssen später fahren.`,
+      true,
+    );
+  return result(
+    d.check.failures >= 1 ? 'hint' : acknowledged ? 'partial' : 'incorrect',
+    d.check.failures >= 1
+      ? '→ So kannst du vergleichen'
+      : '↺ Vergleiche Menschen und Plätze',
+    acknowledged +
+      (d.check.failures >= 1
+        ? `${s.people} Menschen, aber nur ${s.capacity} Plätze: ${s.later} müssen später fahren. Du kannst das erklärte Beispiel übernehmen.`
+        : `Vergleiche ${s.people} Menschen mit ${s.capacity} Plätzen. Ein Platz reicht für eine Person.`),
+    false,
+    true,
+  );
+}
+export function evaluateDemandTrial(
+  d: import('./demand.ts').DemandState,
+): Evaluation {
+  if (d.measure === 'base' || !d.explored.includes(d.measure))
+    return result(
+      'hint',
+      'Probiere eine Maßnahme',
+      'Wähle eine Maßnahme auf der Karte oder darunter.',
+    );
+  const measure = d.measure,
+    t = d.trials[measure],
+    scenario = demandScenario(measure);
+  const capacity = t?.capacity === (measure === 'bus' ? 'more' : 'same');
+  const walk = t?.walk === (measure === 'path' ? 'shorter' : 'same');
+  const acknowledged = [
+    capacity ? 'Dein Vergleich der Busplätze passt.' : '',
+    walk ? 'Dein Vergleich des Fußwegs passt.' : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+  if (!t?.capacity || !t.walk)
+    return result(
+      acknowledged ? 'partial' : 'hint',
+      'Dein Vergleich ist noch offen',
+      `${acknowledged} Wähle, was sich an Plätzen und Fußweg verändert.`,
+    );
+  const explanation = `${measureNames[measure]}: ${scenario.trips} Fahrten mit je ${demandEpisode.seatsPerTrip} Plätzen ergeben ${scenario.capacity} Plätze. Der Fußweg dauert ${scenario.walk} Minuten. ${scenario.later ? `${scenario.later} Personen müssen weiter später fahren.` : 'Die Plätze reichen in dieser Stunde für alle.'}`;
+  if (trialMatches(measure, t))
+    return result(
+      'correct',
+      t.supported ? '→ Mit Hilfe untersucht' : '✓ Die Wirkung passt',
+      explanation,
+      true,
+    );
+  return result(
+    d.explore.failures >= 1 ? 'hint' : acknowledged ? 'partial' : 'incorrect',
+    '↺ Eine Maßnahme verändert nicht alles',
+    `${acknowledged} ${d.explore.failures >= 1 ? explanation + ' Du kannst dieses Beispiel übernehmen.' : 'Vergleiche die Busplätze und den Fußweg vor und nach dieser Maßnahme.'}`,
+    false,
+    true,
+  );
+}
+export function evaluateDemandDecision(
+  d: import('./demand.ts').DemandDecision,
+  failures: number,
+  persisted: boolean,
+): Evaluation {
+  if (!d.measure || !d.goal)
+    return result(
+      'hint',
+      'Dein Vorschlag und dein Ziel',
+      'Wähle eine Maßnahme und dein Ziel.',
+    );
+  if (d.text.trim() && d.ungraded)
+    return result(
+      'neutral',
+      'Bewusst unbewertet abgegeben',
+      textNotice(persisted),
+      true,
+    );
+  const labels = demandFactLabels(),
+    good = demandAdvantage(d),
+    downside = demandDisadvantage(d);
+  const acknowledged = [
+    good ? `Dein Vorteil passt: ${labels.advantage[d.advantage!]}` : '',
+    downside
+      ? `Dein Nachteil passt: ${labels.disadvantage[d.disadvantage!]}`
+      : '',
+  ]
+    .filter(Boolean)
+    .join(' ');
+  if (d.text.trim() && !(good && downside))
+    return result(
+      'neutral',
+      'Dein eigener Gedanke',
+      `${acknowledged} ${textNotice(persisted)} Prüfe die Bausteine oder gib deinen eigenen Text bewusst unbewertet ab.`,
+    );
+  if (!d.advantage || !d.disadvantage)
+    return result(
+      acknowledged ? 'partial' : 'hint',
+      'Ergänze deine Begründung',
+      `${acknowledged} Wähle einen Vorteil und einen verbleibenden Nachteil.`,
+    );
+  if (!good || !downside) {
+    const example = demandExample(d)!;
+    return result(
+      failures >= 1 ? 'hint' : acknowledged ? 'partial' : 'incorrect',
+      '↺ Prüfe die Folgen deines Vorschlags',
+      `${acknowledged} ${failures >= 1 ? `Beispiel: ${demandProduct(example)} Du kannst dieses Beispiel bewusst übernehmen.` : 'Prüfe: Welche Größe verändert deine Maßnahme? Was bleibt gleich?'}`,
+      false,
+      true,
+    );
+  }
+  if (demandConflict(d) && !demandPriority(d)) {
+    const scenario = demandScenario(d.measure);
+    return result(
+      'neutral',
+      'Dein Argument ist noch nicht verbunden',
+      `${acknowledged} ${d.measure === 'bus' ? `Du möchtest einen kurzen Fußweg. Er bleibt aber ${scenario.walk} Minuten lang.` : `Du möchtest Plätze für alle. Aber ${scenario.later} Personen müssen später fahren.`} Ändere dein Ziel oder entscheide bewusst, welche Folge dir wichtiger ist.`,
+    );
+  }
+  return result(
+    'neutral',
+    d.supported
+      ? 'Mit Unterstützung begründet'
+      : 'Deine Empfehlung mit Bausteinen',
+    `${acknowledged} ${demandPriority(d) || 'Dein Vorteil stützt dein gewähltes Ziel.'} Beide Maßnahmen haben Grenzen. Deine Empfehlung ist nachvollziehbar.`,
     true,
   );
 }

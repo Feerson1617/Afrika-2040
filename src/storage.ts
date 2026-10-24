@@ -1,3 +1,6 @@
+import { demandScreens, demandGoals, measures } from './demand-content.ts';
+import { trialMatches, demandFactLabels } from './demand.ts';
+import { evaluateDemandCheck, evaluateDemandDecision } from './feedback.ts';
 import {
   connections,
   effectsMatch,
@@ -52,7 +55,13 @@ export function readSession(storage?: Store): State {
         typeof f.complete === 'boolean');
     if (
       !s ||
-      !oneOf(s.screen, ['start', 'game', 'end', ...eventScreens]) ||
+      !oneOf(s.screen, [
+        'start',
+        'game',
+        'end',
+        ...eventScreens,
+        ...demandScreens,
+      ]) ||
       !oneOf(s.step, [0, 1, 2, 3, 4, 5]) ||
       !oneOf(s.route, routes) ||
       typeof s.words !== 'boolean' ||
@@ -194,6 +203,87 @@ export function readSession(storage?: Store): State {
       s.screen = s.progress[5].complete ? 'end' : 'game';
       s.step = 5;
     }
+    const demand = s.demand;
+    if (demand !== undefined) {
+      const a = demand?.decision,
+        labels = demandFactLabels();
+      const valid =
+        demand &&
+        typeof demand === 'object' &&
+        optional(demand.route, routes) &&
+        oneOf(demand.basis, ['first', 'revision', 'chosen']) &&
+        oneOf(demand.view, ['before', 'now']) &&
+        typeof demand.seenNow === 'boolean' &&
+        optional(demand.enough, ['yes', 'no']) &&
+        (demand.later === undefined ||
+          (Number.isInteger(demand.later) &&
+            demand.later >= 0 &&
+            demand.later <= 100)) &&
+        oneOf(demand.measure, ['base', ...measures]) &&
+        Array.isArray(demand.explored) &&
+        demand.explored.length <= 2 &&
+        new Set(demand.explored).size === demand.explored.length &&
+        demand.explored.every((m: unknown) => oneOf(m, [...measures])) &&
+        demand.trials &&
+        typeof demand.trials === 'object' &&
+        !Array.isArray(demand.trials) &&
+        Object.entries(demand.trials).every(
+          ([m, t]: [string, any]) =>
+            oneOf(m, [...measures]) &&
+            t &&
+            optional(t.capacity, ['more', 'same']) &&
+            optional(t.walk, ['shorter', 'same']) &&
+            optional(t.checked, [true, false]) &&
+            optional(t.supported, [true, false]),
+        ) &&
+        progress(demand.check) &&
+        progress(demand.explore) &&
+        progress(demand.decide) &&
+        a &&
+        optional(a.measure, [...measures]) &&
+        optional(a.goal, Object.keys(demandGoals)) &&
+        optional(a.advantage, Object.keys(labels.advantage)) &&
+        optional(a.disadvantage, Object.keys(labels.disadvantage)) &&
+        optional(a.weighting, Object.keys(demandGoals)) &&
+        optional(a.supported, [true, false]) &&
+        optional(a.ungraded, [true, false]) &&
+        text(a.text);
+      if (!valid) {
+        delete s.demand;
+        if (oneOf(s.screen, [...demandScreens])) s.screen = 'start';
+      } else {
+        demand.check.complete =
+          demand.check.complete &&
+          evaluateDemandCheck(demand).feedback.complete;
+        demand.explore.complete =
+          demand.explore.complete &&
+          measures.every(
+            (m) =>
+              demand.explored.includes(m) &&
+              demand.trials[m]?.checked &&
+              trialMatches(m, demand.trials[m]),
+          );
+        if (demand.decide.complete) {
+          demand.decide.feedback = evaluateDemandDecision(
+            a,
+            demand.decide.failures,
+            true,
+          ).feedback;
+          demand.decide.complete = demand.decide.feedback.complete;
+        }
+        if (oneOf(s.screen, [...demandScreens])) {
+          if (!demand.check.complete && s.screen !== 'demand-check')
+            s.screen = 'demand-check';
+          else if (
+            !demand.explore.complete &&
+            (s.screen === 'demand-decide' || s.screen === 'demand-end')
+          )
+            s.screen = 'demand-explore';
+          else if (!demand.decide.complete && s.screen === 'demand-end')
+            s.screen = 'demand-decide';
+        }
+      }
+    } else if (oneOf(s.screen, [...demandScreens])) s.screen = 'start';
     return normalizeView(s as State);
   } catch {
     return initialState();

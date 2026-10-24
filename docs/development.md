@@ -1,4 +1,4 @@
-# Architektur und Prüfregeln – Phase 2B
+# Architektur und Prüfregeln – Phase 2B und zweite Kenia-Episode
 
 ## Umfang und Module
 
@@ -81,3 +81,24 @@ Die erneute Empfehlung benötigt einen zur empfohlenen Linie gehörenden konkret
 Der Speicherschlüssel bleibt `afrika-2040:kenia-bus:v2a`, weil die sechs bisherigen Fortschrittseinträge unverändert kompatibel sind. Das optionale `road`-Objekt ergänzt die spätere Situation, den Original-Snapshot, den Vorher/Jetzt-Anzeigestand, Teilantworten, Erklärungs- und Revisionsdaten. Alte Phase-2A-Stände erhalten dadurch keinen erfundenen Ereignisfortschritt. Die neuen Felder und Abschlussflags werden validiert/erneut geprüft. Ein beschädigtes optionales Ereignis wird verworfen, während der gültige erste Stand erhalten bleibt. Neustart entfernt beide Situationen und weiterhin den alten Phase-1-Schlüssel. Es werden keine Antworten übertragen.
 
 Playwright hat ein Chromium-Projekt für sämtliche Regressionen und ein WebKit-Projekt für die Phase-2B-Szenarien. Native Tastaturauswahl wird mit echten Ereignissen ausgeführt und ihr tatsächlicher Wert vor der fachlichen Prüfung kontrolliert. Fehlt der WebKit-Browser, scheitert der Start sichtbar; das ist kein bestandener oder still übersprungener Test. Konkrete Ergebnisse, Netzwerkblocker und Plattformgrenzen stehen im [Phase-2B-Bericht](phase2b-handover.md).
+
+## Kombiniertes Paket: Korrektur-Gate und zweite Kenia-Episode
+
+Der kombinierte Nutzerauftrag autorisiert nach dem separaten Korrekturcommit die zweite Episode. `phase2b-correction-gate.md` dokumentiert Gate A. Das Ergänzen von Episode 2 ändert weder die sechs alten Schritte noch die beiden Zeitstände oder bisherigen Lernprodukte.
+
+- `demand-content.ts`: erfundene Ausgangszahlen, Begriffe, Ziele und zwei Maßnahmen.
+- `demand.ts`: reines Kapazitäts-/Fußwegmodell, lokale Antworttypen und zu einer Maßnahme passende Belege/Gewichtung. Keine Wartezeitberechnung.
+- `feedback.ts`: dieselben `Feedback`-/`Evaluation`-Verträge für Vergleich, Maßnahmenfolgen und Empfehlung. Grün/Rot/Gelb/Hinweis/Neutral; Freitext bleibt ungeprüft.
+- `state.ts`: optionale `demand`-Daten und drei Fortschrittsstände auf Grundlage des vorhandenen `newProgress`. Ein begrenzter Versuchszähler je Lernschritt, kein unabhängiges globales Bewertungssystem. Ein Prüfklick zählt höchstens einmal; Hilfe 3 ist nach zwei bewertbaren Fehlern bedienbar. Das Anzeigen der Erklärung ersetzt keine Auswahl und setzt keine Übernahmekennzeichnung.
+- `demand-ui.ts`: drei Lernschritte und ein Abschluss, dieselbe Farb-/Papiergestaltung, SVG-Karte mit gleichwertigen HTML-Tasten. Echte Kartenaktionen verändern Modell und Platzsymbole. Im ersten Schritt stehen Vorher/Jetzt und die Personen-/Platzsymbole unmittelbar bei den Antworten; die räumliche Übersicht ist dort aufklappbar. Im zweiten Schritt ist die Karte direkt verfügbar. Beim Begründen stehen die konkreten Wirkungszahlen neben der Auswahl, sodass kein Kartenrücksprung nötig ist.
+- `storage.ts`: validiert die neue optionale Episode und prüft Abschlussflags erneut. Beschädigte neue Daten werden im Arbeitsspeicher verworfen, gültige alte Empfehlungen bleiben erhalten. Die nächste normale Interaktion speichert den bereinigten Stand. Ein blockierter Speicher verhindert den Abschluss im aktuellen Tab nicht.
+
+Die Ausgangslinie stammt aus einer tatsächlich abgeschlossenen erneuten Empfehlung, sonst einer abgeschlossenen ersten Empfehlung oder einer bewussten neuen Auswahl. Eine neue Auswahl wird nicht nachträglich als historische Empfehlung bezeichnet. Nur die Route wird als Kontext verwendet; alte Lernprodukte werden nicht überschrieben. Die frühere Baustelle wird für die spätere Episode ausdrücklich als beendet bezeichnet; bei Rückkehr zu den historischen Berichten behalten diese ihre ursprünglichen Zeitstände.
+
+Maßnahmen verändern getrennte Größen: Basis 24/20/12 (Personen/Plätze/Fußminuten), zusätzliche Fahrt 24/30/12, kurze Verbindung 24/20/4. Jede Person möchte einmal in derselben Stunde fahren; andere Fahrgäste/Haltestellen sind ausgeschlossen. Die Nachfrage ist gegeben, keine berechnete Folge jeder denkbaren Bevölkerungsänderung. Die örtlichen Mittel reichen laut Modell für genau eine Maßnahme. Neue Effekte auf Einkommen, Sicherheit, Lebensqualität oder Umwelt werden nicht behauptet.
+
+Ein Bausteinprodukt verbindet Vorschlag, Ziel, zutreffenden Vorteil und verbleibenden Nachteil. Ein Zielkonflikt bleibt neutral und benötigt Zieländerung oder eine konkrete andere Priorität mit ausdrücklich akzeptiertem Nachteil. Eigene Texte werden nicht nach Schlüsselwörtern ausgewertet. Eine bewusst unbewertete Abgabe setzt keine fachlich bestätigten Belege voraus und wird entsprechend gekennzeichnet. Aktuelle Beispielherkunft wird bei Änderungen entfernt; die historische Übernahme bleibt am Fortschritt sichtbar. Die Unterstützung beim Maßnahmenvergleich gilt für die gerade ausprobierte Maßnahme; die andere wird ebenfalls untersucht.
+
+Der vorhandene Speicherschlüssel bleibt kompatibel. „Episoden auswählen“ erhält beide Episoden; „Bisherige Empfehlungen ansehen“ öffnet den letzten gültigen alten Bericht. Die ursprüngliche Lernfolge kann weitergespielt werden. Ein bestätigter globaler Neustart löscht sämtliche Antworten beider Episoden und die bestehenden projektspezifischen Schlüssel.
+
+Die Browserprüfung beobachtet reale Modelländerungen, richtige/falsche/teilweise/leere Antworten, zwei Fehler, Übernahme und spätere Änderungen, echte Touch-/Tastaturbedienung, zwei offene Empfehlungen und Zielkonflikte, gespeicherte erste/erneute Empfehlung, beschädigten/gesperrten Speicher, Neuladen/Rücksprung/Neustart und lokale Pages-Pfade. Sie prüft Ressourcen/Konsole sowie ausgewählte axe-Regeln. Das iPad ist eine Simulation, kein physisches Gerät. WebKit bleibt als ausführbares Projekt konfiguriert; sein fehlender Browser ist kein bestandener Test. Ein gut nachvollziehbares Bausteinprodukt bleibt ein angeleitetes Produkt und ersetzt keine Beobachtung des Verstehens.

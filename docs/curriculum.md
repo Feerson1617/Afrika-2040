@@ -1,8 +1,8 @@
 # Curriculare Prüfung und didaktische Entscheidungen
 
-Stand: 23. Oktober 2026. Interne Entwicklungsdokumentation, keine Lehrkräftehandreichung.
+Stand: 24. Oktober 2026. Interne Entwicklungsdokumentation, keine Lehrkräftehandreichung.
 
-**Leseschlüssel:** Die folgenden Abschnitte dokumentieren die curriculare Ausgangsbewertung der Phase 1. Die aktuelle Fortführung auf drei Personen, sechs Lernschritte und eine explizite Ursache-Wirkungs-Erklärung steht im Abschnitt „Ergänzung Phase 2A“ am Ende dieses Dokuments.
+**Leseschlüssel:** Die ersten Abschnitte dokumentieren die curriculare Ausgangsbewertung der Phase 1. Die folgenden Ergänzungen behandeln Phase 2A, ihre Korrektur, Phase 2B und am Ende die aktuelle zweite Kenia-Episode. Historische Abdeckungsgrenzen werden nicht nachträglich als bereits geleistete Kompetenzen ausgegeben.
 
 ## Tatsächlicher Dateizugriff
 
@@ -103,3 +103,36 @@ Jahrgang 7 und der Afrika-Schwerpunkt des Schulcurriculums S. 4 bleiben maßgebl
 Die erste Empfehlung wird als eigener Vorher-Stand einschließlich Text, Gewichtung und genutzter Unterstützung bewahrt. Die neue Empfehlung wird getrennt mit Jetzt-Zeiten geprüft. Das Lernprodukt dokumentiert Beibehalten oder Wechseln und die dafür ausgewählten Folgen. Der Schülertext nennt Bausteine und übernommene Beispiele; die fachliche Begrenzung des Kompetenznachweises steht in dieser internen Dokumentation statt als schwer verständliche Metasprache in der Schüleroberfläche.
 
 Alle drei Original-PDFs wurden erneut auf allen 159 Seiten textuell geöffnet und ihre Hashes mit dem bisherigen Zugriffsnachweis verglichen. Keine fehlende Datei, keine fehlende Seite; der frühere Vollrender wird nicht als neuer Render ausgegeben: [Zugriffsnachweis Phase 2B](evidence/phase2b/source-access.json). Unabhängige Gegenprüfung und Erprobung mit Lernenden, insbesondere sehr geringer Lesekompetenz, bleiben erforderlich.
+
+## Zweite Kenia-Episode: Zuzug, Nachfrage und Infrastruktur
+
+Stand 24. Oktober 2026. Maßgeblich ist jetzt der kombinierte Auftrag `combined-request.md`. Die Phase-2B-Korrektur ist als eigener Abschnitt vor der zweiten Episode abgeschlossen; Gate und Umgebungsgrenzen stehen in `phase2b-correction-gate.md`.
+
+Die drei Originaldateien sind unverändert zugänglich. Alle 159 Seiten wurden erneut textuell geöffnet; die Hashes entsprechen den früheren Originalen. Besonders erneut ausgewertet: FA S. 9, 14–15, 17–22, 25; Leitfaden S. 13–15, 20, 38–39, 62; Schulcurriculum PDF-S. 1 und 4. Kein neuer Vollrender und keine neue schulische Beschlusslage behauptet. Nachweis: `evidence/gate-a/source-access.json` und `evidence/episode2/curriculum-excerpts.json`.
+
+### Verbindlicher Rahmen und ergänzende Anbahnung
+
+FA S. 25 ordnet dem Afrikaschwerpunkt unter anderem F2 S8, F4 S18/S20, F5 S22, K1 S4, B1 S2 sowie H1 S4/S5 und H2 S6 zu. Diese verbindliche Themenzuordnung ist kein Versprechen, dass eine einzelne Bus-Episode alle Standards erfüllt. Das Schulcurriculum PDF-S. 4 konkretisiert Afrika für Jahrgang 7 mit etwa 20 Stunden; sein Entwurfsvermerk auf S. 1 bleibt zu beachten. Leitfaden S. 38–39 bietet dazu mögliche Inhalte („Bevölkerungswachstum – Chance und Risiko“, „Migration“), keine zusätzliche verbindliche Detailstoffliste.
+
+| Lernhandlung                                                                     | Bezug                                                                               | Reichweite                                                                                                                                                      |
+| -------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Unter einer räumlichen Leitfrage zwei Maßnahmen untersuchen                      | F5 S22 (FA S. 19/25), verbindlich dem Themenbereich zugeordnet                      | Die Frage ist vorgegeben; keine selbstständige Regionalanalyse.                                                                                                 |
+| Maßnahmen und ihre Grenzen mit einem Ziel verbinden                              | F4 S20, B1 S2, K1 S4 (FA S. 19/22/25)                                               | Begrenzte soziale Wirkung im Modell; keine umfassende ökonomische/ökologische Nachhaltigkeitsbewertung.                                                         |
+| Zuzug, konkret vorgegebene zusätzliche Nachfrage und Verkehrsangebot verknüpfen  | Ergänzend F3 S11/S13 (FA S. 19), Basiskonzepte Struktur/Funktion/Prozess (FA S. 14) | F3 S11/S13 werden hier nicht fälschlich als ausdrückliche Afrika-Zuordnung von S. 25 ausgegeben. Keine allgemeine Erklärung der Bevölkerungsentwicklung Kenias. |
+| Wohnbereich, Fußverbindung, Platz und Zentrum in Beziehung setzen                | Ergänzend O3 S6/O4 S14 (FA S. 20)                                                   | Arbeit an einer schematischen Modellkarte; keine reale Orientierung in Nairobi.                                                                                 |
+| Vorher/Jetzt, Personen, Plätze und Fußwegzeiten vergleichen und Maßnahmen testen | M2 S4, M3 S7, M4 S10 (FA S. 21; methodischer Themenbezug S. 25)                     | Eigene Untersuchung der vorgegebenen Alternativen; Zahlenwahl allein beweist keine selbstständige Hypothesenbildung.                                            |
+| Begründete Empfehlung lokal zeigen und besprechen können                         | K1 S4/B1 S2; H nur angebahnt                                                        | Kein tatsächlich geführtes Gespräch, keine reale Partizipation und kein Nachweis H2 S6.                                                                         |
+
+F2 S8 und die naturräumlichen/wirtschaftlichen Schwerpunkte der Afrika-Einheit bleiben unvollständig. Eine angeleitete Kapazitätsrechnung ist kein Ersatz dafür. Auch O5 S15 und die kritische Reflexion eigener Afrikabilder sind durch den Modellhinweis allein nicht erfüllt.
+
+### Didaktische Entscheidungen
+
+Die neue Episode untersucht einen anderen Zusammenhang als Episode 1: 16 bisherige Fahrgäste und acht weitere Personen ergeben eine ausdrücklich vorgegebene Nachfrage von 24 Personen. Die 24 sind keine Einwohnerzahl des Viertels. Zwei Fahrten mit je zehn Plätzen bieten 20 Beförderungsplätze in einer Stunde. Der Vergleich verlangt, Nachfrage und Angebot auseinanderzuhalten. Zuzug ist eine Ursache lokaler Bevölkerungsveränderung; Geburtenüberschuss wird nicht damit gleichgesetzt. Nicht jede Bevölkerungsänderung erzeugt automatisch genau diese Busnachfrage: Im Spiel wird ausdrücklich gesagt, dass diese acht Personen mitfahren möchten. Neue Nachbarn werden auch mit möglichen Ideen, Begegnungen und Geschäften verbunden; Wachstum wird nicht pauschal negativ bewertet.
+
+Die Karte hat eine Funktion: Die neue Verbindung verkürzt den Weg vom neuen Wohnbereich zum Platz von zwölf auf vier Minuten. Sie erzeugt keine Busplätze. Das zusätzliche Fahrtenangebot verändert die sichtbaren Platzsymbole von 20 auf 30 und lässt den Fußweg gleich. Beide Maßnahmen werden tatsächlich umgeschaltet und getrennt auf ihre Wirkung geprüft. Das Geld reicht im Modell für genau eine Maßnahme; daraus werden keine realen Bau-/Betriebskosten abgeleitet. Es gibt keine berechnete Wartezeit, Fahrpreise oder Nachhaltigkeitspunkte.
+
+Alle bearbeiten dieselbe Aufgabe und beide offenen Entscheidungen. Freiwillige Hilfen lenken den Blick, ordnen die zwei Größen und erklären nach spätestens zwei bewertbaren Fehlern. Bewusste Übernahme wird gekennzeichnet; die Route und der Vorschlag werden nicht still ausgewählt. Sprache wird entlastet, ohne Belege, Grenzen und Gewichtung zu entfernen (FA S. 9/15; Leitfaden S. 20/62). Je Schritt erscheinen höchstens zwei neu erklärte Begriffe; Freitext ist freiwillig und automatisch ungeprüft. Eine Vertiefung fragt nach dem verbleibenden Problem und fehlenden Planungsinformationen.
+
+In der erneuten Empfehlung von Episode 1 bleibt die Korrektur des unpassenden Vorher-Jetzt-Belegs wirksam. In Episode 2 muss das eigene Ziel zum belegten Vorteil in Beziehung gesetzt werden. Ein Zielkonflikt wird neutral benannt. Lernende können ihr Ziel ausdrücklich anpassen oder die andere konkrete Folge höher gewichten und den verbleibenden Nachteil in Kauf nehmen. Weder Maßnahme noch Positionswechsel erhalten einen moralischen Richtigkeitsbonus.
+
+Der reguläre Abschluss dokumentiert eine nachvollziehbare angeleitete Bausteinbegründung. Lernende können weiterhin durch Lesen/Zuordnen zu einem passenden Ergebnis gelangen. Das Spiel beweist daher weder selbstständige Ursache-Wirkungs-Erklärung noch vollständig eigenständige Urteilskompetenz. Tatsächliche Verständlichkeit, Sprachentlastung und Lernwirkung müssen mit der Zielgruppe beobachtet werden. Die sieben aktuellen Abnahmefragen werden im internen `combined-handover.md` begrenzt beantwortet; es entsteht keine Lehrkräftehandreichung.

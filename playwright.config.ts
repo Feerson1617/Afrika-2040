@@ -29,7 +29,7 @@ export default defineConfig({
     },
     {
       name: 'webkit',
-      testMatch: /phase2b(?:-correction)?\.spec\.ts/,
+      testMatch: /(?:phase2b(?:-correction)?|episode2)\.spec\.ts/,
       use: { browserName: 'webkit' },
     },
   ],

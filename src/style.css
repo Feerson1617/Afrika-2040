@@ -1933,3 +1933,243 @@ summary span {
     flex-basis: 100%;
   }
 }
+
+/* Episode 2: same paper/green map language, two measured quantities, no motion. */
+.episode-picker {
+  margin-top: 22px;
+  display: grid;
+  gap: 12px;
+  max-width: 450px;
+}
+.episode-picker .button {
+  justify-self: start;
+}
+.demand-screen {
+  max-width: 1340px;
+}
+.demand-screen .episode-heading h1 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+}
+.demand-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+}
+.demand-world {
+  min-width: 0;
+}
+.demand-map {
+  width: 100%;
+  height: auto;
+  max-height: 290px;
+}
+.demand-map text {
+  font-size: 24px;
+  fill: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.demand-map-target[role='button'] {
+  cursor: pointer;
+}
+.demand-map-target[role='button']:focus-visible {
+  outline: 3px solid #23599b;
+}
+.demand-task {
+  padding: 24px;
+  min-width: 0;
+}
+.demand-task h2 {
+  font-size: 1.5rem;
+}
+.demand-task > * + * {
+  margin-top: 16px;
+}
+.demand-quantities {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+}
+.demand-quantities p {
+  line-height: 1.4;
+}
+.people-symbols {
+  display: grid;
+  grid-template-columns: repeat(8, 17px);
+  gap: 7px 12px;
+  margin: 12px 0;
+}
+.demand-person {
+  display: block;
+  height: 18px;
+  width: 15px;
+  background: var(--green);
+  border-radius: 8px 8px 3px 3px;
+  border: 1px solid #254c3d;
+}
+.demand-person.new-person {
+  background: #e4c36c;
+  border-color: #68592c;
+}
+.bus-symbols {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 10px 0;
+}
+.bus-card {
+  border: 2px solid var(--green);
+  border-radius: 10px;
+  padding: 8px;
+}
+.bus-card > span {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+.bus-card > div {
+  display: grid;
+  grid-template-columns: repeat(5, 10px);
+  gap: 4px;
+}
+.seat {
+  width: 10px;
+  height: 11px;
+  display: block;
+  border: 1px solid var(--green);
+  border-radius: 2px;
+  background: #e0e8d5;
+}
+.demand-current-facts {
+  display: flex;
+  gap: 12px 22px;
+  flex-wrap: wrap;
+  padding: 16px;
+  background: #eef1e7;
+  border-left: 4px solid #637f55;
+}
+.demand-current-facts span {
+  display: block;
+}
+.demand-current-facts strong {
+  font-size: 1.2em;
+}
+.demand-measures {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.demand-task .choice {
+  min-height: 48px;
+}
+.demand-decision-layout {
+  display: block;
+  max-width: 840px;
+  margin: auto;
+}
+.demand-task .goal-note .choice {
+  margin-top: 12px;
+}
+.demand-model {
+  margin-top: 22px;
+  border-top: 1px solid var(--line);
+  padding: 15px 0;
+}
+.demand-model summary,
+.demand-screen #demand-deeper summary {
+  min-height: 44px;
+  padding: 8px 0;
+}
+.demand-model p + p {
+  margin-top: 12px;
+}
+.demand-screen .recommendation > * + * {
+  margin-top: 18px;
+}
+@media (max-width: 850px) {
+  .demand-workspace {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .demand-map {
+    max-height: 230px;
+  }
+  .demand-quantities {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .demand-task {
+    padding: 20px;
+  }
+}
+@media (max-width: 520px) {
+  .demand-quantities {
+    grid-template-columns: 1fr;
+  }
+  .demand-task .three-choices {
+    grid-template-columns: 1fr;
+  }
+  .demand-screen .episode-heading {
+    align-items: start;
+  }
+}
+
+.demand-task .three-choices {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.demand-transition {
+  margin: -10px 0 16px;
+}
+@media (max-width: 520px) {
+  .demand-task .three-choices {
+    grid-template-columns: 1fr;
+  }
+}
+
+.demand-task {
+  display: block;
+}
+.demand-world > fieldset {
+  margin-top: 12px;
+}
+.demand-world .three-choices {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.demand-world .event-views {
+  margin: 12px 0;
+}
+#demand-spatial-context {
+  margin-top: 12px;
+}
+#demand-spatial-context summary {
+  min-height: 44px;
+  padding: 12px 0;
+}
+.demand-task .small-note {
+  font-size: 0.875rem;
+}
+@media (max-width: 520px) {
+  .demand-world .three-choices {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Keep the actual before/now symbols beside the answer, including after touch scrolling. */
+.demand-task .demand-quantities {
+  grid-template-columns: 1fr 1fr;
+}
+.demand-task .people-symbols {
+  grid-template-columns: repeat(8, 15px);
+  gap: 7px 8px;
+}
+.demand-task .bus-card {
+  padding: 6px;
+}
+@media (max-width: 520px) {
+  .demand-task .demand-quantities {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,3 +1,12 @@
+import { measures } from './demand-content.ts';
+import type { DemandGoal, DemandScreen, Measure } from './demand-content.ts';
+import { demandExample, demandScenario, trialMatches } from './demand.ts';
+import type { DemandDecision, DemandState } from './demand.ts';
+import {
+  evaluateDemandCheck,
+  evaluateDemandTrial,
+  evaluateDemandDecision,
+} from './feedback.ts';
 import {
   effectsMatch,
   evaluateRevision,
@@ -43,7 +52,9 @@ export interface Progress {
   transferFeedback?: Feedback;
 }
 export interface State {
-  screen: 'start' | 'game' | 'end' | import('./event.ts').EventScreen;
+  screen:
+    'start' | 'game' | 'end' | import('./event.ts').EventScreen | DemandScreen;
+  demand?: DemandState;
   road?: RoadState;
   step: Step;
   route: Route;
@@ -99,7 +110,30 @@ export type RoadAction =
   | { type: 'event-change-evidence'; value: Route }
   | { type: 'event-reason'; value: 'goal' | 'priority' }
   | { type: 'event-submit-explanation'; persisted: boolean };
+export type DemandAction =
+  | {
+      type:
+        | 'demand-start'
+        | 'demand-next'
+        | 'demand-back'
+        | 'demand-reset'
+        | 'episode-home'
+        | 'episode-report';
+    }
+  | { type: 'demand-route'; value: Route }
+  | { type: 'demand-view'; value: 'before' | 'now' }
+  | { type: 'demand-enough'; value: 'yes' | 'no' }
+  | { type: 'demand-later'; value: number }
+  | { type: 'demand-measure'; value: Measure | 'base' }
+  | { type: 'demand-capacity'; value: 'more' | 'same' }
+  | { type: 'demand-walk'; value: 'shorter' | 'same' }
+  | { type: 'demand-proposal'; value: Measure }
+  | { type: 'demand-goal' | 'demand-weighting'; value: DemandGoal }
+  | { type: 'demand-advantage'; value: DemandDecision['advantage'] }
+  | { type: 'demand-disadvantage'; value: DemandDecision['disadvantage'] }
+  | { type: 'demand-text'; value: string };
 export type Action =
+  | DemandAction
   | RoadAction
   | {
       type:
@@ -137,6 +171,13 @@ export type Action =
   | { type: 'check' | 'use-example'; persisted: boolean };
 export function reduce(current: State, action: Action): State {
   if (action.type === 'restart') return initialState();
+  if (
+    action.type === 'episode-home' ||
+    action.type === 'episode-report' ||
+    current.screen.startsWith('demand-') ||
+    action.type.startsWith('demand-')
+  )
+    return reduceDemand(current, action);
   if (current.screen.startsWith('event-') || action.type.startsWith('event-'))
     return reduceRoad(current, action);
   const s = structuredClone(current),
@@ -406,6 +447,7 @@ export function reduce(current: State, action: Action): State {
 }
 
 export function currentProgress(s: State): Progress {
+  if (s.demand && s.screen.startsWith('demand-')) return demandProgress(s);
   if (s.road && s.screen.startsWith('event-'))
     return s.screen === 'event-find'
       ? s.road.find
@@ -689,6 +731,275 @@ function reduceRoad(current: State, action: Action): State {
         r.changeEvidence = undefined;
         r.reason = undefined;
       }
+      break;
+  }
+  return s;
+}
+
+export function demandProgress(s: State): Progress {
+  const d = s.demand!;
+  return s.screen === 'demand-check'
+    ? d.check
+    : s.screen === 'demand-explore'
+      ? d.explore
+      : d.decide;
+}
+function reduceDemand(current: State, action: Action): State {
+  const s = structuredClone(current);
+  if (action.type === 'episode-report') {
+    if (
+      s.road?.find.complete &&
+      s.road.effects.complete &&
+      s.road.revision.complete &&
+      evaluateRevision(s.road, true).complete
+    ) {
+      s.screen = 'event-end';
+      s.step = 5;
+    } else if (
+      s.progress[5].complete &&
+      evaluateDecision(s.decision, true).complete
+    ) {
+      s.screen = 'end';
+      s.step = 5;
+    }
+    return s;
+  }
+  if (action.type === 'episode-home') {
+    s.screen = 'start';
+    return s;
+  }
+  if (action.type === 'demand-start') {
+    if (!s.demand) {
+      const revised =
+        s.road &&
+        s.road.find.complete &&
+        s.road.effects.complete &&
+        s.road.revision.complete &&
+        evaluateRevision(s.road, true).complete;
+      const first =
+        s.progress[5].complete && evaluateDecision(s.decision, true).complete;
+      s.demand = {
+        route: revised
+          ? s.road!.review.route
+          : first
+            ? s.decision.route
+            : undefined,
+        basis: revised ? 'revision' : first ? 'first' : 'chosen',
+        view: 'before',
+        seenNow: false,
+        measure: 'base',
+        explored: [],
+        trials: {},
+        check: newProgress(),
+        explore: newProgress(),
+        decide: newProgress(),
+        decision: { text: '' },
+      };
+    }
+    const d = s.demand;
+    s.screen = !d.check.complete
+      ? 'demand-check'
+      : !d.explore.complete
+        ? 'demand-explore'
+        : !d.decide.complete
+          ? 'demand-decide'
+          : 'demand-end';
+    return s;
+  }
+  const d = s.demand;
+  if (!d || !s.screen.startsWith('demand-')) return s;
+  const p = demandProgress(s);
+  const invalidate = () => {
+    p.complete = false;
+    p.feedback = undefined;
+  };
+  const reopenDecision = () => {
+    d.decide.complete = false;
+    d.decide.feedback = undefined;
+    d.decision.supported = undefined;
+    d.decision.ungraded = undefined;
+  };
+  const editDecision = () => {
+    reopenDecision();
+    d.decision.weighting = undefined;
+  };
+  const assess = (evaluated: import('./feedback.ts').Evaluation) => {
+    p.feedback = evaluated.feedback;
+    p.complete = p.feedback.complete;
+    if (evaluated.failed) p.failures = Math.min(2, p.failures + 1);
+    if (p.failures >= 2) p.help = 3;
+  };
+  switch (action.type) {
+    case 'words':
+      s.words = !s.words;
+      break;
+    case 'demand-route':
+      d.route = action.value;
+      d.basis = 'chosen';
+      d.check.complete = false;
+      d.check.feedback = undefined;
+      reopenDecision();
+      break;
+    case 'demand-view':
+      d.view = action.value;
+      if (action.value === 'now') d.seenNow = true;
+      break;
+    case 'demand-enough':
+      d.enough = action.value;
+      invalidate();
+      reopenDecision();
+      break;
+    case 'demand-later':
+      d.later = action.value;
+      invalidate();
+      reopenDecision();
+      break;
+    case 'demand-measure':
+      d.measure = action.value;
+      if (action.value !== 'base' && !d.explored.includes(action.value))
+        d.explored.push(action.value);
+      p.feedback = undefined;
+      break;
+    case 'demand-capacity':
+    case 'demand-walk':
+      if (s.screen === 'demand-explore' && d.measure !== 'base') {
+        const t = (d.trials[d.measure] ??= {});
+        if (action.type === 'demand-capacity') t.capacity = action.value;
+        else t.walk = action.value;
+        t.checked = undefined;
+        t.supported = undefined;
+        invalidate();
+        reopenDecision();
+      }
+      break;
+    case 'demand-proposal':
+      d.decision.measure = action.value;
+      d.decision.advantage = undefined;
+      d.decision.disadvantage = undefined;
+      editDecision();
+      break;
+    case 'demand-goal':
+      d.decision.goal = action.value;
+      editDecision();
+      break;
+    case 'demand-advantage':
+      d.decision.advantage = action.value;
+      editDecision();
+      break;
+    case 'demand-disadvantage':
+      d.decision.disadvantage = action.value;
+      editDecision();
+      break;
+    case 'demand-weighting':
+      d.decision.weighting = action.value;
+      reopenDecision();
+      break;
+    case 'demand-text':
+      d.decision.text = action.value.slice(0, 1500);
+      reopenDecision();
+      break;
+    case 'check':
+      if (s.screen === 'demand-check') assess(evaluateDemandCheck(d));
+      else if (s.screen === 'demand-explore') {
+        const evaluated = evaluateDemandTrial(d);
+        assess(evaluated);
+        if (d.measure !== 'base' && evaluated.feedback.complete)
+          d.trials[d.measure]!.checked = true;
+        p.complete = measures.every(
+          (m) => d.trials[m]?.checked && trialMatches(m, d.trials[m]),
+        );
+        p.feedback!.complete = p.complete;
+      } else if (s.screen === 'demand-decide')
+        assess(
+          evaluateDemandDecision(d.decision, p.failures, action.persisted),
+        );
+      break;
+    case 'help':
+      p.help = Math.max(p.help, Math.min(3, action.value));
+      break;
+    case 'use-example':
+      if (p.help !== 3) break;
+      if (s.screen === 'demand-check') {
+        if (!d.route) break; // A route is always the learner's choice.
+        d.view = 'now';
+        d.seenNow = true;
+        d.enough = 'no';
+        d.later = demandScenario().later;
+        p.supported = true;
+        assess(evaluateDemandCheck(d));
+      } else if (s.screen === 'demand-explore') {
+        if (d.measure === 'base') break;
+        d.trials[d.measure] = {
+          capacity: d.measure === 'bus' ? 'more' : 'same',
+          walk: d.measure === 'path' ? 'shorter' : 'same',
+          supported: true,
+          checked: true,
+        };
+        p.supported = true;
+        assess(evaluateDemandTrial(d));
+        p.complete = measures.every(
+          (m) => d.trials[m]?.checked && trialMatches(m, d.trials[m]),
+        );
+        p.feedback!.complete = p.complete;
+      } else if (s.screen === 'demand-decide') {
+        const example = demandExample(d.decision);
+        if (!example) break;
+        d.decision = example;
+        p.supported = true;
+        assess(
+          evaluateDemandDecision(d.decision, p.failures, action.persisted),
+        );
+      }
+      break;
+    case 'submit-ungraded':
+      if (
+        s.screen === 'demand-decide' &&
+        d.decision.text.trim() &&
+        d.decision.measure &&
+        d.decision.goal
+      ) {
+        d.decision.ungraded = true;
+        assess(
+          evaluateDemandDecision(d.decision, p.failures, action.persisted),
+        );
+      }
+      break;
+    case 'demand-next':
+      if (p.complete)
+        s.screen =
+          s.screen === 'demand-check'
+            ? 'demand-explore'
+            : s.screen === 'demand-explore'
+              ? 'demand-decide'
+              : 'demand-end';
+      break;
+    case 'demand-back':
+      s.screen =
+        s.screen === 'demand-end'
+          ? 'demand-decide'
+          : s.screen === 'demand-decide'
+            ? 'demand-explore'
+            : s.screen === 'demand-explore'
+              ? 'demand-check'
+              : 'start';
+      break;
+    case 'demand-reset':
+      if (s.screen === 'demand-check') {
+        d.check = newProgress();
+        d.enough = undefined;
+        d.later = undefined;
+        d.seenNow = false;
+        d.view = 'before';
+      } else if (s.screen === 'demand-explore') {
+        d.explore = newProgress();
+        d.trials = {};
+        d.explored = [];
+        d.measure = 'base';
+      } else if (s.screen === 'demand-decide') {
+        d.decide = newProgress();
+        d.decision = { text: '' };
+      }
+      reopenDecision();
       break;
   }
   return s;

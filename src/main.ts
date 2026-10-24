@@ -1,3 +1,4 @@
+import { renderDemand, demandHint } from './demand-ui.ts';
 import { renderEvent } from './event-ui.ts';
 import { changeLabel, eventExplanation, eventSituation } from './event.ts';
 import {
@@ -77,7 +78,8 @@ function start() {
     <div class="hero-copy"><p class="eyebrow"><span class="tiny-dot"></span> Entdecken. Abwägen. Mitgestalten.</p>
       <h1>Afrika 2040 <span>Gestalte die<br>Zukunft.</span></h1>
       <p class="intro">Du untersuchst Orte in Afrika. Menschen vor Ort haben Ideen für ihre Zukunft. Prüfe die Vorschläge. Entscheide, was du empfehlen würdest.</p>
-      ${button(`Spiel starten ${arrow}`, 'start', 'button primary start-button')}
+      ${button(`${state.step > 0 ? 'Episode 1 fortsetzen' : 'Spiel starten'} ${arrow}`, 'start', 'button primary start-button')}${state.progress[5].complete || state.road?.revision.complete ? button('Bisherige Empfehlungen ansehen', 'episode-report', 'button secondary') : ''}
+      <section class="episode-picker" aria-label="Episoden auswählen"><p>Episode 1: Welcher Busweg hilft wem?</p>${button(state.demand ? 'Episode 2 fortsetzen' : 'Episode 2 starten', 'demand-start', 'button secondary')}<p class="small-note">Mehr Menschen – reicht der Bus noch? Direkt spielbar. Frühere Antworten bleiben erhalten.</p></section>
       <p class="start-location">Dein erster Ort: <strong>Nairobi, Kenia</strong></p>
     </div>
     <div class="hero-art" aria-hidden="true"><span class="art-label">Jeder Weg macht einen Unterschied.</span>
@@ -311,6 +313,8 @@ function decisionInput() {
 }
 
 function currentHint() {
+  if (state.demand && state.screen.startsWith('demand-'))
+    return demandHint(state);
   const p = currentProgress(state);
   if (state.road && state.screen.startsWith('event-')) {
     const r = state.road;
@@ -400,7 +404,7 @@ function end() {
     ${weightingProduct(d) ? `<p class="weighting-product"><strong>Deine Gewichtung:</strong> ${esc(weightingProduct(d))}</p>` : ''}${d.ungraded ? '<p class="small-note" data-ungraded>Bewusst unbewertet abgegeben. Die Verbindung von Ziel, Belegen und Gewichtung ist damit nicht bestätigt.</p>' : '<p class="small-note">Du hast deine Empfehlung mit Bausteinen begründet.</p>'}
     <details id="learning-process"><summary>Deine Erklärung und deine Vermutung</summary><h3>Aminas Weg erklären</h3>${e.cause ? `<p>${esc(explanationChoices.cause[e.cause])}</p>` : ''}${e.effect ? `<p>${esc(explanationChoices.effect[e.effect])}</p>` : ''}${e.text ? `<p class="saved-explanation saved-text">${esc(e.text)}</p><p class="small-note">Deine eigene Erklärung wurde nicht automatisch fachlich geprüft.</p>` : `<p class="small-note">Mit Satzbausteinen erklärt.${e.cause !== 'shorter' || e.effect !== 'total' ? ' Prüfe die Sätze noch einmal.' : ''}</p>`}${state.progress[4].prediction ? `<p>Deine erste Vermutung für Leila: ${routeNames[state.progress[4].prediction!]}.</p>` : ''}</details>
     ${state.progress.map((p, i) => (p.supported ? `<p class="small-note" data-supported>Mit Hilfe erstellt: Bei „${tasks[i].label}“ hast du ${i < 3 ? 'die Erklärung genutzt' : 'das erklärte Beispiel übernommen'}.</p>` : '')).join('')}
-    <p class="reflection">Zeige jemandem deinen Vorschlag. Erkläre: Welche Folge ist dir besonders wichtig?</p></section><p class="end-model">Dieses Modell ist erfunden. Daraus folgen keine allgemeinen Aussagen über Nairobi oder Kenia. Wartezeiten, Fahrpreise und Kapazitäten fehlen. Ein Vergleich der Zeiten ist noch keine umfassende Nachhaltigkeitsbewertung. Die Zeiten sind keine Vorhersage für das Jahr 2040.</p><section class="event-transition" aria-label="Eine Woche später"><h2>Eine Woche später …</h2><p>Im Viertel hat sich etwas verändert. Prüfe, ob deine Entscheidung noch passt.</p>${button(state.road ? 'Neue Situation weiter prüfen' : 'Was hat sich verändert?', 'event-start', 'button primary')}</section><div class="end-actions">${button('Empfehlung noch einmal ansehen', 'back', 'button secondary')}${button('Neu spielen', 'restart', 'button primary')}</div><p class="privacy-note">Neustart löscht deine Antworten in diesem Tab.</p></main>`;
+    <p class="reflection">Zeige jemandem deinen Vorschlag. Erkläre: Welche Folge ist dir besonders wichtig?</p></section><p class="end-model">Dieses Modell ist erfunden. Daraus folgen keine allgemeinen Aussagen über Nairobi oder Kenia. Wartezeiten, Fahrpreise und Kapazitäten fehlen. Ein Vergleich der Zeiten ist noch keine umfassende Nachhaltigkeitsbewertung. Die Zeiten sind keine Vorhersage für das Jahr 2040.</p><section class="event-transition" aria-label="Eine Woche später"><h2>Eine Woche später …</h2><p>Im Viertel hat sich etwas verändert. Prüfe, ob deine Entscheidung noch passt.</p>${button(state.road ? 'Neue Situation weiter prüfen' : 'Was hat sich verändert?', 'event-start', 'button primary')}</section>${button('Episode 2 starten', 'demand-start', 'button secondary')}<div class="end-actions">${button('Empfehlung noch einmal ansehen', 'back', 'button secondary')}${button('Neu spielen', 'restart', 'button primary')}</div><p class="privacy-note">Neustart löscht deine Antworten in diesem Tab.</p></main>`;
 }
 
 function render(focusId?: string) {
@@ -417,21 +421,30 @@ function render(focusId?: string) {
       ? start()
       : state.screen === 'end'
         ? end()
-        : state.screen.startsWith('event-')
-          ? renderEvent(state, {
+        : state.screen.startsWith('demand-')
+          ? renderDemand(state, {
               header: header(),
               button,
               radio,
               esc,
               feedback,
-              help,
-              evidenceInput,
-              ownWords,
-              routeSwitch,
-              journeyExplorer,
               restartPending,
             })
-          : game();
+          : state.screen.startsWith('event-')
+            ? renderEvent(state, {
+                header: header(),
+                button,
+                radio,
+                esc,
+                feedback,
+                help,
+                evidenceInput,
+                ownWords,
+                routeSwitch,
+                journeyExplorer,
+                restartPending,
+              })
+            : game();
   for (const id of openDetails) {
     const detail = document.getElementById(id) as HTMLDetailsElement | null;
     if (detail) detail.open = true;
@@ -459,6 +472,12 @@ function dispatch(action: Action) {
     'restart',
     'next',
     'back',
+    'demand-start',
+    'demand-next',
+    'demand-back',
+    'demand-reset',
+    'episode-home',
+    'episode-report',
     'event-start',
     'event-next',
     'event-back',
@@ -475,7 +494,9 @@ function dispatch(action: Action) {
     action.type === 'decision-panel'
       ? 'decision-title'
       : navigate
-        ? state.screen === 'game' ||
+        ? (state.screen.startsWith('demand-') &&
+            state.screen !== 'demand-end') ||
+          state.screen === 'game' ||
           (state.screen.startsWith('event-') && state.screen !== 'event-end')
           ? 'task-title'
           : 'main'
@@ -564,6 +585,9 @@ function activate(el: Element) {
       'decision-panel',
       'event-path',
       'event-view',
+      'demand-measure',
+      'demand-view',
+      'demand-goal',
     ].includes(name)
   ) {
     // A solved task stays available for inspection; explicit rework resets it.
@@ -598,6 +622,15 @@ app.addEventListener('keydown', (event) => {
 });
 app.addEventListener('change', (event) => {
   const el = event.target as HTMLInputElement | HTMLSelectElement;
+  if (el.name === 'demand-later') {
+    dispatch({ type: 'demand-later', value: Number(el.value) });
+    return;
+  }
+  if (el.name === 'demand-text') return; // Input already saved it; avoid replacing a clicked control on blur.
+  if (el.name.startsWith('demand-')) {
+    dispatch({ type: el.name, value: el.value } as Action);
+    return;
+  }
   if (el.name.startsWith('event-answer-')) {
     dispatch({
       type: 'event-answer',
@@ -638,7 +671,8 @@ app.addEventListener('input', (event) => {
   if (
     el.name !== 'text' &&
     el.name !== 'explanation-text' &&
-    el.name !== 'event-text'
+    el.name !== 'event-text' &&
+    el.name !== 'demand-text'
   )
     return;
   state = reduce(state, { type: el.name, value: el.value });
@@ -648,7 +682,8 @@ app.addEventListener('input', (event) => {
   const ungraded = document.querySelector<HTMLButtonElement>(
     '[data-action="submit-ungraded"]',
   );
-  if (ungraded && el.name === 'text') ungraded.disabled = !el.value.trim();
+  if (ungraded && (el.name === 'text' || el.name === 'demand-text'))
+    ungraded.disabled = !el.value.trim();
   const explanationSubmit = document.querySelector<HTMLButtonElement>(
     '[data-action="event-submit-explanation"]',
   );
