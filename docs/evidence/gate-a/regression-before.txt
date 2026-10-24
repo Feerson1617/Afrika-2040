@@ -1,0 +1,257 @@
+
+> afrika-2040@0.1.0 test
+> node --test --experimental-test-isolation=none tests/*.test.ts
+
+✔ all nine prescribed journeys include the actual walk and the ridden bus sections (2.575566ms)
+✔ full route lengths and boarding determine all bus sections (0.237952ms)
+✔ the original Phase-1 advantages remain unchanged (0.110135ms)
+✔ missing choices are prompts, not failed attempts (0.243812ms)
+✔ all four original route-part combinations retain correct, partial and wrong feedback (0.326884ms)
+✔ benefit and disadvantage use distinct perspectives (0.141154ms)
+✔ the second failed attempt still explains every original closed task (0.266144ms)
+✔ all evidence labels name the person and both comparison routes unambiguously (0.191931ms)
+✔ all 972 evidence pairs are judged by truth, reference route and different people; every recommendation remains neutral (11.275086ms)
+✔ different valid weightings and comparison references are accepted (0.615043ms)
+✔ a named criterion is required, including when a free text is recorded (0.187543ms)
+✔ correct incomplete reasoning is acknowledged without rejecting a route (0.094715ms)
+✔ unusual or contradictory free text is saved without keyword grading (0.268317ms)
+✔ no false saved claim when storage is blocked (0.095654ms)
+✔ B1 direct/school: acknowledge facts, require a connected goal, allow explicit weighting or changed goal (1.523037ms)
+✔ B1 direct/market: acknowledge facts, require a connected goal, allow explicit weighting or changed goal (0.462789ms)
+✔ B1 direct/training: acknowledge facts, require a connected goal, allow explicit weighting or changed goal (0.350966ms)
+✔ B1 north/school: acknowledge facts, require a connected goal, allow explicit weighting or changed goal (0.147462ms)
+✔ B1 north/market: acknowledge facts, require a connected goal, allow explicit weighting or changed goal (0.253944ms)
+✔ B1 north/training: acknowledge facts, require a connected goal, allow explicit weighting or changed goal (0.217385ms)
+✔ B1 south/school: acknowledge facts, require a connected goal, allow explicit weighting or changed goal (0.241069ms)
+✔ B1 south/market: acknowledge facts, require a connected goal, allow explicit weighting or changed goal (0.180504ms)
+✔ B1 south/training: acknowledge facts, require a connected goal, allow explicit weighting or changed goal (0.530123ms)
+✔ activity-only criterion and a bare acknowledgement cannot replace concrete weighting (0.183712ms)
+✔ a favourable comparison for the same goal person does not explain ignoring their fastest route (0.069203ms)
+✔ any route, goal, fact, comparison, priority or text edit invalidates completion and current example provenance (1.42159ms)
+✔ old accepted contradictory or activity-only endings reopen without losing drafts or earlier progress (0.302734ms)
+✔ text alone is not silently approved; deliberate ungraded submission is preserved and any edit reopens it (0.581704ms)
+✔ no example without a deliberately chosen goal; draft comparisons and panel round trip; invalid fields are rejected (0.550187ms)
+✔ staged introduction hides Leila and South until the extension, including after going back (5.101639ms)
+✔ every route renders the complete sections but only the selected person rides the appropriate portion (0.618131ms)
+✔ a prediction is recorded without grading; the actual inspection follows it (0.44728ms)
+✔ the cause and effect explanation recognizes either correct incomplete part without failed attempts (0.166599ms)
+✔ guided correct explanations are qualified and partial errors acknowledge the valid cause (0.090205ms)
+✔ two explanation errors expose a deliberate supported completion; an edit can adopt again (0.286207ms)
+✔ Leila support after two errors preserves the real prediction and inspections, and leaves routes usable (0.314118ms)
+✔ all three decisions offer matching supported examples, named criteria and a bounded failure counter (0.407899ms)
+✔ incomplete evidence or a missing criterion never consumes failures, even when a selected fact is wrong (0.109368ms)
+✔ free explanation text is never graded, including contradictory facts, HTML and unusual language (0.255763ms)
+✔ changing a first idea is not a success signal, and does not alter the final recommendation (0.081225ms)
+✔ new state round trips with support, criterion, nine-value routes and both texts; reset affects one task only (0.401489ms)
+✔ corrupt extended states are rejected; a late route cannot leak into the first comparison on restoration (0.471236ms)
+✔ all eighteen required journeys derive from exactly one changed walk; old values, buses and boarding remain intact (0.346433ms)
+✔ new evidence and weighting use the current situation while the original product still uses its original values (0.136854ms)
+✔ event is gated by the old completion and keeps a separate immutable snapshot and all six old tasks (0.706936ms)
+✔ localisation: missing input is free, area is partial, buses are wrong, two failures explain and adoption really continues (0.505853ms)
+✔ before/now uses the same map; construction and detour are restricted to the later footpath situation, including back navigation (0.557013ms)
+✔ all 27 incomplete/complete effect combinations are handled honestly; full comparison still needs a cause and connection (6.023341ms)
+✔ revision direct → direct: staying and changing require explicit current evidence and a reason, never a success for switching alone (1.170406ms)
+✔ revision direct → north: staying and changing require explicit current evidence and a reason, never a success for switching alone (0.931324ms)
+✔ revision direct → south: staying and changing require explicit current evidence and a reason, never a success for switching alone (0.680179ms)
+✔ revision north → direct: staying and changing require explicit current evidence and a reason, never a success for switching alone (1.525452ms)
+✔ revision north → north: staying and changing require explicit current evidence and a reason, never a success for switching alone (0.564988ms)
+✔ revision north → south: staying and changing require explicit current evidence and a reason, never a success for switching alone (0.627635ms)
+✔ revision south → direct: staying and changing require explicit current evidence and a reason, never a success for switching alone (0.745335ms)
+✔ revision south → north: staying and changing require explicit current evidence and a reason, never a success for switching alone (0.627795ms)
+✔ revision south → south: staying and changing require explicit current evidence and a reason, never a success for switching alone (0.679273ms)
+✔ new goal connection direct/school stays neutral and accepts only an explicit coherent priority (0.638187ms)
+✔ new goal connection direct/market stays neutral and accepts only an explicit coherent priority (0.544321ms)
+✔ new goal connection direct/training stays neutral and accepts only an explicit coherent priority (1.520993ms)
+✔ new goal connection north/school stays neutral and accepts only an explicit coherent priority (0.493499ms)
+✔ new goal connection north/market stays neutral and accepts only an explicit coherent priority (0.574405ms)
+✔ new goal connection north/training stays neutral and accepts only an explicit coherent priority (0.468402ms)
+✔ new goal connection south/school stays neutral and accepts only an explicit coherent priority (0.437627ms)
+✔ new goal connection south/market stays neutral and accepts only an explicit coherent priority (0.393399ms)
+✔ new goal connection south/training stays neutral and accepts only an explicit coherent priority (0.407399ms)
+✖ correct but unrelated change evidence is acknowledged and counted as one assessable mismatch (1.637905ms)
+✖ Gate A: direct with north evidence explains after two checks, preserves true facts and requires conscious adoption (0.772406ms)
+✖ Gate A: direct with south evidence explains after two checks, preserves true facts and requires conscious adoption (0.514107ms)
+✖ Gate A: north with direct evidence explains after two checks, preserves true facts and requires conscious adoption (0.410953ms)
+✖ Gate A: north with south evidence explains after two checks, preserves true facts and requires conscious adoption (0.584708ms)
+✖ Gate A: south with direct evidence explains after two checks, preserves true facts and requires conscious adoption (0.883644ms)
+✖ Gate A: south with north evidence explains after two checks, preserves true facts and requires conscious adoption (0.984327ms)
+✔ Gate A: missing choices, open goal conflicts and unclear own texts do not count; one click never counts twice (2.927337ms)
+✔ all relevant edits invalidate an adopted revision and its current provenance while keeping historical help visible (1.453368ms)
+✔ unusual free explanations and revisions are deliberately ungraded, escaped later, never keyword evaluated, and edits reopen them (3.169036ms)
+✔ legacy phase-2A states migrate without replaying tasks; damaged new state preserves the valid first product; restart clears both situations (1.885016ms)
+✔ new map/time selection and all partial work round trip without changing the first product (1.098863ms)
+✔ the first recommendation keeps its historical support marker even if the old task is later explicitly reworked (0.272663ms)
+✔ R1: back and rework restore the direct starting route without losing other answers (0.110182ms)
+✔ R1: legacy saved north state in task 1 is normalized; renderer is safe independently (0.227631ms)
+✔ R2: direct gets concrete support after two wrong evidence checks and deliberate adoption (0.384784ms)
+✔ R2: north gets concrete support after two wrong evidence checks and deliberate adoption (0.148975ms)
+✔ R2: voluntary help 3 offers adoption without failures, route change and rework stay safe (0.475537ms)
+✔ R2: unclear free text and correct-but-incomplete evidence never consume failures (0.40013ms)
+✔ R3: either correct incomplete part is explicitly recognized without a failed attempt (0.148979ms)
+✔ R3: incorrect incomplete choices are not confirmed or counted as failures (0.1573ms)
+✔ navigation guards cannot skip an unprocessed task, even under repeated clicks (0.528932ms)
+✔ two failures unlock explanation, not endless rated guesses (0.285239ms)
+✔ hints are voluntary, monotonic, and do not consume attempts (0.097509ms)
+✔ back preserves work and explicit rework resets only the current task (0.225175ms)
+✔ transfer gives a second-attempt explanation and keeps the model unchanged (0.110502ms)
+✔ changing evidence or text invalidates an already checked recommendation (0.150101ms)
+✔ restart deletes all answers, hints and progress (0.097258ms)
+✔ session round trip and corrupted data are handled (0.341974ms)
+✔ blocked session storage never prevents play (0.285718ms)
+ℹ tests 96
+ℹ suites 0
+ℹ pass 89
+ℹ fail 7
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 354.827463
+
+✖ failing tests:
+
+test at tests/phase2b.test.ts:268:1
+✖ correct but unrelated change evidence is acknowledged and counted as one assessable mismatch (1.637905ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/Afrika-2040/tests/phase2b.test.ts:275:10)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/phase2b.test.ts:279:5
+✖ Gate A: direct with north evidence explains after two checks, preserves true facts and requires conscious adoption (0.772406ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/Afrika-2040/tests/phase2b.test.ts:285:14)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/phase2b.test.ts:279:5
+✖ Gate A: direct with south evidence explains after two checks, preserves true facts and requires conscious adoption (0.514107ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/Afrika-2040/tests/phase2b.test.ts:285:14)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/phase2b.test.ts:279:5
+✖ Gate A: north with direct evidence explains after two checks, preserves true facts and requires conscious adoption (0.410953ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/Afrika-2040/tests/phase2b.test.ts:285:14)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/phase2b.test.ts:279:5
+✖ Gate A: north with south evidence explains after two checks, preserves true facts and requires conscious adoption (0.584708ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/Afrika-2040/tests/phase2b.test.ts:285:14)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/phase2b.test.ts:279:5
+✖ Gate A: south with direct evidence explains after two checks, preserves true facts and requires conscious adoption (0.883644ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/Afrika-2040/tests/phase2b.test.ts:285:14)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }
+
+test at tests/phase2b.test.ts:279:5
+✖ Gate A: south with north evidence explains after two checks, preserves true facts and requires conscious adoption (0.984327ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:
+  
+  0 !== 1
+  
+      at TestContext.<anonymous> (file:///workspace/Afrika-2040/tests/phase2b.test.ts:285:14)
+      at Test.runInAsyncScope (node:async_hooks:227:14)
+      at Test.run (node:internal/test_runner/test:1382:25)
+      at Test.processPendingSubtests (node:internal/test_runner/test:960:18)
+      at Test.postRun (node:internal/test_runner/test:1522:19)
+      at Test.run (node:internal/test_runner/test:1447:12)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:960:7) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: 0,
+    expected: 1,
+    operator: 'strictEqual',
+    diff: 'simple'
+  }

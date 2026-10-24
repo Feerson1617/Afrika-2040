@@ -1,0 +1,20 @@
+[
+  {
+    "panel": "advantage",
+    "height": 1024,
+    "comparisonSpan": 510.984375,
+    "rowsTop": 593.53125,
+    "rowsBottom": 864.515625,
+    "scrollY": 66,
+    "overflow": false
+  },
+  {
+    "panel": "disadvantage",
+    "height": 1024,
+    "comparisonSpan": 534.984375,
+    "rowsTop": 593.53125,
+    "rowsBottom": 864.515625,
+    "scrollY": 90,
+    "overflow": false
+  }
+]

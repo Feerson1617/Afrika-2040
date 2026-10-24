@@ -1,6 +1,6 @@
 # Afrika 2040 – Projektregeln
 
-1. Lernwirksamkeit geht vor Grafik, Animationen und technischem Umfang. Jede Handlung braucht ein Lernziel. Der freigegebene Umfang endet nach Phase 2B beim Fußweg-Ereignis und der erneuten Prüfung der Kenia-Empfehlung. Weitere Phasen und Episoden erst nach ausdrücklicher Freigabe.
+1. Lernwirksamkeit geht vor Grafik, Animationen und technischem Umfang. Jede Handlung braucht ein Lernziel. Der freigegebene Umfang umfasst die Phase-2B-Feedbackkorrektur und nach bestandenem Gate A die zweite Kenia-Episode „Mehr Menschen – reicht der Bus noch?“. Nach Episode 2 stoppen. Weitere Phasen und Episoden erst nach ausdrücklicher Freigabe.
 2. Fachliche Richtigkeit ist zwingend. Reale Ortsangaben, erfundene Inhalte und Modellannahmen sichtbar unterscheiden. Alle Zeiten aus `src/content.ts` und `src/model.ts` ableiten. Quellen mit Seiten belegen.
 3. Kurze, einfache und präzise deutsche Sätze verwenden. Fachbegriffe konkret erklären, nicht streichen. Jeden neuen Schülertext auf Verständlichkeit prüfen.
 4. Gleiche geographische Herausforderung, freiwillige Hilfen und unterschiedliche Begründungstiefe. Keine sichtbaren Leistungsgruppen und kein Punktabzug. Individuelle Förderpläne werden durch das Spiel nicht ersetzt.

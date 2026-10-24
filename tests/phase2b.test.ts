@@ -265,14 +265,82 @@ for (const route of routes)
       s = reduce(s, check);
       assert.equal(s.road!.revision.complete, true);
     });
-test('correct but unrelated change evidence is acknowledged and remains open until related to the current recommendation', () => {
+test('correct but unrelated change evidence is acknowledged and counted as one assessable mismatch', () => {
   let s = toRevision('north');
   s = reduce(s, { type: 'event-change-evidence', value: 'south' });
   s = reduce(s, { type: 'event-reason', value: 'goal' });
   s = reduce(s, check);
   assert.match(s.road!.revision.feedback!.text, /10 → 10/);
   assert.equal(s.road!.revision.complete, false);
-  assert.equal(s.road!.revision.failures, 0);
+  assert.equal(s.road!.revision.failures, 1);
+});
+for (const route of routes)
+  for (const other of routes.filter((r) => r !== route))
+    test(`Gate A: ${route} with ${other} evidence explains after two checks, preserves true facts and requires conscious adoption`, () => {
+      let s = toRevision(route);
+      const first = structuredClone(s.road!.original);
+      s = reduce(s, { type: 'event-change-evidence', value: other });
+      s = reduce(s, { type: 'event-reason', value: 'goal' });
+      s = reduce(s, check);
+      assert.equal(s.road!.revision.failures, 1);
+      assert.match(s.road!.revision.feedback!.text, /Du belegst den Vorteil/);
+      assert.match(
+        s.road!.revision.feedback!.text,
+        /Du beachtest auch den Nachteil/,
+      );
+      assert.match(s.road!.revision.feedback!.text, /Zeitangabe stimmt/);
+      assert.doesNotMatch(
+        s.road!.revision.feedback!.text,
+        /Die ausgewählten Belege und dein Ziel sind verbunden/,
+      );
+      s = restore(reduce(s, check));
+      assert.equal(s.road!.revision.failures, 2);
+      assert.equal(s.road!.revision.help, 3);
+      assert.equal(s.road!.revision.complete, false);
+      assert.equal(s.road!.review.supported, undefined);
+      assert.match(
+        s.road!.revision.feedback!.text,
+        new RegExp(changeLabel(route).replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+      );
+      assert.deepEqual(s.road!.original, first);
+      s = reduce(s, { type: 'use-example', persisted: true });
+      assert.equal(s.road!.revision.complete, true);
+      assert.equal(s.road!.review.supported, true);
+      assert.equal(s.road!.revision.supported, true);
+      assert.equal(s.road!.changeEvidence, route);
+      assert.deepEqual(s.road!.original, first);
+      assert.equal(restore(reduce(s, next)).screen, 'event-end');
+    });
+test('Gate A: missing choices, open goal conflicts and unclear own texts do not count; one click never counts twice', () => {
+  let base = toRevision('north');
+  for (const actions of [
+    [],
+    [{ type: 'event-change-evidence', value: 'south' }],
+    [{ type: 'event-reason', value: 'goal' }],
+    [
+      { type: 'criterion', value: 'training' },
+      { type: 'event-change-evidence', value: 'south' },
+    ],
+    [
+      { type: 'text', value: '???' },
+      { type: 'event-change-evidence', value: 'south' },
+      { type: 'event-reason', value: 'goal' },
+    ],
+  ] as Action[][]) {
+    let s = structuredClone(base);
+    for (const action of actions) s = reduce(s, action);
+    for (let i = 0; i < 3; i++) s = reduce(s, check);
+    assert.equal(s.road!.revision.failures, 0);
+    assert.equal(s.road!.revision.complete, false);
+  }
+  base = reduce(base, { type: 'advantage', value: 'david-north-direct' });
+  base = reduce(base, { type: 'event-change-evidence', value: 'south' });
+  base = reduce(base, { type: 'event-reason', value: 'goal' });
+  base = reduce(base, check);
+  assert.equal(base.road!.revision.failures, 1);
+  base = reduce(base, check);
+  assert.equal(base.road!.revision.failures, 2);
+  assert.equal(base.road!.revision.help, 3);
 });
 test('all relevant edits invalidate an adopted revision and its current provenance while keeping historical help visible', () => {
   let s = toRevision('south');

@@ -1,4 +1,9 @@
-import { effectsMatch, evaluateRevision, revisionDraft } from './event.ts';
+import {
+  effectsMatch,
+  evaluateRevision,
+  hasIncorrectRevisionEvidence,
+  revisionDraft,
+} from './event.ts';
 import type { EventPath, RoadState } from './event.ts';
 import type {
   Criterion,
@@ -525,7 +530,7 @@ function reduceRoad(current: State, action: Action): State {
       if (s.screen === 'event-review') {
         p.feedback = evaluateRevision(r, action.persisted);
         p.complete = p.feedback.complete;
-        if (hasIncorrectDecisionEvidence(r.review, 'now'))
+        if (hasIncorrectRevisionEvidence(r))
           p.failures = Math.min(2, p.failures + 1);
       } else if (s.screen === 'event-find' || s.screen === 'event-effects') {
         const evaluated =
