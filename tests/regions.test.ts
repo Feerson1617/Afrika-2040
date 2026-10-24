@@ -355,3 +355,135 @@ test('editing a distribution invalidates its later product, preserves support hi
   assert.equal(restore(damaged).studies!.share, undefined);
   assert.deepEqual(restore(damaged).studies!.cocoa!.data.chain, ['beans']);
 });
+
+import { water, waterModel } from '../src/regions/water.ts';
+import { waterBalance } from '../src/regions/water-model.ts';
+function waterExplore() {
+  let s = start('water');
+  for (const [k, v] of [
+    ['withdrawal', '60'],
+    ['rest', '20'],
+  ])
+    s = action(s, 'answer', v, k);
+  s = action(s, 'check');
+  assert.equal(record(s).progress[0].complete, true);
+  return action(s, 'next');
+}
+function waterDecision() {
+  let s = waterExplore();
+  for (const [k, v] of [
+    ['repair', '30'],
+    ['tech', '35'],
+  ]) {
+    s = action(s, 'select', k);
+    s = action(s, 'answer', v, k);
+    s = action(s, 'check');
+  }
+  s = action(s, 'answer', 'delivery', 'why');
+  s = action(s, 'check');
+  assert.equal(record(s).progress[1].complete, true);
+  return action(s, 'next');
+}
+test('Morocco tank oracle: stock minus withdrawal, delivery distinct, no invented consumption or groundwater result', () => {
+  assert.deepEqual(waterModel('base'), {
+    initial: 80,
+    withdrawal: 60,
+    remaining: 20,
+    atField: 40,
+    notAtField: 20,
+  });
+  assert.deepEqual(waterModel('repair'), {
+    initial: 80,
+    withdrawal: 50,
+    remaining: 30,
+    atField: 40,
+    notAtField: 10,
+  });
+  assert.deepEqual(waterModel('tech'), {
+    initial: 80,
+    withdrawal: 45,
+    remaining: 35,
+    atField: 40,
+    notAtField: 5,
+  });
+  for (const k of ['base', 'repair', 'tech']) {
+    const m = waterModel(k);
+    assert.equal(m.atField + m.notAtField, m.withdrawal);
+    assert.equal(m.remaining + m.withdrawal, 80);
+    assert.equal('consumption' in m, false);
+    assert.equal('groundwater' in m, false);
+  }
+  assert.deepEqual(waterModel('__proto__'), waterModel('base'));
+  for (let w = 0; w <= 80; w++) assert.equal(waterBalance(w).remaining, 80 - w);
+  for (const w of [-1, 81, 1.5, NaN, Infinity])
+    assert.throws(() => waterBalance(w), RangeError);
+});
+test('water incomplete/partial acknowledgment, bounded two failures and explicit adoption of each measure only', () => {
+  let s = start('water');
+  s = action(s, 'answer', '60', 'withdrawal');
+  s = action(s, 'check');
+  assert.equal(record(s).progress[0].failures, 0);
+  assert.match(record(s).progress[0].feedback!.text, /60 WE/);
+  s = action(s, 'answer', '60', 'rest');
+  s = action(s, 'check');
+  s = action(s, 'check');
+  assert.equal(record(s).progress[0].help, 3);
+  s = action(s, 'adopt');
+  s = action(s, 'next');
+  s = action(s, 'help', '3');
+  s = action(s, 'adopt');
+  assert.equal(record(s).progress[1].complete, false);
+  for (const k of ['repair', 'tech']) {
+    s = action(s, 'select', k);
+    s = action(s, 'adopt');
+    assert.equal(record(s).progress[1].complete, false);
+  }
+  s = action(s, 'adopt');
+  assert.equal(record(s).progress[1].complete, true);
+  assert.equal(record(s).progress[1].supported, true);
+});
+test('water investigations reject guaranteed groundwater/harvest claims; both measures and all goal combinations remain legitimately neutral', () => {
+  let s = waterDecision();
+  const d = record(s).data;
+  for (const why of ['ground', 'harvest']) {
+    const x = structuredClone(d);
+    x.why = why;
+    assert.equal(water.evaluate(1, x, 1).feedback.complete, false);
+  }
+  for (const o of water.options(d))
+    for (const goal of ['repair', 'less']) {
+      const e = evaluateStudyDecision(
+        water,
+        d,
+        {
+          proposal: o.id,
+          goal,
+          benefit: o.id,
+          limit: o.id,
+          weighted: goal !== o.goal,
+          text: '',
+        },
+        0,
+        true,
+      );
+      assert.equal(e.feedback.complete, true);
+      assert.equal(e.feedback.kind, 'neutral');
+      assert.equal(e.failed, false);
+    }
+  for (const [k, v] of [
+    ['proposal', 'tech'],
+    ['goal', 'less'],
+    ['benefit', 'tech'],
+    ['limit', 'tech'],
+  ])
+    s = action(s, 'answer', v, k);
+  s = action(s, 'check');
+  s = action(s, 'next');
+  assert.equal(record(restore(s)).step, 3);
+  s = action(s, 'back');
+  s = action(s, 'back');
+  s = action(s, 'answer', '45', 'tech');
+  assert.equal(record(s).progress[1].complete, false);
+  assert.equal(record(s).progress[2].complete, false);
+  assert.equal(record(restore(s)).step, 1);
+});
