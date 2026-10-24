@@ -2173,3 +2173,112 @@ summary span {
     grid-template-columns: 1fr;
   }
 }
+
+/* Shared regional learning surfaces: one scene, one current task. */
+.study-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  margin-top: 20px;
+}
+.study-scene {
+  width: 100%;
+  height: auto;
+  margin: 18px 0;
+}
+.study-scene text {
+  font:
+    22px Arial,
+    sans-serif;
+  fill: var(--ink);
+}
+.study-scene [role='button'] {
+  cursor: pointer;
+}
+.study-scene [role='button']:focus-visible {
+  outline: 3px solid #23599b;
+}
+.study-task {
+  display: block;
+  padding: 24px;
+  min-width: 0;
+}
+.study-task > * + * {
+  margin-top: 16px;
+}
+.study-task h2 {
+  font-size: 1.5rem;
+}
+.study-task .choice {
+  min-height: 48px;
+}
+.study-task fieldset .choice + .choice {
+  margin-top: 8px;
+}
+.study-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+.study-options .button {
+  min-height: 48px;
+}
+.study-ledger {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #edf0e3;
+  padding: 16px;
+  border-radius: 12px;
+}
+.study-ledger span {
+  display: grid;
+  gap: 8px;
+}
+.study-ledger strong {
+  font-size: 1.35rem;
+}
+.study-facts {
+  padding: 16px;
+  background: #edf0e3;
+  border-left: 4px solid #637f55;
+}
+.study-facts p {
+  margin-top: 10px;
+}
+.study-question {
+  font-size: 1.15rem;
+}
+.study-model {
+  margin-top: 24px;
+  border-top: 1px solid var(--line);
+  padding: 14px 0;
+}
+.study-model summary {
+  padding: 10px 0;
+  min-height: 44px;
+}
+.study-model p {
+  margin-top: 14px;
+}
+.study-decision {
+  display: block;
+  max-width: 840px;
+  margin: 20px auto;
+}
+.study-screen .recommendation > * + * {
+  margin-top: 16px;
+}
+@media (max-width: 850px) {
+  .study-layout {
+    grid-template-columns: 1fr;
+  }
+  .study-task {
+    display: block;
+  }
+  .study-scene {
+    max-height: 280px;
+  }
+}

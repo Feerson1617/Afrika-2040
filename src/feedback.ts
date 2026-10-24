@@ -47,7 +47,7 @@ export interface Evaluation {
   feedback: Feedback;
   failed: boolean;
 }
-const result = (
+export const result = (
   kind: FeedbackKind,
   title: string,
   text: string,
@@ -185,7 +185,7 @@ export interface Explanation {
   text: string;
   supported?: boolean;
 }
-function textNotice(persisted: boolean) {
+export function textNotice(persisted: boolean) {
   return (
     (persisted
       ? 'Deine Antwort wurde gespeichert.'

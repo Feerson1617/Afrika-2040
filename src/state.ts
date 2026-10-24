@@ -1,3 +1,9 @@
+import { reduceStudy, studyProgress } from './regions/state.ts';
+import type { StudyId, StudyState, StudyAction } from './regions/types.ts';
+import { newProgress } from './progress.ts';
+import type { Progress } from './progress.ts';
+export { newProgress } from './progress.ts';
+export type { Progress } from './progress.ts';
 import { measures } from './demand-content.ts';
 import type { DemandGoal, DemandScreen, Measure } from './demand-content.ts';
 import { demandExample, demandScenario, trialMatches } from './demand.ts';
@@ -26,7 +32,7 @@ import { tasks, visiblePersons, visibleRoutes } from './content.ts';
 import type { Cause, Effect, Evidence } from './model.ts';
 import { decisionExample } from './decision.ts';
 import type { DecisionPanel } from './decision.ts';
-import type { Decision, Explanation, Feedback } from './feedback.ts';
+import type { Decision, Explanation } from './feedback.ts';
 import {
   evaluateClosed,
   evaluateDecision,
@@ -35,25 +41,16 @@ import {
   evaluateEventFind,
   evaluateEventEffects,
 } from './feedback.ts';
-export interface Progress {
-  foot?: Foot;
-  bus?: Route;
-  person?: Person;
-  prediction?: Route;
-  routeAnswer?: Route;
-  explored: Route[];
-  failures: number;
-  help: number;
-  complete: boolean;
-  supported?: boolean;
-  feedback?: Feedback;
-  transfer?: 'yes' | 'no';
-  transferFailures: number;
-  transferFeedback?: Feedback;
-}
 export interface State {
   screen:
-    'start' | 'game' | 'end' | import('./event.ts').EventScreen | DemandScreen;
+    | 'start'
+    | 'game'
+    | 'end'
+    | 'study'
+    | import('./event.ts').EventScreen
+    | DemandScreen;
+  studies?: Partial<Record<StudyId, StudyState>>;
+  activeStudy?: StudyId;
   demand?: DemandState;
   road?: RoadState;
   step: Step;
@@ -64,15 +61,6 @@ export interface State {
   decision: Decision;
   words: boolean;
   highlight?: Person;
-}
-export function newProgress(): Progress {
-  return {
-    failures: 0,
-    help: 0,
-    complete: false,
-    transferFailures: 0,
-    explored: [],
-  };
 }
 export function initialState(): State {
   return {
@@ -133,6 +121,7 @@ export type DemandAction =
   | { type: 'demand-disadvantage'; value: DemandDecision['disadvantage'] }
   | { type: 'demand-text'; value: string };
 export type Action =
+  | StudyAction
   | DemandAction
   | RoadAction
   | {
@@ -171,6 +160,8 @@ export type Action =
   | { type: 'check' | 'use-example'; persisted: boolean };
 export function reduce(current: State, action: Action): State {
   if (action.type === 'restart') return initialState();
+  if (action.type === 'study' || current.screen === 'study')
+    return reduceStudy(current, action);
   if (
     action.type === 'episode-home' ||
     action.type === 'episode-report' ||
@@ -447,6 +438,7 @@ export function reduce(current: State, action: Action): State {
 }
 
 export function currentProgress(s: State): Progress {
+  if (s.screen === 'study' && studyProgress(s)) return studyProgress(s)!;
   if (s.demand && s.screen.startsWith('demand-')) return demandProgress(s);
   if (s.road && s.screen.startsWith('event-'))
     return s.screen === 'event-find'

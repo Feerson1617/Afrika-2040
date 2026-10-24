@@ -1,3 +1,6 @@
+import { renderStudy, studyMenu, studyHint } from './regions/ui.ts';
+import { studies } from './regions/registry.ts';
+import type { StudyAction, StudyId } from './regions/types.ts';
 import { renderDemand, demandHint } from './demand-ui.ts';
 import { renderEvent } from './event-ui.ts';
 import { changeLabel, eventExplanation, eventSituation } from './event.ts';
@@ -70,7 +73,7 @@ const arrow = `<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true
 const mark = `<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 24V9a3 3 0 013-3h12M10 25h15V10" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="7" cy="25" r="4" fill="currentColor"/><circle cx="25" cy="7" r="4" fill="currentColor"/></svg>`;
 
 function header() {
-  return `<header class="site-header"><div class="brand"><span class="brand-mark">${mark}</span><span>AFRIKA <strong>2040</strong></span></div><span class="header-caption">${state.screen === 'start' ? 'Gestalte die Zukunft' : 'Kenia <span aria-hidden="true">/</span> Nairobi'}</span></header>`;
+  return `<header class="site-header"><div class="brand"><span class="brand-mark">${mark}</span><span>AFRIKA <strong>2040</strong></span></div><span class="header-caption">${state.screen === 'study' && state.activeStudy ? `${studies[state.activeStudy]!.country} / ${studies[state.activeStudy]!.place}` : state.screen === 'start' ? 'Gestalte die Zukunft' : 'Kenia <span aria-hidden="true">/</span> Nairobi'}</span></header>`;
 }
 
 function start() {
@@ -80,6 +83,7 @@ function start() {
       <p class="intro">Du untersuchst Orte in Afrika. Menschen vor Ort haben Ideen für ihre Zukunft. Prüfe die Vorschläge. Entscheide, was du empfehlen würdest.</p>
       ${button(`${state.step > 0 ? 'Episode 1 fortsetzen' : 'Spiel starten'} ${arrow}`, 'start', 'button primary start-button')}${state.progress[5].complete || state.road?.revision.complete ? button('Bisherige Empfehlungen ansehen', 'episode-report', 'button secondary') : ''}
       <section class="episode-picker" aria-label="Episoden auswählen"><p>Episode 1: Welcher Busweg hilft wem?</p>${button(state.demand ? 'Episode 2 fortsetzen' : 'Episode 2 starten', 'demand-start', 'button secondary')}<p class="small-note">Mehr Menschen – reicht der Bus noch? Direkt spielbar. Frühere Antworten bleiben erhalten.</p></section>
+      <section class="episode-picker study-picker" aria-label="Weitere Episoden">${studyMenu({ button })}</section>
       <p class="start-location">Dein erster Ort: <strong>Nairobi, Kenia</strong></p>
     </div>
     <div class="hero-art" aria-hidden="true"><span class="art-label">Jeder Weg macht einen Unterschied.</span>
@@ -313,6 +317,7 @@ function decisionInput() {
 }
 
 function currentHint() {
+  if (state.screen === 'study') return studyHint(state);
   if (state.demand && state.screen.startsWith('demand-'))
     return demandHint(state);
   const p = currentProgress(state);
@@ -408,7 +413,10 @@ function end() {
 }
 
 function render(focusId?: string) {
-  const view = `${state.screen}-${state.step}`;
+  const view =
+    state.screen === 'study'
+      ? `study-${state.activeStudy}-${state.studies?.[state.activeStudy!]?.step}`
+      : `${state.screen}-${state.step}`;
   const openDetails =
     app.dataset.view === view
       ? [...app.querySelectorAll<HTMLDetailsElement>('details[open][id]')].map(
@@ -417,34 +425,43 @@ function render(focusId?: string) {
       : [];
   app.dataset.view = view;
   app.innerHTML =
-    state.screen === 'start'
-      ? start()
-      : state.screen === 'end'
-        ? end()
-        : state.screen.startsWith('demand-')
-          ? renderDemand(state, {
-              header: header(),
-              button,
-              radio,
-              esc,
-              feedback,
-              restartPending,
-            })
-          : state.screen.startsWith('event-')
-            ? renderEvent(state, {
+    state.screen === 'study'
+      ? renderStudy(state, {
+          header: header(),
+          button,
+          radio,
+          esc,
+          feedback,
+          restartPending,
+        })
+      : state.screen === 'start'
+        ? start()
+        : state.screen === 'end'
+          ? end()
+          : state.screen.startsWith('demand-')
+            ? renderDemand(state, {
                 header: header(),
                 button,
                 radio,
                 esc,
                 feedback,
-                help,
-                evidenceInput,
-                ownWords,
-                routeSwitch,
-                journeyExplorer,
                 restartPending,
               })
-            : game();
+            : state.screen.startsWith('event-')
+              ? renderEvent(state, {
+                  header: header(),
+                  button,
+                  radio,
+                  esc,
+                  feedback,
+                  help,
+                  evidenceInput,
+                  ownWords,
+                  routeSwitch,
+                  journeyExplorer,
+                  restartPending,
+                })
+              : game();
   for (const id of openDetails) {
     const detail = document.getElementById(id) as HTMLDetailsElement | null;
     if (detail) detail.open = true;
@@ -467,34 +484,42 @@ function dispatch(action: Action) {
     clearSession(storage);
     restartPending = false;
   } else saveSession(state, storage);
-  const navigate = [
-    'start',
-    'restart',
-    'next',
-    'back',
-    'demand-start',
-    'demand-next',
-    'demand-back',
-    'demand-reset',
-    'episode-home',
-    'episode-report',
-    'event-start',
-    'event-next',
-    'event-back',
-    'event-reset',
-  ].includes(action.type);
-  const report = [
-    'check',
-    'check-transfer',
-    'use-example',
-    'submit-ungraded',
-    'event-submit-explanation',
-  ].includes(action.type);
+  const navigate =
+    [
+      'start',
+      'restart',
+      'next',
+      'back',
+      'demand-start',
+      'demand-next',
+      'demand-back',
+      'demand-reset',
+      'episode-home',
+      'episode-report',
+      'event-start',
+      'event-next',
+      'event-back',
+      'event-reset',
+    ].includes(action.type) ||
+    (action.type === 'study' &&
+      ['start', 'next', 'back', 'home', 'reset'].includes(action.op));
+  const report =
+    [
+      'check',
+      'check-transfer',
+      'use-example',
+      'submit-ungraded',
+      'event-submit-explanation',
+    ].includes(action.type) ||
+    (action.type === 'study' &&
+      ['check', 'adopt', 'submit'].includes(action.op));
   render(
     action.type === 'decision-panel'
       ? 'decision-title'
       : navigate
-        ? (state.screen.startsWith('demand-') &&
+        ? (state.screen === 'study' &&
+            state.studies?.[state.activeStudy!]?.step !== 3) ||
+          (state.screen.startsWith('demand-') &&
             state.screen !== 'demand-end') ||
           state.screen === 'game' ||
           (state.screen.startsWith('event-') && state.screen !== 'event-end')
@@ -535,7 +560,10 @@ function dispatch(action: Action) {
       );
     announcer.textContent = `${personNames[person]}, ${routeNames[state.route]}: ${j.walk} Minuten zu Fuß plus ${j.bus} Minuten im Bus. Insgesamt ${j.total} Minuten.`;
   }
-  if (action.type === 'help') {
+  if (
+    action.type === 'help' ||
+    (action.type === 'study' && action.op === 'help')
+  ) {
     announcer.textContent = currentHint();
     document
       .querySelector<HTMLElement>('.help-panel')
@@ -546,6 +574,17 @@ function dispatch(action: Action) {
 function activate(el: Element) {
   const name = el.getAttribute('data-action')!;
   const value = el.getAttribute('data-value');
+  if (name === 'study') {
+    dispatch({
+      type: 'study',
+      op: el.getAttribute('data-op') as StudyAction['op'],
+      id: el.getAttribute('data-episode') as StudyId,
+      field: el.getAttribute('data-field') ?? undefined,
+      value: value ?? undefined,
+      persisted: saveSession(state, storage),
+    });
+    return;
+  }
   if (name === 'focus-review-goal') {
     document.getElementById('revision-criterion')?.focus();
     document
@@ -622,6 +661,17 @@ app.addEventListener('keydown', (event) => {
 });
 app.addEventListener('change', (event) => {
   const el = event.target as HTMLInputElement | HTMLSelectElement;
+  if (el.name === 'study-text') return;
+  if (el.name.startsWith('study-')) {
+    dispatch({
+      type: 'study',
+      op: 'answer',
+      field: el.name.slice(6),
+      value: el.value,
+      persisted: saveSession(state, storage),
+    });
+    return;
+  }
   if (el.name === 'demand-later') {
     dispatch({ type: 'demand-later', value: Number(el.value) });
     return;
@@ -668,6 +718,15 @@ app.addEventListener('change', (event) => {
 });
 app.addEventListener('input', (event) => {
   const el = event.target as HTMLTextAreaElement;
+  if (el.name === 'study-text') {
+    state = reduce(state, { type: 'study', op: 'text', value: el.value });
+    saveSession(state, storage);
+    document.querySelector('[data-feedback]')?.remove();
+    document.getElementById('next-step')?.remove();
+    const b = document.querySelector<HTMLButtonElement>('#study-submit');
+    if (b) b.disabled = !el.value.trim();
+    return;
+  }
   if (
     el.name !== 'text' &&
     el.name !== 'explanation-text' &&
