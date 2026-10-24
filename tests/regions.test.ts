@@ -224,3 +224,134 @@ test('empty decisions and own texts are not rated as wrong; no keyword evaluatio
     assert.equal(e.feedback.complete, false);
   }
 });
+
+import { share, shareKeys, shareModel } from '../src/regions/share.ts';
+function shareExplore() {
+  let s = start('share');
+  s = action(s, 'answer', '120', 'free');
+  s = action(s, 'answer', 'paid', 'wages');
+  s = action(s, 'check');
+  assert.equal(record(s).progress[0].complete, true);
+  return action(s, 'next');
+}
+function shareDecision(amounts = [40, 40, 40]) {
+  let s = shareExplore();
+  shareKeys.forEach((k, i) => {
+    s = action(s, 'select', k);
+    for (let j = 0; j < amounts[i]; j += 20) s = action(s, 'adjust', '20', k);
+  });
+  s = action(s, 'answer', 'tradeoff', 'why');
+  s = action(s, 'check');
+  assert.equal(record(s).progress[1].complete, true);
+  return action(s, 'next');
+}
+test('Ghana allocation oracle: wages and all costs paid before 120 is distributed; no overspending or negative allocation', () => {
+  assert.deepEqual(shareModel(share.initial()), {
+    income: 300,
+    paidWages: 100,
+    otherPaidCosts: 80,
+    available: 120,
+    used: 0,
+    left: 120,
+  });
+  let s = shareExplore();
+  for (let i = 0; i < 8; i++) s = action(s, 'adjust', '20', 'reserve');
+  assert.equal(record(s).data.allocations.reserve, 120);
+  s = action(s, 'adjust', '-20', 'payout');
+  assert.equal(record(s).data.allocations.payout, 0);
+  s = action(s, 'adjust', '20', '__proto__');
+  assert.equal(shareModel(record(s).data).left, 0);
+});
+test('all 28 allocations are valid, including single-purpose extremes; never a moral ranking or guaranteed future return', () => {
+  let count = 0;
+  for (let a = 0; a <= 120; a += 20)
+    for (let b = 0; b <= 120 - a; b += 20) {
+      const c = 120 - a - b;
+      const s = shareDecision([a, b, c]),
+        d = record(s).data;
+      count++;
+      assert.equal(share.valid(d), true);
+      assert.equal(shareModel(d).left, 0);
+      for (const o of share.options(d)) {
+        assert.equal(o.eligible, d.allocations[o.id] > 0);
+        if (!o.eligible) continue;
+        for (const goal of shareKeys) {
+          const e = evaluateStudyDecision(
+            share,
+            d,
+            {
+              proposal: o.id,
+              goal,
+              benefit: o.id,
+              limit: o.id,
+              weighted: goal !== o.id,
+              text: '',
+            },
+            0,
+            true,
+          );
+          assert.equal(e.feedback.complete, true);
+          assert.equal(e.feedback.kind, 'neutral');
+          assert.equal(e.failed, false);
+        }
+      }
+      assert.equal(record(restore(s)).step, 2);
+    }
+  assert.equal(count, 28);
+  assert.match(share.options(share.initial())[2].limit, /offen/);
+});
+test('allocation requires investigating all three purposes, complete budget and causal explanation; missing work is free and partial facts acknowledged', () => {
+  let s = start('share');
+  s = action(s, 'answer', '120', 'free');
+  s = action(s, 'check');
+  assert.equal(record(s).progress[0].feedback!.kind, 'partial');
+  assert.match(record(s).progress[0].feedback!.text, /120 GE/);
+  assert.equal(record(s).progress[0].failures, 0);
+  s = shareExplore();
+  for (let i = 0; i < 6; i++) s = action(s, 'adjust', '20', 'payout');
+  s = action(s, 'answer', 'tradeoff', 'why');
+  s = action(s, 'check');
+  assert.equal(record(s).progress[1].complete, false);
+  assert.equal(record(s).progress[1].failures, 0);
+  for (const k of shareKeys) s = action(s, 'select', k);
+  s = action(s, 'answer', 'sure', 'why');
+  s = action(s, 'check');
+  s = action(s, 'check');
+  assert.equal(record(s).progress[1].failures, 2);
+  assert.equal(record(s).progress[1].help, 3);
+  s = action(s, 'adopt');
+  assert.equal(record(s).progress[1].complete, true);
+  assert.equal(record(s).progress[1].supported, true);
+  assert.deepEqual(record(s).data.allocations, {
+    payout: 40,
+    reserve: 40,
+    training: 40,
+  });
+});
+test('editing a distribution invalidates its later product, preserves support history, other regional products and Kenyan state', () => {
+  let s = shareDecision();
+  for (const f of ['proposal', 'goal', 'benefit', 'limit'])
+    s = action(s, 'answer', 'reserve', f);
+  s = action(s, 'help', '3');
+  s = action(s, 'adopt');
+  s = action(s, 'next');
+  assert.equal(record(s).step, 3);
+  s = action(s, 'home');
+  s = reduce(s, { type: 'study', op: 'start', id: 'cocoa' });
+  s = action(s, 'pick', 'beans');
+  s = action(s, 'home');
+  s = reduce(s, { type: 'study', op: 'start', id: 'share' });
+  s = action(s, 'back');
+  s = action(s, 'back');
+  s = action(s, 'adjust', '-20', 'reserve');
+  assert.equal(record(s).progress[1].complete, false);
+  assert.equal(record(s).progress[2].complete, false);
+  assert.equal(record(s).decision.supported, undefined);
+  assert.equal(record(s).progress[2].supported, true);
+  assert.deepEqual(s.studies!.cocoa!.data.chain, ['beans']);
+  assert.equal(record(restore(s)).step, 1);
+  const damaged = structuredClone(s);
+  damaged.studies!.share!.data.allocations.payout = 121;
+  assert.equal(restore(damaged).studies!.share, undefined);
+  assert.deepEqual(restore(damaged).studies!.cocoa!.data.chain, ['beans']);
+});

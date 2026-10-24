@@ -30,7 +30,7 @@ export default defineConfig({
     {
       name: 'webkit',
       testMatch:
-        /(?:phase2b(?:-correction)?|episode2(?:-accessibility)?)\.spec\.ts/,
+        /(?:phase2b(?:-correction)?|episode2(?:-accessibility)?|regions)\.spec\.ts/,
       use: { browserName: 'webkit' },
     },
   ],

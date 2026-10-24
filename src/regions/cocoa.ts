@@ -45,7 +45,7 @@ export const cocoa: StudySpec = {
   title: 'Was wird aus dem Kakao?',
   question: 'Warum führt mehr Verarbeitung nicht automatisch zu mehr Gewinn?',
   intro:
-    'Eine erfundene Genossenschaft verkauft Kakaoprodukte. Sie möchte ihren Betrieb verbessern. Du untersuchst zwei Ideen.',
+    'Ghana liegt in Westafrika. Die Szene spielt bei Kumasi. Eine erfundene Genossenschaft verkauft Kakaoprodukte. Sie möchte ihren Betrieb verbessern. Du untersuchst zwei Ideen.',
   modelNote:
     'Erfundener Betrieb im Kontext Ghanas. Ghana hat bereits eigene Kakaoverarbeitung. Alle Geldeinheiten (GE), Einnahmen und Kosten sind erfunden. Eine Spielrunde, keine echten Preise oder Mengen. Keine Umrechnung von Bohnen in Produktmengen. Ein getrennter Investitionstopf enthält 60 GE. Einmalige Investitionen und laufende Ausgaben werden nicht vermischt. Nachfrage, Ausbildung, Energie und Transport können reale Ergebnisse beeinflussen.',
   goals: {
@@ -259,6 +259,6 @@ export const cocoa: StudySpec = {
         .map(([v, t]) => h.radio('study-why', v, t, d.why === v))
         .join('')}</fieldset>`;
     const m = cocoaModel(d.selection);
-    return `<div class="study-options">${['quality', 'process'].map((k) => control(h, k === 'quality' ? 'Lagerung testen' : 'Presse testen', 'select', k, '', 'try-' + k)).join('')}</div>${d.selection === 'base' ? '<p>Teste beide Ideen.</p>' : `<fieldset><legend>Wie viel bleibt in dieser Runde übrig?</legend>${[m.surplus, m.income, m.costs].map((n) => choice(h, d, d.selection, String(n), n + ' GE')).join('')}</fieldset>`}<p class="small-note">Schon berechnet: ${d.checked.length} von 2 Ideen.</p>`;
+    return `<div class="study-options">${['quality', 'process'].map((k) => control(h, k === 'quality' ? 'Lagerung testen' : 'Presse testen', 'select', k, '', 'try-' + k)).join('')}</div>${d.selection === 'base' ? '<p>Teste beide Ideen.</p>' : `<p class="study-inline-ledger">${m.income} GE Einnahmen − ${m.costs} GE laufende Ausgaben.</p><fieldset><legend>Wie viel bleibt in dieser Runde übrig?</legend>${[m.surplus, m.income, m.costs].map((n) => choice(h, d, d.selection, String(n), n + ' GE')).join('')}</fieldset>`}<p class="small-note">Schon berechnet: ${d.checked.length} von 2 Ideen.</p>`;
   },
 };
