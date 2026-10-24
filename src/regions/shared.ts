@@ -184,7 +184,7 @@ export function decisionExample(
 export function product(spec: StudySpec, data: StudyData, d: StudyDecision) {
   const o = optionOf(spec, data, d);
   return o
-    ? `Ich empfehle: ${o.label}. Mein Beleg: ${o.benefit} Aber: ${o.limit} ${weighting(spec, data, d)}`
+    ? `Ich empfehle: ${o.label}. Mein Beleg: ${o.benefit} Aber: ${o.limit} ${weighting(spec, data, d)} ${spec.conclusion?.(data) ?? ''}`
     : '';
 }
 export const control = (

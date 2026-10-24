@@ -176,7 +176,8 @@ export const water: StudySpec = {
     if (step === 0) d.answers = {};
     else {
       d.selection = 'base';
-      d.answers = {};
+      delete d.answers.repair;
+      delete d.answers.tech;
       d.explored = [];
       d.checked = [];
       d.why = undefined;

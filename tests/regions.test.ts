@@ -487,3 +487,157 @@ test('water investigations reject guaranteed groundwater/harvest claims; both me
   assert.equal(record(s).progress[2].complete, false);
   assert.equal(record(restore(s)).step, 1);
 });
+
+import { area, areaModel } from '../src/regions/area.ts';
+import { product } from '../src/regions/shared.ts';
+function areaExplore() {
+  let s = start('area');
+  s = action(s, 'select', 'same');
+  for (const [k, v] of [
+    ['single', '45'],
+    ['saving', '15'],
+  ])
+    s = action(s, 'answer', v, k);
+  s = action(s, 'check');
+  assert.equal(record(s).progress[0].complete, true);
+  return action(s, 'next');
+}
+function areaDecision() {
+  let s = areaExplore();
+  for (const [k, v] of [
+    ['same', '45'],
+    ['extra', '65'],
+  ]) {
+    s = action(s, 'select', k);
+    s = action(s, 'answer', v, k);
+    s = action(s, 'check');
+  }
+  s = action(s, 'answer', 'growth', 'why');
+  s = action(s, 'check');
+  assert.equal(record(s).progress[1].complete, true);
+  return action(s, 'next');
+}
+test('Morocco area oracle: 60 to 45 on same field, extra smaller field adds 20 and total becomes 65, not 45', () => {
+  assert.deepEqual(areaModel('base'), {
+    initial: 80,
+    withdrawal: 60,
+    remaining: 20,
+    first: 60,
+    extra: 0,
+  });
+  assert.deepEqual(areaModel('same'), {
+    initial: 80,
+    withdrawal: 45,
+    remaining: 35,
+    first: 45,
+    extra: 0,
+  });
+  assert.deepEqual(areaModel('extra'), {
+    initial: 80,
+    withdrawal: 65,
+    remaining: 15,
+    first: 45,
+    extra: 20,
+  });
+  assert.equal(areaModel('base').first - areaModel('extra').first, 15);
+  assert.equal(areaModel('extra').withdrawal - areaModel('base').withdrawal, 5);
+});
+test('area must be actively investigated; right single-field calculation does not confirm a false claim about overall savings', () => {
+  let s = start('area');
+  for (const [k, v] of [
+    ['single', '45'],
+    ['saving', '15'],
+  ])
+    s = action(s, 'answer', v, k);
+  s = action(s, 'check');
+  assert.equal(record(s).progress[0].complete, false);
+  assert.equal(record(s).progress[0].failures, 0);
+  s = action(s, 'select', 'same');
+  s = action(s, 'check');
+  s = action(s, 'next');
+  s = action(s, 'select', 'extra');
+  s = action(s, 'answer', '45', 'extra');
+  s = action(s, 'check');
+  s = action(s, 'check');
+  assert.equal(record(s).progress[1].failures, 2);
+  assert.equal(record(s).progress[1].complete, false);
+  s = action(s, 'adopt');
+  assert.equal(record(s).data.answers.extra, '65');
+  assert.equal(record(s).progress[1].complete, false);
+  s = action(s, 'select', 'same');
+  s = action(s, 'adopt');
+  s = action(s, 'adopt');
+  assert.equal(record(s).progress[1].complete, true);
+  for (const why of ['always', 'free']) {
+    const d = structuredClone(record(s).data);
+    d.why = why;
+    assert.equal(area.evaluate(1, d, 1).feedback.complete, false);
+  }
+});
+test('both area plans can be justified with every goal; complete product explains individual saving versus total withdrawal', () => {
+  const s = areaDecision(),
+    d = record(s).data;
+  for (const o of area.options(d))
+    for (const goal of ['save', 'area']) {
+      const dec = {
+        proposal: o.id,
+        goal,
+        benefit: o.id,
+        limit: o.id,
+        weighted: goal !== o.goal,
+        text: '',
+      };
+      const e = evaluateStudyDecision(area, d, dec, 0, true);
+      assert.equal(e.feedback.complete, true);
+      assert.equal(e.feedback.kind, 'neutral');
+      const text = product(area, d, dec);
+      assert.match(text, /mehr Flächen/);
+      assert.match(text, /65 statt früher 60/);
+    }
+});
+test('both Morocco episodes reset the experiment without losing already correct baseline answers; reload preserves progress', () => {
+  for (const build of [waterDecision, areaDecision]) {
+    let s = build();
+    s = action(s, 'back');
+    s = action(s, 'reset');
+    assert.equal(record(s).progress[0].complete, true);
+    assert.equal(record(s).progress[1].complete, false);
+    s = restore(s);
+    assert.equal(record(s).step, 1);
+    assert.equal(record(s).progress[0].complete, true);
+    assert.equal(record(s).data.checked.length, 0);
+  }
+});
+test('area edits invalidate current evidence and priority; unrelated Ghana and Kenya records remain intact', () => {
+  let s = shareDecision([120, 0, 0]);
+  s = action(s, 'home');
+  const ghana = structuredClone(s.studies!.share);
+  s = reduce(s, { type: 'study', op: 'start', id: 'area' });
+  s = action(s, 'help', '3');
+  s = action(s, 'adopt');
+  s = action(s, 'next');
+  for (const k of ['same', 'extra']) {
+    s = action(s, 'select', k);
+    s = action(s, 'help', '3');
+    s = action(s, 'adopt');
+  }
+  s = action(s, 'adopt');
+  s = action(s, 'next');
+  for (const [k, v] of [
+    ['proposal', 'extra'],
+    ['goal', 'save'],
+    ['benefit', 'extra'],
+    ['limit', 'extra'],
+    ['weighted', 'yes'],
+  ])
+    s = action(s, 'answer', v, k);
+  s = action(s, 'check');
+  s = action(s, 'next');
+  assert.equal(record(restore(s)).step, 3);
+  s = action(s, 'back');
+  s = action(s, 'answer', 'same', 'proposal');
+  assert.equal(record(s).progress[2].complete, false);
+  assert.equal(record(s).decision.weighted, undefined);
+  assert.deepEqual(s.studies!.share, ghana);
+  assert.equal(s.step, 0);
+});

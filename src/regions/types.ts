@@ -86,6 +86,7 @@ export interface StudySpec {
   modelNote: string;
   goals: Record<string, string>;
   terms: [string, string][][];
+  conclusion?(data: StudyData): string;
   initial(): StudyData;
   options(data: StudyData): StudyOption[];
   change(data: StudyData, action: StudyAction): StudyData;
