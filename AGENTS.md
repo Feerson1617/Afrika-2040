@@ -11,6 +11,6 @@
 9. Schülerantworten niemals an externe Bewertungsdienste übertragen. Freitext nicht anhand von Schlüsselwörtern bewerten. Unsicheres transparent unbewertet lassen. Speicherung nur im aktuellen Browser-Tab, mit fehlertoleranter Speicherbehandlung und Löschung beim Neustart.
 10. Pro Phase technische, funktionale und didaktische Prüfung dokumentieren. Modell-/Feedbacktests, Produktionsbuild, echte Browserdurchläufe, Touch-/Tastaturtests und Screenshots gehören zur Abnahme. Eigene Tests ersetzen keine unabhängige Prüfung durch ChatGPT/Work oder einen Unterrichtstest.
 
-Curriculare Grundlage und Abwägungen: `docs/curriculum.md`. Architektur und Prüfkriterien: `docs/development.md`. Aktuelle Übergabe: `docs/combined-handover.md`; Abschnitt A: `docs/phase2b-correction-gate.md`.
+Curriculare Grundlage und Abwägungen: `docs/curriculum.md`. Architektur und Prüfkriterien: `docs/development.md`. Aktuelle Übergabe: `docs/episode2-correction.md`; vorheriges Gesamtpaket: `docs/combined-handover.md`; Abschnitt A: `docs/phase2b-correction-gate.md`.
 
 Arbeite im vorhandenen isolierten Checkout. Keine zusätzlichen Git-Worktrees ohne ausdrücklichen Wunsch. Entwicklungsbranch verwenden und bestehende Änderungen erhalten. Keine Arbeitsblätter oder Lehrkräftehandreichungen in Phase 1, Phase 2A oder Phase 2B erstellen.

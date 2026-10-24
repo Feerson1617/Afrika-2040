@@ -1,0 +1,157 @@
+[WebServer] (node:107301) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:107326) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 2 tests using 2 workers
+
+(node:107339) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:107338) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/2] [chromium] › tests/browser/episode2.spec.ts:544:1 › Episode 2 start, comparison, trial, open conflict, supported product pass scoped axe rules
+[2/2] [chromium] › tests/browser/episode2-accessibility.spec.ts:92:3 › Episode 2 accessible SVG names and all bidirectional state changes on desktop
+  1) [chromium] › tests/browser/episode2.spec.ts:544:1 › Episode 2 start, comparison, trial, open conflict, supported product pass scoped axe rules 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 60
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure that elements labelled through their content must have their visible text as part of their accessible name",
+    +     "help": "Elements must have their visible text as part of their accessible name",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/label-content-name-mismatch?application=playwright",
+    +     "id": "label-content-name-mismatch",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": null,
+    +             "id": "label-content-name-mismatch",
+    +             "impact": "serious",
+    +             "message": "Text inside the element is not included in the accessible name",
+    +             "relatedNodes": Array [],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Text inside the element is not included in the accessible name",
+    +         "html": "<g class=\"demand-map-target\" id=\"demand-map-path\" role=\"button\" tabindex=\"0\" data-action=\"demand-measure\" data-value=\"path\" aria-label=\"Fußweg: kürzere Verbindung testen\" aria-pressed=\"false\">",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "#demand-map-path",
+    +         ],
+    +       },
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": null,
+    +             "id": "label-content-name-mismatch",
+    +             "impact": "serious",
+    +             "message": "Text inside the element is not included in the accessible name",
+    +             "relatedNodes": Array [],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Text inside the element is not included in the accessible name",
+    +         "html": "<g class=\"demand-map-target\" id=\"demand-map-bus\" role=\"button\" tabindex=\"0\" data-action=\"demand-measure\" data-value=\"bus\" aria-label=\"Bus: zusätzliche Fahrt testen\" aria-pressed=\"true\">",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           "#demand-map-bus",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.semantics",
+    +       "wcag21a",
+    +       "wcag253",
+    +       "EN-301-549",
+    +       "EN-9.2.5.3",
+    +       "RGAAv4",
+    +       "RGAA-6.1.5",
+    +     ],
+    +   },
+    + ]
+
+      547 |   const audit = async () => {
+      548 |     const r = await auditAccessibility(page);
+    > 549 |     expect(r.violations).toEqual([]);
+          |                          ^
+      550 |   };
+      551 |   await page.goto('/');
+      552 |   await audit();
+        at audit (/workspace/Afrika-2040/tests/browser/episode2.spec.ts:549:26)
+        at /workspace/Afrika-2040/tests/browser/episode2.spec.ts:559:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-start-c-8ec93-oduct-pass-scoped-axe-rules-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/episode2-Episode-2-start-c-8ec93-oduct-pass-scoped-axe-rules-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-start-c-8ec93-oduct-pass-scoped-axe-rules-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/episode2-Episode-2-start-c-8ec93-oduct-pass-scoped-axe-rules-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  2) [chromium] › tests/browser/episode2-accessibility.spec.ts:92:3 › Episode 2 accessible SVG names and all bidirectional state changes on desktop 
+
+    Error: expect(locator).toHaveAccessibleName(expected) failed
+
+    Locator: locator('#demand-map-path')
+    Expected pattern: /Neue Verbindung\?/
+    Received string:  "Fußweg: kürzere Verbindung testen"
+    Timeout: 5000ms
+
+    Call log:
+      - Expect "toHaveAccessibleName" locator('#demand-map-path') with timeout 5000ms
+      - waiting for locator('#demand-map-path')
+        14 × locator resolved to <g tabindex="0" role="button" data-value="path" id="demand-map-path" aria-pressed="false" class="demand-map-target" data-action="demand-measure" aria-label="Fußweg: kürzere Verbindung testen">…</g>
+           - unexpected value "Fußweg: kürzere Verbindung testen"
+
+
+      61 |     // This computes the accessible name, following aria-labelledby precedence;
+      62 |     // it does not merely compare the literal aria-label attribute.
+    > 63 |     await expect(control).toHaveAccessibleName(contains(label));
+         |                           ^
+      64 |     await expect(
+      65 |       page.getByRole('button', { name: contains(label) }),
+      66 |     ).toHaveCount(1);
+        at verify (/workspace/Afrika-2040/tests/browser/episode2-accessibility.spec.ts:63:27)
+        at /workspace/Afrika-2040/tests/browser/episode2-accessibility.spec.ts:114:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/episode2-accessibility-Epi-a8a10-al-state-changes-on-desktop-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/episode2-accessibility-Epi-a8a10-al-state-changes-on-desktop-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/episode2-accessibility-Epi-a8a10-al-state-changes-on-desktop-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/episode2-accessibility-Epi-a8a10-al-state-changes-on-desktop-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  2 failed
+    [chromium] › tests/browser/episode2-accessibility.spec.ts:92:3 › Episode 2 accessible SVG names and all bidirectional state changes on desktop 
+    [chromium] › tests/browser/episode2.spec.ts:544:1 › Episode 2 start, comparison, trial, open conflict, supported product pass scoped axe rules 

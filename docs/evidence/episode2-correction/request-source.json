@@ -1,0 +1,17 @@
+{
+  "file": "Korrekturprompt-Kenia-Episode2.txt",
+  "bytes": 4584,
+  "sha256": "1b2f40fcd721e7c8f1bc83b51acbeafab44897712c628e55f3b390100e0041d9",
+  "base_commit": "d2a3c7aa6c075040e7831b76776ad8a3dd4e4331",
+  "user_supplement": {
+    "all_wcag_A_AA_tags": true,
+    "computed_names_not_aria_label_only": true,
+    "visible_labels": [
+      "Neue Verbindung?",
+      "4 Min. · neuer Weg",
+      "2 Fahrten / Std.",
+      "3 Fahrten / Std."
+    ],
+    "retain_learning_actions_and_no_new_mechanics": true
+  }
+}

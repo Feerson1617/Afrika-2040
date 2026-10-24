@@ -63,6 +63,10 @@ export function demandHint(s: State, level = demandProgress(s).help) {
 function renderDemandMap(d: DemandState, active: boolean) {
   const v = demandScenario(d.measure),
     shortcut = d.measure === 'path';
+  const pathLabel = shortcut
+    ? `${v.walk} Min. · neuer Weg`
+    : 'Neue Verbindung?';
+  const busLabel = `${v.trips} Fahrten / Std.`;
   const line =
     d.route === 'north'
       ? 'M390 150L510 60L660 150'
@@ -71,16 +75,16 @@ function renderDemandMap(d: DemandState, active: boolean) {
         : 'M390 150L660 150';
   const click = (measure: Measure) =>
     active
-      ? `role="button" tabindex="0" data-action="demand-measure" data-value="${measure}" aria-label="${measure === 'bus' ? 'Bus: zusätzliche Fahrt testen' : 'Fußweg: kürzere Verbindung testen'}" aria-pressed="${d.measure === measure}"`
+      ? `role="button" tabindex="0" data-action="demand-measure" data-value="${measure}" aria-label="${measure === 'bus' ? `${busLabel} Zusätzliche Fahrt testen` : `${pathLabel} Kürzere Verbindung testen`}" aria-pressed="${d.measure === measure}"`
       : '';
   return `<svg class="demand-map" viewBox="0 0 760 330" role="${active ? 'group' : 'img'}" aria-labelledby="demand-map-title demand-map-desc"><title id="demand-map-title">Der neue Wohnbereich und die Haltestelle Platz</title><desc id="demand-map-desc">Erfundener Ausschnitt im bekannten Viertel. Acht neue Nachbarn gehen zum Platz. ${shortcut ? 'Die neue Verbindung' : 'Der bisherige Fußweg'} dauert ${v.walk} Minuten. Von dort fährt ${d.route ? routeNames[d.route] : 'die gewählte Linie'} ins Zentrum.</desc><rect x="10" y="10" width="740" height="310" rx="25" fill="#edf0e3"/>
   <path d="M90 160L150 270L300 270L390 150" fill="none" stroke="${shortcut ? '#99a392' : '#45654f'}" stroke-width="6" stroke-dasharray="9 9"/>
-  <g class="demand-map-target" id="demand-map-path" ${click('path')}><path d="M90 160L390 150" stroke="transparent" stroke-width="72"/><path d="M90 160L390 150" fill="none" stroke="${shortcut ? '#45654f' : '#a6aea0'}" stroke-width="${shortcut ? '7' : '3'}" stroke-dasharray="${shortcut ? '9 7' : '4 9'}"/><text x="240" y="125" text-anchor="middle">${shortcut ? v.walk + ' Min. · neuer Weg' : 'Neue Verbindung?'}</text></g>
+  <g class="demand-map-target" id="demand-map-path" ${click('path')}><path d="M90 160L390 150" stroke="transparent" stroke-width="72"/><path d="M90 160L390 150" fill="none" stroke="${shortcut ? '#45654f' : '#a6aea0'}" stroke-width="${shortcut ? '7' : '3'}" stroke-dasharray="${shortcut ? '9 7' : '4 9'}"/><text x="240" y="125" text-anchor="middle">${pathLabel}</text></g>
   <path d="${line}" fill="none" stroke="#a44d2e" stroke-width="9"/>
   ${d.route && d.route !== 'direct' ? `<circle cx="510" cy="${d.route === 'north' ? '60' : '250'}" r="9" fill="#fffef8" stroke="#a44d2e" stroke-width="4"/><text x="510" y="${d.route === 'north' ? '40' : '285'}" text-anchor="middle">${d.route === 'north' ? 'Nord' : 'Süd'}</text>` : ''}
   <g transform="translate(50 142)"><path d="M0 0L28 -25L56 0V42H0Z" fill="#e4c36c" stroke="#68592c" stroke-width="2"/><path d="M17 42V16H37V42" fill="#f7f6ee"/></g><text x="125" y="45" text-anchor="middle">Neuer Wohnbereich</text><text x="125" y="75" text-anchor="middle">${model.newcomers} weitere Personen</text>
   <circle cx="390" cy="150" r="14" fill="#fffef8" stroke="#a44d2e" stroke-width="5"/><text x="390" y="190" text-anchor="middle">Haltestelle Platz</text><circle cx="660" cy="150" r="14" fill="#fffef8" stroke="#a44d2e" stroke-width="5"/><text x="660" y="190" text-anchor="middle">Zentrum</text>
-  <g class="demand-map-target" id="demand-map-bus" ${click('bus')}><rect x="568" y="202" width="115" height="43" rx="9" fill="#244f40"/><rect x="580" y="210" width="83" height="15" rx="3" fill="#edf0e3"/><circle cx="590" cy="248" r="7" fill="#253e34"/><circle cx="657" cy="248" r="7" fill="#253e34"/><text x="625" y="310" text-anchor="middle">${v.trips} Fahrten / Std.</text></g>
+  <g class="demand-map-target" id="demand-map-bus" ${click('bus')}><rect x="568" y="202" width="115" height="43" rx="9" fill="#244f40"/><rect x="580" y="210" width="83" height="15" rx="3" fill="#edf0e3"/><circle cx="590" cy="248" r="7" fill="#253e34"/><circle cx="657" cy="248" r="7" fill="#253e34"/><text x="625" y="310" text-anchor="middle">${busLabel}</text></g>
   <text x="220" y="310" text-anchor="middle">${shortcut ? 'Alter Weg: ' + model.walk + ' Min.' : 'Bisher: ' + v.walk + ' Min.'}</text></svg>`;
 }
 function quantities(d: DemandState, first: boolean) {

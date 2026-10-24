@@ -1,5 +1,5 @@
 import { test, expect, type Page, type Locator } from '@playwright/test';
-import AxeBuilder from '@axe-core/playwright';
+import { auditAccessibility } from './accessibility.ts';
 import { writeFileSync } from 'node:fs';
 import { evidencePath } from './artifacts.ts';
 import {
@@ -511,9 +511,7 @@ test('Phase2B semantic context, new map, comparison, open conflict, support and 
 }) => {
   await eventStart(page, 'south');
   const scan = async () => {
-    const r = await new AxeBuilder({ page })
-      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-      .analyze();
+    const r = await auditAccessibility(page);
     expect(r.violations).toEqual([]);
   };
   await scan();
@@ -545,9 +543,7 @@ test('P3-A selection context has a named group role; pupil language stays simple
   await expect(
     page.getByRole('group', { name: 'Deine aktuelle Auswahl', exact: true }),
   ).toBeVisible();
-  const results = await new AxeBuilder({ page })
-    .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-    .analyze();
+  const results = await auditAccessibility(page);
   expect(results.violations).toEqual([]);
   await expect(page.locator('main')).not.toContainText('Urteilskompetenz');
 });

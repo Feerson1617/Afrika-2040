@@ -1,0 +1,39 @@
+[WebServer] (node:114810) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:114836) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 1 test using 1 worker
+
+(node:114848) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/1] [webkit] › tests/browser/episode2-accessibility.spec.ts:97:3 › Episode 2 accessible SVG names and all bidirectional state changes on desktop
+  1) [webkit] › tests/browser/episode2-accessibility.spec.ts:97:3 › Episode 2 accessible SVG names and all bidirectional state changes on desktop 
+
+    Error: browserType.launch: Executable doesn't exist at /home/agent/.cache/ms-playwright/webkit-2370/pw_run.sh
+    ╔════════════════════════════════════════════════════════════╗
+    ║ Looks like Playwright was just installed or updated.       ║
+    ║ Please run the following command to download new browsers: ║
+    ║                                                            ║
+    ║     npx playwright install                                 ║
+    ║                                                            ║
+    ║ <3 Playwright Team                                         ║
+    ╚════════════════════════════════════════════════════════════╝
+
+    Error Context: ../scratch/episode2-correction-webkit/episode2-accessibility-Epi-a8a10-al-state-changes-on-desktop-webkit/error-context.md
+
+    attachment #2: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../scratch/episode2-correction-webkit/episode2-accessibility-Epi-a8a10-al-state-changes-on-desktop-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../scratch/episode2-correction-webkit/episode2-accessibility-Epi-a8a10-al-state-changes-on-desktop-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  1 failed
+    [webkit] › tests/browser/episode2-accessibility.spec.ts:97:3 › Episode 2 accessible SVG names and all bidirectional state changes on desktop 

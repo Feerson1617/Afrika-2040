@@ -1,5 +1,5 @@
 import { test, expect, type Page } from '@playwright/test';
-import AxeBuilder from '@axe-core/playwright';
+import { auditAccessibility } from './accessibility.ts';
 import { writeFileSync } from 'node:fs';
 import { evidencePath } from './artifacts.ts';
 import {
@@ -219,9 +219,7 @@ for (const device of [
     await page
       .getByRole('button', { name: 'Dieses Beispiel übernehmen' })
       .tap();
-    const axe = await new AxeBuilder({ page })
-      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-      .analyze();
+    const axe = await auditAccessibility(page);
     expect(axe.violations).toEqual([]);
     writeFileSync(
       evidencePath(`correction-${device.name}-metrics.json`),

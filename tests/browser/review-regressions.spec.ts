@@ -1,7 +1,7 @@
 import { evidencePath } from './artifacts.ts';
 import { chooseRoute, setGoal, ownTextPanel, panel, selectEvidence, weightSelected } from './phase2a-helpers.ts';
 import { test, expect, type Page, type Locator } from '@playwright/test';
-import AxeBuilder from '@axe-core/playwright';
+import { auditAccessibility } from './accessibility.ts';
 
 import { key, routeChoices as choices, finish2A } from './phase2a-helpers.ts';
 
@@ -130,9 +130,7 @@ for (const route of ['direct', 'north'] as const) {
       path: evidencePath(`review-R2-${route}-explanation.png`),
       fullPage: true,
     });
-    const axe = await new AxeBuilder({ page })
-      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-      .analyze();
+    const axe = await auditAccessibility(page);
     expect(axe.violations).toEqual([]);
     await page
       .getByRole('button', { name: 'Dieses Beispiel übernehmen' })

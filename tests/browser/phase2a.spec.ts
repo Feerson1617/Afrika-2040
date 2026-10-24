@@ -1,7 +1,7 @@
 import { evidencePath } from './artifacts.ts';
 import { chooseRoute, setGoal, ownTextPanel, panel, selectEvidence, weightSelected, openDecisionMap, nativeFirstOption } from './phase2a-helpers.ts';
 import { test, expect, type Page } from '@playwright/test';
-import AxeBuilder from '@axe-core/playwright';
+import { auditAccessibility } from './accessibility.ts';
 import {
   fullToDecision,
   finish2A,
@@ -240,9 +240,7 @@ test('Phase2A explanation: partial feedback, two errors, accessible support and 
     path: evidencePath('explanation-support.png'),
     fullPage: true,
   });
-  const results = await new AxeBuilder({ page })
-    .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-    .analyze();
+  const results = await auditAccessibility(page);
   expect(results.violations).toEqual([]);
   await page
     .getByRole('button', { name: 'Dieses Beispiel übernehmen' })
@@ -399,9 +397,7 @@ test('Phase2A new map and recommendation remain accessible with expanded words a
       await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
       await page.getByRole('button', { name: 'Zum Abschluss' }).click();
     }
-    const result = await new AxeBuilder({ page })
-      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-      .analyze();
+    const result = await auditAccessibility(page);
     expect(result.violations, stage).toEqual([]);
   }
 });

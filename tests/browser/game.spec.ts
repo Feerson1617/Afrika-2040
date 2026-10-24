@@ -2,7 +2,7 @@ import { evidencePath } from './artifacts.ts';
 import { chooseRoute, ownTextPanel, panel, selectEvidence, weightSelected } from './phase2a-helpers.ts';
 import { finish2A } from './phase2a-helpers.ts';
 import { test, expect, type Page } from '@playwright/test';
-import AxeBuilder from '@axe-core/playwright';
+import { auditAccessibility } from './accessibility.ts';
 
 async function start(page: Page) {
   await page.goto('/');
@@ -378,9 +378,7 @@ test('axe finds no WCAG A/AA issues in start, task, expanded help, decision and 
       await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
       await page.getByRole('button', { name: 'Zum Abschluss' }).click();
     }
-    const results = await new AxeBuilder({ page })
-      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-      .analyze();
+    const results = await auditAccessibility(page);
     expect(results.violations, stage).toEqual([]);
   }
 });
@@ -390,9 +388,7 @@ test('all closed feedback colors and the neutral decision remain accessible', as
 }) => {
   await start(page);
   const scan = async () => {
-    const result = await new AxeBuilder({ page })
-      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-      .analyze();
+    const result = await auditAccessibility(page);
     expect(result.violations).toEqual([]);
   };
   await page.getByRole('radio', { name: /Nach Nord/ }).check();

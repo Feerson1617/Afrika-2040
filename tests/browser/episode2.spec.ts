@@ -1,5 +1,5 @@
 import { test, expect, type Page, type Locator } from '@playwright/test';
-import AxeBuilder from '@axe-core/playwright';
+import { auditAccessibility } from './accessibility.ts';
 import { writeFileSync } from 'node:fs';
 import { evidencePath } from './artifacts.ts';
 import {
@@ -427,47 +427,64 @@ test('Episode 2 uses an existing first recommendation, keeps it through reload/b
   await expect(page.locator('.recommendation')).toContainText('Über Nord');
   expect((await saved(page)).decision).toEqual(firstReport);
 });
-test('Episode 2 native keyboard alone operates complete direct entry, real map controls, choices and report', async ({
-  page,
-}) => {
-  await page.goto('/');
-  const press = async (selector: string, key = 'Enter') => {
-    await page.locator(selector).focus();
-    await page.keyboard.press(key);
-  };
-  await press('[data-action="demand-start"]');
-  await press('#demand-route-north', 'Space');
-  await expect(page.locator('#demand-route-north')).toBeChecked();
-  await press('#demand-view-now');
-  await press('#demand-enough-no', 'Space');
-  await press('#demand-later-4', 'Space');
-  await press('#check-answer');
-  await press('#next-step');
-  for (const measure of ['bus', 'path'] as const) {
-    await press('#demand-map-' + measure, 'Space');
-    await expect(page.locator('#demand-try-' + measure)).toHaveAttribute(
-      'aria-pressed',
-      'true',
-    );
+for (const recommendation of ['bus', 'path'] as const)
+  test(`Episode 2 native keyboard alone completes ${recommendation} with real map controls and reload`, async ({
+    page,
+  }) => {
+    await page.goto('/');
+    const press = async (selector: string, key = 'Enter') => {
+      await page.locator(selector).focus();
+      await page.keyboard.press(key);
+    };
+    await press('[data-action="demand-start"]');
+    await press('#demand-route-north', 'Space');
+    await expect(page.locator('#demand-route-north')).toBeChecked();
+    await press('#demand-view-now');
+    await press('#demand-enough-no', 'Space');
+    await press('#demand-later-4', 'Space');
+    await press('#check-answer');
+    await press('#next-step');
+    for (const measure of ['bus', 'path'] as const) {
+      await press('#demand-map-' + measure, 'Space');
+      await expect(page.locator('#demand-try-' + measure)).toHaveAttribute(
+        'aria-pressed',
+        'true',
+      );
+      await press(
+        '#demand-capacity-' + (measure === 'bus' ? 'more' : 'same'),
+        'Space',
+      );
+      await press(
+        '#demand-walk-' + (measure === 'bus' ? 'same' : 'shorter'),
+        'Space',
+      );
+      await press('#check-answer');
+    }
+    await press('#next-step');
+    await press('#demand-proposal-' + recommendation, 'Space');
     await press(
-      '#demand-capacity-' + (measure === 'bus' ? 'more' : 'same'),
+      '#demand-goal-' + (recommendation === 'bus' ? 'capacity' : 'access'),
       'Space',
     );
     await press(
-      '#demand-walk-' + (measure === 'bus' ? 'same' : 'shorter'),
+      '#demand-advantage-' + (recommendation === 'bus' ? 'seats' : 'walk'),
+      'Space',
+    );
+    await press(
+      '#demand-disadvantage-' +
+        (recommendation === 'bus' ? 'long-walk' : 'not-enough'),
       'Space',
     );
     await press('#check-answer');
-  }
-  await press('#next-step');
-  await press('#demand-proposal-path', 'Space');
-  await press('#demand-goal-access', 'Space');
-  await press('#demand-advantage-walk', 'Space');
-  await press('#demand-disadvantage-not-enough', 'Space');
-  await press('#check-answer');
-  await press('#next-step');
-  await expect(page.locator('.demand-product')).toContainText('4 Personen');
-});
+    await press('#next-step');
+    await expect(page.locator('.demand-product')).toContainText(
+      recommendation === 'bus' ? '12 Minuten' : '4 Personen',
+    );
+    await page.reload();
+    await expect(page.locator('.demand-product')).toContainText(
+      recommendation === 'bus' ? '12 Minuten' : '4 Personen',
+    );
+  });
 test('Episode 2 blocked storage permits a complete supported flow, word help and confirmed restart', async ({
   page,
 }) => {
@@ -545,9 +562,7 @@ test('Episode 2 start, comparison, trial, open conflict, supported product pass 
   page,
 }) => {
   const audit = async () => {
-    const r = await new AxeBuilder({ page })
-      .withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'])
-      .analyze();
+    const r = await auditAccessibility(page);
     expect(r.violations).toEqual([]);
   };
   await page.goto('/');
