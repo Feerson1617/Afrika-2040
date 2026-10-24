@@ -20,7 +20,9 @@ export interface StudyDecision {
   supported?: boolean;
   ungraded?: boolean;
 }
+export type StudyPanel = 'plan' | 'benefit' | 'limit';
 export interface StudyState {
+  panel?: StudyPanel;
   step: 0 | 1 | 2 | 3;
   data: StudyData;
   progress: Progress[];
@@ -29,6 +31,7 @@ export interface StudyState {
 export interface StudyAction {
   type: 'study';
   op:
+    | 'panel'
     | 'start'
     | 'select'
     | 'pick'

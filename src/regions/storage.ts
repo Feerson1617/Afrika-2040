@@ -42,6 +42,8 @@ export function restoreStudies(
         )
       )
         continue;
+      if (!['plan', 'benefit', 'limit'].includes(r.panel ?? 'plan'))
+        delete r.panel;
       for (const step of [0, 1] as const)
         r.progress[step].complete =
           r.progress[step].complete &&

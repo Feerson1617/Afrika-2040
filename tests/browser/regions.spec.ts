@@ -1,28 +1,29 @@
+import { studyClick } from './study-helpers.ts';
 import { test, expect, type Page } from '@playwright/test';
 import { auditAccessibility } from './accessibility.ts';
 import { evidencePath } from './artifacts.ts';
 async function begin(page: Page, n = 3) {
   await page.goto('/');
-  await page.locator('#episode-' + n).click();
+  await studyClick(page, '#episode-' + n, 'click');
 }
 async function chain(page: Page) {
   for (const id of ['beans', 'roast', 'mass', 'press'])
-    await page.locator('#chain-' + id).click();
-  await page.locator('#check-answer').click();
-  await page.locator('#next-step').click();
+    await studyClick(page, '#chain-' + id, 'click');
+  await studyClick(page, '#check-answer', 'click');
+  await studyClick(page, '#next-step', 'click');
 }
 async function trials(page: Page) {
   for (const [id, value] of [
     ['quality', '90'],
     ['process', '75'],
   ]) {
-    await page.locator('#try-' + id).click();
-    await page.locator(`#study-${id}-${value}`).check();
-    await page.locator('#check-answer').click();
+    await studyClick(page, '#try-' + id, 'click');
+    await studyClick(page, `#study-${id}-${value}`, 'check');
+    await studyClick(page, '#check-answer', 'click');
   }
-  await page.locator('#study-why-costs').check();
-  await page.locator('#check-answer').click();
-  await page.locator('#next-step').click();
+  await studyClick(page, '#study-why-costs', 'check');
+  await studyClick(page, '#check-answer', 'click');
+  await studyClick(page, '#next-step', 'click');
 }
 for (const measure of ['quality', 'process'])
   test(`Ghana A1 full ${measure}: production, both trials, explanation, decision, reload and independent entry`, async ({
@@ -39,10 +40,10 @@ for (const measure of ['quality', 'process'])
       ['benefit', measure],
       ['limit', measure],
     ])
-      await page.locator(`#study-${field}-${value}`).check();
-    await page.locator('#check-answer').click();
+      await studyClick(page, `#study-${field}-${value}`, 'check');
+    await studyClick(page, '#check-answer', 'click');
     await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
-    await page.locator('#next-step').click();
+    await studyClick(page, '#next-step', 'click');
     await expect(page.locator('.study-product')).toContainText(
       measure === 'quality' ? '90 GE' : '75 GE',
     );
@@ -59,8 +60,8 @@ test('Ghana A1 supported route, partial acknowledgment, visible help, neutral ta
   page,
 }) => {
   await begin(page);
-  await page.locator('#chain-beans').click();
-  await page.locator('#check-answer').click();
+  await studyClick(page, '#chain-beans', 'click');
+  await studyClick(page, '#check-answer', 'click');
   await expect(page.locator('[data-feedback]')).toHaveClass(/partial/);
   for (const name of [
     'Ich brauche einen Hinweis',
@@ -69,9 +70,9 @@ test('Ghana A1 supported route, partial acknowledgment, visible help, neutral ta
     'Dieses Beispiel übernehmen',
   ])
     await page.getByRole('button', { name, exact: true }).click();
-  await page.locator('#next-step').click();
+  await studyClick(page, '#next-step', 'click');
   for (const id of ['quality', 'process']) {
-    await page.locator('#try-' + id).click();
+    await studyClick(page, '#try-' + id, 'click');
     if (id === 'quality')
       for (const name of [
         'Ich brauche einen Hinweis',
@@ -86,22 +87,22 @@ test('Ghana A1 supported route, partial acknowledgment, visible help, neutral ta
   await page
     .getByRole('button', { name: 'Dieses Beispiel übernehmen' })
     .click();
-  await page.locator('#next-step').click();
+  await studyClick(page, '#next-step', 'click');
   for (const [f, v] of [
     ['proposal', 'process'],
     ['goal', 'surplus'],
     ['benefit', 'process'],
     ['limit', 'process'],
   ])
-    await page.locator(`#study-${f}-${v}`).check();
-  await page.locator('#check-answer').click();
+    await studyClick(page, `#study-${f}-${v}`, 'check');
+  await studyClick(page, '#check-answer', 'click');
   await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
   await expect(page.locator('[data-feedback]')).toContainText(
     'noch nicht verbunden',
   );
-  await page.locator('#study-weighted-yes').check();
-  await page.locator('#check-answer').click();
-  await page.locator('#next-step').click();
+  await studyClick(page, '#study-weighted-yes', 'check');
+  await studyClick(page, '#check-answer', 'click');
+  await studyClick(page, '#next-step', 'click');
   await expect(page.locator('[data-help-history]')).toBeVisible();
   await expect(page.locator('.study-product')).toContainText(
     'Dafür nehme ich in Kauf',
@@ -128,15 +129,15 @@ async function shareLedger(page: Page, touch = false) {
     '#check-answer',
     '#next-step',
   ]) {
-    if (touch) await page.locator(selector).tap();
-    else await page.locator(selector).click();
+    if (touch) await studyClick(page, selector, 'tap');
+    else await studyClick(page, selector, 'click');
   }
 }
 async function distribute(page: Page, touch = false) {
   for (const k of ['payout', 'reserve', 'training']) {
     for (const selector of ['#try-' + k, '#add-' + k, '#add-' + k]) {
-      if (touch) await page.locator(selector).tap();
-      else await page.locator(selector).click();
+      if (touch) await studyClick(page, selector, 'tap');
+      else await studyClick(page, selector, 'click');
     }
   }
   for (const selector of [
@@ -144,8 +145,8 @@ async function distribute(page: Page, touch = false) {
     '#check-answer',
     '#next-step',
   ]) {
-    if (touch) await page.locator(selector).tap();
-    else await page.locator(selector).click();
+    if (touch) await studyClick(page, selector, 'tap');
+    else await studyClick(page, selector, 'click');
   }
 }
 async function regionalDecision(
@@ -160,14 +161,14 @@ async function regionalDecision(
     ['benefit', proposal],
     ['limit', proposal],
   ]) {
-    if (touch) await page.locator(`#study-${f}-${v}`).tap();
-    else await page.locator(`#study-${f}-${v}`).check();
+    if (touch) await studyClick(page, `#study-${f}-${v}`, 'tap');
+    else await studyClick(page, `#study-${f}-${v}`, 'check');
   }
-  if (touch) await page.locator('#check-answer').tap();
-  else await page.locator('#check-answer').click();
+  if (touch) await studyClick(page, '#check-answer', 'tap');
+  else await studyClick(page, '#check-answer', 'click');
   await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
-  if (touch) await page.locator('#next-step').tap();
-  else await page.locator('#next-step').click();
+  if (touch) await studyClick(page, '#next-step', 'tap');
+  else await studyClick(page, '#next-step', 'click');
   await expect(page.locator('.study-product')).toBeVisible();
 }
 for (const priority of ['payout', 'reserve', 'training'])
@@ -186,15 +187,15 @@ test('Ghana A2 wrong/partial feedback, all help stages, own example and rechecki
   page,
 }) => {
   await begin(page, 4);
-  await page.locator('#study-free-120').check();
-  await page.locator('#check-answer').click();
+  await studyClick(page, '#study-free-120', 'check');
+  await studyClick(page, '#check-answer', 'click');
   await expect(page.locator('[data-feedback]')).toHaveClass(/partial/);
   await expect(page.locator('[data-feedback]')).toContainText('120 GE');
-  await page.locator('#study-wages-later').check();
-  for (let i = 0; i < 2; i++) await page.locator('#check-answer').click();
+  await studyClick(page, '#study-wages-later', 'check');
+  for (let i = 0; i < 2; i++) await studyClick(page, '#check-answer', 'click');
   await expect(page.locator('#help-title')).toHaveText('→ Hilfe 3 von 3');
-  await page.locator('#study-adopt').click();
-  await page.locator('#next-step').click();
+  await studyClick(page, '#study-adopt', 'click');
+  await studyClick(page, '#next-step', 'click');
   for (const name of [
     'Ich brauche einen Hinweis',
     'Genauer zeigen',
@@ -205,9 +206,9 @@ test('Ghana A2 wrong/partial feedback, all help stages, own example and rechecki
   await expect(page.locator('.study-mini-balance')).toContainText(
     '0 von 120 GE',
   );
-  await page.locator('#next-step').click();
-  await page.locator('#study-proposal-reserve').check();
-  await page.locator('#study-goal-payout').check();
+  await studyClick(page, '#next-step', 'click');
+  await studyClick(page, '#study-proposal-reserve', 'check');
+  await studyClick(page, '#study-goal-payout', 'check');
   for (const name of [
     'Ich brauche einen Hinweis',
     'Genauer zeigen',
@@ -216,13 +217,13 @@ test('Ghana A2 wrong/partial feedback, all help stages, own example and rechecki
   ])
     await page.getByRole('button', { name, exact: true }).click();
   await expect(page.locator('#study-weighted-yes')).toBeChecked();
-  await page.locator('#next-step').click();
+  await studyClick(page, '#next-step', 'click');
   await expect(page.locator('[data-supported]')).toBeVisible();
   await page.getByRole('button', { name: 'Empfehlung bearbeiten' }).click();
-  await page.locator('#study-goal-reserve').check();
+  await studyClick(page, '#study-goal-reserve', 'check');
   await expect(page.locator('#next-step')).toHaveCount(0);
-  await page.locator('#check-answer').click();
-  await page.locator('#next-step').click();
+  await studyClick(page, '#check-answer', 'click');
+  await studyClick(page, '#next-step', 'click');
   await expect(page.locator('[data-supported]')).toHaveCount(0);
   await expect(page.locator('[data-help-history]')).toBeVisible();
 });
@@ -241,16 +242,16 @@ for (const device of [
     });
     const page = await context.newPage();
     await page.goto('/');
-    await page.locator('#episode-3').tap();
+    await studyClick(page, '#episode-3', 'tap');
     for (const k of ['beans', 'roast', 'mass', 'press'])
-      await page.locator('#chain-' + k).tap();
-    await page.locator('#check-answer').tap();
-    await page.locator('#next-step').tap();
+      await studyClick(page, '#chain-' + k, 'tap');
+    await studyClick(page, '#check-answer', 'tap');
+    await studyClick(page, '#next-step', 'tap');
     for (const [k, v] of [
       ['quality', '90'],
       ['process', '75'],
     ]) {
-      await page.locator('#try-' + k).tap();
+      await studyClick(page, '#try-' + k, 'tap');
       await expect(page.locator('.study-inline-ledger')).toContainText(
         k === 'quality' ? '200 GE' : '260 GE',
       );
@@ -262,11 +263,11 @@ for (const device of [
           return a.top - b.bottom;
         });
       expect(distance).toBeLessThan(100);
-      await page.locator(`#study-${k}-${v}`).tap();
-      await page.locator('#check-answer').tap();
+      await studyClick(page, `#study-${k}-${v}`, 'tap');
+      await studyClick(page, '#check-answer', 'tap');
     }
     for (const selector of ['#study-why-costs', '#check-answer', '#next-step'])
-      await page.locator(selector).tap();
+      await studyClick(page, selector, 'tap');
     await regionalDecision(page, 'process', 'processing', true);
     expect(
       await page.evaluate(
@@ -286,19 +287,19 @@ for (const device of [
     });
     const page = await context.newPage();
     await page.goto('/');
-    await page.locator('#episode-4').tap();
+    await studyClick(page, '#episode-4', 'tap');
     await shareLedger(page, true);
-    await page.locator('#try-training').tap();
+    await studyClick(page, '#try-training', 'tap');
     await expect(page.locator('.study-allocation .study-effect')).toContainText(
       'nicht sicher',
     );
-    await page.locator('#add-training').tap();
+    await studyClick(page, '#add-training', 'tap');
     await expect(page.locator('.study-mini-balance')).toBeInViewport();
-    await page.locator('#remove-training').tap();
+    await studyClick(page, '#remove-training', 'tap');
     await distribute(page, true);
     await expect(page.locator('.study-facts')).toHaveCount(0);
-    await page.locator('#study-proposal-training').tap();
-    await page.locator('#study-goal-training').tap();
+    await studyClick(page, '#study-proposal-training', 'tap');
+    await studyClick(page, '#study-goal-training', 'tap');
     if (device.name === 'portrait')
       await page.screenshot({
         path: evidencePath('ghana-a2-ipad-decision.png'),
@@ -361,7 +362,7 @@ test('Ghana keyboard activation in both episodes uses real focus, SVG and HTML a
   await expect(page.locator('#study-scene-reserve')).toHaveAccessibleName(
     'Rücklage 20 GE ausprobieren',
   );
-  await page.locator('#remove-reserve').click();
+  await studyClick(page, '#remove-reserve', 'click');
   await expect(page.locator('#study-scene-reserve')).toHaveAccessibleName(
     'Rücklage 0 GE ausprobieren',
   );

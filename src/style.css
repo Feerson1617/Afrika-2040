@@ -2301,3 +2301,41 @@ summary span {
   border-radius: 8px;
   font-weight: 700;
 }
+.study-country h2,
+.kenya-picker h2 {
+  font:
+    700 1.15rem Arial,
+    sans-serif;
+  margin-block: 0 12px;
+}
+.study-country + .study-country {
+  margin-top: 24px;
+}
+.study-country .button {
+  display: block;
+  margin-block: 10px;
+  text-align: left;
+}
+.study-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.study-tabs .button {
+  min-height: 48px;
+  font-size: 0.9rem;
+}
+.study-tabs [aria-current='step'] {
+  border: 2px solid var(--green);
+  background: #e4ebda;
+}
+.study-decision-part > * + * {
+  margin-top: 16px;
+}
+.study-decision-part .study-facts p:first-child {
+  margin-top: 0;
+}
+.study-chosen-evidence {
+  border-left: 3px solid var(--line);
+  padding-left: 12px;
+}

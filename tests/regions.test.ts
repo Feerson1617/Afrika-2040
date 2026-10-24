@@ -641,3 +641,70 @@ test('area edits invalidate current evidence and priority; unrelated Ghana and K
   assert.deepEqual(s.studies!.share, ghana);
   assert.equal(s.step, 0);
 });
+
+test('regional decision sections preserve answers, never count navigation as failure, and reveal the missing part on check', () => {
+  let s = cocoaDecision();
+  s = action(s, 'panel', 'limit');
+  s = action(s, 'check');
+  assert.equal(record(s).panel, 'plan');
+  assert.equal(record(s).progress[2].failures, 0);
+  s = action(s, 'answer', 'quality', 'proposal');
+  s = action(s, 'answer', 'surplus', 'goal');
+  s = action(s, 'check');
+  assert.equal(record(s).panel, 'benefit');
+  assert.equal(record(s).progress[2].failures, 0);
+  s = action(s, 'answer', 'quality', 'benefit');
+  s = action(s, 'panel', 'plan');
+  s = action(s, 'panel', 'limit');
+  s = action(s, 'check');
+  assert.equal(record(s).panel, 'limit');
+  assert.equal(record(s).progress[2].feedback!.kind, 'partial');
+  s = action(s, 'answer', 'quality', 'limit');
+  s = action(s, 'check');
+  assert.equal(record(s).progress[2].complete, true);
+  s = action(s, 'panel', 'plan');
+  assert.equal(record(s).progress[2].complete, true);
+  assert.equal(record(restore(s)).panel, 'plan');
+});
+test('damaged successful experiment marks are rejected independently of stored completion flags; unrelated studies survive', () => {
+  for (const build of [cocoaDecision, waterDecision, areaDecision]) {
+    const s = build(),
+      id = s.activeStudy!,
+      r = record(s);
+    r.data.answers[r.data.checked[0]] = '999';
+    const next = restore(s);
+    assert.equal(next.studies![id], undefined);
+    assert.equal(next.screen, 'start');
+  }
+  const s = shareDecision();
+  record(s).data.explored.push('payout');
+  assert.equal(restore(s).studies!.share, undefined);
+});
+test('factually true evidence about another option is an unconnected argument, not a red judgment of the chosen position', () => {
+  for (const spec of [cocoa, share, water, area]) {
+    const d = spec.initial();
+    if (spec.id === 'share')
+      d.allocations = { payout: 40, reserve: 40, training: 40 };
+    const options = spec.options(d),
+      first = options[0],
+      other = options[1];
+    const e = evaluateStudyDecision(
+      spec,
+      d,
+      {
+        proposal: first.id,
+        goal: first.goal,
+        benefit: other.id,
+        limit: first.id,
+        text: '',
+      },
+      0,
+      true,
+    );
+    assert.equal(e.feedback.kind, 'neutral');
+    assert.equal(e.failed, false);
+    assert.equal(e.feedback.complete, false);
+    assert.match(e.feedback.text, /Du beachtest die Grenze/);
+    assert.match(e.feedback.text, /noch nicht verbunden|andere Maßnahme/);
+  }
+});

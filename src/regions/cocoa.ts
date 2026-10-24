@@ -79,7 +79,7 @@ export const cocoa: StudySpec = {
       label: 'Lagerung und Qualität verbessern',
       goal: 'surplus',
       benefit: 'Qualität: 200 − 110 = 90 GE Überschuss.',
-      limit: 'Es entsteht keine zusätzliche Verarbeitungsstufe.',
+      limit: 'Die eigene Verarbeitung wird damit nicht ausgebaut.',
       facts: [
         'Einmalig 20 GE investieren; 40 GE im Investitionstopf übrig.',
         'In der folgenden Modellrunde: 200 GE Einnahmen, 110 GE laufende Ausgaben.',
@@ -236,13 +236,17 @@ export const cocoa: StudySpec = {
       ) &&
       new Set(d.chain).size === d.chain.length &&
       ['base', 'quality', 'process'].includes(d.selection) &&
-      d.checked.every((x) => ['quality', 'process'].includes(x)) &&
+      d.checked.every(
+        (x) =>
+          ['quality', 'process'].includes(x) &&
+          d.answers[x] === String(cocoaModel(x).surplus),
+      ) &&
       d.explored.every((x) => ['quality', 'process'].includes(x))
     );
   },
   scene(d, step, h) {
     const m = cocoaModel(d.selection);
-    return `<svg class="study-scene" viewBox="0 0 720 270" role="group" aria-label="Erfundene Kakaowerkstatt"><rect x="5" y="5" width="710" height="260" rx="20" fill="#eee5d3"/>${cocoaChain.map((key, i) => `<path d="M${72 + i * 170} 90h100" stroke="#72543c" stroke-width="4"/><rect x="${15 + i * 175}" y="100" width="160" height="65" rx="12" fill="${d.chain[i] === key ? '#d4e0c8' : '#fffef8'}" stroke="#72543c"/><text x="${95 + i * 175}" y="125" text-anchor="middle">${i + 1}. ${h.esc(d.chain[i] ? ({ beans: 'Bohnen', roast: 'Rösten/mahlen', mass: 'Masse', press: 'Pressen' } as Record<string, string>)[d.chain[i]] : 'Schritt wählen')}</text>`).join('')}${step > 0 ? svgChoice(h, 'quality', 'Lagerung', `<rect x="35" y="192" width="285" height="55" rx="10" fill="${d.selection === 'quality' ? '#d4e0c8' : '#fffef8'}"/><text x="175" y="226" text-anchor="middle">Lagerung</text>`, d.selection === 'quality', 'quality') + svgChoice(h, 'process', 'Presse', `<rect x="380" y="192" width="285" height="55" rx="10" fill="${d.selection === 'process' ? '#d4e0c8' : '#fffef8'}"/><text x="520" y="226" text-anchor="middle">Presse</text>`, d.selection === 'process', 'process') : ''}</svg>${step > 0 ? `<div class="study-ledger"><span>Einnahmen <strong>${m.income} GE</strong></span><span>Laufende Ausgaben <strong>${m.costs} GE</strong></span></div><p class="small-note">Getrennter Investitionstopf: ${m.investment} von 60 GE eingesetzt; ${m.investmentLeft} GE übrig.</p>` : ''}`;
+    return `<svg class="study-scene" viewBox="0 0 720 270" role="group" aria-label="Erfundene Kakaowerkstatt"><rect x="5" y="5" width="710" height="260" rx="20" fill="#eee5d3"/>${cocoaChain.map((key, i) => `<path d="M${72 + i * 170} 90h100" stroke="#72543c" stroke-width="4"/><rect x="${15 + i * 175}" y="100" width="160" height="65" rx="12" fill="${d.chain[i] === key ? '#d4e0c8' : '#fffef8'}" stroke="#72543c"/><text x="${95 + i * 175}" y="125" text-anchor="middle">${i + 1}. ${h.esc(d.chain[i] ? ({ beans: 'Bohnen', roast: 'Rösten/mahlen', mass: 'Masse', press: 'Pressen' } as Record<string, string>)[d.chain[i]] : 'Schritt wählen')}</text>`).join('')}${step > 0 ? svgChoice(h, 'quality', 'Lagerung', `<rect x="35" y="192" width="285" height="55" rx="10" fill="${d.selection === 'quality' ? '#d4e0c8' : '#fffef8'}"/><text x="175" y="226" text-anchor="middle">Lagerung</text>`, d.selection === 'quality', 'quality') + svgChoice(h, 'process', 'Presse', `<rect x="380" y="192" width="285" height="55" rx="10" fill="${d.selection === 'process' ? '#d4e0c8' : '#fffef8'}"/><text x="520" y="226" text-anchor="middle">Presse</text>`, d.selection === 'process', 'process') : ''}</svg>${step > 0 ? `<p class="study-production-change">${d.selection === 'process' ? 'Im Betrieb kommt eine zusätzliche Presse hinzu.' : d.selection === 'quality' ? 'Die Lagerung wird verbessert. Die Verarbeitung bleibt gleich.' : 'Ausgangsbetrieb: noch keine der beiden Verbesserungen.'}</p><div class="study-ledger"><span>Einnahmen <strong>${m.income} GE</strong></span><span>Laufende Ausgaben <strong>${m.costs} GE</strong></span></div><p class="small-note">Getrennter Investitionstopf: ${m.investment} von 60 GE eingesetzt; ${m.investmentLeft} GE übrig.</p>` : ''}`;
   },
   task(d, step, h) {
     if (step === 0)

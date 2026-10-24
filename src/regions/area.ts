@@ -170,7 +170,7 @@ export const area: StudySpec = {
     if (step === 0) {
       d.selection = 'same';
       d.explored = Array.from(new Set([...d.explored, 'same']));
-      d.answers = { single: '45', saving: '15' };
+      d.answers = { ...d.answers, single: '45', saving: '15' };
     } else if (both(d)) d.why = 'growth';
     else if (['same', 'extra'].includes(d.selection)) {
       d.answers[d.selection] = String(areaModel(d.selection).withdrawal);
@@ -214,7 +214,11 @@ export const area: StudySpec = {
       validData(d) &&
       ['base', 'same', 'extra'].includes(d.selection) &&
       d.explored.every((k) => ['base', 'same', 'extra'].includes(k)) &&
-      d.checked.every((k) => ['same', 'extra'].includes(k))
+      d.checked.every(
+        (k) =>
+          ['same', 'extra'].includes(k) &&
+          d.answers[k] === String(areaModel(k).withdrawal),
+      )
     );
   },
   scene(d, step, h) {
@@ -222,7 +226,7 @@ export const area: StudySpec = {
     const controls = step === 0 ? ['base', 'same'] : ['same', 'extra'];
     const label = (k: string) =>
       k === 'base' ? 'Vorher' : k === 'same' ? 'Gleiches Feld' : 'Zusatzfeld';
-    return `<svg class="study-scene" viewBox="0 0 720 390" role="group" aria-label="Erfundener Tank und bewässerte Flächen">${tankGraphic(m.remaining)}<path d="M185 115H440" fill="none" stroke="#466a76" stroke-width="10"/><text x="305" y="82" text-anchor="middle">Gesamt ${m.withdrawal} WE</text><rect x="445" y="40" width="250" height="150" rx="8" fill="#d4e0c8" stroke="#536449"/>${[0, 1, 2, 3].map((i) => `<path d="M${478 + i * 55} 155V80m0 25l-12-12m12 30l12-12" stroke="#536449" fill="none" stroke-width="3"/>`).join('')}<text x="570" y="215" text-anchor="middle">Gleiches Feld: ${m.first} WE</text>${m.extra ? '<path d="M390 115V267H515" stroke="#466a76" stroke-width="6" fill="none"/>' : ''}<rect x="515" y="245" width="180" height="70" rx="6" stroke="#536449" stroke-dasharray="${m.extra ? '0' : '8 5'}" fill="${m.extra ? '#d4e0c8' : '#fffef8'}"/><text x="605" y="274" text-anchor="middle">Zusatzfeld</text><text x="605" y="302" text-anchor="middle">${m.extra ? '+20 WE' : 'nicht bewässert'}</text>${controls.map((k, i) => svgChoice(h, k, label(k), `<rect x="${30 + i * 350}" y="335" width="310" height="50" rx="10" fill="${d.selection === k ? '#d4e0c8' : '#fffef8'}" stroke="#536449"/><text x="${185 + i * 350}" y="367" text-anchor="middle">${label(k)}</text>`, d.selection === k, k)).join('')}</svg><p class="small-note">Tankstart immer 80 erfundene WE. Früher insgesamt 60 WE Entnahme. Keine echten Flächengrößen.</p>`;
+    return `<svg class="study-scene" viewBox="0 0 720 410" role="group" aria-label="Erfundener Tank und bewässerte Flächen">${tankGraphic(m.remaining)}<path d="M185 115H440" fill="none" stroke="#466a76" stroke-width="10"/><text x="305" y="82" text-anchor="middle">Gesamt ${m.withdrawal} WE</text><rect x="445" y="40" width="250" height="150" rx="8" fill="#d4e0c8" stroke="#536449"/>${[0, 1, 2, 3].map((i) => `<path d="M${478 + i * 55} 155V80m0 25l-12-12m12 30l12-12" stroke="#536449" fill="none" stroke-width="3"/>`).join('')}<text x="570" y="215" text-anchor="middle">Gleiches Feld: ${m.first} WE</text>${m.extra ? '<path d="M390 115V267H515" stroke="#466a76" stroke-width="6" fill="none"/>' : ''}<rect x="515" y="245" width="180" height="70" rx="6" stroke="#536449" stroke-dasharray="${m.extra ? '0' : '8 5'}" fill="${m.extra ? '#d4e0c8' : '#fffef8'}"/><text x="605" y="274" text-anchor="middle">Zusatzfeld</text><text x="605" y="302" text-anchor="middle">${m.extra ? '+20 WE' : 'nicht bewässert'}</text>${controls.map((k, i) => svgChoice(h, k, label(k), `<rect x="${30 + i * 350}" y="335" width="310" height="70" rx="10" fill="${d.selection === k ? '#d4e0c8' : '#fffef8'}" stroke="#536449"/><text x="${185 + i * 350}" y="375" text-anchor="middle">${label(k)}</text>`, d.selection === k, k)).join('')}</svg><p class="small-note">Tankstart immer 80 erfundene WE. Früher insgesamt 60 WE Entnahme. Keine echten Flächengrößen.</p>`;
   },
   task(d, step, h) {
     if (step === 0)

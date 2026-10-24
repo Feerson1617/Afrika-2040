@@ -80,7 +80,7 @@ export const share: StudySpec = {
       label: `Meinen Plan mit ${names[id]} begründen`,
       goal: id,
       eligible: d.allocations[id] > 0,
-      benefit: `${d.allocations[id]} GE für ${names[id]}: ${effects[id]}`,
+      benefit: `${d.allocations[id]} GE für ${names[id]}: ${{ payout: 'Mitglieder erhalten jetzt zusätzliches Geld.', reserve: 'Die Genossenschaft behält Geld für Reparaturen.', training: 'Mitglieder können dazulernen.' }[id]}`,
       limit:
         id === 'payout'
           ? 'Ausgezahltes Geld steht später nicht mehr für den Betrieb bereit.'

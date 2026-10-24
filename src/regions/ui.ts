@@ -1,23 +1,24 @@
+import { decisionView } from './decision-ui.ts';
 import { studies, studyList } from './registry.ts';
 import { activeStudy } from './state.ts';
-import {
-  control,
-  optionOf,
-  product,
-  weighting,
-  decisionExample,
-} from './shared.ts';
+import { control, optionOf, product, decisionExample } from './shared.ts';
 import type { State } from '../state.ts';
 import type { StudyUI } from './types.ts';
 export function studyMenu(h: Pick<StudyUI, 'button'>) {
-  return studyList()
-    .map((spec) =>
-      h.button(
-        `Episode ${spec.number}: ${spec.title}`,
-        'study',
-        'button secondary',
-        `data-op="start" data-episode="${spec.id}" id="episode-${spec.number}"`,
-      ),
+  return ['Ghana', 'Marokko']
+    .map(
+      (country) =>
+        `<section class="study-country"><h2>${country}</h2>${studyList()
+          .filter((s) => s.country === country)
+          .map((spec) =>
+            h.button(
+              `Episode ${spec.number}: ${spec.title}`,
+              'study',
+              'button secondary',
+              `data-op="start" data-episode="${spec.id}" id="episode-${spec.number}"`,
+            ),
+          )
+          .join('')}</section>`,
     )
     .join('');
 }
@@ -38,12 +39,7 @@ export function renderStudy(s: State, h: StudyUI) {
     spec = studies[s.activeStudy!]!,
     p = r.progress[Math.min(r.step, 2)],
     d = r.decision;
-  const options = spec.options(r.data),
-    selected = optionOf(spec, r.data, d);
-  const facts = () =>
-    selected
-      ? `<section class="study-facts" aria-label="Angaben für deinen Vorschlag"><h3>${selected.label}</h3>${selected.facts.map((t) => `<p>${h.esc(t)}</p>`).join('')}</section>`
-      : '';
+  const selected = optionOf(spec, r.data, d);
   const model = () =>
     `<details class="study-model"><summary>Das Modell und seine Grenzen</summary><p>${h.esc(spec.modelNote)}</p></details>`;
   const footer = () =>
@@ -52,14 +48,7 @@ export function renderStudy(s: State, h: StudyUI) {
     return `${h.header}<main id="main" class="end-screen study-screen" tabindex="-1"><p class="eyebrow">Episode ${spec.number} · ${spec.country}</p><h1>Dein begründeter Vorschlag</h1><section class="recommendation" aria-label="Dein Lernprodukt"><h2>${selected?.label ?? 'Dein Vorschlag'}</h2><p><strong>Mein Ziel:</strong> ${d.goal ? h.esc(spec.goals[d.goal]) : 'noch offen'}</p>${d.ungraded ? '<p data-ungraded>Eigener Text bewusst unbewertet. Die Bausteine sind damit nicht bestätigt.</p>' : `<p class="study-product">${h.esc(product(spec, r.data, d))}</p><p>Du hast deinen Vorschlag mit Bausteinen begründet.</p>`}${d.text ? `<p class="saved-text">${h.esc(d.text)}</p><p class="small-note">Eigener Text: nicht automatisch geprüft.</p>` : ''}${d.supported ? '<p data-supported>Diese Empfehlung wurde mit einem Beispiel erstellt.</p>' : ''}${r.progress.some((x) => x.supported) ? '<p data-help-history>In dieser Episode hast du erklärte Beispiele übernommen.</p>' : ''}<p>Zeige deinen Beleg. Erkläre, welche Grenze bleibt.</p></section>${model()}${control(h, 'Empfehlung bearbeiten', 'back')}${footer()}</main>`;
   let body = '';
   if (r.step < 2) body = spec.task(r.data, r.step as 0 | 1, h);
-  else
-    body = `<fieldset><legend>Mein Vorschlag</legend>${options.map((o) => h.radio('study-proposal', o.id, o.label, d.proposal === o.id, o.eligible === false)).join('')}</fieldset>${facts()}<fieldset><legend>Mein Ziel</legend>${Object.entries(
-      spec.goals,
-    )
-      .map(([id, label]) => h.radio('study-goal', id, label, d.goal === id))
-      .join(
-        '',
-      )}</fieldset>${d.proposal && d.goal ? `<fieldset><legend>Welcher Beleg stützt meinen Vorschlag?</legend>${options.map((o) => h.radio('study-benefit', o.id, o.benefit, d.benefit === o.id)).join('')}${h.radio('study-benefit', 'all', 'Mein Vorschlag löst alle Probleme.', d.benefit === 'all')}</fieldset><fieldset><legend>Welche Grenze bleibt bei meinem Vorschlag?</legend>${options.map((o) => h.radio('study-limit', o.id, o.limit, d.limit === o.id)).join('')}${h.radio('study-limit', 'none', 'Es bleibt keine Grenze.', d.limit === 'none')}</fieldset>` : ''}${selected && d.goal && d.goal !== selected.goal ? `<section class="goal-note"><p>Dein Ziel und dein Vorschlag passen noch nicht zusammen. Was ist dir wichtiger?</p>${control(h, 'Ich passe mein Ziel an', 'answer', selected.goal, 'goal', 'study-adjust-goal')}${h.radio('study-weighted', 'yes', h.esc(weighting(spec, r.data, { ...d, weighted: true })), Boolean(d.weighted))}</section>` : ''}<details id="study-own-words" ${d.text ? 'open' : ''}><summary>Mit eigenen Worten · freiwillig</summary><label for="study-text">Mein Vorschlag, mein Beleg und eine Grenze</label><textarea id="study-text" name="study-text" rows="3" maxlength="1500">${h.esc(d.text)}</textarea><p class="small-note">Dein Text wird nicht automatisch geprüft.</p>${control(h, 'Eigenen Text unbewertet abgeben', 'submit', '', '', 'study-submit', 'button secondary', !d.text.trim() || !d.proposal || !d.goal)}</details><details><summary>Weiterdenken · freiwillig</summary><p>Welche weitere Information brauchst du für eine echte Entscheidung? Welche Folgen sind sicher und welche nur möglich?</p></details>`;
+  else body = decisionView(spec, r, h);
   const level = p.help,
     example = r.step === 2 ? decisionExample(spec, r.data, d) : undefined;
   const hint = studyHint(s);

@@ -82,9 +82,9 @@ function start() {
       <h1>Afrika 2040 <span>Gestalte die<br>Zukunft.</span></h1>
       <p class="intro">Du untersuchst Orte in Afrika. Menschen vor Ort haben Ideen für ihre Zukunft. Prüfe die Vorschläge. Entscheide, was du empfehlen würdest.</p>
       ${button(`${state.step > 0 ? 'Episode 1 fortsetzen' : 'Spiel starten'} ${arrow}`, 'start', 'button primary start-button')}${state.progress[5].complete || state.road?.revision.complete ? button('Bisherige Empfehlungen ansehen', 'episode-report', 'button secondary') : ''}
-      <section class="episode-picker" aria-label="Episoden auswählen"><p>Episode 1: Welcher Busweg hilft wem?</p>${button(state.demand ? 'Episode 2 fortsetzen' : 'Episode 2 starten', 'demand-start', 'button secondary')}<p class="small-note">Mehr Menschen – reicht der Bus noch? Direkt spielbar. Frühere Antworten bleiben erhalten.</p></section>
-      <section class="episode-picker study-picker" aria-label="Weitere Episoden">${studyMenu({ button })}</section>
-      <p class="start-location">Dein erster Ort: <strong>Nairobi, Kenia</strong></p>
+      <section class="episode-picker kenya-picker" aria-label="Kenia"><h2>Kenia · Nairobi</h2><p>Episode 1: Welcher Busweg hilft wem?</p>${button(state.demand ? 'Episode 2 fortsetzen' : 'Episode 2 starten', 'demand-start', 'button secondary')}<p class="small-note">Mehr Menschen – reicht der Bus noch? Direkt spielbar. Frühere Antworten bleiben erhalten.</p></section>
+      <section class="episode-picker study-picker" aria-label="Ghana und Marokko">${studyMenu({ button })}</section>
+      <p class="start-location">Sechs Episoden. Alle direkt spielbar. Antworten bleiben nur in diesem Browser-Tab.</p>
     </div>
     <div class="hero-art" aria-hidden="true"><span class="art-label">Jeder Weg macht einen Unterschied.</span>
       <svg viewBox="0 0 540 550"><circle cx="270" cy="270" r="216" fill="#e5e9d7"/><path d="M50 420C290 490 100 60 390 116S280 401 520 390" fill="none" stroke="#b8c9b0" stroke-width="54"/><path d="M50 420C290 490 100 60 390 116S280 401 520 390" fill="none" stroke="#f9f8ed" stroke-width="2" stroke-dasharray="8 10"/>
@@ -397,7 +397,7 @@ function game() {
       ${p.help === 0 ? button('Ich brauche einen Hinweis', 'help', 'text-button help-button', 'data-value="1"') : ''}</div>
       <div class="task-navigation">${button('← Zurück', 'back', 'text-button')}${button('Aufgabe neu bearbeiten', 'reset-task', 'text-button')}</div>
     </div></section></div>
-    <footer class="game-footer"><span>Ein Ort. ${state.step < 4 ? 'Zwei' : 'Drei'} Perspektiven.</span>${button('Neu starten', 'ask-restart', 'text-button')}${restartPending ? `<span class="restart-confirm">Alle Antworten löschen? ${button('Ja, neu starten', 'restart', 'text-button')} ${button('Abbrechen', 'cancel-restart', 'text-button')}</span>` : ''}</footer>
+    <footer class="game-footer">${button('Episoden auswählen', 'episode-home', 'text-button')}<span>Ein Ort. ${state.step < 4 ? 'Zwei' : 'Drei'} Perspektiven.</span>${button('Neu starten', 'ask-restart', 'text-button')}${restartPending ? `<span class="restart-confirm">Alle Antworten löschen? ${button('Ja, neu starten', 'restart', 'text-button')} ${button('Abbrechen', 'cancel-restart', 'text-button')}</span>` : ''}</footer>
   </main>`;
 }
 
@@ -409,7 +409,7 @@ function end() {
     ${weightingProduct(d) ? `<p class="weighting-product"><strong>Deine Gewichtung:</strong> ${esc(weightingProduct(d))}</p>` : ''}${d.ungraded ? '<p class="small-note" data-ungraded>Bewusst unbewertet abgegeben. Die Verbindung von Ziel, Belegen und Gewichtung ist damit nicht bestätigt.</p>' : '<p class="small-note">Du hast deine Empfehlung mit Bausteinen begründet.</p>'}
     <details id="learning-process"><summary>Deine Erklärung und deine Vermutung</summary><h3>Aminas Weg erklären</h3>${e.cause ? `<p>${esc(explanationChoices.cause[e.cause])}</p>` : ''}${e.effect ? `<p>${esc(explanationChoices.effect[e.effect])}</p>` : ''}${e.text ? `<p class="saved-explanation saved-text">${esc(e.text)}</p><p class="small-note">Deine eigene Erklärung wurde nicht automatisch fachlich geprüft.</p>` : `<p class="small-note">Mit Satzbausteinen erklärt.${e.cause !== 'shorter' || e.effect !== 'total' ? ' Prüfe die Sätze noch einmal.' : ''}</p>`}${state.progress[4].prediction ? `<p>Deine erste Vermutung für Leila: ${routeNames[state.progress[4].prediction!]}.</p>` : ''}</details>
     ${state.progress.map((p, i) => (p.supported ? `<p class="small-note" data-supported>Mit Hilfe erstellt: Bei „${tasks[i].label}“ hast du ${i < 3 ? 'die Erklärung genutzt' : 'das erklärte Beispiel übernommen'}.</p>` : '')).join('')}
-    <p class="reflection">Zeige jemandem deinen Vorschlag. Erkläre: Welche Folge ist dir besonders wichtig?</p></section><p class="end-model">Dieses Modell ist erfunden. Daraus folgen keine allgemeinen Aussagen über Nairobi oder Kenia. Wartezeiten, Fahrpreise und Kapazitäten fehlen. Ein Vergleich der Zeiten ist noch keine umfassende Nachhaltigkeitsbewertung. Die Zeiten sind keine Vorhersage für das Jahr 2040.</p><section class="event-transition" aria-label="Eine Woche später"><h2>Eine Woche später …</h2><p>Im Viertel hat sich etwas verändert. Prüfe, ob deine Entscheidung noch passt.</p>${button(state.road ? 'Neue Situation weiter prüfen' : 'Was hat sich verändert?', 'event-start', 'button primary')}</section>${button('Episode 2 starten', 'demand-start', 'button secondary')}<div class="end-actions">${button('Empfehlung noch einmal ansehen', 'back', 'button secondary')}${button('Neu spielen', 'restart', 'button primary')}</div><p class="privacy-note">Neustart löscht deine Antworten in diesem Tab.</p></main>`;
+    <p class="reflection">Zeige jemandem deinen Vorschlag. Erkläre: Welche Folge ist dir besonders wichtig?</p></section><p class="end-model">Dieses Modell ist erfunden. Daraus folgen keine allgemeinen Aussagen über Nairobi oder Kenia. Wartezeiten, Fahrpreise und Kapazitäten fehlen. Ein Vergleich der Zeiten ist noch keine umfassende Nachhaltigkeitsbewertung. Die Zeiten sind keine Vorhersage für das Jahr 2040.</p><section class="event-transition" aria-label="Eine Woche später"><h2>Eine Woche später …</h2><p>Im Viertel hat sich etwas verändert. Prüfe, ob deine Entscheidung noch passt.</p>${button(state.road ? 'Neue Situation weiter prüfen' : 'Was hat sich verändert?', 'event-start', 'button primary')}</section>${button('Episode 2 starten', 'demand-start', 'button secondary')}<div class="end-actions">${button('Episoden auswählen', 'episode-home', 'button secondary')}${button('Empfehlung noch einmal ansehen', 'back', 'button secondary')}${button('Neu spielen', 'restart', 'button primary')}</div><p class="privacy-note">Neustart löscht deine Antworten in diesem Tab.</p></main>`;
 }
 
 function render(focusId?: string) {
@@ -514,30 +514,32 @@ function dispatch(action: Action) {
     (action.type === 'study' &&
       ['check', 'adopt', 'submit'].includes(action.op));
   render(
-    action.type === 'decision-panel'
-      ? 'decision-title'
-      : navigate
-        ? (state.screen === 'study' &&
-            state.studies?.[state.activeStudy!]?.step !== 3) ||
-          (state.screen.startsWith('demand-') &&
-            state.screen !== 'demand-end') ||
-          state.screen === 'game' ||
-          (state.screen.startsWith('event-') && state.screen !== 'event-end')
-          ? 'task-title'
-          : 'main'
-        : action.type === 'prediction'
-          ? 'prediction-status'
-          : action.type === 'words'
-            ? 'words-toggle'
-            : action.type === 'help'
-              ? 'help-title'
-              : action.type === 'reset-task'
-                ? 'task-title'
-                : action.type === 'check-transfer'
-                  ? 'transfer-feedback-title'
-                  : report && currentProgress(state).feedback
-                    ? 'feedback-title'
-                    : oldFocus,
+    action.type === 'study' && action.op === 'panel'
+      ? 'study-decision-title'
+      : action.type === 'decision-panel'
+        ? 'decision-title'
+        : navigate
+          ? (state.screen === 'study' &&
+              state.studies?.[state.activeStudy!]?.step !== 3) ||
+            (state.screen.startsWith('demand-') &&
+              state.screen !== 'demand-end') ||
+            state.screen === 'game' ||
+            (state.screen.startsWith('event-') && state.screen !== 'event-end')
+            ? 'task-title'
+            : 'main'
+          : action.type === 'prediction'
+            ? 'prediction-status'
+            : action.type === 'words'
+              ? 'words-toggle'
+              : action.type === 'help'
+                ? 'help-title'
+                : action.type === 'reset-task'
+                  ? 'task-title'
+                  : action.type === 'check-transfer'
+                    ? 'transfer-feedback-title'
+                    : report && currentProgress(state).feedback
+                      ? 'feedback-title'
+                      : oldFocus,
   );
   if (report)
     announcer.textContent =

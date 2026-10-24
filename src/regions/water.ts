@@ -37,7 +37,7 @@ export const water: StudySpec = {
   intro:
     'Marokko liegt in Nordafrika. Die erfundene Szene spielt bei Agadir. Ein Betrieb nutzt einen Tank und bewässert ein Feld. Du prüfst zwei vorhandene technische Möglichkeiten.',
   modelNote:
-    'Erfundener Betrieb bei einem realen Ort. Marokko wird hier nicht als einheitlicher Naturraum dargestellt. Alle Wassereinheiten (WE) und Wirkungen sind Modellannahmen, keine örtlichen Messwerte oder echten Einsparquoten. Eine Runde: 80 WE im Tank, kein Zufluss. Die gleiche Fläche erhält im Modell jeweils 40 WE; daraus folgt keine sichere Ernte. Nicht am Feld ankommendes Wasser kann etwa versickern oder verdunsten; die Aufteilung und Rückflüsse werden nicht berechnet. Entnahme ist Wasser aus dem Tank. Verbrauch wäre Wasser, das dem betrachteten System nicht wieder zur Verfügung steht: Er wird hier nicht berechnet. Der Tankrest ist kein Grundwasserbestand. Keine Aussage über den realen Wasserhaushalt Marokkos.',
+    'Erfundener Betrieb bei einem realen Ort. Marokko wird hier nicht als einheitlicher Naturraum dargestellt. Alle Wassereinheiten (WE) und Wirkungen sind Modellannahmen, keine örtlichen Messwerte oder echten Einsparquoten. Eine Runde: 80 WE im Tank, kein Zufluss. Die gleiche Fläche erhält im Modell jeweils 40 WE; daraus folgt keine sichere Ernte. Nicht am Feld ankommendes Wasser kann etwa versickern oder verdunsten; die Aufteilung und Rückflüsse werden nicht berechnet. Entnahme ist Wasser aus dem Tank. Verbrauch bedeutet etwa: Wasser verdunstet und ist vor Ort zunächst nicht wieder nutzbar. Er wird hier nicht berechnet. Der Tankrest ist kein Grundwasserbestand. Keine Aussage über den realen Wasserhaushalt Marokkos.',
   goals: {
     repair: 'Die vorhandene Leitung weiter nutzen.',
     less: 'In dieser Runde möglichst wenig Wasser entnehmen.',
@@ -51,7 +51,7 @@ export const water: StudySpec = {
       ['Bewässerung', 'Wasser gezielt zu einer Anbaufläche bringen.'],
       [
         'Verbrauch',
-        'Wasser steht dem betrachteten System nicht wieder zur Verfügung. Hier nicht berechnet.',
+        'Zum Beispiel Wasser, das verdunstet und vor Ort zunächst nicht wieder nutzbar ist. Hier nicht berechnet.',
       ],
     ],
   ],
@@ -147,7 +147,7 @@ export const water: StudySpec = {
     };
   },
   example(step, d) {
-    if (step === 0) d.answers = { withdrawal: '60', rest: '20' };
+    if (step === 0) d.answers = { ...d.answers, withdrawal: '60', rest: '20' };
     else if (checkedBoth(d)) d.why = 'delivery';
     else if (['repair', 'tech'].includes(d.selection)) {
       d.answers[d.selection] = String(waterModel(d.selection).remaining);
@@ -188,13 +188,17 @@ export const water: StudySpec = {
     return (
       validData(d) &&
       Object.hasOwn(scenarios, d.selection) &&
-      d.checked.every((k) => ['repair', 'tech'].includes(k)) &&
+      d.checked.every(
+        (k) =>
+          ['repair', 'tech'].includes(k) &&
+          d.answers[k] === String(waterModel(k).remaining),
+      ) &&
       d.explored.every((k) => ['repair', 'tech'].includes(k))
     );
   },
   scene(d, step, h) {
     const m = waterModel(d.selection);
-    return `<svg class="study-scene" viewBox="0 0 720 335" role="group" aria-label="Erfundener Tank, Leitung und gleiches Anbaufeld">${tankGraphic(m.remaining)}<path d="M185 120H410V150H455" stroke="#466a76" stroke-width="${d.selection === 'tech' ? 14 : 9}" fill="none"/><text x="300" y="95" text-anchor="middle">Entnahme ${m.withdrawal} WE</text><rect x="455" y="60" width="240" height="150" rx="10" fill="#d4e0c8" stroke="#536449"/>${[0, 1, 2, 3].map((i) => `<path d="M${480 + i * 52} 190V100m0 35l-12-12m12 26l12-12" stroke="#536449" fill="none" stroke-width="3"/>`).join('')}<text x="575" y="240" text-anchor="middle">Am Feld: 40 WE</text><text x="300" y="185" text-anchor="middle">${m.notAtField} WE nicht</text><text x="300" y="215" text-anchor="middle">am Feld</text>${step > 0 ? ['repair', 'tech'].map((k, i) => svgChoice(h, k, k === 'repair' ? 'Reparatur' : 'Neue Verteilung', `<rect x="${30 + i * 350}" y="275" width="310" height="50" rx="10" fill="${d.selection === k ? '#d4e0c8' : '#fffef8'}" stroke="#536449"/><text x="${185 + i * 350}" y="307" text-anchor="middle">${k === 'repair' ? 'Reparatur' : 'Neue Verteilung'}</text>`, d.selection === k, k)).join('') : ''}</svg><p class="small-note">WE = erfundene Wassereinheiten. Kein Zufluss. Verbrauch und Grundwasser nicht berechnet.</p>`;
+    return `<svg class="study-scene" viewBox="0 0 720 345" role="group" aria-label="Erfundener Tank, Leitung und gleiches Anbaufeld">${tankGraphic(m.remaining)}<path d="M185 120H410V150H455" stroke="#466a76" stroke-width="${d.selection === 'tech' ? 14 : 9}" fill="none"/><text x="300" y="95" text-anchor="middle">Entnahme ${m.withdrawal} WE</text><rect x="455" y="60" width="240" height="150" rx="10" fill="#d4e0c8" stroke="#536449"/>${[0, 1, 2, 3].map((i) => `<path d="M${480 + i * 52} 190V100m0 35l-12-12m12 26l12-12" stroke="#536449" fill="none" stroke-width="3"/>`).join('')}<text x="575" y="240" text-anchor="middle">Am Feld: 40 WE</text><text x="300" y="185" text-anchor="middle">${m.notAtField} WE nicht</text><text x="300" y="215" text-anchor="middle">am Feld</text>${step > 0 ? ['repair', 'tech'].map((k, i) => svgChoice(h, k, k === 'repair' ? 'Reparatur' : 'Neue Verteilung', `<rect x="${30 + i * 350}" y="275" width="310" height="60" rx="10" fill="${d.selection === k ? '#d4e0c8' : '#fffef8'}" stroke="#536449"/><text x="${185 + i * 350}" y="312" text-anchor="middle">${k === 'repair' ? 'Reparatur' : 'Neue Verteilung'}</text>`, d.selection === k, k)).join('') : ''}</svg><p class="small-note">WE = erfundene Wassereinheiten. Kein Zufluss. Verbrauch und Grundwasser nicht berechnet.</p>`;
   },
   task(d, step, h) {
     if (step === 0)

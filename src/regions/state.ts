@@ -59,6 +59,10 @@ export function reduceStudy(current: State, raw: Action): State {
     r.decision.weighted = undefined;
   };
   switch (a.op) {
+    case 'panel':
+      if (r.step === 2 && ['plan', 'benefit', 'limit'].includes(a.value ?? ''))
+        r.panel = a.value as StudyState['panel'];
+      break;
     case 'help':
       p.help = Math.max(p.help, Math.min(3, Number(a.value) || 1));
       break;
@@ -99,6 +103,13 @@ export function reduceStudy(current: State, raw: Action): State {
       reopen(2);
       break;
     case 'check': {
+      if (r.step === 2)
+        r.panel =
+          !r.decision.proposal || !r.decision.goal
+            ? 'plan'
+            : !r.decision.benefit
+              ? 'benefit'
+              : 'limit';
       const e =
         r.step === 2
           ? evaluateStudyDecision(
@@ -124,6 +135,7 @@ export function reduceStudy(current: State, raw: Action): State {
         const ex = decisionExample(spec, r.data, r.decision);
         if (!ex) break;
         r.decision = ex;
+        r.panel = 'limit';
         applyEvaluation(
           p,
           evaluateStudyDecision(

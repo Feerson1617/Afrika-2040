@@ -1,9 +1,10 @@
+import { studyClick } from './study-helpers.ts';
 import { test, expect, type Page } from '@playwright/test';
 import { auditAccessibility } from './accessibility.ts';
 import { evidencePath } from './artifacts.ts';
 async function begin(page: Page, n = 5) {
   await page.goto('/');
-  await page.locator('#episode-' + n).click();
+  await studyClick(page, '#episode-' + n, 'click');
 }
 async function baseline(page: Page) {
   for (const id of [
@@ -12,20 +13,20 @@ async function baseline(page: Page) {
     '#check-answer',
     '#next-step',
   ])
-    await page.locator(id).click();
+    await studyClick(page, id, 'click');
 }
 async function trials(page: Page) {
   for (const [k, v] of [
     ['repair', '30'],
     ['tech', '35'],
   ]) {
-    await page.locator('#try-' + k).click();
-    await page.locator(`#study-${k}-${v}`).check();
-    await page.locator('#check-answer').click();
+    await studyClick(page, '#try-' + k, 'click');
+    await studyClick(page, `#study-${k}-${v}`, 'check');
+    await studyClick(page, '#check-answer', 'click');
   }
-  await page.locator('#study-why-delivery').check();
-  await page.locator('#check-answer').click();
-  await page.locator('#next-step').click();
+  await studyClick(page, '#study-why-delivery', 'check');
+  await studyClick(page, '#check-answer', 'click');
+  await studyClick(page, '#next-step', 'click');
 }
 async function decision(page: Page, k: string, goal: string, touch = false) {
   for (const [f, v] of [
@@ -34,12 +35,12 @@ async function decision(page: Page, k: string, goal: string, touch = false) {
     ['benefit', k],
     ['limit', k],
   ]) {
-    if (touch) await page.locator(`#study-${f}-${v}`).tap();
-    else await page.locator(`#study-${f}-${v}`).check();
+    if (touch) await studyClick(page, `#study-${f}-${v}`, 'tap');
+    else await studyClick(page, `#study-${f}-${v}`, 'check');
   }
   for (const id of ['#check-answer', '#next-step']) {
-    if (touch) await page.locator(id).tap();
-    else await page.locator(id).click();
+    if (touch) await studyClick(page, id, 'tap');
+    else await studyClick(page, id, 'click');
   }
   await expect(page.locator('.study-product')).toBeVisible();
 }
@@ -64,15 +65,15 @@ test('Morocco B1 partials, wrong answers, bounded help and full supported path w
   page,
 }) => {
   await begin(page);
-  await page.locator('#study-withdrawal-60').check();
-  await page.locator('#check-answer').click();
+  await studyClick(page, '#study-withdrawal-60', 'check');
+  await studyClick(page, '#check-answer', 'click');
   await expect(page.locator('[data-feedback]')).toHaveClass(/partial/);
   await expect(page.locator('[data-feedback]')).toContainText('60 WE');
-  await page.locator('#study-rest-60').check();
-  for (let i = 0; i < 2; i++) await page.locator('#check-answer').click();
+  await studyClick(page, '#study-rest-60', 'check');
+  for (let i = 0; i < 2; i++) await studyClick(page, '#check-answer', 'click');
   await expect(page.locator('#help-title')).toHaveText('→ Hilfe 3 von 3');
-  await page.locator('#study-adopt').click();
-  await page.locator('#next-step').click();
+  await studyClick(page, '#study-adopt', 'click');
+  await studyClick(page, '#next-step', 'click');
   for (const name of [
     'Ich brauche einen Hinweis',
     'Genauer zeigen',
@@ -80,13 +81,13 @@ test('Morocco B1 partials, wrong answers, bounded help and full supported path w
   ])
     await page.getByRole('button', { name, exact: true }).click();
   for (const k of ['repair', 'tech']) {
-    await page.locator('#try-' + k).click();
-    await page.locator('#study-adopt').click();
+    await studyClick(page, '#try-' + k, 'click');
+    await studyClick(page, '#study-adopt', 'click');
   }
-  await page.locator('#study-adopt').click();
-  await page.locator('#next-step').click();
-  await page.locator('#study-proposal-tech').check();
-  await page.locator('#study-goal-repair').check();
+  await studyClick(page, '#study-adopt', 'click');
+  await studyClick(page, '#next-step', 'click');
+  await studyClick(page, '#study-proposal-tech', 'check');
+  await studyClick(page, '#study-goal-repair', 'check');
   for (const name of [
     'Ich brauche einen Hinweis',
     'Genauer zeigen',
@@ -94,7 +95,7 @@ test('Morocco B1 partials, wrong answers, bounded help and full supported path w
     'Dieses Beispiel übernehmen',
   ])
     await page.getByRole('button', { name, exact: true }).click();
-  await page.locator('#next-step').click();
+  await studyClick(page, '#next-step', 'click');
   await expect(page.locator('[data-supported]')).toBeVisible();
   await expect(page.locator('.study-product')).toContainText(
     'Dafür nehme ich in Kauf',
@@ -143,8 +144,8 @@ async function areaBaseline(page: Page, touch = false) {
     '#check-answer',
     '#next-step',
   ]) {
-    if (touch) await page.locator(id).tap();
-    else await page.locator(id).click();
+    if (touch) await studyClick(page, id, 'tap');
+    else await studyClick(page, id, 'click');
   }
 }
 async function areaTrials(page: Page, touch = false) {
@@ -153,13 +154,13 @@ async function areaTrials(page: Page, touch = false) {
     ['extra', '65'],
   ]) {
     for (const id of ['#try-' + k, `#study-${k}-${v}`, '#check-answer']) {
-      if (touch) await page.locator(id).tap();
-      else await page.locator(id).click();
+      if (touch) await studyClick(page, id, 'tap');
+      else await studyClick(page, id, 'click');
     }
   }
   for (const id of ['#study-why-growth', '#check-answer', '#next-step']) {
-    if (touch) await page.locator(id).tap();
-    else await page.locator(id).click();
+    if (touch) await studyClick(page, id, 'tap');
+    else await studyClick(page, id, 'click');
   }
 }
 for (const k of ['same', 'extra'])
@@ -181,9 +182,9 @@ test('Morocco B2 missing/partial work, wrong total despite right single field, s
   page,
 }) => {
   await begin(page, 6);
-  await page.locator('#try-same').click();
-  await page.locator('#study-single-45').check();
-  await page.locator('#check-answer').click();
+  await studyClick(page, '#try-same', 'click');
+  await studyClick(page, '#study-single-45', 'check');
+  await studyClick(page, '#check-answer', 'click');
   await expect(page.locator('[data-feedback]')).toHaveClass(/partial/);
   await expect(page.locator('[data-feedback]')).toContainText('45 WE');
   for (const name of [
@@ -193,19 +194,19 @@ test('Morocco B2 missing/partial work, wrong total despite right single field, s
     'Dieses Beispiel übernehmen',
   ])
     await page.getByRole('button', { name, exact: true }).click();
-  await page.locator('#next-step').click();
-  await page.locator('#try-extra').click();
-  await page.locator('#study-extra-45').check();
-  for (let i = 0; i < 2; i++) await page.locator('#check-answer').click();
+  await studyClick(page, '#next-step', 'click');
+  await studyClick(page, '#try-extra', 'click');
+  await studyClick(page, '#study-extra-45', 'check');
+  for (let i = 0; i < 2; i++) await studyClick(page, '#check-answer', 'click');
   await expect(page.locator('#help-title')).toHaveText('→ Hilfe 3 von 3');
-  await page.locator('#study-adopt').click();
+  await studyClick(page, '#study-adopt', 'click');
   await expect(page.locator('#study-extra-65')).toBeChecked();
-  await page.locator('#try-same').click();
-  await page.locator('#study-adopt').click();
-  await page.locator('#study-adopt').click();
-  await page.locator('#next-step').click();
-  await page.locator('#study-proposal-extra').check();
-  await page.locator('#study-goal-save').check();
+  await studyClick(page, '#try-same', 'click');
+  await studyClick(page, '#study-adopt', 'click');
+  await studyClick(page, '#study-adopt', 'click');
+  await studyClick(page, '#next-step', 'click');
+  await studyClick(page, '#study-proposal-extra', 'check');
+  await studyClick(page, '#study-goal-save', 'check');
   for (const name of [
     'Ich brauche einen Hinweis',
     'Genauer zeigen',
@@ -213,7 +214,7 @@ test('Morocco B2 missing/partial work, wrong total despite right single field, s
     'Dieses Beispiel übernehmen',
   ])
     await page.getByRole('button', { name, exact: true }).click();
-  await page.locator('#next-step').click();
+  await studyClick(page, '#next-step', 'click');
   await expect(page.locator('[data-supported]')).toBeVisible();
   await expect(page.locator('.study-product')).toContainText(
     '65 statt früher 60',
@@ -268,7 +269,7 @@ for (const device of [
       });
       const page = await ctx.newPage();
       await page.goto('/');
-      await page.locator('#episode-' + n).tap();
+      await studyClick(page, '#episode-' + n, 'tap');
       if (n === 5) {
         for (const id of [
           '#study-withdrawal-60',
@@ -276,18 +277,18 @@ for (const device of [
           '#check-answer',
           '#next-step',
         ])
-          await page.locator(id).tap();
+          await studyClick(page, id, 'tap');
         for (const [k, v] of [
           ['repair', '30'],
           ['tech', '35'],
         ])
           for (const id of ['#try-' + k, `#study-${k}-${v}`, '#check-answer'])
-            await page.locator(id).tap();
+            await studyClick(page, id, 'tap');
         for (const id of ['#study-why-delivery', '#check-answer', '#next-step'])
-          await page.locator(id).tap();
+          await studyClick(page, id, 'tap');
       } else {
         await areaBaseline(page, true);
-        await page.locator('#study-scene-extra').tap();
+        await studyClick(page, '#study-scene-extra', 'tap');
         await expect(page.locator('.study-scene')).toContainText(
           'Gesamt 65 WE',
         );

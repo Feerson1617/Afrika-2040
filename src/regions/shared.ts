@@ -20,6 +20,7 @@ export function validData(d: unknown): d is StudyData {
   const strings = (v: unknown) =>
     Array.isArray(v) &&
     v.length <= 12 &&
+    new Set(v).size === v.length &&
     v.every((t) => typeof t === 'string' && t.length <= 80);
   return Boolean(
     x &&
@@ -134,6 +135,13 @@ export function evaluateStudyDecision(
       'Ergänze deine Begründung',
       ack + ' Wähle einen Beleg und eine Grenze.',
     );
+  if ((!good || !limit) && d.benefit !== 'all' && d.limit !== 'none')
+    return result(
+      'neutral',
+      'Dein Argument ist noch nicht verbunden',
+      ack +
+        ' Die anderen Angaben können für eine andere Maßnahme stimmen. Erkläre den Bezug zu deinem Vorschlag oder wähle einen dazu passenden Beleg und eine Grenze. Du kannst auch mit eigenen Worten begründen.',
+    );
   if (!good || !limit)
     return result(
       failures >= 1 ? 'hint' : good || limit ? 'partial' : 'incorrect',
@@ -151,7 +159,7 @@ export function evaluateStudyDecision(
       'neutral',
       'Dein Argument ist noch nicht verbunden',
       ack +
-        ` Dein Ziel ist: ${spec.goals[d.goal]} Dein Vorschlag unterstützt: ${spec.goals[o.goal]} Ändere dein Ziel oder gewichte diese Folge ausdrücklich höher.`,
+        ` Dein Ziel ist: ${spec.goals[d.goal]} Dein Beleg zeigt: ${spec.goals[o.goal]} Passe dein Ziel an oder gewichte diese konkrete Folge ausdrücklich höher.`,
     );
   return result(
     'neutral',
@@ -184,7 +192,7 @@ export function decisionExample(
 export function product(spec: StudySpec, data: StudyData, d: StudyDecision) {
   const o = optionOf(spec, data, d);
   return o
-    ? `Ich empfehle: ${o.label}. Mein Beleg: ${o.benefit} Aber: ${o.limit} ${weighting(spec, data, d)} ${spec.conclusion?.(data) ?? ''}`
+    ? `Ich empfehle: ${o.label}. Mein Beleg: ${o.benefit} ${d.weighted ? weighting(spec, data, d) : 'Aber: ' + o.limit} ${spec.conclusion?.(data) ?? ''}`
     : '';
 }
 export const control = (

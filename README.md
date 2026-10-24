@@ -1,6 +1,17 @@
 # Afrika 2040 – Gestalte die Zukunft
 
-Ein kurzer Geographie-Lernprototyp für eine heterogene 7. Klasse: **„Welcher Busweg hilft wem?“** in einer ausdrücklich erfundenen Nachbarschaft in Nairobi. Vergleiche Fußweg und Busfahrt, erkläre einen Zusammenhang und begründe eine Empfehlung. **Phase 2A** führt nach dem Vergleich von Amina und David die dritte Person Leila und den Busweg über Süd ein. Nach den sechs bisherigen Lernschritten erweitert **Phase 2B** dieselbe Episode um ein erfundenes Fußweg-Ereignis: entdecken, Folgen erklären und die ursprüngliche Empfehlung erneut prüfen. Die zweite Kenia-Episode **„Mehr Menschen – reicht der Bus noch?“** ist direkt über die Startseite oder nach Episode 1 erreichbar. Sie vergleicht zusätzliche Fahrten und einen kürzeren Fußweg bei mehr Nachfrage. Danach endet der freigegebene Umfang.
+Sechs direkt startbare Geographie-Lernprototypen für eine heterogene 7. Klasse. Reale Ortsbezüge, ausdrücklich erfundene Betriebe und Modellzahlen; freiwillige Worterklärungen und drei Hilfestufen.
+
+| Ort                  | Episode                                 | Untersuchung                                                                    |
+| -------------------- | --------------------------------------- | ------------------------------------------------------------------------------- |
+| Kenia / Nairobi      | 1. Welcher Busweg hilft wem?            | Drei Personen, drei Buslinien; späterer Fußweg-Umweg und erneute Empfehlung.    |
+| Kenia / Nairobi      | 2. Mehr Menschen – reicht der Bus noch? | Nachfrage, zusätzliche Fahrten und kürzerer Fußweg.                             |
+| Ghana / bei Kumasi   | 3. Was wird aus dem Kakao?              | Verarbeitungskette, Einnahmen, laufende Kosten und getrennter Investitionstopf. |
+| Ghana / bei Kumasi   | 4. Mehr Einnahmen – mehr für alle?      | 120 freie GE auf Auszahlung, Rücklage und Fortbildung verteilen.                |
+| Marokko / bei Agadir | 5. Wasser für die nächste Ernte         | Tankvorrat, Entnahme und zwei technische Maßnahmen.                             |
+| Marokko / bei Agadir | 6. Gespartes Wasser – wirklich gespart? | Einsparung am gleichen Feld und höhere Gesamtentnahme bei einem Zusatzfeld.     |
+
+Die vier neuen Episoden wurden nach getrennten Qualitäts-Gates entwickelt. Der Stand ist für die unabhängige Prüfung vorbereitet. Kein Push, Merge oder Deployment im Ausbauauftrag.
 
 ## Starten
 
@@ -11,7 +22,9 @@ npm ci
 npm run dev
 ```
 
-Im Browser die vom Entwicklungsserver angegebene Adresse öffnen. „Spiel starten“ führt direkt zur Karte. Zuerst Aminas Fußweg und Busfahrt wählen, dann die beiden bisherigen Buswege vergleichen und Aminas kürzere Gesamtzeit erklären. Anschließend für Leila vermuten und alle drei Wege testen. Zum Schluss in vier kurzen Abschnitten eine Buslinie, ein Ziel, einen Vorteil und einen Nachteil für eine andere Person wählen. Bei einem Zielkonflikt das Ziel bewusst ändern oder eine konkrete andere Folge stärker gewichten. Satzbausteine und eigene Texte sind möglich; eigene Texte bleiben unbewertet. „Wörter erklären“ und dreistufige Aufgabenhilfen sind freiwillig. Nach der ersten Empfehlung startet „Eine Woche später …“ die neue Situation. Nur Leilas Fußweg zum Platz wird sechs Minuten länger; Vorher und Jetzt bleiben getrennt verfügbar. Beibehalten und Wechseln benötigen jeweils eine Begründung. „Zurück“ erhält die Eingaben; „Neu starten“ löscht beide Situationen und Episode 2 im aktuellen Tab. Über „Episoden auswählen“ können die Aufgaben an verschiedenen Unterrichtstagen getrennt gestartet werden. Vorhandene Empfehlungen bleiben erhalten und können auf der Startseite wieder geöffnet werden. Episode 2 verwendet eine frühere Linie oder lässt selbst eine Ausgangslinie wählen. Die frühere Baustelle ist dort beendet. Alle Bevölkerungs-/Kapazitätszahlen sind erfundene Modellwerte.
+Im Browser die angegebene Adresse öffnen und eine Episode wählen. Frühere Episoden sind keine Voraussetzung. In Kenia bleiben der ursprüngliche Vergleich und das spätere Ereignis erhalten. Die neuen Episoden führen über Ausgangslage, Experiment und Begründung zu einem kurzen Lernprodukt. Die Begründung ist in Vorschlag/Ziel, Beleg und Grenze/Gewichtung gegliedert; Werte stehen neben den Antworten. Unterschiedliche begründete Empfehlungen bleiben neutral. Eigene Texte werden nicht automatisch bewertet. Übernommene Beispiele bleiben kenntlich.
+
+„Zurück“ und „Episoden auswählen“ erhalten die Eingaben im aktuellen Tab. „Schritt neu bearbeiten“ öffnet die aktuelle Aufgabe und folgende Produkte erneut. „Neu starten“ verlangt eine Bestätigung und löscht alle sechs Episoden im Tab. Der bisherige Kenia-Abschluss bietet außerdem „Neu spielen“ als unmittelbaren vollständigen Neustart; „Episoden auswählen“ erhält dagegen alle Antworten. Speicherung ist weder geräteübergreifend noch für spätere Unterrichtstage zugesichert. Gesperrter Browserspeicher verhindert das Spielen nicht.
 
 Cloud-Arbeitsverzeichnis: `/workspace/Afrika-2040`. Wenn das Benutzerverzeichnis nicht schreibbar ist, `npm --cache /workspace/.cache/npm ci` verwenden. Im vorhandenen Checkout arbeiten; kein zusätzlicher Worktree erforderlich.
 
@@ -24,9 +37,9 @@ npm run test:e2e -- --project=chromium
 npm run test:e2e -- --project=webkit
 ```
 
-Die Browsertests starten selbst zwei lokale Server für den Produktionsbuild. Ein vorhandenes `/usr/bin/chromium` wird verwendet. Andernfalls einmal `npx playwright install chromium` ausführen; `CHROMIUM_PATH` kann auf eine vorhandene Chromium-Datei zeigen. Die aktuelle SVG-Namenskorrektur mit vollständigen A-/AA-Filtern liegt in `docs/evidence/episode2-correction/`; die vorherige kombinierte Prüfung liegt in `docs/evidence/episode2/`, die getrennte Phase-2B-Korrektur in `docs/evidence/gate-a/`. Die frühere Phase-2B-Prüfung liegt in `docs/evidence/phase2b/`; frühere Korrekturbelege liegen in `docs/evidence/phase2a-corrections/`; `docs/evidence/phase2a/` dokumentiert den früheren Phase-2A-Ausgangsstand. Historische Phase-1-Belege liegen in `docs/evidence/`. Neue Screenshots schreibt der Test standardmäßig nach `test-results/evidence/`. Mit `AFRIKA_EVIDENCE_DIR=mein-pruefordner npm run test:e2e -- --project=chromium` ist der Ausgabeort konfigurierbar. Aktuelle Laufberichte liegen in den ignorierten Verzeichnissen `test-results/` und `playwright-report/`.
+Die Browsertests starten selbst zwei lokale Server für den Produktionsbuild. Ein vorhandenes `/usr/bin/chromium` wird verwendet. Andernfalls einmal `npx playwright install chromium` ausführen; `CHROMIUM_PATH` kann auf eine vorhandene Chromium-Datei zeigen. Neue Protokolle und wenige repräsentative Bilder werden außerhalb Git in einem separaten Abnahmeexport gebündelt. Die bisherige SVG-Namenskorrektur mit vollständigen A-/AA-Filtern liegt in `docs/evidence/episode2-correction/`; die vorherige kombinierte Prüfung liegt in `docs/evidence/episode2/`, die getrennte Phase-2B-Korrektur in `docs/evidence/gate-a/`. Die frühere Phase-2B-Prüfung liegt in `docs/evidence/phase2b/`; frühere Korrekturbelege liegen in `docs/evidence/phase2a-corrections/`; `docs/evidence/phase2a/` dokumentiert den früheren Phase-2A-Ausgangsstand. Historische Phase-1-Belege liegen in `docs/evidence/`. Neue Screenshots schreibt der Test standardmäßig nach `test-results/evidence/`. Mit `AFRIKA_EVIDENCE_DIR=mein-pruefordner npm run test:e2e -- --project=chromium` ist der Ausgabeort konfigurierbar. Aktuelle Laufberichte liegen in den ignorierten Verzeichnissen `test-results/` und `playwright-report/`.
 
-Für WebKit muss zusätzlich der passende Playwright-Browser installiert sein (`npx playwright install webkit`). Das WebKit-Projekt umfasst Phase 2B, die Gate-A-Korrekturen und Episode 2 einschließlich der SVG-Namenskorrektur. Ohne Browserinstallation scheitert es sichtbar beim Start und wird nicht als bestandene oder übersprungene Prüfung dargestellt. Der aktuelle Cloud-Download ist durch die Netzwerkfreigabe blockiert; genaue Grenzen stehen im Übergabebericht.
+Für WebKit muss zusätzlich der passende Playwright-Browser installiert sein (`npx playwright install webkit`). Das WebKit-Projekt umfasst die bisherigen Kenia-Korrekturen und alle neuen regionalen Episoden einschließlich der Integration. Ohne Browserinstallation scheitert es sichtbar beim Start und wird nicht als bestandene oder übersprungene Prüfung dargestellt. Der aktuelle Cloud-Download ist durch die Netzwerkfreigabe blockiert; genaue Grenzen stehen im Übergabebericht.
 
 Die native Tastatursequenz prüft vor der fachlichen Rückmeldung den tatsächlich ausgewählten Wert. Linux ist hier geprüft. Der bestehende Mac-Helfer verwendet Leertaste → Pfeil-ab → Enter. Der aktuelle Korrekturprompt nennt 98/100 alte Chromium-Fälle auf dem Prüf-Mac und zwei leere native Auswahlwerte. Die dort beschriebene erfolgreiche manuelle Sequenz Öffnen → Home → Pfeil-ab → Enter ist hier mangels Mac nicht verifiziert. Der Testtreiberpunkt bleibt offen; die Wertprüfungen bleiben erhalten.
 
@@ -34,7 +47,9 @@ Für eine lokale Prüfung des fertigen Builds: `npm run preview`. Relative Resso
 
 ## Fachliche und technische Übergabe
 
-- [Aktuelle SVG-Namenskorrektur und Abnahmenachweis](docs/episode2-correction.md)
+- [Aktueller Ausbau Ghana/Marokko: Modelle, Quellenzugriff, Qualitäts-Gates und Grenzen](docs/ghana-marokko-development.md)
+- [Verbindlicher Ausbauauftrag](docs/ghana-marokko-request.md)
+- [Bisherige SVG-Namenskorrektur und Abnahmenachweis](docs/episode2-correction.md)
 - [Vorherige kombinierte Übergabe und Gate B](docs/combined-handover.md)
 - [Separater Abschluss der Phase-2B-Korrektur und Gate A](docs/phase2b-correction-gate.md)
 - [Verbindlicher kombinierter Auftrag](docs/combined-request.md)
