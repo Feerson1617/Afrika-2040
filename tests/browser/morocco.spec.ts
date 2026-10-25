@@ -171,9 +171,11 @@ for (const k of ['same', 'extra'])
     await areaBaseline(page);
     await areaTrials(page);
     await decision(page, k, k === 'same' ? 'save' : 'area');
-    await expect(page.locator('.study-product')).toContainText('mehr Flächen');
     await expect(page.locator('.study-product')).toContainText(
-      '65 statt früher 60',
+      'Zum Vergleich:',
+    );
+    await expect(page.locator('.study-product')).toContainText(
+      'statt früher 60 WE',
     );
     await page.reload();
     await expect(page.locator('.study-product')).toBeVisible();
@@ -217,7 +219,7 @@ test('Morocco B2 missing/partial work, wrong total despite right single field, s
   await studyClick(page, '#next-step', 'click');
   await expect(page.locator('[data-supported]')).toBeVisible();
   await expect(page.locator('.study-product')).toContainText(
-    '65 statt früher 60',
+    'statt früher 60 WE',
   );
 });
 test('Morocco B2 all A/AA views and computed names with keyboard switches in both directions', async ({

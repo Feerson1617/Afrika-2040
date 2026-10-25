@@ -88,7 +88,10 @@ export const area: StudySpec = {
       ],
     },
   ],
-  conclusion: () => cause,
+  conclusion: (_data, decision) =>
+    decision.proposal === 'same'
+      ? 'Mein Plan bewässert nur das gleiche Feld: insgesamt 45 WE. Zum Vergleich: Mit dem kleineren Zusatzfeld wären es 45 + 20 = 65 WE statt früher 60 WE. Mehr Flächen können die Einsparung am ersten Feld also aufheben.'
+      : 'Mein Plan bewässert auch das kleinere Zusatzfeld: 45 + 20 = 65 WE statt früher 60 WE. Das erste Feld braucht weniger, beide Felder zusammen aber mehr. Zum Vergleich: Ohne Zusatzfeld wären es insgesamt 45 WE.',
   change(d, a) {
     if (
       a.op === 'select' &&

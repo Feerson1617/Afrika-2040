@@ -591,8 +591,13 @@ test('both area plans can be justified with every goal; complete product explain
       assert.equal(e.feedback.complete, true);
       assert.equal(e.feedback.kind, 'neutral');
       const text = product(area, d, dec);
-      assert.match(text, /mehr Flächen/);
-      assert.match(text, /65 statt früher 60/);
+      assert.match(text, /Zum Vergleich:/);
+      assert.match(
+        text,
+        o.id === 'same'
+          ? /Mein Plan bewässert nur das gleiche Feld: insgesamt 45 WE/
+          : /Mein Plan bewässert auch das kleinere Zusatzfeld: 45 \+ 20 = 65 WE/,
+      );
     }
 });
 test('both Morocco episodes reset the experiment without losing already correct baseline answers; reload preserves progress', () => {
@@ -702,9 +707,85 @@ test('factually true evidence about another option is an unconnected argument, n
       true,
     );
     assert.equal(e.feedback.kind, 'neutral');
-    assert.equal(e.failed, false);
+    assert.equal(e.failed, true);
     assert.equal(e.feedback.complete, false);
     assert.match(e.feedback.text, /Du beachtest die Grenze/);
-    assert.match(e.feedback.text, /noch nicht verbunden|andere Maßnahme/);
+    assert.match(e.feedback.text, /gehört zu/);
   }
+});
+
+import { studyHint } from '../src/regions/ui.ts';
+for (const build of [cocoaDecision, shareDecision, waterDecision, areaDecision])
+  test(`correction: ${build.name} complete associations adapt within two checks; incomplete, own language and conflict stay open`, () => {
+    let s = build(),
+      r = record(s);
+    const spec = { cocoa, share, water, area }[s.activeStudy!];
+    const [o, other] = spec.options(r.data);
+    for (const [k, v] of [
+      ['proposal', o.id],
+      ['goal', o.goal],
+      ['benefit', other.id],
+      ['limit', other.id],
+    ])
+      s = action(s, 'answer', v, k);
+    s = action(s, 'check');
+    assert.equal(record(s).progress[2].help, 0);
+    s = action(s, 'check');
+    r = record(s);
+    assert.equal(r.progress[2].help, 3);
+    assert.equal(r.progress[2].complete, false);
+    assert.equal(r.decision.supported, undefined);
+    assert.equal(r.progress[2].supported, undefined);
+    s = action(s, 'adopt');
+    assert.equal(record(s).progress[2].complete, true);
+    assert.equal(record(s).decision.supported, true);
+    s = action(s, 'answer', o.id, 'benefit');
+    assert.equal(record(s).decision.supported, undefined);
+    s = action(s, 'answer', undefined, 'limit');
+    s = action(s, 'check');
+    assert.match(record(s).progress[2].feedback!.text, /Dein Beleg passt/);
+    const before = record(s).progress[2].failures;
+    s = action(s, 'text', '???');
+    s = action(s, 'check');
+    assert.equal(record(s).progress[2].failures, before);
+    s = action(s, 'submit');
+    assert.equal(record(s).decision.ungraded, true);
+    assert.doesNotMatch(record(s).progress[2].feedback!.text, /Karte/);
+    const hints = [1, 2, 3].map((n) =>
+      studyHint(action(build(), 'help', String(n))),
+    ); // without a plan: safe prompts
+    assert.notEqual(hints[0], hints[1]);
+  });
+test('complete area products: own plan and conditional comparison are assigned correctly for both goals, support and reload', () => {
+  for (const proposal of ['same', 'extra'])
+    for (const goal of ['save', 'area']) {
+      let s = areaDecision();
+      for (const [k, v] of [
+        ['proposal', proposal],
+        ['goal', goal],
+        ['benefit', proposal],
+        ['limit', proposal],
+      ])
+        s = action(s, 'answer', v, k);
+      s = action(s, 'help', '3');
+      const hints = [1, 2, 3].map((n) => {
+        const x = structuredClone(s);
+        record(x).progress[2].help = n;
+        return studyHint(x);
+      });
+      assert.equal(new Set(hints).size, 3);
+      s = action(s, 'adopt');
+      s = action(s, 'next');
+      s = restore(s);
+      const d = record(s).decision,
+        text = product(area, record(s).data, d);
+      const conclusion =
+        proposal === 'same'
+          ? 'Mein Plan bewässert nur das gleiche Feld: insgesamt 45 WE. Zum Vergleich: Mit dem kleineren Zusatzfeld wären es 45 + 20 = 65 WE statt früher 60 WE. Mehr Flächen können die Einsparung am ersten Feld also aufheben.'
+          : 'Mein Plan bewässert auch das kleinere Zusatzfeld: 45 + 20 = 65 WE statt früher 60 WE. Das erste Feld braucht weniger, beide Felder zusammen aber mehr. Zum Vergleich: Ohne Zusatzfeld wären es insgesamt 45 WE.';
+      assert.ok(text.endsWith(conclusion));
+      assert.equal(d.benefit, proposal);
+      assert.equal(d.limit, proposal);
+      assert.doesNotMatch(text, /Es werden aber mehr Flächen bewässert/);
+    }
 });

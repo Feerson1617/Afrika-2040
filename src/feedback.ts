@@ -185,12 +185,12 @@ export interface Explanation {
   text: string;
   supported?: boolean;
 }
-export function textNotice(persisted: boolean) {
+export function textNotice(persisted: boolean, material = 'auf der Karte') {
   return (
     (persisted
       ? 'Deine Antwort wurde gespeichert.'
       : 'Deine Antwort bleibt für dieses Spiel erhalten. Der Browser erlaubt kein Speichern.') +
-    ' Das Spiel kann sie nicht sicher prüfen. Zeige deinen Beleg auf der Karte.'
+    ` Das Spiel kann sie nicht sicher prüfen. Zeige deinen Beleg ${material}.`
   );
 }
 export function evaluateExplanation(

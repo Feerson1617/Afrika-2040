@@ -1,0 +1,42 @@
+# Korrektur der sechs Episoden – 25. Oktober 2026
+
+Ausgangsstand exakt bestätigt: `feat/ghana-marokko-episoden`, `0e8a93c5f6ce132af64b88cad4c45f2870673e81`, sauberer Arbeitsbaum. Maßstab sind der hochgeladene Work-Korrekturprompt und die ergänzenden Nutzeranforderungen. Die unabhängige Gegenprüfung wurde als Befund gelesen, nicht als eigene bestandene Prüfung übernommen. Keine neue Phase, keine neuen Mechaniken oder Episoden.
+
+## Änderungen
+
+- **B1:** Vollständig ausgefüllte unpassende Beleg-/Grenzzuordnungen erhöhen nun den vorhandenen, auf zwei begrenzten Unterstützungszähler. Nach dem zweiten Prüfen erscheint automatisch Hilfe 3 mit dem Beispiel für den aktuellen Vorschlag. Die Anzeige bleibt bei wahren, falsch zugeordneten Angaben sachlich neutral. Zahlen werden ihrer tatsächlichen Maßnahme zugeordnet. Richtige Bestandteile bleiben gewählt und werden anerkannt. Offene Felder, ungeprüfte eigene Sprache und legitime Zielkonflikte verbrauchen keine Versuche. Es gibt weiterhin keine Strafpunkte.
+- **B3:** Drei verschiedene Begründungshilfen: auf Vorschlag/Beleg achten; aktuelle Maßnahme und konkrete Zahl bzw. Verteilung vergleichen; vollständige Erklärung mit Grenze und gegebenenfalls ausdrücklicher abweichender Gewichtung. Erst „Dieses Beispiel übernehmen“ markiert das aktuelle Produkt als unterstützt. Nach tatsächlicher inhaltlicher Bearbeitung wird diese Markierung gelöscht; die Hilfegeschichte bleibt erhalten.
+- **B2:** Episode 6 erzeugt den Erklärungssatz aus dem gewählten Vorschlag. Bei nur einem Feld gelten 45 WE für den eigenen Plan; 65 WE werden ausdrücklich als Gegenfall mit kleinerem Zusatzfeld bezeichnet. Beim Zusatzfeld gelten 45+20=65 WE für den eigenen Plan; 45 WE werden als Vergleich ohne Zusatzfeld bezeichnet. Die Vergleichserkenntnis bleibt erhalten. Maßgeblich ist der Vorschlag, nicht die zuletzt betrachtete Versuchsszene.
+- **B4/B5:** Der Ghana-Abschluss nennt den vollständigen gespeicherten Verteilplan mit allen drei Beträgen und Summe 120 GE. Eigene regionale Antworten verweisen auf die Angaben zum Vorschlag, nicht auf eine nicht vorhandene Karte. Der Standardhinweis in Kenia bleibt unverändert.
+
+Modellwerte, Kenia-Weglogik, Straßenereignis, Kapazitäts-/Zugangsrechnung, zugängliche SVG-Namen, curriculare Originaldokumente und Quellen bleiben unverändert. Kein neuer Speicherzustand oder Migrationsschlüssel erforderlich. Bereits gespeicherte Abschlüsse werden mit dem korrigierten, zum Vorschlag gehörigen Erklärungstext wieder angezeigt.
+
+## Prüfung und Aussagegrenzen
+
+Die neuen Tests kontrollieren konkrete Zuordnungen und vollständige Texte: alle neun regionalen Optionen mit ausgeschriebenen Solltexten; alle drei einseitigen 120-GE-Verteilungen; Kenias drei Buslinien mit vollständigen Vorteil-/Nachteilssätzen und beide Maßnahmen der Folgeepisode mit vollständigem Produktsatz. Ganze Abschlussberichte bleiben nach Neuladen identisch. Regionale Texte werden außerdem erneut bearbeitet/geprüft. Die drei Ansichten prüfen automatische Hilfe, drei verschiedene Hilfen, bewusste Übernahme, echte Änderung, Zielgewichtung/-anpassung und ungeprüfte Abgabe. Touchereignisse werden bei der Überarbeitung in den iPad-Simulationen verwendet. Die bestehende Suite prüft weiterhin die normalen Touch-/Tastaturwege, SVG-Namen, A/AA-Tags, Speicherfehler und relative Pages-Pfade.
+
+**Negative Gegenkontrolle:** Die aktuellen regionalen Logiktests wurden außerhalb des Repositorys gegen den unveränderten Ausgangsquellcode ausgeführt: 23 bestanden, sieben schlugen erwartungsgemäß fehl. Sie erkennen die fehlende automatische Unterstützung, identische Hilfen und den falsch zugeordneten Erklärungssatz. Es wurde kein weiterer Git-Worktree angelegt. Der Fehlerstatus ist ausdrücklich eine erfolgreiche Empfindlichkeitskontrolle, kein bestandener Anwendungstest.
+
+Der erste neue Browserlauf meldete vier Fehler im Testtreiber: Ein bereits ausgewähltes Radiofeld erneut mit `.check()` zu setzen löst keine Änderung aus. Die ursprüngliche Erwartung, dadurch die Beispielkennzeichnung zu löschen, war falsch. Die Tests führen jetzt eine echte Änderung zur anderen Antwort und zurück aus; danach bestehen sie. Der Rohbericht bleibt im separaten Prüfpaket. Ein alter Logiktest erwartete den früheren allgemeinen Hinweis; er prüft jetzt die konkrete Maßnahmenzuordnung und den Unterstützungsfortschritt.
+
+**Umgebungsgrenzen:** Ein erneuter WebKit-Startversuch scheitert an der fehlenden Engine. Kein WebKit-Erfolg und kein echter iPad-/Safari-Test behauptet. Die bekannten macOS-Probleme des nativen Select-Testtreibers werden hier auf Linux nicht als behoben ausgegeben. Die macOS-Ergebnisse der unabhängigen Gegenprüfung sind fremde Prüfergebnisse, keine eigenen aktuellen Ergebnisse. Keine vollständige Screenreader- oder WCAG-Konformitätsprüfung, keine empirische Prüfung geringer Lesekompetenz oder Lernwirksamkeit. Die unabhängige Gesamtprüfung bleibt verpflichtend.
+
+Neue umfangreiche Laufprotokolle/Bilder werden außerhalb von Git aufbewahrt und im Prüfexport zusammengefasst. Frühere Belege werden nicht gelöscht. Nach dem Korrekturcommit stoppen: kein Push, Merge oder Deployment ohne neue ausdrückliche Freigabe.
+
+## Abschließendes Gate
+
+| Eigene Prüfung                                                            | Ergebnis                                                                                                         |
+| ------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
+| Vollständige Logik-Suite                                                  | 147/147 bestanden                                                                                                |
+| Produktionsbuild                                                          | bestanden                                                                                                        |
+| Gesamte Chromium-Browser-Suite                                            | 169/169 bestanden, keine Wiederholungs-Retries                                                                   |
+| Zusätzliche regionale Fälle innerhalb dieser Suite                        | 24: zwölf Ansichts-/Episodenkombinationen, neun vollständige Textzuordnungen, drei einseitige Ghana-Verteilungen |
+| Zusätzliche Kenia-Berichtsfälle innerhalb dieser Suite                    | fünf: drei Buslinien und beide Maßnahmen aus Episode 2                                                           |
+| Neue/geänderte Quell- und Testdateien: Formatcheck, Git-Whitespaceprüfung | bestanden                                                                                                        |
+| Neue regionale Tests gegen unveränderten Ausgangsquellcode                | 30 Fälle: 23 bestanden, sieben erwartete Fehler als negative Gegenkontrolle                                      |
+| Curriculare Original-PDFs                                                 | alle drei Hashes unverändert; reine Hashkontrolle, keine neue seitenweise Auswertung behauptet                   |
+| Aktueller WebKit-Start                                                    | blockiert: ausführbare Engine fehlt                                                                              |
+
+Die 169 sind verschiedene automatisierte Fälle, keine 169 vollständigen Unterrichtserprobungen. Es wurden keine neuen Episoden, Modellwerte, externen Dienste oder Abhängigkeiten eingeführt. Vollständige Endtexte sind mit dem gewählten Vorschlag und dessen Vergleich abgeglichen; der korrigierte Ein-Feld-Abschluss wurde zusätzlich visuell gesichtet. Die Logik für das Straßenereignis bleibt unverändert und wird durch die bestehenden Vorher-/Jetzt-Prüfungen abgesichert. Empirische Lernwirksamkeit, Unterrichtstauglichkeit für alle Lernenden und vollständige selbstständige Urteilskompetenz werden daraus nicht abgeleitet.
+
+Die aktuelle vollständige Commit-ID und der saubere Arbeitsbaum stehen nach dem Commit in der Bestandsdatei des Prüfexports. Das vollständige Paket enthält den eigenständig wiederherstellbaren Git-Bundle mit gesamtem versioniertem Stand, Tests und Dokumentation sowie aktuelle Protokolle und ausgewählte Bilder. Ein zusätzlicher kompakter Export enthält direkt nutzbaren Quellcode ohne die großen historischen Dateien unter `docs/evidence/`; diese bleiben im vollständigen Bundle erhalten. SHA-256- und ZIP-Inhaltsprüfungen gehören zum Export. Kein Push, Merge oder Deployment im Korrekturauftrag.

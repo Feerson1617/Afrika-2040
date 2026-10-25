@@ -109,7 +109,7 @@ export function evaluateStudyDecision(
     return result(
       'neutral',
       'Bewusst unbewertet abgegeben',
-      textNotice(persisted),
+      textNotice(persisted, 'in den Angaben zu deinem Vorschlag'),
       true,
     );
   const good = d.benefit === o.id,
@@ -126,7 +126,7 @@ export function evaluateStudyDecision(
       'Dein eigener Gedanke',
       ack +
         ' ' +
-        textNotice(persisted) +
+        textNotice(persisted, 'in den Angaben zu deinem Vorschlag') +
         ' Prüfe die Bausteine oder gib deinen Text bewusst unbewertet ab.',
     );
   if (!d.benefit || !d.limit)
@@ -135,25 +135,38 @@ export function evaluateStudyDecision(
       'Ergänze deine Begründung',
       ack + ' Wähle einen Beleg und eine Grenze.',
     );
-  if ((!good || !limit) && d.benefit !== 'all' && d.limit !== 'none')
+  if (!good || !limit) {
+    const options = spec.options(data);
+    const wrong = [
+      !good
+        ? options.find((x) => x.id === d.benefit)
+          ? `Dein Beleg gehört zu: ${options.find((x) => x.id === d.benefit)!.label}. ${options.find((x) => x.id === d.benefit)!.benefit}`
+          : 'Dein Vorschlag löst nicht alle Probleme.'
+        : '',
+      !limit
+        ? options.find((x) => x.id === d.limit)
+          ? `Deine Grenze gehört zu: ${options.find((x) => x.id === d.limit)!.label}.`
+          : 'Bei deinem Vorschlag bleibt eine Grenze.'
+        : '',
+    ]
+      .filter(Boolean)
+      .join(' ');
     return result(
       'neutral',
       'Dein Argument ist noch nicht verbunden',
-      ack +
-        ' Die anderen Angaben können für eine andere Maßnahme stimmen. Erkläre den Bezug zu deinem Vorschlag oder wähle einen dazu passenden Beleg und eine Grenze. Du kannst auch mit eigenen Worten begründen.',
-    );
-  if (!good || !limit)
-    return result(
-      failures >= 1 ? 'hint' : good || limit ? 'partial' : 'incorrect',
-      '↺ Verbinde Beleg und Vorschlag',
-      ack +
-        ' ' +
-        (failures >= 1
-          ? `Zu ${o.label} passt: ${o.benefit} Grenze: ${o.limit} Du kannst dieses Beispiel übernehmen.`
-          : 'Eine wahre Angabe kann zu einer anderen Maßnahme gehören. Prüfe den Bezug zu deinem Vorschlag.'),
+      [
+        ack,
+        wrong,
+        failures >= 1
+          ? 'Unten steht ein passendes Beispiel. Du kannst es bewusst übernehmen.'
+          : 'Behalte passende Teile. Prüfe die Angaben zu deinem Vorschlag.',
+      ]
+        .filter(Boolean)
+        .join(' '),
       false,
       true,
     );
+  }
   if (d.goal !== o.goal && !d.weighted)
     return result(
       'neutral',
@@ -192,7 +205,7 @@ export function decisionExample(
 export function product(spec: StudySpec, data: StudyData, d: StudyDecision) {
   const o = optionOf(spec, data, d);
   return o
-    ? `Ich empfehle: ${o.label}. Mein Beleg: ${o.benefit} ${d.weighted ? weighting(spec, data, d) : 'Aber: ' + o.limit} ${spec.conclusion?.(data) ?? ''}`
+    ? `Ich empfehle: ${o.label}. Mein Beleg: ${o.benefit} ${d.weighted ? weighting(spec, data, d) : 'Aber: ' + o.limit} ${spec.conclusion?.(data, d) ?? ''}`
     : '';
 }
 export const control = (
