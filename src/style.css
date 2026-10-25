@@ -2460,3 +2460,27 @@ summary span {
     scroll-margin-top: 24px;
   }
 }
+
+/* Optional source detail keeps the active task brief. */
+.real-context {
+  margin: 1.2rem 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line, #c8cfc3);
+  border-radius: 12px;
+  background: #fffef8;
+}
+.real-context summary {
+  cursor: pointer;
+  font-weight: 650;
+  padding: 0.4rem 0;
+}
+.real-context p {
+  max-width: 65ch;
+}
+.context-source {
+  font-size: 0.9rem;
+}
+.real-context a {
+  color: #244f40;
+  text-decoration: underline;
+}

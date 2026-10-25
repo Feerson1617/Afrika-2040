@@ -1,0 +1,102 @@
+{
+  "source": "https://raw.githubusercontent.com/nvkelso/natural-earth-vector/master/geojson/ne_10m_populated_places_simple.geojson",
+  "access_date": "2026-10-25",
+  "source_sha256": "fd3fa867a320cbd5c5b6bb5bc550afeec2939fb2cef688e508007282a55ac42f",
+  "features": [
+    {
+      "properties": {
+        "name": "Agadir",
+        "adm0name": "Morocco",
+        "adm0_a3": "MAR",
+        "adm0cap": 0,
+        "featurecla": "Admin-1 capital",
+        "latitude": 30.439988,
+        "longitude": -9.620044,
+        "ne_id": 1159148065
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -9.620044,
+          30.439988
+        ]
+      }
+    },
+    {
+      "properties": {
+        "name": "Kumasi",
+        "adm0name": "Ghana",
+        "adm0_a3": "GHA",
+        "adm0cap": 0,
+        "featurecla": "Admin-1 capital",
+        "latitude": 6.691937,
+        "longitude": -1.63196,
+        "ne_id": 1159148507
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -1.63196,
+          6.691937
+        ]
+      }
+    },
+    {
+      "properties": {
+        "name": "Rabat",
+        "adm0name": "Morocco",
+        "adm0_a3": "MAR",
+        "adm0cap": 1,
+        "featurecla": "Admin-0 capital",
+        "latitude": 34.025307,
+        "longitude": -6.836408,
+        "ne_id": 1159150673
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -6.836408,
+          34.025307
+        ]
+      }
+    },
+    {
+      "properties": {
+        "name": "Accra",
+        "adm0name": "Ghana",
+        "adm0_a3": "GHA",
+        "adm0cap": 1,
+        "featurecla": "Admin-0 capital",
+        "latitude": 5.551981,
+        "longitude": -0.218662,
+        "ne_id": 1159151403
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -0.218662,
+          5.55198
+        ]
+      }
+    },
+    {
+      "properties": {
+        "name": "Nairobi",
+        "adm0name": "Kenya",
+        "adm0_a3": "KEN",
+        "adm0cap": 1,
+        "featurecla": "Admin-0 capital",
+        "latitude": -1.281401,
+        "longitude": 36.814711,
+        "ne_id": 1159151597
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          36.814711,
+          -1.281401
+        ]
+      }
+    }
+  ]
+}

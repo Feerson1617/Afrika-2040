@@ -1,3 +1,4 @@
+import { renderContext } from './geography/context.ts';
 import { renderOrientation } from './geography/ui.ts';
 import { geoHint, type GeoAction } from './geography/state.ts';
 import { renderStudy, studyMenu, studyHint } from './regions/ui.ts';
@@ -462,6 +463,17 @@ function render(focusId?: string) {
                   restartPending,
                 })
               : game();
+  if (state.screen !== 'start') {
+    const country =
+      state.screen === 'study' && state.activeStudy
+        ? state.activeStudy === 'cocoa' || state.activeStudy === 'share'
+          ? 'GHA'
+          : 'MAR'
+        : 'KEN';
+    app
+      .querySelector('main')
+      ?.insertAdjacentHTML('beforeend', renderContext(country));
+  }
   for (const id of openDetails) {
     const detail = document.getElementById(id) as HTMLDetailsElement | null;
     if (detail) detail.open = true;
