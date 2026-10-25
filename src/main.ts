@@ -63,6 +63,27 @@ try {
 }
 let state = readSession(storage);
 let restartPending = false;
+const storageWarning = document.createElement('aside');
+storageWarning.id = 'storage-warning';
+storageWarning.className = 'storage-warning';
+storageWarning.setAttribute('role', 'status');
+storageWarning.setAttribute('aria-live', 'polite');
+storageWarning.setAttribute('aria-atomic', 'true');
+storageWarning.hidden = true;
+app.before(storageWarning);
+function updateStorageWarning(storageFailed: boolean) {
+  const warning = storageFailed
+    ? 'Speichern ist gerade nicht möglich. Beim Neuladen können deine Antworten verloren gehen.'
+    : '';
+  if (storageWarning.textContent !== warning)
+    storageWarning.textContent = warning;
+  storageWarning.hidden = !storageFailed;
+}
+function persistState() {
+  const saved = saveSession(state, storage);
+  updateStorageWarning(!saved);
+  return saved;
+}
 
 const esc = (text: string) =>
   text.replace(
@@ -416,7 +437,7 @@ function end() {
     <p class="reflection">Zeige jemandem deinen Vorschlag. Erkläre: Welche Folge ist dir besonders wichtig?</p></section><p class="end-model">Dieses Modell ist erfunden. Daraus folgen keine allgemeinen Aussagen über Nairobi oder Kenia. Wartezeiten, Fahrpreise und Kapazitäten fehlen. Ein Vergleich der Zeiten ist noch keine umfassende Nachhaltigkeitsbewertung. Die Zeiten sind keine Vorhersage für das Jahr 2040.</p><section class="event-transition" aria-label="Eine Woche später"><h2>Eine Woche später …</h2><p>Im Viertel hat sich etwas verändert. Prüfe, ob deine Entscheidung noch passt.</p>${button(state.road ? 'Neue Situation weiter prüfen' : 'Was hat sich verändert?', 'event-start', 'button primary')}</section>${button('Episode 2 starten', 'demand-start', 'button secondary')}<div class="end-actions">${button('Episoden auswählen', 'episode-home', 'button secondary')}${button('Empfehlung noch einmal ansehen', 'back', 'button secondary')}${button('Neu spielen', 'restart', 'button primary')}</div><p class="privacy-note">Neustart löscht deine Antworten in diesem Tab.</p></main>`;
 }
 
-function render(focusId?: string) {
+function render(focusId?: string, taskChange = false) {
   const view =
     state.screen === 'study'
       ? `study-${state.activeStudy}-${state.studies?.[state.activeStudy!]?.step}`
@@ -508,6 +529,13 @@ function render(focusId?: string) {
         'feedback-title',
       ].includes(focusId),
     });
+  if (taskChange && focusId) {
+    requestAnimationFrame(() =>
+      document
+        .getElementById(focusId)
+        ?.scrollIntoView({ block: 'start', behavior: 'instant' }),
+    );
+  }
 }
 
 function dispatch(action: Action) {
@@ -517,7 +545,8 @@ function dispatch(action: Action) {
   if (action.type === 'restart') {
     clearSession(storage);
     restartPending = false;
-  } else saveSession(state, storage);
+    updateStorageWarning(false);
+  } else persistState();
   const navigate =
     [
       'start',
@@ -584,6 +613,7 @@ function dispatch(action: Action) {
                           : report && currentProgress(state).feedback
                             ? 'feedback-title'
                             : oldFocus,
+    navigate || (geo && ['review', 'home'].includes(action.op)),
   );
   if (geo && state.geography) {
     announcer.textContent =
@@ -647,7 +677,7 @@ function activate(el: Element) {
       id: el.getAttribute('data-episode') as StudyId,
       field: el.getAttribute('data-field') ?? undefined,
       value: value ?? undefined,
-      persisted: saveSession(state, storage),
+      persisted: persistState(),
     });
     return;
   }
@@ -673,7 +703,7 @@ function activate(el: Element) {
     name === 'submit-ungraded' ||
     name === 'event-submit-explanation'
   ) {
-    dispatch({ type: name, persisted: saveSession(state, storage) });
+    dispatch({ type: name, persisted: persistState() });
     return;
   }
   if (name === 'help') {
@@ -743,7 +773,7 @@ app.addEventListener('change', (event) => {
       op: 'answer',
       field: el.name.slice(6),
       value: el.value,
-      persisted: saveSession(state, storage),
+      persisted: persistState(),
     });
     return;
   }
@@ -795,7 +825,7 @@ app.addEventListener('input', (event) => {
   const el = event.target as HTMLTextAreaElement;
   if (el.name === 'study-text') {
     state = reduce(state, { type: 'study', op: 'text', value: el.value });
-    saveSession(state, storage);
+    persistState();
     document.querySelector('[data-feedback]')?.remove();
     document.getElementById('next-step')?.remove();
     const b = document.querySelector<HTMLButtonElement>('#study-submit');
@@ -810,7 +840,7 @@ app.addEventListener('input', (event) => {
   )
     return;
   state = reduce(state, { type: el.name, value: el.value });
-  saveSession(state, storage);
+  persistState();
   document.querySelector('[data-feedback]')?.remove();
   document.getElementById('next-step')?.remove();
   const ungraded = document.querySelector<HTMLButtonElement>(
@@ -827,4 +857,10 @@ app.addEventListener('input', (event) => {
 
 // Do not rely on previous tasks' services or an existing in-memory state.
 if (!state) state = initialState();
-render();
+render(undefined, false);
+if (['event-find', 'event-effects', 'event-review'].includes(state.screen))
+  requestAnimationFrame(() =>
+    document
+      .getElementById('task-title')
+      ?.scrollIntoView({ block: 'start', behavior: 'instant' }),
+  );
