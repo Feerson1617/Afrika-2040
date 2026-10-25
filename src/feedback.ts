@@ -18,6 +18,7 @@ import {
   weightingProduct,
 } from './decision.ts';
 import type { DecisionPanel } from './decision.ts';
+import type { Progress } from './progress.ts';
 import type {
   Criterion,
   Foot,
@@ -178,6 +179,50 @@ export function evaluateClosed(
     false,
     true,
   );
+}
+// A shown explanation can complete an early task, but cannot turn a previous
+// wrong choice into a verified answer or erase an already verified correct one.
+export function settleEarlyExplanation(step: Step, p: Progress) {
+  if (step > 2 || p.help !== 3) return;
+  const confirmed =
+    p.complete &&
+    p.feedback?.kind === 'correct' &&
+    p.feedback.complete &&
+    evaluateClosed(step, p, 0).feedback.complete;
+  if (confirmed) {
+    // Legacy help-3 code set supported even after a green confirmation.
+    // A green confirmation was only produced by checking the actual answer.
+    p.supported = undefined;
+    return;
+  }
+  if (
+    p.supported &&
+    p.complete &&
+    p.feedback?.kind === 'hint' &&
+    p.feedback.title === '→ Mit Erklärung bearbeitet'
+  )
+    return;
+  const acknowledgement =
+    step === 0
+      ? [
+          p.foot === 'platz' ? 'Dein Fußweg zum Platz passte.' : '',
+          p.bus === 'direct' ? 'Deine direkte Busfahrt passte.' : '',
+        ]
+          .filter(Boolean)
+          .join(' ')
+      : '';
+  delete p.foot;
+  delete p.bus;
+  delete p.person;
+  p.complete = true;
+  p.supported = true;
+  p.feedback = result(
+    'hint',
+    '→ Mit Erklärung bearbeitet',
+    (acknowledgement ? acknowledgement + ' ' : '') +
+      'Die Erklärung unten zeigt den richtigen Zusammenhang. Du kannst damit weitergehen.',
+    true,
+  ).feedback;
 }
 export interface Explanation {
   cause?: Cause;

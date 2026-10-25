@@ -40,6 +40,7 @@ import type { DecisionPanel } from './decision.ts';
 import type { Decision, Explanation } from './feedback.ts';
 import {
   evaluateClosed,
+  settleEarlyExplanation,
   evaluateDecision,
   evaluateExplanation,
   hasIncorrectDecisionEvidence,
@@ -261,8 +262,7 @@ export function reduce(current: State, action: Action): State {
     case 'help':
       p.help = Math.max(p.help, Math.min(3, action.value));
       if (p.help === 3 && s.step < 3) {
-        p.complete = true;
-        p.supported = true;
+        settleEarlyExplanation(s.step, p);
       }
       break;
     case 'submit-ungraded':
@@ -295,7 +295,7 @@ export function reduce(current: State, action: Action): State {
       }
       if (p.failures >= 2) {
         p.help = 3;
-        if (s.step < 3) p.supported = true;
+        if (s.step < 3) settleEarlyExplanation(s.step, p);
       }
       break;
     }

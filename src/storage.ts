@@ -1,4 +1,5 @@
 import { restoreGeography } from './geography/state.ts';
+import { settleEarlyExplanation } from './feedback.ts';
 import { restoreStudies } from './regions/storage.ts';
 import { demandScreens, demandGoals, measures } from './demand-content.ts';
 import { trialMatches, demandFactLabels } from './demand.ts';
@@ -98,6 +99,8 @@ export function readSession(storage?: Store): State {
       !s.progress.every(progress)
     )
       return initialState();
+    for (const step of [0, 1, 2] as const)
+      settleEarlyExplanation(step, s.progress[step]);
     const e = s.explanation,
       d = s.decision;
     if (

@@ -43,7 +43,8 @@ export const cocoa: StudySpec = {
   country: 'Ghana',
   place: 'bei Kumasi',
   title: 'Was wird aus dem Kakao?',
-  question: 'Warum führt mehr Verarbeitung nicht automatisch zu mehr Gewinn?',
+  question:
+    'Warum bleibt bei mehr Verarbeitung hier nicht automatisch mehr Überschuss übrig?',
   intro:
     'Ghana liegt in Westafrika. Die Szene spielt bei Kumasi. Eine erfundene Genossenschaft verkauft Kakaoprodukte. Sie möchte ihren Betrieb verbessern. Du untersuchst zwei Ideen.',
   modelNote:
@@ -54,6 +55,10 @@ export const cocoa: StudySpec = {
   },
   terms: [
     [
+      [
+        'Genossenschaft',
+        'Ein Betrieb, der seinen Mitgliedern gemeinsam gehört.',
+      ],
       [
         'Rohstoff',
         'Material, aus dem ein Produkt entsteht. Hier: Kakaobohnen.',
