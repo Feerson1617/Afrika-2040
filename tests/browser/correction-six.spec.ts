@@ -64,9 +64,11 @@ for (const device of [
             device.touch ? 'tap' : 'check',
           );
         await page.locator('#check-answer').click();
+        await expect(page.locator('[data-feedback]')).toHaveClass(/incorrect/);
         await expect(page.locator('#help-title')).toHaveCount(0);
         await page.locator('#check-answer').click();
         await expect(page.locator('#help-title')).toHaveText('→ Hilfe 3 von 3');
+        await expect(page.locator('[data-feedback]')).toHaveClass(/hint/);
         await expect(page.locator('#next-step')).toHaveCount(0);
         await expect(page.locator('#study-adopt')).toBeVisible();
         await page.reload();

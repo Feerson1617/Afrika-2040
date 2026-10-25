@@ -152,7 +152,7 @@ export function evaluateStudyDecision(
       .filter(Boolean)
       .join(' ');
     return result(
-      'neutral',
+      failures >= 1 ? 'hint' : good || limit ? 'partial' : 'incorrect',
       'Dein Argument ist noch nicht verbunden',
       [
         ack,

@@ -685,7 +685,7 @@ test('damaged successful experiment marks are rejected independently of stored c
   record(s).data.explored.push('payout');
   assert.equal(restore(s).studies!.share, undefined);
 });
-test('factually true evidence about another option is an unconnected argument, not a red judgment of the chosen position', () => {
+test('a true fact about another option with a correct limit is partial; the chosen position stays legitimate', () => {
   for (const spec of [cocoa, share, water, area]) {
     const d = spec.initial();
     if (spec.id === 'share')
@@ -706,7 +706,7 @@ test('factually true evidence about another option is an unconnected argument, n
       0,
       true,
     );
-    assert.equal(e.feedback.kind, 'neutral');
+    assert.equal(e.feedback.kind, 'partial');
     assert.equal(e.failed, true);
     assert.equal(e.feedback.complete, false);
     assert.match(e.feedback.text, /Du beachtest die Grenze/);
@@ -789,3 +789,135 @@ test('complete area products: own plan and conditional comparison are assigned c
       assert.doesNotMatch(text, /Es werden aber mehr Flächen bewässert/);
     }
 });
+
+for (const build of [cocoaDecision, shareDecision, waterDecision, areaDecision])
+  test(`feedback classification matrix and counter contract: ${build.name}`, () => {
+    const initial = build(),
+      r = record(initial);
+    const spec = { cocoa, share, water, area }[initial.activeStudy!];
+    const [chosen, other] = spec.options(r.data);
+    const cases = [
+      { benefit: 'all', limit: 'none', kind: 'incorrect', failed: true },
+      { benefit: other.id, limit: other.id, kind: 'incorrect', failed: true },
+      {
+        benefit: chosen.id,
+        limit: 'none',
+        kind: 'partial',
+        failed: true,
+        ack: 'Dein Beleg passt',
+      },
+      {
+        benefit: 'all',
+        limit: chosen.id,
+        kind: 'partial',
+        failed: true,
+        ack: 'Du beachtest die Grenze',
+      },
+      {
+        benefit: other.id,
+        limit: chosen.id,
+        kind: 'partial',
+        failed: true,
+        ack: 'Du beachtest die Grenze',
+      },
+      {
+        benefit: chosen.id,
+        limit: other.id,
+        kind: 'partial',
+        failed: true,
+        ack: 'Dein Beleg passt',
+      },
+      { benefit: undefined, limit: undefined, kind: 'hint', failed: false },
+      {
+        benefit: chosen.id,
+        limit: undefined,
+        kind: 'partial',
+        failed: false,
+        ack: 'Dein Beleg passt',
+      },
+      {
+        benefit: undefined,
+        limit: chosen.id,
+        kind: 'partial',
+        failed: false,
+        ack: 'Du beachtest die Grenze',
+      },
+    ];
+    for (const c of cases) {
+      let s = structuredClone(initial);
+      for (const [field, value] of [
+        ['proposal', chosen.id],
+        ['goal', chosen.goal],
+        ['benefit', c.benefit],
+        ['limit', c.limit],
+      ])
+        s = action(s, 'answer', value, field);
+      const before = structuredClone(record(s).decision);
+      s = action(s, 'check');
+      let p = record(s).progress[2];
+      assert.equal(p.feedback!.kind, c.kind);
+      assert.equal(p.failures, c.failed ? 1 : 0);
+      assert.equal(p.help, 0);
+      assert.equal(p.complete, false);
+      if (c.ack) assert.match(p.feedback!.text, new RegExp(c.ack));
+      s = restore(s);
+      assert.deepEqual(record(s).decision, JSON.parse(JSON.stringify(before)));
+      s = action(s, 'check');
+      p = record(s).progress[2];
+      assert.equal(p.feedback!.kind, c.failed ? 'hint' : c.kind);
+      assert.equal(p.failures, c.failed ? 2 : 0);
+      assert.equal(p.help, c.failed ? 3 : 0);
+      assert.equal(record(s).decision.supported, undefined);
+      assert.equal(p.supported, undefined);
+      if (c.failed) {
+        assert.match(
+          studyHint(s),
+          new RegExp(chosen.benefit.replace(/[.*+?^${}()|[\]\\]/g, '\\$&')),
+        );
+        s = action(s, 'adopt');
+        assert.equal(record(s).progress[2].complete, true);
+        assert.equal(record(s).decision.supported, true);
+        assert.equal(record(s).decision.benefit, chosen.id);
+        assert.equal(record(s).decision.limit, chosen.id);
+        s = action(s, 'answer', other.id, 'benefit');
+        assert.equal(record(s).decision.supported, undefined);
+        assert.equal(record(s).progress[2].complete, false);
+      }
+    }
+    let s = structuredClone(initial);
+    for (const [field, value] of [
+      ['proposal', chosen.id],
+      ['goal', other.goal],
+      ['benefit', chosen.id],
+      ['limit', chosen.id],
+    ])
+      s = action(s, 'answer', value, field);
+    for (let i = 0; i < 3; i++) s = action(s, 'check');
+    assert.equal(record(s).progress[2].feedback!.kind, 'neutral');
+    assert.equal(record(s).progress[2].failures, 0);
+    assert.equal(record(s).progress[2].help, 0);
+    assert.equal(record(s).progress[2].complete, false);
+    s = action(s, 'answer', 'yes', 'weighted');
+    s = action(s, 'check');
+    assert.equal(record(s).progress[2].feedback!.kind, 'neutral');
+    assert.equal(record(s).progress[2].complete, true);
+    assert.equal(record(s).progress[2].failures, 0);
+    s = structuredClone(initial);
+    for (const [field, value] of [
+      ['proposal', chosen.id],
+      ['goal', chosen.goal],
+      ['benefit', 'all'],
+      ['limit', 'none'],
+    ])
+      s = action(s, 'answer', value, field);
+    s = action(s, 'text', '???');
+    for (let i = 0; i < 3; i++) s = action(s, 'check');
+    assert.equal(record(s).progress[2].feedback!.kind, 'neutral');
+    assert.equal(record(s).progress[2].failures, 0);
+    assert.equal(record(s).progress[2].help, 0);
+    assert.match(record(s).progress[2].feedback!.text, /nicht sicher prüfen/);
+    s = action(s, 'submit');
+    assert.equal(record(s).decision.ungraded, true);
+    assert.equal(record(s).progress[2].complete, true);
+    assert.equal(record(s).progress[2].failures, 0);
+  });

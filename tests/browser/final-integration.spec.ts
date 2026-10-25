@@ -378,7 +378,7 @@ for (const device of [
       });
     await ctx.close();
   });
-test('true information about another tested measure remains neutral and unconnected; correct partial evidence is explicitly acknowledged', async ({
+test('a fact about another tested measure with a correct limit is visibly partial; the position remains legitimate', async ({
   page,
 }) => {
   await page.goto('/');
@@ -392,7 +392,7 @@ test('true information about another tested measure remains neutral and unconnec
   ])
     await studyClick(page, `#study-${f}-${v}`, 'check');
   await page.locator('#check-answer').click();
-  await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
+  await expect(page.locator('[data-feedback]')).toHaveClass(/partial/);
   await expect(page.locator('[data-feedback]')).toContainText(
     'Du beachtest die Grenze',
   );
