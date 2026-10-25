@@ -252,6 +252,23 @@ for (const [n, id, goal, label, benefit, limit] of reports)
           ? 'Mein Plan bewässert nur das gleiche Feld: insgesamt 45 WE. Zum Vergleich: Mit dem kleineren Zusatzfeld wären es 45 + 20 = 65 WE statt früher 60 WE. Mehr Flächen können die Einsparung am ersten Feld also aufheben.'
           : 'Mein Plan bewässert auch das kleinere Zusatzfeld: 45 + 20 = 65 WE statt früher 60 WE. Das erste Feld braucht weniger, beide Felder zusammen aber mehr. Zum Vergleich: Ohne Zusatzfeld wären es insgesamt 45 WE.');
     await expect(page.locator('.study-product')).toHaveText(expected);
+    // Phase 5: the same complete product is readable in separate short paragraphs.
+    await expect(page.locator('.study-product > p')).toHaveCount(
+      n === 6 ? 5 : 3,
+    );
+    await expect(page.locator('.study-product > p').nth(0)).toHaveText(
+      `Ich empfehle: ${label}.`,
+    );
+    await expect(page.locator('.study-product > p').nth(1)).toHaveText(
+      `Mein Beleg: ${benefit}`,
+    );
+    await expect(page.locator('.study-product > p').nth(2)).toHaveText(
+      `Aber: ${limit}`,
+    );
+    if (n === 6)
+      await expect(page.locator('.study-product > p').nth(4)).toContainText(
+        'Zum Vergleich:',
+      );
     const report = await page.locator('.recommendation').innerText();
     await page.reload();
     expect(await page.locator('.recommendation').innerText()).toBe(report);

@@ -1,7 +1,14 @@
+import { productParagraphs } from '../product-ui.ts';
 import { decisionView } from './decision-ui.ts';
 import { studies, studyList } from './registry.ts';
 import { activeStudy } from './state.ts';
-import { control, optionOf, product, decisionExample } from './shared.ts';
+import {
+  control,
+  optionOf,
+  product,
+  productParts,
+  decisionExample,
+} from './shared.ts';
 import type { State } from '../state.ts';
 import type { StudyUI } from './types.ts';
 export function studyMenu(h: Pick<StudyUI, 'button'>) {
@@ -54,7 +61,7 @@ export function renderStudy(s: State, h: StudyUI) {
   const footer = () =>
     `<footer class="game-footer">${control(h, 'Episoden auswählen', 'home')}${h.button('Neu starten', 'ask-restart', 'text-button')}${h.restartPending ? `<span class="restart-confirm">Alle Antworten löschen? ${h.button('Ja, neu starten', 'restart', 'text-button')} ${h.button('Abbrechen', 'cancel-restart', 'text-button')}</span>` : ''}</footer>`;
   if (r.step === 3)
-    return `${h.header}<main id="main" class="end-screen study-screen" tabindex="-1"><p class="eyebrow">Episode ${spec.number} · ${spec.country}</p><h1>Dein begründeter Vorschlag</h1><section class="recommendation" aria-label="Dein Lernprodukt"><h2>${selected?.label ?? 'Dein Vorschlag'}</h2><p><strong>Mein Ziel:</strong> ${d.goal ? h.esc(spec.goals[d.goal]) : 'noch offen'}</p>${spec.id === 'share' ? `<p class="study-allocation-summary">Mein vollständiger Plan: Auszahlung ${r.data.allocations.payout} GE · Rücklage ${r.data.allocations.reserve} GE · Fortbildung ${r.data.allocations.training} GE. Zusammen 120 GE.</p>` : ''}${d.ungraded ? '<p data-ungraded>Eigener Text bewusst unbewertet. Die Bausteine sind damit nicht bestätigt.</p>' : `<p class="study-product">${h.esc(product(spec, r.data, d))}</p><p>Du hast deinen Vorschlag mit Bausteinen begründet.</p>`}${d.text ? `<p class="saved-text">${h.esc(d.text)}</p><p class="small-note">Eigener Text: nicht automatisch geprüft.</p>` : ''}${d.supported ? '<p data-supported>Diese Empfehlung wurde mit einem Beispiel erstellt.</p>' : ''}${r.progress.some((x) => x.supported) ? '<p data-help-history>In dieser Episode hast du erklärte Beispiele übernommen.</p>' : ''}<p>Zeige deinen Beleg. Erkläre, welche Grenze bleibt.</p></section>${model()}${control(h, 'Empfehlung bearbeiten', 'back')}${footer()}</main>`;
+    return `${h.header}<main id="main" class="end-screen study-screen" tabindex="-1"><p class="eyebrow">Episode ${spec.number} · ${spec.country}</p><h1>Dein begründeter Vorschlag</h1><section class="recommendation" aria-label="Dein Lernprodukt"><h2>${selected?.label ?? 'Dein Vorschlag'}</h2><p><strong>Mein Ziel:</strong> ${d.goal ? h.esc(spec.goals[d.goal]) : 'noch offen'}</p>${spec.id === 'share' ? `<p class="study-allocation-summary">Mein vollständiger Plan: Auszahlung ${r.data.allocations.payout} GE · Rücklage ${r.data.allocations.reserve} GE · Fortbildung ${r.data.allocations.training} GE. Zusammen 120 GE.</p>` : ''}${d.ungraded ? '<p data-ungraded>Eigener Text bewusst unbewertet. Die Bausteine sind damit nicht bestätigt.</p>' : `<div class="study-product">${productParagraphs(productParts(spec, r.data, d), h.esc)}</div><p>Du hast deinen Vorschlag mit Bausteinen begründet.</p>`}${d.text ? `<p class="saved-text">${h.esc(d.text)}</p><p class="small-note">Eigener Text: nicht automatisch geprüft.</p>` : ''}${d.supported ? '<p data-supported>Diese Empfehlung wurde mit einem Beispiel erstellt.</p>' : ''}${r.progress.some((x) => x.supported) ? '<p data-help-history>In dieser Episode hast du erklärte Beispiele übernommen.</p>' : ''}<p>Zeige deinen Beleg. Erkläre, welche Grenze bleibt.</p></section>${model()}${control(h, 'Empfehlung bearbeiten', 'back')}${footer()}</main>`;
   let body = '';
   if (r.step < 2) body = spec.task(r.data, r.step as 0 | 1, h);
   else body = decisionView(spec, r, h);

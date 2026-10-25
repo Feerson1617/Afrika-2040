@@ -225,6 +225,17 @@ for (const measure of ['bus', 'path'] as const)
         ? 'Ich empfehle: Eine zusätzliche Busfahrt. Für alle 24 Personen gibt es Plätze. Aber: Der Fußweg bleibt 12 Minuten lang.'
         : 'Ich empfehle: Ein kürzerer Fußweg. Der Fußweg dauert nur 4 Minuten. Aber: 4 Personen müssen später fahren.';
     await expect(page.locator('.demand-product')).toHaveText(expected);
+    await expect(page.locator('.demand-product > p')).toHaveCount(3);
+    await expect(page.locator('.demand-product > p').nth(1)).toHaveText(
+      measure === 'bus'
+        ? 'Für alle 24 Personen gibt es Plätze.'
+        : 'Der Fußweg dauert nur 4 Minuten.',
+    );
+    await expect(page.locator('.demand-product > p').nth(2)).toHaveText(
+      measure === 'bus'
+        ? 'Aber: Der Fußweg bleibt 12 Minuten lang.'
+        : 'Aber: 4 Personen müssen später fahren.',
+    );
     const all = await page.locator('.recommendation').innerText();
     await page.reload();
     expect(await page.locator('.recommendation').innerText()).toBe(all);

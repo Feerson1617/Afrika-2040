@@ -2571,3 +2571,27 @@ summary span {
 .review-map g text {
   font-weight: 650;
 }
+
+.study-product,
+.demand-product {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1.1rem 0;
+}
+.study-product > p,
+.demand-product > p {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid #becbb8;
+  background: #f5f6ee;
+  max-width: 62ch;
+  line-height: 1.65;
+}
+.study-product > p:first-child,
+.demand-product > p:first-child {
+  border-left-color: #244f40;
+}
+.study-product > p:last-child:not(:first-child),
+.demand-product > p:last-child:not(:first-child) {
+  border-left-color: #a44d2e;
+}

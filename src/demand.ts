@@ -108,7 +108,17 @@ export function demandExample(d: DemandDecision): DemandDecision | undefined {
   };
 }
 export function demandProduct(d: DemandDecision) {
-  if (!d.measure) return '';
+  return demandProductParts(d).join(' ').trim();
+}
+export function demandProductParts(d: DemandDecision) {
+  if (!d.measure) return [];
   const labels = demandFactLabels();
-  return `Ich empfehle: ${measureNames[d.measure]}. ${d.advantage ? labels.advantage[d.advantage] : 'Mein Vorteil ist noch offen.'} Aber: ${d.disadvantage ? labels.disadvantage[d.disadvantage] : 'Mein Nachteil ist noch offen.'} ${demandPriority(d)}`.trim();
+  return [
+    `Ich empfehle: ${measureNames[d.measure]}.`,
+    d.advantage
+      ? labels.advantage[d.advantage]
+      : 'Mein Vorteil ist noch offen.',
+    `Aber: ${d.disadvantage ? labels.disadvantage[d.disadvantage] : 'Mein Nachteil ist noch offen.'}`,
+    demandPriority(d),
+  ];
 }

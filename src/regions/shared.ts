@@ -203,10 +203,22 @@ export function decisionExample(
   };
 }
 export function product(spec: StudySpec, data: StudyData, d: StudyDecision) {
+  return productParts(spec, data, d).join(' ');
+}
+export function productParts(
+  spec: StudySpec,
+  data: StudyData,
+  d: StudyDecision,
+) {
   const o = optionOf(spec, data, d);
   return o
-    ? `Ich empfehle: ${o.label}. Mein Beleg: ${o.benefit} ${d.weighted ? weighting(spec, data, d) : 'Aber: ' + o.limit} ${spec.conclusion?.(data, d) ?? ''}`
-    : '';
+    ? [
+        `Ich empfehle: ${o.label}.`,
+        `Mein Beleg: ${o.benefit}`,
+        d.weighted ? weighting(spec, data, d) : 'Aber: ' + o.limit,
+        spec.conclusion?.(data, d) ?? '',
+      ]
+    : [];
 }
 export const control = (
   h: StudyUI,

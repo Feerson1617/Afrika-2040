@@ -1,3 +1,4 @@
+import { productParagraphs } from './product-ui.ts';
 import {
   demandEpisode as model,
   demandGoals,
@@ -12,6 +13,7 @@ import {
   demandFactLabels,
   demandPriority,
   demandProduct,
+  demandProductParts,
   measureGoal,
 } from './demand.ts';
 import type { DemandState } from './demand.ts';
@@ -112,7 +114,7 @@ export function renderDemand(s: State, h: UI) {
   const footer = () =>
     `<footer class="game-footer">${button('Episoden auswählen', 'episode-home', 'text-button')}${button('Neu starten', 'ask-restart', 'text-button')}${h.restartPending ? `<span class="restart-confirm">Alle Antworten der sechs Episoden löschen? ${button('Ja, neu starten', 'restart', 'text-button')} ${button('Abbrechen', 'cancel-restart', 'text-button')}</span>` : ''}</footer>`;
   if (s.screen === 'demand-end')
-    return `${h.header}<main id="main" class="end-screen demand-screen" tabindex="-1"><p class="eyebrow">Episode 2 · Dein Vorschlag</p><h1>Was ist dir wichtiger?</h1><section class="recommendation" aria-label="Dein Lernprodukt aus Episode 2"><h2>${answer.measure ? measureNames[answer.measure] : 'Dein Vorschlag'}</h2>${summary(answer.measure || 'base')}<p><strong>Mein Ziel:</strong> ${answer.goal ? demandGoals[answer.goal] : 'noch offen'}</p>${answer.ungraded ? '<p data-ungraded>Eigener Text bewusst unbewertet abgegeben. Die Bausteine sind damit nicht bestätigt.</p>' : `<p class="demand-product">${esc(demandProduct(answer))}</p><p>Du hast deine Empfehlung mit Bausteinen begründet.</p>`}${answer.text ? `<p class="saved-text">${esc(answer.text)}</p><p class="small-note">Eigener Text: nicht automatisch geprüft.</p>` : ''}${answer.supported ? '<p data-supported>Diese Empfehlung wurde mit einem Beispiel erstellt.</p>' : ''}${d.check.supported || d.explore.supported || d.decide.supported ? '<p class="small-note" data-demand-help-history>Du hast in dieser Episode erklärte Beispiele übernommen.</p>' : ''}<p>Zeige deinen Vorschlag. Erkläre: Welches Problem bleibt bestehen?</p></section><details id="demand-deeper"><summary>Weiterdenken · freiwillig</summary><p>Welche Information fehlt für eine echte Verkehrsplanung? Denke an Fahrplan, Kosten oder weitere Fahrgäste. Können mehr Nachbarn auch neue Ideen, Geschäfte oder Begegnungen ins Viertel bringen?</p></details>${history()}<div class="end-actions">${button('Empfehlung bearbeiten', 'demand-back', 'button secondary')}</div>${footer()}</main>`;
+    return `${h.header}<main id="main" class="end-screen demand-screen" tabindex="-1"><p class="eyebrow">Episode 2 · Dein Vorschlag</p><h1>Was ist dir wichtiger?</h1><section class="recommendation" aria-label="Dein Lernprodukt aus Episode 2"><h2>${answer.measure ? measureNames[answer.measure] : 'Dein Vorschlag'}</h2>${summary(answer.measure || 'base')}<p><strong>Mein Ziel:</strong> ${answer.goal ? demandGoals[answer.goal] : 'noch offen'}</p>${answer.ungraded ? '<p data-ungraded>Eigener Text bewusst unbewertet abgegeben. Die Bausteine sind damit nicht bestätigt.</p>' : `<div class="demand-product">${productParagraphs(demandProductParts(answer), esc)}</div><p>Du hast deine Empfehlung mit Bausteinen begründet.</p>`}${answer.text ? `<p class="saved-text">${esc(answer.text)}</p><p class="small-note">Eigener Text: nicht automatisch geprüft.</p>` : ''}${answer.supported ? '<p data-supported>Diese Empfehlung wurde mit einem Beispiel erstellt.</p>' : ''}${d.check.supported || d.explore.supported || d.decide.supported ? '<p class="small-note" data-demand-help-history>Du hast in dieser Episode erklärte Beispiele übernommen.</p>' : ''}<p>Zeige deinen Vorschlag. Erkläre: Welches Problem bleibt bestehen?</p></section><details id="demand-deeper"><summary>Weiterdenken · freiwillig</summary><p>Welche Information fehlt für eine echte Verkehrsplanung? Denke an Fahrplan, Kosten oder weitere Fahrgäste. Können mehr Nachbarn auch neue Ideen, Geschäfte oder Begegnungen ins Viertel bringen?</p></details>${history()}<div class="end-actions">${button('Empfehlung bearbeiten', 'demand-back', 'button secondary')}</div>${footer()}</main>`;
   let title: string, instruction: string, body: string;
   if (step === 1) {
     title = 'Reichen die Busplätze für alle?';
