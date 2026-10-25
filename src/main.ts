@@ -1,3 +1,5 @@
+import { renderOrientation } from './geography/ui.ts';
+import { geoHint, type GeoAction } from './geography/state.ts';
 import { renderStudy, studyMenu, studyHint } from './regions/ui.ts';
 import { studies } from './regions/registry.ts';
 import type { StudyAction, StudyId } from './regions/types.ts';
@@ -81,18 +83,16 @@ function start() {
     <div class="hero-copy"><p class="eyebrow"><span class="tiny-dot"></span> Entdecken. Abwägen. Mitgestalten.</p>
       <h1>Afrika 2040 <span>Gestalte die<br>Zukunft.</span></h1>
       <p class="intro">Du untersuchst Orte in Afrika. Menschen vor Ort haben Ideen für ihre Zukunft. Prüfe die Vorschläge. Entscheide, was du empfehlen würdest.</p>
+      <a class="text-button" href="#episodes-menu">Direkt zu den Episoden</a>
+    </div>
+    ${renderOrientation(state.geography, { header: '', restartPending, button, radio, esc, feedback })}
+    <div class="episode-list" id="episodes-menu">
       ${button(`${state.step > 0 ? 'Episode 1 fortsetzen' : 'Spiel starten'} ${arrow}`, 'start', 'button primary start-button')}${state.progress[5].complete || state.road?.revision.complete ? button('Bisherige Empfehlungen ansehen', 'episode-report', 'button secondary') : ''}
       <section class="episode-picker kenya-picker" aria-label="Kenia"><h2>Kenia · Nairobi</h2><p>Episode 1: Welcher Busweg hilft wem?</p>${button(state.demand ? 'Episode 2 fortsetzen' : 'Episode 2 starten', 'demand-start', 'button secondary')}<p class="small-note">Mehr Menschen – reicht der Bus noch? Direkt spielbar. Frühere Antworten bleiben erhalten.</p></section>
       <section class="episode-picker study-picker" aria-label="Ghana und Marokko">${studyMenu({ button })}</section>
       <p class="start-location">Sechs Episoden. Alle direkt spielbar. Antworten bleiben nur in diesem Browser-Tab.</p>
     </div>
-    <div class="hero-art" aria-hidden="true"><span class="art-label">Jeder Weg macht einen Unterschied.</span>
-      <svg viewBox="0 0 540 550"><circle cx="270" cy="270" r="216" fill="#e5e9d7"/><path d="M50 420C290 490 100 60 390 116S280 401 520 390" fill="none" stroke="#b8c9b0" stroke-width="54"/><path d="M50 420C290 490 100 60 390 116S280 401 520 390" fill="none" stroke="#f9f8ed" stroke-width="2" stroke-dasharray="8 10"/>
-      <path d="M20 340C200 400 360 140 535 237" fill="none" stroke="#c4774f" stroke-width="16"/><circle cx="120" cy="336" r="14" fill="#f6f4e9" stroke="#c4774f" stroke-width="7"/><circle cx="437" cy="230" r="14" fill="#f6f4e9" stroke="#c4774f" stroke-width="7"/>
-      <g transform="translate(160 235) rotate(-14 110 65)"><rect x="3" y="17" width="230" height="112" rx="23" fill="#c8cbb5"/><rect width="230" height="112" rx="23" fill="#264e40"/><rect x="17" y="16" width="160" height="45" rx="8" fill="#e2eadb"/><rect x="185" y="16" width="29" height="71" rx="6" fill="#e2eadb"/><path d="M70 16V61M124 16V61" stroke="#264e40" stroke-width="5"/><path d="M15 81H174" stroke="#e8c978" stroke-width="8"/><circle cx="47" cy="112" r="20" fill="#243c35"/><circle cx="47" cy="112" r="9" fill="#e6e5d5"/><circle cx="183" cy="112" r="20" fill="#243c35"/><circle cx="183" cy="112" r="9" fill="#e6e5d5"/></g>
-      <path d="M412 407V454M396 430H427" stroke="#40634e" stroke-width="2"/><circle cx="412" cy="402" r="26" fill="#b5c7a5"/><circle cx="400" cy="396" r="18" fill="#cfdbc1"/>
-      </svg><span class="art-stamp">01 <span>Kenia<br>Welcher Busweg hilft wem?</span></span>
-    </div>
+
     <p class="privacy-note">Ohne Anmeldung. Deine Antworten bleiben in diesem Browser-Tab.</p>
   </main>`;
 }
@@ -478,6 +478,7 @@ function render(focusId?: string) {
 }
 
 function dispatch(action: Action) {
+  const geo = action.type === 'geography';
   const oldFocus = document.activeElement?.id;
   state = reduce(state, action);
   if (action.type === 'restart') {
@@ -514,33 +515,45 @@ function dispatch(action: Action) {
     (action.type === 'study' &&
       ['check', 'adopt', 'submit'].includes(action.op));
   render(
-    action.type === 'study' && action.op === 'panel'
-      ? 'study-decision-title'
-      : action.type === 'decision-panel'
-        ? 'decision-title'
-        : navigate
-          ? (state.screen === 'study' &&
-              state.studies?.[state.activeStudy!]?.step !== 3) ||
-            (state.screen.startsWith('demand-') &&
-              state.screen !== 'demand-end') ||
-            state.screen === 'game' ||
-            (state.screen.startsWith('event-') && state.screen !== 'event-end')
-            ? 'task-title'
-            : 'main'
-          : action.type === 'prediction'
-            ? 'prediction-status'
-            : action.type === 'words'
-              ? 'words-toggle'
-              : action.type === 'help'
-                ? 'help-title'
-                : action.type === 'reset-task'
-                  ? 'task-title'
-                  : action.type === 'check-transfer'
-                    ? 'transfer-feedback-title'
-                    : report && currentProgress(state).feedback
-                      ? 'feedback-title'
-                      : oldFocus,
+    geo && (action.op === 'check' || action.op === 'adopt')
+      ? 'feedback-title'
+      : geo && action.op === 'help'
+        ? 'help-title'
+        : action.type === 'study' && action.op === 'panel'
+          ? 'study-decision-title'
+          : action.type === 'decision-panel'
+            ? 'decision-title'
+            : navigate
+              ? (state.screen === 'study' &&
+                  state.studies?.[state.activeStudy!]?.step !== 3) ||
+                (state.screen.startsWith('demand-') &&
+                  state.screen !== 'demand-end') ||
+                state.screen === 'game' ||
+                (state.screen.startsWith('event-') &&
+                  state.screen !== 'event-end')
+                ? 'task-title'
+                : 'main'
+              : action.type === 'prediction'
+                ? 'prediction-status'
+                : action.type === 'words'
+                  ? 'words-toggle'
+                  : action.type === 'help'
+                    ? 'help-title'
+                    : action.type === 'reset-task'
+                      ? 'task-title'
+                      : action.type === 'check-transfer'
+                        ? 'transfer-feedback-title'
+                        : report && currentProgress(state).feedback
+                          ? 'feedback-title'
+                          : oldFocus,
   );
+  if (geo && state.geography) {
+    announcer.textContent =
+      action.op === 'help'
+        ? geoHint(state.geography)
+        : (state.geography.records[state.geography.target].progress.feedback
+            ?.text ?? '');
+  }
   if (report)
     announcer.textContent =
       (action.type === 'check-transfer'
@@ -575,6 +588,14 @@ function dispatch(action: Action) {
 
 function activate(el: Element) {
   const name = el.getAttribute('data-action')!;
+  if (name === 'geography') {
+    dispatch({
+      type: 'geography',
+      op: el.getAttribute('data-op') as GeoAction['op'],
+      value: el.getAttribute('data-value') ?? undefined,
+    });
+    return;
+  }
   const value = el.getAttribute('data-value');
   if (name === 'study') {
     dispatch({

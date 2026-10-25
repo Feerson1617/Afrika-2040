@@ -1,3 +1,4 @@
+import { restoreGeography } from './geography/state.ts';
 import { restoreStudies } from './regions/storage.ts';
 import { demandScreens, demandGoals, measures } from './demand-content.ts';
 import { trialMatches, demandFactLabels } from './demand.ts';
@@ -287,6 +288,7 @@ export function readSession(storage?: Store): State {
       }
     } else if (oneOf(s.screen, [...demandScreens])) s.screen = 'start';
     restoreStudies(s as State, progress);
+    restoreGeography(s as State, progress);
     return normalizeView(s as State);
   } catch {
     return initialState();

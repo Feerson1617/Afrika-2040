@@ -1,3 +1,8 @@
+import {
+  reduceGeography,
+  type Geography,
+  type GeoAction,
+} from './geography/state.ts';
 import { reduceStudy, studyProgress } from './regions/state.ts';
 import type { StudyId, StudyState, StudyAction } from './regions/types.ts';
 import { newProgress } from './progress.ts';
@@ -42,6 +47,7 @@ import {
   evaluateEventEffects,
 } from './feedback.ts';
 export interface State {
+  geography?: Geography;
   screen:
     | 'start'
     | 'game'
@@ -121,6 +127,7 @@ export type DemandAction =
   | { type: 'demand-disadvantage'; value: DemandDecision['disadvantage'] }
   | { type: 'demand-text'; value: string };
 export type Action =
+  | GeoAction
   | StudyAction
   | DemandAction
   | RoadAction
@@ -160,6 +167,7 @@ export type Action =
   | { type: 'check' | 'use-example'; persisted: boolean };
 export function reduce(current: State, action: Action): State {
   if (action.type === 'restart') return initialState();
+  if (action.type === 'geography') return reduceGeography(current, action);
   if (action.type === 'study' || current.screen === 'study')
     return reduceStudy(current, action);
   if (
