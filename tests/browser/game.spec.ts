@@ -1,5 +1,11 @@
 import { evidencePath } from './artifacts.ts';
-import { chooseRoute, ownTextPanel, panel, selectEvidence, weightSelected } from './phase2a-helpers.ts';
+import {
+  chooseRoute,
+  ownTextPanel,
+  panel,
+  selectEvidence,
+  weightSelected,
+} from './phase2a-helpers.ts';
 import { finish2A } from './phase2a-helpers.ts';
 import { test, expect, type Page } from '@playwright/test';
 import { auditAccessibility } from './accessibility.ts';
@@ -103,7 +109,9 @@ test('complete mouse flow, route changes, all times, all three valid recommendat
     .getByRole('button', { name: 'Empfehlung noch einmal ansehen' })
     .click();
   await panel(page, 'plan');
-  await expect(page.getByRole('radio', { name: 'Über Süd', exact: true })).toBeChecked();
+  await expect(
+    page.getByRole('radio', { name: 'Über Süd', exact: true }),
+  ).toBeChecked();
   await panel(page, 'weigh');
   await page.getByRole('button', { name: 'Zum Abschluss' }).click();
   await page.getByRole('button', { name: 'Neu spielen', exact: true }).click();
@@ -189,7 +197,9 @@ test('free text is stored locally, never keyword-graded, escaped and editable af
   await expect(page.locator('[data-feedback]')).toContainText(
     'wurde gespeichert',
   );
-  await page.getByRole('button', { name: 'Eigenen Text unbewertet abgeben' }).click();
+  await page
+    .getByRole('button', { name: 'Eigenen Text unbewertet abgeben' })
+    .click();
   await page.reload();
   await expect(
     page.getByLabel('Ich schlage diesen Busweg vor, weil …'),
@@ -274,6 +284,12 @@ test('keyboard can operate start, SVG paths, radio groups, checking and word hel
   await expect(page.getByRole('link', { name: 'Zum Inhalt' })).toBeFocused();
   await page.keyboard.press('Tab');
   await expect(
+    page.getByRole('link', { name: 'Direkt zu den Episoden' }),
+  ).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(page.locator('#episodes-menu')).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(
     page.getByRole('button', { name: 'Spiel starten' }),
   ).toBeFocused();
   await page.keyboard.press('Enter');
@@ -321,8 +337,12 @@ test('blocked session storage does not prevent the full workflow', async ({
     .fill('David ist schneller.');
   await weightSelected(page);
   await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
-  await expect(page.locator('[data-feedback]')).toContainText('erlaubt kein Speichern');
-  await page.getByRole('button', { name: 'Eigenen Text unbewertet abgeben' }).click();
+  await expect(page.locator('[data-feedback]')).toContainText(
+    'erlaubt kein Speichern',
+  );
+  await page
+    .getByRole('button', { name: 'Eigenen Text unbewertet abgeben' })
+    .click();
   await page.getByRole('button', { name: 'Zum Abschluss' }).click();
   await expect(page.locator('.saved-text')).toHaveText('David ist schneller.');
 });

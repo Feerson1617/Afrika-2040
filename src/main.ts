@@ -89,7 +89,7 @@ function start() {
       <a class="text-button" href="#episodes-menu">Direkt zu den Episoden</a>
     </div>
     ${renderOrientation(state.geography, { header: '', restartPending, button, radio, esc, feedback })}
-    <div class="episode-list" id="episodes-menu">
+    <div class="episode-list" id="episodes-menu" tabindex="-1">
       ${button(`${state.step > 0 ? 'Episode 1 fortsetzen' : 'Spiel starten'} ${arrow}`, 'start', 'button primary start-button')}${state.progress[5].complete || state.road?.revision.complete ? button('Bisherige Empfehlungen ansehen', 'episode-report', 'button secondary') : ''}
       <section class="episode-picker kenya-picker" aria-label="Kenia"><h2>Kenia · Nairobi</h2><p>Episode 1: Welcher Busweg hilft wem?</p>${button(state.demand ? 'Episode 2 fortsetzen' : 'Episode 2 starten', 'demand-start', 'button secondary')}<p class="small-note">Mehr Menschen – reicht der Bus noch? Direkt spielbar. Frühere Antworten bleiben erhalten.</p></section>
       <section class="episode-picker study-picker" aria-label="Ghana und Marokko">${studyMenu({ button })}</section>

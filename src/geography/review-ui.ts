@@ -40,7 +40,7 @@ export function renderReview(s: State, h: StudyUI) {
     `<fieldset><legend>${legend}</legend>${options.map(([value, text]) => h.radio('geo-transfer-' + name, value, text, d.answers[name] === value)).join('')}</fieldset>`;
   const body =
     tab === 'common'
-      ? `<h2 id="review-task-title" tabindex="-1">Was haben die Entscheidungen gemeinsam?</h2><ul class="review-comparisons"><li>Busmodell Nord: Amina 10 statt 22 Min.; David 18 statt 12 Min.</li><li>Kakaomodell: Qualität 90 GE Überschuss; Verarbeitung 75 GE.</li><li>Flächenmodell: erstes Feld verbessert 45 WE; mit Zusatzfläche insgesamt 65 WE.</li></ul>${field(
+      ? `<h2 id="review-task-title" tabindex="-1">Was haben die Entscheidungen gemeinsam?</h2><p class="small-note">GE: erfundene Geld-Einheiten. WE: erfundene Wasser-Einheiten.</p><ul class="review-comparisons"><li>Busmodell Nord: Amina 10 statt 22 Min.; David 18 statt 12 Min.</li><li>Kakaomodell: Qualität 90 GE Überschuss; Verarbeitung 75 GE.</li><li>Flächenmodell: erstes Feld verbessert 45 WE; mit Zusatzfläche insgesamt 65 WE.</li></ul>${field(
           'consequences',
           '1. Welche Folgen haben Vorschläge?',
           [
@@ -54,7 +54,7 @@ export function renderReview(s: State, h: StudyUI) {
           ['evidence', 'Ich prüfe Vorteile und Grenzen mit passenden Angaben.'],
           ['any', 'Eine richtige Zahl zu irgendeinem Vorschlag reicht aus.'],
         ])}`
-      : `<p class="eyebrow">${regions[tab].name} · ${regions[tab].city}</p><h2 id="review-task-title" tabindex="-1">Was belegt unser Modell?</h2><p class="review-example">${transferTasks[tab].example}</p>${field(
+      : `<p class="eyebrow">${regions[tab].name} · ${regions[tab].city}</p><h2 id="review-task-title" tabindex="-1">Was belegt unser Modell?</h2><p class="review-example">${transferTasks[tab].example}</p>${tab === 'GHA' ? '<p class="small-note">Überschuss: Einnahmen minus laufende Ausgaben. GE: erfundene Geld-Einheiten.</p>' : tab === 'MAR' ? '<p class="small-note">WE: erfundene Wasser-Einheiten. Entnahme heißt: Wasser aus dem Tank holen.</p>' : ''}${field(
           'claim',
           'Wähle die belegte Aussage.',
           [

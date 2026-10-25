@@ -4,6 +4,7 @@ import { readFileSync } from 'node:fs';
 import { initialState, reduce } from '../src/state.ts';
 import { regions, project, type RegionId } from '../src/geography/state.ts';
 import { readSession, storageKey } from '../src/storage.ts';
+import { outlines } from '../src/geography/map-data.ts';
 const raw = JSON.parse(
   readFileSync(
     new URL('../src/geography/natural-earth-africa.json', import.meta.url),
@@ -23,6 +24,31 @@ function inside(point: number[], ring: number[][]) {
   }
   return c;
 }
+test('all rendered country vertices preserve the used official geometries and their common geographic projection', () => {
+  assert.equal(outlines.length, raw.countries.length);
+  for (const f of raw.countries) {
+    const path = outlines.find((x) => x.code === f.code)!.path;
+    const actual = [...path.matchAll(/-?\d+(?:\.\d+)?/g)].map((x) =>
+      Number(x[0]),
+    );
+    const polys =
+      f.geometry.type === 'Polygon'
+        ? [f.geometry.coordinates]
+        : f.geometry.coordinates;
+    const expected: number[] = polys.flatMap((p: number[][][]) =>
+      p.flatMap((ring) =>
+        ring.flatMap(([lon, lat]) => [
+          24 + (lon + 20) * 9.2,
+          24 + (38 - lat) * 9.2,
+        ]),
+      ),
+    );
+    assert.equal(actual.length, expected.length, f.code);
+    actual.forEach((n, i) =>
+      assert.ok(Math.abs(n - expected[i]) <= 0.00051, f.code + ':' + i),
+    );
+  }
+});
 test('official city coordinates are independently inside the correct Natural Earth country, in the stated African subregion', () => {
   const expected = {
     KEN: {

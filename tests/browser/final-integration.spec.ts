@@ -91,6 +91,27 @@ test('all six entries, four complete independent regional products below Pages p
       .getByRole('button', { name: 'Episoden auswählen', exact: true })
       .click();
   }
+  // Phase 5: actual completed products differ from the not-yet-played previews.
+  await page.locator('#review-open').click();
+  await expect(page.locator('[data-region-status=KEN]')).toContainText(
+    'Episode 1: noch nicht abgeschlossen · Vorschau',
+  );
+  for (const [id, numbers] of [
+    ['GHA', [3, 4]],
+    ['MAR', [5, 6]],
+  ] as const)
+    for (const n of numbers)
+      await expect(page.locator(`[data-region-status=${id}]`)).toContainText(
+        `Episode ${n}: Abschluss vorhanden`,
+      );
+  await page.locator('#review-tab-GHA').click();
+  await page.locator('#geo-transfer-claim-model').check();
+  await page.locator('#review-check').click();
+  await page.reload();
+  await expect(page.locator('[data-review-complete]')).toBeVisible();
+  await page.locator('#review-home').click();
+  await page.locator('#episode-3').click();
+  await expect(page.locator('.study-product')).toHaveText(products[3]);
   expect(errors).toEqual([]);
 });
 test('actual Kenya recommendation survives regional work and reload; cancellation preserves every record and confirmed restart clears them', async ({
@@ -109,6 +130,20 @@ test('actual Kenya recommendation survives regional work and reload; cancellatio
     (k) => JSON.parse(sessionStorage.getItem(k)!),
     key,
   );
+  await page.locator('#review-open').click();
+  await expect(page.locator('[data-region-status=KEN]')).toContainText(
+    'Episode 1: Abschluss vorhanden',
+  );
+  await expect(page.locator('[data-region-status=KEN]')).toContainText(
+    'Episode 2: noch nicht abgeschlossen · Vorschau',
+  );
+  await page.locator('#review-home').click();
+  await page
+    .getByRole('button', {
+      name: 'Bisherige Empfehlungen ansehen',
+      exact: true,
+    })
+    .click();
   await page
     .getByRole('button', { name: 'Episoden auswählen', exact: true })
     .click();
