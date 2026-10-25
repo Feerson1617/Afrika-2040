@@ -58,6 +58,7 @@ export function readSession(storage?: Store): State {
     if (
       !s ||
       !oneOf(s.screen, [
+        'review',
         'start',
         'study',
         'game',

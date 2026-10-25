@@ -1,3 +1,5 @@
+import { renderReview } from './geography/review-ui.ts';
+import { transferHint } from './geography/transfer.ts';
 import { renderContext } from './geography/context.ts';
 import { renderOrientation } from './geography/ui.ts';
 import { geoHint, type GeoAction } from './geography/state.ts';
@@ -76,7 +78,7 @@ const arrow = `<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true
 const mark = `<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 24V9a3 3 0 013-3h12M10 25h15V10" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="7" cy="25" r="4" fill="currentColor"/><circle cx="25" cy="7" r="4" fill="currentColor"/></svg>`;
 
 function header() {
-  return `<header class="site-header"><div class="brand"><span class="brand-mark">${mark}</span><span>AFRIKA <strong>2040</strong></span></div><span class="header-caption">${state.screen === 'study' && state.activeStudy ? `${studies[state.activeStudy]!.country} / ${studies[state.activeStudy]!.place}` : state.screen === 'start' ? 'Gestalte die Zukunft' : 'Kenia <span aria-hidden="true">/</span> Nairobi'}</span></header>`;
+  return `<header class="site-header"><div class="brand"><span class="brand-mark">${mark}</span><span>AFRIKA <strong>2040</strong></span></div><span class="header-caption">${state.screen === 'study' && state.activeStudy ? `${studies[state.activeStudy]!.country} / ${studies[state.activeStudy]!.place}` : state.screen === 'review' ? 'Drei Orte im Vergleich' : state.screen === 'start' ? 'Gestalte die Zukunft' : 'Kenia <span aria-hidden="true">/</span> Nairobi'}</span></header>`;
 }
 
 function start() {
@@ -91,6 +93,7 @@ function start() {
       ${button(`${state.step > 0 ? 'Episode 1 fortsetzen' : 'Spiel starten'} ${arrow}`, 'start', 'button primary start-button')}${state.progress[5].complete || state.road?.revision.complete ? button('Bisherige Empfehlungen ansehen', 'episode-report', 'button secondary') : ''}
       <section class="episode-picker kenya-picker" aria-label="Kenia"><h2>Kenia · Nairobi</h2><p>Episode 1: Welcher Busweg hilft wem?</p>${button(state.demand ? 'Episode 2 fortsetzen' : 'Episode 2 starten', 'demand-start', 'button secondary')}<p class="small-note">Mehr Menschen – reicht der Bus noch? Direkt spielbar. Frühere Antworten bleiben erhalten.</p></section>
       <section class="episode-picker study-picker" aria-label="Ghana und Marokko">${studyMenu({ button })}</section>
+      ${button('Drei Orte – Rückblick', 'geography', 'button secondary', 'data-op="review" id="review-open"')}
       <p class="start-location">Sechs Episoden. Alle direkt spielbar. Antworten bleiben nur in diesem Browser-Tab.</p>
     </div>
 
@@ -426,8 +429,8 @@ function render(focusId?: string) {
       : [];
   app.dataset.view = view;
   app.innerHTML =
-    state.screen === 'study'
-      ? renderStudy(state, {
+    state.screen === 'review'
+      ? renderReview(state, {
           header: header(),
           button,
           radio,
@@ -435,35 +438,44 @@ function render(focusId?: string) {
           feedback,
           restartPending,
         })
-      : state.screen === 'start'
-        ? start()
-        : state.screen === 'end'
-          ? end()
-          : state.screen.startsWith('demand-')
-            ? renderDemand(state, {
-                header: header(),
-                button,
-                radio,
-                esc,
-                feedback,
-                restartPending,
-              })
-            : state.screen.startsWith('event-')
-              ? renderEvent(state, {
+      : state.screen === 'study'
+        ? renderStudy(state, {
+            header: header(),
+            button,
+            radio,
+            esc,
+            feedback,
+            restartPending,
+          })
+        : state.screen === 'start'
+          ? start()
+          : state.screen === 'end'
+            ? end()
+            : state.screen.startsWith('demand-')
+              ? renderDemand(state, {
                   header: header(),
                   button,
                   radio,
                   esc,
                   feedback,
-                  help,
-                  evidenceInput,
-                  ownWords,
-                  routeSwitch,
-                  journeyExplorer,
                   restartPending,
                 })
-              : game();
-  if (state.screen !== 'start') {
+              : state.screen.startsWith('event-')
+                ? renderEvent(state, {
+                    header: header(),
+                    button,
+                    radio,
+                    esc,
+                    feedback,
+                    help,
+                    evidenceInput,
+                    ownWords,
+                    routeSwitch,
+                    journeyExplorer,
+                    restartPending,
+                  })
+                : game();
+  if (state.screen !== 'start' && state.screen !== 'review') {
     const country =
       state.screen === 'study' && state.activeStudy
         ? state.activeStudy === 'cocoa' || state.activeStudy === 'share'
@@ -472,7 +484,16 @@ function render(focusId?: string) {
         : 'KEN';
     app
       .querySelector('main')
-      ?.insertAdjacentHTML('beforeend', renderContext(country));
+      ?.insertAdjacentHTML(
+        'beforeend',
+        renderContext(country) +
+          button(
+            'Drei Orte – Rückblick',
+            'geography',
+            'button secondary',
+            'data-op="review" id="review-open"',
+          ),
+      );
   }
   for (const id of openDetails) {
     const detail = document.getElementById(id) as HTMLDetailsElement | null;
@@ -527,44 +548,54 @@ function dispatch(action: Action) {
     (action.type === 'study' &&
       ['check', 'adopt', 'submit'].includes(action.op));
   render(
-    geo && (action.op === 'check' || action.op === 'adopt')
-      ? 'feedback-title'
-      : geo && action.op === 'help'
-        ? 'help-title'
-        : action.type === 'study' && action.op === 'panel'
-          ? 'study-decision-title'
-          : action.type === 'decision-panel'
-            ? 'decision-title'
-            : navigate
-              ? (state.screen === 'study' &&
-                  state.studies?.[state.activeStudy!]?.step !== 3) ||
-                (state.screen.startsWith('demand-') &&
-                  state.screen !== 'demand-end') ||
-                state.screen === 'game' ||
-                (state.screen.startsWith('event-') &&
-                  state.screen !== 'event-end')
-                ? 'task-title'
-                : 'main'
-              : action.type === 'prediction'
-                ? 'prediction-status'
-                : action.type === 'words'
-                  ? 'words-toggle'
-                  : action.type === 'help'
-                    ? 'help-title'
-                    : action.type === 'reset-task'
-                      ? 'task-title'
-                      : action.type === 'check-transfer'
-                        ? 'transfer-feedback-title'
-                        : report && currentProgress(state).feedback
-                          ? 'feedback-title'
-                          : oldFocus,
+    geo && ['review', 'home'].includes(action.op)
+      ? 'main'
+      : geo &&
+          ['check', 'adopt', 'transfer-check', 'transfer-adopt'].includes(
+            action.op,
+          )
+        ? 'feedback-title'
+        : geo && ['help', 'transfer-help'].includes(action.op)
+          ? 'help-title'
+          : action.type === 'study' && action.op === 'panel'
+            ? 'study-decision-title'
+            : action.type === 'decision-panel'
+              ? 'decision-title'
+              : navigate
+                ? (state.screen === 'study' &&
+                    state.studies?.[state.activeStudy!]?.step !== 3) ||
+                  (state.screen.startsWith('demand-') &&
+                    state.screen !== 'demand-end') ||
+                  state.screen === 'game' ||
+                  (state.screen.startsWith('event-') &&
+                    state.screen !== 'event-end')
+                  ? 'task-title'
+                  : 'main'
+                : action.type === 'prediction'
+                  ? 'prediction-status'
+                  : action.type === 'words'
+                    ? 'words-toggle'
+                    : action.type === 'help'
+                      ? 'help-title'
+                      : action.type === 'reset-task'
+                        ? 'task-title'
+                        : action.type === 'check-transfer'
+                          ? 'transfer-feedback-title'
+                          : report && currentProgress(state).feedback
+                            ? 'feedback-title'
+                            : oldFocus,
   );
   if (geo && state.geography) {
     announcer.textContent =
-      action.op === 'help'
-        ? geoHint(state.geography)
-        : (state.geography.records[state.geography.target].progress.feedback
-            ?.text ?? '');
+      state.screen === 'review' && state.geography.review
+        ? action.op === 'transfer-help'
+          ? transferHint(state.geography.review)
+          : (state.geography.review.records[state.geography.review.tab].progress
+              .feedback?.text ?? '')
+        : action.op === 'help'
+          ? geoHint(state.geography)
+          : (state.geography.records[state.geography.target].progress.feedback
+              ?.text ?? '');
   }
   if (report)
     announcer.textContent =
@@ -696,6 +727,15 @@ app.addEventListener('keydown', (event) => {
 });
 app.addEventListener('change', (event) => {
   const el = event.target as HTMLInputElement | HTMLSelectElement;
+  if (el.name.startsWith('geo-transfer-')) {
+    dispatch({
+      type: 'geography',
+      op: 'transfer-answer',
+      field: el.name.slice(13),
+      value: el.value,
+    });
+    return;
+  }
   if (el.name === 'study-text') return;
   if (el.name.startsWith('study-')) {
     dispatch({

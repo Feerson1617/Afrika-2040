@@ -49,6 +49,7 @@ import {
 export interface State {
   geography?: Geography;
   screen:
+    | 'review'
     | 'start'
     | 'game'
     | 'end'

@@ -2484,3 +2484,90 @@ summary span {
   color: #244f40;
   text-decoration: underline;
 }
+
+.review-screen {
+  max-width: 1120px;
+  margin: auto;
+  padding: 1.5rem 2rem 3rem;
+}
+.review-screen h1 {
+  max-width: 28ch;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+.review-overview {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(320px, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+.review-overview .africa-overview {
+  max-height: 390px;
+  width: 100%;
+}
+.review-insights section {
+  margin-bottom: 0.8rem;
+  padding: 0.8rem 1rem;
+  border-left: 4px solid #a44d2e;
+  background: #fffef8;
+}
+.review-insights h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.3rem;
+}
+.review-insights p {
+  margin: 0.3rem 0;
+}
+.review-status {
+  font-size: 0.85rem;
+  color: #405448;
+}
+.review-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+.review-tabs [aria-pressed='true'] {
+  background: #244f40;
+  color: #fffef8;
+}
+.review-task {
+  max-width: 850px;
+}
+.review-task legend {
+  font-weight: 650;
+}
+.review-example {
+  padding: 0.8rem;
+  background: #eef3e8;
+  border-radius: 8px;
+}
+.review-completion {
+  border-left: 4px solid #244f40;
+  padding: 0.7rem;
+}
+@media (max-width: 760px) {
+  .review-screen {
+    padding: 1rem;
+  }
+  .review-overview {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+  .review-overview .africa-overview {
+    max-height: 320px;
+  }
+}
+
+.review-map text {
+  font-size: 26px;
+}
+.review-map .geo-city-label {
+  font-size: 26px;
+  paint-order: stroke;
+  stroke: #fffef8;
+  stroke-width: 3px;
+}
+.review-map g text {
+  font-weight: 650;
+}

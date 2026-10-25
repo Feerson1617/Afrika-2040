@@ -1,6 +1,7 @@
 import { newProgress, applyEvaluation, type Progress } from '../progress.ts';
 import { result } from '../feedback.ts';
 import type { State } from '../state.ts';
+import { reduceReview, restoreReview, type Review } from './transfer.ts';
 export const regions = {
   KEN: {
     name: 'Kenia',
@@ -33,12 +34,28 @@ export interface GeoRecord {
   progress: Progress;
 }
 export interface Geography {
+  review?: Review;
   target: RegionId;
   records: Record<RegionId, GeoRecord>;
 }
 export interface GeoAction {
   type: 'geography';
-  op: 'target' | 'pick' | 'check' | 'help' | 'adopt' | 'reset';
+  op:
+    | 'target'
+    | 'pick'
+    | 'check'
+    | 'help'
+    | 'adopt'
+    | 'reset'
+    | 'review'
+    | 'home'
+    | 'review-tab'
+    | 'transfer-answer'
+    | 'transfer-check'
+    | 'transfer-help'
+    | 'transfer-adopt'
+    | 'transfer-reset';
+  field?: string;
   value?: string;
 }
 export const isRegion = (v: unknown): v is RegionId =>
@@ -91,6 +108,13 @@ export function reduceGeography(current: State, a: GeoAction) {
   const s = structuredClone(current);
   s.geography ??= newGeography();
   const g = s.geography;
+  if (
+    a.op === 'review' ||
+    a.op === 'home' ||
+    a.op === 'review-tab' ||
+    a.op.startsWith('transfer-')
+  )
+    return reduceReview(s, a);
   if (a.op === 'target') {
     if (isRegion(a.value)) g.target = a.value;
     return s;
@@ -118,7 +142,10 @@ export function restoreGeography(
   validProgress: (v: unknown) => boolean,
 ) {
   const g = s.geography;
-  if (!g) return;
+  if (!g) {
+    if (s.screen === 'review') s.screen = 'start';
+    return;
+  }
   if (
     !isRegion(g.target) ||
     !g.records ||
@@ -136,6 +163,7 @@ export function restoreGeography(
   ) {
     delete s.geography;
   }
+  restoreReview(s, validProgress);
 }
 export const project = (lon: number, lat: number) => ({
   x: 24 + (lon + 20) * 9.2,

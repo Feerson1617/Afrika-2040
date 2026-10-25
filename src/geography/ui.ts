@@ -33,7 +33,14 @@ export function africaMap(g: Geography, all = false) {
     GHA: { x: 55, y: 360 },
     MAR: { x: 230, y: 12 },
   };
-  return `<svg class="africa-overview" viewBox="0 0 740 730" role="group" aria-labelledby="africa-title africa-desc"><title id="africa-title">Kenia, Ghana und Marokko in Afrika</title><desc id="africa-desc">Vereinfachte Karte aus echten Natural-Earth-Daten. Drei hervorgehobene Länder sind wählbar. Die Länderknöpfe unter der Karte bieten dieselbe Auswahl.</desc><rect x="0" y="0" width="740" height="730" rx="16" fill="#eef3f5"/>${outlines
+  return `<svg class="africa-overview${all ? ' review-map' : ''}" viewBox="0 0 740 730" role="group" aria-labelledby="africa-title africa-desc"><title id="africa-title">Kenia, Ghana und Marokko in Afrika</title><desc id="africa-desc">Vereinfachte Karte aus echten Natural-Earth-Daten. Drei hervorgehobene Länder sind wählbar. Die Länderknöpfe unter der Karte bieten dieselbe Auswahl.</desc><rect x="0" y="0" width="740" height="730" rx="16" fill="#eef3f5"/>${[
+    ...outlines,
+  ]
+    .sort(
+      (a, b) =>
+        Number(Object.hasOwn(regions, a.code)) -
+        Number(Object.hasOwn(regions, b.code)),
+    )
     .map((f) => {
       const selected = Object.hasOwn(regions, f.code),
         active = marked === f.code || all;
@@ -41,7 +48,7 @@ export function africaMap(g: Geography, all = false) {
         ? active
           ? '#d4e0c8'
           : '#f0d994'
-        : p.help >= 2 && f.region === regions[g.target].subregion
+        : !all && p.help >= 2 && f.region === regions[g.target].subregion
           ? '#dbe8ee'
           : '#f7f6ee';
       const path = `<path d="${f.path}" fill="${fill}" stroke="#68766b" stroke-width="${selected ? 2.5 : 1}" ${f.code === 'SAH' ? 'stroke-dasharray="5 4"' : ''}/>`;
@@ -50,7 +57,7 @@ export function africaMap(g: Geography, all = false) {
         r = regions[id],
         point = project(r.lon, r.lat),
         pos = labelPositions[id];
-      return `<g role="button" tabindex="0" id="geo-country-${id}" data-action="geography" data-op="pick" data-value="${id}" aria-label="${r.name}${active ? ' ' + r.city : ''}" aria-pressed="${d.selection === id}">${path}<path d="M${pos.x + 70} ${pos.y + 24}L${point.x} ${point.y}" stroke="#244f40" fill="none" stroke-width="2"/><rect x="${pos.x}" y="${pos.y}" width="155" height="48" rx="8" fill="#fffef8" stroke="#244f40"/><text x="${pos.x + 77}" y="${pos.y + 31}" text-anchor="middle">${r.name}</text>${active ? `<circle cx="${point.x}" cy="${point.y}" r="7" fill="#a44d2e" stroke="#fffef8" stroke-width="2"/><text class="geo-city-label" x="${point.x + (id === 'KEN' ? -70 : 10)}" y="${point.y + 23}"> ${r.city}</text>` : ''}</g>`;
+      return `<g role="button" tabindex="0" id="geo-country-${id}" data-action="geography" data-op="${all ? 'review-tab' : 'pick'}" data-value="${id}" aria-label="${r.name}${active ? ' ' + r.city : ''}" aria-pressed="${all ? g.review?.tab === id : d.selection === id}">${path}<path d="M${pos.x + 70} ${pos.y + 24}L${point.x} ${point.y}" stroke="#244f40" fill="none" stroke-width="2"/><rect x="${pos.x}" y="${pos.y}" width="155" height="48" rx="8" fill="#fffef8" stroke="#244f40"/><text x="${pos.x + 77}" y="${pos.y + 31}" text-anchor="middle">${r.name}</text>${active ? `<circle cx="${point.x}" cy="${point.y}" r="7" fill="#a44d2e" stroke="#fffef8" stroke-width="2"/><text class="geo-city-label" x="${point.x + (id === 'KEN' ? -70 : 10)}" y="${point.y + 23}"> ${r.city}</text>` : ''}</g>`;
     })
     .join(
       '',
