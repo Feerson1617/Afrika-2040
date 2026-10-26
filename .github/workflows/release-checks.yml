@@ -54,8 +54,8 @@ jobs:
         run: node scripts/check-dist.mjs | tee release-results/dist.json
       - name: Install Playwright engine and OS libraries
         run: npx playwright install --with-deps ${{ matrix.browser }} 2>&1 | tee release-results/browser-install.txt
-      - name: Production smoke and selected existing regressions
-        run: npx playwright test --config=playwright.release.config.ts --project=${{ matrix.browser }} --reporter=list,html,json 2>&1 | tee release-results/browser.txt
+      - name: Curriculum modules, production smoke and existing regressions
+        run: npx playwright test --config=playwright.afrika.config.ts --project=${{ matrix.browser }} --reporter=list,html,json 2>&1 | tee release-results/browser.txt
       - name: Summary
         if: always()
         run: |

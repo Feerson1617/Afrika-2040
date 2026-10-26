@@ -1,0 +1,101 @@
+{
+  "date": "2026-10-26",
+  "baseline": "e6edaaf946081dd2b78163600fae7c7eff56ca26",
+  "branch": "feat/afrika-vollstaendig-klasse7",
+  "logic": {
+    "passed": 197,
+    "failed": 0,
+    "skipped": 0
+  },
+  "combinedBrowser": {
+    "passed": 130,
+    "failed": 0,
+    "skipped": 0,
+    "chromium": 65,
+    "webkit": 65
+  },
+  "finalNewBrowser": {
+    "startTime": "2026-10-26T19:05:40.719Z",
+    "duration": 63191.421,
+    "expected": 38,
+    "skipped": 0,
+    "unexpected": 0,
+    "flaky": 0
+  },
+  "browserEnvironments": [
+    "Linux Chromium 154",
+    "Linux Playwright WebKit 27.2 build 2370",
+    "Desktop 1440x1000",
+    "simulated iPad 1024x768 touch/keyboard",
+    "narrow Pages content 720px"
+  ],
+  "productionBuild": [
+    {
+      "file": "assets/asafo-CiD1wyHi.jpg",
+      "bytes": 1988168,
+      "sha256": "b764593e666dbeb085a22b175de59b2fa84f7068dcff78446d490e257f524302"
+    },
+    {
+      "file": "assets/index-DJe-v01B.css",
+      "bytes": 39544,
+      "sha256": "41b6999830e9007bd9b5085737bc00205f9db687bc1cf2b3cc1c1729d9b4db27"
+    },
+    {
+      "file": "assets/index-DeNnLJS0.js",
+      "bytes": 282087,
+      "sha256": "0702a9cfd36d4fb9667a2d6ad2943e3413617c32f3c3339ac821df7941a0b28f"
+    },
+    {
+      "file": "assets/kakum-v8Jew1-6.jpg",
+      "bytes": 1534641,
+      "sha256": "4447349bea9a1aa522bf1697d66cb8e89ab13807bc9e33bd94c08b49e943a03c"
+    },
+    {
+      "file": "index.html",
+      "bytes": 1052,
+      "sha256": "de2ab61f332d48a78cf921c1549ef9e1916f8c98ec2f9739164be26ee7f62f4f"
+    }
+  ],
+  "format": {
+    "changedFiles": "pass",
+    "wholeRepository": "15 unchanged pre-existing warnings, exit 1",
+    "baselineComparison": "format-baseline.json"
+  },
+  "intermediateFailure": "37/38 in new-module run: image readiness checked before decode completed; polling assertion now waits for complete && naturalWidth > 0. Final 38/38 pass without retries.",
+  "notClaimed": [
+    "independent acceptance",
+    "learning effectiveness",
+    "physical iPad/Safari",
+    "screen-reader manual audit",
+    "SCORM/LMS implementation"
+  ],
+  "logs": {
+    "logic-final.txt": {
+      "sha256": "1c41e1386c18194ec4dbf38495d762f408d4e32c7f8622cdd5c64c677ec9ee79"
+    },
+    "browser-complete.txt": {
+      "sha256": "1246bacd22a67a22386b6291f037604d0d6c353f7aaddbadcdcdb3c886fcd8b2"
+    },
+    "browser-final-new.txt": {
+      "sha256": "9800cc121e9fce36c7a638cb295e0870274c98754756aaf3a2ffc355f35490f3"
+    },
+    "browser-final-new.json": {
+      "sha256": "f9c8b398dfa44ad45ccb059f1219b4c97be52bc0711289a4a32fda65edfac2c7"
+    },
+    "browser-image-timing.txt": {
+      "sha256": "6aefaee6fd90183d55eb5f8b3c79c230396eb7089b40c84cf68b63a8910b6976"
+    },
+    "build-final.txt": {
+      "sha256": "4b4bb75f8da2e189e24a56f8d1110a5e5b32ccf8b100cfe3df109faf02f44ab6"
+    },
+    "dist-final.json": {
+      "sha256": "0cad4862cc1836b5b1b2e8fa36c02378a979b89f6e954872c5d1e197dca4fe8e"
+    },
+    "format-final.txt": {
+      "sha256": "c9e064949383b80170ae5ec2971a735f55935d8d8a081ddb31a0022d568be062"
+    },
+    "format-baseline.json": {
+      "sha256": "95e4ebf08fc78b909df96a79861391f54f0c80f21b54583515cb4b8940cdaa35"
+    }
+  }
+}

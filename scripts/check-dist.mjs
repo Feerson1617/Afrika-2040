@@ -3,8 +3,14 @@ import { lstatSync, readFileSync, readdirSync } from 'node:fs';
 import { resolve, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 
-// This application emits exactly an HTML entry and bundled JS/CSS. Fail closed
-// if a future public/ copy, source map, archive, PDF, state or log appears.
+// Only the entry, bundled JS/CSS and the two reviewed, byte-identical photographs
+// may ship. An image extension alone is never sufficient admission.
+const imageHashes = JSON.parse(
+  readFileSync(
+    new URL('../src/inquiry/assets/manifest.json', import.meta.url),
+    'utf8',
+  ),
+);
 export function checkDist(directory = 'dist') {
   const root = resolve(directory);
   const files = [];
@@ -18,9 +24,15 @@ export function checkDist(directory = 'dist') {
       for (const name of readdirSync(full))
         visit(relative ? relative + '/' + name : name);
     } else {
+      const photo = /^assets\/(asafo|kakum)-[\w-]+\.jpg$/.exec(relative);
+      const admittedPhoto =
+        photo &&
+        createHash('sha256').update(readFileSync(full)).digest('hex') ===
+          imageHashes[photo[1] + '.jpg'];
       if (
         !info.isFile() ||
-        !/^(index\.html|assets\/[\w-]+-[\w-]+\.(js|css))$/.test(relative)
+        (!/^(index\.html|assets\/[\w-]+-[\w-]+\.(js|css))$/.test(relative) &&
+          !admittedPhoto)
       )
         throw new Error('Unerlaubte Build-Datei: ' + relative);
       files.push(relative);
@@ -29,7 +41,7 @@ export function checkDist(directory = 'dist') {
   visit();
   files.sort();
   if (
-    files.length !== 3 ||
+    files.length !== 3 + files.filter((f) => f.endsWith('.jpg')).length ||
     !files.includes('index.html') ||
     files.filter((f) => f.endsWith('.js')).length !== 1 ||
     files.filter((f) => f.endsWith('.css')).length !== 1
@@ -53,6 +65,17 @@ export function checkDist(directory = 'dist') {
     throw new Error(
       'HTML muss ausschließlich die beiden relativen lokalen Bundles laden.',
     );
+  const code = readFileSync(
+    join(
+      root,
+      files.find((f) => f.endsWith('.js')),
+    ),
+    'utf8',
+  );
+  for (const file of files.filter((f) => f.endsWith('.jpg'))) {
+    if (!code.includes(file.split('/').at(-1)))
+      throw new Error('Nicht referenziertes Bild: ' + file);
+  }
   for (const file of files) {
     const text = readFileSync(join(root, file), 'utf8');
     if (

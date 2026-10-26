@@ -1,3 +1,4 @@
+import { restoreInquiry } from './inquiry/state.ts';
 import { restoreGeography } from './geography/state.ts';
 import { settleEarlyExplanation } from './feedback.ts';
 import { restoreStudies } from './regions/storage.ts';
@@ -59,6 +60,7 @@ export function readSession(storage?: Store): State {
     if (
       !s ||
       !oneOf(s.screen, [
+        'inquiry',
         'review',
         'start',
         'study',
@@ -291,6 +293,12 @@ export function readSession(storage?: Store): State {
         }
       }
     } else if (oneOf(s.screen, [...demandScreens])) s.screen = 'start';
+    if (s.inquiry !== undefined) {
+      const inquiry = restoreInquiry(s.inquiry);
+      if (inquiry) s.inquiry = inquiry;
+      else delete s.inquiry;
+    }
+    if (s.screen === 'inquiry' && !s.inquiry) s.screen = 'start';
     restoreStudies(s as State, progress);
     restoreGeography(s as State, progress);
     return normalizeView(s as State);

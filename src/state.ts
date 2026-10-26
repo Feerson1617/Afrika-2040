@@ -1,4 +1,9 @@
 import {
+  reduceInquiry,
+  type Inquiry,
+  type InquiryAction,
+} from './inquiry/state.ts';
+import {
   reduceGeography,
   type Geography,
   type GeoAction,
@@ -48,8 +53,10 @@ import {
   evaluateEventEffects,
 } from './feedback.ts';
 export interface State {
+  inquiry?: Inquiry;
   geography?: Geography;
   screen:
+    | 'inquiry'
     | 'review'
     | 'start'
     | 'game'
@@ -129,6 +136,7 @@ export type DemandAction =
   | { type: 'demand-disadvantage'; value: DemandDecision['disadvantage'] }
   | { type: 'demand-text'; value: string };
 export type Action =
+  | InquiryAction
   | GeoAction
   | StudyAction
   | DemandAction
@@ -169,6 +177,13 @@ export type Action =
   | { type: 'check' | 'use-example'; persisted: boolean };
 export function reduce(current: State, action: Action): State {
   if (action.type === 'restart') return initialState();
+  if (action.type === 'inquiry')
+    return {
+      ...current,
+      screen: action.op === 'home' ? 'start' : 'inquiry',
+      inquiry: reduceInquiry(current.inquiry, action),
+    };
+  if (current.screen === 'inquiry') return current;
   if (action.type === 'geography') return reduceGeography(current, action);
   if (action.type === 'study' || current.screen === 'study')
     return reduceStudy(current, action);

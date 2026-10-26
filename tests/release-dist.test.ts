@@ -4,6 +4,7 @@ import {
   mkdtempSync,
   mkdirSync,
   writeFileSync,
+  readFileSync,
   symlinkSync,
   rmSync,
 } from 'node:fs';
@@ -49,6 +50,43 @@ test('release artifact gate accepts only referenced portable production bundles'
       '//# sourceMappingURL=index.js.map',
     );
     assert.throws(() => checkDist(root), /Source-Map/);
+  } finally {
+    rmSync(root, { recursive: true, force: true });
+  }
+});
+
+test('release artifact gate admits only reviewed image bytes, with a bundle reference, and rejects private or altered images', () => {
+  const root = mkdtempSync(join(tmpdir(), 'afrika-images-'));
+  try {
+    mkdirSync(join(root, 'assets'));
+    writeFileSync(
+      join(root, 'index.html'),
+      '<script src="./assets/index-abc.js"></script><link href="./assets/index-abc.css">',
+    );
+    writeFileSync(join(root, 'assets/index-abc.css'), 'body{}');
+    writeFileSync(
+      join(root, 'assets/index-abc.js'),
+      'const photo="assets/asafo-reviewed.jpg";',
+    );
+    const original = readFileSync(
+      new URL('../src/inquiry/assets/asafo.jpg', import.meta.url),
+    );
+    writeFileSync(join(root, 'assets/asafo-reviewed.jpg'), original);
+    assert.equal(checkDist(root).length, 4);
+    const changed = Buffer.from(original);
+    changed[changed.length - 1] ^= 1;
+    writeFileSync(join(root, 'assets/asafo-reviewed.jpg'), changed);
+    assert.throws(() => checkDist(root), /Unerlaubte/);
+    rmSync(join(root, 'assets/asafo-reviewed.jpg'));
+    writeFileSync(join(root, 'assets/student-private.jpg'), original);
+    assert.throws(() => checkDist(root), /Unerlaubte/);
+    rmSync(join(root, 'assets/student-private.jpg'));
+    writeFileSync(join(root, 'assets/asafo-reviewed.jpg'), original);
+    writeFileSync(
+      join(root, 'assets/index-abc.js'),
+      'console.log("no photo");',
+    );
+    assert.throws(() => checkDist(root), /Nicht referenziertes Bild/);
   } finally {
     rmSync(root, { recursive: true, force: true });
   }
