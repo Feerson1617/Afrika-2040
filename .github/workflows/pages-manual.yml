@@ -1,0 +1,94 @@
+name: Publish approved main to Pages (manual only)
+
+on:
+  workflow_dispatch:
+    inputs:
+      approved_sha:
+        description: Full 40-character main commit approved for publication
+        required: true
+        type: string
+      publication_approved:
+        description: I have explicit approval to publish this exact main commit
+        required: true
+        default: false
+        type: boolean
+
+permissions:
+  contents: read
+
+concurrency:
+  group: github-pages-production
+  cancel-in-progress: false
+
+defaults:
+  run:
+    shell: bash
+
+jobs:
+  build:
+    if: github.repository == 'Feerson1617/Afrika-2040' && github.ref == 'refs/heads/main' && inputs.publication_approved
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    env:
+      CI: 'true'
+      AFRIKA_EVIDENCE_DIR: release-results/evidence
+      PLAYWRIGHT_JSON_OUTPUT_FILE: release-results/browser.json
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7
+        with:
+          ref: ${{ github.sha }}
+          persist-credentials: false
+      - name: Require the explicitly approved immutable main SHA
+        run: |
+          [[ "$APPROVED_SHA" =~ ^[0-9a-f]{40}$ ]]
+          test "$APPROVED_SHA" = "$GITHUB_SHA"
+          test "$(git rev-parse HEAD)" = "$APPROVED_SHA"
+          mkdir -p release-results
+          git rev-parse HEAD | tee release-results/commit.txt
+        env:
+          APPROVED_SHA: ${{ inputs.approved_sha }}
+      - uses: actions/setup-node@949feb2413d6458794dcd2491c4babbbce0c15c1 # v7
+        with:
+          node-version: '24'
+          cache: npm
+      - run: npm ci 2>&1 | tee release-results/npm-ci.txt
+      - run: npm test 2>&1 | tee release-results/logic.txt
+      - run: npm run build 2>&1 | tee release-results/build.txt
+      - run: node scripts/check-dist.mjs | tee release-results/dist.json
+      - run: npx playwright install --with-deps chromium webkit 2>&1 | tee release-results/browser-install.txt
+      - run: npx playwright test --config=playwright.release.config.ts --reporter=list,html,json 2>&1 | tee release-results/browser.txt
+      - name: Upload only audited dist (no source, reports or PDFs)
+        uses: actions/upload-pages-artifact@fc324d3547104276b827a68afc52ff2a11cc49c9 # v5
+        with:
+          path: dist
+          retention-days: 1
+      - name: Separate test evidence
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: publication-checks-${{ github.run_id }}
+          path: |
+            release-results/
+            playwright-report/
+            test-results/
+          retention-days: 14
+          if-no-files-found: warn
+  deploy:
+    needs: build
+    if: github.repository == 'Feerson1617/Afrika-2040' && github.ref == 'refs/heads/main' && inputs.publication_approved
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Read configured Pages site (never enable it automatically)
+        uses: actions/configure-pages@45bfe0192ca1faeb007ade9deae92b16b8254a0d # v6
+        with:
+          enablement: false
+      - name: Publish the successful build artifact
+        id: deployment
+        uses: actions/deploy-pages@368f82528645a54fb793d4d04e342629a3f51346 # v5
