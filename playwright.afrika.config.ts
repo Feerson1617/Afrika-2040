@@ -1,7 +1,7 @@
 import { defineConfig } from '@playwright/test';
 import release from './playwright.release.config.ts';
 const match =
-  /(?:inquiry|game|phase2b|episode2|episode2-accessibility|regions|morocco|final-integration|pedagogical-final|release-rc1|final-scorm|phase5-integration|release-live)\.spec\.ts/;
+  /(?:inquiry(?:-correction)?|game|phase2b|episode2|episode2-accessibility|regions|morocco|final-integration|pedagogical-final|release-rc1|final-scorm|phase5-integration|release-live)\.spec\.ts/;
 export default defineConfig(release, {
   testMatch: match,
   grep: new RegExp((release.grep as RegExp).source + '|Afrika curriculum'),

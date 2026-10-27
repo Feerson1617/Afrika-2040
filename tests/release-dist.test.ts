@@ -12,6 +12,18 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { checkDist } from '../scripts/check-dist.mjs';
 
+function addReviewedPhotos(root: string) {
+  for (const name of ['asafo', 'kakum'])
+    writeFileSync(
+      join(root, `assets/${name}-reviewed.jpg`),
+      readFileSync(
+        new URL(`../src/inquiry/assets/${name}.jpg`, import.meta.url),
+      ),
+    );
+}
+const references =
+  'const photos = ["assets/asafo-reviewed.jpg", "assets/kakum-reviewed.jpg"];';
+
 test('release artifact gate accepts only referenced portable production bundles', () => {
   const root = mkdtempSync(join(tmpdir(), 'afrika-dist-'));
   try {
@@ -19,9 +31,21 @@ test('release artifact gate accepts only referenced portable production bundles'
     const html =
       '<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\'%3E%3C/svg%3E"><a href="#main">Zum Inhalt</a><script src="./assets/index-abc123.js"></script><link href="./assets/index-abc123.css">';
     writeFileSync(join(root, 'index.html'), html);
-    writeFileSync(join(root, 'assets/index-abc123.js'), 'console.log("model")');
+    writeFileSync(join(root, 'assets/index-abc123.js'), references);
+    addReviewedPhotos(root);
     writeFileSync(join(root, 'assets/index-abc123.css'), 'body{}');
-    assert.equal(checkDist(root).length, 3);
+    assert.equal(checkDist(root).length, 5);
+    for (const name of ['asafo', 'kakum']) {
+      rmSync(join(root, `assets/${name}-reviewed.jpg`));
+      assert.throws(() => checkDist(root), /Erwartet/);
+      addReviewedPhotos(root);
+    }
+    writeFileSync(
+      join(root, 'assets/asafo-duplicate.jpg'),
+      readFileSync(join(root, 'assets/asafo-reviewed.jpg')),
+    );
+    assert.throws(() => checkDist(root), /Erwartet/);
+    rmSync(join(root, 'assets/asafo-duplicate.jpg'));
     for (const extra of [
       '.env',
       'curriculum.pdf',
@@ -47,7 +71,7 @@ test('release artifact gate accepts only referenced portable production bundles'
     writeFileSync(join(root, 'index.html'), html);
     writeFileSync(
       join(root, 'assets/index-abc123.js'),
-      '//# sourceMappingURL=index.js.map',
+      references + '\n//# sourceMappingURL=index.js.map',
     );
     assert.throws(() => checkDist(root), /Source-Map/);
   } finally {
@@ -64,15 +88,13 @@ test('release artifact gate admits only reviewed image bytes, with a bundle refe
       '<script src="./assets/index-abc.js"></script><link href="./assets/index-abc.css">',
     );
     writeFileSync(join(root, 'assets/index-abc.css'), 'body{}');
-    writeFileSync(
-      join(root, 'assets/index-abc.js'),
-      'const photo="assets/asafo-reviewed.jpg";',
-    );
+    writeFileSync(join(root, 'assets/index-abc.js'), references);
+    addReviewedPhotos(root);
     const original = readFileSync(
       new URL('../src/inquiry/assets/asafo.jpg', import.meta.url),
     );
     writeFileSync(join(root, 'assets/asafo-reviewed.jpg'), original);
-    assert.equal(checkDist(root).length, 4);
+    assert.equal(checkDist(root).length, 5);
     const changed = Buffer.from(original);
     changed[changed.length - 1] ^= 1;
     writeFileSync(join(root, 'assets/asafo-reviewed.jpg'), changed);

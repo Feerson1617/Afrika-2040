@@ -16,6 +16,7 @@ import {
   reduceInquiry,
   evaluateInquiry,
   checkDefinition,
+  parseInquiryInteger,
   checkComplete,
   restoreInquiry,
   productStatus,
@@ -224,7 +225,7 @@ test('curriculum oral alternative needs no written essay and never certifies fac
     assert.deepEqual(s.records[id].product, ['', '', '']);
     assert.equal(
       productStatus(id, s.records[id]),
-      'Mündliche Bearbeitung vermerkt – fachlich noch nicht geprüft',
+      'Du hast mündlich erklärt: Die Antwort ist noch nicht geprüft.',
     );
     assert.equal(restoreInquiry(s)!.records[id].submitted, true);
     s = act(s, 'oral', 'false');
@@ -269,7 +270,9 @@ for (const id of topicIds) {
     assert.equal(s.records[id].checks[0].feedback?.kind, 'neutral');
     // In-memory drafts emulate a wrong but fully supplied selection without deriving expectations from task definitions.
     for (const key of Object.keys(solutions[id][0]))
-      r.checks[0].answers[key] = 'objectively-wrong';
+      r.checks[0].answers[key] = ['population', 'economy'].includes(id)
+        ? '999'
+        : 'objectively-wrong';
     let e = evaluateInquiry(id, 0, r);
     assert.equal(e.feedback.kind, 'incorrect');
     assert.equal(e.error, true);
@@ -283,7 +286,9 @@ for (const id of topicIds) {
     e = evaluateInquiry(id, 0, r);
     assert.equal(e.error, false);
     assert.equal(e.feedback.kind, 'partial');
-    r.checks[0].answers[other] = 'objectively-wrong';
+    r.checks[0].answers[other] = ['population', 'economy'].includes(id)
+      ? '999'
+      : 'objectively-wrong';
     s.records[id] = r;
     s = act(s, 'check');
     assert.equal(s.records[id].checks[0].failures, 1);
@@ -311,12 +316,15 @@ for (const id of topicIds) {
     }
     s = act(s, 'product-adopt');
     assert.deepEqual(s.records[id].product, productExample(id, s.records[id]));
-    assert.match(productStatus(id, s.records[id]), /bewusst übernommen/);
+    assert.match(
+      productStatus(id, s.records[id]),
+      /Beispiel übernommen: keine selbstständige Antwort/,
+    );
     s = act(s, 'product', 'Ich verändere diese Begründung.', '1');
     s = act(s, 'submit');
     assert.match(
       productStatus(id, s.records[id]),
-      /Beispiel genutzt oder überarbeitet/,
+      /Beispiel genutzt oder geändert/,
     );
     const restored = restoreInquiry(s)!;
     assert.equal(restored.records[id].productAdopted, false);
@@ -333,7 +341,11 @@ test('curriculum no incomplete numeric input counts as a failure; malformed numb
     s = fill(s, { migration: bad });
     const e = evaluateInquiry('population', 0, s.records.population);
     assert.equal(e.feedback.complete, false);
-    assert.equal(e.error, true);
+    assert.equal(e.error, false);
+    assert.equal(e.feedback.kind, 'partial');
+    assert.equal(e.feedback.title, 'Prüfe die Schreibweise der Zahl');
+    s = act(s, 'check');
+    assert.equal(s.records.population.checks[0].failures, 0);
   }
 });
 test('curriculum inspect both authentic materials and both measures before completion; help cannot replace exploration', () => {
@@ -363,15 +375,18 @@ test('curriculum both proposals with both goals: legitimate conflict is neutral 
       assert.equal(p.feedback?.kind, 'neutral');
       assert.equal(p.feedback?.complete, matches);
       assert.equal(p.failures, 0);
-      assert.match(p.feedback!.text, /Beleg|passend/);
+      assert.match(p.feedback!.text, /(?:Deine Angaben passen|Schon passend)/);
       if (!matches) {
-        assert.match(p.feedback!.title, /offen/);
+        assert.equal(
+          p.feedback!.title,
+          'Die Angaben passen. Was ist dir wichtiger?',
+        );
         s = act(s, 'answer', plan === 'cool' ? 'loss' : 'access', 'weighting');
         s = act(s, 'check');
         assert.equal(s.records.future.checks[1].feedback?.complete, true);
         assert.match(
           s.records.future.checks[1].feedback!.text,
-          /nehme in Kauf/,
+          /Dafür akzeptiere ich/,
         );
         assert.equal(s.records.future.checks[1].failures, 0);
       }
@@ -467,4 +482,201 @@ test('curriculum restore re-evaluates forged completion/feedback and isolates da
     false,
   );
   assert.notEqual(restored.records.population.checks[0].feedback?.text, 'fake');
+});
+
+test('curriculum integer notation accepts only complete signed integers and full German thousands groups', () => {
+  for (const [input, expected] of [
+    ['-10', -10n],
+    ['−10', -10n],
+    ['  −10\t', -10n],
+    ['1020', 1020n],
+    ['1.020', 1020n],
+    ['1000', 1000n],
+    ['1.000', 1000n],
+    [' +1.020 ', 1020n],
+    ['1.234.567', 1234567n],
+    ['−12.345', -12345n],
+    ['0', 0n],
+    ['-0', 0n],
+    ['00030', 30n],
+    ['9.007.199.254.740.993', 9007199254740993n],
+  ] as const)
+    assert.equal(parseInquiryInteger(input), expected, input);
+  for (const input of [
+    undefined,
+    '',
+    ' ',
+    '30abc',
+    '1.02',
+    '1..020',
+    '1,020',
+    '10+20',
+    '1.020.',
+    '.1020',
+    '1000.000',
+    '1.020.00',
+    '1.020.0000',
+    '-',
+    '−',
+    '+',
+    '- 10',
+    '--10',
+    '−-10',
+    '1 020',
+    '1\u00a0020',
+    '10.0',
+    '10,0',
+    '1e3',
+    '0x400',
+    'Infinity',
+    'NaN',
+    '10\n20',
+    '–10',
+    '—10',
+  ])
+    assert.equal(parseInquiryInteger(input), undefined, String(input));
+});
+
+test('curriculum accepted numeric spellings complete population and economy without any failure and survive reload/back', () => {
+  for (const values of [
+    { natural: '30', migration: '-10', end: '1020' },
+    { natural: ' 30 ', migration: '−10', end: '1.020' },
+    { natural: '+30', migration: ' -10 ', end: ' 1.020 ' },
+  ]) {
+    let s = fill(start('population'), values);
+    s = act(s, 'check');
+    assert.equal(s.records.population.checks[0].feedback?.kind, 'correct');
+    assert.equal(s.records.population.checks[0].failures, 0);
+    s = restoreInquiry(JSON.parse(JSON.stringify(s)))!;
+    assert.deepEqual(s.records.population.checks[0].answers, values);
+    assert.equal(checkComplete('population', 0, s.records.population), true);
+    s = act(s, 'next');
+    s = act(s, 'back');
+    assert.equal(checkComplete('population', 0, s.records.population), true);
+  }
+  let s = fill(start('economy'), {
+    'surplus-a': ' 80 ',
+    'surplus-b': '+60',
+    first: '20',
+  });
+  s = act(s, 'check');
+  assert.equal(s.records.economy.checks[0].feedback?.kind, 'correct');
+  assert.equal(s.records.economy.checks[0].failures, 0);
+});
+
+test('curriculum uncertain format, including mixed wrong/correct/missing values, never consumes a factual attempt', () => {
+  for (const id of ['population', 'economy'] as const) {
+    const keys = Object.keys(solutions[id][0]);
+    for (const invalid of [
+      '30abc',
+      '1.02',
+      '1..020',
+      '1,020',
+      '10+20',
+      '−',
+      '1.020.00',
+    ]) {
+      let s = fill(start(id), {
+        [keys[0]]: solutions[id][0][keys[0]],
+        [keys[1]]: '999',
+        [keys[2]]: invalid,
+      });
+      for (let i = 0; i < 3; i++) s = act(s, 'check');
+      let p = s.records[id].checks[0];
+      assert.equal(p.failures, 0);
+      assert.equal(p.help, 0);
+      assert.equal(p.feedback?.kind, 'partial');
+      assert.match(p.feedback!.text, /Schon passend:/);
+      assert.match(p.feedback!.text, /Schreibe eine ganze Zahl/);
+      s = act(s, 'answer', '', keys[0]);
+      s = act(s, 'check');
+      p = s.records[id].checks[0];
+      assert.equal(p.feedback?.kind, 'neutral');
+      assert.equal(p.failures, 0);
+      s = restoreInquiry(s)!;
+      assert.equal(s.records[id].checks[0].feedback?.kind, 'neutral');
+      s = fill(s, solutions[id][0]);
+      s = act(s, 'check');
+      assert.equal(s.records[id].checks[0].feedback?.kind, 'correct');
+      assert.equal(s.records[id].checks[0].failures, 0);
+    }
+  }
+});
+
+test('curriculum only two actual arithmetic failures trigger explanation; format errors neither add nor reset attempts', () => {
+  let s = fill(start('population'), { natural: '0', migration: '0', end: '0' });
+  s = act(s, 'check');
+  assert.equal(s.records.population.checks[0].feedback?.kind, 'incorrect');
+  assert.equal(s.records.population.checks[0].failures, 1);
+  s = fill(s, { natural: '30', migration: '−', end: '999' });
+  s = act(s, 'check');
+  s = act(s, 'check');
+  assert.equal(s.records.population.checks[0].failures, 1);
+  assert.equal(s.records.population.checks[0].help, 0);
+  assert.equal(s.records.population.checks[0].feedback?.kind, 'partial');
+  s = act(s, 'answer', '−10', 'migration');
+  s = act(s, 'check');
+  let p = s.records.population.checks[0];
+  assert.equal(p.failures, 2);
+  assert.equal(p.help, 3);
+  assert.equal(p.feedback?.kind, 'hint');
+  assert.equal(p.exampleUsed, false);
+  assert.match(p.feedback!.text, /Schon passend:/);
+  s = act(s, 'adopt');
+  p = s.records.population.checks[0];
+  assert.deepEqual(p.answers, solutions.population[0]);
+  assert.equal(p.exampleUsed, true);
+  s = act(s, 'answer', '1.020', 'end');
+  s = act(s, 'check');
+  assert.equal(s.records.population.checks[0].adopted, false);
+  assert.equal(s.records.population.checks[0].exampleUsed, true);
+  assert.equal(
+    checkComplete('population', 0, restoreInquiry(s)!.records.population),
+    true,
+  );
+});
+
+test('curriculum numeric comparison is exact for large integers and never rounds a wrong value into a correct one', () => {
+  assert.notEqual(
+    parseInquiryInteger('9.007.199.254.740.993'),
+    parseInquiryInteger('9.007.199.254.740.992'),
+  );
+  const s = fill(start('population'), {
+    natural: '30',
+    migration: '−10',
+    end: '9.007.199.254.740.993',
+  });
+  const result = evaluateInquiry('population', 0, s.records.population);
+  assert.equal(result.error, true);
+  assert.equal(result.feedback.kind, 'partial');
+  assert.equal(result.feedback.complete, false);
+});
+
+test('curriculum real baseline save keeps original ungraded words and marks legacy copied examples as supported', () => {
+  const old = JSON.parse(
+    readFileSync(
+      new URL('./fixtures/inquiry-5785267.json', import.meta.url),
+      'utf8',
+    ),
+  );
+  const saved = readSession({ getItem: () => JSON.stringify(old) });
+  assert.deepEqual(
+    saved.inquiry!.records.population.product,
+    old.inquiry.records.population.product,
+  );
+  assert.deepEqual(
+    saved.inquiry!.records.future.product,
+    old.inquiry.records.future.product,
+  );
+  assert.equal(saved.inquiry!.records.population.checks[0].failures, 0);
+  assert.equal(
+    productStatus('population', saved.inquiry!.records.population),
+    'Eigene Antwort: noch nicht geprüft.',
+  );
+  assert.equal(saved.inquiry!.records.future.productExampleUsed, true);
+  assert.match(
+    productStatus('future', saved.inquiry!.records.future),
+    /Beispiel genutzt/,
+  );
+  assert.deepEqual(saved.progress, old.progress);
 });

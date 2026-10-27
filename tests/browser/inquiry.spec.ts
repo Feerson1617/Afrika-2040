@@ -160,6 +160,28 @@ for (const device of [
         fullPage: true,
       });
       await solve(page, id, device.touch);
+      const beforeWords = await record(page, id);
+      const words = page.locator('#inquiry-terms');
+      await words.locator('summary').focus();
+      await page.keyboard.press('Enter');
+      await expect(words.locator('.inquiry-terms-text')).toBeVisible();
+      await expect(words.locator('.inquiry-terms-text')).toHaveCSS(
+        'white-space',
+        'pre-line',
+      );
+      await expect(words.locator('.inquiry-terms-text')).toHaveCSS(
+        'font-size',
+        '16px',
+      );
+      for (const verb of ['Beschreibe:', 'Erkläre:', 'Begründe:'])
+        await expect(words).toContainText(verb);
+      expect(await record(page, id)).toEqual(beforeWords);
+      await page.screenshot({
+        path: evidencePath(`language-${id}-${browserName}-${device.name}.png`),
+        fullPage: true,
+      });
+      await words.locator('summary').click();
+
       if (id === 'image')
         await expect(page.locator('#inquiry-product-anchor')).toContainText(
           'Zuerst denke ich nur an Natur.',
@@ -177,7 +199,7 @@ for (const device of [
         await page.locator('#inq-product-' + i).fill(own[id][i]);
       await click(page, 'submit', device.touch);
       await expect(page.locator('#inquiry-product-status')).toHaveText(
-        'Eigene Antwort – fachlich noch nicht geprüft',
+        'Eigene Antwort: noch nicht geprüft.',
       );
       const before = await record(page, id);
       await page.reload();
@@ -303,14 +325,14 @@ for (const plan of ['cool', 'shade'] as const)
       const desired = plan === 'cool' ? 'loss' : 'access';
       if (goal !== desired) {
         await expect(page.locator('[data-inquiry-feedback]')).toContainText(
-          'Beleg, Grenze und offene Frage passen',
+          'Deine Angaben passen',
         );
         await expect(page.locator('#inquiry-next')).toHaveCount(0);
         expect((await record(page, 'future')).checks[1].failures).toBe(0);
         await page.locator('#inq-weighting').selectOption(desired);
         await click(page, 'check');
         await expect(page.locator('[data-inquiry-feedback]')).toContainText(
-          'nehme in Kauf',
+          'Dafür akzeptiere ich',
         );
       }
       await click(page, 'next');
@@ -318,7 +340,7 @@ for (const plan of ['cool', 'shade'] as const)
       expect((await record(page, 'future')).productExampleUsed).toBe(false);
       await click(page, 'product-adopt');
       await expect(page.locator('#inquiry-product-status')).toContainText(
-        'Beispiel bewusst übernommen',
+        'Beispiel übernommen',
       );
       await page.reload();
       await expect(page.locator('#inq-product-0')).toHaveValue(
@@ -327,7 +349,7 @@ for (const plan of ['cool', 'shade'] as const)
       await click(page, 'journal');
       const section = page
         .locator('.journal-record')
-        .filter({ hasText: 'E · Eine Zukunft' });
+        .filter({ hasText: 'E · Einen Plan für die Zukunft' });
       await expect(section).toContainText(
         plan === 'cool' ? '30 Stände' : '60 Stände',
       );
@@ -401,7 +423,7 @@ test('Afrika curriculum supported path for all five, keyboard progression, all r
       .fill('Meine eigene Ergänzung nach dem Beispiel.');
     await click(page, 'submit');
     await expect(page.locator('#inquiry-product-status')).toContainText(
-      'Beispiel genutzt oder überarbeitet',
+      'Beispiel genutzt oder geändert',
     );
     expect(
       await page.evaluate(

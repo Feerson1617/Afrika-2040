@@ -81,13 +81,13 @@ export const seasons = [
     name: 'Nordghana',
     wet: [5, 6, 7, 8, 9],
     detail:
-      'Savannenraum: ganzjährig warm. Eine Regenzeit, dazwischen eine längere trockenere Zeit. Bericht 2021, S. 4.',
+      'Nordghana liegt in der Savanne. Es ist das ganze Jahr warm. Auf die Regenzeit folgt eine längere trockene Zeit. Quelle: Bericht 2021, S. 4.',
   },
   {
     name: 'Nordwestmarokko',
     wet: [10, 11, 12, 1, 2, 3, 4],
     detail:
-      'Winterregenraum: milde, feuchte Winter; heiße, trockene Sommer. Bericht 2025, S. 3–4.',
+      'In Nordwestmarokko regnet es vor allem im Winter. Die Winter sind mild und feucht. Die Sommer sind heiß und trocken. Quelle: Bericht 2025, S. 3–4.',
   },
 ] as const;
 export const plans = {
@@ -97,10 +97,14 @@ export const plans = {
     investment: 80,
     running: 12,
     stands: 30,
-    benefit: 'Kühlung kann Verderb empfindlicher Lebensmittel verringern.',
-    limit: 'Nur 30 Stände haben Zugang; Strom und Wartung sind nötig.',
-    ecology: 'Energiebedarf sowie spätere Reparatur und Entsorgung bleiben.',
-    unknown: 'Wer übernimmt Wartung und Stromkosten bei einem Ausfall?',
+    benefit:
+      'Kühlung kann helfen: Empfindliche Lebensmittel werden weniger schnell schlecht.',
+    limit:
+      'Nur 30 Stände können den Kühlraum nutzen. Er braucht Strom. Er muss regelmäßig geprüft und gepflegt werden (Wartung).',
+    ecology:
+      'Der Kühlraum braucht Energie. Später muss man Teile reparieren und Abfälle entsorgen.',
+    unknown:
+      'Wer kümmert sich um die Wartung? Wer zahlt die Stromkosten bei einem Ausfall?',
   },
   shade: {
     name: 'Schattendächer und Mehrwegkisten',
@@ -109,27 +113,27 @@ export const plans = {
     running: 3,
     stands: 60,
     benefit: '60 Stände können die Dächer und Kisten nutzen.',
-    limit: 'Schatten ersetzt keine Kühlung empfindlicher Lebensmittel.',
+    limit: 'Schatten allein kühlt empfindliche Lebensmittel nicht genug.',
     ecology:
-      'Kein Strom zum Kühlen; Material, Reinigung und Ersatz bleiben nötig.',
+      'Zum Kühlen ist kein Strom nötig. Aber man braucht Material. Kisten und Dächer müssen gereinigt und bei Schäden ersetzt werden.',
     unknown: 'Wie gut schützen die Dächer die Lebensmittel in heißen Wochen?',
   },
 } as const;
 export const goals = [
-  ['loss', 'Verderb empfindlicher Lebensmittel verringern'],
-  ['access', 'Möglichst viele Stände erreichen'],
+  ['loss', 'Weniger Lebensmittel sollen schlecht werden'],
+  ['access', 'Möglichst viele Stände sollen das Angebot nutzen'],
 ] as const;
 export const topics: Record<TopicId, Topic> = {
   image: {
     title: 'A · Unser Afrikabild',
     question: 'Was zeigen Bilder – und was fehlt?',
     terms:
-      'Ausschnitt: Ein Bild zeigt nur einen Teil. Perspektive: Von wo und mit welchem Blick etwas gezeigt wird. Beleg: Eine Information, die eine bestimmte Aussage stützt.',
+      'Ausschnitt: Ein Foto zeigt nur einen kleinen Teil der Welt.\nPerspektive: Von wo aus schauen wir? Was ist für uns wichtig?\nBeleg: Eine passende Angabe aus dem Material. Sie hilft, eine Aussage zu prüfen.',
     checks: [
       {
-        title: 'Zwei echte Ausschnitte prüfen',
+        title: 'Zwei echte Fotos prüfen',
         instruction:
-          'Betrachte beide Fotos. Trenne sichtbare Details von Vermutungen.',
+          'Sieh dir beide Fotos an. Was siehst du wirklich? Was vermutest du nur?',
         fields: [
           choose(
             'detail',
@@ -146,16 +150,16 @@ export const topics: Record<TopicId, Topic> = {
             'origin',
             'Wer hat das Marktfoto aufgenommen?',
             'jbdodane',
-            'Die Quellenangabe nennt jbdodane als Fotografen des Marktbildes von 2013. Die Projektredaktion hat das Foto für diese Aufgabe ausgewählt.',
+            'Das Marktfoto ist von jbdodane aus dem Jahr 2013. Das steht beim Foto. Das Team von Afrika 2040 hat es für diese Aufgabe ausgewählt.',
             [
-              ['project', 'Die Projektredaktion Afrika 2040'],
+              ['project', 'Das Team von Afrika 2040'],
               ['jbdodane', 'jbdodane'],
               ['dasupremo', 'daSupremo'],
             ],
           ),
           choose(
             'scope',
-            'Was belegt der Baumkronenweg?',
+            'Was zeigt das Foto vom Weg zwischen den Baumkronen?',
             'place',
             'Das Foto zeigt einen Weg zwischen Bäumen im Kakum-Nationalpark. Es zeigt nicht alle Landschaften Afrikas.',
             [
@@ -167,19 +171,19 @@ export const topics: Record<TopicId, Topic> = {
         ],
         hints: [
           'Suche ein Detail, das du im Foto zeigen kannst.',
-          'Ort und Datum begrenzen die Aussage. Einkommen und ganz Afrika sind auf keinem der Fotos zu sehen.',
+          'Achte auf Ort und Datum. Ein Foto zeigt nur diesen Ort zu dieser Zeit. Es zeigt nicht, wie viel Menschen verdienen. Es zeigt auch nicht ganz Afrika.',
         ],
       },
       {
-        title: 'Eine Überschrift hinterfragen',
+        title: 'Stimmt diese Überschrift?',
         instruction:
-          'Für diese Übung erfundene Überschrift: „Afrika ist nur unberührte Natur.“ Prüfe sie mit beiden Fotos.',
+          'Diese Überschrift ist für die Übung erfunden: „Afrika ist nur unberührte Natur.“ Das bedeutet: Menschen hätten dort nichts verändert. Prüfe die Überschrift. Nutze beide Fotos.',
         fields: [
           choose(
             'counter',
-            'Welcher Beleg widerspricht „nur unberührte Natur“?',
+            'Was auf den Fotos passt nicht zu „nur unberührte Natur“?',
             'built',
-            'Verkaufsstände und der gebaute Baumkronenweg zeigen menschliche Nutzung an diesen Orten.',
+            'Menschen haben die Verkaufsstände und den Weg zwischen den Bäumen gebaut. Sie nutzen diese Orte.',
             [
               ['beautiful', 'Die Bilder sehen schön aus.'],
               ['built', 'Marktstände und ein gebauter Weg sind sichtbar.'],
@@ -190,7 +194,7 @@ export const topics: Record<TopicId, Topic> = {
             'missing',
             'Was bleibt mit diesen Fotos offen?',
             'life',
-            'Zwei ausgewählte Fotos zeigen nicht die Lebensbedingungen aller Menschen. Auch ein freundliches Bild ist nur ein Ausschnitt.',
+            'Zwei Fotos zeigen nicht, wie alle Menschen leben. Das gilt auch für schöne und freundliche Fotos.',
             [
               ['life', 'Wie unterschiedliche Menschen heute leben.'],
               ['trees', 'Ob auf dem zweiten Foto Bäume stehen.'],
@@ -199,15 +203,15 @@ export const topics: Record<TopicId, Topic> = {
           ),
         ],
         hints: [
-          'Welches Wort der Überschrift macht aus einem Ausschnitt eine pauschale Behauptung?',
-          '„Nur“ schließt andere Nutzungen aus. Suche etwas Gebautes. Frage danach, was die Auswahl nicht zeigt.',
+          'Achte auf das Wort „nur“. Passt es zu beiden Fotos?',
+          '„Nur Natur“ würde bedeuten: Dort gibt es nichts, was Menschen gebaut haben. Suche etwas Gebautes. Überlege dann: Was zeigen die beiden Fotos nicht?',
         ],
       },
     ],
     prompts: [
-      'Überarbeite deine erste Vorstellung: Nenne ein konkretes Detail aus einem der Fotos.',
-      'Erkläre kurz, wie der zweite Beleg deine Aussage ergänzt oder begrenzt.',
-      'Eine Schulzeitung in Deutschland zeigt nur das Waldfoto. Welche Ergänzung würdest du empfehlen – und warum?',
+      'Lies deine erste Vorstellung noch einmal. Was würdest du jetzt ändern? Nenne dazu etwas, das du auf einem Foto siehst.',
+      'Nutze jetzt das andere Foto. Was zeigt es zusätzlich? Was erfährst du durch die zwei Fotos trotzdem nicht?',
+      'Eine Schulzeitung in Deutschland zeigt nur das Waldfoto. Was sollte sie zusätzlich zeigen? Begründe deinen Vorschlag.',
     ],
     example: [
       'Auf dem Foto aus Kumasi sehe ich Verkaufsstände. Dieser Ort wird von Menschen genutzt.',
@@ -215,22 +219,22 @@ export const topics: Record<TopicId, Topic> = {
       'Ich würde ein weiteres Bild mit Ort und Datum ergänzen, etwa den Markt. Auch diese Auswahl zeigt nicht alle Lebensbedingungen.',
     ],
     deeper:
-      'Formuliere zwei unterschiedliche, aber sachlich haltbare Überschriften zum selben Foto. Welche Information lenkt jeweils den Blick? Begründe deine Auswahl.',
+      'Schreibe zwei verschiedene Überschriften für dasselbe Foto. Beide sollen zum Foto passen. Worauf macht jede Überschrift aufmerksam? Erkläre deine Auswahl.',
   },
   nature: {
     title: 'B · Natur und Nutzung',
     question: 'Wann kommt Regen – und wofür reicht er?',
     terms:
-      'Wetter: Zustand der Luft an einem Ort zu einer bestimmten Zeit. Klima: typische Verhältnisse über viele Jahre. Vegetation: Pflanzen eines Raumes. Niederschlag: Wasser aus Wolken, etwa Regen. 1 mm entspricht 1 Liter je Quadratmeter.',
+      'Wetter: Wie ist es jetzt an einem Ort? Zum Beispiel warm, kalt oder regnerisch.\nKlima: Wie ist das Wetter an einem Ort meist? Dafür betrachtet man viele Jahre.\nVegetation: die Pflanzen in einem Gebiet.\nNiederschlag: Wasser aus Wolken. Zum Beispiel Regen oder Schnee.\n1 mm Niederschlag: 1 Liter Wasser auf 1 Quadratmeter Fläche.',
     checks: [
       {
         title: 'Lage und Regenzeiten lesen',
         instruction:
-          'Nutze Karte und Saisonkalender. Die Markierungen zeigen große Räume, keine Wetterstationen.',
+          'Nutze die Karte und den Kalender der Regenzeiten. Die Punkte auf der Karte zeigen ungefähr, wo die Gebiete liegen.',
         fields: [
           choose(
             'ghana-season',
-            'In welcher Zeit liegt Nordghanas Regenzeit laut Material?',
+            'In welchen Monaten ist in Nordghana Regenzeit? Nutze den Kalender.',
             'may-sep',
             'Für Nordghana nennt der Bericht Mai bis September. Das ist keine Garantie für Regen an jedem Tag.',
             [
@@ -241,9 +245,9 @@ export const topics: Record<TopicId, Topic> = {
           ),
           choose(
             'morocco-season',
-            'Wann regnet es im nordwestlichen Marokko überwiegend?',
+            'In welchen Monaten regnet es in Nordwestmarokko am meisten?',
             'oct-apr',
-            'Der nordwestliche Winterregenraum erhält überwiegend zwischen Oktober und April Regen. Die Sommer sind trockener.',
+            'In Nordwestmarokko regnet es vor allem von Oktober bis April. Die Sommer sind trockener.',
             [
               ['all', 'Jeden Tag gleich viel Regen'],
               ['may-sep', 'Mai bis September'],
@@ -252,7 +256,7 @@ export const topics: Record<TopicId, Topic> = {
           ),
           choose(
             'location',
-            'Welcher untersuchte Raum liegt weiter nördlich?',
+            'Welches der beiden Gebiete liegt weiter nördlich?',
             'morocco',
             'Nordwestmarokko liegt weiter nördlich als Nordghana. Beide liegen nördlich des Äquators.',
             [
@@ -263,19 +267,19 @@ export const topics: Record<TopicId, Topic> = {
         ],
         hints: [
           'Lies die Monatsnamen und die Lage zum Äquator.',
-          'Regenzeit ist ein jahreszeitliches Muster. In Nordghana liegt sie im nördlichen Sommer, in Nordwestmarokko vor allem im Winterhalbjahr.',
+          'Eine Regenzeit kehrt meist in ähnlichen Monaten wieder. In Nordghana regnet es vor allem von Mai bis September. In Nordwestmarokko regnet es vor allem von Oktober bis April.',
         ],
       },
       {
         title: 'Regen ist noch kein Wasservorrat',
         instruction:
-          'Vergleiche die beiden regionalen Jahresmittel. Überlege danach, welche Grenze eine Anpassung hat.',
+          'Vergleiche die Regenmengen in den zwei Regionen. Überlege dann: Wie kann ein Wasserspeicher helfen? Welches Problem bleibt?',
         fields: [
           choose(
             'rain',
-            'Welche Region hat 1991–2020 das höhere Jahresmittel?',
+            'In welcher Region fiel von 1991 bis 2020 im Durchschnitt mehr Regen pro Jahr?',
             'tanger',
-            '634,10 mm in Tanger-Tétouan-Al Hoceima sind mehr als 205,15 mm in Souss-Massa. Das sind regionale Mittel für denselben Zeitraum.',
+            'Tanger-Tétouan-Al Hoceima: 634,10 mm. Souss-Massa: 205,15 mm. Der erste Wert ist höher. Beide Werte sind Durchschnitte für die Jahre 1991–2020.',
             [
               ['souss', 'Souss-Massa'],
               ['tanger', 'Tanger-Tétouan-Al Hoceima'],
@@ -283,48 +287,51 @@ export const topics: Record<TopicId, Topic> = {
           ),
           choose(
             'adapt',
-            'Welche Erklärung zu einem Regenwasserspeicher ist schlüssig?',
+            'Welche Erklärung zu einem Regenwasserspeicher passt?',
             'limited',
-            'Ein Speicher kann Regen für trockenere Zeiten zurückhalten. Größe, Wasserqualität, Zugang und Verdunstung begrenzen die Nutzung.',
+            'Ein Speicher sammelt Regen für die trockene Zeit. Aber er hat nur begrenzt Platz. Wasser kann verdunsten oder verschmutzt sein. Nicht alle Menschen können den Speicher nutzen.',
             [
-              ['guarantee', 'Ein Speicher garantiert unbegrenzt Wasser.'],
-              ['poverty', 'Wenig Regen führt überall zwangsläufig zu Armut.'],
+              ['guarantee', 'Mit einem Speicher gibt es immer genug Wasser.'],
+              [
+                'poverty',
+                'Wo wenig Regen fällt, sind alle Menschen immer arm.',
+              ],
               [
                 'limited',
-                'Er überbrückt trockene Zeiten, aber sein Vorrat ist begrenzt.',
+                'Er speichert Wasser für trockene Zeiten. Aber das Wasser kann ausgehen.',
               ],
             ],
           ),
         ],
         hints: [
-          'Vergleiche erst Einheit und Zeitraum. Trenne danach Regenmenge und nutzbares Wasser.',
-          'Ein Teil verdunstet, versickert oder fließt ab. Technik kann helfen, ersetzt aber weder Zugang noch endlichen Vorrat.',
+          'Prüfe zuerst: Welche Einheit und welche Jahre stehen bei den Werten? Überlege dann: Können Menschen den ganzen Regen nutzen?',
+          'Ein Teil des Regens verdunstet, geht in den Boden oder fließt weg. Technik kann helfen. Aber das Wasser bleibt begrenzt. Menschen müssen es auch erreichen können.',
         ],
       },
     ],
     prompts: [
-      'Erkläre an Nordghana oder Nordwestmarokko, wann Regen gesammelt werden könnte. Nenne Monate und Raum.',
-      'Begründe eine passende Nutzung oder Anpassung. Nenne eine Grenze, die trotz der Maßnahme bleibt.',
-      'Neue Bedingung: Der Speicher ist kleiner als geplant. Was änderst du an deinem Vorschlag – und warum?',
+      'Wähle Nordghana oder Nordwestmarokko. Wann könnte man dort Regen sammeln? Nenne das Gebiet und die Monate. Erkläre deine Antwort mit dem Kalender.',
+      'Wie könnte man den Regen nutzen oder Wasser sparen? Begründe deine Idee. Welches Problem bleibt trotzdem?',
+      'Jetzt ist der Speicher kleiner als geplant. Was änderst du an deiner Idee? Begründe deine Änderung.',
     ],
     example: [
       'In Nordghana könnte Regen vor allem von Mai bis September gesammelt werden.',
-      'Ein Speicher kann Pflanzen in trockeneren Zeiten versorgen. Sein Vorrat und der Zugang bleiben begrenzt; Niederschlag ist nicht gleich Trinkwasser.',
-      'Bei einem kleineren Speicher würde ich die Nutzung begrenzen und zuerst den Bedarf klären. Technik allein garantiert keine sichere Versorgung.',
+      'Ein Speicher kann Wasser für Pflanzen in der trockenen Zeit liefern. Aber das Wasser kann ausgehen. Nicht alle Menschen können es nutzen. Regenwasser ist nicht immer sauberes Trinkwasser.',
+      'Bei einem kleineren Speicher würde ich zuerst fragen: Wie viel Wasser brauchen wir? Dann würde ich die Nutzung begrenzen. Technik allein sorgt nicht dafür, dass alle genug Wasser haben.',
     ],
     deeper:
-      'Zwei Orte haben dieselbe Jahresregenmenge, aber verschieden lange Trockenzeiten. Warum kann die Nutzbarkeit trotzdem unterschiedlich sein? Welche weiteren Angaben brauchst du?',
+      'An zwei Orten fällt im ganzen Jahr gleich viel Regen. An einem Ort ist die Trockenzeit länger. Warum können Menschen das Wasser trotzdem unterschiedlich gut nutzen? Welche Angaben fehlen dir?',
   },
   population: {
     title: 'C · Bevölkerung verändert sich',
     question: 'Woher kommt Veränderung – und was folgt daraus?',
     terms:
-      'Natürliche Veränderung: Geburten minus Sterbefälle. Wanderungssaldo: Zuzug minus Fortzug. Schätzung: statistisch ermittelter Wert. Projektion: mögliche Zukunft unter Annahmen. Urbanisierung: wachsender Anteil der Bevölkerung in Städten; nicht gleich jeder Bevölkerungszunahme.',
+      'Natürliche Veränderung: Geburten minus Sterbefälle.\nZuzug: Menschen ziehen in einen Ort.\nFortzug: Menschen ziehen aus einem Ort weg.\nWanderungssaldo: Zuzug minus Fortzug. Der Wert kann negativ sein.\nSchätzung: Ein Wert wird aus vorhandenen Daten berechnet. Er kann später geändert werden.\nProjektion: eine mögliche Zukunft. Dafür nimmt man an, wie sich wichtige Bedingungen entwickeln.\nUrbanisierung: Ein größerer Anteil der Bevölkerung lebt in Städten. Mehr Menschen in einer Stadt allein beweisen das noch nicht.',
     checks: [
       {
-        title: 'Vier Größen selbst verrechnen',
+        title: 'So verändert sich die Zahl der Menschen',
         instruction:
-          'Erfundenes Rechenmodell: ein Ort, ein Jahr. Alle Zahlen sind Personen, keine Prozentwerte.',
+          'Die Zahlen sind für die Übung erfunden. Alle Zahlen gelten für denselben Ort und dasselbe Jahr. Rechne mit Personen, nicht mit Prozent.',
         fields: [
           number(
             'natural',
@@ -334,7 +341,7 @@ export const topics: Record<TopicId, Topic> = {
           ),
           number(
             'migration',
-            'Wanderungssaldo (Personen, mit Minus falls nötig)',
+            'Zuzug minus Fortzug: Wanderungssaldo (Personen). Nutze ein Minus, wenn nötig.',
             '-10',
             '30 Zuzüge minus 40 Fortzüge ergeben −10 Personen.',
           ),
@@ -346,20 +353,20 @@ export const topics: Record<TopicId, Topic> = {
           ),
         ],
         hints: [
-          'Berechne natürliche Veränderung und Wanderung getrennt.',
-          'Zuzug kommt hinzu, Fortzug geht ab. Addiere beide Teiländerungen zum Anfangsbestand von 1.000.',
+          'Rechne zuerst: Geburten minus Sterbefälle. Rechne dann: Zuzug minus Fortzug.',
+          'Am Anfang sind es 1.000 Menschen. Addiere die Veränderung durch Geburten und Sterbefälle. Addiere dann den Wanderungssaldo. Ein negativer Wert verringert die Zahl.',
         ],
       },
       {
         title: 'Eine echte Entwicklung auswerten',
         instruction:
-          'Lies die Ghana-Reihe mit Quelle, Jahren und Einheit. Die Modellrechnung erklärt diese Landesreihe nicht.',
+          'Lies die Daten zu Ghana. Achte auf die Quelle, die Jahre und die Einheit. Die erfundenen Zahlen von eben erklären nicht die echten Daten zu Ghana.',
         fields: [
           choose(
             'trend',
             'Welche Beschreibung passt zu den gezeigten Jahren?',
             'increase',
-            'Die geschätzte Bevölkerung steigt zwischen 2000 und 2024 von rund 19,6 auf rund 34,4 Millionen. Dazwischen liegen unterschiedlich lange Zeitabstände.',
+            'Die Zahl der Menschen steigt: von etwa 19,6 Millionen im Jahr 2000 auf etwa 34,4 Millionen im Jahr 2024. Das sind Schätzungen. Zwischen den gezeigten Jahren liegen unterschiedlich viele Jahre.',
             [
               ['decrease', '2024 leben dort weniger Menschen als 2000.'],
               [
@@ -371,20 +378,20 @@ export const topics: Record<TopicId, Topic> = {
           ),
           choose(
             'status',
-            'Welche Datenart zeigt diese Reihe?',
+            'Was für Daten sind das?',
             'estimate',
-            'Die WDI-Reihe enthält historische Schätzungen zur Jahresmitte. Eine Volkszählung ist eine Beobachtungsgrundlage; eine Projektion betrifft eine mögliche Zukunft.',
+            'Die Werte sind Schätzungen für die Mitte der genannten Jahre. Eine Volkszählung liefert wichtige Daten dafür. Eine Projektion würde eine mögliche Zukunft zeigen. Diese Werte zeigen die Vergangenheit.',
             [
               ['census', 'In jedem Jahr wurden alle Personen direkt gezählt.'],
               ['forecast', 'Eine sichere Zukunftsvorhersage'],
-              ['estimate', 'Historische statistische Schätzungen'],
+              ['estimate', 'Schätzungen für vergangene Jahre'],
             ],
           ),
           choose(
             'condition',
-            'Welche Folge ist fachlich begründet?',
+            'Welche mögliche Folge ist sinnvoll erklärt?',
             'conditional',
-            'Mehr Menschen können mehr Nachfrage und Arbeitskräftepotenzial bedeuten. Ausbildung, Arbeitsplätze und Infrastruktur beeinflussen, ob daraus Chancen entstehen.',
+            'Mehr Menschen können mehr Waren kaufen. Mehr Menschen können auch arbeiten. Daraus können Chancen entstehen. Dafür braucht es zum Beispiel Ausbildung, Arbeitsplätze, Schulen und Verkehrswege.',
             [
               ['poverty', 'Mehr Menschen verursachen immer Armut.'],
               [
@@ -396,34 +403,34 @@ export const topics: Record<TopicId, Topic> = {
           ),
         ],
         hints: [
-          'Unterscheide Beschreibung, Datenart und mögliche Folge.',
-          'Eine Kurve zeigt die Veränderung, aber nicht allein ihre Ursachen. „Immer“ und „sicher“ sind hier nicht durch die Daten belegt.',
+          'Prüfe nacheinander: Wie verändert sich die Zahl? Was für Daten sind das? Welche Folge ist möglich?',
+          'Die Kurve zeigt die Veränderung. Sie erklärt nicht allein, warum sich die Zahl verändert. Die Daten beweisen keine Folgen, die „immer“ oder „sicher“ eintreten.',
         ],
       },
     ],
     prompts: [
-      'Neue Modellzahlen, ein Jahr: Anfang 800, Geburten 28, Sterbefälle 12, Zuzug 5, Fortzug 17. Berechne die beiden Teiländerungen und den Endbestand.',
-      'Beschreibe Ghanas Entwicklung mit zwei Jahren und Werten. Sage dazu, um welche Datenart es sich handelt.',
-      'Nenne eine Chance und eine Herausforderung bei wachsender Bevölkerung. Erkläre jeweils eine Bedingung, von der sie abhängen.',
+      'Neue erfundene Zahlen für ein Jahr: Am Anfang 800 Menschen. Geburten: 28. Sterbefälle: 12. Zuzug: 5. Fortzug: 17. Rechne zuerst Geburten minus Sterbefälle. Rechne dann Zuzug minus Fortzug. Wie viele Menschen sind es am Jahresende?',
+      'Wie verändert sich Ghanas Bevölkerung? Nenne zwei Jahre und die passenden Werte. Sage auch: Sind es Zählungen, Schätzungen oder Projektionen?',
+      'Die Zahl der Menschen wächst. Nenne eine Chance und ein mögliches Problem. Erkläre bei beiden: Wovon hängt es ab, ob das eintritt?',
     ],
     example: [
       'Natürliche Veränderung: 28 − 12 = +16. Wanderung: 5 − 17 = −12. Ende: 800 + 16 − 12 = 804 Personen.',
-      'Die historischen Schätzungen für Ghana steigen von rund 19,6 Millionen im Jahr 2000 auf rund 34,4 Millionen im Jahr 2024.',
-      'Wenn Ausbildung und Arbeitsplätze vorhanden sind, können mehr Menschen wirtschaftlich tätig werden. Wenn die Infrastruktur nicht mitwächst, können etwa Schulplätze knapp werden.',
+      'Die Bevölkerung von Ghana steigt laut den Schätzungen: 2000 waren es etwa 19,6 Millionen Menschen. 2024 waren es etwa 34,4 Millionen Menschen.',
+      'Wenn es Ausbildung und Arbeitsplätze gibt, können mehr Menschen arbeiten. Wenn keine neuen Schulen entstehen, können Schulplätze fehlen.',
     ],
     deeper:
-      'Kann eine Bevölkerung trotz mehr Geburten als Sterbefällen sinken? Erfinde passende absolute Zahlen für dasselbe Jahr und begründe. Die Zahl der Stadtbewohner allein beweist noch keinen wachsenden Stadtbevölkerungsanteil.',
+      'Kann die Zahl der Menschen sinken, obwohl mehr Menschen geboren werden als sterben? Erfinde passende Zahlen für ein Jahr. Begründe deine Antwort. Denke auch weiter: In einer Stadt leben mehr Menschen als früher. Muss deshalb auch ihr Anteil an der Bevölkerung des Landes steigen?',
   },
   economy: {
-    title: 'D · Wirtschaft und Teilhabe',
-    question: 'Was wächst – und wer profitiert?',
+    title: 'D · Wirtschaft: Wer hat etwas davon?',
+    question: 'Was wächst – und wer hat etwas davon?',
     terms:
-      'Rohstoff: Ausgangsmaterial, etwa Kakaobohnen. Verarbeitung: daraus entstehen andere Produkte. Wertschöpfung: neu geschaffener wirtschaftlicher Wert. Einnahmen sind nicht Überschuss. BIP: gesamtwirtschaftliche Wertschöpfung; hier preisbereinigte Veränderung zum Vorjahr. Investition: gesonderte einmalige Anschaffung.',
+      'Rohstoff: Material, aus dem etwas hergestellt wird. Zum Beispiel Kakaobohnen.\nVerarbeitung: Aus einem Rohstoff entstehen andere Produkte.\nWertschöpfung: Bei der Arbeit entsteht neuer wirtschaftlicher Wert.\nEinnahmen: Geld, das ein Betrieb bekommt.\nÜberschuss: Einnahmen minus laufende Ausgaben.\nInvestition: Geld für eine Anschaffung. Hier wird sie einmal bezahlt.\nBIP (Bruttoinlandsprodukt): Ein Maß für den wirtschaftlichen Wert, der in einem Land in einem Jahr neu entsteht. Es ist kein Kontostand.\nPreisbereinigt: Der Einfluss veränderter Preise wird herausgerechnet. So lässt sich das BIP verschiedener Jahre besser vergleichen.',
     checks: [
       {
-        title: 'Betrieb und Land auseinanderhalten',
+        title: 'Ein Betrieb ist nicht das ganze Land',
         instruction:
-          'Neue erfundene Betriebsrechnung: A nimmt 200 GE ein und zahlt laufend 120 GE. B nimmt 240 GE ein und zahlt laufend 180 GE. B investiert außerdem einmalig 40 GE.',
+          'Die Rechnung ist erfunden. GE bedeutet Geldeinheiten. A bekommt 200 GE und hat laufende Ausgaben von 120 GE. B bekommt 240 GE und hat laufende Ausgaben von 180 GE. B zahlt zusätzlich einmalig 40 GE für eine Anschaffung.',
         fields: [
           number(
             'surplus-a',
@@ -439,32 +446,29 @@ export const topics: Record<TopicId, Topic> = {
           ),
           number(
             'first',
-            'Bei B nach einmaliger Investition verbleibend (GE)',
+            'Wie viel bleibt bei B nach der einmaligen Anschaffung übrig? (GE)',
             '20',
-            '60 − 40 = 20 GE verbleiben in der ersten Runde dieses vereinfachten Modells. Die Investition fällt nicht automatisch jede Runde an.',
+            '60 − 40 = 20 GE bleiben in der ersten Runde übrig. Die 40 GE werden hier nur einmal bezahlt.',
           ),
         ],
         hints: [
           'Ziehe zuerst nur die laufenden Ausgaben von den Einnahmen ab.',
-          'Trenne den laufenden Überschuss von der einmaligen Anschaffung. Keine dieser Betriebszahlen ist Ghanas BIP.',
+          'Rechne zuerst die laufenden Ausgaben ab. Ziehe erst danach die einmalige Anschaffung ab. Diese Zahlen gelten nur für den erfundenen Betrieb. Sie zeigen nicht Ghanas BIP.',
         ],
       },
       {
-        title: 'Reale Daten mit Grenzen lesen',
+        title: 'Echte Daten lesen: Was sagen sie aus?',
         instruction:
-          'Untersuche die Ghana-Tabelle. Verbinde zwei Bedingungen, ohne aus dem gemeinsamen Auftreten eine bewiesene Ursache zu machen.',
+          'Lies die Tabelle zu Ghana. Überlege: Was kann bei der Kakaoverarbeitung helfen? Die Tabelle allein beweist nicht, warum die Wirtschaft wächst.',
         fields: [
           choose(
             'access',
-            'Was sagt der Stromwert 89,5 für 2023?',
+            'Was bedeutet der Stromwert 89,5 im Jahr 2023?',
             'share',
-            '89,5 Prozent der Bevölkerung haben Zugang zu Elektrizität. Der Wert misst weder ständige Verfügbarkeit noch Bezahlbarkeit.',
+            '89,5 Prozent der Bevölkerung haben Zugang zu Strom. Der Wert sagt nicht, ob der Strom immer da ist. Er sagt auch nicht, ob alle ihn bezahlen können.',
             [
               ['money', 'Jeder Betrieb verdient 89,5 GE.'],
-              [
-                'share',
-                '89,5 Prozent der Bevölkerung haben Zugang zu Elektrizität.',
-              ],
+              ['share', '89,5 Prozent der Bevölkerung haben Zugang zu Strom.'],
               ['reliable', 'Alle haben jederzeit kostenlosen Strom.'],
             ],
           ),
@@ -472,7 +476,7 @@ export const topics: Record<TopicId, Topic> = {
             'growth',
             'Was bedeutet 3,1 Prozent BIP-Wachstum 2023?',
             'real',
-            'Das preisbereinigte BIP wächst gegenüber 2022 um rund 3,1 Prozent. Verteilung und individuelle Lebensbedingungen sind damit nicht beschrieben.',
+            'Das BIP steigt von 2022 bis 2023 um etwa 3,1 Prozent. Preisänderungen sind dabei herausgerechnet. Daraus wissen wir nicht, wie viel die einzelnen Menschen haben oder wie sie leben.',
             [
               ['everyone', 'Jeder Haushalt wird um 3,1 Prozent reicher.'],
               ['real', 'Das preisbereinigte BIP steigt gegenüber dem Vorjahr.'],
@@ -481,54 +485,54 @@ export const topics: Record<TopicId, Topic> = {
           ),
           choose(
             'conditions',
-            'Welche Verbindung ist plausibel und vorsichtig?',
+            'Welche Erklärung ist möglich, ohne zu viel zu behaupten?',
             'together',
-            'Zuverlässiger Strom ermöglicht Maschinenbetrieb; passende Kenntnisse helfen bei Verarbeitung und Absatz. Das ist eine begründete Bedingungskette, kein aus dieser Tabelle bewiesener Erfolg.',
+            'Mit zuverlässigem Strom können Maschinen arbeiten. Wissen hilft bei der Verarbeitung und beim Verkauf. Beides kann zusammen helfen. Die Tabelle beweist aber keinen sicheren Erfolg.',
             [
               ['only', 'Eine Maschine garantiert erfolgreichen Verkauf.'],
               ['cause', 'Die Tabelle beweist: Nur Strom verursacht Wachstum.'],
               [
                 'together',
-                'Stromversorgung und Kenntnisse können gemeinsam die Verarbeitung unterstützen.',
+                'Strom und Wissen können zusammen bei der Verarbeitung helfen.',
               ],
             ],
           ),
         ],
         hints: [
-          'Lies jeweils Bezugsgröße und Einheit. Unterscheide Voraussetzungen und nachgewiesene Wirkungen.',
-          'Stromzugang ist ein Bevölkerungsanteil. Das BIP betrifft ein Land. Ob alle profitieren, braucht zusätzliche Angaben, etwa Einkommen und Zugang.',
+          'Prüfe: Worum geht es bei der Zahl? Welche Einheit gehört dazu? Was kann helfen? Was ist wirklich bewiesen?',
+          'Stromzugang: Wie viel Prozent der Menschen haben Zugang zu Strom? BIP: Es geht um die Wirtschaft des ganzen Landes. Ob alle etwas davon haben, zeigen diese Zahlen nicht. Dafür fehlen zum Beispiel Angaben zum Einkommen.',
         ],
       },
     ],
     prompts: [
-      'Beschreibe eine Veränderung des Elektrizitätszugangs in Ghana mit zwei Jahren und Werten. Benenne die Einheit und eine Aussagegrenze.',
-      'Erkläre, wie zwei Bedingungen bei der Kakaoverarbeitung zusammenwirken können. Nutze den GEPA-Bericht und die Information zur Energieversorgung.',
-      'Neue Situation: Ein Betrieb erhält höhere Einnahmen, aber seine laufenden Kosten steigen noch stärker. Was prüfst du, bevor du von Erfolg sprichst? Was fehlt für ein Urteil über alle Menschen im Land?',
+      'Wie verändert sich der Zugang zu Strom in Ghana? Nenne zwei Jahre und die passenden Werte. Nenne die Einheit. Was sagen die Werte nicht aus?',
+      'Was kann bei der Kakaoverarbeitung helfen? Erkläre, wie zwei Bedingungen zusammenwirken können. Nutze den Bericht von GEPA und die Angaben zum Strom.',
+      'Neue Situation: Ein Betrieb bekommt mehr Geld. Seine laufenden Kosten steigen aber noch stärker. Was musst du prüfen, bevor du sagst: Der Betrieb ist erfolgreich? Was müsstest du zusätzlich wissen, um über alle Menschen im Land zu urteilen?',
     ],
     example: [
       'Von 2022 bis 2023 steigt der Zugang von 85,1 auf 89,5 Prozent der Bevölkerung. Das sind 4,4 Prozentpunkte. Über Stromausfälle sagt dieser Anteil nichts.',
       'Zuverlässiger Strom kann Maschinenbetrieb ermöglichen. Kenntnisse über Verarbeitung, Preisgestaltung und Transport können helfen, Produkte anzubieten. Keine dieser Bedingungen garantiert Verkaufserfolg.',
-      'Ich vergleiche Einnahmen und laufende Ausgaben und trenne eine einmalige Investition. Für das Land fehlen mir Angaben zu Arbeitsbedingungen und zur Verteilung der Einkommen.',
+      'Ich vergleiche Einnahmen und laufende Ausgaben. Eine einmalige Anschaffung rechne ich getrennt ab. Für ein Urteil über das Land muss ich mehr wissen: Wie sind die Arbeitsbedingungen? Wer bekommt wie viel Geld?',
     ],
     deeper:
-      'Ein Sektoranteil sinkt von 20 auf 15 Prozent. Kann seine absolute Wertschöpfung trotzdem steigen? Überlege, welche Gesamtgröße fehlt. Höhere Geldwerte allein können auch durch höhere Preise entstehen.',
+      'Ein Wirtschaftsbereich hat zuerst einen Anteil von 20 Prozent am BIP. Später sind es 15 Prozent. Kann der wirtschaftliche Wert dieses Bereichs trotzdem steigen? Welche Zahl zum gesamten BIP fehlt dir? Denke auch an die Preise: Höhere Geldwerte können auch durch höhere Preise entstehen.',
   },
   future: {
-    title: 'E · Eine Zukunft abwägen',
+    title: 'E · Einen Plan für die Zukunft wählen',
     question: 'Was empfiehlst du für einen Markt in Kumasi?',
     terms:
-      'Sozial: Folgen für Menschen und ihren Zugang. Wirtschaftlich: Kosten, Einnahmen und Arbeit. Ökologisch: Folgen für Umwelt und Ressourcen. Zielkonflikt: Nicht alle Ziele werden gleich gut erfüllt. Unsicherheit: Eine wichtige Information fehlt oder ist noch nicht gesichert.',
+      'Sozial: Was bedeutet der Plan für die Menschen? Wer kann das Angebot nutzen?\nWirtschaftlich: Was kostet der Plan? Welche Einnahmen und welche Arbeit gibt es?\nÖkologisch: Was bedeutet der Plan für die Umwelt? Welche Rohstoffe und wie viel Energie braucht er?\nZielkonflikt: Ein Plan hilft bei einem Ziel. Bei einem anderen Ziel hilft er weniger oder schafft Nachteile.\nUnsicherheit: Wir wissen etwas Wichtiges noch nicht.\nWartung: Etwas regelmäßig prüfen und pflegen. So sollen Schäden vermieden werden.\nGE: Geldeinheiten. Das ist hier erfundenes Geld für den Vergleich.',
     checks: [
       {
         title: 'Beide Angebote untersuchen',
         instruction:
-          'Der Ort ist real. Beide Angebote, alle GE-Werte und Standzahlen sind erfunden. Sie dienen nur dem Vergleich.',
+          'Kumasi gibt es wirklich. Die zwei Angebote sind erfunden. Auch das Geld und die Zahl der Stände sind erfunden. So kannst du die Angebote vergleichen.',
         fields: [
           choose(
             'reach',
             'Welches Angebot erreicht im Modell mehr Stände?',
             'shade',
-            'Dächer und Kisten erreichen 60 Stände, der Kühlraum 30. Das ist eine soziale Zugangsfolge, keine Aussage über alle Märkte Ghanas.',
+            '60 Stände können die Dächer und Kisten nutzen. 30 Stände können den Kühlraum nutzen. Das sind Folgen für die Menschen in diesem Modell. Die Zahlen gelten nicht für alle Märkte in Ghana.',
             [
               ['cool', 'Gemeinsamer Kühlraum'],
               ['shade', 'Schattendächer und Mehrwegkisten'],
@@ -536,9 +540,9 @@ export const topics: Record<TopicId, Topic> = {
           ),
           choose(
             'environment',
-            'Welche ökologische Grenze bleibt beim Kühlraum?',
+            'Welches Problem für die Umwelt bleibt beim Kühlraum?',
             'energy',
-            'Auch Kühlung benötigt Energie und Material. Reparatur und Entsorgung bleiben Aufgaben. Nachhaltig heißt nicht in allem folgenlos.',
+            'Auch der Kühlraum braucht Energie und Material. Man muss ihn reparieren und später Abfälle entsorgen. Auch eine nachhaltige Idee kann Nachteile haben.',
             [
               ['none', 'Kühlung hat überhaupt keine Umweltfolgen.'],
               ['energy', 'Energiebedarf, Reparatur und Entsorgung bleiben.'],
@@ -549,44 +553,44 @@ export const topics: Record<TopicId, Topic> = {
             'cost',
             'Welche Kosten treten wiederholt auf?',
             'running',
-            '12 GE beim Kühlraum und 3 GE bei Dächern/Kisten sind laufende Modellkosten pro Monat. 80 bzw. 30 GE sind einmalige Investitionen.',
+            'Der Kühlraum kostet jeden Monat 12 GE. Dächer und Kisten kosten jeden Monat 3 GE. Diese Kosten wiederholen sich. Die Anschaffung kostet nur einmal 80 GE oder 30 GE.',
             [
-              ['investment', 'Immer wieder 80 bzw. 30 GE Anschaffung'],
-              ['running', 'Monatlich 12 bzw. 3 GE laufende Kosten'],
+              ['investment', 'Die Anschaffung: immer wieder 80 GE oder 30 GE'],
+              ['running', 'Die laufenden Kosten: jeden Monat 12 GE oder 3 GE'],
             ],
           ),
         ],
         hints: [
           'Vergleiche beide Angebote nach Zugang, Kosten und Umwelt.',
-          'Eine Anschaffung wird einmal bezahlt. Laufende Kosten wiederholen sich. Ein Vorteil in einer Dimension löst nicht alle anderen Probleme.',
+          'Die Anschaffung wird hier einmal bezahlt. Laufende Kosten kommen immer wieder. Ein Plan kann bei einem Ziel helfen. Andere Probleme bleiben trotzdem.',
         ],
       },
       {
         title: 'Deinen Vorschlag begründen',
         instruction:
-          'Wähle dein Ziel und deinen Vorschlag. Suche danach einen passenden Beleg und eine Grenze. Beide Vorschläge sind begründbar.',
+          'Wähle zuerst dein Ziel. Wähle dann einen Plan. Suche eine passende Angabe aus dem Material. Welches Problem bleibt bei deinem Plan? Du kannst beide Pläne sinnvoll begründen.',
         fields: [],
         hints: [
-          'Welcher Beleg gehört zu deinem Vorschlag? Welche Grenze bleibt genau dabei?',
-          'Wenn dein Ziel eher zur anderen Maßnahme passt, passe das Ziel bewusst an oder nenne die Folge, die du höher gewichtest.',
+          'Welche Angabe aus dem Material passt zu deinem Plan? Welches Problem bleibt bei diesem Plan?',
+          'Dein Ziel passt besser zum anderen Plan? Du kannst dein Ziel ändern. Oder du erklärst: Warum ist dir ein anderer Vorteil wichtiger?',
         ],
       },
     ],
     prompts: [
-      'Formuliere deine Empfehlung in eigenen Worten. Nenne Ziel, passenden Beleg und eine Grenze deines Vorschlags.',
-      'Verbinde eine soziale, wirtschaftliche und ökologische Folge. Welche Folge wiegt für dich stärker – und welchen Nachteil nimmst du in Kauf?',
-      'Neue Bedingung: Für beide Angebote ist die langfristige Wartung ungeklärt. Welche Information brauchst du? Würdest du deine Entscheidung ändern oder beibehalten – und warum?',
+      'Welchen Plan empfiehlst du? Nenne dein Ziel. Nutze eine passende Angabe aus dem Material als Beleg. Nenne auch ein Problem, das bei deinem Plan bleibt.',
+      'Welche Folgen hat dein Plan für die Menschen, die Wirtschaft und die Umwelt? Erkläre, wie die Folgen zusammenhängen. Welche Folge ist dir wichtiger? Welchen Nachteil akzeptierst du dafür?',
+      'Neue Situation: Bei beiden Angeboten ist unklar, wer sie später prüft und pflegt (Wartung). Was musst du noch wissen? Würdest du deinen Plan ändern oder behalten? Begründe deine Entscheidung.',
     ],
     example: ['', '', ''],
     deeper:
-      'Erkundige dich gedanklich bei einer Person, die keinen Zugang erhält. Welche zusätzliche Folge könnte deine Gewichtung verändern? Eine andere Priorität ist legitim; ein falscher Beleg wird dadurch nicht richtig.',
+      'Stell dir vor: Du sprichst mit einer Person, die das Angebot nicht nutzen darf. Was könnte sie dir sagen? Würdest du dann anders entscheiden? Andere Ziele sind erlaubt. Die Angaben aus dem Material müssen trotzdem zu deinem Plan passen.',
   },
 };
 export function decisionFields(plan: Plan): Field[] {
   return [
     choose(
       'evidence',
-      'Welcher Beleg stützt deinen Vorschlag?',
+      'Welche Angabe aus dem Material spricht für deinen Plan?',
       plan,
       plans[plan].benefit,
       [
@@ -597,7 +601,7 @@ export function decisionFields(plan: Plan): Field[] {
     ),
     choose(
       'limit',
-      'Welche Grenze betrifft deinen Vorschlag?',
+      'Welches Problem bleibt bei deinem Plan?',
       plan,
       plans[plan].limit,
       [
@@ -608,7 +612,7 @@ export function decisionFields(plan: Plan): Field[] {
     ),
     choose(
       'unknown',
-      'Welche offene Frage prüfst du zu deinem Vorschlag?',
+      'Was musst du für deinen Plan noch klären?',
       plan,
       plans[plan].unknown,
       [

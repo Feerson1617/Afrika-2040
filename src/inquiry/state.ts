@@ -110,12 +110,21 @@ export function checkDefinition(
   const plan = selectedPlan(r);
   return { ...def, fields: plan ? decisionFields(plan) : [] };
 }
+// Validate the entire notation before removing grouping separators. BigInt
+// keeps even unusually large integer inputs exact; saved answers stay strings.
+export function parseInquiryInteger(
+  value: string | undefined,
+): bigint | undefined {
+  const text = value?.trim().replace(/^−/, '-');
+  if (!text || !/^[+-]?(?:\d+|\d{1,3}(?:\.\d{3})+)$/.test(text))
+    return undefined;
+  return BigInt(text.replaceAll('.', ''));
+}
 function matches(field: Field, value: string | undefined) {
   if (value === undefined || !value.trim()) return false;
   if (field.options) return value === field.expected;
-  return (
-    /^[+-]?\d+$/.test(value.trim()) && Number(value) === Number(field.expected)
-  );
+  const number = parseInquiryInteger(value);
+  return number !== undefined && number === parseInquiryInteger(field.expected);
 }
 function message(
   kind: Feedback['kind'],
@@ -156,7 +165,7 @@ export function evaluateInquiry(
         'neutral',
         'Beide Materialien ansehen',
         id === 'image'
-          ? 'Öffne beide Fotos und lies Ort, Datum und Urheber. Deine bisherigen Antworten bleiben erhalten.'
+          ? 'Öffne beide Fotos. Lies den Ort, das Datum und den Namen der Person, die das Foto gemacht hat. Deine Antworten bleiben erhalten.'
           : 'Öffne beide Angebote. Vergleiche Zugang, Kosten und Umweltfolgen. Deine Antworten bleiben erhalten.',
       ),
     );
@@ -169,17 +178,31 @@ export function evaluateInquiry(
       message(
         'neutral',
         'Ziel und Vorschlag fehlen noch',
-        'Wähle ein Ziel und einen Vorschlag. Beide Maßnahmen sind begründbar.',
+        'Wähle ein Ziel und einen Plan. Du kannst beide Pläne sinnvoll begründen.',
       ),
     );
   const correct = def.fields.filter((f) => matches(f, p.answers[f.id]));
   const missing = def.fields.filter((f) => !p.answers[f.id]?.trim());
+  const unclear = def.fields.filter(
+    (f) =>
+      !f.options &&
+      p.answers[f.id]?.trim() &&
+      parseInquiryInteger(p.answers[f.id]) === undefined,
+  );
   const wrong = def.fields.filter(
     (f) => p.answers[f.id]?.trim() && !matches(f, p.answers[f.id]),
   );
   const praise = correct.length
     ? 'Schon passend: ' + correct.map((f) => f.label).join('; ') + '.'
     : '';
+  if (unclear.length)
+    return result(
+      message(
+        correct.length ? 'partial' : 'neutral',
+        'Prüfe die Schreibweise der Zahl',
+        `${praise} Noch nicht eindeutig: ${unclear.map((f) => f.label).join('; ')}. Schreibe eine ganze Zahl, zum Beispiel -10, −10 oder 1.020. Das zählt nicht als Rechenfehler.`.trim(),
+      ),
+    );
   if (missing.length)
     return result(
       message(
@@ -207,19 +230,19 @@ export function evaluateInquiry(
       return result(
         message(
           'neutral',
-          'Belege passen – Gewichtung noch offen',
+          'Die Angaben passen. Was ist dir wichtiger?',
           plan === 'cool'
-            ? 'Beleg, Grenze und offene Frage passen zum Kühlraum. Du möchtest möglichst viele Stände erreichen. Der Kühlraum erreicht aber 30, Dächer und Kisten erreichen 60. Passe dein Ziel an oder begründe, warum dir der Schutz empfindlicher Lebensmittel trotzdem wichtiger ist.'
-            : 'Beleg, Grenze und offene Frage passen zu Dächern und Kisten. Dein Ziel ist weniger Verderb empfindlicher Lebensmittel. Schatten ersetzt aber keine Kühlung. Passe dein Ziel an oder begründe, warum dir der Zugang für 60 Stände trotzdem wichtiger ist.',
+            ? 'Deine Angaben passen zum Kühlraum. Dein Ziel: Möglichst viele Stände sollen ihn nutzen. Aber nur 30 Stände können ihn nutzen. Bei Dächern und Kisten sind es 60. Ändere dein Ziel. Oder erkläre: Warum ist dir der Schutz der Lebensmittel trotzdem wichtiger?'
+            : 'Deine Angaben passen zu Dächern und Kisten. Dein Ziel: Weniger Lebensmittel sollen schlecht werden. Schatten kühlt aber nicht genug. Ändere dein Ziel. Oder erkläre: Warum ist dir die Nutzung durch 60 Stände trotzdem wichtiger?',
         ),
       );
     return result(
       message(
         'neutral',
         conflict
-          ? 'Zielkonflikt bewusst gewichtet'
-          : 'Vorschlag mit Belegen verbunden',
-        `${praise} ${conflict ? weightingText(plan) : 'Dein Ziel passt zur genannten Folge.'} Die Entscheidung bleibt deine. Geprüft ist die Zuordnung; selbstständige Urteilskompetenz ist damit nicht nachgewiesen.`,
+          ? 'Du hast erklärt, was dir wichtiger ist'
+          : 'Die Angaben passen zu deinem Plan',
+        `${praise} ${conflict ? weightingText(plan) : 'Dein Ziel passt zur genannten Folge.'} Du entscheidest selbst. Das Spiel hat nur deine Auswahl geprüft. Ob du selbst gut begründen kannst, muss noch jemand prüfen.`,
         true,
       ),
     );
@@ -228,15 +251,15 @@ export function evaluateInquiry(
     message(
       'correct',
       'Diese Angaben passen',
-      'Die Materialzuordnung beziehungsweise Rechnung stimmt. Erkläre den Zusammenhang danach selbst. Eine passende Auswahl allein ist noch kein selbstständiger Leistungsnachweis.',
+      'Deine Auswahl oder Rechnung stimmt. Erkläre danach selbst, wie es zusammenhängt. Eine richtige Auswahl allein zeigt noch nicht, ob du es selbst erklären kannst.',
       true,
     ),
   );
 }
 export function weightingText(plan: Plan): string {
   return plan === 'cool'
-    ? 'Mir ist der Schutz empfindlicher Lebensmittel wichtiger als Zugang für alle 60 Stände. Ich nehme in Kauf, dass zunächst nur 30 Stände den Kühlraum nutzen können.'
-    : 'Mir ist der Zugang für 60 Stände wichtiger als die Kühlung empfindlicher Lebensmittel. Ich nehme in Kauf, dass Schatten diese Lebensmittel nicht wie ein Kühlraum schützt.';
+    ? 'Mir ist der Schutz der Lebensmittel wichtiger. Dafür akzeptiere ich: Zunächst können nur 30 statt 60 Stände den Kühlraum nutzen.'
+    : 'Mir ist wichtiger, dass 60 Stände das Angebot nutzen können. Dafür akzeptiere ich: Schatten schützt empfindliche Lebensmittel weniger gut als ein Kühlraum.';
 }
 export function inquiryExplanation(
   id: TopicId,
@@ -267,7 +290,7 @@ export function productExample(
   return [
     `Ich empfehle ${p.name}. ${p.benefit} Die Grenze bleibt: ${p.limit}`,
     `${p.stands} Stände erhalten Zugang. Einmalig kostet die Anschaffung ${p.investment} GE, laufend ${p.running} GE pro Monat. ${p.ecology} ${weightingText(plan)}`,
-    `Ich würde vor der Umsetzung klären: ${p.unknown} Bei ungeklärter Wartung ist meine Empfehlung vorläufig. Ich würde die Umsetzung davon abhängig machen, dass Zuständigkeit und Finanzierung geklärt sind.`,
+    `Bevor ich mit dem Plan beginne, frage ich: ${p.unknown} Ich bleibe nur bei meinem Plan, wenn klar ist: Wer prüft und pflegt die Anlage? Wer bezahlt das? Bis dahin ist meine Entscheidung noch unsicher.`,
   ];
 }
 export function checkComplete(
@@ -283,15 +306,16 @@ export function productReady(id: TopicId, r: InquiryRecord): boolean {
   return checkComplete(id, 0, r) && checkComplete(id, 1, r);
 }
 export function productStatus(id: TopicId, r: InquiryRecord): string {
-  if (!productReady(id, r)) return 'Entwurf – Materialzuordnung noch offen';
-  if (!r.submitted) return 'Entwurf – noch nicht abgegeben';
+  if (!productReady(id, r))
+    return 'Entwurf: Prüfe zuerst die Antworten zum Material.';
+  if (!r.submitted) return 'Entwurf: noch nicht als fertig markiert.';
   if (r.productAdopted)
-    return 'Beispiel bewusst übernommen – kein selbstständiger Leistungsnachweis';
+    return 'Beispiel übernommen: keine selbstständige Antwort.';
   if (r.productExampleUsed)
-    return 'Beispiel genutzt oder überarbeitet – eigener Text fachlich ungeprüft';
+    return 'Beispiel genutzt oder geändert: Dein Text ist noch nicht geprüft.';
   if (r.oral)
-    return 'Mündliche Bearbeitung vermerkt – fachlich noch nicht geprüft';
-  return 'Eigene Antwort – fachlich noch nicht geprüft';
+    return 'Du hast mündlich erklärt: Die Antwort ist noch nicht geprüft.';
+  return 'Eigene Antwort: noch nicht geprüft.';
 }
 export function reduceInquiry(
   current: Inquiry | undefined,

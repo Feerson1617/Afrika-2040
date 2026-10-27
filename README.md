@@ -2,7 +2,7 @@
 
 Fünf curriculare Untersuchungsbereiche und sechs direkt startbare Modell-Episoden für eine heterogene 7. Klasse. Reale Ortsbezüge und geprüfte Originalmaterialien werden von erfundenen Betrieben und Modellzahlen getrennt; freiwillige Worterklärungen und drei Hilfestufen unterstützen die Bearbeitung.
 
-Der Einstieg **„Afrika untersuchen · fünf Themen“** führt zu Afrikabild, Naturraum, Bevölkerung, Wirtschaft und Nachhaltigkeit. Auf Materialauswertung folgen kurze eigene Erklärungen mit Lernjournal. Aktueller Entwicklungsstand und Grenzen: [Übergabe](docs/afrika-vollstaendig-handover.md), [curriculare Abdeckung](docs/afrika-lernziele-und-pruefbarkeit.md) und [Klassenarbeitsvorbereitung](docs/afrika-klassenarbeitsreife.md).
+Der Einstieg **„Afrika untersuchen · fünf Themen“** führt zu Afrikabild, Naturraum, Bevölkerung, Wirtschaft und Nachhaltigkeit. Auf Materialauswertung folgen kurze eigene Erklärungen mit Lernjournal. Aktueller Entwicklungsstand und Grenzen: [Sprach- und Zahlenkorrektur](docs/afrika-sprachkorrektur.md), [curriculare Abdeckung](docs/afrika-lernziele-und-pruefbarkeit.md) und [Klassenarbeitsvorbereitung](docs/afrika-klassenarbeitsreife.md). Die [vorherige Übergabe](docs/afrika-vollstaendig-handover.md) dokumentiert den Ausgangsstand.
 
 | Ort                  | Episode                                 | Untersuchung                                                                    |
 | -------------------- | --------------------------------------- | ------------------------------------------------------------------------------- |
@@ -45,7 +45,7 @@ Für WebKit muss zusätzlich der passende Playwright-Browser installiert sein (`
 
 Die native Tastatursequenz prüft vor der fachlichen Rückmeldung den tatsächlich ausgewählten Wert. Linux ist hier geprüft. Der bestehende Mac-Helfer verwendet Leertaste → Pfeil-ab → Enter. Der aktuelle Korrekturprompt nennt 98/100 alte Chromium-Fälle auf dem Prüf-Mac und zwei leere native Auswahlwerte. Die dort beschriebene erfolgreiche manuelle Sequenz Öffnen → Home → Pfeil-ab → Enter ist hier mangels Mac nicht verifiziert. Der Testtreiberpunkt bleibt offen; die Wertprüfungen bleiben erhalten.
 
-Für eine lokale Prüfung des fertigen Builds: `npm run preview`. Relative Ressourcenpfade unterstützen die spätere Veröffentlichung unter einem GitHub-Pages-Repositorypfad. Dieser Auftrag veröffentlicht nichts. Der vorhandene manuell auszulösende Pages-Workflow wurde nicht gestartet oder verändert.
+Für eine lokale Prüfung des fertigen Builds: `npm run preview`. Relative Ressourcenpfade unterstützen die spätere Veröffentlichung unter einem GitHub-Pages-Repositorypfad. Dieser Auftrag veröffentlicht nichts. Im manuell auszulösenden Pages-Workflow wurde nur die Browserprüfung auf `playwright.afrika.config.ts` erweitert. Er wurde nicht gestartet; seine Freigabebedingungen bleiben erhalten. Der Artefaktprüfer verlangt genau fünf Build-Dateien einschließlich beider unveränderter, freigegebener JPEGs.
 
 ## Fachliche und technische Übergabe
 

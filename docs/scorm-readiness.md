@@ -1,10 +1,16 @@
 # SCORM-Bereitschaft – technische Prüfung, kein SCORM-Paket
 
-Referenz: 02aae52052736aff53cdf8b096f0a4bd2614f775. Aktuelle Korrektur: `feat/phase5-final-scorm-readiness`. Der Auftrag liegt wortgetreu in `phase5-final-request.md`.
+Historische Referenz dieses Konzepts: 02aae52052736aff53cdf8b096f0a4bd2614f775; damalige Korrektur: `feat/phase5-final-scorm-readiness`. Der damalige Auftrag liegt wortgetreu in `phase5-final-request.md`.
+
+## Aktualisierung vom 27.10.2026
+
+Der aktuelle Branch `feat/afrika-vollstaendig-klasse7` enthält zusätzlich fünf Untersuchungsbereiche. Die [Sprach- und Zahlenkorrektur](afrika-sprachkorrektur.md) ändert keine Speicher- oder LMS-Schnittstelle. Der Produktionsbuild hat jetzt **genau fünf lokale Dateien: HTML, JavaScript, CSS und zwei JPEGs**. Die Allowlist prüft beide konkreten Bildnamen und ihre unveränderten SHA-256-Werte. `base: './'`, Navigation ohne Server-Routen und Betrieb ohne externe Laufzeitdienste bleiben erhalten.
+
+Die Browserregression führt den vorhandenen Test im gleichursprünglichen 640 × 650-Inhaltsframe erneut in Chromium und WebKit aus. Zusätzlich durchlaufen alle fünf Themen den Repository-Prefix und ein 720 Pixel breites Fenster. Das belegt lokale Portabilität, keinen Import in ein echtes LMS. Es gibt weiterhin kein SCORM-Manifest, keinen Adapter und keine Abschluss-/Notenübertragung. Die unten stehende Zustandsgrößentabelle dokumentiert ausschließlich die damaligen sechs Episoden; sie ist **keine aktuelle Größenmessung aller elf Bereiche**. Vor einem Export müssen die neuen Untersuchungsdaten und freie Texte bei Schema, Umfang und Datenschutz neu berücksichtigt werden. Die Rückmeldungen „bearbeitet“ und „ohne Bewertung“ dürfen nicht in einen bestandenen Kompetenznachweis umgedeutet werden.
 
 ## Ergebnis und Nachweisgrenzen
 
-**Grundsätzlich überführbar, noch nicht SCORM-fähig ausgeliefert.** Der tatsächliche Vite-Produktionsbuild besteht aus `index.html` und lokalen JS-/CSS-Dateien. Seine Ressourcenpfade beginnen mit `./`; Karten und Illustrationen sind lokal im JavaScript enthalten. Das Favicon ist eine Data-URL. Es gibt keinen notwendigen externen Laufzeitdienst, Login, Pop-up oder GitHub-API-Aufruf. Externe Quellenlinks sind freiwillige Zusatzinformationen. Keine Lernnavigation hängt von diesen Links ab.
+**Grundsätzlich überführbar, noch nicht SCORM-fähig ausgeliefert.** Der Vite-Produktionsbuild besteht aus `index.html`, lokalen JS-/CSS-Dateien und inzwischen den zwei oben genannten Fotos. Seine Ressourcenpfade beginnen mit `./`; Karten und Illustrationen sind lokal im JavaScript enthalten. Das Favicon ist eine Data-URL. Es gibt keinen notwendigen externen Laufzeitdienst, Login, Pop-up oder GitHub-API-Aufruf. Externe Quellenlinks sind freiwillige Zusatzinformationen. Keine Lernnavigation hängt von diesen Links ab.
 
 **Getestet:** Produktionsbuild; statische Auslieferung unter `/Afrika-2040/`; lokale **LMS-Simulation** mit einem 640 × 650 CSS-Pixel großen Inhaltsframe, Skripten und gleichem Ursprung. Orientierung, Rückblick und Episodeneinstieg funktionieren, ohne horizontales Überlaufen oder externe Laufzeitrequests. Blockierte Speicherung ist separat tatsächlich durch einen SecurityError getestet. Das ist kein itslearning-Import und kein Beweis für beliebige Frame-/CSP-/Cookie-Konfigurationen. Primäre Schulansicht bleibt iPad quer 1024 × 768; F1 im Hochformat ist laut Auftrag kein Blocker. Keine neue Hochformatoberfläche.
 
@@ -26,7 +32,7 @@ Die Standards bleiben getrennt: 1.2 nutzt `LMSInitialize`, `LMSGetValue`, `LMSSe
 
 **Vorläufig bevorzugt: SCORM 2004, 3rd Edition**, falls die Schule es tatsächlich freigibt: größeres Suspend-Datenfeld und getrennte Abschluss-/Erfolgsmeldung passen besser zu differenzierten Lernwegen. 1.2 wäre eine Kompatibilitätsalternative mit stärker reduziertem Wiederaufnahmedatensatz. Eine automatische Note oder Punkteskala ist bei keiner Version vorgesehen.
 
-## Gemessene Zustandsgrößen
+## Historisch gemessene Zustandsgrößen (sechs Episoden)
 
 Die Browserprüfung spielt tatsächlich alle sechs Episoden durch, nutzt Beispiele/Hilfen, bearbeitet Orientierung und Rückblick und ergänzt freiwillige Testtexte. Sie liest die wirklich gespeicherte JSON-Zeichenkette; keine künstlich gesetzten Abschlussflags. Messwerte und Abschlusskennzeichen: `state-sizes.json` im Prüfpaket. UTF-8-Bytes sind zusätzlich angegeben; Zeichen- und Transportgrenzen dürfen nicht verwechselt werden.
 

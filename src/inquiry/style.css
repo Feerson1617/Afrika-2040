@@ -269,3 +269,7 @@
 .inquiry-screen summary {
   font-size: 16px;
 }
+
+.inquiry-terms-text {
+  white-space: pre-line;
+}

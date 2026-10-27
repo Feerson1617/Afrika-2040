@@ -40,13 +40,21 @@ export function checkDist(directory = 'dist') {
   }
   visit();
   files.sort();
+  const photographs = files.filter((f) => f.endsWith('.jpg'));
   if (
-    files.length !== 3 + files.filter((f) => f.endsWith('.jpg')).length ||
+    files.length !== 5 ||
+    photographs.length !== 2 ||
+    !['asafo', 'kakum'].every(
+      (name) =>
+        photographs.filter((f) => f.startsWith(`assets/${name}-`)).length === 1,
+    ) ||
     !files.includes('index.html') ||
     files.filter((f) => f.endsWith('.js')).length !== 1 ||
     files.filter((f) => f.endsWith('.css')).length !== 1
   )
-    throw new Error('Erwartet: index.html und genau ein JS-/CSS-Bundle.');
+    throw new Error(
+      'Erwartet: index.html, genau ein JS-/CSS-Bundle und jeweils ein geprüftes Asafo-/Kakum-Foto.',
+    );
   const html = readFileSync(join(root, 'index.html'), 'utf8');
   const references = [...html.matchAll(/(?:src|href)=(["'])(.*?)\1/g)].map(
     (m) => m[2],
