@@ -1,3 +1,4 @@
+import { answerOrder } from './answer-order.ts';
 import { result } from '../feedback.ts';
 import type { StudyData, StudySpec } from './types.ts';
 import {
@@ -210,12 +211,15 @@ export const share: StudySpec = {
   },
   task(d, step, h) {
     if (step === 0)
-      return `<fieldset><legend>Wie viel ist nach allen Kosten frei?</legend>${['120', '300', '200'].map((v) => choice(h, d, 'free', v, v + ' GE')).join('')}</fieldset><fieldset><legend>Was gilt für die Löhne?</legend>${choice(h, d, 'wages', 'paid', 'Die Löhne sind bereits bezahlt.')}${choice(h, d, 'wages', 'later', 'Die Löhne sollen erst aus den 120 GE bezahlt werden.')}</fieldset>`;
-    return `<p>Verteile in Schritten von 20 GE. Wähle jeden Zweck an und lies die Folge.</p><p class="study-mini-balance" role="status">Noch frei: <strong>${shareModel(d).left} von 120 GE</strong></p>${shareKeys.map((k) => `<section class="study-allocation"><h3>${names[k]}: <strong>${d.allocations[k]} GE</strong></h3><div class="study-options">${control(h, names[k] + ' ansehen', 'select', k, '', 'try-' + k)}${control(h, '+20 GE für ' + names[k], 'adjust', '20', k, 'add-' + k, 'button secondary', shareModel(d).left < 20)}${control(h, '−20 GE bei ' + names[k], 'adjust', '-20', k, 'remove-' + k, 'button secondary', !d.allocations[k])}</div>${d.selection === k ? `<p class="study-effect">${effects[k]}</p>` : ''}</section>`).join('')}<fieldset><legend>Was gilt für jede Verteilung?</legend>${[
-      ['tradeoff', 'Mehr für einen Zweck heißt weniger für andere.'],
-      ['everyone', 'Jede Verteilung erfüllt alle Wünsche.'],
-      ['sure', 'Fortbildung bringt sicher mehr Einnahmen.'],
-    ]
+      return `<fieldset><legend>Wie viel ist nach allen Kosten frei?</legend>${['300', '120', '200'].map((v) => choice(h, d, 'free', v, v + ' GE')).join('')}</fieldset><fieldset><legend>Was gilt für die Löhne?</legend>${choice(h, d, 'wages', 'later', 'Die Löhne sollen erst aus den 120 GE bezahlt werden.')}${choice(h, d, 'wages', 'paid', 'Die Löhne sind bereits bezahlt.')}</fieldset>`;
+    return `<p>Verteile in Schritten von 20 GE. Wähle jeden Zweck an und lies die Folge.</p><p class="study-mini-balance" role="status">Noch frei: <strong>${shareModel(d).left} von 120 GE</strong></p>${shareKeys.map((k) => `<section class="study-allocation"><h3>${names[k]}: <strong>${d.allocations[k]} GE</strong></h3><div class="study-options">${control(h, names[k] + ' ansehen', 'select', k, '', 'try-' + k)}${control(h, '+20 GE für ' + names[k], 'adjust', '20', k, 'add-' + k, 'button secondary', shareModel(d).left < 20)}${control(h, '−20 GE bei ' + names[k], 'adjust', '-20', k, 'remove-' + k, 'button secondary', !d.allocations[k])}</div>${d.selection === k ? `<p class="study-effect">${effects[k]}</p>` : ''}</section>`).join('')}<fieldset><legend>Was gilt für jede Verteilung?</legend>${answerOrder(
+      [
+        ['tradeoff', 'Mehr für einen Zweck heißt weniger für andere.'],
+        ['everyone', 'Jede Verteilung erfüllt alle Wünsche.'],
+        ['sure', 'Fortbildung bringt sicher mehr Einnahmen.'],
+      ],
+      1,
+    )
       .map(([v, t]) => h.radio('study-why', v, t, d.why === v))
       .join('')}</fieldset>`;
   },

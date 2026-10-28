@@ -1,3 +1,4 @@
+import { answerOrder } from './answer-order.ts';
 import { result } from '../feedback.ts';
 import type { StudySpec, StudyData } from './types.ts';
 import {
@@ -257,17 +258,29 @@ export const cocoa: StudySpec = {
     if (step === 0)
       return `<p>Wähle die Schritte der Reihe nach.</p><div class="study-options">${['mass', 'beans', 'press', 'roast'].map((k) => control(h, chainNames[k], 'pick', k, '', 'chain-' + k, 'button secondary', d.chain.includes(k))).join('')}</div>${control(h, 'Letzten Schritt zurücknehmen', 'undo', '', '', 'chain-undo', 'text-button', !d.chain.length)}`;
     if (allChecked(d))
-      return `<fieldset><legend>Warum bleibt bei mehr Verarbeitung hier weniger übrig?</legend>${[
+      return `<fieldset><legend>Warum bleibt bei mehr Verarbeitung hier weniger übrig?</legend>${answerOrder(
         [
-          'costs',
-          'Die Einnahmen steigen. Die laufenden Ausgaben steigen aber auch.',
+          [
+            'costs',
+            'Die Einnahmen steigen. Die laufenden Ausgaben steigen aber auch.',
+          ],
+          ['income', 'Alle Einnahmen sind Überschuss.'],
+          ['free', 'Eine neue Presse verursacht keine laufenden Kosten.'],
         ],
-        ['income', 'Alle Einnahmen sind Überschuss.'],
-        ['free', 'Eine neue Presse verursacht keine laufenden Kosten.'],
-      ]
+        2,
+      )
         .map(([v, t]) => h.radio('study-why', v, t, d.why === v))
         .join('')}</fieldset>`;
     const m = cocoaModel(d.selection);
-    return `<div class="study-options">${['quality', 'process'].map((k) => control(h, k === 'quality' ? 'Lagerung testen' : 'Presse testen', 'select', k, '', 'try-' + k)).join('')}</div>${d.selection === 'base' ? '<p>Teste beide Ideen.</p>' : `<p class="study-inline-ledger">${m.income} GE Einnahmen − ${m.costs} GE laufende Ausgaben.</p><fieldset><legend>Wie viel bleibt in dieser Runde übrig?</legend>${[m.surplus, m.income, m.costs].map((n) => choice(h, d, d.selection, String(n), n + ' GE')).join('')}</fieldset>`}<p class="small-note">Schon berechnet: ${d.checked.length} von 2 Ideen.</p>`;
+    return `<div class="study-options">${['quality', 'process'].map((k) => control(h, k === 'quality' ? 'Lagerung testen' : 'Presse testen', 'select', k, '', 'try-' + k)).join('')}</div>${
+      d.selection === 'base'
+        ? '<p>Teste beide Ideen.</p>'
+        : `<p class="study-inline-ledger">${m.income} GE Einnahmen − ${m.costs} GE laufende Ausgaben.</p><fieldset><legend>Wie viel bleibt in dieser Runde übrig?</legend>${answerOrder(
+            [m.surplus, m.income, m.costs],
+            d.selection === 'quality' ? 1 : 2,
+          )
+            .map((n) => choice(h, d, d.selection, String(n), n + ' GE'))
+            .join('')}</fieldset>`
+    }<p class="small-note">Schon berechnet: ${d.checked.length} von 2 Ideen.</p>`;
   },
 };

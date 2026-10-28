@@ -1,3 +1,4 @@
+import { resetNotice } from './reset.ts';
 import { renderInquiry } from './inquiry/ui.ts';
 import { productStatus, type InquiryAction } from './inquiry/state.ts';
 import { renderReview } from './geography/review-ui.ts';
@@ -426,7 +427,7 @@ function game() {
       ${p.help === 0 ? button('Ich brauche einen Hinweis', 'help', 'text-button help-button', 'data-value="1"') : ''}</div>
       <div class="task-navigation">${button('← Zurück', 'back', 'text-button')}${button('Aufgabe neu bearbeiten', 'reset-task', 'text-button')}</div>
     </div></section></div>
-    <footer class="game-footer">${button('Episoden auswählen', 'episode-home', 'text-button')}<span>Ein Ort. ${state.step < 4 ? 'Zwei' : 'Drei'} Perspektiven.</span>${button('Neu starten', 'ask-restart', 'text-button')}${restartPending ? `<span class="restart-confirm">Alle Antworten löschen? ${button('Ja, neu starten', 'restart', 'text-button')} ${button('Abbrechen', 'cancel-restart', 'text-button')}</span>` : ''}</footer>
+    <footer class="game-footer">${button('Episoden auswählen', 'episode-home', 'text-button')}<span>Ein Ort. ${state.step < 4 ? 'Zwei' : 'Drei'} Perspektiven.</span>${button('Neu starten', 'ask-restart', 'text-button')}${restartPending ? `<span class="restart-confirm">${resetNotice} ${button('Ja, neu starten', 'restart', 'text-button')} ${button('Abbrechen', 'cancel-restart', 'text-button')}</span>` : ''}</footer>
   </main>`;
 }
 

@@ -1,3 +1,4 @@
+import { answerOrder } from './answer-order.ts';
 import { result } from '../feedback.ts';
 import type { StudyData, StudySpec } from './types.ts';
 import {
@@ -233,23 +234,27 @@ export const area: StudySpec = {
   },
   task(d, step, h) {
     if (step === 0)
-      return `<div class="study-options">${control(h, 'Vorher ansehen', 'select', 'base', '', 'try-base')}${control(h, 'Neue Technik am gleichen Feld', 'select', 'same', '', 'try-same')}</div><p class="study-inline-ledger">Gleiches Feld: vorher 60 WE · neue Technik 45 WE</p><fieldset><legend>Wie viel entnimmt die neue Technik für das gleiche Feld?</legend>${['45', '60', '15'].map((v) => choice(h, d, 'single', v, v + ' WE')).join('')}</fieldset><fieldset><legend>Wie viel weniger als vorher?</legend>${['15', '45', '60'].map((v) => choice(h, d, 'saving', v, v + ' WE')).join('')}</fieldset>`;
+      return `<div class="study-options">${control(h, 'Vorher ansehen', 'select', 'base', '', 'try-base')}${control(h, 'Neue Technik am gleichen Feld', 'select', 'same', '', 'try-same')}</div><p class="study-inline-ledger">Gleiches Feld: vorher 60 WE · neue Technik 45 WE</p><fieldset><legend>Wie viel entnimmt die neue Technik für das gleiche Feld?</legend>${['60', '45', '15'].map((v) => choice(h, d, 'single', v, v + ' WE')).join('')}</fieldset><fieldset><legend>Wie viel weniger als vorher?</legend>${['60', '45', '15'].map((v) => choice(h, d, 'saving', v, v + ' WE')).join('')}</fieldset>`;
     if (both(d))
-      return `<fieldset><legend>Warum steigt die Entnahme mit dem Zusatzfeld wieder?</legend>${[
+      return `<fieldset><legend>Warum steigt die Entnahme mit dem Zusatzfeld wieder?</legend>${answerOrder(
         [
-          'growth',
-          'Eine Fläche braucht weniger. Mehr Flächen brauchen zusammen aber mehr.',
+          [
+            'growth',
+            'Eine Fläche braucht weniger. Mehr Flächen brauchen zusammen aber mehr.',
+          ],
+          ['always', 'Sparsame Technik senkt die Gesamtentnahme immer.'],
+          ['free', 'Das Zusatzfeld braucht kein weiteres Wasser.'],
         ],
-        ['always', 'Sparsame Technik senkt die Gesamtentnahme immer.'],
-        ['free', 'Das Zusatzfeld braucht kein weiteres Wasser.'],
-      ]
+        1,
+      )
         .map(([v, t]) => h.radio('study-why', v, t, d.why === v))
         .join('')}</fieldset>`;
     const m = areaModel(d.selection);
     return `<div class="study-options">${control(h, 'Gleiches Feld testen', 'select', 'same', '', 'try-same')}${control(h, 'Zusatzfeld hinzufügen', 'select', 'extra', '', 'try-extra')}</div><p class="study-inline-ledger">Erstes Feld ${m.first} WE · Zusatzfeld ${m.extra} WE · Tankstart 80 WE</p>${
       ['same', 'extra'].includes(d.selection)
-        ? `<fieldset><legend>Wie viel wird insgesamt entnommen?</legend>${Array.from(
-            new Set([m.withdrawal, 45, 60, 65]),
+        ? `<fieldset><legend>Wie viel wird insgesamt entnommen?</legend>${answerOrder(
+            Array.from(new Set([m.withdrawal, 45, 60, 65])),
+            d.selection === 'same' ? 1 : 2,
           )
             .map((v) => choice(h, d, d.selection, String(v), v + ' WE'))
             .join('')}</fieldset>`

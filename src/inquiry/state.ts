@@ -146,11 +146,35 @@ export function evaluateInquiry(
   step: 0 | 1,
   r: InquiryRecord,
   second = false,
-): { feedback: Feedback; error: boolean } {
+): {
+  feedback: Feedback;
+  error: boolean;
+  parts: {
+    field: string;
+    label: string;
+    status: string;
+    explanation: string;
+  }[];
+} {
   const p = r.checks[step],
     def = checkDefinition(id, step, r),
     plan = selectedPlan(r);
-  const result = (feedback: Feedback, error = false) => ({ feedback, error });
+  const result = (feedback: Feedback, error = false) => ({
+    feedback,
+    error,
+    parts: def.fields.map((f) => ({
+      field: f.id,
+      label: f.label,
+      status: !p.answers[f.id]?.trim()
+        ? 'missing'
+        : !f.options && parseInquiryInteger(p.answers[f.id]) === undefined
+          ? 'format'
+          : matches(f, p.answers[f.id])
+            ? 'correct'
+            : 'incorrect',
+      explanation: f.explanation,
+    })),
+  });
   if (id === 'image' && !r.initialSaved)
     return result(
       message(

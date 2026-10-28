@@ -1,3 +1,4 @@
+import { answerOrder } from './answer-order.ts';
 import { result } from '../feedback.ts';
 import type { StudyData, StudySpec } from './types.ts';
 import {
@@ -202,19 +203,31 @@ export const water: StudySpec = {
   },
   task(d, step, h) {
     if (step === 0)
-      return `<p class="study-inline-ledger">Start: 80 WE · Aus dem Tank: 60 WE · Am Feld: 40 WE</p><fieldset><legend>Wie viel wird aus dem Tank entnommen?</legend>${['60', '40', '80'].map((v) => choice(h, d, 'withdrawal', v, v + ' WE')).join('')}</fieldset><fieldset><legend>Wie viel bleibt im Tank?</legend>${['20', '40', '60'].map((v) => choice(h, d, 'rest', v, v + ' WE')).join('')}</fieldset>`;
+      return `<p class="study-inline-ledger">Start: 80 WE · Aus dem Tank: 60 WE · Am Feld: 40 WE</p><fieldset><legend>Wie viel wird aus dem Tank entnommen?</legend>${['40', '60', '80'].map((v) => choice(h, d, 'withdrawal', v, v + ' WE')).join('')}</fieldset><fieldset><legend>Wie viel bleibt im Tank?</legend>${['40', '60', '20'].map((v) => choice(h, d, 'rest', v, v + ' WE')).join('')}</fieldset>`;
     if (checkedBoth(d))
-      return `<fieldset><legend>Warum bleibt mehr im Tank?</legend>${[
+      return `<fieldset><legend>Warum bleibt mehr im Tank?</legend>${answerOrder(
         [
-          'delivery',
-          '40 WE erreichen das gleiche Feld. Dafür wird weniger entnommen.',
+          [
+            'delivery',
+            '40 WE erreichen das gleiche Feld. Dafür wird weniger entnommen.',
+          ],
+          ['ground', 'Die Technik lässt das echte Grundwasser sicher steigen.'],
+          ['harvest', 'Weniger Entnahme garantiert eine größere Ernte.'],
         ],
-        ['ground', 'Die Technik lässt das echte Grundwasser sicher steigen.'],
-        ['harvest', 'Weniger Entnahme garantiert eine größere Ernte.'],
-      ]
+        2,
+      )
         .map(([v, t]) => h.radio('study-why', v, t, d.why === v))
         .join('')}</fieldset>`;
     const m = waterModel(d.selection);
-    return `<div class="study-options">${control(h, 'Reparatur testen', 'select', 'repair', '', 'try-repair')}${control(h, 'Neue Verteilung testen', 'select', 'tech', '', 'try-tech')}</div>${d.selection === 'base' ? '<p>Untersuche beide Maßnahmen.</p>' : `<p class="study-inline-ledger">Start 80 WE · Entnahme ${m.withdrawal} WE · Am Feld 40 WE</p><fieldset><legend>Wie viel bleibt im Tank?</legend>${[m.remaining, 40, m.withdrawal].map((v) => choice(h, d, d.selection, String(v), v + ' WE')).join('')}</fieldset>`}<p class="small-note">Schon geprüft: ${d.checked.length} von 2 Maßnahmen.</p>`;
+    return `<div class="study-options">${control(h, 'Reparatur testen', 'select', 'repair', '', 'try-repair')}${control(h, 'Neue Verteilung testen', 'select', 'tech', '', 'try-tech')}</div>${
+      d.selection === 'base'
+        ? '<p>Untersuche beide Maßnahmen.</p>'
+        : `<p class="study-inline-ledger">Start 80 WE · Entnahme ${m.withdrawal} WE · Am Feld 40 WE</p><fieldset><legend>Wie viel bleibt im Tank?</legend>${answerOrder(
+            [m.remaining, 40, m.withdrawal],
+            d.selection === 'repair' ? 1 : 2,
+          )
+            .map((v) => choice(h, d, d.selection, String(v), v + ' WE'))
+            .join('')}</fieldset>`
+    }<p class="small-note">Schon geprüft: ${d.checked.length} von 2 Maßnahmen.</p>`;
   },
 };
