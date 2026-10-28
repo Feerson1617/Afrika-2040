@@ -617,7 +617,7 @@ export function tasksFor(unit: Unit, profile: ProfileId): Task[] {
     ...arithmetic('m1'),
     task(
       'population.base.explain',
-      'Warum steigt die Zahl trotz mehr Fortzügen?',
+      'Mehr Menschen ziehen weg als zu. Warum steigt die Zahl trotzdem?',
       'm1',
       [
         text(
@@ -636,12 +636,12 @@ export function tasksFor(unit: Unit, profile: ProfileId): Task[] {
     source(profile),
     task(
       'population.source.explain',
-      'Welche Ursache kann die Kurve allein nicht erklären?',
+      'Beweist die Reihe, dass mehr Menschen zugezogen sind?',
       'm2',
       [
         text(
           'explanation',
-          'Nutze Jahre und Werte. Nenne eine Grenze.',
+          'Eine Behauptung: „Ghanas Bevölkerung ist gewachsen. Deshalb sind mehr Menschen zugezogen.“ Prüfe sie mit der Reihe. Begründe kurz.',
           'Zwischen 2000 und 2024 steigt die geschätzte Zahl von etwa 19,6 auf 34,4 Millionen. Die Reihe allein zeigt nicht, wie Geburten, Sterbefälle oder Umzüge beigetragen haben.',
           'Historische Gesamtzahlen sind keine getrennten Ursachen.',
         ),
@@ -768,7 +768,7 @@ function kenyaTasks(profile: ProfileId): Task[] {
       ),
       task(
         'kenia.limit',
-        'Wem hilft Nord weniger?',
+        'Wer braucht über Nord mehr Zeit?',
         'kenia',
         [limit],
         'Vergleiche jede Person mit ihrem bisherigen Weg.',

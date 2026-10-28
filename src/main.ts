@@ -3,7 +3,7 @@ import {
   active as activeLearning,
   type LearningAction,
 } from './learning/storage.ts';
-import { isProfile } from './learning/profiles.ts';
+import { recommendation, consumedRecommendation } from './learning/entry.ts';
 import { resetNotice } from './reset.ts';
 import { renderInquiry } from './inquiry/ui.ts';
 import { productStatus, type InquiryAction } from './inquiry/state.ts';
@@ -71,24 +71,6 @@ try {
   /* In-memory play remains available. */
 }
 let state = readSession(storage);
-const recommendedProfile = new URLSearchParams(location.search).get('lernweg');
-const recommendedUnit = new URLSearchParams(location.search).get('bereich');
-if (
-  isProfile(recommendedProfile) &&
-  (recommendedUnit === 'c' || recommendedUnit === 's1')
-) {
-  state = reduce(state, {
-    type: 'learning',
-    op: 'unit',
-    value: recommendedUnit,
-  });
-  state = reduce(state, {
-    type: 'learning',
-    op: 'request-profile',
-    value: recommendedProfile,
-  });
-  state = reduce(state, { type: 'learning', op: 'confirm-profile' });
-}
 let restartPending = false;
 const storageWarning = document.createElement('aside');
 storageWarning.id = 'storage-warning';
@@ -111,6 +93,49 @@ function persistState() {
   updateStorageWarning(!saved);
   return saved;
 }
+function consumeEntry() {
+  history.replaceState(
+    history.state,
+    '',
+    consumedRecommendation(location.href),
+  );
+}
+function openRecommendation() {
+  const entry = recommendation(location.search);
+  if (!entry) return;
+  state = reduce(state, {
+    type: 'learning',
+    op: 'recommend',
+    value: entry.profile,
+    field: entry.unit,
+  });
+  persistState();
+  if (!state.learning?.pendingProfile) consumeEntry();
+}
+openRecommendation();
+function syncStoredState() {
+  if (!storage) return;
+  try {
+    storage.getItem('afrika-2040:kenia-bus:v2a');
+    state = readSession(storage);
+  } catch {
+    // A blocked store must not discard the current in-memory work on history navigation.
+  }
+}
+window.addEventListener('popstate', () => {
+  // Hash-only navigation (including the keyboard skip link) belongs to the
+  // browser. Replacing its DOM here would destroy the newly focused target.
+  if (!recommendation(location.search) && !state.learning?.pendingUnit) return;
+  syncStoredState();
+  openRecommendation();
+  render('main', true);
+});
+window.addEventListener('pageshow', (event) => {
+  if (!event.persisted) return;
+  syncStoredState();
+  openRecommendation();
+  render('main', true);
+});
 
 const esc = (text: string) =>
   text.replace(
@@ -593,6 +618,12 @@ function dispatch(action: Action) {
   const geo = action.type === 'geography';
   const oldFocus = document.activeElement?.id;
   state = reduce(state, action);
+  if (
+    action.type === 'learning' &&
+    ['confirm-profile', 'cancel-profile'].includes(action.op) &&
+    recommendation(location.search)
+  )
+    consumeEntry();
   if (action.type === 'restart') {
     clearSession(storage);
     restartPending = false;

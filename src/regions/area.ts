@@ -254,7 +254,7 @@ export const area: StudySpec = {
       ['same', 'extra'].includes(d.selection)
         ? `<fieldset><legend>Wie viel wird insgesamt entnommen?</legend>${answerOrder(
             Array.from(new Set([m.withdrawal, 45, 60, 65])),
-            d.selection === 'same' ? 1 : 2,
+            d.selection === 'same' ? 0 : 2,
           )
             .map((v) => choice(h, d, d.selection, String(v), v + ' WE'))
             .join('')}</fieldset>`

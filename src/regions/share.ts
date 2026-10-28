@@ -218,7 +218,7 @@ export const share: StudySpec = {
         ['everyone', 'Jede Verteilung erfüllt alle Wünsche.'],
         ['sure', 'Fortbildung bringt sicher mehr Einnahmen.'],
       ],
-      1,
+      0,
     )
       .map(([v, t]) => h.radio('study-why', v, t, d.why === v))
       .join('')}</fieldset>`;

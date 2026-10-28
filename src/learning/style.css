@@ -26,6 +26,14 @@
   width: 100%;
   height: auto;
 }
+.learning-event {
+  margin: 12px 0;
+}
+.learning-event svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
 .learning-screen .study-scene [role='button']:focus {
   outline: 3px solid #ae461e;
   outline-offset: -4px;

@@ -267,7 +267,7 @@ export const cocoa: StudySpec = {
           ['income', 'Alle Einnahmen sind Überschuss.'],
           ['free', 'Eine neue Presse verursacht keine laufenden Kosten.'],
         ],
-        2,
+        0,
       )
         .map(([v, t]) => h.radio('study-why', v, t, d.why === v))
         .join('')}</fieldset>`;
@@ -277,7 +277,7 @@ export const cocoa: StudySpec = {
         ? '<p>Teste beide Ideen.</p>'
         : `<p class="study-inline-ledger">${m.income} GE Einnahmen − ${m.costs} GE laufende Ausgaben.</p><fieldset><legend>Wie viel bleibt in dieser Runde übrig?</legend>${answerOrder(
             [m.surplus, m.income, m.costs],
-            d.selection === 'quality' ? 1 : 2,
+            d.selection === 'quality' ? 0 : 1,
           )
             .map((n) => choice(h, d, d.selection, String(n), n + ' GE'))
             .join('')}</fieldset>`

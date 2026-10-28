@@ -1,5 +1,7 @@
 # Afrika 2040 – Gestalte die Zukunft
 
+Aktueller Prüfstand: [gezielte Paket-A-Nachbesserung](docs/afrika-paket-a-correction.md) auf Basis `be814ec49263446c142953622789bf2570641c87`. Acht Pilotwege, kein Paket B. Die frühere Paket-A-Übergabe dokumentiert den Ausgangsstand.
+
 Fünf curriculare Untersuchungsbereiche und sechs direkt startbare Modell-Episoden für eine heterogene 7. Klasse. Reale Ortsbezüge und geprüfte Originalmaterialien werden von erfundenen Betrieben und Modellzahlen getrennt; freiwillige Worterklärungen und drei Hilfestufen unterstützen die Bearbeitung.
 
 Der Einstieg **„Afrika untersuchen · fünf Themen“** führt zu Afrikabild, Naturraum, Bevölkerung, Wirtschaft und Nachhaltigkeit. Auf Materialauswertung folgen kurze eigene Erklärungen mit Lernjournal. Aktueller Entwicklungsstand und Grenzen: [Sprach- und Zahlenkorrektur](docs/afrika-sprachkorrektur.md), [curriculare Abdeckung](docs/afrika-lernziele-und-pruefbarkeit.md) und [Klassenarbeitsvorbereitung](docs/afrika-klassenarbeitsreife.md). Die [vorherige Übergabe](docs/afrika-vollstaendig-handover.md) dokumentiert den Ausgangsstand.

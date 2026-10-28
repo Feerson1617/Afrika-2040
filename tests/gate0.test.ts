@@ -62,8 +62,10 @@ test('all 16 formerly first-position questions retain IDs and stable varied corr
     why: 'growth',
   });
   assert.equal(seen.length, 16);
-  assert.ok(new Set(seen).size >= 2);
-  assert.ok(seen.filter((v) => v > 1).length >= 12);
+  // All three slots are usable: no “first is always wrong” strategy.
+  for (const position of [1, 2, 3])
+    assert.ok(seen.filter((v) => v === position).length >= 4);
+  assert.ok(seen.every((v) => v >= 1 && v <= 3));
 });
 test('global reset notice covers current topics and journal', () => {
   assert.match(

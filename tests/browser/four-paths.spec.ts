@@ -3,7 +3,7 @@ import AxeBuilder from '@axe-core/playwright';
 import { writeFileSync, readFileSync } from 'node:fs';
 import { profileIds, profiles } from '../../src/learning/profiles.ts';
 import { tasksFor } from '../../src/learning/tasks.ts';
-import { exampleValue } from '../../src/learning/progress.ts';
+import { answers } from '../learning-oracles.ts';
 import { evidencePath } from './artifacts.ts';
 const key = 'afrika-2040:kenia-bus:v2a';
 const tags = [
@@ -22,6 +22,18 @@ async function learning(page: Page) {
 }
 const op = (page: Page, name: string) =>
   page.locator(`[data-action="learning"][data-op="${name}"]`).first();
+async function assertActive(page: Page, profile: (typeof profileIds)[number]) {
+  const state = await learning(page),
+    record = state.records[`${state.unit}.${profile}.v1`];
+  expect(state.profile).toBe(profile);
+  const task = tasksFor(state.unit, profile)[record.index];
+  await expect(page.locator('h1')).toHaveText(task.title);
+  await expect(page.locator('.eyebrow')).toContainText(profiles[profile].name);
+  await expect(page.locator('.eyebrow')).toContainText(
+    `Schritt ${record.index + 1} von`,
+  );
+  expect(record.attempts[task.id].identity.profileId).toBe(profile);
+}
 for (const profile of profileIds)
   for (const unit of ['c', 's1'] as const)
     for (const supported of [false, true])
@@ -32,7 +44,7 @@ for (const profile of profileIds)
         const context = await browser.newContext({
           viewport: supported
             ? { width: 1024, height: 768 }
-            : { width: 1440, height: 1000 },
+            : { width: 1366, height: 900 },
           hasTouch: supported,
           isMobile: supported,
         });
@@ -98,16 +110,17 @@ for (const profile of profileIds)
           } else {
             for (const f of task.fields) {
               const el = page.locator('#learn-' + f.id);
-              if (f.kind === 'choice') await el.selectOption(exampleValue(f));
+              if (f.kind === 'choice')
+                await el.selectOption(answers(task)[f.id]);
               else
                 await el.fill(
                   f.kind === 'text'
-                    ? f.example!
+                    ? answers(task)[f.id]
                     : f.expected === '-10'
                       ? '−10'
                       : f.expected === '1020'
                         ? '1.020'
-                        : exampleValue(f),
+                        : answers(task)[f.id],
                 );
             }
             await page.locator('#learning-check').press('Enter');
@@ -131,7 +144,7 @@ for (const profile of profileIds)
               const f = task.fields[0];
               await page
                 .locator('#learn-' + f.id)
-                .fill(f.example + ' Mein Zusatz.');
+                .fill(answers(task)[f.id] + ' Mein Zusatz.');
               await expect(page.locator('#learning-next')).toHaveCount(0);
               await page.locator('#learning-check').click();
               expect(
@@ -208,11 +221,13 @@ test('Afrika curriculum four paths all twelve switches preserve drafts and resto
 }) => {
   for (const from of profileIds)
     for (const to of profileIds.filter((p) => p !== from)) {
+      await page.goto('/');
+      await page.evaluate(() => sessionStorage.clear());
       await page.goto(`/?lernweg=${from}&bereich=c`);
       const task = tasksFor('c', from)[0],
         f = task.fields[0];
       if (f.kind === 'choice')
-        await page.locator('#learn-' + f.id).selectOption(exampleValue(f));
+        await page.locator('#learn-' + f.id).selectOption(answers(task)[f.id]);
       else await page.locator('#learn-' + f.id).fill('30');
       const before = (await learning(page)).records[`c.${from}.v1`];
       await op(page, 'profiles').click();
@@ -220,17 +235,23 @@ test('Afrika curriculum four paths all twelve switches preserve drafts and resto
         .locator(`[data-op="request-profile"][data-value="${to}"]`)
         .click();
       await op(page, 'confirm-profile').click();
+      await assertActive(page, to);
       const destination = (await learning(page)).records[`c.${to}.v1`];
       expect(
-        destination.attempts[tasksFor('c', to)[0].id].identity.profileId,
-      ).toBe(to);
+        destination.attempts[tasksFor('c', to)[0].id].identity.attemptId,
+      ).not.toBe(before.attempts[task.id].identity.attemptId);
+      await page.reload();
+      await assertActive(page, to);
+      expect((await learning(page)).records[`c.${to}.v1`]).toEqual(destination);
       await op(page, 'profiles').click();
       await page
         .locator(`[data-op="request-profile"][data-value="${from}"]`)
         .click();
       await op(page, 'confirm-profile').click();
+      await assertActive(page, from);
       expect((await learning(page)).records[`c.${from}.v1`]).toEqual(before);
       await page.reload();
+      await assertActive(page, from);
       expect((await learning(page)).records[`c.${from}.v1`]).toEqual(before);
     }
 });

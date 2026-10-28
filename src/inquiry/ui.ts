@@ -67,7 +67,7 @@ const photos = {
 };
 const sourceLink = (url: string, label: string) =>
   `<a href="${url}" target="_blank" rel="noopener noreferrer">${esc(label)}</a>`;
-function sources(id: TopicId) {
+export function sources(id: TopicId) {
   const worldbank = `<p>The World Bank: World Development Indicators. Datenstand 8.10.2026, abgerufen 26.10.2026. ${sourceLink('https://data.worldbank.org/summary-terms-of-use', 'CC BY 4.0 mit Zusatzbedingungen und Quellenpflicht')}.</p>`;
   const texts = {
     image:

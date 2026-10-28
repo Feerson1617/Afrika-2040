@@ -40,6 +40,7 @@ export interface LearningState {
   version: 1;
   profile?: ProfileId;
   pendingProfile?: ProfileId;
+  pendingUnit?: Unit;
   unit?: Unit;
   view: 'menu' | 'profiles' | 'task' | 'journal';
   sequence: number;
@@ -51,6 +52,7 @@ export type LearningAction = {
     | 'open'
     | 'profiles'
     | 'request-profile'
+    | 'recommend'
     | 'confirm-profile'
     | 'cancel-profile'
     | 'unit'
@@ -164,11 +166,7 @@ function checked(s: LearningState, adopt = false) {
   }
   p.process = e.ready ? (adopt ? 'explained' : 'submitted') : 'draft';
   p.factual = e.factual;
-  if (p.submissions.length === 40) {
-    p.submissions.shift();
-    p.olderSubmissions++;
-  }
-  p.submissions.push({
+  appendSubmission(p, {
     answers: { ...p.answers },
     factual: e.factual,
     support: p.exampleUsed
@@ -180,11 +178,38 @@ function checked(s: LearningState, adopt = false) {
           : 'own',
   });
 }
+// The same limit applies to numeric, written and oral submissions, and restore.
+function appendSubmission(p: Attempt, submission: Submission) {
+  p.submissions.push(submission);
+  const excess = Math.max(0, p.submissions.length - 40);
+  if (excess) {
+    p.submissions.splice(0, excess);
+    p.olderSubmissions += excess;
+  }
+}
 export function reduceLearning(
   value: LearningState | undefined,
   action: LearningAction,
 ): LearningState {
   const s = structuredClone(value ?? newLearning());
+  if (
+    action.op === 'recommend' &&
+    isProfile(action.value) &&
+    (action.field === 'c' || action.field === 's1')
+  ) {
+    if (s.profile && s.profile !== action.value) {
+      s.pendingProfile = action.value;
+      s.pendingUnit = action.field;
+    } else {
+      s.profile = action.value;
+      s.unit = action.field;
+      delete s.pendingProfile;
+      delete s.pendingUnit;
+      s.view = 'task';
+      ensure(s);
+    }
+    return s;
+  }
   if (action.op === 'open') {
     s.view = s.profile ? 'menu' : 'profiles';
     return s;
@@ -194,17 +219,21 @@ export function reduceLearning(
     return s;
   }
   if (action.op === 'request-profile' && isProfile(action.value)) {
+    delete s.pendingUnit;
     s.pendingProfile = action.value;
     return s;
   }
   if (action.op === 'cancel-profile') {
     delete s.pendingProfile;
+    delete s.pendingUnit;
     s.view = s.unit ? 'task' : 'menu';
     return s;
   }
   if (action.op === 'confirm-profile' && s.pendingProfile) {
     s.profile = s.pendingProfile;
+    if (s.pendingUnit) s.unit = s.pendingUnit;
     delete s.pendingProfile;
+    delete s.pendingUnit;
     s.view = s.unit ? 'task' : 'menu';
     ensure(s);
     return s;
@@ -247,15 +276,15 @@ export function reduceLearning(
     if (p.oral) {
       p.process = 'submitted';
       p.factual = 'ungraded';
-      p.submissions.push({
+      appendSubmission(p, {
         answers: { ...p.answers },
         factual: 'ungraded',
         support: p.exampleUsed
           ? 'example'
-          : p.standardScaffold
-            ? 'standard'
-            : p.help
-              ? 'help'
+          : p.help
+            ? 'help'
+            : p.standardScaffold
+              ? 'standard'
               : 'own',
       });
     } else checked(s);
@@ -397,14 +426,14 @@ export function restoreLearning(raw: unknown): LearningState | undefined {
               : 0,
         };
         if (Array.isArray(p.submissions))
-          for (const item of p.submissions.slice(-40)) {
+          for (const item of p.submissions) {
             if (!item || typeof item.answers !== 'object' || !item.answers)
               continue;
             const answer: Record<string, string> = {};
             for (const f of task.fields)
               if (typeof item.answers[f.id] === 'string')
                 answer[f.id] = item.answers[f.id].slice(0, 2000);
-            a.submissions.push({
+            appendSubmission(a, {
               answers: answer,
               factual: evaluate(task, answer).factual,
               support: ['example', 'standard', 'help', 'own'].includes(

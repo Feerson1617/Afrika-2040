@@ -1593,7 +1593,7 @@
         {
           "id": "population.base.explain",
           "conceptId": "population.balance",
-          "title": "Warum steigt die Zahl trotz mehr Fortzügen?",
+          "title": "Mehr Menschen ziehen weg als zu. Warum steigt die Zahl trotzdem?",
           "instruction": "Ein kurzer Satz oder Stichwörter reichen. Dein eigener Text wird nicht fachlich bewertet.",
           "material": "m1",
           "fields": [
@@ -1690,13 +1690,13 @@
         {
           "id": "population.source.explain",
           "conceptId": "population.source-limit",
-          "title": "Welche Ursache kann die Kurve allein nicht erklären?",
+          "title": "Beweist die Reihe, dass mehr Menschen zugezogen sind?",
           "instruction": "Ein kurzer Satz oder Stichwörter reichen. Dein eigener Text wird nicht fachlich bewertet.",
           "material": "m2",
           "fields": [
             {
               "id": "explanation",
-              "label": "Nutze Jahre und Werte. Nenne eine Grenze.",
+              "label": "Eine Behauptung: „Ghanas Bevölkerung ist gewachsen. Deshalb sind mehr Menschen zugezogen.“ Prüfe sie mit der Reihe. Begründe kurz.",
               "kind": "text",
               "example": "Zwischen 2000 und 2024 steigt die geschätzte Zahl von etwa 19,6 auf 34,4 Millionen. Die Reihe allein zeigt nicht, wie Geburten, Sterbefälle oder Umzüge beigetragen haben.",
               "explanation": "Historische Gesamtzahlen sind keine getrennten Ursachen."
@@ -2078,7 +2078,7 @@
         {
           "id": "kenia.limit",
           "conceptId": "accessibility.personal-journey",
-          "title": "Wem hilft Nord weniger?",
+          "title": "Wer braucht über Nord mehr Zeit?",
           "instruction": "Nutze die Angaben und wähle selbst.",
           "material": "kenia",
           "fields": [

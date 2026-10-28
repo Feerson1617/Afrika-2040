@@ -224,7 +224,7 @@ export const water: StudySpec = {
         ? '<p>Untersuche beide Maßnahmen.</p>'
         : `<p class="study-inline-ledger">Start 80 WE · Entnahme ${m.withdrawal} WE · Am Feld 40 WE</p><fieldset><legend>Wie viel bleibt im Tank?</legend>${answerOrder(
             [m.remaining, 40, m.withdrawal],
-            d.selection === 'repair' ? 1 : 2,
+            d.selection === 'repair' ? 0 : 2,
           )
             .map((v) => choice(h, d, d.selection, String(v), v + ' WE'))
             .join('')}</fieldset>`
