@@ -1,3 +1,4 @@
+import { restoreLearning } from './learning/storage.ts';
 import { restoreInquiry } from './inquiry/state.ts';
 import { restoreGeography } from './geography/state.ts';
 import { settleEarlyExplanation } from './feedback.ts';
@@ -60,6 +61,7 @@ export function readSession(storage?: Store): State {
     if (
       !s ||
       !oneOf(s.screen, [
+        'learning',
         'inquiry',
         'review',
         'start',
@@ -299,6 +301,12 @@ export function readSession(storage?: Store): State {
       else delete s.inquiry;
     }
     if (s.screen === 'inquiry' && !s.inquiry) s.screen = 'start';
+    if (s.learning !== undefined) {
+      const learning = restoreLearning(s.learning);
+      if (learning) s.learning = learning;
+      else delete s.learning;
+    }
+    if (s.screen === 'learning' && !s.learning) s.screen = 'start';
     restoreStudies(s as State, progress);
     restoreGeography(s as State, progress);
     return normalizeView(s as State);

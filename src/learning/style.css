@@ -1,0 +1,57 @@
+.learning-screen {
+  max-width: 1200px;
+}
+.learning-screen button {
+  min-height: 44px;
+  margin: 4px;
+  max-width: 100%;
+}
+.learning-screen table {
+  width: 100%;
+  table-layout: auto;
+}
+.learning-screen th,
+.learning-screen td {
+  overflow-wrap: anywhere;
+}
+.learning-scaffold,
+.learning-criteria {
+  padding: 16px;
+  border: 1px solid #7d9682;
+  background: #eef1e7;
+  border-radius: 12px;
+  margin-block: 12px;
+}
+.learning-screen .study-scene {
+  width: 100%;
+  height: auto;
+}
+.learning-screen .study-scene [role='button']:focus {
+  outline: 3px solid #ae461e;
+  outline-offset: -4px;
+}
+.learning-screen article {
+  border-block-start: 1px solid #ced6c9;
+  padding-block: 12px;
+}
+.learning-screen .own-answer {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+.learning-screen textarea {
+  width: 100%;
+}
+.learning-screen .feedback h3 {
+  font-size: 18px;
+}
+.learning-screen footer {
+  margin-top: 24px;
+}
+@media (max-width: 760px) {
+  .learning-screen .inquiry-work {
+    grid-template-columns: 1fr;
+  }
+  .learning-screen {
+    padding-inline: 16px;
+  }
+}

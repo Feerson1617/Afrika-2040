@@ -1,0 +1,14 @@
+{
+  "basis": "a3be815e5557188d5769f3fc70f25a3bdf8de5d6",
+  "all_six_uploaded_files_accessible": true,
+  "separate_01_and_06_missing": true,
+  "01_and_06_read_from_supplied_html": true,
+  "files": {
+    "02_Vier_Niveaus_Matrix.md": "0be4f9f861e5855635c616c84224371e06669453c4ad545397826478a5a17f53",
+    "03_Mustersequenzen.md": "4f10d70d387504a20f21e7185e0ce837d282262779a8a1ac0750f1e74de3d3ce",
+    "04_Pruefmatrix_und_Architektur.md": "09a05bdf2d5d7df912bc2f2addf3329154a85d0a5f00936bd0b8746db00fc0c5",
+    "05_Codex_Entwicklungsauftrag.txt": "f59c3944ed17bbf286edf470723f9895b67e2709f13eac5547ae40328f9bfc72",
+    "07_Verbindliche_Ergaenzung.txt": "f63379a2fb2e05cb43f2424c12031616d71e598b6a63dfeea7353bd69c69920b"
+  },
+  "html_sha256": "875a1facc4aa340eaedbe6a882b21cd94011aaaa2abee14affd9744da8b3235f"
+}

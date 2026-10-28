@@ -1,2 +1,2 @@
 export const resetNotice =
-  'Alle Antworten in diesem Tab löschen? Dazu gehören alle Themen, Episoden und dein Lernjournal.';
+  'Alle Antworten in diesem Tab löschen? Dazu gehören alle Lernwege, Themen, Episoden und dein Lernjournal.';

@@ -1,4 +1,9 @@
 import {
+  reduceLearning,
+  type LearningState,
+  type LearningAction,
+} from './learning/storage.ts';
+import {
   reduceInquiry,
   type Inquiry,
   type InquiryAction,
@@ -53,9 +58,11 @@ import {
   evaluateEventEffects,
 } from './feedback.ts';
 export interface State {
+  learning?: LearningState;
   inquiry?: Inquiry;
   geography?: Geography;
   screen:
+    | 'learning'
     | 'inquiry'
     | 'review'
     | 'start'
@@ -136,6 +143,7 @@ export type DemandAction =
   | { type: 'demand-disadvantage'; value: DemandDecision['disadvantage'] }
   | { type: 'demand-text'; value: string };
 export type Action =
+  | LearningAction
   | InquiryAction
   | GeoAction
   | StudyAction
@@ -177,6 +185,13 @@ export type Action =
   | { type: 'check' | 'use-example'; persisted: boolean };
 export function reduce(current: State, action: Action): State {
   if (action.type === 'restart') return initialState();
+  if (action.type === 'learning')
+    return {
+      ...current,
+      screen: action.op === 'home' ? 'start' : 'learning',
+      learning: reduceLearning(current.learning, action),
+    };
+  if (current.screen === 'learning') current = { ...current, screen: 'start' };
   if (action.type === 'inquiry')
     return {
       ...current,

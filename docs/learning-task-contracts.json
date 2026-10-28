@@ -1,0 +1,2909 @@
+{
+  "phase": "Paket A / Gate 1",
+  "areaIdIsNotTaskId": true,
+  "variants": [
+    {
+      "areaId": "o.foerder.v1",
+      "unit": "o",
+      "profileId": "foerder",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "o.esa.v1",
+      "unit": "o",
+      "profileId": "esa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "o.msa.v1",
+      "unit": "o",
+      "profileId": "msa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "o.ahr.v1",
+      "unit": "o",
+      "profileId": "ahr",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "a.foerder.v1",
+      "unit": "a",
+      "profileId": "foerder",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "a.esa.v1",
+      "unit": "a",
+      "profileId": "esa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "a.msa.v1",
+      "unit": "a",
+      "profileId": "msa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "a.ahr.v1",
+      "unit": "a",
+      "profileId": "ahr",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "n.foerder.v1",
+      "unit": "n",
+      "profileId": "foerder",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "n.esa.v1",
+      "unit": "n",
+      "profileId": "esa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "n.msa.v1",
+      "unit": "n",
+      "profileId": "msa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "n.ahr.v1",
+      "unit": "n",
+      "profileId": "ahr",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "c.foerder.v1",
+      "unit": "c",
+      "profileId": "foerder",
+      "status": "implemented",
+      "tasks": [
+        {
+          "id": "population.event.birth",
+          "conceptId": "population.balance",
+          "title": "Ein Baby wird geboren. Wird die Zahl größer oder kleiner?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "direction",
+              "label": "Die Zahl wird …",
+              "kind": "choice",
+              "expected": "more",
+              "options": [
+                ["less", "weniger"],
+                ["more", "mehr"]
+              ],
+              "explanation": "Ein Baby wird geboren. Die Zahl wird größer."
+            }
+          ],
+          "hints": [
+            "Betrachte nur dieses Ereignis im Ort.",
+            "Ein neuer Mensch kommt im Ort zur Welt. Es geht nicht um einen Umzug.",
+            "Ein Baby wird geboren. Die Zahl wird größer."
+          ],
+          "criteria": ["Ein Baby wird geboren. Die Zahl wird größer."],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.event.birth",
+            "variantId": "c.foerder.v1:population.event.birth",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.event.death",
+          "conceptId": "population.balance",
+          "title": "Ein Mensch stirbt. Wird die Zahl größer oder kleiner?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "direction",
+              "label": "Die Zahl wird …",
+              "kind": "choice",
+              "expected": "less",
+              "options": [
+                ["less", "weniger"],
+                ["more", "mehr"]
+              ],
+              "explanation": "Ein Mensch stirbt. Die Zahl wird kleiner."
+            }
+          ],
+          "hints": [
+            "Betrachte nur dieses Ereignis im Ort.",
+            "Ein Mensch lebt nicht mehr. Es geht nicht um einen Umzug in einen anderen Ort.",
+            "Ein Mensch stirbt. Die Zahl wird kleiner."
+          ],
+          "criteria": ["Ein Mensch stirbt. Die Zahl wird kleiner."],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.event.death",
+            "variantId": "c.foerder.v1:population.event.death",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.event.arrival",
+          "conceptId": "population.balance",
+          "title": "Ein Mensch zieht in den Ort. Wird die Zahl größer oder kleiner?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "direction",
+              "label": "Die Zahl wird …",
+              "kind": "choice",
+              "expected": "more",
+              "options": [
+                ["less", "weniger"],
+                ["more", "mehr"]
+              ],
+              "explanation": "Ein Mensch zieht in den Ort. Die Zahl wird größer."
+            }
+          ],
+          "hints": [
+            "Betrachte nur dieses Ereignis im Ort.",
+            "Folge dem Pfeil: Eine Person kommt von außerhalb über die Grenze in den Ort.",
+            "Ein Mensch zieht in den Ort. Die Zahl wird größer."
+          ],
+          "criteria": ["Ein Mensch zieht in den Ort. Die Zahl wird größer."],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.event.arrival",
+            "variantId": "c.foerder.v1:population.event.arrival",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.event.departure",
+          "conceptId": "population.balance",
+          "title": "Ein Mensch zieht aus dem Ort weg. Wird die Zahl größer oder kleiner?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "direction",
+              "label": "Die Zahl wird …",
+              "kind": "choice",
+              "expected": "less",
+              "options": [
+                ["less", "weniger"],
+                ["more", "mehr"]
+              ],
+              "explanation": "Ein Mensch zieht aus dem Ort weg. Die Zahl wird kleiner."
+            }
+          ],
+          "hints": [
+            "Betrachte nur dieses Ereignis im Ort.",
+            "Folge dem Pfeil: Eine Person verlässt den Ort und wohnt danach außerhalb.",
+            "Ein Mensch zieht aus dem Ort weg. Die Zahl wird kleiner."
+          ],
+          "criteria": [
+            "Ein Mensch zieht aus dem Ort weg. Die Zahl wird kleiner."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.event.departure",
+            "variantId": "c.foerder.v1:population.event.departure",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.base.natural-direction",
+          "conceptId": "population.balance",
+          "title": "Geburten und Sterbefälle: Werden es mehr oder weniger?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "direction",
+              "label": "Durch diese beiden Größen werden es …",
+              "kind": "choice",
+              "expected": "more",
+              "options": [
+                ["less", "weniger"],
+                ["more", "mehr"]
+              ],
+              "explanation": "Mehr Geburten als Sterbefälle: 30 mehr."
+            }
+          ],
+          "hints": [
+            "Vergleiche die Zahl der Geburten mit der Zahl der Sterbefälle.",
+            "Markiere 48 Geburten und 18 Sterbefälle. Bei einer Rechnung ziehst du die Sterbefälle von den Geburten ab.",
+            "Mehr Geburten als Sterbefälle: 30 mehr."
+          ],
+          "criteria": ["Mehr Geburten als Sterbefälle: 30 mehr."],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.base.natural-direction",
+            "variantId": "c.foerder.v1:population.base.natural-direction",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.base.migration-direction",
+          "conceptId": "population.balance",
+          "title": "Zuzug und Fortzug: Werden es mehr oder weniger?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "direction",
+              "label": "Durch Umzüge werden es …",
+              "kind": "choice",
+              "expected": "less",
+              "options": [
+                ["more", "mehr"],
+                ["less", "weniger"]
+              ],
+              "explanation": "10 mehr ziehen weg als zu."
+            }
+          ],
+          "hints": [
+            "Vergleiche Zuzug mit Fortzug.",
+            "Markiere 30 Zuzüge und 40 Fortzüge. Rechne Zuzug minus Fortzug. Gehen mehr weg, ist der Saldo negativ.",
+            "10 mehr ziehen weg als zu."
+          ],
+          "criteria": ["10 mehr ziehen weg als zu."],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.base.migration-direction",
+            "variantId": "c.foerder.v1:population.base.migration-direction",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.base.total-direction",
+          "conceptId": "population.balance",
+          "title": "Bleiben insgesamt mehr Menschen als am Anfang?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "direction",
+              "label": "Insgesamt werden es …",
+              "kind": "choice",
+              "expected": "more",
+              "options": [
+                ["less", "weniger"],
+                ["more", "mehr"]
+              ],
+              "explanation": "30 mehr und 10 weniger: 20 mehr. Ende: 1020 Personen."
+            }
+          ],
+          "hints": [
+            "Vergleiche die beiden Änderungen.",
+            "Nutze beide Teilwirkungen: 30 und (-10). Die Anfangszahl 1000 gehört erst zum Endbestand. Setze kein zweites Minus vor einen schon negativen Saldo.",
+            "30 mehr und 10 weniger: 20 mehr. Ende: 1020 Personen."
+          ],
+          "criteria": ["30 mehr und 10 weniger: 20 mehr. Ende: 1020 Personen."],
+          "explained": "Erklärte Rechnung: 30 mehr durch Geburten und Sterbefälle, 10 weniger durch Umzüge. Diese Werte sind vorgegeben, nicht von dir gerechnet.",
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.base.total-direction",
+            "variantId": "c.foerder.v1:population.base.total-direction",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.source.read.larger",
+          "conceptId": "population.source-limit",
+          "title": "In welchem Jahr ist der Wert größer?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m2",
+          "fields": [
+            {
+              "id": "larger",
+              "label": "In welchem Jahr ist der Wert größer?",
+              "kind": "choice",
+              "expected": "2024",
+              "options": [
+                ["2000", "2000"],
+                ["2024", "2024"]
+              ],
+              "explanation": "2024: etwa 34,4 Millionen; 2000: etwa 19,6 Millionen."
+            }
+          ],
+          "hints": [
+            "Lies jeweils Jahr und Wert zusammen. Schätzung heißt: aus vorhandenen Daten berechnet.",
+            "Lies Jahr und Wert zusammen: 2000 und 2024. Die Quelle nennt historische Schätzungen. Die Gesamtlinie trennt Geburten, Sterbefälle und Umzüge nicht auf.",
+            "2024: etwa 34,4 Millionen; 2000: etwa 19,6 Millionen. Historische Schätzungen sind keine Zukunftsprognosen."
+          ],
+          "criteria": [
+            "2024: etwa 34,4 Millionen; 2000: etwa 19,6 Millionen.",
+            "Historische Schätzungen sind keine Zukunftsprognosen."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.source-limit",
+            "taskId": "population.source.read.larger",
+            "variantId": "c.foerder.v1:population.source.read.larger",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m2.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.source.read.status",
+          "conceptId": "population.source-limit",
+          "title": "Was sind diese Angaben?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m2",
+          "fields": [
+            {
+              "id": "status",
+              "label": "Was sind diese Angaben?",
+              "kind": "choice",
+              "expected": "estimate",
+              "options": [
+                ["future", "Sichere Zahlen für 2040"],
+                ["estimate", "Schätzungen für vergangene Jahre"]
+              ],
+              "explanation": "Historische Schätzungen sind keine Zukunftsprognosen."
+            }
+          ],
+          "hints": [
+            "Lies jeweils Jahr und Wert zusammen. Schätzung heißt: aus vorhandenen Daten berechnet.",
+            "Lies Jahr und Wert zusammen: 2000 und 2024. Die Quelle nennt historische Schätzungen. Die Gesamtlinie trennt Geburten, Sterbefälle und Umzüge nicht auf.",
+            "2024: etwa 34,4 Millionen; 2000: etwa 19,6 Millionen. Historische Schätzungen sind keine Zukunftsprognosen."
+          ],
+          "criteria": [
+            "2024: etwa 34,4 Millionen; 2000: etwa 19,6 Millionen.",
+            "Historische Schätzungen sind keine Zukunftsprognosen."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.source-limit",
+            "taskId": "population.source.read.status",
+            "variantId": "c.foerder.v1:population.source.read.status",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m2.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.condition.places",
+          "conceptId": "population.conditional-effects",
+          "title": "Mehr Kinder: Was kann beim Lernen helfen?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m4",
+          "fields": [
+            {
+              "id": "help",
+              "label": "Wähle.",
+              "kind": "choice",
+              "expected": "places",
+              "options": [
+                ["none", "Keine zusätzlichen nutzbaren Plätze"],
+                ["places", "Zusätzliche nutzbare Schulplätze"]
+              ],
+              "explanation": "Zusätzliche Schulplätze können helfen, wenn sie nutzbar sind."
+            }
+          ],
+          "hints": [
+            "Was brauchen die Kinder, um in der Schule zu lernen?",
+            "Verbinde eine Bedingung mit einer möglichen Folge: etwa nutzbare Schulplätze mit Lehrkräften oder Ausbildung mit passenden Arbeitsplätzen. Eine Bedingung allein ist keine Erfolgsgarantie.",
+            "Zusätzliche Schulplätze können helfen, wenn sie nutzbar sind."
+          ],
+          "criteria": [
+            "Zusätzliche Schulplätze können helfen, wenn sie nutzbar sind."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.conditional-effects",
+            "taskId": "population.condition.places",
+            "variantId": "c.foerder.v1:population.condition.places",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m4.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.condition.teachers",
+          "conceptId": "population.conditional-effects",
+          "title": "Was braucht die Schule außerdem?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m4",
+          "fields": [
+            {
+              "id": "condition",
+              "label": "Wähle eine passende Bedingung.",
+              "kind": "choice",
+              "expected": "teachers",
+              "options": [
+                ["teachers", "Lehrkräfte"],
+                ["nothing", "Nur das Gebäude; sonst nichts"]
+              ],
+              "explanation": "Ein Gebäude allein reicht nicht. Es braucht auch Lehrkräfte."
+            }
+          ],
+          "hints": [
+            "Wer unterstützt die Kinder beim Lernen?",
+            "Verbinde eine Bedingung mit einer möglichen Folge: etwa nutzbare Schulplätze mit Lehrkräften oder Ausbildung mit passenden Arbeitsplätzen. Eine Bedingung allein ist keine Erfolgsgarantie.",
+            "Ein Gebäude allein reicht nicht. Es braucht auch Lehrkräfte."
+          ],
+          "criteria": [
+            "Ein Gebäude allein reicht nicht. Es braucht auch Lehrkräfte."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.conditional-effects",
+            "taskId": "population.condition.teachers",
+            "variantId": "c.foerder.v1:population.condition.teachers",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m4.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.transfer.natural-direction",
+          "conceptId": "population.balance",
+          "title": "Geburten und Sterbefälle: Werden es mehr oder weniger?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m3",
+          "fields": [
+            {
+              "id": "direction",
+              "label": "Durch diese beiden Größen werden es …",
+              "kind": "choice",
+              "expected": "more",
+              "options": [
+                ["less", "weniger"],
+                ["more", "mehr"]
+              ],
+              "explanation": "Mehr Geburten als Sterbefälle: 16 mehr."
+            }
+          ],
+          "hints": [
+            "Vergleiche die Zahl der Geburten mit der Zahl der Sterbefälle.",
+            "Markiere 28 Geburten und 12 Sterbefälle. Bei einer Rechnung ziehst du die Sterbefälle von den Geburten ab.",
+            "Mehr Geburten als Sterbefälle: 16 mehr."
+          ],
+          "criteria": ["Mehr Geburten als Sterbefälle: 16 mehr."],
+          "transfer": true,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.transfer.natural-direction",
+            "variantId": "c.foerder.v1:population.transfer.natural-direction",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m3.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.transfer.migration-direction",
+          "conceptId": "population.balance",
+          "title": "Zuzug und Fortzug: Werden es mehr oder weniger?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m3",
+          "fields": [
+            {
+              "id": "direction",
+              "label": "Durch Umzüge werden es …",
+              "kind": "choice",
+              "expected": "less",
+              "options": [
+                ["more", "mehr"],
+                ["less", "weniger"]
+              ],
+              "explanation": "12 mehr ziehen weg als zu."
+            }
+          ],
+          "hints": [
+            "Vergleiche Zuzug mit Fortzug.",
+            "Markiere 5 Zuzüge und 17 Fortzüge. Rechne Zuzug minus Fortzug. Gehen mehr weg, ist der Saldo negativ.",
+            "12 mehr ziehen weg als zu."
+          ],
+          "criteria": ["12 mehr ziehen weg als zu."],
+          "transfer": true,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.transfer.migration-direction",
+            "variantId": "c.foerder.v1:population.transfer.migration-direction",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m3.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.transfer.total-direction",
+          "conceptId": "population.balance",
+          "title": "Bleiben insgesamt mehr Menschen als am Anfang?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m3",
+          "fields": [
+            {
+              "id": "direction",
+              "label": "Insgesamt werden es …",
+              "kind": "choice",
+              "expected": "more",
+              "options": [
+                ["less", "weniger"],
+                ["more", "mehr"]
+              ],
+              "explanation": "16 mehr und 12 weniger: 4 mehr. Ende: 804 Personen."
+            }
+          ],
+          "hints": [
+            "Vergleiche die beiden Änderungen.",
+            "Nutze beide Teilwirkungen: 16 und (-12). Die Anfangszahl 800 gehört erst zum Endbestand. Setze kein zweites Minus vor einen schon negativen Saldo.",
+            "16 mehr und 12 weniger: 4 mehr. Ende: 804 Personen."
+          ],
+          "criteria": ["16 mehr und 12 weniger: 4 mehr. Ende: 804 Personen."],
+          "explained": "Erklärte Rechnung: 16 mehr durch Geburten und Sterbefälle, 12 weniger durch Umzüge. Diese Werte sind vorgegeben, nicht von dir gerechnet.",
+          "transfer": true,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.transfer.total-direction",
+            "variantId": "c.foerder.v1:population.transfer.total-direction",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m3.a3be815.v1"
+          }
+        }
+      ]
+    },
+    {
+      "areaId": "c.esa.v1",
+      "unit": "c",
+      "profileId": "esa",
+      "status": "implemented",
+      "tasks": [
+        {
+          "id": "population.event.birth",
+          "conceptId": "population.balance",
+          "title": "Ein Baby wird geboren. Welches Ereignis ist das?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "event",
+              "label": "Ordne zu.",
+              "kind": "choice",
+              "expected": "birth",
+              "options": [
+                ["arrival", "Zuzug"],
+                ["death", "Sterbefall"],
+                ["birth", "Geburt"],
+                ["departure", "Fortzug"]
+              ],
+              "explanation": "Das ist eine Geburt."
+            }
+          ],
+          "hints": [
+            "Geburt und Sterbefall sind etwas anderes als Umziehen.",
+            "Ein neuer Mensch kommt im Ort zur Welt. Es geht nicht um einen Umzug.",
+            "Das ist eine Geburt."
+          ],
+          "criteria": ["Das ist eine Geburt."],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.event.birth",
+            "variantId": "c.esa.v1:population.event.birth",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.event.death",
+          "conceptId": "population.balance",
+          "title": "Ein Mensch stirbt. Welches Ereignis ist das?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "event",
+              "label": "Ordne zu.",
+              "kind": "choice",
+              "expected": "death",
+              "options": [
+                ["arrival", "Zuzug"],
+                ["death", "Sterbefall"],
+                ["birth", "Geburt"],
+                ["departure", "Fortzug"]
+              ],
+              "explanation": "Das ist ein Sterbefall."
+            }
+          ],
+          "hints": [
+            "Geburt und Sterbefall sind etwas anderes als Umziehen.",
+            "Ein Mensch lebt nicht mehr. Es geht nicht um einen Umzug in einen anderen Ort.",
+            "Das ist ein Sterbefall."
+          ],
+          "criteria": ["Das ist ein Sterbefall."],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.event.death",
+            "variantId": "c.esa.v1:population.event.death",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.event.arrival",
+          "conceptId": "population.balance",
+          "title": "Ein Mensch zieht in den Ort. Welches Ereignis ist das?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "event",
+              "label": "Ordne zu.",
+              "kind": "choice",
+              "expected": "arrival",
+              "options": [
+                ["arrival", "Zuzug"],
+                ["death", "Sterbefall"],
+                ["birth", "Geburt"],
+                ["departure", "Fortzug"]
+              ],
+              "explanation": "Das ist Zuzug."
+            }
+          ],
+          "hints": [
+            "Geburt und Sterbefall sind etwas anderes als Umziehen.",
+            "Folge dem Pfeil: Eine Person kommt von außerhalb über die Grenze in den Ort.",
+            "Das ist Zuzug."
+          ],
+          "criteria": ["Das ist Zuzug."],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.event.arrival",
+            "variantId": "c.esa.v1:population.event.arrival",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.event.departure",
+          "conceptId": "population.balance",
+          "title": "Ein Mensch zieht aus dem Ort weg. Welches Ereignis ist das?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "event",
+              "label": "Ordne zu.",
+              "kind": "choice",
+              "expected": "departure",
+              "options": [
+                ["arrival", "Zuzug"],
+                ["death", "Sterbefall"],
+                ["birth", "Geburt"],
+                ["departure", "Fortzug"]
+              ],
+              "explanation": "Das ist Fortzug."
+            }
+          ],
+          "hints": [
+            "Geburt und Sterbefall sind etwas anderes als Umziehen.",
+            "Folge dem Pfeil: Eine Person verlässt den Ort und wohnt danach außerhalb.",
+            "Das ist Fortzug."
+          ],
+          "criteria": ["Das ist Fortzug."],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.event.departure",
+            "variantId": "c.esa.v1:population.event.departure",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.base.natural",
+          "conceptId": "population.balance",
+          "title": "Eine Teilrechnung nach der anderen",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "natural",
+              "label": "48 − 18 =",
+              "kind": "integer",
+              "expected": "30",
+              "explanation": "48 − 18 = 30."
+            }
+          ],
+          "hints": [
+            "48 − 18  = …",
+            "Markiere 48 Geburten und 18 Sterbefälle. Bei einer Rechnung ziehst du die Sterbefälle von den Geburten ab.",
+            "48 − 18 = 30."
+          ],
+          "criteria": ["48 − 18 = 30."],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.base.natural",
+            "variantId": "c.esa.v1:population.base.natural",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.base.migration",
+          "conceptId": "population.balance",
+          "title": "Eine Teilrechnung nach der anderen",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "migration",
+              "label": "30 − 40 =",
+              "kind": "integer",
+              "expected": "-10",
+              "explanation": "30 − 40 = -10."
+            }
+          ],
+          "hints": [
+            "30 − 40  = …",
+            "Markiere 30 Zuzüge und 40 Fortzüge. Rechne Zuzug minus Fortzug. Gehen mehr weg, ist der Saldo negativ.",
+            "30 − 40 = -10."
+          ],
+          "criteria": ["30 − 40 = -10."],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.base.migration",
+            "variantId": "c.esa.v1:population.base.migration",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.base.end",
+          "conceptId": "population.balance",
+          "title": "Eine Teilrechnung nach der anderen",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "end",
+              "label": "1000 + (natürliche Veränderung) + (Wanderungssaldo) =",
+              "kind": "integer",
+              "expected": "1020",
+              "explanation": "1000 + (30) + (-10) = 1020. Die Änderung allein ist noch nicht der Endbestand."
+            }
+          ],
+          "hints": [
+            "1000 + (30) + (-10)  = …",
+            "Nutze beide Teilwirkungen: 30 und (-10). Die Anfangszahl 1000 gehört erst zum Endbestand. Setze kein zweites Minus vor einen schon negativen Saldo.",
+            "1000 + (30) + (-10) = 1020. Die Änderung allein ist noch nicht der Endbestand."
+          ],
+          "criteria": [
+            "1000 + (30) + (-10) = 1020. Die Änderung allein ist noch nicht der Endbestand."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.base.end",
+            "variantId": "c.esa.v1:population.base.end",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.base.reason",
+          "conceptId": "population.balance",
+          "title": "Warum gibt es am Ende mehr Menschen?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "reason",
+              "label": "Wähle die passende Erklärung.",
+              "kind": "choice",
+              "expected": "balance",
+              "options": [
+                ["away", "Wegziehen vergrößert die Zahl."],
+                [
+                  "balance",
+                  "Die natürliche Zunahme ist größer als die Abnahme durch Umzüge."
+                ]
+              ],
+              "explanation": "Die natürliche Zunahme +30 übersteigt den Wanderungsverlust 10."
+            }
+          ],
+          "hints": [
+            "Vergleiche +30 und −10.",
+            "Nutze beide Teilwirkungen: 30 und (-10). Die Anfangszahl 1000 gehört erst zum Endbestand. Setze kein zweites Minus vor einen schon negativen Saldo.",
+            "Die natürliche Zunahme +30 übersteigt den Wanderungsverlust 10."
+          ],
+          "criteria": [
+            "Die natürliche Zunahme +30 übersteigt den Wanderungsverlust 10."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.base.reason",
+            "variantId": "c.esa.v1:population.base.reason",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.source.read",
+          "conceptId": "population.source-limit",
+          "title": "Lies Jahre, Werte und Datenstatus.",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m2",
+          "fields": [
+            {
+              "id": "year2000",
+              "label": "Wie viele Menschen im Jahr 2000?",
+              "kind": "choice",
+              "expected": "19637087",
+              "options": [
+                ["34427414", "etwa 34,4 Millionen"],
+                ["19637087", "etwa 19,6 Millionen"]
+              ],
+              "explanation": "2000: 19.637.087 Menschen."
+            },
+            {
+              "id": "year2024",
+              "label": "Wie viele Menschen im Jahr 2024?",
+              "kind": "choice",
+              "expected": "34427414",
+              "options": [
+                ["19637087", "etwa 19,6 Millionen"],
+                ["34427414", "etwa 34,4 Millionen"]
+              ],
+              "explanation": "2024: 34.427.414 Menschen."
+            },
+            {
+              "id": "status",
+              "label": "Was sind diese Angaben?",
+              "kind": "choice",
+              "expected": "estimate",
+              "options": [
+                ["future", "Sichere Zahlen für 2040"],
+                ["estimate", "Schätzungen für vergangene Jahre"]
+              ],
+              "explanation": "Historische Schätzungen sind keine Zukunftsprognosen."
+            }
+          ],
+          "hints": [
+            "Lies jeweils Jahr und Wert zusammen. Schätzung heißt: aus vorhandenen Daten berechnet.",
+            "Lies Jahr und Wert zusammen: 2000 und 2024. Die Quelle nennt historische Schätzungen. Die Gesamtlinie trennt Geburten, Sterbefälle und Umzüge nicht auf.",
+            "2000: 19.637.087 Menschen. 2024: 34.427.414 Menschen. Historische Schätzungen sind keine Zukunftsprognosen."
+          ],
+          "criteria": [
+            "2000: 19.637.087 Menschen.",
+            "2024: 34.427.414 Menschen.",
+            "Historische Schätzungen sind keine Zukunftsprognosen."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.source-limit",
+            "taskId": "population.source.read",
+            "variantId": "c.esa.v1:population.source.read",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m2.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.condition.links",
+          "conceptId": "population.conditional-effects",
+          "title": "Verbinde Möglichkeiten und Bedingungen.",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m4",
+          "fields": [
+            {
+              "id": "chance",
+              "label": "Ausbildung kann später Erwerbsmöglichkeiten eröffnen, wenn …",
+              "kind": "choice",
+              "expected": "jobs",
+              "options": [
+                ["automatic", "dadurch sofort alle Arbeit haben."],
+                ["jobs", "auch passende Arbeitsplätze entstehen."]
+              ],
+              "explanation": "Ausbildung kann helfen, garantiert aber keine Beschäftigung."
+            },
+            {
+              "id": "risk",
+              "label": "Mehr Kinder ohne zusätzliche Plätze und Lehrkräfte …",
+              "kind": "choice",
+              "expected": "pressure",
+              "options": [
+                ["pressure", "können die Versorgung schwieriger machen."],
+                ["always", "machen jeden Ort sofort ärmer."]
+              ],
+              "explanation": "Schulplätze und Lehrkräfte sind eine Bedingung; keine pauschale Armutsbehauptung."
+            }
+          ],
+          "hints": [
+            "Achte darauf, unter welcher Bedingung eine Folge möglich ist.",
+            "Verbinde eine Bedingung mit einer möglichen Folge: etwa nutzbare Schulplätze mit Lehrkräften oder Ausbildung mit passenden Arbeitsplätzen. Eine Bedingung allein ist keine Erfolgsgarantie.",
+            "Ausbildung kann helfen, garantiert aber keine Beschäftigung. Schulplätze und Lehrkräfte sind eine Bedingung; keine pauschale Armutsbehauptung."
+          ],
+          "criteria": [
+            "Ausbildung kann helfen, garantiert aber keine Beschäftigung.",
+            "Schulplätze und Lehrkräfte sind eine Bedingung; keine pauschale Armutsbehauptung."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.conditional-effects",
+            "taskId": "population.condition.links",
+            "variantId": "c.esa.v1:population.condition.links",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m4.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.transfer.natural",
+          "conceptId": "population.balance",
+          "title": "Eine Teilrechnung nach der anderen",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "m3",
+          "fields": [
+            {
+              "id": "natural",
+              "label": "28 − 12 =",
+              "kind": "integer",
+              "expected": "16",
+              "explanation": "28 − 12 = 16."
+            }
+          ],
+          "hints": [
+            "28 − 12  = …",
+            "Markiere 28 Geburten und 12 Sterbefälle. Bei einer Rechnung ziehst du die Sterbefälle von den Geburten ab.",
+            "28 − 12 = 16."
+          ],
+          "criteria": ["28 − 12 = 16."],
+          "transfer": true,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.transfer.natural",
+            "variantId": "c.esa.v1:population.transfer.natural",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m3.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.transfer.migration",
+          "conceptId": "population.balance",
+          "title": "Eine Teilrechnung nach der anderen",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "m3",
+          "fields": [
+            {
+              "id": "migration",
+              "label": "5 − 17 =",
+              "kind": "integer",
+              "expected": "-12",
+              "explanation": "5 − 17 = -12."
+            }
+          ],
+          "hints": [
+            "5 − 17  = …",
+            "Markiere 5 Zuzüge und 17 Fortzüge. Rechne Zuzug minus Fortzug. Gehen mehr weg, ist der Saldo negativ.",
+            "5 − 17 = -12."
+          ],
+          "criteria": ["5 − 17 = -12."],
+          "transfer": true,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.transfer.migration",
+            "variantId": "c.esa.v1:population.transfer.migration",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m3.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.transfer.end",
+          "conceptId": "population.balance",
+          "title": "Eine Teilrechnung nach der anderen",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "m3",
+          "fields": [
+            {
+              "id": "end",
+              "label": "800 + (natürliche Veränderung) + (Wanderungssaldo) =",
+              "kind": "integer",
+              "expected": "804",
+              "explanation": "800 + (16) + (-12) = 804. Die Änderung allein ist noch nicht der Endbestand."
+            }
+          ],
+          "hints": [
+            "800 + (16) + (-12)  = …",
+            "Nutze beide Teilwirkungen: 16 und (-12). Die Anfangszahl 800 gehört erst zum Endbestand. Setze kein zweites Minus vor einen schon negativen Saldo.",
+            "800 + (16) + (-12) = 804. Die Änderung allein ist noch nicht der Endbestand."
+          ],
+          "criteria": [
+            "800 + (16) + (-12) = 804. Die Änderung allein ist noch nicht der Endbestand."
+          ],
+          "transfer": true,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.transfer.end",
+            "variantId": "c.esa.v1:population.transfer.end",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m3.a3be815.v1"
+          }
+        }
+      ]
+    },
+    {
+      "areaId": "c.msa.v1",
+      "unit": "c",
+      "profileId": "msa",
+      "status": "implemented",
+      "tasks": [
+        {
+          "id": "population.operations",
+          "conceptId": "population.balance",
+          "title": "Welche Zahlen und Operationen gehören zusammen?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "natural",
+              "label": "Natürliche Veränderung",
+              "kind": "choice",
+              "expected": "birth-death",
+              "options": [
+                ["sum", "48 + 18"],
+                ["birth-death", "48 − 18"],
+                ["moves", "30 − 40"]
+              ],
+              "explanation": "Geburten minus Sterbefälle: 48 − 18."
+            },
+            {
+              "id": "migration",
+              "label": "Wanderungssaldo",
+              "kind": "choice",
+              "expected": "arrival-departure",
+              "options": [
+                ["arrival-departure", "30 − 40"],
+                ["reverse", "40 − 30"],
+                ["births", "48 − 18"]
+              ],
+              "explanation": "Zuzug minus Fortzug: 30 − 40."
+            }
+          ],
+          "hints": [
+            "Welche Zahlen gehören zusammen?",
+            "Geburten und Sterbefälle bilden ein Paar; Zuzug und Fortzug das andere. Zähle nicht alle vier Größen zusammen.",
+            "Geburten minus Sterbefälle: 48 − 18. Zuzug minus Fortzug: 30 − 40."
+          ],
+          "criteria": [
+            "Geburten minus Sterbefälle: 48 − 18.",
+            "Zuzug minus Fortzug: 30 − 40."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.operations",
+            "variantId": "c.msa.v1:population.operations",
+            "profileId": "msa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.base.balance",
+          "conceptId": "population.balance",
+          "title": "Berechne die Teiländerungen und den Endbestand.",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "natural",
+              "label": "Natürliche Veränderung (Personen)",
+              "kind": "integer",
+              "expected": "30",
+              "explanation": "48 − 18 = 30."
+            },
+            {
+              "id": "migration",
+              "label": "Wanderungssaldo (Personen)",
+              "kind": "integer",
+              "expected": "-10",
+              "explanation": "30 − 40 = -10."
+            },
+            {
+              "id": "end",
+              "label": "Endbestand (Personen)",
+              "kind": "integer",
+              "expected": "1020",
+              "explanation": "1000 + (30) + (-10) = 1020. Die Änderung allein ist noch nicht der Endbestand."
+            }
+          ],
+          "hints": [
+            "Rechne natürliche Veränderung und Umzüge getrennt. Addiere beide Beiträge zur Anfangszahl.",
+            "Nutze beide Teilwirkungen: 30 und (-10). Die Anfangszahl 1000 gehört erst zum Endbestand. Setze kein zweites Minus vor einen schon negativen Saldo.",
+            "48 − 18 = 30. 30 − 40 = -10. 1000 + (30) + (-10) = 1020. Die Änderung allein ist noch nicht der Endbestand."
+          ],
+          "criteria": [
+            "48 − 18 = 30.",
+            "30 − 40 = -10.",
+            "1000 + (30) + (-10) = 1020. Die Änderung allein ist noch nicht der Endbestand."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.base.balance",
+            "variantId": "c.msa.v1:population.base.balance",
+            "profileId": "msa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.stock-change",
+          "conceptId": "population.balance",
+          "title": "Unterscheide Änderung und Bestand.",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "change",
+              "label": "Änderung (Personen)",
+              "kind": "integer",
+              "expected": "20",
+              "explanation": "+20 ist die Änderung."
+            },
+            {
+              "id": "stock",
+              "label": "Endbestand (Personen)",
+              "kind": "integer",
+              "expected": "1020",
+              "explanation": "1020 ist Anfang plus Änderung."
+            }
+          ],
+          "hints": [
+            "Was war schon am Anfang vorhanden?",
+            "Nutze beide Teilwirkungen: 30 und (-10). Die Anfangszahl 1000 gehört erst zum Endbestand. Setze kein zweites Minus vor einen schon negativen Saldo.",
+            "+20 ist die Änderung. 1020 ist Anfang plus Änderung."
+          ],
+          "criteria": [
+            "+20 ist die Änderung.",
+            "1020 ist Anfang plus Änderung."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.stock-change",
+            "variantId": "c.msa.v1:population.stock-change",
+            "profileId": "msa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.source.read",
+          "conceptId": "population.source-limit",
+          "title": "Lies Jahre, Werte und Datenstatus.",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m2",
+          "fields": [
+            {
+              "id": "year2000",
+              "label": "Wie viele Menschen im Jahr 2000?",
+              "kind": "choice",
+              "expected": "19637087",
+              "options": [
+                ["34427414", "etwa 34,4 Millionen"],
+                ["19637087", "etwa 19,6 Millionen"]
+              ],
+              "explanation": "2000: 19.637.087 Menschen."
+            },
+            {
+              "id": "year2024",
+              "label": "Wie viele Menschen im Jahr 2024?",
+              "kind": "choice",
+              "expected": "34427414",
+              "options": [
+                ["19637087", "etwa 19,6 Millionen"],
+                ["34427414", "etwa 34,4 Millionen"]
+              ],
+              "explanation": "2024: 34.427.414 Menschen."
+            },
+            {
+              "id": "status",
+              "label": "Was sind diese Angaben?",
+              "kind": "choice",
+              "expected": "estimate",
+              "options": [
+                ["future", "Sichere Zahlen für 2040"],
+                ["estimate", "Schätzungen für vergangene Jahre"]
+              ],
+              "explanation": "Historische Schätzungen sind keine Zukunftsprognosen."
+            },
+            {
+              "id": "limit",
+              "label": "Was zeigt die Reihe allein nicht?",
+              "kind": "choice",
+              "expected": "causes",
+              "options": [
+                [
+                  "causes",
+                  "Wie viel Geburten und Umzüge jeweils zur Änderung beitragen"
+                ],
+                [
+                  "trend",
+                  "Dass die geschätzte Zahl zwischen 2000 und 2024 steigt"
+                ]
+              ],
+              "explanation": "Die Reihe zeigt die Gesamtzahl, nicht ihre einzelnen Ursachen."
+            }
+          ],
+          "hints": [
+            "Lies jeweils Jahr und Wert zusammen. Schätzung heißt: aus vorhandenen Daten berechnet.",
+            "Lies Jahr und Wert zusammen: 2000 und 2024. Die Quelle nennt historische Schätzungen. Die Gesamtlinie trennt Geburten, Sterbefälle und Umzüge nicht auf.",
+            "2000: 19.637.087 Menschen. 2024: 34.427.414 Menschen. Historische Schätzungen sind keine Zukunftsprognosen. Die Reihe zeigt die Gesamtzahl, nicht ihre einzelnen Ursachen."
+          ],
+          "criteria": [
+            "2000: 19.637.087 Menschen.",
+            "2024: 34.427.414 Menschen.",
+            "Historische Schätzungen sind keine Zukunftsprognosen.",
+            "Die Reihe zeigt die Gesamtzahl, nicht ihre einzelnen Ursachen."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.source-limit",
+            "taskId": "population.source.read",
+            "variantId": "c.msa.v1:population.source.read",
+            "profileId": "msa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m2.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.condition.links",
+          "conceptId": "population.conditional-effects",
+          "title": "Verbinde Möglichkeiten und Bedingungen.",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m4",
+          "fields": [
+            {
+              "id": "chance",
+              "label": "Ausbildung kann später Erwerbsmöglichkeiten eröffnen, wenn …",
+              "kind": "choice",
+              "expected": "jobs",
+              "options": [
+                ["automatic", "dadurch sofort alle Arbeit haben."],
+                ["jobs", "auch passende Arbeitsplätze entstehen."]
+              ],
+              "explanation": "Ausbildung kann helfen, garantiert aber keine Beschäftigung."
+            },
+            {
+              "id": "risk",
+              "label": "Mehr Kinder ohne zusätzliche Plätze und Lehrkräfte …",
+              "kind": "choice",
+              "expected": "pressure",
+              "options": [
+                ["pressure", "können die Versorgung schwieriger machen."],
+                ["always", "machen jeden Ort sofort ärmer."]
+              ],
+              "explanation": "Schulplätze und Lehrkräfte sind eine Bedingung; keine pauschale Armutsbehauptung."
+            }
+          ],
+          "hints": [
+            "Achte darauf, unter welcher Bedingung eine Folge möglich ist.",
+            "Verbinde eine Bedingung mit einer möglichen Folge: etwa nutzbare Schulplätze mit Lehrkräften oder Ausbildung mit passenden Arbeitsplätzen. Eine Bedingung allein ist keine Erfolgsgarantie.",
+            "Ausbildung kann helfen, garantiert aber keine Beschäftigung. Schulplätze und Lehrkräfte sind eine Bedingung; keine pauschale Armutsbehauptung."
+          ],
+          "criteria": [
+            "Ausbildung kann helfen, garantiert aber keine Beschäftigung.",
+            "Schulplätze und Lehrkräfte sind eine Bedingung; keine pauschale Armutsbehauptung."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.conditional-effects",
+            "taskId": "population.condition.links",
+            "variantId": "c.msa.v1:population.condition.links",
+            "profileId": "msa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m4.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.condition.own",
+          "conceptId": "population.conditional-effects",
+          "title": "Erkläre eine Bedingung kurz selbst.",
+          "instruction": "Ein kurzer Satz oder Stichwörter reichen. Dein eigener Text wird nicht fachlich bewertet.",
+          "material": "m4",
+          "fields": [
+            {
+              "id": "explanation",
+              "label": "Wann können mehr junge Menschen eine Chance sein?",
+              "kind": "text",
+              "example": "Wenn Ausbildung und passende Arbeitsplätze entstehen, können sich später Erwerbsmöglichkeiten eröffnen.",
+              "explanation": "Eine Bedingung und eine mögliche Folge verbinden."
+            }
+          ],
+          "hints": [
+            "Welche Bedingung muss erfüllt sein?",
+            "Verbinde eine Bedingung mit einer möglichen Folge: etwa nutzbare Schulplätze mit Lehrkräften oder Ausbildung mit passenden Arbeitsplätzen. Eine Bedingung allein ist keine Erfolgsgarantie.",
+            "Wenn Ausbildung und passende Arbeitsplätze entstehen, können sich später Erwerbsmöglichkeiten eröffnen."
+          ],
+          "criteria": [
+            "Du nennst eine konkrete Bedingung, etwa Ausbildung und passende Arbeitsplätze.",
+            "Du erklärst eine mögliche Folge, keine Garantie und keine sofort erwachsenen Arbeitskräfte."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.conditional-effects",
+            "taskId": "population.condition.own",
+            "variantId": "c.msa.v1:population.condition.own",
+            "profileId": "msa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m4.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.transfer.balance",
+          "conceptId": "population.balance",
+          "title": "Berechne die Teiländerungen und den Endbestand.",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "m3",
+          "fields": [
+            {
+              "id": "natural",
+              "label": "Natürliche Veränderung (Personen)",
+              "kind": "integer",
+              "expected": "16",
+              "explanation": "28 − 12 = 16."
+            },
+            {
+              "id": "migration",
+              "label": "Wanderungssaldo (Personen)",
+              "kind": "integer",
+              "expected": "-12",
+              "explanation": "5 − 17 = -12."
+            },
+            {
+              "id": "change",
+              "label": "Gesamtveränderung (Personen)",
+              "kind": "integer",
+              "expected": "4",
+              "explanation": "16 + (-12) = 4."
+            },
+            {
+              "id": "end",
+              "label": "Endbestand (Personen)",
+              "kind": "integer",
+              "expected": "804",
+              "explanation": "800 + (16) + (-12) = 804. Die Änderung allein ist noch nicht der Endbestand."
+            }
+          ],
+          "hints": [
+            "Rechne natürliche Veränderung und Umzüge getrennt. Addiere beide Beiträge zur Anfangszahl.",
+            "Nutze beide Teilwirkungen: 16 und (-12). Die Anfangszahl 800 gehört erst zum Endbestand. Setze kein zweites Minus vor einen schon negativen Saldo.",
+            "28 − 12 = 16. 5 − 17 = -12. 16 + (-12) = 4. 800 + (16) + (-12) = 804. Die Änderung allein ist noch nicht der Endbestand."
+          ],
+          "criteria": [
+            "28 − 12 = 16.",
+            "5 − 17 = -12.",
+            "16 + (-12) = 4.",
+            "800 + (16) + (-12) = 804. Die Änderung allein ist noch nicht der Endbestand."
+          ],
+          "transfer": true,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.transfer.balance",
+            "variantId": "c.msa.v1:population.transfer.balance",
+            "profileId": "msa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m3.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.bridge",
+          "conceptId": "population.balance",
+          "title": "Bevölkerung und Fahrgäste sind verschiedene Größen.",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m4",
+          "fields": [
+            {
+              "id": "scope",
+              "label": "Sind 24 Fahrgäste die Einwohnerzahl Ghanas?",
+              "kind": "choice",
+              "expected": "no",
+              "options": [
+                ["yes", "Ja"],
+                ["no", "Nein: Fahrgäste in einem erfundenen Verkehrsmodell"]
+              ],
+              "explanation": "24 bezeichnet Fahrgäste in einer Modellstunde, keine Landesbevölkerung."
+            }
+          ],
+          "hints": [
+            "Lies Ort, Einheit und Zeitraum.",
+            "24 sind Fahrgäste in einer Stunde. Die Ghana-Tabelle zählt Menschen im ganzen Land.",
+            "24 bezeichnet Fahrgäste in einer Modellstunde, keine Landesbevölkerung."
+          ],
+          "criteria": [
+            "24 bezeichnet Fahrgäste in einer Modellstunde, keine Landesbevölkerung."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.bridge",
+            "variantId": "c.msa.v1:population.bridge",
+            "profileId": "msa",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m4.a3be815.v1"
+          }
+        }
+      ]
+    },
+    {
+      "areaId": "c.ahr.v1",
+      "unit": "c",
+      "profileId": "ahr",
+      "status": "implemented",
+      "tasks": [
+        {
+          "id": "population.base.balance",
+          "conceptId": "population.balance",
+          "title": "Berechne die Teiländerungen und den Endbestand.",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "natural",
+              "label": "Natürliche Veränderung (Personen)",
+              "kind": "integer",
+              "expected": "30",
+              "explanation": "48 − 18 = 30."
+            },
+            {
+              "id": "migration",
+              "label": "Wanderungssaldo (Personen)",
+              "kind": "integer",
+              "expected": "-10",
+              "explanation": "30 − 40 = -10."
+            },
+            {
+              "id": "end",
+              "label": "Endbestand (Personen)",
+              "kind": "integer",
+              "expected": "1020",
+              "explanation": "1000 + (30) + (-10) = 1020. Die Änderung allein ist noch nicht der Endbestand."
+            }
+          ],
+          "hints": [
+            "Rechne natürliche Veränderung und Umzüge getrennt. Addiere beide Beiträge zur Anfangszahl.",
+            "Nutze beide Teilwirkungen: 30 und (-10). Die Anfangszahl 1000 gehört erst zum Endbestand. Setze kein zweites Minus vor einen schon negativen Saldo.",
+            "48 − 18 = 30. 30 − 40 = -10. 1000 + (30) + (-10) = 1020. Die Änderung allein ist noch nicht der Endbestand."
+          ],
+          "criteria": [
+            "48 − 18 = 30.",
+            "30 − 40 = -10.",
+            "1000 + (30) + (-10) = 1020. Die Änderung allein ist noch nicht der Endbestand."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.base.balance",
+            "variantId": "c.ahr.v1:population.base.balance",
+            "profileId": "ahr",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.base.explain",
+          "conceptId": "population.balance",
+          "title": "Warum steigt die Zahl trotz mehr Fortzügen?",
+          "instruction": "Ein kurzer Satz oder Stichwörter reichen. Dein eigener Text wird nicht fachlich bewertet.",
+          "material": "m1",
+          "fields": [
+            {
+              "id": "explanation",
+              "label": "Verbinde beide Teiländerungen.",
+              "kind": "text",
+              "example": "Die natürliche Zunahme +30 ist größer als der Wanderungsverlust 10. Insgesamt sind es 20 mehr und am Ende 1020 Personen.",
+              "explanation": "Beide Teiländerungen und die Gesamtwirkung unterscheiden."
+            }
+          ],
+          "hints": [
+            "Vergleiche die beiden Beiträge.",
+            "Nutze beide Teilwirkungen: 30 und (-10). Die Anfangszahl 1000 gehört erst zum Endbestand. Setze kein zweites Minus vor einen schon negativen Saldo.",
+            "Die natürliche Zunahme +30 ist größer als der Wanderungsverlust 10. Insgesamt sind es 20 mehr und am Ende 1020 Personen."
+          ],
+          "criteria": [
+            "Beide Salden stimmen und sind einbezogen.",
+            "Du unterscheidest Änderung +20 und Endbestand 1020."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.base.explain",
+            "variantId": "c.ahr.v1:population.base.explain",
+            "profileId": "ahr",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m1.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.source.read",
+          "conceptId": "population.source-limit",
+          "title": "Lies Jahre, Werte und Datenstatus.",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "m2",
+          "fields": [
+            {
+              "id": "year2000",
+              "label": "Wie viele Menschen im Jahr 2000?",
+              "kind": "choice",
+              "expected": "19637087",
+              "options": [
+                ["34427414", "etwa 34,4 Millionen"],
+                ["19637087", "etwa 19,6 Millionen"]
+              ],
+              "explanation": "2000: 19.637.087 Menschen."
+            },
+            {
+              "id": "year2024",
+              "label": "Wie viele Menschen im Jahr 2024?",
+              "kind": "choice",
+              "expected": "34427414",
+              "options": [
+                ["19637087", "etwa 19,6 Millionen"],
+                ["34427414", "etwa 34,4 Millionen"]
+              ],
+              "explanation": "2024: 34.427.414 Menschen."
+            },
+            {
+              "id": "status",
+              "label": "Was sind diese Angaben?",
+              "kind": "choice",
+              "expected": "estimate",
+              "options": [
+                ["future", "Sichere Zahlen für 2040"],
+                ["estimate", "Schätzungen für vergangene Jahre"]
+              ],
+              "explanation": "Historische Schätzungen sind keine Zukunftsprognosen."
+            }
+          ],
+          "hints": [
+            "Lies jeweils Jahr und Wert zusammen. Schätzung heißt: aus vorhandenen Daten berechnet.",
+            "Lies Jahr und Wert zusammen: 2000 und 2024. Die Quelle nennt historische Schätzungen. Die Gesamtlinie trennt Geburten, Sterbefälle und Umzüge nicht auf.",
+            "2000: 19.637.087 Menschen. 2024: 34.427.414 Menschen. Historische Schätzungen sind keine Zukunftsprognosen."
+          ],
+          "criteria": [
+            "2000: 19.637.087 Menschen.",
+            "2024: 34.427.414 Menschen.",
+            "Historische Schätzungen sind keine Zukunftsprognosen."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.source-limit",
+            "taskId": "population.source.read",
+            "variantId": "c.ahr.v1:population.source.read",
+            "profileId": "ahr",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m2.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.source.explain",
+          "conceptId": "population.source-limit",
+          "title": "Welche Ursache kann die Kurve allein nicht erklären?",
+          "instruction": "Ein kurzer Satz oder Stichwörter reichen. Dein eigener Text wird nicht fachlich bewertet.",
+          "material": "m2",
+          "fields": [
+            {
+              "id": "explanation",
+              "label": "Nutze Jahre und Werte. Nenne eine Grenze.",
+              "kind": "text",
+              "example": "Zwischen 2000 und 2024 steigt die geschätzte Zahl von etwa 19,6 auf 34,4 Millionen. Die Reihe allein zeigt nicht, wie Geburten, Sterbefälle oder Umzüge beigetragen haben.",
+              "explanation": "Historische Gesamtzahlen sind keine getrennten Ursachen."
+            }
+          ],
+          "hints": [
+            "Prüfe Datenart und Aussagegrenze.",
+            "Lies Jahr und Wert zusammen: 2000 und 2024. Die Quelle nennt historische Schätzungen. Die Gesamtlinie trennt Geburten, Sterbefälle und Umzüge nicht auf.",
+            "Zwischen 2000 und 2024 steigt die geschätzte Zahl von etwa 19,6 auf 34,4 Millionen. Die Reihe allein zeigt nicht, wie Geburten, Sterbefälle oder Umzüge beigetragen haben."
+          ],
+          "criteria": [
+            "Zwei Jahre und passende Werte mit Einheit.",
+            "Schätzung für vergangene Jahre, keine Prognose.",
+            "Keine einzelne Ursache aus der Gesamtlinie behaupten."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.source-limit",
+            "taskId": "population.source.explain",
+            "variantId": "c.ahr.v1:population.source.explain",
+            "profileId": "ahr",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m2.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.condition.explain",
+          "conceptId": "population.conditional-effects",
+          "title": "Eine mögliche Chance und eine Herausforderung",
+          "instruction": "Ein kurzer Satz oder Stichwörter reichen. Dein eigener Text wird nicht fachlich bewertet.",
+          "material": "m4",
+          "fields": [
+            {
+              "id": "explanation",
+              "label": "Unter welchen Bedingungen können beide entstehen?",
+              "kind": "text",
+              "example": "Ausbildung und passende Arbeitsplätze können später Chancen eröffnen. Ohne weitere Schulplätze und Lehrkräfte kann die Versorgung schwieriger werden.",
+              "explanation": "Beide Folgen sind bedingt, nicht zwangsläufig."
+            }
+          ],
+          "hints": [
+            "Welche Bedingungen verändern die Folgen?",
+            "Verbinde eine Bedingung mit einer möglichen Folge: etwa nutzbare Schulplätze mit Lehrkräften oder Ausbildung mit passenden Arbeitsplätzen. Eine Bedingung allein ist keine Erfolgsgarantie.",
+            "Ausbildung und passende Arbeitsplätze können später Chancen eröffnen. Ohne weitere Schulplätze und Lehrkräfte kann die Versorgung schwieriger werden."
+          ],
+          "criteria": [
+            "Eine konkrete Chance und passende Bedingung.",
+            "Eine Herausforderung und passende Bedingung.",
+            "Keine sofortige Erwerbstätigkeit durch mehr Geburten."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.conditional-effects",
+            "taskId": "population.condition.explain",
+            "variantId": "c.ahr.v1:population.condition.explain",
+            "profileId": "ahr",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m4.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.transfer.balance",
+          "conceptId": "population.balance",
+          "title": "Berechne die Teiländerungen und den Endbestand.",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "m3",
+          "fields": [
+            {
+              "id": "natural",
+              "label": "Natürliche Veränderung (Personen)",
+              "kind": "integer",
+              "expected": "16",
+              "explanation": "28 − 12 = 16."
+            },
+            {
+              "id": "migration",
+              "label": "Wanderungssaldo (Personen)",
+              "kind": "integer",
+              "expected": "-12",
+              "explanation": "5 − 17 = -12."
+            },
+            {
+              "id": "end",
+              "label": "Endbestand (Personen)",
+              "kind": "integer",
+              "expected": "804",
+              "explanation": "800 + (16) + (-12) = 804. Die Änderung allein ist noch nicht der Endbestand."
+            }
+          ],
+          "hints": [
+            "Rechne natürliche Veränderung und Umzüge getrennt. Addiere beide Beiträge zur Anfangszahl.",
+            "Nutze beide Teilwirkungen: 16 und (-12). Die Anfangszahl 800 gehört erst zum Endbestand. Setze kein zweites Minus vor einen schon negativen Saldo.",
+            "28 − 12 = 16. 5 − 17 = -12. 800 + (16) + (-12) = 804. Die Änderung allein ist noch nicht der Endbestand."
+          ],
+          "criteria": [
+            "28 − 12 = 16.",
+            "5 − 17 = -12.",
+            "800 + (16) + (-12) = 804. Die Änderung allein ist noch nicht der Endbestand."
+          ],
+          "transfer": true,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.transfer.balance",
+            "variantId": "c.ahr.v1:population.transfer.balance",
+            "profileId": "ahr",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m3.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.counter.balance",
+          "conceptId": "population.balance",
+          "title": "Berechne die Teiländerungen und den Endbestand.",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "counter",
+          "fields": [
+            {
+              "id": "natural",
+              "label": "Natürliche Veränderung (Personen)",
+              "kind": "integer",
+              "expected": "30",
+              "explanation": "48 − 18 = 30."
+            },
+            {
+              "id": "migration",
+              "label": "Wanderungssaldo (Personen)",
+              "kind": "integer",
+              "expected": "-40",
+              "explanation": "30 − 70 = -40."
+            },
+            {
+              "id": "change",
+              "label": "Gesamtveränderung (Personen)",
+              "kind": "integer",
+              "expected": "-10",
+              "explanation": "30 + (-40) = -10."
+            },
+            {
+              "id": "end",
+              "label": "Endbestand (Personen)",
+              "kind": "integer",
+              "expected": "990",
+              "explanation": "1000 + (30) + (-40) = 990. Die Änderung allein ist noch nicht der Endbestand."
+            }
+          ],
+          "hints": [
+            "Rechne natürliche Veränderung und Umzüge getrennt. Addiere beide Beiträge zur Anfangszahl.",
+            "Nutze beide Teilwirkungen: 30 und (-40). Die Anfangszahl 1000 gehört erst zum Endbestand. Setze kein zweites Minus vor einen schon negativen Saldo.",
+            "48 − 18 = 30. 30 − 70 = -40. 30 + (-40) = -10. 1000 + (30) + (-40) = 990. Die Änderung allein ist noch nicht der Endbestand."
+          ],
+          "criteria": [
+            "48 − 18 = 30.",
+            "30 − 70 = -40.",
+            "30 + (-40) = -10.",
+            "1000 + (30) + (-40) = 990. Die Änderung allein ist noch nicht der Endbestand."
+          ],
+          "transfer": true,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.counter.balance",
+            "variantId": "c.ahr.v1:population.counter.balance",
+            "profileId": "ahr",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "counter.a3be815.v1"
+          }
+        },
+        {
+          "id": "population.question",
+          "conceptId": "population.balance",
+          "title": "Welche Information brauchst du für einen wirklichen Ort?",
+          "instruction": "Ein kurzer Satz oder Stichwörter reichen. Dein eigener Text wird nicht fachlich bewertet.",
+          "material": "m4",
+          "fields": [
+            {
+              "id": "question",
+              "label": "Stelle eine kurze eigene Frage.",
+              "kind": "text",
+              "example": "Wie viele Kinder leben dort, und wie viele nutzbare Schulplätze gibt es?",
+              "explanation": "Frage nach einer relevanten zusätzlichen Information."
+            }
+          ],
+          "hints": [
+            "Was fehlt für ein Urteil über Versorgung?",
+            "Frage nach einer konkreten fehlenden Angabe, etwa Altersverteilung oder vorhandenen Angeboten.",
+            "Wie viele Kinder leben dort, und wie viele nutzbare Schulplätze gibt es?"
+          ],
+          "criteria": [
+            "Die Frage betrifft Versorgung, etwa Altersverteilung oder vorhandene Angebote.",
+            "Die Gesamtbevölkerung allein beantwortet deine Frage noch nicht."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "population.balance",
+            "taskId": "population.question",
+            "variantId": "c.ahr.v1:population.question",
+            "profileId": "ahr",
+            "taskVersion": 1,
+            "modelVersion": "population.balance.v1",
+            "materialVersion": "m4.a3be815.v1"
+          }
+        }
+      ]
+    },
+    {
+      "areaId": "d.foerder.v1",
+      "unit": "d",
+      "profileId": "foerder",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "d.esa.v1",
+      "unit": "d",
+      "profileId": "esa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "d.msa.v1",
+      "unit": "d",
+      "profileId": "msa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "d.ahr.v1",
+      "unit": "d",
+      "profileId": "ahr",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "e.foerder.v1",
+      "unit": "e",
+      "profileId": "foerder",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "e.esa.v1",
+      "unit": "e",
+      "profileId": "esa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "e.msa.v1",
+      "unit": "e",
+      "profileId": "msa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "e.ahr.v1",
+      "unit": "e",
+      "profileId": "ahr",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s1.foerder.v1",
+      "unit": "s1",
+      "profileId": "foerder",
+      "status": "early-comparison-only",
+      "tasks": [
+        {
+          "id": "kenia.walk",
+          "conceptId": "accessibility.personal-journey",
+          "title": "Welchen Teil geht Amina zu Fuß?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "walk",
+              "label": "Wähle.",
+              "kind": "choice",
+              "expected": "to-stop",
+              "options": [
+                ["bus", "Die Fahrt mit dem Bus"],
+                ["to-stop", "Den Weg von zu Hause zur Haltestelle"]
+              ],
+              "explanation": "Amina geht zur Haltestelle. Danach fährt sie Bus."
+            }
+          ],
+          "hints": [
+            "Folge Aminas Weg vom Startpunkt zur Haltestelle.",
+            "Der gestrichelte erste Teil führt zu Fuß zur Haltestelle. Erst der zweite Teil ist die Busfahrt.",
+            "Amina geht zur Haltestelle. Danach fährt sie Bus."
+          ],
+          "criteria": ["Amina geht zur Haltestelle. Danach fährt sie Bus."],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.walk",
+            "variantId": "s1.foerder.v1:kenia.walk",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        },
+        {
+          "id": "kenia.compare",
+          "conceptId": "accessibility.personal-journey",
+          "title": "Welcher Weg ist für Amina kürzer?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "route",
+              "label": "Wähle.",
+              "kind": "choice",
+              "expected": "north",
+              "options": [
+                ["direct", "Direkt: 22 Minuten"],
+                ["north", "Nord: 10 Minuten"]
+              ],
+              "explanation": "10 ist weniger als 22 Minuten."
+            }
+          ],
+          "hints": [
+            "Vergleiche Aminas beide Gesamtzeiten.",
+            "Vergleiche beide Richtungen getrennt: Amina 22 → 10 Minuten; David 12 → 18 Minuten. Ein Vorteil für eine Person kann ein Nachteil für die andere sein.",
+            "10 ist weniger als 22 Minuten."
+          ],
+          "criteria": ["10 ist weniger als 22 Minuten."],
+          "explained": "Erklärte Rechnung: Direkt 12 + 10 = 22, Nord 2 + 8 = 10 Minuten. Du wählst den Vergleich; die Rechnung ist vorgegeben.",
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.compare",
+            "variantId": "s1.foerder.v1:kenia.compare",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        },
+        {
+          "id": "kenia.benefit",
+          "conceptId": "accessibility.personal-journey",
+          "title": "Wem hilft Nord?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "benefit",
+              "label": "Wem hilft Nord im Vergleich zu Direkt?",
+              "kind": "choice",
+              "expected": "amina",
+              "options": [
+                ["david", "David: 12 → 18 Minuten"],
+                ["amina", "Amina: 22 → 10 Minuten"]
+              ],
+              "explanation": "Amina braucht über Nord 10 statt 22 Minuten."
+            }
+          ],
+          "hints": [
+            "Vergleiche jede Person mit ihrem bisherigen Weg.",
+            "Vergleiche beide Richtungen getrennt: Amina 22 → 10 Minuten; David 12 → 18 Minuten. Ein Vorteil für eine Person kann ein Nachteil für die andere sein.",
+            "Amina braucht über Nord 10 statt 22 Minuten."
+          ],
+          "criteria": ["Amina braucht über Nord 10 statt 22 Minuten."],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.benefit",
+            "variantId": "s1.foerder.v1:kenia.benefit",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        },
+        {
+          "id": "kenia.limit",
+          "conceptId": "accessibility.personal-journey",
+          "title": "Wem hilft Nord weniger?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "limit",
+              "label": "Welcher Nachteil gehört dazu?",
+              "kind": "choice",
+              "expected": "david",
+              "options": [
+                ["david", "David braucht 18 statt 12 Minuten."],
+                ["amina", "Amina braucht länger als vorher."]
+              ],
+              "explanation": "David braucht über Nord 18 statt 12 Minuten."
+            }
+          ],
+          "hints": [
+            "Vergleiche jede Person mit ihrem bisherigen Weg.",
+            "Vergleiche beide Richtungen getrennt: Amina 22 → 10 Minuten; David 12 → 18 Minuten. Ein Vorteil für eine Person kann ein Nachteil für die andere sein.",
+            "David braucht über Nord 18 statt 12 Minuten."
+          ],
+          "criteria": ["David braucht über Nord 18 statt 12 Minuten."],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.limit",
+            "variantId": "s1.foerder.v1:kenia.limit",
+            "profileId": "foerder",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        }
+      ]
+    },
+    {
+      "areaId": "s1.esa.v1",
+      "unit": "s1",
+      "profileId": "esa",
+      "status": "early-comparison-only",
+      "tasks": [
+        {
+          "id": "kenia.times.amina-direct",
+          "conceptId": "accessibility.personal-journey",
+          "title": "12 + 10 = (Amina Direkt)",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "amina-direct",
+              "label": "12 + 10 = (Amina Direkt)",
+              "kind": "integer",
+              "expected": "22",
+              "explanation": "12 Minuten zu Fuß + 10 Minuten Bus = 22."
+            }
+          ],
+          "hints": [
+            "Addiere Fußweg und den tatsächlich genutzten Busabschnitt.",
+            "Amina: Direkt 12 Minuten Fußweg und 10 Minuten Bus; Nord 2 und 8. David: Direkt 2 und 10; Nord 2 und 16. Addiere jeweils nur die Teile derselben Person und Route.",
+            "12 Minuten zu Fuß + 10 Minuten Bus = 22. 2 Minuten zu Fuß + 8 Minuten Bus = 10. 2 + 10 = 12 Minuten. 2 + 16 = 18 Minuten."
+          ],
+          "criteria": [
+            "12 Minuten zu Fuß + 10 Minuten Bus = 22.",
+            "2 Minuten zu Fuß + 8 Minuten Bus = 10.",
+            "2 + 10 = 12 Minuten.",
+            "2 + 16 = 18 Minuten."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.times.amina-direct",
+            "variantId": "s1.esa.v1:kenia.times.amina-direct",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        },
+        {
+          "id": "kenia.times.amina-north",
+          "conceptId": "accessibility.personal-journey",
+          "title": "2 + 8 = (Amina Nord)",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "amina-north",
+              "label": "2 + 8 = (Amina Nord)",
+              "kind": "integer",
+              "expected": "10",
+              "explanation": "2 Minuten zu Fuß + 8 Minuten Bus = 10."
+            }
+          ],
+          "hints": [
+            "Addiere Fußweg und den tatsächlich genutzten Busabschnitt.",
+            "Amina: Direkt 12 Minuten Fußweg und 10 Minuten Bus; Nord 2 und 8. David: Direkt 2 und 10; Nord 2 und 16. Addiere jeweils nur die Teile derselben Person und Route.",
+            "12 Minuten zu Fuß + 10 Minuten Bus = 22. 2 Minuten zu Fuß + 8 Minuten Bus = 10. 2 + 10 = 12 Minuten. 2 + 16 = 18 Minuten."
+          ],
+          "criteria": [
+            "12 Minuten zu Fuß + 10 Minuten Bus = 22.",
+            "2 Minuten zu Fuß + 8 Minuten Bus = 10.",
+            "2 + 10 = 12 Minuten.",
+            "2 + 16 = 18 Minuten."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.times.amina-north",
+            "variantId": "s1.esa.v1:kenia.times.amina-north",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        },
+        {
+          "id": "kenia.times.david-direct",
+          "conceptId": "accessibility.personal-journey",
+          "title": "2 + 10 = (David Direkt)",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "david-direct",
+              "label": "2 + 10 = (David Direkt)",
+              "kind": "integer",
+              "expected": "12",
+              "explanation": "2 + 10 = 12 Minuten."
+            }
+          ],
+          "hints": [
+            "Addiere Fußweg und den tatsächlich genutzten Busabschnitt.",
+            "Amina: Direkt 12 Minuten Fußweg und 10 Minuten Bus; Nord 2 und 8. David: Direkt 2 und 10; Nord 2 und 16. Addiere jeweils nur die Teile derselben Person und Route.",
+            "12 Minuten zu Fuß + 10 Minuten Bus = 22. 2 Minuten zu Fuß + 8 Minuten Bus = 10. 2 + 10 = 12 Minuten. 2 + 16 = 18 Minuten."
+          ],
+          "criteria": [
+            "12 Minuten zu Fuß + 10 Minuten Bus = 22.",
+            "2 Minuten zu Fuß + 8 Minuten Bus = 10.",
+            "2 + 10 = 12 Minuten.",
+            "2 + 16 = 18 Minuten."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.times.david-direct",
+            "variantId": "s1.esa.v1:kenia.times.david-direct",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        },
+        {
+          "id": "kenia.times.david-north",
+          "conceptId": "accessibility.personal-journey",
+          "title": "2 + 16 = (David Nord)",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "david-north",
+              "label": "2 + 16 = (David Nord)",
+              "kind": "integer",
+              "expected": "18",
+              "explanation": "2 + 16 = 18 Minuten."
+            }
+          ],
+          "hints": [
+            "Addiere Fußweg und den tatsächlich genutzten Busabschnitt.",
+            "Amina: Direkt 12 Minuten Fußweg und 10 Minuten Bus; Nord 2 und 8. David: Direkt 2 und 10; Nord 2 und 16. Addiere jeweils nur die Teile derselben Person und Route.",
+            "12 Minuten zu Fuß + 10 Minuten Bus = 22. 2 Minuten zu Fuß + 8 Minuten Bus = 10. 2 + 10 = 12 Minuten. 2 + 16 = 18 Minuten."
+          ],
+          "criteria": [
+            "12 Minuten zu Fuß + 10 Minuten Bus = 22.",
+            "2 Minuten zu Fuß + 8 Minuten Bus = 10.",
+            "2 + 10 = 12 Minuten.",
+            "2 + 16 = 18 Minuten."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.times.david-north",
+            "variantId": "s1.esa.v1:kenia.times.david-north",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        },
+        {
+          "id": "kenia.effects",
+          "conceptId": "accessibility.personal-journey",
+          "title": "Verbinde die unterschiedlichen Folgen.",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "benefit",
+              "label": "Wem hilft Nord im Vergleich zu Direkt?",
+              "kind": "choice",
+              "expected": "amina",
+              "options": [
+                ["david", "David: 12 → 18 Minuten"],
+                ["amina", "Amina: 22 → 10 Minuten"]
+              ],
+              "explanation": "Amina braucht über Nord 10 statt 22 Minuten."
+            },
+            {
+              "id": "limit",
+              "label": "Welcher Nachteil gehört dazu?",
+              "kind": "choice",
+              "expected": "david",
+              "options": [
+                ["david", "David braucht 18 statt 12 Minuten."],
+                ["amina", "Amina braucht länger als vorher."]
+              ],
+              "explanation": "David braucht über Nord 18 statt 12 Minuten."
+            }
+          ],
+          "hints": [
+            "Nicht jede Person hat denselben Weg zur Haltestelle.",
+            "Vergleiche beide Richtungen getrennt: Amina 22 → 10 Minuten; David 12 → 18 Minuten. Ein Vorteil für eine Person kann ein Nachteil für die andere sein.",
+            "Amina braucht über Nord 10 statt 22 Minuten. David braucht über Nord 18 statt 12 Minuten."
+          ],
+          "criteria": [
+            "Amina braucht über Nord 10 statt 22 Minuten.",
+            "David braucht über Nord 18 statt 12 Minuten."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.effects",
+            "variantId": "s1.esa.v1:kenia.effects",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        },
+        {
+          "id": "kenia.recommendation",
+          "conceptId": "accessibility.personal-journey",
+          "title": "Welche Folge ist dir wichtiger?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "priority",
+              "label": "Beide Prioritäten sind möglich.",
+              "kind": "choice",
+              "expected": "either",
+              "options": [
+                [
+                  "amina",
+                  "Aminas Zeitvorteil. Ich akzeptiere Davids längeren Weg."
+                ],
+                [
+                  "david",
+                  "Davids kürzerer Direktweg. Ich akzeptiere Aminas längeren Weg."
+                ]
+              ],
+              "explanation": "Eine Priorität ist keine falsche Rechnung. Beide Folgen müssen stimmen."
+            }
+          ],
+          "hints": [
+            "Du darfst beide Zeitfolgen unterschiedlich gewichten.",
+            "Vergleiche beide Richtungen getrennt: Amina 22 → 10 Minuten; David 12 → 18 Minuten. Ein Vorteil für eine Person kann ein Nachteil für die andere sein.",
+            "Eine Priorität ist keine falsche Rechnung. Beide Folgen müssen stimmen."
+          ],
+          "criteria": [
+            "Eine Priorität ist keine falsche Rechnung. Beide Folgen müssen stimmen."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.recommendation",
+            "variantId": "s1.esa.v1:kenia.recommendation",
+            "profileId": "esa",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        }
+      ]
+    },
+    {
+      "areaId": "s1.msa.v1",
+      "unit": "s1",
+      "profileId": "msa",
+      "status": "early-comparison-only",
+      "tasks": [
+        {
+          "id": "kenia.used-section",
+          "conceptId": "accessibility.personal-journey",
+          "title": "Welchen Busabschnitt benutzt Amina über Nord?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "section",
+              "label": "Wähle anhand ihres Einstiegs.",
+              "kind": "choice",
+              "expected": "used",
+              "options": [
+                ["whole", "Die gesamte Nordlinie: 16 Minuten"],
+                ["used", "Den Abschnitt ab Nord: 8 Minuten"]
+              ],
+              "explanation": "Amina steigt an der Nordhaltestelle ein und fährt den letzten Abschnitt (8 Minuten)."
+            }
+          ],
+          "hints": [
+            "Unterscheide gesamte Linie und späteren Einstieg.",
+            "Amina steigt an der Nordhaltestelle ein. Die ganze Nordlinie dauert 16 Minuten; sie benutzt davon 8 Minuten. Ihr Fußweg dorthin dauert 2 Minuten.",
+            "Amina steigt an der Nordhaltestelle ein und fährt den letzten Abschnitt (8 Minuten)."
+          ],
+          "criteria": [
+            "Amina steigt an der Nordhaltestelle ein und fährt den letzten Abschnitt (8 Minuten)."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.used-section",
+            "variantId": "s1.msa.v1:kenia.used-section",
+            "profileId": "msa",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        },
+        {
+          "id": "kenia.times",
+          "conceptId": "accessibility.personal-journey",
+          "title": "Berechne die persönlichen Gesamtzeiten.",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "amina-direct",
+              "label": "Amina Direkt (Minuten)",
+              "kind": "integer",
+              "expected": "22",
+              "explanation": "12 Minuten zu Fuß + 10 Minuten Bus = 22."
+            },
+            {
+              "id": "amina-north",
+              "label": "Amina Nord (Minuten)",
+              "kind": "integer",
+              "expected": "10",
+              "explanation": "2 Minuten zu Fuß + 8 Minuten Bus = 10."
+            },
+            {
+              "id": "david-direct",
+              "label": "David Direkt (Minuten)",
+              "kind": "integer",
+              "expected": "12",
+              "explanation": "2 + 10 = 12 Minuten."
+            },
+            {
+              "id": "david-north",
+              "label": "David Nord (Minuten)",
+              "kind": "integer",
+              "expected": "18",
+              "explanation": "2 + 16 = 18 Minuten."
+            }
+          ],
+          "hints": [
+            "Addiere Fußweg und den tatsächlich genutzten Busabschnitt.",
+            "Amina: Direkt 12 Minuten Fußweg und 10 Minuten Bus; Nord 2 und 8. David: Direkt 2 und 10; Nord 2 und 16. Addiere jeweils nur die Teile derselben Person und Route.",
+            "12 Minuten zu Fuß + 10 Minuten Bus = 22. 2 Minuten zu Fuß + 8 Minuten Bus = 10. 2 + 10 = 12 Minuten. 2 + 16 = 18 Minuten."
+          ],
+          "criteria": [
+            "12 Minuten zu Fuß + 10 Minuten Bus = 22.",
+            "2 Minuten zu Fuß + 8 Minuten Bus = 10.",
+            "2 + 10 = 12 Minuten.",
+            "2 + 16 = 18 Minuten."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.times",
+            "variantId": "s1.msa.v1:kenia.times",
+            "profileId": "msa",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        },
+        {
+          "id": "kenia.effects",
+          "conceptId": "accessibility.personal-journey",
+          "title": "Verbinde die unterschiedlichen Folgen.",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "benefit",
+              "label": "Wem hilft Nord im Vergleich zu Direkt?",
+              "kind": "choice",
+              "expected": "amina",
+              "options": [
+                ["david", "David: 12 → 18 Minuten"],
+                ["amina", "Amina: 22 → 10 Minuten"]
+              ],
+              "explanation": "Amina braucht über Nord 10 statt 22 Minuten."
+            },
+            {
+              "id": "limit",
+              "label": "Welcher Nachteil gehört dazu?",
+              "kind": "choice",
+              "expected": "david",
+              "options": [
+                ["david", "David braucht 18 statt 12 Minuten."],
+                ["amina", "Amina braucht länger als vorher."]
+              ],
+              "explanation": "David braucht über Nord 18 statt 12 Minuten."
+            }
+          ],
+          "hints": [
+            "Nicht jede Person hat denselben Weg zur Haltestelle.",
+            "Vergleiche beide Richtungen getrennt: Amina 22 → 10 Minuten; David 12 → 18 Minuten. Ein Vorteil für eine Person kann ein Nachteil für die andere sein.",
+            "Amina braucht über Nord 10 statt 22 Minuten. David braucht über Nord 18 statt 12 Minuten."
+          ],
+          "criteria": [
+            "Amina braucht über Nord 10 statt 22 Minuten.",
+            "David braucht über Nord 18 statt 12 Minuten."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.effects",
+            "variantId": "s1.msa.v1:kenia.effects",
+            "profileId": "msa",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        },
+        {
+          "id": "kenia.recommendation",
+          "conceptId": "accessibility.personal-journey",
+          "title": "Welche Folge ist dir wichtiger?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "priority",
+              "label": "Beide Prioritäten sind möglich.",
+              "kind": "choice",
+              "expected": "either",
+              "options": [
+                [
+                  "amina",
+                  "Aminas Zeitvorteil. Ich akzeptiere Davids längeren Weg."
+                ],
+                [
+                  "david",
+                  "Davids kürzerer Direktweg. Ich akzeptiere Aminas längeren Weg."
+                ]
+              ],
+              "explanation": "Eine Priorität ist keine falsche Rechnung. Beide Folgen müssen stimmen."
+            }
+          ],
+          "hints": [
+            "Du darfst beide Zeitfolgen unterschiedlich gewichten.",
+            "Vergleiche beide Richtungen getrennt: Amina 22 → 10 Minuten; David 12 → 18 Minuten. Ein Vorteil für eine Person kann ein Nachteil für die andere sein.",
+            "Eine Priorität ist keine falsche Rechnung. Beide Folgen müssen stimmen."
+          ],
+          "criteria": [
+            "Eine Priorität ist keine falsche Rechnung. Beide Folgen müssen stimmen."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.recommendation",
+            "variantId": "s1.msa.v1:kenia.recommendation",
+            "profileId": "msa",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        }
+      ]
+    },
+    {
+      "areaId": "s1.ahr.v1",
+      "unit": "s1",
+      "profileId": "ahr",
+      "status": "early-comparison-only",
+      "tasks": [
+        {
+          "id": "kenia.times",
+          "conceptId": "accessibility.personal-journey",
+          "title": "Berechne die persönlichen Gesamtzeiten.",
+          "instruction": "Rechne mit den Angaben.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "amina-direct",
+              "label": "Amina Direkt (Minuten)",
+              "kind": "integer",
+              "expected": "22",
+              "explanation": "12 Minuten zu Fuß + 10 Minuten Bus = 22."
+            },
+            {
+              "id": "amina-north",
+              "label": "Amina Nord (Minuten)",
+              "kind": "integer",
+              "expected": "10",
+              "explanation": "2 Minuten zu Fuß + 8 Minuten Bus = 10."
+            },
+            {
+              "id": "david-direct",
+              "label": "David Direkt (Minuten)",
+              "kind": "integer",
+              "expected": "12",
+              "explanation": "2 + 10 = 12 Minuten."
+            },
+            {
+              "id": "david-north",
+              "label": "David Nord (Minuten)",
+              "kind": "integer",
+              "expected": "18",
+              "explanation": "2 + 16 = 18 Minuten."
+            }
+          ],
+          "hints": [
+            "Addiere Fußweg und den tatsächlich genutzten Busabschnitt.",
+            "Amina: Direkt 12 Minuten Fußweg und 10 Minuten Bus; Nord 2 und 8. David: Direkt 2 und 10; Nord 2 und 16. Addiere jeweils nur die Teile derselben Person und Route.",
+            "12 Minuten zu Fuß + 10 Minuten Bus = 22. 2 Minuten zu Fuß + 8 Minuten Bus = 10. 2 + 10 = 12 Minuten. 2 + 16 = 18 Minuten."
+          ],
+          "criteria": [
+            "12 Minuten zu Fuß + 10 Minuten Bus = 22.",
+            "2 Minuten zu Fuß + 8 Minuten Bus = 10.",
+            "2 + 10 = 12 Minuten.",
+            "2 + 16 = 18 Minuten."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.times",
+            "variantId": "s1.ahr.v1:kenia.times",
+            "profileId": "ahr",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        },
+        {
+          "id": "kenia.explain",
+          "conceptId": "accessibility.personal-journey",
+          "title": "Warum kann die längere Linie Amina helfen?",
+          "instruction": "Ein kurzer Satz oder Stichwörter reichen. Dein eigener Text wird nicht fachlich bewertet.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "explanation",
+              "label": "Erkläre den persönlichen Weg.",
+              "kind": "text",
+              "example": "Amina geht nur 2 statt 12 Minuten zur Haltestelle. Sie steigt später ein und fährt über Nord 8 Minuten. Insgesamt sind es 10 statt 22 Minuten.",
+              "explanation": "Gesamte Linie und benutzter Busabschnitt unterscheiden."
+            }
+          ],
+          "hints": [
+            "Vergleiche Fußweg und Einstieg.",
+            "Amina steigt an der Nordhaltestelle ein. Die ganze Nordlinie dauert 16 Minuten; sie benutzt davon 8 Minuten. Ihr Fußweg dorthin dauert 2 Minuten.",
+            "Amina geht nur 2 statt 12 Minuten zur Haltestelle. Sie steigt später ein und fährt über Nord 8 Minuten. Insgesamt sind es 10 statt 22 Minuten."
+          ],
+          "criteria": [
+            "Fußweg 12 → 2 Minuten.",
+            "Genutzter Busabschnitt 10 → 8 Minuten, nicht die gesamte Linie.",
+            "Gesamtzeit 22 → 10 Minuten."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.explain",
+            "variantId": "s1.ahr.v1:kenia.explain",
+            "profileId": "ahr",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        },
+        {
+          "id": "kenia.judgment",
+          "conceptId": "accessibility.personal-journey",
+          "title": "Empfiehl einen Weg und nenne seinen Nachteil.",
+          "instruction": "Ein kurzer Satz oder Stichwörter reichen. Dein eigener Text wird nicht fachlich bewertet.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "explanation",
+              "label": "Welcher Beleg trägt deine Wahl?",
+              "kind": "text",
+              "example": "Ich empfehle Nord wegen Aminas Zeitvorteil von 22 auf 10 Minuten. Dafür akzeptiere ich, dass David 18 statt 12 Minuten braucht.",
+              "explanation": "Direkt oder Nord mit passendem Vorteil und Nachteil sind zulässig."
+            }
+          ],
+          "hints": [
+            "Welche Person profitiert und welche braucht länger?",
+            "Vergleiche beide Richtungen getrennt: Amina 22 → 10 Minuten; David 12 → 18 Minuten. Ein Vorteil für eine Person kann ein Nachteil für die andere sein.",
+            "Ich empfehle Nord wegen Aminas Zeitvorteil von 22 auf 10 Minuten. Dafür akzeptiere ich, dass David 18 statt 12 Minuten braucht."
+          ],
+          "criteria": [
+            "Vorschlag und tatsächlich passende Zeitfolge.",
+            "Nachteil einer anderen Person und eigene Gewichtung.",
+            "Auch Direkt ist mit umgekehrter Gewichtung begründbar."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.judgment",
+            "variantId": "s1.ahr.v1:kenia.judgment",
+            "profileId": "ahr",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        },
+        {
+          "id": "kenia.transfer",
+          "conceptId": "accessibility.personal-journey",
+          "title": "Was fehlt für eine Entscheidung über echte Wege?",
+          "instruction": "Nutze die Angaben und wähle selbst.",
+          "material": "kenia",
+          "fields": [
+            {
+              "id": "missing",
+              "label": "Wähle eine zusätzliche nötige Information.",
+              "kind": "choice",
+              "expected": "price",
+              "options": [
+                ["price", "Fahrpreis oder Wartezeit"],
+                ["forecast", "Die sichere Verkehrslage im Jahr 2040"]
+              ],
+              "explanation": "Fahrpreis und Wartezeit fehlen; das Modell ist keine Prognose."
+            }
+          ],
+          "hints": [
+            "Was berechnet das Modell nicht?",
+            "Das Modell rechnet Wegzeiten. Es enthält weder Ticketpreise noch Wartezeiten oder eine sichere Zukunftsentwicklung.",
+            "Fahrpreis und Wartezeit fehlen; das Modell ist keine Prognose."
+          ],
+          "criteria": [
+            "Fahrpreis und Wartezeit fehlen; das Modell ist keine Prognose."
+          ],
+          "transfer": false,
+          "identity": {
+            "conceptId": "accessibility.personal-journey",
+            "taskId": "kenia.transfer",
+            "variantId": "s1.ahr.v1:kenia.transfer",
+            "profileId": "ahr",
+            "taskVersion": 1,
+            "modelVersion": "kenia.network.v1",
+            "materialVersion": "kenia.a3be815.v1"
+          }
+        }
+      ]
+    },
+    {
+      "areaId": "s2.foerder.v1",
+      "unit": "s2",
+      "profileId": "foerder",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s2.esa.v1",
+      "unit": "s2",
+      "profileId": "esa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s2.msa.v1",
+      "unit": "s2",
+      "profileId": "msa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s2.ahr.v1",
+      "unit": "s2",
+      "profileId": "ahr",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s3.foerder.v1",
+      "unit": "s3",
+      "profileId": "foerder",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s3.esa.v1",
+      "unit": "s3",
+      "profileId": "esa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s3.msa.v1",
+      "unit": "s3",
+      "profileId": "msa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s3.ahr.v1",
+      "unit": "s3",
+      "profileId": "ahr",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s4.foerder.v1",
+      "unit": "s4",
+      "profileId": "foerder",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s4.esa.v1",
+      "unit": "s4",
+      "profileId": "esa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s4.msa.v1",
+      "unit": "s4",
+      "profileId": "msa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s4.ahr.v1",
+      "unit": "s4",
+      "profileId": "ahr",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s5.foerder.v1",
+      "unit": "s5",
+      "profileId": "foerder",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s5.esa.v1",
+      "unit": "s5",
+      "profileId": "esa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s5.msa.v1",
+      "unit": "s5",
+      "profileId": "msa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s5.ahr.v1",
+      "unit": "s5",
+      "profileId": "ahr",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s6.foerder.v1",
+      "unit": "s6",
+      "profileId": "foerder",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s6.esa.v1",
+      "unit": "s6",
+      "profileId": "esa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s6.msa.v1",
+      "unit": "s6",
+      "profileId": "msa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "s6.ahr.v1",
+      "unit": "s6",
+      "profileId": "ahr",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "r.foerder.v1",
+      "unit": "r",
+      "profileId": "foerder",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "r.esa.v1",
+      "unit": "r",
+      "profileId": "esa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "r.msa.v1",
+      "unit": "r",
+      "profileId": "msa",
+      "status": "planned",
+      "tasks": []
+    },
+    {
+      "areaId": "r.ahr.v1",
+      "unit": "r",
+      "profileId": "ahr",
+      "status": "planned",
+      "tasks": []
+    }
+  ]
+}

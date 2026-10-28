@@ -1,3 +1,9 @@
+import { renderLearning } from './learning/chapter-ui.ts';
+import {
+  active as activeLearning,
+  type LearningAction,
+} from './learning/storage.ts';
+import { isProfile } from './learning/profiles.ts';
 import { resetNotice } from './reset.ts';
 import { renderInquiry } from './inquiry/ui.ts';
 import { productStatus, type InquiryAction } from './inquiry/state.ts';
@@ -65,6 +71,24 @@ try {
   /* In-memory play remains available. */
 }
 let state = readSession(storage);
+const recommendedProfile = new URLSearchParams(location.search).get('lernweg');
+const recommendedUnit = new URLSearchParams(location.search).get('bereich');
+if (
+  isProfile(recommendedProfile) &&
+  (recommendedUnit === 'c' || recommendedUnit === 's1')
+) {
+  state = reduce(state, {
+    type: 'learning',
+    op: 'unit',
+    value: recommendedUnit,
+  });
+  state = reduce(state, {
+    type: 'learning',
+    op: 'request-profile',
+    value: recommendedProfile,
+  });
+  state = reduce(state, { type: 'learning', op: 'confirm-profile' });
+}
 let restartPending = false;
 const storageWarning = document.createElement('aside');
 storageWarning.id = 'storage-warning';
@@ -102,7 +126,7 @@ const arrow = `<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true
 const mark = `<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 24V9a3 3 0 013-3h12M10 25h15V10" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="7" cy="25" r="4" fill="currentColor"/><circle cx="25" cy="7" r="4" fill="currentColor"/></svg>`;
 
 function header() {
-  return `<header class="site-header"><div class="brand"><span class="brand-mark">${mark}</span><span>AFRIKA <strong>2040</strong></span></div><span class="header-caption">${state.screen === 'inquiry' ? 'Afrika untersuchen' : state.screen === 'study' && state.activeStudy ? `${studies[state.activeStudy]!.country} / ${studies[state.activeStudy]!.place}` : state.screen === 'review' ? 'Drei Orte im Vergleich' : state.screen === 'start' ? 'Gestalte die Zukunft' : 'Kenia <span aria-hidden="true">/</span> Nairobi'}</span></header>`;
+  return `<header class="site-header"><div class="brand"><span class="brand-mark">${mark}</span><span>AFRIKA <strong>2040</strong></span></div><span class="header-caption">${state.screen === 'learning' ? (state.learning?.unit === 's1' ? 'Kenia / Nairobi' : state.learning?.unit === 'c' ? 'Bevölkerung untersuchen' : 'Fünf Kapitel') : state.screen === 'inquiry' ? 'Afrika untersuchen' : state.screen === 'study' && state.activeStudy ? `${studies[state.activeStudy]!.country} / ${studies[state.activeStudy]!.place}` : state.screen === 'review' ? 'Drei Orte im Vergleich' : state.screen === 'start' ? 'Gestalte die Zukunft' : 'Kenia <span aria-hidden="true">/</span> Nairobi'}</span></header>`;
 }
 
 function start() {
@@ -111,6 +135,7 @@ function start() {
       <h1>Afrika 2040 <span>Gestalte die<br>Zukunft.</span></h1>
       <p class="intro">Du untersuchst Orte in Afrika. Menschen vor Ort haben Ideen für ihre Zukunft. Prüfe die Vorschläge. Entscheide, was du empfehlen würdest.</p>
       <a class="text-button" href="#episodes-menu">Direkt zu den Episoden</a>
+      ${button('Fünf Kapitel · Lernweg wählen', 'learning', 'button primary', 'data-op="open" id="learning-open"')}
       ${button('Afrika untersuchen · fünf Themen', 'inquiry', 'button primary', 'data-op="open" id="inquiry-open"')}
     </div>
     ${renderOrientation(state.geography, { header: '', restartPending, button, radio, esc, feedback })}
@@ -444,11 +469,13 @@ function end() {
 
 function render(focusId?: string, taskChange = false) {
   const view =
-    state.screen === 'inquiry'
-      ? `inquiry-${state.inquiry?.topic}-${state.inquiry?.step}-${state.inquiry?.journal}`
-      : state.screen === 'study'
-        ? `study-${state.activeStudy}-${state.studies?.[state.activeStudy!]?.step}`
-        : `${state.screen}-${state.step}`;
+    state.screen === 'learning'
+      ? `learning-${state.learning?.view}-${state.learning?.profile}-${state.learning?.pendingProfile}-${state.learning?.unit}-${state.learning && activeLearning(state.learning)?.index}`
+      : state.screen === 'inquiry'
+        ? `inquiry-${state.inquiry?.topic}-${state.inquiry?.step}-${state.inquiry?.journal}`
+        : state.screen === 'study'
+          ? `study-${state.activeStudy}-${state.studies?.[state.activeStudy!]?.step}`
+          : `${state.screen}-${state.step}`;
   const openDetails =
     app.dataset.view === view
       ? [...app.querySelectorAll<HTMLDetailsElement>('details[open][id]')].map(
@@ -457,19 +484,20 @@ function render(focusId?: string, taskChange = false) {
       : [];
   app.dataset.view = view;
   app.innerHTML =
-    state.screen === 'inquiry'
-      ? renderInquiry(state.inquiry, header())
-      : state.screen === 'review'
-        ? renderReview(state, {
-            header: header(),
-            button,
-            radio,
-            esc,
-            feedback,
-            restartPending,
-          })
-        : state.screen === 'study'
-          ? renderStudy(state, {
+    state.screen === 'learning'
+      ? renderLearning(
+          state.learning,
+          header(),
+          restartPending,
+          !!state.inquiry ||
+            !!state.demand ||
+            !!state.studies ||
+            state.step > 0,
+        )
+      : state.screen === 'inquiry'
+        ? renderInquiry(state.inquiry, header())
+        : state.screen === 'review'
+          ? renderReview(state, {
               header: header(),
               button,
               radio,
@@ -477,38 +505,48 @@ function render(focusId?: string, taskChange = false) {
               feedback,
               restartPending,
             })
-          : state.screen === 'start'
-            ? start()
-            : state.screen === 'end'
-              ? end()
-              : state.screen.startsWith('demand-')
-                ? renderDemand(state, {
-                    header: header(),
-                    button,
-                    radio,
-                    esc,
-                    feedback,
-                    restartPending,
-                  })
-                : state.screen.startsWith('event-')
-                  ? renderEvent(state, {
+          : state.screen === 'study'
+            ? renderStudy(state, {
+                header: header(),
+                button,
+                radio,
+                esc,
+                feedback,
+                restartPending,
+              })
+            : state.screen === 'start'
+              ? start()
+              : state.screen === 'end'
+                ? end()
+                : state.screen.startsWith('demand-')
+                  ? renderDemand(state, {
                       header: header(),
                       button,
                       radio,
                       esc,
                       feedback,
-                      help,
-                      evidenceInput,
-                      ownWords,
-                      routeSwitch,
-                      journeyExplorer,
                       restartPending,
                     })
-                  : game();
+                  : state.screen.startsWith('event-')
+                    ? renderEvent(state, {
+                        header: header(),
+                        button,
+                        radio,
+                        esc,
+                        feedback,
+                        help,
+                        evidenceInput,
+                        ownWords,
+                        routeSwitch,
+                        journeyExplorer,
+                        restartPending,
+                      })
+                    : game();
   if (
     state.screen !== 'start' &&
     state.screen !== 'review' &&
-    state.screen !== 'inquiry'
+    state.screen !== 'inquiry' &&
+    state.screen !== 'learning'
   ) {
     const country =
       state.screen === 'study' && state.activeStudy
@@ -560,6 +598,35 @@ function dispatch(action: Action) {
     restartPending = false;
     updateStorageWarning(false);
   } else persistState();
+  if (action.type === 'learning') {
+    const navigation = [
+      'open',
+      'profiles',
+      'confirm-profile',
+      'cancel-profile',
+      'unit',
+      'next',
+      'back',
+      'menu',
+      'home',
+      'journal',
+    ].includes(action.op);
+    const focus =
+      action.op === 'check' || action.op === 'adopt'
+        ? 'learning-feedback-title'
+        : action.op === 'help'
+          ? 'learning-help-title'
+          : navigation
+            ? 'main'
+            : oldFocus;
+    render(focus, navigation);
+    announcer.textContent =
+      action.op === 'check'
+        ? (document.querySelector('[data-learning-feedback]')?.textContent ??
+          '')
+        : '';
+    return;
+  }
   if (action.type === 'inquiry') {
     const navigation = [
       'open',
@@ -703,6 +770,21 @@ function dispatch(action: Action) {
 
 function activate(el: Element) {
   const name = el.getAttribute('data-action')!;
+  if (name === 'learning') {
+    const op = el.getAttribute('data-op');
+    if (op === 'ask-reset') {
+      restartPending = true;
+      render();
+      return;
+    }
+    dispatch({
+      type: 'learning',
+      op: op as LearningAction['op'],
+      value: el.getAttribute('data-value') ?? undefined,
+      field: el.getAttribute('data-field') ?? undefined,
+    });
+    return;
+  }
   if (name === 'inquiry') {
     dispatch({
       type: 'inquiry',
@@ -807,6 +889,20 @@ app.addEventListener('keydown', (event) => {
 });
 app.addEventListener('change', (event) => {
   const el = event.target as HTMLInputElement | HTMLSelectElement;
+  if (el.name === 'learning-answer') {
+    if (el instanceof HTMLSelectElement)
+      dispatch({
+        type: 'learning',
+        op: 'answer',
+        field: el.dataset.field,
+        value: el.value,
+      });
+    return;
+  }
+  if (el.name === 'learning-oral') {
+    dispatch({ type: 'learning', op: 'oral' });
+    return;
+  }
   if (el.name.startsWith('inquiry-')) {
     // Text/numeric edits are saved on input, without replacing the clicked next control on blur.
     if (el.name === 'inquiry-answer' && el instanceof HTMLSelectElement)
@@ -961,3 +1057,17 @@ if (['event-find', 'event-effects', 'event-review'].includes(state.screen))
       .getElementById('task-title')
       ?.scrollIntoView({ block: 'start', behavior: 'instant' }),
   );
+
+app.addEventListener('input', (event) => {
+  const el = event.target as HTMLInputElement | HTMLTextAreaElement;
+  if (el.name !== 'learning-answer' || el instanceof HTMLSelectElement) return;
+  state = reduce(state, {
+    type: 'learning',
+    op: 'answer',
+    field: el.dataset.field,
+    value: el.value,
+  });
+  persistState();
+  document.querySelector('[data-learning-feedback]')?.remove();
+  document.querySelector('#learning-next')?.remove();
+});

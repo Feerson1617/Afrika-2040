@@ -4,6 +4,8 @@ Fünf curriculare Untersuchungsbereiche und sechs direkt startbare Modell-Episod
 
 Der Einstieg **„Afrika untersuchen · fünf Themen“** führt zu Afrikabild, Naturraum, Bevölkerung, Wirtschaft und Nachhaltigkeit. Auf Materialauswertung folgen kurze eigene Erklärungen mit Lernjournal. Aktueller Entwicklungsstand und Grenzen: [Sprach- und Zahlenkorrektur](docs/afrika-sprachkorrektur.md), [curriculare Abdeckung](docs/afrika-lernziele-und-pruefbarkeit.md) und [Klassenarbeitsvorbereitung](docs/afrika-klassenarbeitsreife.md). Die [vorherige Übergabe](docs/afrika-vollstaendig-handover.md) dokumentiert den Ausgangsstand.
 
+Aktuell zusätzlich: **Paket A der vier Lernwege** auf `feat/afrika-vier-lernwege`. Über „Fünf Kapitel · Lernweg wählen“ sind Bevölkerung und ein früher Kenia-Vergleich unterschiedlich bearbeitbar. Die übrigen Profilvarianten sind geplant. Die bisherigen Themen und Episoden bleiben direkt erreichbar. [Aufgabenverträge und Umfang](docs/afrika-four-paths.md), [Migration](docs/afrika-progress-migration.md) und [Paket-A-Übergabe](docs/afrika-paket-a-handover.md) dokumentieren den Prototyp. Kein breiter Rollout ohne unabhängige Musterabnahme.
+
 | Ort                  | Episode                                 | Untersuchung                                                                    |
 | -------------------- | --------------------------------------- | ------------------------------------------------------------------------------- |
 | Kenia / Nairobi      | 1. Welcher Busweg hilft wem?            | Drei Personen, drei Buslinien; späterer Fußweg-Umweg und erneute Empfehlung.    |

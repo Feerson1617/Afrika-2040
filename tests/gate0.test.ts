@@ -66,5 +66,8 @@ test('all 16 formerly first-position questions retain IDs and stable varied corr
   assert.ok(seen.filter((v) => v > 1).length >= 12);
 });
 test('global reset notice covers current topics and journal', () => {
-  assert.match(resetNotice, /alle Themen, Episoden und dein Lernjournal/);
+  assert.match(
+    resetNotice,
+    /alle Lernwege, Themen, Episoden und dein Lernjournal/,
+  );
 });
