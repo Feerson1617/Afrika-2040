@@ -36,7 +36,7 @@ for (const blocked of [true, false])
     page,
   }) => {
     await page.setViewportSize({ width: 1024, height: 768 });
-    await page.goto('/');
+    await page.goto('/?ansicht=bisher');
     await page.locator('#episode-3').click();
     await page.locator('#chain-beans').click();
     await page
@@ -353,7 +353,7 @@ test('SCORM state sizes measured from six actually completed episodes, help, tex
 test('F2 recovery saves the in-memory correct answers without penalties and removes the warning', async ({
   page,
 }) => {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.evaluate(() => {
     const native = Storage.prototype.setItem;
     (window as any).restoreSaving = () => {

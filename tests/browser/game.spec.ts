@@ -11,7 +11,7 @@ import { test, expect, type Page } from '@playwright/test';
 import { auditAccessibility } from './accessibility.ts';
 
 async function start(page: Page) {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.getByRole('button', { name: 'Spiel starten' }).click();
 }
 async function explainAndNext(page: Page) {
@@ -279,7 +279,7 @@ test('rapid clicks cannot skip tasks and restart requires a deliberate confirmat
 test('keyboard can operate start, SVG paths, radio groups, checking and word help', async ({
   page,
 }) => {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', { name: 'Zum Inhalt' })).toBeFocused();
   await page.keyboard.press('Tab');
@@ -354,7 +354,7 @@ test('production assets work under the GitHub Pages repository prefix', async ({
   page.on('response', (r) => {
     if (r.status() >= 400) failed.push(`${r.status()} ${r.url()}`);
   });
-  await page.goto('http://127.0.0.1:4174/Afrika-2040/');
+  await page.goto('http://127.0.0.1:4174/Afrika-2040/?ansicht=bisher');
   await page.getByRole('button', { name: 'Spiel starten' }).click();
   await expect(
     page.getByRole('heading', { name: 'Zeige Aminas Weg zur Schule.' }),
@@ -368,7 +368,7 @@ test('production assets work under the GitHub Pages repository prefix', async ({
 test('axe finds no WCAG A/AA issues in start, task, expanded help, decision and ending', async ({
   page,
 }) => {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   for (const stage of ['start', 'task', 'help', 'decision', 'end']) {
     if (stage === 'task')
       await page.getByRole('button', { name: 'Spiel starten' }).click();
@@ -452,7 +452,7 @@ for (const viewport of [
       isMobile: viewport.name !== 'desktop',
     });
     const page = await context.newPage();
-    await page.goto('http://127.0.0.1:4173');
+    await page.goto('http://127.0.0.1:4173?ansicht=bisher');
     await noHorizontalOverflow(page);
     if (viewport.name === 'desktop') {
       await page.screenshot({

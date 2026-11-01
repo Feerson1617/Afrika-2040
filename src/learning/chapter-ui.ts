@@ -1,5 +1,5 @@
 import './style.css';
-import { chapters, unitNames, type Unit } from './catalog.ts';
+import { chapters, unitNames, implementedUnits, type Unit } from './catalog.ts';
 import { profileIds, profiles } from './profiles.ts';
 import {
   active,
@@ -76,9 +76,16 @@ export function renderLearning(
       `<h1>Lernjournal · Lernwege</h1><p>Die App prüft deine Auswahl und deine Rechnungen. Eigene Erklärungen musst du noch mit jemandem besprechen. Eine fertige Seite zeigt noch nicht, ob du alles selbst erklären kannst.</p>${Object.entries(
         s.records,
       )
+        .sort(
+          ([, a], [, b]) =>
+            Number(
+              Object.values(b.attempts).some((p) => p.submissions.length),
+            ) -
+            Number(Object.values(a.attempts).some((p) => p.submissions.length)),
+        )
         .map(
           ([key, r]) =>
-            `<section class="journal-record"><h2>${unitNames[key.split('.')[0] as Unit]} · ${profiles[key.split('.')[1] as keyof typeof profiles].name}</h2>${Object.entries(
+            `<details class="journal-record" ${key === `${s.unit}.${s.profile}.v1` ? 'open' : ''}><summary><h2>${unitNames[key.split('.')[0] as Unit]} · ${profiles[key.split('.')[1] as keyof typeof profiles].name}</h2></summary><p>Kapitel: ${chapters.find((c) => (c.areas as readonly string[]).includes(key.split('.')[0]))?.name ?? ''}</p>${Object.entries(
               r.attempts,
             )
               .map(([taskId, a]) => {
@@ -92,18 +99,41 @@ export function renderLearning(
                 );
                 return `<article><h3>${esc(task.title)}</h3>${task.contextNote ? `<p>${esc(task.contextNote)}</p>` : ''}<p>${status(a, true)}</p>${task.fields.map((f) => `<p><strong>${esc(f.label)}</strong>: <span class="own-answer">${esc(f.options?.find(([id]) => id === a.answers[f.id])?.[1] ?? a.answers[f.id] ?? 'Noch offen')}</span></p>`).join('')}${task.explained ? `<p>${esc(task.explained)}</p>` : ''}<details><summary>Details zu deiner Bearbeitung</summary><p>${status(a)}</p><p>Aufgabe: ${esc(taskId)} · Variante: ${esc(a.identity.variantId)} · Versuch: ${esc(a.identity.attemptId)}</p><p>Modell: ${esc(a.identity.modelVersion)} · Material: ${esc(a.identity.materialVersion)}</p><p>Standardgerüst: ${a.standardScaffold ? 'ja' : 'nein'}; freiwillige Hilfe: ${a.help}; Beispiel angezeigt: ${a.exampleShown ? 'ja' : 'nein'}; bewusst genutzt: ${a.exampleUsed ? 'ja' : 'nein'}.</p><p>${a.submissions.length} protokollierte Antwortversuche${a.olderSubmissions ? `, ${a.olderSubmissions} ältere Versuche verdichtet` : ''}. Freie Texte bleiben ungeprüft.</p>${a.submissions.map((item, index) => `<details><summary>Frühere Antwortabgabe ${a.olderSubmissions + index + 1} · ${esc(item.support)}</summary>${task.fields.map((f) => `<p>${esc(f.label)}: ${esc(item.labels?.[f.id] ?? f.options?.find(([id]) => id === item.answers[f.id])?.[1] ?? item.answers[f.id] ?? 'Noch offen')}</p>`).join('')}<p>Prüfstatus zum Antwortinhalt: ${esc(item.factual)}. Eigene Texte sind ungeprüft.</p></details>`).join('')}</details></article>`;
               })
-              .join('')}</section>`,
+              .join('')}</details>`,
         )
-        .join('')}${hasLegacy ? legacyLink() : ''}` +
+        .join('')}<details><summary>Noch nicht begonnene Bereiche</summary><p>${
+        s.profile
+          ? implementedUnits
+              .filter((u) => !s.records[`${u}.${s.profile}.v1`])
+              .map((u) => unitNames[u])
+              .join(' · ')
+          : 'Wähle zunächst einen Lernweg.'
+      }</p></details>${hasLegacy ? legacyLink() : ''}` +
       footer
     );
   const a = active(s);
   if (s.view !== 'task' || !a?.attempt)
     return (
       open +
-      `<h1>Fünf Kapitel · Orte verstehen. Entscheidungen prüfen.</h1><p>2040 ist unser Zukunftsblick. Unsere Beispiele sagen die Zukunft nicht voraus.</p><p>${s.profile === 'foerder' ? 'Wähle ein Kapitel. Weitere Modelle findest du bei den direkten Episoden.' : 'Fünf Themen sind in vier Lernwegen erreichbar. Die vollständigen Episoden bleiben auch direkt spielbar.'}</p>${!s.profile ? button('Lernweg wählen', 'profiles') : `<p>Dein Weg: ${profiles[s.profile].name}</p>`}<div class="inquiry-menu">${chapters.map((c) => `<section><h2>${c.name}</h2>${button(unitNames[({ pictures: 'a', nature: 'n', people: 'c', economy: 'd', future: 'e' } as const)[c.id]], 'unit', ({ pictures: 'a', nature: 'n', people: 'c', economy: 'd', future: 'e' } as const)[c.id], `id="learn-${c.id === 'people' ? 'population' : c.topic}"`)}${c.id === 'people' ? `${''}${button('Kenia · früher Vergleich in vier Lernwegen', 'unit', 's1', 'id="learn-kenya"')}` : ''}<button type="button" data-action="inquiry" data-op="topic" data-value="${c.topic}">Bisherigen Themenweg öffnen</button>${c.episodes.map((id) => `<button type="button" data-action="study" data-op="start" data-episode="${id}">${id === 'water' ? 'Wasserlabor' : id === 'area' ? 'Zusatzfläche' : id === 'cocoa' ? 'Kakaoverarbeitung' : 'Verteilung'} direkt starten</button>`).join('')}${c.id === 'people' ? '<button type="button" data-action="start">Kenia Episode 1 direkt starten</button><button type="button" data-action="demand-start">Kenia Episode 2 direkt starten</button>' : ''}</section>`).join('')}</div>${hasLegacy ? legacyLink() : ''}` +
+      `<h1>Fünf Kapitel · Orte verstehen. Entscheidungen prüfen.</h1><p>2040 ist unser Zukunftsblick. Unsere Beispiele sagen die Zukunft nicht voraus. Du kannst jedes Kapitel direkt öffnen.</p>${s.profile ? `<p>Dein Weg: ${profiles[s.profile].name}</p>${s.unit && s.records[`${s.unit}.${s.profile}.v1`] ? button('Weiterarbeiten', 'unit', s.unit, 'id="learning-resume"') : ''}` : button('Lernweg wählen', 'profiles', '', 'id="learning-open"')}<div class="inquiry-menu" id="learning-chapters">${chapters
+        .map(
+          (c) =>
+            `<section><h2>${c.name}</h2>${c.areas
+              .filter((id) => implementedUnits.includes(id as Unit))
+              .map((id) =>
+                button(
+                  unitNames[id as Unit],
+                  'unit',
+                  id,
+                  `id="learn-${id === 'c' ? 'population' : id === 's1' ? 'kenya' : id === c.areas[0] && id !== 'o' ? c.topic : id}"`,
+                ),
+              )
+              .join('')}</section>`,
+        )
+        .join('')}</div>${legacyLink(hasLegacy)}` +
       footer
     );
+
   const rawAttempt = a.attempt,
     p =
       rawAttempt.process !== 'draft' && !canContinue(a.task, rawAttempt)
@@ -130,7 +160,7 @@ export function renderLearning(
       : '';
   return (
     open +
-    `<p class="eyebrow">${unitNames[s.unit!]} · Schritt ${a.index + 1} von ${a.tasks.length} · ${profiles[s.profile!].name}</p><h1>${esc(task.title)}</h1><div class="inquiry-work"><section class="inquiry-material" aria-label="Material zur Aufgabe">${materialView(task, s.profile!, p)}</section><section class="inquiry-task"><h2 id="learning-title" tabindex="-1">Dein Auftrag</h2><p>${esc(task.instruction)}</p>${task.contextNote ? `<p class="learning-context">${esc(task.contextNote)}</p>` : ''}${p.standardScaffold ? `<aside class="learning-scaffold"><strong>Denkhinweis</strong><p>${esc(task.hints[0])}</p></aside>` : ''}${task.explained ? `<p>${esc(task.explained)}</p>` : ''}${carried}${task.simulation?.required?.some((id) => !p.explored?.includes(id)) ? '<p role="status">Teste die angegebenen Wege oder Maßnahmen mit den Tasten im Material. Danach kannst du deine Antwort prüfen.</p>' : ''}${fields(task, p)}${task.fields.some((f) => f.kind === 'integer') ? '<p id="learning-number" class="small-note">Ganze Zahlen: -10 und −10 sowie 1020 und 1.020 gelten gleich. Unklare Schreibweisen zählen nicht als Rechenfehler.</p>' : ''}${hasText ? `<label class="choice"><input type="checkbox" name="learning-oral" ${p.oral ? 'checked' : ''}>Ich möchte mündlich erklären. Das ist nur meine Selbstmeldung, noch keine beobachtete Besprechung.</label>` : ''}${p.submissions.length && (p.process !== 'draft' || p.factual !== 'ungraded') ? `<section class="feedback ${e.kind}" data-learning-feedback role="status"><h3 id="learning-feedback-title" tabindex="-1">${p.oral ? 'Mündliche Bearbeitung selbstgemeldet – fachlich ungeprüft' : esc(e.title)}</h3>${e.parts.map((f) => `<p data-finding="${f.status}"><strong>${esc(f.label)}</strong>: ${f.status === 'correct' ? 'Diese Angabe passt.' : f.status === 'missing' ? 'Noch offen; kein Fehlversuch.' : f.status === 'format' ? 'Schreibe eine eindeutige ganze Zahl oder wähle eine Angabe. Kein fachlicher Fehlversuch.' : f.status === 'unchecked' ? 'Eigener Text, fachlich ungeprüft.' : f.status === 'opinion' ? (task.personal ? 'Deine Vorstellung ist gespeichert, nicht fachlich bewertet.' : 'Deine Priorität ist legitim.') : 'Diese Angabe passt noch nicht. Sieh den zugehörigen Materialteil an.'}</p>`).join('')}</section>` : ''}<div class="inquiry-actions">${button(hasText ? 'Antwort abgeben (ohne Fachbewertung)' : 'Angaben prüfen', 'check', '', 'id="learning-check"')}${button('Hilfe', 'help', '', 'id="learning-help"')}${canContinue(task, p) ? (task.id === 'future.revision' && p.answers.revision === 'change' ? button('Anderen Plan wählen und Belege neu prüfen', 'future-revise', '', 'id="learning-revise"') : button(a.index === a.tasks.length - 1 ? 'Zum Lernjournal' : 'Weiter', 'next', '', 'id="learning-next"')) : ''}</div><p class="small-note">${s.profile === 'foerder' ? 'Noch nicht passende Antworten' : 'Fachliche Fehlversuche'}: ${p.failures} von 2. ${support(p, s.profile === 'foerder')}.</p>${
+    `<p class="eyebrow">${unitNames[s.unit!]} · Schritt ${a.index + 1} von ${a.tasks.length} · ${profiles[s.profile!].name}</p><h1>${esc(task.title)}</h1><div class="inquiry-work"><section class="inquiry-material" aria-label="Material zur Aufgabe">${materialView(task, s.profile!, p)}</section><section class="inquiry-task"><h2 id="learning-title" tabindex="-1">Dein Auftrag</h2><p>${esc(task.instruction)}</p>${task.contextNote ? `<p class="learning-context">${esc(task.contextNote)}</p>` : ''}${p.standardScaffold ? `<aside class="learning-scaffold"><strong>Denkhinweis</strong><p>${esc(task.hints[0])}</p></aside>` : ''}${task.explained ? `<p>${esc(task.explained)}</p>` : ''}${carried}${task.simulation?.required?.some((id) => !p.explored?.includes(id)) ? '<p role="status">Teste die angegebenen Wege oder Maßnahmen mit den Tasten im Material. Danach kannst du deine Antwort prüfen.</p>' : ''}${fields(task, p)}${task.fields.some((f) => f.kind === 'integer') ? '<p id="learning-number" class="small-note">Ganze Zahlen: -10 und −10 sowie 1020 und 1.020 gelten gleich. Unklare Schreibweisen zählen nicht als Rechenfehler.</p>' : ''}${hasText ? `<label class="choice"><input type="checkbox" name="learning-oral" ${p.oral ? 'checked' : ''}>Ich möchte mündlich erklären. Das ist nur meine Selbstmeldung, noch keine beobachtete Besprechung.</label>` : ''}${p.submissions.length && (p.process !== 'draft' || p.factual !== 'ungraded') ? `<section class="feedback ${e.kind}" data-learning-feedback role="status"><h3 id="learning-feedback-title" tabindex="-1">${p.oral ? 'Mündliche Bearbeitung selbstgemeldet – fachlich ungeprüft' : esc(e.title)}</h3>${e.parts.map((f) => `<p data-finding="${f.status}"><strong>${esc(f.label)}</strong>: ${f.status === 'correct' ? 'Diese Angabe passt.' : f.status === 'missing' ? 'Noch offen; kein Fehlversuch.' : f.status === 'format' ? 'Schreibe eine eindeutige ganze Zahl oder wähle eine Angabe. Kein fachlicher Fehlversuch.' : f.status === 'unchecked' ? 'Eigener Text, fachlich ungeprüft.' : f.status === 'opinion' ? (task.personal ? 'Deine Vorstellung ist gespeichert, nicht fachlich bewertet.' : 'Du darfst so entscheiden.') : 'Diese Angabe passt noch nicht. Sieh den zugehörigen Materialteil an.'}</p>`).join('')}</section>` : ''}<div class="inquiry-actions">${button(hasText ? 'Antwort abgeben (ohne Fachbewertung)' : 'Angaben prüfen', 'check', '', 'id="learning-check"')}${button('Hilfe', 'help', '', 'id="learning-help"')}${canContinue(task, p) ? (task.id === 'future.revision' && p.answers.revision === 'change' ? button('Anderen Plan wählen und Belege neu prüfen', 'future-revise', '', 'id="learning-revise"') : button(a.index === a.tasks.length - 1 ? 'Zum Lernjournal' : 'Weiter', 'next', '', 'id="learning-next"')) : ''}</div><p class="small-note">${s.profile === 'foerder' ? 'Noch nicht passende Antworten' : 'Fachliche Fehlversuche'}: ${p.failures} von 2. ${support(p, s.profile === 'foerder')}.</p>${
       p.help
         ? `<aside class="help-panel"><h3 id="learning-help-title" tabindex="-1">Hilfe ${p.help} von 3</h3>${
             p.help === 3
@@ -154,6 +184,6 @@ export function renderLearning(
     footer
   );
 }
-function legacyLink() {
-  return '<aside><h2>Bisheriger Lernweg, ohne Niveaueinstufung</h2><p>Frühere Ergebnisse bleiben erhalten. Sie bestätigen keine neue Profilaufgabe.</p><button type="button" data-action="inquiry" data-op="journal">Bisheriges Themenjournal ansehen</button><button type="button" data-action="episode-report">Bisherige Kenia-Empfehlung ansehen</button></aside>';
+function legacyLink(hasLegacy = true) {
+  return `<details id="learning-legacy"><summary>Frühere Werkzeuge${hasLegacy ? ' und Ergebnisse' : ''}</summary><p>Frühere Ergebnisse bleiben bei ihrem bisherigen Lernweg, ohne Niveaueinstufung. Sie bestätigen keine neue Profilaufgabe.</p><button type="button" class="button secondary" data-action="legacy-home">Bisherige Themen und Episoden öffnen</button>${hasLegacy ? '<button type="button" data-action="inquiry" data-op="journal">Bisheriges Themenjournal ansehen</button><button type="button" data-action="episode-report">Bisherige Kenia-Empfehlung ansehen</button>' : ''}</details>`;
 }

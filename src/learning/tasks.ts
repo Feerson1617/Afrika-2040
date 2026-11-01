@@ -1,3 +1,4 @@
+import { simpleTask } from './language.ts';
 import { orientationTasks, reviewTasks } from './cross-paths.ts';
 import { populationModel, populationBalance } from '../inquiry/content.ts';
 import { journey } from '../model.ts';
@@ -58,6 +59,7 @@ export interface Task {
   };
   dependsOn?: string[];
   contextKey?: string;
+  simpleLanguage?: boolean;
   budget?: boolean;
   differentBudget?: boolean;
   allocationReference?: boolean;
@@ -528,7 +530,7 @@ function conditions(profile: ProfileId) {
     ),
   ];
 }
-export function tasksFor(unit: Unit, profile: ProfileId): Task[] {
+function buildTasks(unit: Unit, profile: ProfileId): Task[] {
   if (!isUnit(unit) || !isProfile(profile))
     throw new Error('Dieser Lernbereich ist noch nicht als Lernweg umgesetzt.');
   if (unit === 'o') return orientationTasks(profile);
@@ -746,6 +748,14 @@ export function tasksFor(unit: Unit, profile: ProfileId): Task[] {
       ],
     ),
   ];
+}
+export function tasksFor(unit: Unit, profile: ProfileId): Task[] {
+  return buildTasks(unit, profile).map((t) =>
+    simpleTask({
+      ...t,
+      simpleLanguage: profile === 'foerder' || profile === 'esa',
+    }),
+  );
 }
 function kenyaTasks(profile: ProfileId): Task[] {
   const a = journey('amina', 'direct'),

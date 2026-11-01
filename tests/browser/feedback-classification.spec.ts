@@ -140,7 +140,7 @@ for (const device of [
             },
             { key, id: c.id },
           );
-        await page.goto('/');
+        await page.goto('/?ansicht=bisher');
         await click('#episode-' + c.n);
         await help();
         await click('#study-adopt');

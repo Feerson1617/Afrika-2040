@@ -38,7 +38,7 @@ for (const mode of ['mouse', 'touch', 'keyboard'] as const)
             page.locator(`label[for="${await input.getAttribute('id')}"]`),
           );
       }
-      await page.goto('/');
+      await page.goto('/?ansicht=bisher');
       await press(page.getByRole('button', { name: 'Spiel starten' }));
       for (const step of [0, 1, 2]) {
         async function select(correct: boolean) {
@@ -158,7 +158,7 @@ for (const n of [3, 4, 5, 6])
     page,
   }) => {
     await page.setViewportSize({ width: 1024, height: 768 });
-    await page.goto('/');
+    await page.goto('/?ansicht=bisher');
     await page.locator('#episode-' + n).click();
     async function words() {
       const before = (await saved(page)).studies;
@@ -282,7 +282,7 @@ test('P2-01 confirmed early answers keep their provenance in the full learning p
 }) => {
   const { finish2A, chooseRoute, setGoal, selectEvidence } =
     await import('./phase2a-helpers.ts');
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.getByRole('button', { name: 'Spiel starten' }).click();
   for (const step of [0, 1, 2]) {
     if (step === 0) {

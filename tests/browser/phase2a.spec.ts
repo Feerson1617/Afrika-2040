@@ -1,5 +1,14 @@
 import { evidencePath } from './artifacts.ts';
-import { chooseRoute, setGoal, ownTextPanel, panel, selectEvidence, weightSelected, openDecisionMap, nativeFirstOption } from './phase2a-helpers.ts';
+import {
+  chooseRoute,
+  setGoal,
+  ownTextPanel,
+  panel,
+  selectEvidence,
+  weightSelected,
+  openDecisionMap,
+  nativeFirstOption,
+} from './phase2a-helpers.ts';
 import { test, expect, type Page } from '@playwright/test';
 import { auditAccessibility } from './accessibility.ts';
 import {
@@ -19,7 +28,7 @@ const personNames = { amina: 'Amina', david: 'David', leila: 'Leila' };
 const saved = (page: Page) =>
   page.evaluate((k) => JSON.parse(sessionStorage.getItem(k)!), key);
 async function toExplanation(page: Page) {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.getByRole('button', { name: 'Spiel starten' }).click();
   for (let i = 0; i < 3; i++) {
     await page
@@ -145,13 +154,14 @@ for (const device of [
         path: evidencePath(`map-${device.name}-${route}.png`),
       });
       await chooseRoute(page, c.name);
-      await setGoal(page,
-          route === 'north'
-            ? 'school'
-            : route === 'south'
-              ? 'training'
-              : 'market',
-        );
+      await setGoal(
+        page,
+        route === 'north'
+          ? 'school'
+          : route === 'south'
+            ? 'training'
+            : 'market',
+      );
       await selectEvidence(page, 'advantage', c.advantage);
       await selectEvidence(page, 'disadvantage', c.disadvantage);
       await weightSelected(page);
@@ -184,7 +194,7 @@ for (const device of [
       for (let i = 0; i < 2; i++) {
         await weightSelected(page);
         await act(page.getByRole('button', { name: 'Empfehlung prüfen' }));
-        }
+      }
       await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
       await expect(
         page.getByRole('button', { name: 'Zum Abschluss' }),
@@ -392,7 +402,11 @@ test('Phase2A new map and recommendation remain accessible with expanded words a
   for (const stage of ['decision', 'end']) {
     if (stage === 'end') {
       await selectEvidence(page, 'advantage', routeChoices.south.advantage);
-      await selectEvidence(page, 'disadvantage', routeChoices.south.disadvantage);
+      await selectEvidence(
+        page,
+        'disadvantage',
+        routeChoices.south.disadvantage,
+      );
       await weightSelected(page);
       await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
       await page.getByRole('button', { name: 'Zum Abschluss' }).click();
@@ -413,7 +427,7 @@ test('Phase2A an explicitly named goal is required without guessing it from free
   for (let i = 0; i < 3; i++) {
     await weightSelected(page);
     await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
-    }
+  }
   expect((await saved(page)).progress[5].failures).toBe(0);
   await expect(page.locator('[data-feedback]')).toContainText(
     'Ziel oder Kriterium',
@@ -438,9 +452,15 @@ test('Phase2A an explicitly named goal is required without guessing it from free
   await expect(page.locator('[data-feedback]')).toContainText(
     'nicht sicher prüfen',
   );
-  await expect(page.getByRole('button', { name: 'Zum Abschluss' })).toHaveCount(0);
-  await page.getByRole('button', { name: 'Eigenen Text unbewertet abgeben' }).click();
-  await expect(page.getByRole('button', { name: 'Zum Abschluss' })).toBeVisible();
+  await expect(page.getByRole('button', { name: 'Zum Abschluss' })).toHaveCount(
+    0,
+  );
+  await page
+    .getByRole('button', { name: 'Eigenen Text unbewertet abgeben' })
+    .click();
+  await expect(
+    page.getByRole('button', { name: 'Zum Abschluss' }),
+  ).toBeVisible();
 });
 test('Phase2A alternative valid evidence and a different weighting are accepted; a changed route alone never completes the task', async ({
   page,

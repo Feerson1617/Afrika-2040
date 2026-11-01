@@ -21,7 +21,7 @@ const act = (touch: boolean) => (el: Locator) =>
   touch ? el.tap() : el.click();
 async function explore(page: Page, touch = false) {
   const click = act(touch);
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await click(
     page.getByRole('button', { name: 'Episode 2 starten', exact: true }),
   );

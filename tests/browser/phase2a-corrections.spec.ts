@@ -274,7 +274,7 @@ test('B1 keyboard: both conflict paths and deliberate ungraded text; Pages prefi
   await page.keyboard.press('Enter');
   await expect(page.locator('.weighting-product')).toContainText('Trotzdem');
   // Visit same production build through repository prefix, preserving a deliberately ungraded record.
-  await page.goto('http://127.0.0.1:4174/Afrika-2040/');
+  await page.goto('http://127.0.0.1:4174/Afrika-2040/?ansicht=bisher');
   await page.evaluate((k) => {
     // Source is an existing real playthrough, copied across local origins for this prefix check.
     sessionStorage.removeItem(k);

@@ -232,7 +232,7 @@ test('Afrika curriculum four paths all twelve switches preserve drafts and resto
 }) => {
   for (const from of profileIds)
     for (const to of profileIds.filter((p) => p !== from)) {
-      await page.goto('/');
+      await page.goto('/?ansicht=bisher');
       await page.evaluate(() => sessionStorage.clear());
       await page.goto(`/?lernweg=${from}&bereich=c`);
       const task = tasksFor('c', from)[0],

@@ -52,7 +52,7 @@ export async function finish2A(page: Page, touch = false) {
 }
 export async function fullToDecision(page: Page, touch = false) {
   const act = actOn(touch);
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await act(page.getByRole('button', { name: 'Spiel starten' }));
   await act(page.getByRole('radio', { name: /Zum Platz/ }));
   await act(page.getByRole('radio', { name: /Platz → Zentrum/ }));

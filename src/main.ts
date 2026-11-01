@@ -2,6 +2,7 @@ import { unitNames } from './learning/catalog.ts';
 import { renderLearning } from './learning/chapter-ui.ts';
 import {
   active as activeLearning,
+  newLearning,
   type LearningAction,
 } from './learning/storage.ts';
 import { recommendation, consumedRecommendation } from './learning/entry.ts';
@@ -156,6 +157,18 @@ function header() {
 }
 
 function start() {
+  if (new URLSearchParams(location.search).get('ansicht') !== 'bisher')
+    return renderLearning(
+      { ...(state.learning ?? newLearning()), view: 'menu' },
+      header(),
+      restartPending,
+      !!state.inquiry ||
+        !!state.studies ||
+        !!state.demand ||
+        !!state.geography ||
+        state.step > 0,
+    );
+
   return `${header()}<main id="main" class="start-screen" tabindex="-1">
     <div class="hero-copy"><p class="eyebrow"><span class="tiny-dot"></span> Entdecken. Abwägen. Mitgestalten.</p>
       <h1>Afrika 2040 <span>Gestalte die<br>Zukunft.</span></h1>
@@ -518,6 +531,7 @@ function render(focusId?: string, taskChange = false) {
           !!state.inquiry ||
             !!state.demand ||
             !!state.studies ||
+            !!state.geography ||
             state.step > 0,
         )
       : state.screen === 'inquiry'
@@ -803,6 +817,15 @@ function dispatch(action: Action) {
 
 function activate(el: Element) {
   const name = el.getAttribute('data-action')!;
+  if (name === 'legacy-home') {
+    const url = new URL(location.href);
+    url.searchParams.set('ansicht', 'bisher');
+    history.replaceState(null, '', url);
+    state = { ...state, screen: 'start' };
+    persistState();
+    render('main', true);
+    return;
+  }
   if (name === 'learning') {
     const op = el.getAttribute('data-op');
     if (op === 'ask-reset') {

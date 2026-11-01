@@ -35,7 +35,7 @@ function observe(page: Page) {
   });
   return errors;
 }
-async function enter(page: Page, touch = false, path = '/') {
+async function enter(page: Page, touch = false, path = '/?ansicht=bisher') {
   await page.goto(path);
   await act(touch)(
     page.getByRole('button', { name: 'Episode 2 starten', exact: true }),
@@ -431,7 +431,7 @@ for (const recommendation of ['bus', 'path'] as const)
   test(`Episode 2 native keyboard alone completes ${recommendation} with real map controls and reload`, async ({
     page,
   }) => {
-    await page.goto('/');
+    await page.goto('/?ansicht=bisher');
     const press = async (selector: string, key = 'Enter') => {
       await page.locator(selector).focus();
       await page.keyboard.press(key);
@@ -565,7 +565,7 @@ test('Episode 2 start, comparison, trial, open conflict, supported product pass 
     const r = await auditAccessibility(page);
     expect(r.violations).toEqual([]);
   };
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await audit();
   await page
     .getByRole('button', { name: 'Episode 2 starten', exact: true })

@@ -12,7 +12,7 @@ test('Afrika curriculum Gate0 reset announces full scope and cancel preserves al
       'utf8',
     ),
   );
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.evaluate(
     ({ key, old }) => sessionStorage.setItem(key, JSON.stringify(old)),
     { key, old },
@@ -49,7 +49,7 @@ test('Afrika curriculum Gate0 economic writing has full GEPA and electricity mat
   page,
   browserName,
 }) => {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.locator('#inquiry-open').click();
   await page.locator('[data-op="topic"][data-value="economy"]').click();
   for (let i = 0; i < 2; i++) {
@@ -84,7 +84,7 @@ test('Afrika curriculum Gate0 economic writing has full GEPA and electricity mat
 test('Afrika curriculum Gate0 water answer order survives check, back and reload with semantic evaluation', async ({
   page,
 }) => {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.locator('#episode-5').click();
   const order = () =>
     page

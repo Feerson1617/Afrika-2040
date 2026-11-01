@@ -175,6 +175,8 @@ function setAnswer(
   value = value.slice(0, 2000);
   if (p.answers[field] === value) return false;
   p.answers[field] = value;
+  if (a.task.simulation?.kind === 'orientation' && field === 'country')
+    p.simulationSelection = value;
   p.process = 'draft';
   p.factual = 'ungraded';
   p.adopted = false;

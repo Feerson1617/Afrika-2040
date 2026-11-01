@@ -36,13 +36,16 @@ export function topicMaterial(f: Focus, p: ProfileId) {
     view += `<table class="learning-season"><caption>${esc(s.name)} · typische Jahreszeiten, keine Monatsmessungen</caption><thead><tr><th scope="col">Monat</th><th scope="col">Regen im Vergleich</th></tr></thead><tbody>${months.map((m, i) => `<tr><th scope="row">${m}</th><td>${(s.wet as readonly number[]).includes(i + 1) ? '● ● ● mehr' : '● weniger'}</td></tr>`).join('')}</tbody></table>`;
   }
   if (f.rows)
-    view += `<table><caption>Angaben für diesen Schritt</caption><thead><tr>${f.rows[0].map((x) => `<th scope="col">${esc(x)}</th>`).join('')}</tr></thead><tbody>${f.rows
+    view += `<table><caption>Angaben für diesen Schritt</caption><thead><tr>${f.rows[0].map((x) => `<th scope="col">${esc(f.topic === 'future' ? x.replace('Gemeinsamer Kühlraum', 'Kühlraum').replace('Schattendächer und Mehrwegkisten', 'Dächer/Kisten') : x)}</th>`).join('')}</tr></thead><tbody>${f.rows
       .slice(1)
       .map(
         (row) =>
-          `<tr>${row.map((x, i) => (i ? `<td>${esc(x)}</td>` : `<th scope="row">${esc(x)}</th>`)).join('')}</tr>`,
+          `<tr>${row.map((x, i) => (i ? `<td>${esc(x)}</td>` : `<th scope="row">${esc(f.topic === 'future' ? x.replace('Gemeinsamer Kühlraum', 'Kühlraum').replace('Schattendächer und Mehrwegkisten', 'Dächer/Kisten') : x)}</th>`)).join('')}</tr>`,
       )
       .join('')}</tbody></table>`;
+  if (f.topic === 'future' && f.rows)
+    view +=
+      '<p>Kühlraum: Gemeinsamer Kühlraum. Dächer/Kisten: Schattendächer und Mehrwegkisten.</p>';
   if (f.steps)
     view += `<figure class="learning-chain"><ol>${f.steps.map((s) => `<li>${esc(s)}</li>`).join('')}</ol><figcaption>Vereinfachtes Schema: Wasser kann erneut verdunsten. Keine gemessene regionale Wasserbilanz.</figcaption></figure>`;
   const r = newRecord();

@@ -445,7 +445,7 @@ test('Phase2B migration, damaged optional event, return/back/reset and prefix pr
   await expect(page.locator('.event-transition')).toBeVisible();
   expect((await saved(page)).decision).toEqual(first);
   const prefixState = await saved(page);
-  await page.goto('http://127.0.0.1:4174/Afrika-2040/');
+  await page.goto('http://127.0.0.1:4174/Afrika-2040/?ansicht=bisher');
   await page.evaluate(
     ({ k, s }) => sessionStorage.setItem(k, JSON.stringify(s)),
     { k: key, s: prefixState },

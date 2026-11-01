@@ -64,7 +64,7 @@ for (const mode of ['mouse', 'touch', 'keyboard'] as const)
       radios().evaluateAll((es) =>
         es.map((e) => (e as HTMLInputElement).value),
       );
-    await page.goto('/');
+    await page.goto('/?ansicht=bisher');
     await press(page.locator('#review-open'));
     const observations = [];
     for (const c of countries) {

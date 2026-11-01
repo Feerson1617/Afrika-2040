@@ -3,7 +3,7 @@ import { readFileSync, writeFileSync } from 'node:fs';
 import { evidencePath } from './artifacts.ts';
 const key = 'afrika-2040:kenia-bus:v2a';
 async function open(page: Page) {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.evaluate(() => sessionStorage.clear());
   await page.reload();
   await page.locator('#inquiry-open').click();
@@ -192,7 +192,7 @@ test('Afrika curriculum correction real baseline save retains ungraded text and 
       'utf8',
     ),
   );
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.evaluate(
     ({ key, old }) => sessionStorage.setItem(key, JSON.stringify(old)),
     { key, old },

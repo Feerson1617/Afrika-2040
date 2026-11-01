@@ -35,7 +35,7 @@ function observe(page: Page) {
   });
   return errors;
 }
-async function enter(page: Page, touch = false, path = '/') {
+async function enter(page: Page, touch = false, path = '/?ansicht=bisher') {
   await page.goto(path);
   await act(touch)(
     page.getByRole('button', { name: 'Episode 2 starten', exact: true }),

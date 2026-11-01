@@ -49,7 +49,7 @@ for (const device of [
       test(`correction episode ${c.n}: automatic association support, distinct hints, provenance, full product/reload and own text`, async ({
         page,
       }) => {
-        await page.goto('/');
+        await page.goto('/?ansicht=bisher');
         await page.locator('#episode-' + c.n).click();
         await supportedToDecision(page, c.n);
         for (const [f, v] of [
@@ -232,7 +232,7 @@ for (const [n, id, goal, label, benefit, limit] of reports)
   test(`entire report assigned to chosen proposal ${n}/${id}, persisted and edited`, async ({
     page,
   }) => {
-    await page.goto('/');
+    await page.goto('/?ansicht=bisher');
     await page.locator('#episode-' + n).click();
     await supportedToDecision(page, n);
     for (const [f, v] of [
@@ -283,7 +283,7 @@ for (const priority of ['payout', 'reserve', 'training'])
   test(`entire one-sided Ghana plan ${priority}: 120 GE, not the mixed example`, async ({
     page,
   }) => {
-    await page.goto('/');
+    await page.goto('/?ansicht=bisher');
     await page.locator('#episode-4').click();
     await help(page);
     await page.locator('#study-adopt').click();

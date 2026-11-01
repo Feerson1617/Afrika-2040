@@ -3,7 +3,7 @@ import { auditAccessibility } from './accessibility.ts';
 test('phase5 short real/model information and offline source detail remain separate in all six direct episodes', async ({
   page,
 }) => {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   for (const [id, fact] of [
     ['KEN', 'Hauptstadt von Kenia'],
     ['GHA', 'Accra liegt weiter südlich'],

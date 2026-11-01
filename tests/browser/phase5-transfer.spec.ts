@@ -11,7 +11,7 @@ const progress = (page: Page, tab: string) =>
 test('phase5 all three transfers: false claim, two errors, conscious support, editing, reload and fully independent answer', async ({
   page,
 }) => {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.locator('#review-open').click();
   await expect(page.locator('h1')).toContainText('Drei Orte');
   await expect(page.locator('[data-region-status=KEN]')).toContainText(
@@ -57,7 +57,7 @@ test('phase5 all three transfers: false claim, two errors, conscious support, ed
 test('phase5 common comparison: partial acknowledgment, actual colors, missing answer without failure and supported completion', async ({
   page,
 }) => {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.locator('#review-open').click();
   await page.locator('#review-tab-common').click();
   await page.locator('#geo-transfer-consequences-different').check();
@@ -117,7 +117,7 @@ for (const size of [
     const page = await ctx.newPage();
     const errors: string[] = [];
     page.on('pageerror', (e) => errors.push(e.message));
-    await page.goto('/');
+    await page.goto('/?ansicht=bisher');
     await page.locator('#episode-3').tap();
     await page.locator('#chain-beans').tap();
     await page.locator('#review-open').tap();
@@ -183,7 +183,7 @@ for (const size of [
 test('phase5 keyboard, both directions in review map selection, names, focus and actual HTML alternative', async ({
   page,
 }) => {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.locator('#review-open').focus();
   await page.keyboard.press('Enter');
   for (const id of ['KEN', 'GHA', 'KEN']) {

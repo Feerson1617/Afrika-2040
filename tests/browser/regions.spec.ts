@@ -3,7 +3,7 @@ import { test, expect, type Page } from '@playwright/test';
 import { auditAccessibility } from './accessibility.ts';
 import { evidencePath } from './artifacts.ts';
 async function begin(page: Page, n = 3) {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await studyClick(page, '#episode-' + n, 'click');
 }
 async function chain(page: Page) {
@@ -241,7 +241,7 @@ for (const device of [
       baseURL: 'http://127.0.0.1:4173',
     });
     const page = await context.newPage();
-    await page.goto('/');
+    await page.goto('/?ansicht=bisher');
     await studyClick(page, '#episode-3', 'tap');
     for (const k of ['beans', 'roast', 'mass', 'press'])
       await studyClick(page, '#chain-' + k, 'tap');
@@ -286,7 +286,7 @@ for (const device of [
       baseURL: 'http://127.0.0.1:4173',
     });
     const page = await context.newPage();
-    await page.goto('/');
+    await page.goto('/?ansicht=bisher');
     await studyClick(page, '#episode-4', 'tap');
     await shareLedger(page, true);
     await studyClick(page, '#try-training', 'tap');

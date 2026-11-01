@@ -48,7 +48,7 @@ function fixture(
   return s;
 }
 async function seed(page: Page, s: LearningState) {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.evaluate(
     ({ key, s }) => sessionStorage.setItem(key, JSON.stringify({ ...s })),
     { key, s: { ...initialState(), screen: 'learning', learning: s } },

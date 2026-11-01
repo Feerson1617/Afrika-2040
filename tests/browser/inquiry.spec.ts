@@ -71,7 +71,7 @@ const click = async (page: Page, op: string, touch = false, value?: string) => {
   else await l.click();
 };
 async function open(page: Page, id: Topic, touch = false) {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   if (touch) await page.locator('#inquiry-open').tap();
   else await page.locator('#inquiry-open').click();
   await click(page, 'topic', touch, id);
@@ -523,7 +523,7 @@ test('Afrika curriculum all ten checks: actual wrong alternatives, yellow recogn
       ],
     };
   for (const id of Object.keys(answers) as Topic[]) {
-    await page.goto('/');
+    await page.goto('/?ansicht=bisher');
     await page.evaluate(() => sessionStorage.clear());
     await open(page, id);
     for (let step = 0; step < 2; step++) {
@@ -573,7 +573,7 @@ test('Afrika curriculum keyboard-only selects and numeric entry, reversible mate
     baseURL: 'http://127.0.0.1:4173',
   });
   const page = await context.newPage();
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.locator('#inquiry-open').focus();
   await page.keyboard.press('Enter');
   const go = async (selector: string) => {

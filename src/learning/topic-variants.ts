@@ -940,16 +940,27 @@ export function futureReference(
         return {
           ...f,
           expected: 'either',
-          options: [
-            [
-              'adapt',
-              `Ich passe mein Ziel an: ${plan === 'cool' ? 'Kühlung' : 'Zugang für 60 Stände'} ist mir wichtiger. Dafür akzeptiere ich ${plan === 'cool' ? 'nur 30 nutzende Stände und Strombedarf' : 'die geringere Kühlung empfindlicher Ware'}.`,
-            ],
-            [
-              'tradeoff',
-              `Ich sehe den Zielkonflikt. Ich gewichte ${plan === 'cool' ? 'Kühlung stärker als breiten Zugang und akzeptiere 30 statt 60 Stände' : 'Zugang für 60 Stände stärker als Kühlung empfindlicher Ware und akzeptiere deren geringeren Schutz'}.`,
-            ],
-          ] as const,
+          options: task.simpleLanguage
+            ? [
+                [
+                  'adapt',
+                  `Ich wähle diesen Plan. Mir ist wichtig: ${plan === 'cool' ? 'empfindliche Waren kühlen' : 'Zugang für 60 Stände'}. Dafür nehme ich in Kauf: ${plan === 'cool' ? 'nur 30 Stände und Strombedarf' : 'weniger Schutz für empfindliche Waren'}.`,
+                ],
+                [
+                  'tradeoff',
+                  `Mein erstes Ziel bleibt wichtig. Trotzdem ist mir hier ${plan === 'cool' ? 'die Kühlung' : 'der Zugang für 60 Stände'} wichtiger. Dafür akzeptiere ich ${plan === 'cool' ? 'nur 30 Stände und Strombedarf' : 'weniger Kühlung empfindlicher Waren'}.`,
+                ],
+              ]
+            : ([
+                [
+                  'adapt',
+                  `Ich passe mein Ziel an: ${plan === 'cool' ? 'Kühlung' : 'Zugang für 60 Stände'} ist mir wichtiger. Dafür akzeptiere ich ${plan === 'cool' ? 'nur 30 nutzende Stände und Strombedarf' : 'die geringere Kühlung empfindlicher Ware'}.`,
+                ],
+                [
+                  'tradeoff',
+                  `Ich sehe den Zielkonflikt. Ich gewichte ${plan === 'cool' ? 'Kühlung stärker als breiten Zugang und akzeptiere 30 statt 60 Stände' : 'Zugang für 60 Stände stärker als Kühlung empfindlicher Ware und akzeptiere deren geringeren Schutz'}.`,
+                ],
+              ] as const),
         };
       return {
         ...f,

@@ -3,7 +3,7 @@ import { test, expect, type Page } from '@playwright/test';
 import { auditAccessibility } from './accessibility.ts';
 import { evidencePath } from './artifacts.ts';
 async function begin(page: Page, n = 5) {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await studyClick(page, '#episode-' + n, 'click');
 }
 async function baseline(page: Page) {
@@ -270,7 +270,7 @@ for (const device of [
         baseURL: 'http://127.0.0.1:4173',
       });
       const page = await ctx.newPage();
-      await page.goto('/');
+      await page.goto('/?ansicht=bisher');
       await studyClick(page, '#episode-' + n, 'tap');
       if (n === 5) {
         for (const id of [

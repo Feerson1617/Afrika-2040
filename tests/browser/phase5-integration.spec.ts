@@ -14,7 +14,7 @@ test('phase5 production under Pages prefix: local assets, orientation, offline f
   page.on('response', (r) => {
     if (r.status() >= 400) errors.push(r.url() + ':' + r.status());
   });
-  await page.goto('http://127.0.0.1:4174/Afrika-2040/');
+  await page.goto('http://127.0.0.1:4174/Afrika-2040/?ansicht=bisher');
   await page.locator('#geo-target-MAR').click();
   await page.locator('#geo-pick-MAR').click();
   await page.locator('#geo-check').click();

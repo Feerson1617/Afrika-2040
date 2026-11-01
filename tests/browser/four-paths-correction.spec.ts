@@ -63,7 +63,7 @@ async function assertActive(
   expect(r.attempts[task.id].identity.profileId).toBe(profile);
 }
 async function seed(page: Page, learning: LearningState) {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.evaluate(
     ({ key, state }) => sessionStorage.setItem(key, JSON.stringify(state)),
     { key, state: { ...initialState(), screen: 'learning', learning } },
@@ -500,7 +500,7 @@ test('Afrika curriculum correction all 16 rendered region positions survive wron
         record.data.explored = ['base', 'same'];
       }
     }
-    await page.goto('/');
+    await page.goto('/?ansicht=bisher');
     await page.evaluate(
       ({ key, base }) => sessionStorage.setItem(key, JSON.stringify(base)),
       { key, base },

@@ -61,7 +61,7 @@ test('all six entries, four complete independent regional products below Pages p
     if (r.url().startsWith('http://127.0.0.1:4174') && r.status() >= 400)
       errors.push(r.url() + ':' + r.status());
   });
-  await page.goto('http://127.0.0.1:4174/Afrika-2040/');
+  await page.goto('http://127.0.0.1:4174/Afrika-2040/?ansicht=bisher');
   await expect(
     page.getByRole('button', { name: 'Spiel starten' }),
   ).toBeVisible();
@@ -193,7 +193,7 @@ test('blocked storage still permits regional supported work and explicitly ungra
       throw new DOMException('blocked', 'SecurityError');
     };
   });
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.locator('#episode-5').click();
   await supportedToDecision(page, 5);
   await studyClick(page, '#study-proposal-tech', 'check');
@@ -224,7 +224,7 @@ for (const n of [3, 4, 5, 6])
   test(`complete regional episode ${n} by keyboard; SVG and HTML alternatives reached in actual Tab order`, async ({
     page,
   }) => {
-    await page.goto('/');
+    await page.goto('/?ansicht=bisher');
     await keyboard(page, '#episode-' + n);
     const ids =
       n === 3
@@ -347,7 +347,7 @@ for (const device of [
       baseURL: 'http://127.0.0.1:4173',
     });
     const page = await ctx.newPage();
-    await page.goto('/');
+    await page.goto('/?ansicht=bisher');
     for (const n of [3, 4, 5, 6]) {
       await page.locator('#episode-' + n).tap();
       await help(page);
@@ -416,7 +416,7 @@ for (const device of [
 test('a fact about another tested measure with a correct limit is visibly partial; the position remains legitimate', async ({
   page,
 }) => {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.locator('#episode-3').click();
   await supportedToDecision(page, 3);
   for (const [f, v] of [

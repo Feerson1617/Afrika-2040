@@ -22,7 +22,7 @@ for (const device of [
     page.on('response', (r) => {
       if (r.status() >= 400) errors.push(r.status() + ':' + r.url());
     });
-    await page.goto('/');
+    await page.goto('/?ansicht=bisher');
     for (const [id, name, city, lon, lat, region] of [
       ['KEN', 'Kenia', 'Nairobi', 36.814711, -1.281401, 'Ostafrika'],
       ['GHA', 'Ghana', 'Kumasi', -1.63196, 6.691937, 'Westafrika'],
@@ -75,7 +75,7 @@ for (const device of [
 test('phase5 orientation missing answer, two wrong attempts, truthful selected names, distinct hints and conscious example/reload', async ({
   page,
 }) => {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.locator('#geo-check').click();
   await expect(page.locator('[data-feedback]')).toHaveClass(/hint/);
   await page.locator('#geo-pick-KEN').click();
@@ -132,7 +132,7 @@ test('phase5 orientation missing answer, two wrong attempts, truthful selected n
 test('phase5 keyboard reaches SVG and HTML alternatives and updates computed names in both directions', async ({
   page,
 }) => {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.locator('#geo-target-KEN').focus();
   await page.keyboard.press('Enter');
   await page.locator('#geo-country-KEN').focus();
@@ -183,7 +183,7 @@ test('phase5 all six episodes start without completed map work', async ({
   page,
 }) => {
   for (const n of [1, 2, 3, 4, 5, 6]) {
-    await page.goto('/');
+    await page.goto('/?ansicht=bisher');
     if (n === 1)
       await page.getByRole('button', { name: 'Spiel starten' }).click();
     else if (n === 2)

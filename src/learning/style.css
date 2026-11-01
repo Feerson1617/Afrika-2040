@@ -6,13 +6,14 @@
   margin: 4px;
   max-width: 100%;
 }
-.learning-screen table {
+.learning-screen.inquiry-screen table {
   width: 100%;
   table-layout: auto;
 }
-.learning-screen th,
-.learning-screen td {
-  overflow-wrap: anywhere;
+.learning-screen.inquiry-screen th,
+.learning-screen.inquiry-screen td {
+  overflow-wrap: normal;
+  word-break: normal;
 }
 .learning-scaffold,
 .learning-criteria {
@@ -91,4 +92,12 @@
 .learning-long-choice .choice span {
   white-space: normal;
   overflow-wrap: anywhere;
+}
+
+.journal-record {
+  margin-block: 16px;
+}
+.journal-record > summary h2 {
+  display: inline;
+  font-size: 1.2rem;
 }
