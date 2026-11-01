@@ -1,3 +1,4 @@
+import { transferCases, transferContext } from './transfer-cases.ts';
 import { waterModel, water } from '../regions/water.ts';
 import { areaModel, area } from '../regions/area.ts';
 import { cocoaModel, cocoa } from '../regions/cocoa.ts';
@@ -527,13 +528,13 @@ export function demandTasks(p: ProfileId): Task[] {
       [
         pick(
           'enough',
-          'Jetzt sind es 18 Menschen bei 20 Plätzen. Reicht die Kapazität?',
+          `Jetzt sind es ${transferCases['demand-18'].people} Menschen bei ${transferCases['demand-18'].capacity} Plätzen. Reicht die Kapazität?`,
           'yes',
           [
             ['no', 'Nein'],
             ['yes', 'Ja'],
           ],
-          '18 ist kleiner als 20.',
+          `${transferCases['demand-18'].people} ist kleiner als ${transferCases['demand-18'].capacity}.`,
         ),
         pick(
           'access',
@@ -546,7 +547,12 @@ export function demandTasks(p: ProfileId): Task[] {
           'Freie Plätze und Erreichbarkeit sind verschiedene Größen.',
         ),
       ],
-      'Der Vergleich hat 18 Menschen. Die übrigen Modellregeln bleiben gleich.',
+      `Der neue Fall hat ${transferCases['demand-18'].people} Menschen. Vergleiche Nachfrage und Plätze. Prüfe den Fußweg getrennt.`,
+      [],
+      {
+        simulation: { kind: 'demand', transfer: 'demand-18' },
+        contextNote: transferContext['demand-18'],
+      },
     ),
   ];
   if (p === 'ahr')
@@ -1255,26 +1261,34 @@ export function waterTasks(p: ProfileId): Task[] {
         ? [
             pick(
               'rest',
-              'Neue erfundene Runde: 70 WE da, 50 WE entnommen. 70 − 50 = 20. Was bleibt?',
-              '20',
+              `Neue erfundene Runde: ${transferCases['water-70'].initial} WE da, ${transferCases['water-70'].withdrawal} WE entnommen. ${transferCases['water-70'].initial} − ${transferCases['water-70'].withdrawal} = ${transferCases['water-70'].remaining}. Was bleibt?`,
+              String(transferCases['water-70'].remaining),
               [
                 ['50', '50 WE'],
-                ['20', '20 WE'],
+                [
+                  String(transferCases['water-70'].remaining),
+                  `${transferCases['water-70'].remaining} WE`,
+                ],
               ],
-              '20 WE bleiben; das ist keine Grundwassermessung.',
+              `${transferCases['water-70'].remaining} WE bleiben; das ist keine Grundwassermessung.`,
             ),
           ]
         : [
             number(
               'rest',
               p === 'esa'
-                ? 'Neuer Fall: 70 − 50 ='
-                : 'Neuer Fall: Start 70 WE, Entnahme 50 WE. Tankrest?',
-              20,
-              '70 − 50 = 20 WE.',
+                ? `Neuer Fall: ${transferCases['water-70'].initial} − ${transferCases['water-70'].withdrawal} =`
+                : `Neuer Fall: Start ${transferCases['water-70'].initial} WE, Entnahme ${transferCases['water-70'].withdrawal} WE. Tankrest?`,
+              transferCases['water-70'].remaining,
+              `${transferCases['water-70'].initial} − ${transferCases['water-70'].withdrawal} = ${transferCases['water-70'].remaining} WE.`,
             ),
           ],
-      'Die neue Runde hat 70 statt 80 WE am Anfang.',
+      `Die neue Runde hat ${transferCases['water-70'].initial} WE am Anfang. Ziehe die Entnahme ab.`,
+      [],
+      {
+        simulation: { kind: 'water', transfer: 'water-70' },
+        contextNote: transferContext['water-70'],
+      },
     ),
   ];
   if (p === 'ahr')
@@ -1417,36 +1431,41 @@ export function areaTasks(p: ProfileId): Task[] {
         ? [
             pick(
               'total',
-              'Dieses Zusatzfeld braucht nur 10 WE. 45 + 10 = 55 WE. Ist das weniger als früher 60 WE?',
+              `Dieses Zusatzfeld braucht nur ${transferCases['area-10'].extra} WE. ${transferCases['area-10'].first} + ${transferCases['area-10'].extra} = ${transferCases['area-10'].total} WE. Ist das weniger als früher ${transferCases['area-10'].former} WE?`,
               'yes',
               [
                 ['no', 'Nein'],
                 ['yes', 'Ja'],
               ],
-              '55 WE sind weniger als 60 WE. Nicht jede Erweiterung hebt die Einsparung auf.',
+              `${transferCases['area-10'].total} WE sind weniger als ${transferCases['area-10'].former} WE. Nicht jede Erweiterung hebt die Einsparung auf.`,
             ),
           ]
         : [
             number(
               'total',
               p === 'esa'
-                ? 'Neuer Fall: 45 + 10 ='
-                : 'Neuer Fall: Zusatzfeld 10 WE. Gesamt mit erstem Feld?',
-              55,
-              '45 + 10 = 55 WE.',
+                ? `Neuer Fall: ${transferCases['area-10'].first} + ${transferCases['area-10'].extra} =`
+                : `Neuer Fall: Zusatzfeld ${transferCases['area-10'].extra} WE. Gesamt mit erstem Feld?`,
+              transferCases['area-10'].total,
+              `${transferCases['area-10'].first} + ${transferCases['area-10'].extra} = ${transferCases['area-10'].total} WE.`,
             ),
             pick(
               'less',
-              'Ist die Gesamtentnahme hier kleiner als früher 60 WE?',
+              `Ist die Gesamtentnahme hier kleiner als früher ${transferCases['area-10'].former} WE?`,
               'yes',
               [
                 ['yes', 'Ja'],
                 ['no', 'Nein'],
               ],
-              '55 ist kleiner als 60. Die Größe der Erweiterung ist entscheidend.',
+              `${transferCases['area-10'].total} ist kleiner als ${transferCases['area-10'].former}. Die Größe der Erweiterung ist entscheidend.`,
             ),
           ],
       'Prüfe die neue Zusatzmenge statt die alte Summe zu übernehmen.',
+      [],
+      {
+        simulation: { kind: 'area', transfer: 'area-10' },
+        contextNote: transferContext['area-10'],
+      },
     ),
   ];
   if (p === 'ahr')

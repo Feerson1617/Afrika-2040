@@ -45,10 +45,47 @@ for (const unit of ['s1', 's2', 's3', 's4', 's5', 's6', 'o', 'r'] as const)
           let s = await get();
           expect(s.profile).toBe(profile);
           const task = active(s)!.task;
-          if (unit === 's2')
+          if (unit === 's2' && !task.simulation?.transfer)
             await expect(page.locator('.inquiry-material')).toContainText(
               'acht neuen Nachbarn',
             );
+          if (task.simulation?.transfer) {
+            await expect(
+              page.locator('[data-transfer-view="current"]'),
+            ).toBeVisible();
+            const rows = page.locator('.inquiry-material tbody tr');
+            for (const [label, value] of task.simulation.transfer ===
+            'demand-18'
+              ? [
+                  ['Menschen in dieser Stunde', '18'],
+                  ['Plätze pro Stunde', '20'],
+                  ['Betrachteter Fußweg (Minuten)', '12'],
+                ]
+              : task.simulation.transfer === 'water-70'
+                ? [
+                    ['Tank am Anfang', '70'],
+                    ['Entnahme', '50'],
+                    ['Tankrest', '20'],
+                  ]
+                : [
+                    ['Tank am Anfang', '80'],
+                    ['Erstes Feld', '45'],
+                    ['Zusatzfeld', '10'],
+                    ['Gesamtentnahme', '55'],
+                    ['Tankrest', '25'],
+                  ]) {
+              await expect(
+                rows
+                  .filter({
+                    has: page.getByRole('rowheader', {
+                      name: label,
+                      exact: true,
+                    }),
+                  })
+                  .getByRole('cell'),
+              ).toHaveText(value);
+            }
+          }
           if (task.linked && task.linked.kind !== 'kenya') {
             const proposed =
               s.records[`${unit}.${profile}.v1`].attempts[task.linked.task]

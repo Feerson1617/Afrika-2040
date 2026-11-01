@@ -86,7 +86,7 @@ export function evaluate(
         : opinion
           ? task.personal
             ? 'Deine erste Vorstellung bleibt unbewertet.'
-            : 'Deine Priorität bleibt deine.'
+            : 'Du darfst so entscheiden.'
           : 'Diese Angaben passen.';
   return {
     parts,

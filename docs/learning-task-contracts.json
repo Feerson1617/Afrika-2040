@@ -5,7 +5,8 @@
     "future": "Resolve against current plan and goal. Historical responses retain original context.",
     "episodes": "dependsOn encodes source task answers. contextKey must match the latest submission. Changing a source invalidates current dependent answers; historical labels remain.",
     "allocation": "All 28 budget plans accepted. Funded purposes provide legitimate consequences. A second comparison plan must differ. No moral ranking.",
-    "exploration": "Required simulation states must actually be selected. Viewing a model is not proof of understanding."
+    "exploration": "Required simulation states must actually be selected. Viewing a model is not proof of understanding.",
+    "transfer": "Task-bound current case, explicit old comparison. View switches preserve raw answers, submission history and support provenance. Old correct answers are retained, never reissued as new independent work."
   },
   "variants": [
     {
@@ -17290,7 +17291,8 @@
           "title": "Jetzt sind es 18 Menschen bei 20 Plätzen. Reicht die Kapazität?",
           "material": "simulation",
           "simulation": {
-            "kind": "demand"
+            "kind": "demand",
+            "transfer": "demand-18"
           },
           "instruction": "Untersuche das Modell. Wähle oder rechne selbst.",
           "fields": [
@@ -17307,7 +17309,7 @@
             }
           ],
           "hints": [
-            "Der Vergleich hat 18 Menschen. Die übrigen Modellregeln bleiben gleich.",
+            "Der neue Fall hat 18 Menschen. Vergleiche Nachfrage und Plätze. Prüfe den Fußweg getrennt.",
             "Plätze pro Stunde = Fahrten mal Plätze je Fahrt. Vergleiche dies mit der Nachfrage. Der Fußweg ist eine andere Größe.",
             "Prüfe das erklärte Beispiel. Du entscheidest, ob du es übernehmen möchtest."
           ],
@@ -17315,6 +17317,7 @@
             "Sachangaben zum dargestellten Modell zugeordnet.",
             "Eigene Entscheidungen sind keine automatische Fachbewertung."
           ],
+          "contextNote": "Neuer Fall: 18 Menschen, 20 Plätze pro Stunde. Der betrachtete Fußweg bleibt 12 Minuten lang. Beantworte die Frage zum neuen Fall.",
           "simpleLanguage": true,
           "identity": {
             "conceptId": "demand.transfer",
@@ -17333,7 +17336,8 @@
           "title": "Beweist das auch einen kurzen Fußweg?",
           "material": "simulation",
           "simulation": {
-            "kind": "demand"
+            "kind": "demand",
+            "transfer": "demand-18"
           },
           "instruction": "Untersuche das Modell. Wähle oder rechne selbst.",
           "fields": [
@@ -17350,7 +17354,7 @@
             }
           ],
           "hints": [
-            "Der Vergleich hat 18 Menschen. Die übrigen Modellregeln bleiben gleich.",
+            "Der neue Fall hat 18 Menschen. Vergleiche Nachfrage und Plätze. Prüfe den Fußweg getrennt.",
             "Plätze pro Stunde = Fahrten mal Plätze je Fahrt. Vergleiche dies mit der Nachfrage. Der Fußweg ist eine andere Größe.",
             "Prüfe das erklärte Beispiel. Du entscheidest, ob du es übernehmen möchtest."
           ],
@@ -17358,6 +17362,7 @@
             "Sachangaben zum dargestellten Modell zugeordnet.",
             "Eigene Entscheidungen sind keine automatische Fachbewertung."
           ],
+          "contextNote": "Neuer Fall: 18 Menschen, 20 Plätze pro Stunde. Der betrachtete Fußweg bleibt 12 Minuten lang. Beantworte die Frage zum neuen Fall.",
           "simpleLanguage": true,
           "identity": {
             "conceptId": "demand.transfer",
@@ -17914,7 +17919,8 @@
           "title": "Jetzt sind es 18 Menschen bei 20 Plätzen. Reicht die Kapazität?",
           "material": "simulation",
           "simulation": {
-            "kind": "demand"
+            "kind": "demand",
+            "transfer": "demand-18"
           },
           "instruction": "Untersuche das Modell. Wähle oder rechne selbst.",
           "fields": [
@@ -17931,7 +17937,7 @@
             }
           ],
           "hints": [
-            "Der Vergleich hat 18 Menschen. Die übrigen Modellregeln bleiben gleich.",
+            "Der neue Fall hat 18 Menschen. Vergleiche Nachfrage und Plätze. Prüfe den Fußweg getrennt.",
             "Plätze pro Stunde = Fahrten mal Plätze je Fahrt. Vergleiche dies mit der Nachfrage. Der Fußweg ist eine andere Größe.",
             "Prüfe das erklärte Beispiel. Du entscheidest, ob du es übernehmen möchtest."
           ],
@@ -17939,6 +17945,7 @@
             "Sachangaben zum dargestellten Modell zugeordnet.",
             "Eigene Entscheidungen sind keine automatische Fachbewertung."
           ],
+          "contextNote": "Neuer Fall: 18 Menschen, 20 Plätze pro Stunde. Der betrachtete Fußweg bleibt 12 Minuten lang. Beantworte die Frage zum neuen Fall.",
           "simpleLanguage": true,
           "identity": {
             "conceptId": "demand.transfer",
@@ -17957,7 +17964,8 @@
           "title": "Beweist das auch einen kurzen Fußweg?",
           "material": "simulation",
           "simulation": {
-            "kind": "demand"
+            "kind": "demand",
+            "transfer": "demand-18"
           },
           "instruction": "Untersuche das Modell. Wähle oder rechne selbst.",
           "fields": [
@@ -17974,7 +17982,7 @@
             }
           ],
           "hints": [
-            "Der Vergleich hat 18 Menschen. Die übrigen Modellregeln bleiben gleich.",
+            "Der neue Fall hat 18 Menschen. Vergleiche Nachfrage und Plätze. Prüfe den Fußweg getrennt.",
             "Plätze pro Stunde = Fahrten mal Plätze je Fahrt. Vergleiche dies mit der Nachfrage. Der Fußweg ist eine andere Größe.",
             "Prüfe das erklärte Beispiel. Du entscheidest, ob du es übernehmen möchtest."
           ],
@@ -17982,6 +17990,7 @@
             "Sachangaben zum dargestellten Modell zugeordnet.",
             "Eigene Entscheidungen sind keine automatische Fachbewertung."
           ],
+          "contextNote": "Neuer Fall: 18 Menschen, 20 Plätze pro Stunde. Der betrachtete Fußweg bleibt 12 Minuten lang. Beantworte die Frage zum neuen Fall.",
           "simpleLanguage": true,
           "identity": {
             "conceptId": "demand.transfer",
@@ -18421,7 +18430,8 @@
           "title": "Ein neuer erfundener Vergleich",
           "material": "simulation",
           "simulation": {
-            "kind": "demand"
+            "kind": "demand",
+            "transfer": "demand-18"
           },
           "instruction": "Untersuche das Modell. Wähle oder rechne selbst.",
           "fields": [
@@ -18449,7 +18459,7 @@
             }
           ],
           "hints": [
-            "Der Vergleich hat 18 Menschen. Die übrigen Modellregeln bleiben gleich.",
+            "Der neue Fall hat 18 Menschen. Vergleiche Nachfrage und Plätze. Prüfe den Fußweg getrennt.",
             "Plätze pro Stunde = Fahrten mal Plätze je Fahrt. Vergleiche dies mit der Nachfrage. Der Fußweg ist eine andere Größe.",
             "Prüfe das erklärte Beispiel. Du entscheidest, ob du es übernehmen möchtest."
           ],
@@ -18457,6 +18467,7 @@
             "Sachangaben zum dargestellten Modell zugeordnet.",
             "Eigene Entscheidungen sind keine automatische Fachbewertung."
           ],
+          "contextNote": "Neuer Fall: 18 Menschen, 20 Plätze pro Stunde. Der betrachtete Fußweg bleibt 12 Minuten lang. Beantworte die Frage zum neuen Fall.",
           "simpleLanguage": false,
           "identity": {
             "conceptId": "demand.transfer",
@@ -18967,7 +18978,8 @@
           "title": "Ein neuer erfundener Vergleich",
           "material": "simulation",
           "simulation": {
-            "kind": "demand"
+            "kind": "demand",
+            "transfer": "demand-18"
           },
           "instruction": "Untersuche das Modell. Wähle oder rechne selbst.",
           "fields": [
@@ -18995,7 +19007,7 @@
             }
           ],
           "hints": [
-            "Der Vergleich hat 18 Menschen. Die übrigen Modellregeln bleiben gleich.",
+            "Der neue Fall hat 18 Menschen. Vergleiche Nachfrage und Plätze. Prüfe den Fußweg getrennt.",
             "Plätze pro Stunde = Fahrten mal Plätze je Fahrt. Vergleiche dies mit der Nachfrage. Der Fußweg ist eine andere Größe.",
             "Prüfe das erklärte Beispiel. Du entscheidest, ob du es übernehmen möchtest."
           ],
@@ -19003,6 +19015,7 @@
             "Sachangaben zum dargestellten Modell zugeordnet.",
             "Eigene Entscheidungen sind keine automatische Fachbewertung."
           ],
+          "contextNote": "Neuer Fall: 18 Menschen, 20 Plätze pro Stunde. Der betrachtete Fußweg bleibt 12 Minuten lang. Beantworte die Frage zum neuen Fall.",
           "simpleLanguage": false,
           "identity": {
             "conceptId": "demand.transfer",
@@ -29556,7 +29569,8 @@
           "title": "Ein kleinerer Tankvorrat",
           "material": "simulation",
           "simulation": {
-            "kind": "water"
+            "kind": "water",
+            "transfer": "water-70"
           },
           "instruction": "Untersuche das Modell. Wähle oder rechne selbst.",
           "fields": [
@@ -29573,7 +29587,7 @@
             }
           ],
           "hints": [
-            "Die neue Runde hat 70 statt 80 WE am Anfang.",
+            "Die neue Runde hat 70 WE am Anfang. Ziehe die Entnahme ab.",
             "Tankrest = Anfang minus Entnahme. Die Ankunft am Feld ist eine andere Messstelle. Verbrauch wird hier nicht berechnet.",
             "Prüfe das erklärte Beispiel. Du entscheidest, ob du es übernehmen möchtest."
           ],
@@ -29581,6 +29595,7 @@
             "Sachangaben zum dargestellten Modell zugeordnet.",
             "Eigene Entscheidungen sind keine automatische Fachbewertung."
           ],
+          "contextNote": "Neue Runde: 70 WE im Tank, 50 WE Entnahme. Kein Zufluss. Beantworte die Frage zu dieser Runde.",
           "simpleLanguage": true,
           "identity": {
             "conceptId": "water.transfer",
@@ -30192,7 +30207,8 @@
           "title": "Ein kleinerer Tankvorrat",
           "material": "simulation",
           "simulation": {
-            "kind": "water"
+            "kind": "water",
+            "transfer": "water-70"
           },
           "instruction": "Untersuche das Modell. Wähle oder rechne selbst.",
           "fields": [
@@ -30205,7 +30221,7 @@
             }
           ],
           "hints": [
-            "Die neue Runde hat 70 statt 80 WE am Anfang.",
+            "Die neue Runde hat 70 WE am Anfang. Ziehe die Entnahme ab.",
             "Tankrest = Anfang minus Entnahme. Die Ankunft am Feld ist eine andere Messstelle. Verbrauch wird hier nicht berechnet.",
             "Prüfe das erklärte Beispiel. Du entscheidest, ob du es übernehmen möchtest."
           ],
@@ -30213,6 +30229,7 @@
             "Sachangaben zum dargestellten Modell zugeordnet.",
             "Eigene Entscheidungen sind keine automatische Fachbewertung."
           ],
+          "contextNote": "Neue Runde: 70 WE im Tank, 50 WE Entnahme. Kein Zufluss. Beantworte die Frage zu dieser Runde.",
           "simpleLanguage": true,
           "identity": {
             "conceptId": "water.transfer",
@@ -30684,7 +30701,8 @@
           "title": "Ein kleinerer Tankvorrat",
           "material": "simulation",
           "simulation": {
-            "kind": "water"
+            "kind": "water",
+            "transfer": "water-70"
           },
           "instruction": "Untersuche das Modell. Wähle oder rechne selbst.",
           "fields": [
@@ -30697,7 +30715,7 @@
             }
           ],
           "hints": [
-            "Die neue Runde hat 70 statt 80 WE am Anfang.",
+            "Die neue Runde hat 70 WE am Anfang. Ziehe die Entnahme ab.",
             "Tankrest = Anfang minus Entnahme. Die Ankunft am Feld ist eine andere Messstelle. Verbrauch wird hier nicht berechnet.",
             "Prüfe das erklärte Beispiel. Du entscheidest, ob du es übernehmen möchtest."
           ],
@@ -30705,6 +30723,7 @@
             "Sachangaben zum dargestellten Modell zugeordnet.",
             "Eigene Entscheidungen sind keine automatische Fachbewertung."
           ],
+          "contextNote": "Neue Runde: 70 WE im Tank, 50 WE Entnahme. Kein Zufluss. Beantworte die Frage zu dieser Runde.",
           "simpleLanguage": false,
           "identity": {
             "conceptId": "water.transfer",
@@ -31247,7 +31266,8 @@
           "title": "Ein kleinerer Tankvorrat",
           "material": "simulation",
           "simulation": {
-            "kind": "water"
+            "kind": "water",
+            "transfer": "water-70"
           },
           "instruction": "Untersuche das Modell. Wähle oder rechne selbst.",
           "fields": [
@@ -31260,7 +31280,7 @@
             }
           ],
           "hints": [
-            "Die neue Runde hat 70 statt 80 WE am Anfang.",
+            "Die neue Runde hat 70 WE am Anfang. Ziehe die Entnahme ab.",
             "Tankrest = Anfang minus Entnahme. Die Ankunft am Feld ist eine andere Messstelle. Verbrauch wird hier nicht berechnet.",
             "Prüfe das erklärte Beispiel. Du entscheidest, ob du es übernehmen möchtest."
           ],
@@ -31268,6 +31288,7 @@
             "Sachangaben zum dargestellten Modell zugeordnet.",
             "Eigene Entscheidungen sind keine automatische Fachbewertung."
           ],
+          "contextNote": "Neue Runde: 70 WE im Tank, 50 WE Entnahme. Kein Zufluss. Beantworte die Frage zu dieser Runde.",
           "simpleLanguage": false,
           "identity": {
             "conceptId": "water.transfer",
@@ -31796,7 +31817,8 @@
           "title": "Ein anderes erfundenes Zusatzfeld",
           "material": "simulation",
           "simulation": {
-            "kind": "area"
+            "kind": "area",
+            "transfer": "area-10"
           },
           "instruction": "Untersuche das Modell. Wähle oder rechne selbst.",
           "fields": [
@@ -31821,6 +31843,7 @@
             "Sachangaben zum dargestellten Modell zugeordnet.",
             "Eigene Entscheidungen sind keine automatische Fachbewertung."
           ],
+          "contextNote": "Neues Zusatzfeld: 45 WE für das erste Feld, 10 WE für das Zusatzfeld. Tank am Anfang: 80 WE. Früher wurden 60 WE entnommen. Beantworte die Frage zum neuen Fall.",
           "simpleLanguage": true,
           "identity": {
             "conceptId": "area.transfer",
@@ -32383,7 +32406,8 @@
           "title": "Neuer Fall: 45 + 10 =",
           "material": "simulation",
           "simulation": {
-            "kind": "area"
+            "kind": "area",
+            "transfer": "area-10"
           },
           "instruction": "Untersuche das Modell. Wähle oder rechne selbst.",
           "fields": [
@@ -32404,6 +32428,7 @@
             "Sachangaben zum dargestellten Modell zugeordnet.",
             "Eigene Entscheidungen sind keine automatische Fachbewertung."
           ],
+          "contextNote": "Neues Zusatzfeld: 45 WE für das erste Feld, 10 WE für das Zusatzfeld. Tank am Anfang: 80 WE. Früher wurden 60 WE entnommen. Beantworte die Frage zum neuen Fall.",
           "simpleLanguage": true,
           "identity": {
             "conceptId": "area.transfer",
@@ -32422,7 +32447,8 @@
           "title": "Ist die Gesamtentnahme hier kleiner als früher 60 WE?",
           "material": "simulation",
           "simulation": {
-            "kind": "area"
+            "kind": "area",
+            "transfer": "area-10"
           },
           "instruction": "Untersuche das Modell. Wähle oder rechne selbst.",
           "fields": [
@@ -32447,6 +32473,7 @@
             "Sachangaben zum dargestellten Modell zugeordnet.",
             "Eigene Entscheidungen sind keine automatische Fachbewertung."
           ],
+          "contextNote": "Neues Zusatzfeld: 45 WE für das erste Feld, 10 WE für das Zusatzfeld. Tank am Anfang: 80 WE. Früher wurden 60 WE entnommen. Beantworte die Frage zum neuen Fall.",
           "simpleLanguage": true,
           "identity": {
             "conceptId": "area.transfer",
@@ -32898,7 +32925,8 @@
           "title": "Ein anderes erfundenes Zusatzfeld",
           "material": "simulation",
           "simulation": {
-            "kind": "area"
+            "kind": "area",
+            "transfer": "area-10"
           },
           "instruction": "Untersuche das Modell. Wähle oder rechne selbst.",
           "fields": [
@@ -32930,6 +32958,7 @@
             "Sachangaben zum dargestellten Modell zugeordnet.",
             "Eigene Entscheidungen sind keine automatische Fachbewertung."
           ],
+          "contextNote": "Neues Zusatzfeld: 45 WE für das erste Feld, 10 WE für das Zusatzfeld. Tank am Anfang: 80 WE. Früher wurden 60 WE entnommen. Beantworte die Frage zum neuen Fall.",
           "simpleLanguage": false,
           "identity": {
             "conceptId": "area.transfer",
@@ -33452,7 +33481,8 @@
           "title": "Ein anderes erfundenes Zusatzfeld",
           "material": "simulation",
           "simulation": {
-            "kind": "area"
+            "kind": "area",
+            "transfer": "area-10"
           },
           "instruction": "Untersuche das Modell. Wähle oder rechne selbst.",
           "fields": [
@@ -33484,6 +33514,7 @@
             "Sachangaben zum dargestellten Modell zugeordnet.",
             "Eigene Entscheidungen sind keine automatische Fachbewertung."
           ],
+          "contextNote": "Neues Zusatzfeld: 45 WE für das erste Feld, 10 WE für das Zusatzfeld. Tank am Anfang: 80 WE. Früher wurden 60 WE entnommen. Beantworte die Frage zum neuen Fall.",
           "simpleLanguage": false,
           "identity": {
             "conceptId": "area.transfer",
@@ -35179,5 +35210,28 @@
       ]
     }
   ],
-  "attemptIdPolicy": "Contract identities are templates (local-0), not saved attempts. Actual unique positive local sequence IDs are assigned on first work and validated on restore."
+  "attemptIdPolicy": "Contract identities are templates (local-0), not saved attempts. Actual unique positive local sequence IDs are assigned on first work and validated on restore.",
+  "transferCases": {
+    "demand-18": {
+      "people": 18,
+      "seatsPerTrip": 10,
+      "trips": 2,
+      "walk": 12,
+      "capacity": 20
+    },
+    "water-70": {
+      "initial": 70,
+      "withdrawal": 50,
+      "remaining": 20
+    },
+    "area-10": {
+      "initial": 80,
+      "first": 45,
+      "extra": 10,
+      "former": 60,
+      "total": 55,
+      "remaining": 25,
+      "saving": 5
+    }
+  }
 }

@@ -1,3 +1,4 @@
+import type { TransferCaseId } from './transfer-cases.ts';
 import { simpleTask } from './language.ts';
 import { orientationTasks, reviewTasks } from './cross-paths.ts';
 import { populationModel, populationBalance } from '../inquiry/content.ts';
@@ -53,6 +54,7 @@ export interface Task {
       | 'area'
       | 'orientation'
       | 'review';
+    transfer?: TransferCaseId;
     preset?: string;
     now?: boolean;
     required?: string[];
