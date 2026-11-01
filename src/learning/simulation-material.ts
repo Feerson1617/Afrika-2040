@@ -38,8 +38,12 @@ export const controls = (
   group = 'Modell untersuchen',
 ) =>
   `<div role="group" aria-label="${group}">${options.map(([id, name]) => `<button type="button" id="sim-${group.replace(/[^a-zA-Z]/g, '')}-${id}" class="button secondary" data-action="learning" data-op="simulate" data-value="${id}" aria-pressed="${selection === id}">${esc(name)}</button>`).join('')}</div>`;
-export const table = (head: string[], rows: (string | number)[][]) =>
-  `<table><caption>Erfundenes Modell · Angaben für diese Runde</caption><thead><tr>${head.map((x) => `<th scope="col">${esc(x)}</th>`).join('')}</tr></thead><tbody>${rows.map((row) => `<tr>${row.map((x, i) => (i ? `<td>${esc(String(x))}</td>` : `<th scope="row">${esc(String(x))}</th>`)).join('')}</tr>`).join('')}</tbody></table>`;
+export const table = (
+  head: string[],
+  rows: (string | number)[][],
+  caption = 'Erfundenes Modell · Angaben für diese Runde',
+) =>
+  `<table><caption>${esc(caption)}</caption><thead><tr>${head.map((x) => `<th scope="col">${esc(x)}</th>`).join('')}</tr></thead><tbody>${rows.map((row) => `<tr>${row.map((x, i) => (i ? `<td>${esc(String(x))}</td>` : `<th scope="row">${esc(String(x))}</th>`)).join('')}</tr>`).join('')}</tbody></table>`;
 export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
   const cfg = t.simulation!,
     simple = p === 'foerder';
@@ -121,20 +125,22 @@ export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
       selection === 'bus' || selection === 'path' ? selection : 'base',
       selection === 'before' ? 'before' : 'now',
     );
-    return `<h2>Nairobi · Plätze und Fußwege</h2><p>Eine unabhängige erfundene Modellstunde. Vorher wollen 16 Menschen fahren, nach Zuzug 24. Ein Bus hat 10 Plätze. Bisher: zwei Fahrten pro Stunde. Beide Maßnahmen sind unabhängig voneinander prüfbar.</p>${controls(options, selection)}<p aria-live="polite">${esc(options.find(([id]) => id === selection)?.[1] ?? 'Jetzt')}: ${model.people} Menschen · ${model.capacity} Plätze · ${model.walk} Minuten Fußweg.</p><figure aria-label="Menschen und Plätze"><div>${'● '.repeat(model.people)}</div><figcaption>${model.people} Menschen; ${model.capacity} Plätze in einer Stunde. Die Punkte sind Menschen, keine Einwohnerzahl Nairobis.</figcaption></figure>${table(
+    return `<h2>Nairobi · Plätze und Fußwege</h2><p>Eine unabhängige erfundene Modellstunde. Vorher wollen 16 Menschen fahren, nach Zuzug 24. Acht neue Nachbarn kommen dazu. Die Fußwegzeiten beziehen sich auf diese acht neuen Nachbarn. Ein Bus hat 10 Plätze. Bisher: zwei Fahrten pro Stunde. Beide Maßnahmen sind unabhängig voneinander prüfbar.</p>${controls(options, selection)}<p aria-live="polite">${esc(options.find(([id]) => id === selection)?.[1] ?? 'Jetzt')}: ${model.people} Menschen · ${model.capacity} Plätze${selection === 'before' ? '' : ` · ${model.walk} Minuten Fußweg für die neuen Nachbarn`}.</p><figure aria-label="Menschen und Plätze"><div>${'● '.repeat(model.people)}</div><figcaption>${model.people} Menschen; ${model.capacity} Plätze in einer Stunde. Die Punkte sind Menschen, keine Einwohnerzahl Nairobis.</figcaption></figure>${table(
       ['Größe', 'Wert'],
       [
         ['Fahrten pro Stunde', model.trips],
         ['Plätze pro Fahrt', 10],
         ['Plätze pro Stunde', model.capacity],
-        ['Fußweg (Minuten)', model.walk],
+        ...(selection === 'before'
+          ? []
+          : [['Fußweg der neuen Nachbarn (Minuten)', model.walk]]),
       ],
     )}<p>Eine zusätzliche Fahrt und ein neuer Fußweg lösen verschiedene Probleme. Die genaue Wartezeit, Kosten und der Fahrpreis fehlen.</p>`;
   }
   if (cfg.kind === 'cocoa') {
-    const selection = a.simulationSelection ?? 'base',
+    const selection = a.simulationSelection ?? cfg.preset ?? 'base',
       m = cocoaModel(selection);
-    return `<h2>Ein Betrieb bei Kumasi · Ghana</h2><p>Erfundene Genossenschaft: Der Betrieb gehört seinen Mitgliedern gemeinsam. Ghana hat bereits eigene Kakaoverarbeitung. GE sind erfundene Geldeinheiten, keine echten Preise.</p>${t.id.startsWith('cocoa.chain') ? '<figure><svg viewBox="0 0 420 110" role="img" aria-label="Bohnen, Hitze, Kakaomasse und Presse als ungeordnete Hinweise"><ellipse cx="45" cy="50" rx="22" ry="14" fill="#855538"/><rect x="115" y="25" width="40" height="50" fill="#9d4d2c"/><circle cx="245" cy="50" r="25" fill="#855538"/><path d="M330 10v70h50V10M320 35h70" fill="none" stroke="#234e42" stroke-width="6"/></svg><figcaption>Material: Bohnen, Hitze, Masse und Presse. Ordne die Verarbeitung selbst.</figcaption></figure>' : ''}${controls(
+    return `<h2>Ein Betrieb bei Kumasi · Ghana</h2><p>Erfundene Genossenschaft: Der Betrieb gehört seinen Mitgliedern gemeinsam. Ghana hat bereits eigene Kakaoverarbeitung. GE sind erfundene Geldeinheiten, keine echten Preise.</p>${t.id.startsWith('cocoa.chain') ? '<figure><ul class="learning-material-cards" aria-label="Ungeordnete Materialkarten"><li>Pressen: Butter und Presskuchen</li><li>Getrocknete Bohnen</li><li>Kakaomasse</li><li>Rösten und mahlen</li></ul><figcaption>Materialkarten: Ordne die Verarbeitung selbst.</figcaption></figure>' : ''}${controls(
       [
         ['base', 'Bisher'],
         ['quality', 'Qualität'],
@@ -188,7 +194,7 @@ export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
     const diagram = simple
       ? shape
       : shape.replace(`Rest ${m.remaining} WE`, 'Rest selbst bestimmen');
-    return `<h2>Ein Betrieb bei Agadir · Marokko</h2><p>Unabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.</p>${controls(options, selection)}<figure><svg class="study-scene" viewBox="0 0 660 280" role="img" aria-label="Tank, Entnahme und Feld getrennt. ${m.withdrawal} WE werden entnommen.">${diagram}<path d="M190 130H370" stroke="#356a76" stroke-width="9"/><text x="230" y="108">Entnahme ${m.withdrawal} WE</text><rect x="380" y="80" width="150" height="85" fill="#d4e0bd" stroke="#234e42"/><text x="390" y="112">${isWater ? 'Ankunft am Feld' : 'Erstes Feld'}</text><text x="410" y="144">${isWater ? '40' : (m as ReturnType<typeof areaModel>).first} WE</text>${!isWater && selection === 'extra' ? '<rect x="545" y="105" width="85" height="60" fill="#d4e0bd" stroke="#234e42"/><text x="547" y="192">Zusatz: 20 WE</text>' : ''}</svg><figcaption>${isWater ? 'Entnahme aus dem Tank ist nicht gleich Ankunft am Feld. Der Verbleib des übrigen Wassers wird nicht berechnet.' : 'Feldsymbole sind schematisch, ohne Hektarmaßstab. Die Zusatzfläche ist kleiner.'}</figcaption></figure>${
+    return `<h2>Ein Betrieb bei Agadir · Marokko</h2><p>Unabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.</p>${controls(options, selection)}<p><strong>Aktuelle Modellansicht: ${esc(options.find(([id]) => id === selection)?.[1] ?? options[0][1])}.</strong> Prüfe, auf welche Maßnahme sich die Frage bezieht.</p><figure><svg class="study-scene" viewBox="0 0 660 280" role="img" aria-label="Tank, Entnahme und Feld getrennt. ${m.withdrawal} WE werden entnommen.">${diagram}<path d="M190 130H370" stroke="#356a76" stroke-width="9"/><text x="220" y="70">Entnahme</text><text x="235" y="100">${m.withdrawal} WE</text><rect x="380" y="80" width="150" height="85" fill="#d4e0bd" stroke="#234e42"/><text x="390" y="112">${isWater ? 'Am Feld' : 'Erstes Feld'}</text><text x="410" y="144">${isWater ? '40' : (m as ReturnType<typeof areaModel>).first} WE</text>${!isWater && selection === 'extra' ? '<rect x="545" y="105" width="85" height="60" fill="#d4e0bd" stroke="#234e42"/><text x="547" y="192">Zusatz: 20 WE</text>' : ''}</svg><figcaption>${isWater ? 'Entnahme aus dem Tank ist nicht gleich Ankunft am Feld. Der Verbleib des übrigen Wassers wird nicht berechnet.' : 'Feldsymbole sind schematisch, ohne Hektarmaßstab. Die Zusatzfläche ist kleiner.'}</figcaption></figure>${
       isWater
         ? table(
             ['Messstelle', 'WE'],
@@ -218,6 +224,7 @@ export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
     const g = newGeography();
     if (isRegion(cfg.preset)) g.target = cfg.preset;
     g.review = newReview();
+    g.review.tab = 'common';
     if (isRegion(a.simulationSelection)) g.review.tab = a.simulationSelection;
     const map = africaMap(g, true).replace(
       /data-action="geography" data-op="review-tab"/g,
@@ -229,6 +236,7 @@ export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
     )}<details><summary>Städte und Quelle nachsehen</summary>${table(
       ['Stadt', 'Land'],
       Object.values(regions).map((r) => [r.city, r.name]),
+      'Reale Städte und Länder · Übersicht',
     )}<p>Natural Earth, public domain; stark vereinfachte Übersicht. Keine genaue Reisezeitmessung. Die gestrichelte Gebietsgrenze der Westsahara ist keine normale durchgezogene Staatsgrenze.</p></details>`;
   }
   if (cfg.kind === 'review') {

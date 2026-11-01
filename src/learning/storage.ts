@@ -175,6 +175,14 @@ function setAnswer(
   value = value.slice(0, 2000);
   if (p.answers[field] === value) return false;
   p.answers[field] = value;
+  if (
+    field === 'plan' &&
+    ['network', 'demand', 'cocoa', 'water', 'area'].includes(
+      a.task.simulation?.kind ?? '',
+    )
+  )
+    p.simulationSelection =
+      a.task.simulation?.kind === 'network' ? 'amina-' + value : value;
   if (a.task.simulation?.kind === 'orientation' && field === 'country')
     p.simulationSelection = value;
   p.process = 'draft';
@@ -186,6 +194,7 @@ function setAnswer(
       later.process = 'draft';
       later.factual = 'ungraded';
       later.adopted = false;
+      delete later.simulationSelection;
     }
   }
   if (['future.plan', 'future.goal', 'future.weight'].includes(a.task.id)) {
@@ -240,6 +249,12 @@ function checked(s: LearningState, adopt = false) {
   const a = ensure(s);
   if (!a?.attempt) return;
   const p = a.attempt;
+  if (
+    a.task.fields.length === 1 &&
+    ['cocoa', 'water'].includes(a.task.simulation?.kind ?? '') &&
+    ['quality', 'process', 'repair', 'tech'].includes(a.task.fields[0].id)
+  )
+    p.simulationSelection = a.task.fields[0].id;
   const result = evaluate(a.task, p.answers, p.failures);
   let usedExample = false;
   if (adopt) {

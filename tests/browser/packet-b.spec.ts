@@ -20,7 +20,12 @@ for (const unit of ['s1', 's2', 's3', 's4', 's5', 's6', 'o', 'r'] as const)
           hasTouch: supported,
         });
         const page = await context.newPage();
-        const errors: string[] = [];
+        const errors: string[] = [],
+          external: string[] = [];
+        page.on('request', (r) => {
+          if (!r.url().startsWith('http://127.0.0.1:4173/'))
+            external.push(r.url());
+        });
         page.on('pageerror', (e) => {
           errors.push(e.message);
           console.error('PAGEERROR', e.message);
@@ -40,6 +45,20 @@ for (const unit of ['s1', 's2', 's3', 's4', 's5', 's6', 'o', 'r'] as const)
           let s = await get();
           expect(s.profile).toBe(profile);
           const task = active(s)!.task;
+          if (unit === 's2')
+            await expect(page.locator('.inquiry-material')).toContainText(
+              'acht neuen Nachbarn',
+            );
+          if (task.linked && task.linked.kind !== 'kenya') {
+            const proposed =
+              s.records[`${unit}.${profile}.v1`].attempts[task.linked.task]
+                .answers.plan;
+            await expect(
+              page.locator(
+                `button[data-op="simulate"][data-value="${proposed}"]`,
+              ),
+            ).toHaveAttribute('aria-pressed', 'true');
+          }
           for (const id of task.simulation?.required ?? [])
             await press(`#sim-Liniewhlen-${id}, #sim-Modelluntersuchen-${id}`);
           if (supported) {
@@ -71,6 +90,14 @@ for (const unit of ['s1', 's2', 's3', 's4', 's5', 's6', 'o', 'r'] as const)
             }
             await press('#learning-check');
           }
+          if (
+            task.fields.length === 1 &&
+            ['water', 'cocoa'].includes(task.simulation?.kind ?? '') &&
+            ['quality', 'process', 'repair', 'tech'].includes(task.fields[0].id)
+          )
+            expect(active(await get())!.attempt!.simulationSelection).toBe(
+              task.fields[0].id,
+            );
           await expect(page.locator('#learning-next')).toBeVisible();
           s = await get();
           const p = active(s)!.attempt!;
@@ -105,5 +132,6 @@ for (const unit of ['s1', 's2', 's3', 's4', 's5', 's6', 'o', 'r'] as const)
         }
         await expect(page.locator('h1')).toContainText('Lernjournal');
         expect(errors).toEqual([]);
+        expect(external).toEqual([]);
         await context.close();
       });

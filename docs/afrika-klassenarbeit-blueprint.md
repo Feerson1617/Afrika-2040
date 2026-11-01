@@ -1,5 +1,7 @@
 # Interner Blueprint: spätere Afrika-Klassenarbeit, Jahrgang 7
 
+Aktualisierung Paket B: Die tatsächlichen vier Zugänge aller fünf Kapitel stehen in der [internen Abdeckungsmatrix](afrika-paket-b-abdeckungsmatrix.md). Dies ist weiterhin ein interner Planungsrahmen, keine fertige Klassenarbeit oder Unterrichtsfreigabe. Freie Erklärungen brauchen menschliche Rückmeldung, Auswahl-/Zahleneingaben belegen nur ihre konkrete Prüfung. Klimadiagramme, Raten, breitere Atlasarbeit und reale Handlungserprobung bleiben gesonderte Unterrichtsbedarfe.
+
 27.10.2026. **Aufgabenplanung, keine fertige Klassenarbeit, kein Arbeitsblatt und keine rechtsverbindliche Bewertungsvorgabe.** Bezug: [Lernzielmatrix](afrika-lernziele-und-pruefbarkeit.md). Allgemeiner Teil 2024 und Erlass vom 4.6.2025 sind nun im amtlichen Original geprüft; siehe Quellenplan. Ziff.1b verlangt mehrere AFB, Ziff.3a vorher bekannte Prüfungsbedingungen, Ziff.3c sprachliche Korrekturen als Lernhilfe. Daraus folgt kein automatischer Rechtschreibabzug im Lernspiel. Konkrete Prüfungsentscheidung und spätere neue Materialien bleiben Aufgabe der Schule. Die folgenden Bausteine legen fest, welche Leistungen zunächst gelernt und geübt werden müssen; sie legen noch keine Punktzahl, Bearbeitungsdauer oder Notengrenze fest.
 
 ## Vorausgesetztes und bereitgestelltes Wissen

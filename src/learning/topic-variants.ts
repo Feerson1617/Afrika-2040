@@ -944,11 +944,11 @@ export function futureReference(
             ? [
                 [
                   'adapt',
-                  `Ich wähle diesen Plan. Mir ist wichtig: ${plan === 'cool' ? 'empfindliche Waren kühlen' : 'Zugang für 60 Stände'}. Dafür nehme ich in Kauf: ${plan === 'cool' ? 'nur 30 Stände und Strombedarf' : 'weniger Schutz für empfindliche Waren'}.`,
+                  `Ich wähle diesen Plan. Mir ist wichtig: ${plan === 'cool' ? 'empfindliche Waren kühlen' : 'Zugang für 60 Stände'}. Dafür nehme ich in Kauf: ${plan === 'cool' ? 'nur 30 statt 60 Stände und Strombedarf' : 'weniger Schutz für empfindliche Waren'}.`,
                 ],
                 [
                   'tradeoff',
-                  `Mein erstes Ziel bleibt wichtig. Trotzdem ist mir hier ${plan === 'cool' ? 'die Kühlung' : 'der Zugang für 60 Stände'} wichtiger. Dafür akzeptiere ich ${plan === 'cool' ? 'nur 30 Stände und Strombedarf' : 'weniger Kühlung empfindlicher Waren'}.`,
+                  `Mein erstes Ziel bleibt wichtig. Trotzdem ist mir hier ${plan === 'cool' ? 'die Kühlung' : 'der Zugang für 60 Stände'} wichtiger. Dafür akzeptiere ich ${plan === 'cool' ? 'nur 30 statt 60 Stände und Strombedarf' : 'weniger Kühlung empfindlicher Waren'}.`,
                 ],
               ]
             : ([

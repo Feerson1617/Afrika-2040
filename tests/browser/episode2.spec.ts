@@ -548,7 +548,11 @@ for (const measure of ['bus', 'path'] as const)
     page,
   }) => {
     const errors = observe(page);
-    await enter(page, false, 'http://127.0.0.1:4174/Afrika-2040/');
+    await enter(
+      page,
+      false,
+      'http://127.0.0.1:4174/Afrika-2040/?ansicht=bisher',
+    );
     await first(page);
     await decide(page);
     await proposal(page, measure);

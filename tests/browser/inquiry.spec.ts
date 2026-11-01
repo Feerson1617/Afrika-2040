@@ -375,7 +375,7 @@ test('Afrika curriculum supported path for all five, keyboard progression, all r
     baseURL: 'http://127.0.0.1:4174',
   });
   const page = await context.newPage();
-  await page.goto('/Afrika-2040/');
+  await page.goto('/Afrika-2040/?ansicht=bisher');
   await page.locator('#inquiry-open').focus();
   await page.keyboard.press('Enter');
   await expect(page.locator('#main')).toBeFocused();

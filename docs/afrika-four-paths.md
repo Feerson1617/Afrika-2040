@@ -1,5 +1,7 @@
 # Vier Lernwege – Paket A
 
+Aktueller Stand: Der 52er-Katalog ist vollständig mit tatsächlichen Aufgaben belegt. Ausgang ist die abgenommene Gate-2-Korrektur 4fecdd5. [Zwischencommits, Integration und eigene Tests](afrika-paket-b-abschluss.md), [vollständige Aufgabenverträge](learning-task-contracts.json) und [interne curriculare Matrix](afrika-paket-b-abdeckungsmatrix.md). Die folgenden älteren Abschnitte bleiben als Entwicklungskontext erhalten.
+
 Basis a3be815e5557188d5769f3fc70f25a3bdf8de5d6. Nur Gate 0 und Gate 1. Gate 2–5 warten auf unabhängige Musterabnahme und ausdrückliche Freigabe. Keine automatische Einstufung von Kindern. Förder ist ein Unterstützungsprofil; AHR/ÜOS bezeichnet hier Anforderungen in Jahrgang 7, keinen erreichten Abschluss.
 
 Alle sechs aktuellen Anhänge sind zugänglich. 02–05 und die verbindliche Ergänzung wurden direkt gelesen; 01 und 06 fehlen als Einzeldateien, ihre vollständigen Abschnitte sind in der Gesamtausarbeitung.html enthalten und wurden dort gelesen. Sie sind als HTML-Extrakte gekennzeichnet archiviert. Fremde Testberichte sind keine eigenen neuen Läufe. Original-Schul-PDFs bleiben außerhalb des Repositorys.

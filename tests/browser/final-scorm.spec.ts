@@ -208,7 +208,7 @@ test('SCORM readiness: simulated narrow embedded static Pages build, no LMS API 
   await page.route('**/mock-lms', (r) =>
     r.fulfill({
       contentType: 'text/html',
-      body: '<html lang="de"><title>Lokale LMS-Simulation</title><iframe title="Spiel" src="/Afrika-2040/" style="width:640px;height:650px;border:0" sandbox="allow-scripts allow-same-origin"></iframe></html>',
+      body: '<html lang="de"><title>Lokale LMS-Simulation</title><iframe title="Spiel" src="/Afrika-2040/?ansicht=bisher" style="width:640px;height:650px;border:0" sandbox="allow-scripts allow-same-origin"></iframe></html>',
     }),
   );
   await page.goto('http://127.0.0.1:4174/mock-lms');

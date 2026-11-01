@@ -1,4 +1,4 @@
-Aktueller Ausbau: [Paket B, Gates 3–5](docs/afrika-paket-b-abschluss.md). Kenia-Gate 3A implementiert; weitere Abschnitte folgen im selben Auftrag.
+Aktueller Ausbau: [Paket B, Gates 3–5](docs/afrika-paket-b-abschluss.md) mit allen 52 Lernbereich-/Profilvarianten. Intern geprüft; unabhängige Abnahme steht aus. Kein Push, Merge oder Deployment.
 
 # Afrika 2040 – Gestalte die Zukunft
 

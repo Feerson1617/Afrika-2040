@@ -61,7 +61,23 @@ export function step(
     fields,
     hints: [
       hint,
-      'Verbinde die Größen mit der passenden Person, Maßnahme und Runde. Vergleiche die Darstellung und deine Antwort.',
+      kind === 'network'
+        ? 'Suche den Einstieg. Addiere den Fußweg und nur die Busabschnitte ab diesem Einstieg. Lies bei jedem Beleg auch die Vergleichslinie.'
+        : kind === 'demand'
+          ? 'Plätze pro Stunde = Fahrten mal Plätze je Fahrt. Vergleiche dies mit der Nachfrage. Der Fußweg ist eine andere Größe.'
+          : kind === 'cocoa'
+            ? id.startsWith('cocoa.chain')
+              ? 'Rösten und Mahlen verändern die Bohnen. Die Presse verarbeitet die entstandene Masse weiter.'
+              : 'Laufender Überschuss = Einnahmen minus laufende Ausgaben. Halte die einmalige Anschaffung im getrennten Topf.'
+            : kind === 'share'
+              ? 'Alle Beträge zusammen müssen 120 GE ergeben. Unterscheide zusätzliches Geld heute, Vorsorge und mögliche spätere Wirkungen.'
+              : kind === 'water'
+                ? 'Tankrest = Anfang minus Entnahme. Die Ankunft am Feld ist eine andere Messstelle. Verbrauch wird hier nicht berechnet.'
+                : kind === 'area'
+                  ? 'Erstes Feld plus Zusatzfeld ergibt die gesamte Entnahme. Vergleiche erst dieselbe Fläche, dann die Summe mit früher 60 WE.'
+                  : kind === 'orientation'
+                    ? 'Stadtpunkte liegen innerhalb der Länderflächen. Norden ist oben. Die Äquatorlinie trennt Nordhalbkugel und Südhalbkugel.'
+                    : 'Suche zuerst den konkreten Beleg im jeweiligen Fall. Prüfe dann, ob die Behauptung über den erfundenen Fall hinausgeht.',
       'Prüfe das erklärte Beispiel. Du entscheidest, ob du es übernehmen möchtest.',
     ],
     criteria: criteria.length
@@ -73,18 +89,41 @@ export function step(
     ...extra,
   };
 }
-export function differentiated(tasks: Task[], p: ProfileId): Task[] {
-  return tasks.flatMap((t) =>
-    (p === 'foerder' || p === 'esa') && t.fields.length > 1
-      ? t.fields.map((f) => ({
-          ...t,
-          id: t.id + '.' + f.id,
-          fields: [f],
-          title: f.label,
-        }))
-      : [t],
-  );
+export function orderTaskFields(t: Task): Task {
+  if (!t.simulation) return t;
+  return {
+    ...t,
+    fields: t.fields.map((f) => {
+      if (f.kind !== 'choice' || f.expected === 'either' || !f.options?.length)
+        return f;
+      const options = [...f.options].sort((a, b) =>
+        a[0].localeCompare(b[0], 'de'),
+      );
+      const shift =
+        [...(t.id + ':' + f.id)].reduce((n, c) => n + c.charCodeAt(0), 0) %
+        options.length;
+      return {
+        ...f,
+        options: [...options.slice(shift), ...options.slice(0, shift)],
+      };
+    }),
+  };
 }
+export function differentiated(tasks: Task[], p: ProfileId): Task[] {
+  return tasks
+    .flatMap((t) =>
+      (p === 'foerder' || p === 'esa') && t.fields.length > 1
+        ? t.fields.map((f) => ({
+            ...t,
+            id: t.id + '.' + f.id,
+            fields: [f],
+            title: f.label,
+          }))
+        : [t],
+    )
+    .map(orderTaskFields);
+}
+
 export function decision(
   prefix: string,
   kind: NonNullable<Task['simulation']>['kind'],
@@ -165,7 +204,7 @@ export function decision(
       common,
     ),
   ];
-  if (p === 'ahr')
+  if (p === 'ahr' && (kind !== 'network' || now))
     result.push(
       step(
         prefix + '.own',
@@ -532,7 +571,7 @@ export function demandTasks(p: ProfileId): Task[] {
     );
   return differentiated(ts, p);
 }
-export function resolveSimulation(
+function resolveSimulationInner(
   task: Task,
   records: Record<string, { answers: Record<string, string> }>,
 ): Task {
@@ -556,6 +595,35 @@ export function resolveSimulation(
         ),
       })),
     };
+  if (task.id === 'share.perspective') {
+    const first = records['share.plan']?.answers.plan ?? '',
+      second = records['share.plan.second']?.answers.plan ?? '';
+    const amounts = first.split('-').map(Number),
+      i = amounts.indexOf(Math.max(...amounts));
+    const names = [
+      'die Auszahlung heute',
+      'die Rücklage für Reparaturen',
+      'die Fortbildung',
+    ];
+    const limits = [
+      'Dieses Geld ist danach nicht mehr im Betrieb.',
+      'Das Geld wird heute nicht ausgezahlt. Ob es für Reparaturen reicht, ist unklar.',
+      'Das Geld wird heute nicht ausgezahlt. Zusätzliche Aufträge sind nicht sicher.',
+    ];
+    const a = allocationOptions.find(([id]) => id === first),
+      b = allocationOptions.find(([id]) => id === second);
+    return {
+      ...task,
+      contextKey,
+      fields: task.fields.map((f) => ({
+        ...f,
+        example:
+          a && b
+            ? `Mein erster Plan: ${a[1]}. Mein zweiter Plan: ${b[1]}. In diesem Beispiel behalte ich den ersten Plan. Mir ist ${names[i]} wichtig; dafür sind ${amounts[i]} GE vorgesehen. Dafür akzeptiere ich: ${limits[i]}`
+            : 'Verteile zuerst beide Pläne vollständig.',
+      })),
+    };
+  }
   if (!link) return { ...task, contextKey };
   const plan = records[link.task]?.answers[link.field];
   if (!plan)
@@ -581,10 +649,10 @@ export function resolveSimulation(
     selectedName = plan === 'bus' ? 'zusätzliche Fahrt' : 'kurzer Fußweg';
     benefits = [
       ['bus', '30 Plätze: Alle 24 können in dieser Stunde fahren.'],
-      ['path', 'Nur 4 statt 12 Minuten Fußweg.'],
+      ['path', 'Die neuen Nachbarn gehen nur 4 statt 12 Minuten.'],
     ];
     limits = [
-      ['bus', 'Der Fußweg bleibt 12 Minuten lang.'],
+      ['bus', 'Der Fußweg der neuen Nachbarn bleibt 12 Minuten lang.'],
       ['path', 'Es bleiben 20 Plätze. Vier Menschen fahren später.'],
     ];
   }
@@ -595,6 +663,10 @@ export function resolveSimulation(
     selectedName = options.find((x) => x.id === plan)?.label ?? plan;
     benefits = options.map((x) => [x.id, x.benefit]);
     limits = options.map((x) => [x.id, x.limit]);
+  }
+  if (task.simpleLanguage && link.kind === 'kenya') {
+    benefits = benefits.slice(0, 2);
+    limits = limits.slice(0, 2);
   }
   const opts = (list: typeof benefits) =>
     link.kind === 'kenya'
@@ -610,6 +682,15 @@ export function resolveSimulation(
   return {
     ...task,
     contextKey,
+    simulation: task.simulation
+      ? {
+          ...task.simulation,
+          preset:
+            link.kind === 'kenya'
+              ? `${(task.fields.some((f) => f.id === 'limit') && task.fields.length === 1 ? limit : benefit)?.[0].split('-')[0] ?? 'amina'}-${plan}`
+              : plan,
+        }
+      : task.simulation,
     contextNote: `Dein Vorschlag: ${selectedName}.`,
     fields: task.fields.map((f) =>
       f.id === 'evidence'
@@ -1389,4 +1470,11 @@ export function areaTasks(p: ProfileId): Task[] {
       ),
     );
   return differentiated(ts, p);
+}
+
+export function resolveSimulation(
+  task: Task,
+  records: Record<string, { answers: Record<string, string> }>,
+): Task {
+  return orderTaskFields(resolveSimulationInner(task, records));
 }

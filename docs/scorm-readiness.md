@@ -1,5 +1,7 @@
 # SCORM-Bereitschaft – technische Prüfung, kein SCORM-Paket
 
+Aktualisierung nach vollständigem Paket-B-Ausbau: Der rohe Zustand enthält nun bis zu 52 Varianten, Antwortkontexte, Erkundungen, verschiedene Budgetpläne und getrennte Hilfeherkunft. Gemessene Größen und Wiederherstellungsprüfungen stehen im Paket-B-Abschlussbericht. Bereits einzelne längere Profile können das 64.000-Zeichen-Budget überschreiten; über alle Profile sind es rund 339.000 UTF-16-Einheiten bei nur einer Abgabe pro Aufgabe. Kein fertiges suspend_data-Format. Vor späterem Export sind ein separater kompakter Codec, Verlustvertrag für Texte/Historien, Datenschutz und echte LMS-Tests nötig. Keine SCORM-API, LMS-Übertragung oder Benutzerverwaltung ergänzt.
+
 Historische Referenz dieses Konzepts: 02aae52052736aff53cdf8b096f0a4bd2614f775; damalige Korrektur: `feat/phase5-final-scorm-readiness`. Der damalige Auftrag liegt wortgetreu in `phase5-final-request.md`.
 
 ## Aktualisierung vom 27.10.2026

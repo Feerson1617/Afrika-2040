@@ -1,5 +1,7 @@
 # Curriculare Abdeckung im Vier-Lernwege-Prototyp
 
+Aktueller Paket-B-Stand: Alle fünf Themen, sechs Simulationen sowie Orientierung und Rückblick sind in vier Profilen implementiert (52 Varianten). Die [interne Abdeckungsmatrix](afrika-paket-b-abdeckungsmatrix.md) ordnet tatsächliche Lernhandlungen, Materialien, Eigenständigkeit und Nachweisgrenzen zu. Frühere Abschnitte dokumentieren die damaligen Zwischenstände; sie sind keine aktuelle Lückenliste. Interne technische Gesamtprüfung und unabhängige Abnahme bleiben getrennt.
+
 Paket A: Bevölkerung vollständig in vier Profilen, früher Kenia-Vergleich als zweite technische Familie. Die übrigen 44 Bereichs-/Profilvarianten sind geplant. Kenia E1 ist nicht vollständig vierfach umgebaut. Die fünf Kapitel und direkten bisherigen Aufgaben sind zugänglich; die breite Neustrukturierung folgt erst nach Musterabnahme.
 
 | Kapitel               | Tatsächlich neuer Lernweg in Paket A                                        | Im bisherigen Angebot erhalten                                                           | Grenze                                                                                                       |

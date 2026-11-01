@@ -63,6 +63,10 @@ test('Afrika curriculum PaketB orientation map keyboard and HTML alternatives ke
   page,
 }) => {
   await page.goto('/?lernweg=esa&bereich=o');
+  await page.locator('.inquiry-material details > summary').click();
+  await expect(page.locator('.inquiry-material caption')).toHaveText(
+    'Reale Städte und Länder · Übersicht',
+  );
   await page.locator('#geo-country-GHA').focus();
   await page.keyboard.press('Enter');
   await expect(page.locator('#geo-country-GHA')).toBeFocused();

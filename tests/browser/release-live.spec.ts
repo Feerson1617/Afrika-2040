@@ -14,6 +14,7 @@ for (const device of [
     browserName,
   }) => {
     const target = new URL(url);
+    target.searchParams.set('ansicht', 'bisher');
     if (process.env.RELEASE_LIVE_URL) expect(target.protocol).toBe('https:');
     const context = await browser.newContext({
       viewport: device,
@@ -43,7 +44,7 @@ for (const device of [
       if (device.touch) await page.locator(selector).tap();
       else await page.locator(selector).click();
     };
-    const response = await page.goto(url);
+    const response = await page.goto(target.href);
     expect(response?.ok()).toBe(true);
     expect(new URL(page.url()).origin).toBe(target.origin);
     expect(

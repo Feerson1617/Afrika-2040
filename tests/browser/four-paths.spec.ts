@@ -1,3 +1,4 @@
+import { active } from '../../src/learning/storage.ts';
 import { test, expect, type Page } from '@playwright/test';
 import AxeBuilder from '@axe-core/playwright';
 import { writeFileSync, readFileSync } from 'node:fs';
@@ -336,18 +337,17 @@ test('Afrika curriculum four paths legacy, narrow Pages content, blocked storage
       'utf8',
     ),
   );
-  await page.goto('/Afrika-2040/');
+  await page.goto('/Afrika-2040/?ansicht=bisher');
   await page.evaluate(
     ({ key, old }) => sessionStorage.setItem(key, JSON.stringify(old)),
     { key, old },
   );
   await page.goto('/Afrika-2040/?lernweg=foerder&bereich=c');
   await op(page, 'menu').click();
-  await expect(
-    page.getByRole('heading', {
-      name: 'Bisheriger Lernweg, ohne Niveaueinstufung',
-    }),
-  ).toBeVisible();
+  await page.locator('#learning-legacy > summary').click();
+  await expect(page.locator('#learning-legacy')).toContainText(
+    'ohne Niveaueinstufung',
+  );
   await page.locator('#learn-population').click();
   await page.locator('#learning-help').click();
   await page.locator('#learning-help').click();
@@ -370,7 +370,7 @@ test('Afrika curriculum four paths legacy, narrow Pages content, blocked storage
   ).toBe(true);
   await op(page, 'ask-reset').click();
   await page.locator('[data-action="restart"]').click();
-  await page.goto('/Afrika-2040/');
+  await page.goto('/Afrika-2040/?ansicht=bisher');
   expect(
     await page.evaluate((key) => sessionStorage.getItem(key), key),
   ).toBeNull();
