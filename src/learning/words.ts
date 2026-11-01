@@ -27,6 +27,16 @@ const words = {
   justify: ['Begründe', 'Nutze einen passenden Beleg für deine Wahl.'],
 } as const;
 const addedWords: [string, string][] = [
+  ['Land', 'Ein Staat, zum Beispiel Ghana. Eine Stadt ist ein Ort darin.'],
+  ['Stadt', 'Ein bebauter Ort, zum Beispiel Kumasi in Ghana.'],
+  [
+    'Äquator',
+    'Eine gedachte Linie um die Erde zwischen Nordhalbkugel und Südhalbkugel.',
+  ],
+  [
+    'Modell',
+    'Eine vereinfachte Darstellung mit bestimmten Annahmen. Hier sind viele Zahlen erfunden.',
+  ],
   ['Entnahme', 'Wasser, das aus dem Tank herausgenommen wird.'],
   [
     'Tankrest',
@@ -113,6 +123,10 @@ const byName = (...names: string[]) =>
     allWords.find(([word]) => wordKey(word) === wordKey(name))!,
   );
 export function taskWords(task: Task) {
+  if (task.simulation?.kind === 'orientation')
+    return byName('Land', 'Stadt', 'Äquator');
+  if (task.simulation?.kind === 'review')
+    return byName('Modell', 'Beleg', 'Grenze');
   if (task.simulation?.kind === 'water' || task.simulation?.kind === 'area')
     return byName('Entnahme', 'Tankrest', 'Verbrauch');
   if (task.simulation?.kind === 'cocoa')

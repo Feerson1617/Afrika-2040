@@ -38,7 +38,7 @@ test('entry contract accepts only a complete unique closed pair and preserves pa
     '?lernweg=esa',
     '?bereich=c',
     '?lernweg=bad&bereich=c',
-    '?lernweg=esa&bereich=o',
+    '?lernweg=esa&bereich=unbekannt',
     '?lernweg=esa&lernweg=ahr&bereich=c',
     '?lernweg=esa&bereich=c&bereich=s1',
   ])

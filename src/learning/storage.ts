@@ -396,9 +396,14 @@ export function reduceLearning(
     action.op === 'simulate' &&
     a.task.simulation &&
     action.value &&
-    /^[a-z0-9-]{1,50}$/.test(action.value)
+    /^[A-Za-z0-9-]{1,50}$/.test(action.value)
   ) {
     p.simulationSelection = action.value;
+    if (
+      a.task.simulation.kind === 'orientation' &&
+      a.task.fields.some((f) => f.id === 'country')
+    )
+      setAnswer(a, 'country', action.value);
     p.explored = [...new Set([...(p.explored ?? []), action.value])].slice(-30);
   }
   if (action.op === 'oral' && a.task.fields.every((f) => f.kind === 'text')) {
@@ -667,7 +672,7 @@ export function restoreLearning(raw: unknown): LearningState | undefined {
           a.mapSelection = p.mapSelection;
         if (
           typeof p.simulationSelection === 'string' &&
-          /^[a-z0-9-]{1,50}$/.test(p.simulationSelection)
+          /^[A-Za-z0-9-]{1,50}$/.test(p.simulationSelection)
         )
           a.simulationSelection = p.simulationSelection;
         if (Array.isArray(p.explored))
@@ -675,7 +680,7 @@ export function restoreLearning(raw: unknown): LearningState | undefined {
             ...new Set<string>(
               p.explored.filter(
                 (v: unknown) =>
-                  typeof v === 'string' && /^[a-z0-9-]{1,50}$/.test(v),
+                  typeof v === 'string' && /^[A-Za-z0-9-]{1,50}$/.test(v),
               ),
             ),
           ].slice(-30);

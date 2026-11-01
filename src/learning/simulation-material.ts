@@ -1,3 +1,7 @@
+import { africaMap } from '../geography/ui.ts';
+import { newGeography, isRegion, regions } from '../geography/state.ts';
+import { newReview, transferTasks } from '../geography/transfer.ts';
+import { renderContext } from '../geography/context.ts';
 import { waterModel, water } from '../regions/water.ts';
 import { areaModel, area } from '../regions/area.ts';
 import { tankGraphic } from '../regions/water-model.ts';
@@ -209,6 +213,27 @@ export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
             ],
           )
     }<details><summary>Grenzen und Annahmen des Modells</summary><p>${esc((isWater ? water : area).modelNote)}</p></details>`;
+  }
+  if (cfg.kind === 'orientation') {
+    const g = newGeography();
+    if (isRegion(cfg.preset)) g.target = cfg.preset;
+    g.review = newReview();
+    if (isRegion(a.simulationSelection)) g.review.tab = a.simulationSelection;
+    const map = africaMap(g, true).replace(
+      /data-action="geography" data-op="review-tab"/g,
+      'data-action="learning" data-op="simulate"',
+    );
+    return `<h2>Drei Länder in Afrika</h2><p>Nordrichtung: oben. Die gestrichelte Linie ist der Äquator, keine Landesgrenze. Punkte zeigen Städte. Diese Übersicht nutzt echte Natural-Earth-Umrisse. Sie ist keine Karte unserer erfundenen Nachbarschaft.</p>${map}${controls(
+      Object.entries(regions).map(([id, r]) => [id, r.name]),
+      a.simulationSelection ?? '',
+    )}<details><summary>Städte und Quelle nachsehen</summary>${table(
+      ['Stadt', 'Land'],
+      Object.values(regions).map((r) => [r.city, r.name]),
+    )}<p>Natural Earth, public domain; stark vereinfachte Übersicht. Keine genaue Reisezeitmessung. Die gestrichelte Gebietsgrenze der Westsahara ist keine normale durchgezogene Staatsgrenze.</p></details>`;
+  }
+  if (cfg.kind === 'review') {
+    const code = isRegion(cfg.preset) ? cfg.preset : undefined;
+    return `<h2>Fälle erneut vergleichen</h2><p>Hier stehen die nötigen Fallangaben. Du kannst sie auch lesen, wenn du eine Episode noch nicht bearbeitet hast. Das ist kein Nachweis einer früheren Bearbeitung.</p>${(code ? [code] : (['KEN', 'GHA', 'MAR'] as const)).map((id) => `<section><h3>${regions[id].name} · erfundener Fall</h3><p>${esc(transferTasks[id].example)}</p></section>`).join('')}<details><summary>Reale Orte und Kontext</summary>${(code ? [code] : (['KEN', 'GHA', 'MAR'] as const)).map((id) => renderContext(id)).join('')}</details>`;
   }
   return '';
 }

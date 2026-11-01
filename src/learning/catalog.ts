@@ -26,11 +26,15 @@ export const implementedUnits = [
   's4',
   's5',
   's6',
+  'o',
+  'r',
 ] as const;
 export type Unit = (typeof implementedUnits)[number];
 export const isUnit = (value: unknown): value is Unit =>
   implementedUnits.includes(value as Unit);
 export const unitNames: Record<Unit, string> = {
+  o: 'Orientierung · Länder und Städte',
+  r: 'Rückblick · Fälle vergleichen',
   a: 'Bilder und Orte',
   n: 'Natur und Wasser',
   c: 'Bevölkerung',
@@ -85,20 +89,6 @@ export const variantCatalog = units.flatMap((unit) =>
     areaId: `${unit}.${profileId}.v1`,
     unit,
     profileId,
-    status: [
-      'a',
-      'n',
-      'c',
-      'd',
-      'e',
-      's1',
-      's2',
-      's3',
-      's4',
-      's5',
-      's6',
-    ].includes(unit)
-      ? 'implemented'
-      : 'planned',
+    status: 'implemented',
   })),
 );

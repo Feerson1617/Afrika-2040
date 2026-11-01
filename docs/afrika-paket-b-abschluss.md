@@ -27,3 +27,11 @@ Episode 5 trennt Tank, Entnahme und Ankunft am selben Feld. Reparatur und neue V
 Episode 6 behandelt zuerst dieselbe Fläche, dann die zusätzliche Fläche und die Gesamtentnahme. Eigene Empfehlungen haben passende Belege und Grenzen. Der neue Vergleich mit 10 WE Zusatzbedarf ergibt 55 WE und verhindert die falsche Verallgemeinerung „Technik spart nie“. AHR erklärt zusätzlich die Bedingung unterhalb von 15 WE Zusatzentnahme und den Grenzfall.
 
 Geprüft: **354 Logiktests** und **32 vollständige Marokko-Browserwege** regulär/unterstützt in beiden Engines; Produktionsbuild erfolgreich. Katalog: 44 implementierte Varianten, Orientierung und Rückblick (acht Varianten) noch geplant. Danach Gate 4A.
+
+## Gate 4A – Orientierung und Rückblick
+
+Alle 52 Katalogvarianten besitzen nun tatsächliche Aufgaben. Orientierung verwendet unveränderte Natural-Earth-Geometrie, Stadtpunkte und Äquator. Länder sind auf der Karte und mit gleichwertigen HTML-Tasten wählbar. Förder ordnet Land/Stadt in Einzelschritten zu, ESA verknüpft Orte und Länder, MSA nutzt Lagebeziehungen, AHR erklärt zusätzlich eine Darstellungsgrenze.
+
+Der vierfach differenzierte Rückblick gibt notwendige Modellbelege bei direktem Einstieg selbst an und behauptet keine vorherige Bearbeitung. Er vergleicht die drei Länderfälle, ihre Interessen und Grenzen; MSA/AHR formulieren kurze eigene, weiterhin ungeprüfte Erklärungen. Die richtige Antwort hat je Land eine feste unterschiedliche Position; alte Antwort-IDs und die bisherigen Rückblicke bleiben erhalten.
+
+Geprüft: **370 Logiktests**, **32 vollständige Browserwege** für Orientierung/Rückblick regulär und unterstützt in Chromium/WebKit; Produktionsbuild erfolgreich. Katalogstatus ist jetzt 52 implementiert, keine Platzhalter. Der einheitliche Haupteinstieg und die gemeinsame Ergebnissicht folgen in Gate 4B; die Gesamtprüfung ist noch offen.

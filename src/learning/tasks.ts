@@ -1,3 +1,4 @@
+import { orientationTasks, reviewTasks } from './cross-paths.ts';
 import { populationModel, populationBalance } from '../inquiry/content.ts';
 import { journey } from '../model.ts';
 import { isProfile, type ProfileId } from './profiles.ts';
@@ -530,6 +531,8 @@ function conditions(profile: ProfileId) {
 export function tasksFor(unit: Unit, profile: ProfileId): Task[] {
   if (!isUnit(unit) || !isProfile(profile))
     throw new Error('Dieser Lernbereich ist noch nicht als Lernweg umgesetzt.');
+  if (unit === 'o') return orientationTasks(profile);
+  if (unit === 'r') return reviewTasks(profile);
   if (unit === 's1')
     return [...kenyaTasks(profile), ...kenyaCompletion(profile)];
   if (unit === 's2') return demandTasks(profile);

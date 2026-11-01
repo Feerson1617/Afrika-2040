@@ -133,4 +133,31 @@ export function episodeAnswers(t: {
       explanation:
         'Zusatzentnahme muss kleiner als 15 WE sein, dann bleibt die Summe unter 60. Bei 15 WE ergibt sich genau 60, bei 20 WE insgesamt 65.',
     };
+  if (id.startsWith('orientation.country.'))
+    return { country: id.split('.').at(-1)! };
+  if (id.startsWith('orientation.city.')) return { city: 'city' };
+  if (id.startsWith('orientation.equator'))
+    return { south: 'Nairobi', north: 'MAR' };
+  if (id === 'orientation.scope') return { limit: 'no' };
+  if (id === 'orientation.describe')
+    return {
+      explanation:
+        'Agadir liegt nördlicher als Nairobi. Nairobi liegt südlich des Äquators. Eine genaue Fahrzeit zeigt diese Übersicht nicht.',
+    };
+  if (/^review\.(KEN|GHA|MAR)/.test(id))
+    return { claim: 'model', scope: 'local' };
+  if (id.startsWith('review.common'))
+    return { consequences: 'different', weigh: 'evidence' };
+  if (id === 'review.transfer') return { claim: 'no' };
+  if (id === 'review.revision')
+    return {
+      revision: 'varied',
+      explanation:
+        'Nord hilft Amina, verlängert aber Davids Weg. Das sind erfundene Wege, kein Beweis für ganz Nairobi oder Afrika.',
+    };
+  if (id === 'review.cause')
+    return {
+      explanation:
+        'Eine zusätzliche Fläche kann die Einsparung am ersten Feld aufheben. Mehr Verarbeitung kann höhere Kosten auslösen. Echte Flächen und Kosten müsste ich zusätzlich kennen.',
+    };
 }

@@ -53,14 +53,14 @@ const store = () => {
     },
   };
 };
-test('catalog has 52 distinct area profiles with twenty implemented topics and twenty-four complete episode variants; no silent fallback', () => {
+test('catalog has 52 distinct area profiles with all 52 implemented variants; no silent fallback', () => {
   assert.equal(variantCatalog.length, 52);
   assert.equal(new Set(variantCatalog.map((v) => v.areaId)).size, 52);
   assert.equal(
     variantCatalog.filter((v) => v.status === 'implemented').length,
-    44,
+    52,
   );
-  assert.equal(variantCatalog.filter((v) => v.status === 'planned').length, 8);
+  assert.equal(variantCatalog.filter((v) => v.status === 'planned').length, 0);
 });
 test('each subtask has complete contract and unique identity; forms require different work', () => {
   const ids = new Set<string>();
@@ -347,7 +347,7 @@ test('old fixture remains without profile; corrupted optional tasks cannot relab
 });
 
 test('planned or unknown variants never silently become population tasks', () => {
-  assert.throws(() => tasksFor('o' as any, 'esa'), /noch nicht/);
+  assert.throws(() => tasksFor('unknown-unit' as any, 'esa'), /noch nicht/);
   assert.throws(() => tasksFor('c', 'unknown' as any), /noch nicht/);
 });
 
