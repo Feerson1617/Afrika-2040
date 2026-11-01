@@ -1,3 +1,4 @@
+import { adjustAllocation } from './allocation.ts';
 import { profileIds, isProfile, profiles, type ProfileId } from './profiles.ts';
 import { isUnit, implementedUnits, type Unit } from './catalog.ts';
 import { resolveSimulation } from './simulation-variants.ts';
@@ -78,7 +79,8 @@ export type LearningAction = {
     | 'rework'
     | 'material'
     | 'future-revise'
-    | 'simulate';
+    | 'simulate'
+    | 'allocate';
   value?: string;
   field?: string;
 };
@@ -384,6 +386,12 @@ export function reduceLearning(
   ) {
     setAnswer(a, action.field, action.value ?? '');
   }
+  if (action.op === 'allocate' && a.task.budget && action.field && action.value)
+    setAnswer(
+      a,
+      'plan',
+      adjustAllocation(p.answers.plan, action.field, action.value),
+    );
   if (
     action.op === 'simulate' &&
     a.task.simulation &&

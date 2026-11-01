@@ -34,6 +34,8 @@ function status(a: Attempt, simple = false) {
   return `${a.process === 'draft' ? 'Entwurf' : a.process === 'explained' ? 'Mit Erklärung bearbeitet' : 'Abgegeben'} · ${a.factual === 'correct' ? 'Sachangaben geprüft' : a.factual === 'partial' ? 'Sachangaben teilweise passend' : a.factual === 'incorrect' ? 'Sachangaben noch unpassend' : 'Noch nicht fachlich geprüft'} · ${support(a)}${a.oral ? ' · mündlich selbstgemeldet, nicht beobachtet' : ''}${a.criteriaSeen ? ' · Kriterien zur Selbstkontrolle angesehen' : ''}${a.revised ? ' · danach überarbeitet' : ''}`;
 }
 function fields(task: Task, p: Attempt) {
+  if (task.budget)
+    return '<p>Baue deinen Plan mit den +20- und −20-Tasten im Material. Erst bei Rest 0 ist er vollständig.</p>';
   return task.fields
     .map((f) =>
       (task.focus || task.simulation) &&

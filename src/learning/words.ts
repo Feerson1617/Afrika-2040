@@ -104,6 +104,10 @@ const byName = (...names: string[]) =>
     allWords.find(([word]) => wordKey(word) === wordKey(name))!,
   );
 export function taskWords(task: Task) {
+  if (task.simulation?.kind === 'cocoa')
+    return byName('Einnahmen', 'Überschuss', 'Investition');
+  if (task.simulation?.kind === 'share')
+    return byName('Verteilung', 'Überschuss');
   if (task.simulation?.kind === 'network')
     return byName('Fußweg', 'Busabschnitt', 'Gesamtzeit');
   if (task.simulation?.kind === 'demand')

@@ -5,7 +5,7 @@ import { active } from '../../src/learning/storage.ts';
 import { answers } from '../learning-oracles.ts';
 import { evidencePath } from './artifacts.ts';
 const key = 'afrika-2040:kenia-bus:v2a';
-for (const unit of ['s1', 's2'] as const)
+for (const unit of ['s1', 's2', 's3', 's4'] as const)
   for (const profile of profileIds)
     for (const supported of [false, true])
       test(`Afrika curriculum PaketB ${unit}/${profile} supported=${supported}`, async ({
@@ -46,7 +46,17 @@ for (const unit of ['s1', 's2'] as const)
             for (let h = 0; h < 3; h++) await press('#learning-help');
             await press('#learning-adopt');
           } else {
-            for (const field of task.fields) {
+            if (task.budget) {
+              const amounts = answers(task).plan.split('-').map(Number);
+              for (const [i, key] of [
+                'payout',
+                'reserve',
+                'training',
+              ].entries())
+                for (let n = 0; n < amounts[i] / 20; n++)
+                  await press('#allocate-' + key + '-plus');
+            }
+            for (const field of task.budget ? [] : task.fields) {
               const value = answers(task)[field.id],
                 el = page.locator('#learn-' + field.id);
               if (field.kind === 'choice') {

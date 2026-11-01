@@ -2,7 +2,12 @@ import { populationModel, populationBalance } from '../inquiry/content.ts';
 import { journey } from '../model.ts';
 import { isProfile, type ProfileId } from './profiles.ts';
 import { isUnit, type Unit } from './catalog.ts';
-import { kenyaCompletion, demandTasks } from './simulation-variants.ts';
+import {
+  kenyaCompletion,
+  demandTasks,
+  cocoaTasks,
+  shareTasks,
+} from './simulation-variants.ts';
 import { topicTasks, type Focus } from './topic-variants.ts';
 export type MaterialId =
   'm1' | 'm2' | 'm3' | 'm4' | 'counter' | 'kenia' | 'topic' | 'simulation';
@@ -50,6 +55,9 @@ export interface Task {
   };
   dependsOn?: string[];
   contextKey?: string;
+  budget?: boolean;
+  differentBudget?: boolean;
+  allocationReference?: boolean;
   linked?: {
     task: string;
     field: string;
@@ -523,6 +531,8 @@ export function tasksFor(unit: Unit, profile: ProfileId): Task[] {
   if (unit === 's1')
     return [...kenyaTasks(profile), ...kenyaCompletion(profile)];
   if (unit === 's2') return demandTasks(profile);
+  if (unit === 's3') return cocoaTasks(profile);
+  if (unit === 's4') return shareTasks(profile);
   if (unit !== 'c') return topicTasks(unit, profile);
   if (profile === 'foerder')
     return [

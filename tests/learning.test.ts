@@ -53,14 +53,14 @@ const store = () => {
     },
   };
 };
-test('catalog has 52 distinct area profiles with twenty implemented topics and eight full Kenya variants; no silent fallback', () => {
+test('catalog has 52 distinct area profiles with twenty implemented topics and sixteen full Kenya/Ghana variants; no silent fallback', () => {
   assert.equal(variantCatalog.length, 52);
   assert.equal(new Set(variantCatalog.map((v) => v.areaId)).size, 52);
   assert.equal(
     variantCatalog.filter((v) => v.status === 'implemented').length,
-    28,
+    36,
   );
-  assert.equal(variantCatalog.filter((v) => v.status === 'planned').length, 24);
+  assert.equal(variantCatalog.filter((v) => v.status === 'planned').length, 16);
 });
 test('each subtask has complete contract and unique identity; forms require different work', () => {
   const ids = new Set<string>();

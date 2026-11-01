@@ -16,7 +16,7 @@ const act = (
   value?: string,
   field?: string,
 ) => reduceLearning(s, { type: 'learning', op, value, field });
-for (const unit of ['s1', 's2'] as const)
+for (const unit of ['s1', 's2', 's3', 's4'] as const)
   for (const profile of profileIds)
     for (const supported of [false, true])
       test(`PaketB ${unit}/${profile} supported=${supported}: full path, independent answers and roundtrip`, () => {
@@ -108,4 +108,30 @@ test('PaketB exploration cannot be claimed through example adoption or an old co
   s = act(s, 'check');
   s = act(s, 'next');
   assert.notEqual(active(s)!.index, index);
+});
+test('PaketB Ghana: every complete 120 GE allocation is legitimate; repeated +20 cannot overspend', async () => {
+  const { adjustAllocation, allocationData } =
+    await import('../src/learning/allocation.ts');
+  const { shareModel } = await import('../src/regions/share.ts');
+  const { evaluate } = await import('../src/learning/progress.ts');
+  let count = 0;
+  for (let payout = 0; payout <= 120; payout += 20)
+    for (let reserve = 0; reserve <= 120 - payout; reserve += 20) {
+      const training = 120 - payout - reserve,
+        id = `${payout}-${reserve}-${training}`;
+      let s = act(newLearning(), 'recommend', 'foerder', 's4');
+      s.records['s4.foerder.v1'].index = tasksFor('s4', 'foerder').findIndex(
+        (t) => t.id === 'share.plan',
+      );
+      s = act(s, 'answer', id, 'plan');
+      s = act(s, 'check');
+      assert.equal(active(s)!.attempt!.factual, 'na');
+      assert.equal(evaluate(active(s)!.task, { plan: id }).kind, 'neutral');
+      count++;
+    }
+  assert.equal(count, 28);
+  let id = '0-0-0';
+  for (let i = 0; i < 10; i++) id = adjustAllocation(id, 'payout', '20');
+  assert.equal(id, '120-0-0');
+  assert.equal(shareModel(allocationData(id)).left, 0);
 });

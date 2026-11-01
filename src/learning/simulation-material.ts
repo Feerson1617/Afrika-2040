@@ -1,3 +1,6 @@
+import { cocoaModel, cocoa } from '../regions/cocoa.ts';
+import { share, shareModel, shareKeys } from '../regions/share.ts';
+import { allocationData } from './allocation.ts';
 import type { Task } from './tasks.ts';
 import type { Attempt } from './storage.ts';
 import type { ProfileId } from './profiles.ts';
@@ -120,6 +123,44 @@ export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
         ['Fußweg (Minuten)', model.walk],
       ],
     )}<p>Eine zusätzliche Fahrt und ein neuer Fußweg lösen verschiedene Probleme. Die genaue Wartezeit, Kosten und der Fahrpreis fehlen.</p>`;
+  }
+  if (cfg.kind === 'cocoa') {
+    const selection = a.simulationSelection ?? 'base',
+      m = cocoaModel(selection);
+    return `<h2>Ein Betrieb bei Kumasi · Ghana</h2><p>Erfundene Genossenschaft: Der Betrieb gehört seinen Mitgliedern gemeinsam. Ghana hat bereits eigene Kakaoverarbeitung. GE sind erfundene Geldeinheiten, keine echten Preise.</p>${t.id.startsWith('cocoa.chain') ? '<figure><svg viewBox="0 0 420 110" role="img" aria-label="Bohnen, Hitze, Kakaomasse und Presse als ungeordnete Hinweise"><ellipse cx="45" cy="50" rx="22" ry="14" fill="#855538"/><rect x="115" y="25" width="40" height="50" fill="#9d4d2c"/><circle cx="245" cy="50" r="25" fill="#855538"/><path d="M330 10v70h50V10M320 35h70" fill="none" stroke="#234e42" stroke-width="6"/></svg><figcaption>Material: Bohnen, Hitze, Masse und Presse. Ordne die Verarbeitung selbst.</figcaption></figure>' : ''}${controls(
+      [
+        ['base', 'Bisher'],
+        ['quality', 'Qualität'],
+        ['process', 'Presse'],
+      ],
+      selection,
+    )}${table(['Laufende Runde', 'GE'], [['Einnahmen', m.income], ['Laufende Ausgaben', m.costs], ...(simple ? [['Erklärter Überschuss', m.surplus]] : [])])}<section aria-label="Getrennter Anschaffungstopf"><h3>Einmalige Anschaffung · eigener Topf</h3><p>Topf vorher: 60 GE. Anschaffung: ${m.investment} GE. Im Topf bleiben ${m.investmentLeft} GE. Diese Anschaffung wird nicht als laufende Ausgabe umbenannt.</p></section><details><summary>Modellgrenzen ansehen</summary><p>${esc(cocoa.modelNote)}</p></details>`;
+  }
+  if (cfg.kind === 'share') {
+    const d = allocationData(a.answers.plan),
+      m = shareModel(d),
+      selection = a.simulationSelection ?? 'payout';
+    const names = {
+      payout: 'Auszahlung',
+      reserve: 'Rücklage',
+      training: 'Fortbildung',
+    };
+    const effects = {
+      payout:
+        'Mitglieder bekommen jetzt zusätzliches Geld. Es ist dann nicht mehr im Betrieb.',
+      reserve:
+        'Geld bleibt für mögliche Reparaturen. Ob es später reicht, ist unklar.',
+      training:
+        'Mitglieder können dazulernen. Zusätzliche Aufträge sind nicht sicher.',
+    };
+    return `<h2>120 GE gemeinsam verteilen · Ghana</h2><p>Eine neue erfundene Runde bei Kumasi. 300 GE Einnahmen. 100 GE Löhne und 80 GE andere Kosten sind bereits bezahlt. Nun sind 120 GE frei. Keine Verteilung ist automatisch die beste.</p>${
+      t.budget
+        ? `<div role="group" aria-label="120 GE verteilen">${shareKeys.map((key) => `<section><h3>${names[key]}: ${d.allocations[key] ?? 0} GE</h3><button type="button" id="allocate-${key}-minus" data-action="learning" data-op="allocate" data-field="${key}" data-value="-20" ${!d.allocations[key] ? 'disabled' : ''}>${names[key]} −20 GE</button><button type="button" id="allocate-${key}-plus" data-action="learning" data-op="allocate" data-field="${key}" data-value="20" ${m.left < 20 ? 'disabled' : ''}>${names[key]} +20 GE</button></section>`).join('')}</div><p role="status">Noch zu verteilen: ${m.left} GE.</p>${t.differentBudget ? '<p>Ändere mindestens einen Betrag gegenüber deinem ersten Plan.</p>' : ''}`
+        : controls(
+            shareKeys.map((key) => [key, names[key]]),
+            selection,
+          )
+    }<p>${effects[selection as keyof typeof effects] ?? effects.payout}</p><details><summary>Unabhängige Runde und Grenzen</summary><p>${esc(share.modelNote)}</p></details>`;
   }
   return '';
 }

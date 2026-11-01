@@ -1,3 +1,4 @@
+import { cocoaModel, cocoa } from '../regions/cocoa.ts';
 import type { Task, LearningField } from './tasks.ts';
 import type { ProfileId } from './profiles.ts';
 import { journey, evidenceIds, evidenceFits, evidenceLabel } from '../model.ts';
@@ -540,6 +541,19 @@ export function resolveSimulation(
     ),
   );
   const link = task.linked;
+  if (task.allocationReference)
+    return resolveAllocation(task, records, contextKey);
+  if (task.differentBudget)
+    return {
+      ...task,
+      contextKey,
+      fields: task.fields.map((f) => ({
+        ...f,
+        options: f.options?.filter(
+          ([id]) => id !== records['share.plan']?.answers.plan,
+        ),
+      })),
+    };
   if (!link) return { ...task, contextKey };
   const plan = records[link.task]?.answers[link.field];
   if (!plan)
@@ -571,6 +585,12 @@ export function resolveSimulation(
       ['bus', 'Der Fußweg bleibt 12 Minuten lang.'],
       ['path', 'Es bleiben 20 Plätze. Vier Menschen fahren später.'],
     ];
+  }
+  if (link.kind === 'cocoa') {
+    const options = cocoa.options({} as any);
+    selectedName = options.find((x) => x.id === plan)?.label ?? plan;
+    benefits = options.map((x) => [x.id, x.benefit]);
+    limits = options.map((x) => [x.id, x.limit]);
   }
   const opts = (list: typeof benefits) =>
     link.kind === 'kenya'
@@ -627,5 +647,404 @@ export function resolveSimulation(
                 }
               : f,
     ),
+  };
+}
+export function cocoaTasks(p: ProfileId): Task[] {
+  const simple = p === 'foerder';
+  const ts: Task[] = [];
+  const chain = [
+    ['beans', 'Getrocknete Bohnen'],
+    ['roast', 'Rösten und mahlen'],
+    ['mass', 'Kakaomasse'],
+    ['press', 'Pressen: Butter und Presskuchen'],
+  ] as const;
+  for (const [i, [id, label]] of chain.entries())
+    ts.push(
+      step(
+        'cocoa.chain.' + id,
+        `Schritt ${i + 1} der Verarbeitung`,
+        'cocoa',
+        [
+          pick(
+            'step',
+            i === 0
+              ? 'Was ist der Rohstoff?'
+              : `Was kommt als Schritt ${i + 1}?`,
+            id,
+            simple ? [[id, label], chain[(i + 1) % 4]] : chain,
+            'Die Kette: Bohnen → Rösten und mahlen → Kakaomasse → Pressen. Beim Pressen entstehen Butter und Presskuchen.',
+          ),
+        ],
+        'Welche Veränderung ist zuerst nötig?',
+      ),
+    );
+  const base = cocoaModel('base');
+  ts.push(
+    step(
+      'cocoa.base',
+      'Einnahmen sind nicht der Überschuss',
+      'cocoa',
+      simple
+        ? [
+            pick(
+              'surplus',
+              '180 − 100 = 80 GE. Wie viel bleibt?',
+              '80',
+              [
+                ['180', '180 GE'],
+                ['80', '80 GE'],
+              ],
+              'Die Rechnung ist vorgegeben. Die laufenden Ausgaben gehen von den Einnahmen ab.',
+            ),
+          ]
+        : [
+            number(
+              'surplus',
+              p === 'esa' ? '180 − 100 =' : 'Laufender Überschuss (GE)',
+              base.surplus,
+              '180 − 100 = 80 GE.',
+            ),
+          ],
+      'Ziehe die laufenden Ausgaben von den Einnahmen ab.',
+    ),
+  );
+  const cases = [
+    ['quality', 'Lagerung und Qualität'],
+    ['process', 'Zusätzliche Presse'],
+  ] as const;
+  ts.push(
+    step(
+      'cocoa.compare',
+      'Teste beide Maßnahmen',
+      'cocoa',
+      cases.map(([id, name]) => {
+        const m = cocoaModel(id);
+        return simple
+          ? pick(
+              id,
+              `${name}: Welcher laufende Überschuss bleibt?`,
+              String(m.surplus),
+              [
+                [String(m.income), `${m.income} GE Einnahmen`],
+                [String(m.surplus), `${m.surplus} GE Überschuss`],
+              ],
+              `${m.income} − ${m.costs} = ${m.surplus} GE. Diese Rechnung ist hier erklärt.`,
+            )
+          : number(
+              id,
+              p === 'esa'
+                ? `${m.income} − ${m.costs} = (${name})`
+                : `${name}: laufender Überschuss (GE)`,
+              m.surplus,
+              `${m.income} − ${m.costs} = ${m.surplus} GE.`,
+            );
+      }),
+      'Wechsle zwischen Qualität und Presse. Trenne Einnahmen und Ausgaben.',
+      [],
+      { simulation: { kind: 'cocoa', required: ['quality', 'process'] } },
+    ),
+  );
+  ts.push(
+    step(
+      'cocoa.investment',
+      'Ein eigener Topf für Anschaffungen',
+      'cocoa',
+      [
+        pick(
+          'pot',
+          'Woher kommen die einmaligen 20 oder 60 GE?',
+          'separate',
+          [
+            ['running', 'Aus dem laufenden Überschuss noch einmal abziehen'],
+            ['separate', 'Aus einem getrennten Topf mit 60 GE'],
+          ],
+          'Einmalige Anschaffung und laufende Runde sind getrennte Rechnungen.',
+        ),
+        pick(
+          'cause',
+          'Warum bedeutet mehr Einnahme hier nicht mehr Überschuss?',
+          'costs',
+          [
+            ['automatic', 'Die Presse garantiert später Gewinn.'],
+            ['costs', 'Die laufenden Ausgaben steigen ebenfalls.'],
+          ],
+          '260 − 185 = 75 GE sind weniger als 200 − 110 = 90 GE.',
+        ),
+      ],
+      'Lies die zwei Geldtöpfe getrennt.',
+    ),
+  );
+  ts.push(...decision('cocoa.final', 'cocoa', cases, p));
+  ts.push(
+    step(
+      'cocoa.transfer',
+      'Eine neue Information prüfen',
+      'cocoa',
+      [
+        pick(
+          'guarantee',
+          'Beweisen unsere Modellzahlen sichere spätere Verkäufe?',
+          'no',
+          [
+            ['no', 'Nein. Nachfrage und Verkaufspreise können sich ändern.'],
+            ['yes', 'Ja. Jede zusätzliche Presse lohnt sich sicher.'],
+          ],
+          'Die Runde ist erfunden. Eine Zukunftsrendite wird nicht berechnet.',
+        ),
+      ],
+      'Was fehlt für echte spätere Einnahmen?',
+    ),
+  );
+  if (p === 'ahr')
+    ts.push(
+      step(
+        'cocoa.cause',
+        'Wann kann zusätzliche Verarbeitung trotzdem sinnvoll sein?',
+        'cocoa',
+        [
+          own(
+            'Trenne Überschuss in dieser Runde und längerfristiges Ziel. Welche Absatzangabe brauchst du?',
+            'Die Presse bringt mit 260 GE höhere Einnahmen, aber nur 75 statt 90 GE Überschuss. Mehr eigene Verarbeitung kann mir trotzdem wichtig sein. Ob Nachfrage und Absatzpreise künftig reichen, müsste ich zusätzlich prüfen.',
+          ),
+        ],
+        'Verbinde Rechnung, Ziel und eine fehlende Information.',
+        [
+          'Mehr Einnahmen von mehr Überschuss unterschieden.',
+          'Einmalige Investition separat.',
+          'Konkrete Absatzinformation und ihre Bedeutung.',
+        ],
+      ),
+    );
+  return differentiated(ts, p);
+}
+export const allocationOptions: readonly (readonly [string, string])[] = [
+  ['40-40-40', '40 GE Auszahlung, 40 GE Rücklage, 40 GE Fortbildung'],
+  ...Array.from({ length: 7 }, (_, a) =>
+    Array.from(
+      { length: 7 - a },
+      (_, b) =>
+        [
+          `${a * 20}-${b * 20}-${120 - a * 20 - b * 20}`,
+          `${a * 20} GE Auszahlung, ${b * 20} GE Rücklage, ${120 - a * 20 - b * 20} GE Fortbildung`,
+        ] as const,
+    ),
+  )
+    .flat()
+    .filter(([id]) => id !== '40-40-40'),
+];
+export function shareTasks(p: ProfileId): Task[] {
+  const ts = [
+    step(
+      'share.paid',
+      'Was ist schon bezahlt?',
+      'share',
+      [
+        pick(
+          'wages',
+          'Die 100 GE Löhne sind …',
+          'paid',
+          [
+            ['open', 'noch offen'],
+            ['paid', 'bereits bezahlt'],
+          ],
+          '100 GE Löhne und 80 GE andere Kosten sind bereits bezahlt.',
+        ),
+        p === 'foerder'
+          ? pick(
+              'free',
+              '300 − 100 − 80 = 120 GE. Welcher Betrag ist frei?',
+              '120',
+              [
+                ['300', '300 GE'],
+                ['120', '120 GE'],
+              ],
+              'Die Rechnung ist hier erklärt. 120 GE sind frei.',
+            )
+          : number(
+              'free',
+              p === 'esa' ? '300 − 100 − 80 =' : 'Freier Betrag (GE)',
+              120,
+              '300 − 100 − 80 = 120 GE.',
+            ),
+      ],
+      'Ziehe bereits bezahlte Kosten nicht ein zweites Mal ab.',
+    ),
+    step(
+      'share.effects',
+      'Untersuche drei Zwecke',
+      'share',
+      [
+        pick(
+          'now',
+          'Welcher Zweck gibt Mitgliedern jetzt zusätzlich Geld?',
+          'payout',
+          [
+            ['training', 'Fortbildung'],
+            ['payout', 'Auszahlung'],
+            ['reserve', 'Rücklage'],
+          ],
+          'Auszahlung ist zusätzliches Geld, kein Ersatz für unbezahlte Löhne.',
+        ),
+        pick(
+          'future',
+          'Garantiert eine Fortbildung spätere Einnahmen?',
+          'no',
+          [
+            ['yes', 'Ja'],
+            ['no', 'Nein'],
+          ],
+          'Fortbildung kann helfen, garantiert aber keine Aufträge.',
+        ),
+      ],
+      'Tippe jeden Zweck an. Prüfe heutige Wirkung und Unsicherheit.',
+      [],
+      {
+        simulation: {
+          kind: 'share',
+          required: ['payout', 'reserve', 'training'],
+        },
+      },
+    ),
+    step(
+      'share.plan',
+      'Verteile deine freien 120 GE',
+      'share',
+      [
+        pick(
+          'plan',
+          'Dein Verteilungsplan',
+          'either',
+          allocationOptions,
+          'Jede vollständige Verteilung der 120 GE ist möglich. Keine ist automatisch die beste.',
+        ),
+      ],
+      'Verteile in Schritten von 20 GE. Achte auf den Rest.',
+      [],
+      { budget: true },
+    ),
+    step(
+      'share.proof',
+      'Welche Folge hat dein Plan?',
+      'share',
+      [
+        pick(
+          'evidence',
+          'Welchen Zweck unterstützt dein Plan?',
+          'linked',
+          [],
+          '',
+        ),
+        pick('limit', 'Welche Grenze bleibt?', 'linked', [], ''),
+      ],
+      'Verbinde Geldbetrag, Zweck und Zeit.',
+      ['Vorteil und Grenze passen zu den tatsächlichen Beträgen.'],
+      { dependsOn: ['share.plan'], allocationReference: true },
+    ),
+    step(
+      'share.tradeoff',
+      'Begrenztes Geld',
+      'share',
+      [
+        pick(
+          'tradeoff',
+          'Was passiert bei festem Budget, wenn 20 GE mehr in die Rücklage gehen?',
+          'less',
+          [
+            ['more', 'Für alle anderen Zwecke gibt es zugleich mehr.'],
+            ['less', 'Für andere Zwecke bleiben zusammen 20 GE weniger.'],
+          ],
+          'Der freie Betrag bleibt 120 GE. Man muss an anderer Stelle 20 GE wegnehmen.',
+        ),
+      ],
+      'Vergleiche denselben gesamten Topf.',
+    ),
+  ];
+  if (p === 'msa' || p === 'ahr')
+    ts.push(
+      step(
+        'share.plan.second',
+        'Baue einen zweiten eigenen Plan',
+        'share',
+        [
+          pick(
+            'plan',
+            'Ein anderer Verteilungsplan',
+            'either',
+            allocationOptions,
+            'Du darfst eine andere Verteilung ausprobieren.',
+          ),
+        ],
+        'Vergleiche deinen zweiten Plan mit dem ersten.',
+        [],
+        { budget: true, differentBudget: true, dependsOn: ['share.plan'] },
+      ),
+    );
+  if (p === 'ahr')
+    ts.push(
+      step(
+        'share.perspective',
+        'Begründe gegenüber einem anderen Mitglied',
+        'share',
+        [
+          own(
+            'Vergleiche deine beiden Pläne. Ein anderes Mitglied möchte mehr Auszahlung. Wie begründest du deine Wahl, und was bleibt unsicher?',
+            'Ich vergleiche die Beträge meiner beiden Pläne. Mehr Rücklage lässt weniger sofortige Auszahlung zu. Mir ist die Vorsorge wichtiger, obwohl noch unklar ist, ob das Geld für eine echte Reparatur reicht. Fortbildung ist ebenfalls keine Garantie für zusätzliche Einnahmen.',
+          ),
+        ],
+        'Nenne einen tatsächlichen Betrag aus jedem deiner Pläne.',
+        [
+          'Beide eigenen Pläne korrekt verglichen.',
+          'Andere Perspektive und Zeitpunkt einbezogen.',
+          'Konkrete Unsicherheit statt Renditeversprechen.',
+        ],
+        { dependsOn: ['share.plan', 'share.plan.second'] },
+      ),
+    );
+  return differentiated(ts, p);
+}
+function resolveAllocation(
+  t: Task,
+  records: Record<string, { answers: Record<string, string> }>,
+  contextKey: string,
+): Task {
+  const source = records['share.plan']?.answers.plan ?? '';
+  const parts = source.split('-').map(Number);
+  const valid = allocationOptions.some(([id]) => id === source);
+  const names = ['Auszahlung', 'Rücklage', 'Fortbildung'];
+  const largest = parts.indexOf(Math.max(...parts));
+  const effects = [
+    'Mitglieder erhalten jetzt zusätzliches Geld.',
+    'Geld bleibt für mögliche Reparaturen im Betrieb.',
+    'Mitglieder können etwas dazulernen.',
+  ];
+  const limits = [
+    'Das ausgezahlte Geld steht dem Betrieb nicht mehr zur Verfügung.',
+    'Das Geld wird jetzt nicht ausgezahlt. Ob es für Reparaturen reicht, bleibt offen.',
+    'Das Geld wird jetzt nicht ausgezahlt. Zusätzliche Aufträge sind nicht sicher.',
+  ];
+  return {
+    ...t,
+    contextKey,
+    contextNote: valid
+      ? `Dein Plan: ${allocationOptions.find(([id]) => id === source)![1]}.`
+      : 'Dein Verteilungsplan ist noch nicht vollständig.',
+    fields: t.fields.map((f) => ({
+      ...f,
+      expected: valid ? String(largest) : '__missing_budget__',
+      accepted: valid
+        ? parts.flatMap((amount, i) => (amount > 0 ? [String(i)] : []))
+        : [],
+      options: names.map((name, i) => [
+        String(i),
+        f.id === 'evidence'
+          ? `${name}: ${effects[i]}`
+          : `${name}: ${limits[i]}`,
+      ]),
+      explanation: valid
+        ? f.id === 'evidence'
+          ? `${names[largest]} erhält ${parts[largest]} GE. ${effects[largest]}`
+          : limits[largest]
+        : 'Verteile zuerst alle 120 GE.',
+    })),
   };
 }

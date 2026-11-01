@@ -44,4 +44,35 @@ export function episodeAnswers(t: {
       explanation:
         'Plätze pro Stunde und Fußweg sind verschiedene Größen. Eine Fahrt schafft Plätze, ein Weg verkürzt den Zugang. Betriebskosten können meine Wahl ändern.',
     };
+  if (id.startsWith('cocoa.chain.')) return { step: id.split('.').at(-1)! };
+  if (id === 'cocoa.base') return { surplus: '80' };
+  if (id.startsWith('cocoa.compare')) return { quality: '90', process: '75' };
+  if (id.startsWith('cocoa.investment'))
+    return { pot: 'separate', cause: 'costs' };
+  if (id.startsWith('cocoa.final'))
+    return {
+      plan: 'quality',
+      evidence: 'quality',
+      limit: 'quality',
+      weight: 'benefit',
+      explanation:
+        'Qualität ergibt 90 GE, die Presse nur 75 GE. Für mehr Verarbeitung könnte ich trotzdem die Presse wählen.',
+    };
+  if (id === 'cocoa.transfer') return { guarantee: 'no' };
+  if (id === 'cocoa.cause')
+    return {
+      explanation:
+        '260 GE sind Einnahmen, kein Überschuss. Nach 185 GE Kosten bleiben 75 GE. Mehr eigene Verarbeitung kann trotzdem mein Ziel sein. Dafür fehlen Absatzinformationen.',
+    };
+  if (id.startsWith('share.paid')) return { wages: 'paid', free: '120' };
+  if (id.startsWith('share.effects')) return { now: 'payout', future: 'no' };
+  if (id === 'share.plan') return { plan: '40-40-40' };
+  if (id === 'share.plan.second') return { plan: '60-20-40' };
+  if (id.startsWith('share.proof')) return { evidence: '0', limit: '0' };
+  if (id === 'share.tradeoff') return { tradeoff: 'less' };
+  if (id === 'share.perspective')
+    return {
+      explanation:
+        'Im ersten Plan je 40 GE, im zweiten 60 GE Auszahlung, 20 GE Rücklage und 40 GE Fortbildung. Die Auszahlung stärkt das heutige Einkommen, die Rücklage wird kleiner. Künftige Reparaturkosten sind ungewiss.',
+    };
 }

@@ -11,3 +11,11 @@ Förder vergleicht erklärte Zahlen ohne Pflichtschrift; ESA nutzt getrennte Tei
 Geprüft: **321 Logiktests**, davon alle bisherigen 300, und **32 vollständige Browserwege** (acht Varianten × regulär/unterstützt × Chromium/WebKit). Desktop 1366×900 und emuliertes iPad 1024×768 mit Touch, Tastatur/Enter, Reload nach jeder Aufgabe, Journal und Hilfeübernahme. Produktionsbuild erfolgreich. Der erste Browserlauf fand eine Namenskollision in der Wörterhilfe (`event`); diese ist korrigiert. Frühe Fehlprotokolle werden im externen Prüfpaket erhalten, nicht als bestanden gezählt. Keine Hardware-/Unterrichtsabnahme behauptet.
 
 Katalog zu diesem Zwischencommit: 28 implementierte Varianten, 24 noch geplant. Gates 3B–5 werden anschließend bearbeitet; Paket B ist hier noch nicht vollständig.
+
+## Gate 3B – Ghana
+
+Kakaoverarbeitung: vier eigene Reihenfolgeentscheidungen, laufende Einnahmen/Ausgaben, Überschüsse 80/90/75 GE und davon getrennter Anschaffungstopf mit 60 GE. Beide Maßnahmen sind aktiv zu untersuchen. Beleg, Grenze und Gewichtung beziehen sich auf die gewählte Maßnahme; AHR prüft zusätzlich den Unterschied zwischen aktuellem Überschuss, mehr Verarbeitung und ungewissem Absatz.
+
+Verteilung: Die vorhandene Budgetfunktion begrenzt +20/−20-Handlungen. Alle 28 vollständigen Verteilungen sind zulässig. Auswahl und Priorität bleiben neutral. Folgen müssen zu tatsächlich finanzierten Zwecken passen. MSA/AHR bauen einen zweiten, tatsächlich anderen Plan; AHR setzt sich kurz mit einer anderen Perspektive auseinander. Frühere Pläne und Belege bleiben in der Historie erhalten. Keine garantierte Rendite oder moralische Siegerverteilung.
+
+Geprüft: **338 Logiktests**, darunter alle bisherigen Fälle und alle 28 Verteilungen; **32 vollständige Ghana-Browserwege** regulär/unterstützt in Chromium und WebKit. Produktionsbuild erfolgreich. Katalog: 36 implementiert, 16 geplant. Danach Weiterarbeit mit Marokko.
