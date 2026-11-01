@@ -1,3 +1,5 @@
+Aktueller Ausbau: [Paket B, Gates 3–5](docs/afrika-paket-b-abschluss.md). Kenia-Gate 3A implementiert; weitere Abschnitte folgen im selben Auftrag.
+
 # Afrika 2040 – Gestalte die Zukunft
 
 Aktuelle gezielte Nachbesserung: [Gate-2-Korrektur](docs/afrika-gate2-correction.md). Kein Beginn von Gate 3–5.

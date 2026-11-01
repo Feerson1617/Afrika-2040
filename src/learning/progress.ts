@@ -26,7 +26,11 @@ export function findings(
             : 'incorrect';
     } else if (!f.options?.some(([id]) => id === value)) status = 'format';
     else if (f.expected === 'either') status = 'opinion';
-    else status = value === f.expected ? 'correct' : 'incorrect';
+    else
+      status =
+        value === f.expected || f.accepted?.includes(value)
+          ? 'correct'
+          : 'incorrect';
     return { field: f.id, label: f.label, status, explanation: f.explanation };
   });
 }

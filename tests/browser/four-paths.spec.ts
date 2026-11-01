@@ -98,6 +98,11 @@ for (const profile of profileIds)
               '16 Min.',
             );
           }
+          const actualTask = active(await learning(page))!.task;
+          for (const id of task.simulation?.required ?? [])
+            await page
+              .locator(`#sim-Liniewhlen-${id}, #sim-Modelluntersuchen-${id}`)
+              .click();
           if (supported) {
             for (let h = 0; h < 3; h++)
               await page.locator('#learning-help').tap();
@@ -110,9 +115,15 @@ for (const profile of profileIds)
           } else {
             for (const f of task.fields) {
               const el = page.locator('#learn-' + f.id);
-              if (f.kind === 'choice')
-                await el.selectOption(answers(task)[f.id]);
-              else
+              if (f.kind === 'choice') {
+                if (await el.evaluate((e) => e.tagName === 'FIELDSET'))
+                  await page
+                    .locator(
+                      `input[data-field="${f.id}"][value="${answers(actualTask)[f.id]}"]`,
+                    )
+                    .check();
+                else await el.selectOption(answers(actualTask)[f.id]);
+              } else
                 await el.fill(
                   f.kind === 'text'
                     ? answers(task)[f.id]

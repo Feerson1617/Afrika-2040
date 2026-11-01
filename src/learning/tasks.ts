@@ -2,15 +2,17 @@ import { populationModel, populationBalance } from '../inquiry/content.ts';
 import { journey } from '../model.ts';
 import { isProfile, type ProfileId } from './profiles.ts';
 import { isUnit, type Unit } from './catalog.ts';
+import { kenyaCompletion, demandTasks } from './simulation-variants.ts';
 import { topicTasks, type Focus } from './topic-variants.ts';
 export type MaterialId =
-  'm1' | 'm2' | 'm3' | 'm4' | 'counter' | 'kenia' | 'topic';
+  'm1' | 'm2' | 'm3' | 'm4' | 'counter' | 'kenia' | 'topic' | 'simulation';
 export interface LearningField {
   id: string;
   label: string;
   kind: 'choice' | 'integer' | 'text';
   options?: readonly (readonly [string, string])[];
   expected?: string;
+  accepted?: string[];
   explanation: string;
   example?: string;
 }
@@ -32,6 +34,28 @@ export interface Task {
   reduced?: boolean;
   contextPlan?: 'cool' | 'shade';
   contextGoal?: string;
+  simulation?: {
+    kind:
+      | 'network'
+      | 'demand'
+      | 'cocoa'
+      | 'share'
+      | 'water'
+      | 'area'
+      | 'orientation'
+      | 'review';
+    preset?: string;
+    now?: boolean;
+    required?: string[];
+  };
+  dependsOn?: string[];
+  contextKey?: string;
+  linked?: {
+    task: string;
+    field: string;
+    kind: 'kenya' | 'demand' | 'cocoa' | 'water' | 'area';
+    now?: boolean;
+  };
 }
 export const transferModel = {
   start: 800,
@@ -496,7 +520,9 @@ function conditions(profile: ProfileId) {
 export function tasksFor(unit: Unit, profile: ProfileId): Task[] {
   if (!isUnit(unit) || !isProfile(profile))
     throw new Error('Dieser Lernbereich ist noch nicht als Lernweg umgesetzt.');
-  if (unit === 's1') return kenyaTasks(profile);
+  if (unit === 's1')
+    return [...kenyaTasks(profile), ...kenyaCompletion(profile)];
+  if (unit === 's2') return demandTasks(profile);
   if (unit !== 'c') return topicTasks(unit, profile);
   if (profile === 'foerder')
     return [

@@ -1,3 +1,4 @@
+import { simulationMaterial } from './simulation-material.ts';
 import { topicMaterial } from './topic-material.ts';
 import {
   populationBalance,
@@ -20,6 +21,7 @@ export const escapeHtml = (text: string) =>
       ]!,
   );
 export function materialView(task: Task, profile: ProfileId, attempt: Attempt) {
+  if (task.simulation) return simulationMaterial(task, profile, attempt);
   if (task.focus) return topicMaterial(task.focus, profile);
   if (task.material === 'm2') {
     const simple = profile === 'foerder';

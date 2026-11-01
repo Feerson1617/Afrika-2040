@@ -23,6 +23,8 @@ const act = (
 ) => reduceLearning(s, { type: 'learning', op, value, field });
 const start = () => act(newLearning(), 'recommend', 'ahr', 'c');
 function submit(s: LearningState) {
+  for (const id of active(s)!.task.simulation?.required ?? [])
+    s = act(s, 'simulate', id);
   for (const f of active(s)!.task.fields)
     s = act(s, 'answer', answers(active(s)!.task)[f.id], f.id);
   return act(s, 'check');
@@ -148,7 +150,7 @@ test('every pilot task has independent factual oracles, retained IDs/counts and 
   for (const [index, profile] of profileIds.entries())
     for (const unit of ['c', 's1'] as const) {
       assert.equal(
-        tasksFor(unit, profile).length,
+        tasksFor(unit, profile).filter((t) => !t.simulation).length,
         (unit === 'c' ? [14, 13, 8, 8] : [4, 6, 4, 4])[index],
       );
       let s = act(newLearning(), 'recommend', profile, unit);

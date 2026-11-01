@@ -30,6 +30,8 @@ function start(profile: (typeof profileIds)[number], unit: 'c' | 's1' = 'c') {
 }
 function solve(s: LearningState) {
   const a = active(s)!;
+  for (const id of a.task.simulation?.required ?? [])
+    s = act(s, 'simulate', id);
   for (const f of a.task.fields)
     s = act(
       s,
@@ -51,17 +53,14 @@ const store = () => {
     },
   };
 };
-test('catalog has 52 distinct area profiles with twenty implemented topics and four early pilots; no silent fallback', () => {
+test('catalog has 52 distinct area profiles with twenty implemented topics and eight full Kenya variants; no silent fallback', () => {
   assert.equal(variantCatalog.length, 52);
   assert.equal(new Set(variantCatalog.map((v) => v.areaId)).size, 52);
   assert.equal(
     variantCatalog.filter((v) => v.status === 'implemented').length,
-    20,
+    28,
   );
-  assert.equal(
-    variantCatalog.filter((v) => v.status === 'early-comparison-only').length,
-    4,
-  );
+  assert.equal(variantCatalog.filter((v) => v.status === 'planned').length, 24);
 });
 test('each subtask has complete contract and unique identity; forms require different work', () => {
   const ids = new Set<string>();
@@ -107,6 +106,8 @@ for (const profile of profileIds)
         let s = start(profile, unit);
         const count = tasksFor(unit, profile).length;
         for (let i = 0; i < count; i++) {
+          for (const id of active(s)!.task.simulation?.required ?? [])
+            s = act(s, 'simulate', id);
           const a = active(s)!;
           assert.equal(a.index, i);
           assert.equal(
@@ -378,7 +379,11 @@ test('every pilot contract rejects its actual wrong alternatives, recognizes rig
           }
           const wrong =
             f.kind === 'choice'
-              ? f.options!.filter(([id]) => id !== f.expected).map(([id]) => id)
+              ? f
+                  .options!.filter(
+                    ([id]) => id !== f.expected && !f.accepted?.includes(id),
+                  )
+                  .map(([id]) => id)
               : [String(Number(f.expected) + 1)];
           for (const value of wrong) {
             const e = evaluate(task, { ...answers, [f.id]: value });

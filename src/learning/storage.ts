@@ -1,5 +1,6 @@
 import { profileIds, isProfile, profiles, type ProfileId } from './profiles.ts';
 import { isUnit, implementedUnits, type Unit } from './catalog.ts';
+import { resolveSimulation } from './simulation-variants.ts';
 import { futureReference } from './topic-variants.ts';
 import { tasksFor, type Task } from './tasks.ts';
 import { evaluate, exampleValue } from './progress.ts';
@@ -14,6 +15,7 @@ export interface Identity {
   attemptId: string;
 }
 export interface Submission {
+  contextKey?: string;
   labels?: Record<string, string>;
   contextPlan?: 'cool' | 'shade';
   contextGoal?: 'loss' | 'access';
@@ -39,6 +41,8 @@ export interface Attempt {
   submissions: Submission[];
   olderSubmissions: number;
   mapSelection?: string;
+  simulationSelection?: string;
+  explored?: string[];
 }
 export interface LearningState {
   version: 1;
@@ -73,7 +77,8 @@ export type LearningAction = {
     | 'home'
     | 'rework'
     | 'material'
-    | 'future-revise';
+    | 'future-revise'
+    | 'simulate';
   value?: string;
   field?: string;
 };
@@ -120,7 +125,10 @@ export function active(s: LearningState) {
     record,
     tasks,
     index,
-    task: futureReference(task, record?.attempts ?? {}),
+    task: resolveSimulation(
+      futureReference(task, record?.attempts ?? {}),
+      record?.attempts ?? {},
+    ),
     attempt: record?.attempts[task.id],
   };
 }
@@ -169,6 +177,13 @@ function setAnswer(
   p.factual = 'ungraded';
   p.adopted = false;
   if (p.criteriaSeen) p.revised = true;
+  for (const [id, later] of Object.entries(a.record.attempts)) {
+    if (a.tasks.find((t) => t.id === id)?.dependsOn?.includes(a.task.id)) {
+      later.process = 'draft';
+      later.factual = 'ungraded';
+      later.adopted = false;
+    }
+  }
   if (['future.plan', 'future.goal', 'future.weight'].includes(a.task.id)) {
     for (const [id, later] of Object.entries(a.record.attempts)) {
       const dependent =
@@ -198,6 +213,10 @@ function setAnswer(
 }
 export function canContinue(task: Task, p: Attempt) {
   if (p.process === 'draft') return false;
+  if (task.simulation?.required?.some((id) => !p.explored?.includes(id)))
+    return false;
+  if (task.contextKey && p.submissions.at(-1)?.contextKey !== task.contextKey)
+    return false;
   if (task.reference) {
     const proof = p.submissions.at(-1);
     if (!task.contextPlan || proof?.contextPlan !== task.contextPlan)
@@ -240,15 +259,26 @@ function checked(s: LearningState, adopt = false) {
       p.exampleShown = true;
     }
   }
-  p.process = e.ready ? (usedExample ? 'explained' : 'submitted') : 'draft';
+  p.process =
+    e.ready &&
+    !a.task.simulation?.required?.some((id) => !p.explored?.includes(id))
+      ? usedExample
+        ? 'explained'
+        : 'submitted'
+      : 'draft';
   p.factual = e.factual;
   appendSubmission(p, {
-    ...(a.task.reference
+    ...(a.task.contextKey ? { contextKey: a.task.contextKey } : {}),
+    ...(a.task.reference || a.task.linked
       ? {
-          contextGoal: s.records[a.key].attempts['future.goal']?.answers
-            .goal as 'loss' | 'access',
-          contextPlan: s.records[a.key].attempts['future.plan']?.answers
-            .plan as 'cool' | 'shade',
+          ...(a.task.reference
+            ? {
+                contextGoal: s.records[a.key].attempts['future.goal']?.answers
+                  .goal as 'loss' | 'access',
+                contextPlan: s.records[a.key].attempts['future.plan']?.answers
+                  .plan as 'cool' | 'shade',
+              }
+            : {}),
           labels: Object.fromEntries(
             a.task.fields.map((f) => [
               f.id,
@@ -354,6 +384,15 @@ export function reduceLearning(
   ) {
     setAnswer(a, action.field, action.value ?? '');
   }
+  if (
+    action.op === 'simulate' &&
+    a.task.simulation &&
+    action.value &&
+    /^[a-z0-9-]{1,50}$/.test(action.value)
+  ) {
+    p.simulationSelection = action.value;
+    p.explored = [...new Set([...(p.explored ?? []), action.value])].slice(-30);
+  }
   if (action.op === 'oral' && a.task.fields.every((f) => f.kind === 'text')) {
     p.oral = !p.oral;
     p.form = p.oral ? 'oral-self-report' : 'written';
@@ -365,6 +404,7 @@ export function reduceLearning(
       p.process = 'submitted';
       p.factual = 'ungraded';
       appendSubmission(p, {
+        ...(a.task.contextKey ? { contextKey: a.task.contextKey } : {}),
         ...(a.task.reference
           ? {
               contextPlan: a.task.contextPlan,
@@ -471,7 +511,10 @@ export function restoreLearning(raw: unknown): LearningState | undefined {
         };
       s.records[key] = record;
       for (const sourceTask of tasks) {
-        const task = futureReference(sourceTask, record.attempts);
+        const task = resolveSimulation(
+          futureReference(sourceTask, record.attempts),
+          record.attempts,
+        );
         const p = r.attempts?.[task.id];
         if (
           !p ||
@@ -553,8 +596,26 @@ export function restoreLearning(raw: unknown): LearningState | undefined {
             for (const f of task.fields)
               if (typeof item.answers[f.id] === 'string')
                 answer[f.id] = item.answers[f.id].slice(0, 2000);
+            let historical = task;
+            if (task.dependsOn && typeof item.contextKey === 'string') {
+              try {
+                const context = JSON.parse(item.contextKey);
+                historical = resolveSimulation(
+                  sourceTask,
+                  Object.fromEntries(
+                    task.dependsOn.map((id) => [
+                      id,
+                      { answers: context[id] ?? {} },
+                    ]),
+                  ),
+                );
+              } catch {}
+            }
             appendSubmission(a, {
-              ...(task.reference &&
+              ...(task.contextKey && typeof item.contextKey === 'string'
+                ? { contextKey: item.contextKey.slice(0, 6000) }
+                : {}),
+              ...((task.reference || task.linked) &&
               item.labels &&
               typeof item.labels === 'object'
                 ? {
@@ -577,7 +638,7 @@ export function restoreLearning(raw: unknown): LearningState | undefined {
                       ...record.attempts,
                       'future.plan': { answers: { plan: item.contextPlan } },
                     })
-                  : task,
+                  : historical,
                 answer,
               ).factual,
               ...(task.reference &&
@@ -596,6 +657,20 @@ export function restoreLearning(raw: unknown): LearningState | undefined {
           /^(amina|david)-(direct|north)$/.test(p.mapSelection)
         )
           a.mapSelection = p.mapSelection;
+        if (
+          typeof p.simulationSelection === 'string' &&
+          /^[a-z0-9-]{1,50}$/.test(p.simulationSelection)
+        )
+          a.simulationSelection = p.simulationSelection;
+        if (Array.isArray(p.explored))
+          a.explored = [
+            ...new Set<string>(
+              p.explored.filter(
+                (v: unknown) =>
+                  typeof v === 'string' && /^[a-z0-9-]{1,50}$/.test(v),
+              ),
+            ),
+          ].slice(-30);
         if (a.process !== 'draft' && !canContinue(task, a)) {
           a.process = 'draft';
           a.factual = 'ungraded';

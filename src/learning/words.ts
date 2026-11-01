@@ -27,6 +27,8 @@ const words = {
   justify: ['Begründe', 'Nutze einen passenden Beleg für deine Wahl.'],
 } as const;
 const addedWords: [string, string][] = [
+  ['Nachfrage', 'Wie viele Menschen in dieser Modellstunde fahren möchten.'],
+  ['Kapazität', 'Wie viele Plätze in einer Stunde angeboten werden.'],
   ['Einnahmen', 'Geld, das ein Betrieb bekommt.'],
   ['Überschuss', 'Einnahmen minus laufende Ausgaben.'],
   ['Investition', 'Eine Anschaffung, die hier einmal bezahlt wird.'],
@@ -102,6 +104,10 @@ const byName = (...names: string[]) =>
     allWords.find(([word]) => wordKey(word) === wordKey(name))!,
   );
 export function taskWords(task: Task) {
+  if (task.simulation?.kind === 'network')
+    return byName('Fußweg', 'Busabschnitt', 'Gesamtzeit');
+  if (task.simulation?.kind === 'demand')
+    return byName('Nachfrage', 'Kapazität', 'Zugang');
   if (task.id.startsWith('economy.data'))
     return task.fields.some((f) => f.id === 'growth')
       ? byName('Zugang', 'Prozent', 'BIP', 'Preisbereinigt')
