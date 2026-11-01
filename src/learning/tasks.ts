@@ -7,6 +7,8 @@ import {
   demandTasks,
   cocoaTasks,
   shareTasks,
+  waterTasks,
+  areaTasks,
 } from './simulation-variants.ts';
 import { topicTasks, type Focus } from './topic-variants.ts';
 export type MaterialId =
@@ -533,6 +535,8 @@ export function tasksFor(unit: Unit, profile: ProfileId): Task[] {
   if (unit === 's2') return demandTasks(profile);
   if (unit === 's3') return cocoaTasks(profile);
   if (unit === 's4') return shareTasks(profile);
+  if (unit === 's5') return waterTasks(profile);
+  if (unit === 's6') return areaTasks(profile);
   if (unit !== 'c') return topicTasks(unit, profile);
   if (profile === 'foerder')
     return [

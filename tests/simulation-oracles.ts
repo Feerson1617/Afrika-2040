@@ -75,4 +75,62 @@ export function episodeAnswers(t: {
       explanation:
         'Im ersten Plan je 40 GE, im zweiten 60 GE Auszahlung, 20 GE Rücklage und 40 GE Fortbildung. Die Auszahlung stärkt das heutige Einkommen, die Rücklage wird kleiner. Künftige Reparaturkosten sind ungewiss.',
     };
+  if (id.startsWith('water.base'))
+    return { withdrawal: '60', arrival: '40', rest: '20' };
+  if (id.startsWith('water.compare')) return { repair: '30', tech: '35' };
+  if (id.startsWith('water.scope')) return { same: 'field', consumption: 'no' };
+  if (id.startsWith('water.final'))
+    return {
+      plan: 'repair',
+      evidence: 'repair',
+      limit: 'repair',
+      weight: 'benefit',
+      explanation:
+        'Reparatur nutzt die vorhandene Leitung und lässt 30 WE im Tank. Sie bleibt wartungsbedürftig.',
+    };
+  if (id === 'water.transfer') return { rest: '20' };
+  if (id === 'water.system')
+    return {
+      explanation:
+        '45 WE Entnahme und 40 WE Ankunft sind verschiedene Messstellen. Bei 80 WE Start bleiben 35 WE im Tank. Über Verbrauch und Grundwasser fehlen Angaben.',
+    };
+  if (id.startsWith('area.single'))
+    return {
+      saving:
+        t.fields?.find((f) => f.id === 'saving')?.kind === 'choice'
+          ? 'yes'
+          : '15',
+      single: '45',
+    };
+  if (id.startsWith('area.total'))
+    return {
+      total:
+        t.fields?.find((f) => f.id === 'total')?.kind === 'choice'
+          ? 'more'
+          : '65',
+      rest: '15',
+    };
+  if (id === 'area.cause') return { claim: 'no' };
+  if (id.startsWith('area.final'))
+    return {
+      plan: 'same',
+      evidence: 'same',
+      limit: 'same',
+      weight: 'benefit',
+      explanation:
+        'Nur das erste Feld braucht 45 statt 60 WE. Die Zusatzfläche wird dann nicht bewässert.',
+    };
+  if (id.startsWith('area.transfer'))
+    return {
+      total:
+        t.fields?.find((f) => f.id === 'total')?.kind === 'choice'
+          ? 'yes'
+          : '55',
+      less: 'yes',
+    };
+  if (id === 'area.condition')
+    return {
+      explanation:
+        'Zusatzentnahme muss kleiner als 15 WE sein, dann bleibt die Summe unter 60. Bei 15 WE ergibt sich genau 60, bei 20 WE insgesamt 65.',
+    };
 }

@@ -1,3 +1,6 @@
+import { waterModel, water } from '../regions/water.ts';
+import { areaModel, area } from '../regions/area.ts';
+import { tankGraphic } from '../regions/water-model.ts';
 import { cocoaModel, cocoa } from '../regions/cocoa.ts';
 import { share, shareModel, shareKeys } from '../regions/share.ts';
 import { allocationData } from './allocation.ts';
@@ -161,6 +164,51 @@ export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
             selection,
           )
     }<p>${effects[selection as keyof typeof effects] ?? effects.payout}</p><details><summary>Unabhängige Runde und Grenzen</summary><p>${esc(share.modelNote)}</p></details>`;
+  }
+  if (cfg.kind === 'water' || cfg.kind === 'area') {
+    const isWater = cfg.kind === 'water',
+      selection = a.simulationSelection ?? cfg.preset ?? 'base';
+    const m = isWater ? waterModel(selection) : areaModel(selection);
+    const options: readonly (readonly [string, string])[] = isWater
+      ? [
+          ['base', 'Bisher'],
+          ['repair', 'Reparatur'],
+          ['tech', 'Neue Verteilung'],
+        ]
+      : [
+          ['base', 'Früher: ein Feld'],
+          ['same', 'Neue Technik: gleiches Feld'],
+          ['extra', 'Mit Zusatzfeld'],
+        ];
+    const shape = tankGraphic(m.remaining);
+    const diagram = simple
+      ? shape
+      : shape.replace(`Rest ${m.remaining} WE`, 'Rest selbst bestimmen');
+    return `<h2>Ein Betrieb bei Agadir · Marokko</h2><p>Unabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.</p>${controls(options, selection)}<figure><svg class="study-scene" viewBox="0 0 660 280" role="img" aria-label="Tank, Entnahme und Feld getrennt. ${m.withdrawal} WE werden entnommen.">${diagram}<path d="M190 130H370" stroke="#356a76" stroke-width="9"/><text x="230" y="108">Entnahme ${m.withdrawal} WE</text><rect x="380" y="80" width="150" height="85" fill="#d4e0bd" stroke="#234e42"/><text x="390" y="112">${isWater ? 'Ankunft am Feld' : 'Erstes Feld'}</text><text x="410" y="144">${isWater ? '40' : (m as ReturnType<typeof areaModel>).first} WE</text>${!isWater && selection === 'extra' ? '<rect x="545" y="105" width="85" height="60" fill="#d4e0bd" stroke="#234e42"/><text x="547" y="192">Zusatz: 20 WE</text>' : ''}</svg><figcaption>${isWater ? 'Entnahme aus dem Tank ist nicht gleich Ankunft am Feld. Der Verbleib des übrigen Wassers wird nicht berechnet.' : 'Feldsymbole sind schematisch, ohne Hektarmaßstab. Die Zusatzfläche ist kleiner.'}</figcaption></figure>${
+      isWater
+        ? table(
+            ['Messstelle', 'WE'],
+            [
+              ['Tank am Anfang', 80],
+              ['Entnahme', m.withdrawal],
+              ['Ankunft am selben Feld', 40],
+              ...(simple ? [['Erklärter Tankrest', m.remaining]] : []),
+            ],
+          )
+        : table(
+            ['Fläche', 'Entnahme (WE)'],
+            [
+              ['Erstes Feld', (m as ReturnType<typeof areaModel>).first],
+              ['Zusatzfeld', (m as ReturnType<typeof areaModel>).extra],
+              ...(simple
+                ? [
+                    ['Erklärte Gesamtentnahme', m.withdrawal],
+                    ['Erklärter Tankrest', m.remaining],
+                  ]
+                : []),
+            ],
+          )
+    }<details><summary>Grenzen und Annahmen des Modells</summary><p>${esc((isWater ? water : area).modelNote)}</p></details>`;
   }
   return '';
 }

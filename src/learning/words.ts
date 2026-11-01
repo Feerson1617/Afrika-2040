@@ -27,6 +27,15 @@ const words = {
   justify: ['Begründe', 'Nutze einen passenden Beleg für deine Wahl.'],
 } as const;
 const addedWords: [string, string][] = [
+  ['Entnahme', 'Wasser, das aus dem Tank herausgenommen wird.'],
+  [
+    'Tankrest',
+    'Wasser, das nach der Entnahme im Tank bleibt. Kein Grundwasserbestand.',
+  ],
+  [
+    'Verbrauch',
+    'Zum Beispiel Wasser, das verdunstet und vor Ort zunächst nicht wieder nutzbar ist. Hier nicht berechnet.',
+  ],
   ['Nachfrage', 'Wie viele Menschen in dieser Modellstunde fahren möchten.'],
   ['Kapazität', 'Wie viele Plätze in einer Stunde angeboten werden.'],
   ['Einnahmen', 'Geld, das ein Betrieb bekommt.'],
@@ -104,6 +113,8 @@ const byName = (...names: string[]) =>
     allWords.find(([word]) => wordKey(word) === wordKey(name))!,
   );
 export function taskWords(task: Task) {
+  if (task.simulation?.kind === 'water' || task.simulation?.kind === 'area')
+    return byName('Entnahme', 'Tankrest', 'Verbrauch');
   if (task.simulation?.kind === 'cocoa')
     return byName('Einnahmen', 'Überschuss', 'Investition');
   if (task.simulation?.kind === 'share')

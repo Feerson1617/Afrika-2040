@@ -16,7 +16,7 @@ const act = (
   value?: string,
   field?: string,
 ) => reduceLearning(s, { type: 'learning', op, value, field });
-for (const unit of ['s1', 's2', 's3', 's4'] as const)
+for (const unit of ['s1', 's2', 's3', 's4', 's5', 's6'] as const)
   for (const profile of profileIds)
     for (const supported of [false, true])
       test(`PaketB ${unit}/${profile} supported=${supported}: full path, independent answers and roundtrip`, () => {

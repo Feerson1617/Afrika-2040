@@ -24,6 +24,8 @@ export const implementedUnits = [
   's2',
   's3',
   's4',
+  's5',
+  's6',
 ] as const;
 export type Unit = (typeof implementedUnits)[number];
 export const isUnit = (value: unknown): value is Unit =>
@@ -38,6 +40,8 @@ export const unitNames: Record<Unit, string> = {
   s2: 'Kenia 2 · Plätze und Fußwege',
   s3: 'Ghana 3 · Kakaoverarbeitung',
   s4: 'Ghana 4 · Geld verteilen',
+  s5: 'Marokko 5 · Wasser zum Feld',
+  s6: 'Marokko 6 · Zusätzliche Fläche',
 };
 export const chapters = [
   {
@@ -81,7 +85,19 @@ export const variantCatalog = units.flatMap((unit) =>
     areaId: `${unit}.${profileId}.v1`,
     unit,
     profileId,
-    status: ['a', 'n', 'c', 'd', 'e', 's1', 's2', 's3', 's4'].includes(unit)
+    status: [
+      'a',
+      'n',
+      'c',
+      'd',
+      'e',
+      's1',
+      's2',
+      's3',
+      's4',
+      's5',
+      's6',
+    ].includes(unit)
       ? 'implemented'
       : 'planned',
   })),

@@ -5,7 +5,7 @@ import { active } from '../../src/learning/storage.ts';
 import { answers } from '../learning-oracles.ts';
 import { evidencePath } from './artifacts.ts';
 const key = 'afrika-2040:kenia-bus:v2a';
-for (const unit of ['s1', 's2', 's3', 's4'] as const)
+for (const unit of ['s1', 's2', 's3', 's4', 's5', 's6'] as const)
   for (const profile of profileIds)
     for (const supported of [false, true])
       test(`Afrika curriculum PaketB ${unit}/${profile} supported=${supported}`, async ({

@@ -19,3 +19,11 @@ Kakaoverarbeitung: vier eigene Reihenfolgeentscheidungen, laufende Einnahmen/Aus
 Verteilung: Die vorhandene Budgetfunktion begrenzt +20/−20-Handlungen. Alle 28 vollständigen Verteilungen sind zulässig. Auswahl und Priorität bleiben neutral. Folgen müssen zu tatsächlich finanzierten Zwecken passen. MSA/AHR bauen einen zweiten, tatsächlich anderen Plan; AHR setzt sich kurz mit einer anderen Perspektive auseinander. Frühere Pläne und Belege bleiben in der Historie erhalten. Keine garantierte Rendite oder moralische Siegerverteilung.
 
 Geprüft: **338 Logiktests**, darunter alle bisherigen Fälle und alle 28 Verteilungen; **32 vollständige Ghana-Browserwege** regulär/unterstützt in Chromium und WebKit. Produktionsbuild erfolgreich. Katalog: 36 implementiert, 16 geplant. Danach Weiterarbeit mit Marokko.
+
+## Gate 3C – Marokko
+
+Episode 5 trennt Tank, Entnahme und Ankunft am selben Feld. Reparatur und neue Verteilung sind aktiv untersuchbar; Verbrauch, Rückflüsse, Grundwasser und sichere Ernten werden nicht aus den Zahlen behauptet. Förder vergleicht erklärte Größen, ESA rechnet in Einzelschritten, MSA nutzt einen kontrollierten Vergleich, AHR erklärt zusätzlich die Systemgrenze. Ein neuer 70-WE-Vorrat ist ausdrücklich eine erfundene andere Runde.
+
+Episode 6 behandelt zuerst dieselbe Fläche, dann die zusätzliche Fläche und die Gesamtentnahme. Eigene Empfehlungen haben passende Belege und Grenzen. Der neue Vergleich mit 10 WE Zusatzbedarf ergibt 55 WE und verhindert die falsche Verallgemeinerung „Technik spart nie“. AHR erklärt zusätzlich die Bedingung unterhalb von 15 WE Zusatzentnahme und den Grenzfall.
+
+Geprüft: **354 Logiktests** und **32 vollständige Marokko-Browserwege** regulär/unterstützt in beiden Engines; Produktionsbuild erfolgreich. Katalog: 44 implementierte Varianten, Orientierung und Rückblick (acht Varianten) noch geplant. Danach Gate 4A.

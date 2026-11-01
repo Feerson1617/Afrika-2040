@@ -1,3 +1,5 @@
+import { waterModel, water } from '../regions/water.ts';
+import { areaModel, area } from '../regions/area.ts';
 import { cocoaModel, cocoa } from '../regions/cocoa.ts';
 import type { Task, LearningField } from './tasks.ts';
 import type { ProfileId } from './profiles.ts';
@@ -586,8 +588,10 @@ export function resolveSimulation(
       ['path', 'Es bleiben 20 Plätze. Vier Menschen fahren später.'],
     ];
   }
-  if (link.kind === 'cocoa') {
-    const options = cocoa.options({} as any);
+  if (link.kind === 'cocoa' || link.kind === 'water' || link.kind === 'area') {
+    const options = (
+      link.kind === 'water' ? water : link.kind === 'area' ? area : cocoa
+    ).options({} as any);
     selectedName = options.find((x) => x.id === plan)?.label ?? plan;
     benefits = options.map((x) => [x.id, x.benefit]);
     limits = options.map((x) => [x.id, x.limit]);
@@ -1047,4 +1051,342 @@ function resolveAllocation(
         : 'Verteile zuerst alle 120 GE.',
     })),
   };
+}
+export function waterTasks(p: ProfileId): Task[] {
+  const simple = p === 'foerder',
+    base = waterModel('base');
+  const ts = [
+    step(
+      'water.base',
+      'Wo wird das Wasser gemessen?',
+      'water',
+      simple
+        ? [
+            pick(
+              'withdrawal',
+              'Wie viel geht aus dem Tank heraus?',
+              '60',
+              [
+                ['40', '40 WE am Feld'],
+                ['60', '60 WE Entnahme'],
+              ],
+              'Entnahme ist Wasser aus dem Tank.',
+            ),
+            pick(
+              'arrival',
+              'Wie viel kommt am Feld an?',
+              '40',
+              [
+                ['40', '40 WE'],
+                ['60', '60 WE'],
+              ],
+              'Am Feld kommen 40 WE an. Das ist nicht die gesamte Entnahme.',
+            ),
+          ]
+        : [
+            number(
+              'withdrawal',
+              'Entnahme aus dem Tank (WE)',
+              base.withdrawal,
+              '60 WE werden entnommen.',
+            ),
+            number(
+              'rest',
+              p === 'esa' ? '80 − 60 =' : 'Rest im Tank (WE)',
+              base.remaining,
+              '80 − 60 = 20 WE.',
+            ),
+          ],
+      'Unterscheide den Pfeil am Tank vom Pfeil am Feld.',
+    ),
+    step(
+      'water.compare',
+      'Teste Reparatur und neue Verteilung',
+      'water',
+      ['repair', 'tech'].map((id) => {
+        const m = waterModel(id);
+        return simple
+          ? pick(
+              id,
+              `${id === 'repair' ? 'Reparatur' : 'Neue Verteilung'}: Was bleibt im Tank?`,
+              String(m.remaining),
+              [
+                [String(m.remaining), `${m.remaining} WE`],
+                ['40', '40 WE am Feld'],
+              ],
+              `Erklärte Rechnung: 80 − ${m.withdrawal} = ${m.remaining} WE.`,
+            )
+          : number(
+              id,
+              p === 'esa'
+                ? `80 − ${m.withdrawal} =`
+                : `${id === 'repair' ? 'Reparatur' : 'Neue Verteilung'}: Tankrest (WE)`,
+              m.remaining,
+              `80 − ${m.withdrawal} = ${m.remaining} WE.`,
+            );
+      }),
+      'Wähle beide Maßnahmen. Vergleiche für dasselbe Feld.',
+      [],
+      { simulation: { kind: 'water', required: ['repair', 'tech'] } },
+    ),
+    step(
+      'water.scope',
+      'Was wissen wir über das Wasser?',
+      'water',
+      [
+        pick(
+          'same',
+          'Was bleibt in beiden Versuchen gleich?',
+          'field',
+          [
+            ['ground', 'Der gesamte Grundwasservorrat'],
+            ['field', '40 WE am selben Feld'],
+          ],
+          'Die gleiche Fläche bekommt jeweils 40 WE.',
+        ),
+        pick(
+          'consumption',
+          'Ist alles übrige Wasser sicher verbraucht?',
+          'no',
+          [
+            ['no', 'Nein. Verbrauch und Rückflüsse werden nicht berechnet.'],
+            ['yes', 'Ja. Es ist sicher für immer verschwunden.'],
+          ],
+          'Tankentnahme, Ankunft und Verbrauch sind verschiedene Größen.',
+        ),
+      ],
+      'Prüfe Messstelle und Modellgrenze.',
+    ),
+    ...decision(
+      'water.final',
+      'water',
+      [
+        ['repair', 'Vorhandene Leitung reparieren'],
+        ['tech', 'Wasserverteilung erneuern'],
+      ],
+      p,
+    ),
+    step(
+      'water.transfer',
+      'Ein kleinerer Tankvorrat',
+      'water',
+      simple
+        ? [
+            pick(
+              'rest',
+              'Neue erfundene Runde: 70 WE da, 50 WE entnommen. 70 − 50 = 20. Was bleibt?',
+              '20',
+              [
+                ['50', '50 WE'],
+                ['20', '20 WE'],
+              ],
+              '20 WE bleiben; das ist keine Grundwassermessung.',
+            ),
+          ]
+        : [
+            number(
+              'rest',
+              p === 'esa'
+                ? 'Neuer Fall: 70 − 50 ='
+                : 'Neuer Fall: Start 70 WE, Entnahme 50 WE. Tankrest?',
+              20,
+              '70 − 50 = 20 WE.',
+            ),
+          ],
+      'Die neue Runde hat 70 statt 80 WE am Anfang.',
+    ),
+  ];
+  if (p === 'ahr')
+    ts.push(
+      step(
+        'water.system',
+        'Welche Umweltwirkung ist damit noch nicht belegt?',
+        'water',
+        [
+          own(
+            'Erkläre Entnahme, Ankunft und Tankrest. Warum beweist ein größerer Tankrest noch keinen besseren Grundwasserzustand?',
+            'Bei neuer Verteilung erreichen 40 WE das Feld, während 45 statt 60 WE aus dem Tank entnommen werden. Es bleiben 35 WE. Der Tank ist kein Grundwasser. Verbrauch, Rückflüsse und echte Zuflüsse werden nicht berechnet.',
+          ),
+        ],
+        'Benenne die Grenze des berechneten Systems.',
+        [
+          'Entnahme, Ankunft und Rest unterschieden.',
+          'Kontrollierter Vergleich desselben Felds.',
+          'Keine Grundwasser- oder Erntegarantie behauptet.',
+        ],
+      ),
+    );
+  return differentiated(ts, p);
+}
+export function areaTasks(p: ProfileId): Task[] {
+  const simple = p === 'foerder',
+    same = areaModel('same'),
+    extra = areaModel('extra');
+  const ts = [
+    step(
+      'area.single',
+      'Zuerst dasselbe Feld',
+      'area',
+      simple
+        ? [
+            pick(
+              'saving',
+              'Früher 60 WE, jetzt 45 WE. Braucht dasselbe Feld weniger?',
+              'yes',
+              [
+                ['yes', 'Ja: 15 WE weniger'],
+                ['no', 'Nein: mehr'],
+              ],
+              '60 − 45 = 15 WE weniger. Die Rechnung ist vorgegeben.',
+            ),
+          ]
+        : [
+            number(
+              'single',
+              'Entnahme für das erste Feld mit neuer Technik (WE)',
+              same.first,
+              '45 WE für dasselbe erste Feld.',
+            ),
+            number(
+              'saving',
+              p === 'esa' ? '60 − 45 =' : 'Einsparung am ersten Feld (WE)',
+              15,
+              '60 − 45 = 15 WE weniger.',
+            ),
+          ],
+      'Vergleiche genau dasselbe Feld.',
+      [],
+      { simulation: { kind: 'area', preset: 'same', required: ['same'] } },
+    ),
+    step(
+      'area.total',
+      'Jetzt kommt eine Fläche dazu',
+      'area',
+      simple
+        ? [
+            pick(
+              'total',
+              'Erklärte Rechnung: 45 + 20 = 65 WE. Wie ist das gegenüber früher 60 WE?',
+              'more',
+              [
+                ['less', 'Insgesamt weniger'],
+                ['more', 'Insgesamt mehr'],
+              ],
+              'Das erste Feld braucht weniger. Beide zusammen brauchen hier mehr.',
+            ),
+          ]
+        : [
+            number(
+              'total',
+              p === 'esa'
+                ? '45 + 20 ='
+                : 'Gesamtentnahme für beide Felder (WE)',
+              extra.withdrawal,
+              '45 + 20 = 65 WE.',
+            ),
+            number(
+              'rest',
+              p === 'esa' ? '80 − 65 =' : 'Rest im Tank (WE)',
+              extra.remaining,
+              '80 − 65 = 15 WE.',
+            ),
+          ],
+      'Teste beide Pläne. Das kleinere Zusatzfeld braucht weitere 20 WE.',
+      [],
+      {
+        simulation: {
+          kind: 'area',
+          preset: 'extra',
+          required: ['same', 'extra'],
+        },
+      },
+    ),
+    step(
+      'area.cause',
+      'Eine Behauptung prüfen',
+      'area',
+      [
+        pick(
+          'claim',
+          'Senkt sparsame Technik immer die gesamte Entnahme?',
+          'no',
+          [
+            ['yes', 'Ja, unabhängig von der Fläche.'],
+            ['no', 'Nein. Zusätzliche Flächen können die Einsparung aufheben.'],
+          ],
+          'Einzelfeld und alle bewässerten Felder sind verschiedene Bezugsebenen.',
+        ),
+      ],
+      'Vergleiche erst dieselbe Fläche, dann alle Flächen.',
+    ),
+    ...decision(
+      'area.final',
+      'area',
+      [
+        ['same', 'Nur das gleiche Feld bewässern'],
+        ['extra', 'Auch das kleinere Zusatzfeld bewässern'],
+      ],
+      p,
+    ),
+    step(
+      'area.transfer',
+      'Ein anderes erfundenes Zusatzfeld',
+      'area',
+      simple
+        ? [
+            pick(
+              'total',
+              'Dieses Zusatzfeld braucht nur 10 WE. 45 + 10 = 55 WE. Ist das weniger als früher 60 WE?',
+              'yes',
+              [
+                ['no', 'Nein'],
+                ['yes', 'Ja'],
+              ],
+              '55 WE sind weniger als 60 WE. Nicht jede Erweiterung hebt die Einsparung auf.',
+            ),
+          ]
+        : [
+            number(
+              'total',
+              p === 'esa'
+                ? 'Neuer Fall: 45 + 10 ='
+                : 'Neuer Fall: Zusatzfeld 10 WE. Gesamt mit erstem Feld?',
+              55,
+              '45 + 10 = 55 WE.',
+            ),
+            pick(
+              'less',
+              'Ist die Gesamtentnahme hier kleiner als früher 60 WE?',
+              'yes',
+              [
+                ['yes', 'Ja'],
+                ['no', 'Nein'],
+              ],
+              '55 ist kleiner als 60. Die Größe der Erweiterung ist entscheidend.',
+            ),
+          ],
+      'Prüfe die neue Zusatzmenge statt die alte Summe zu übernehmen.',
+    ),
+  ];
+  if (p === 'ahr')
+    ts.push(
+      step(
+        'area.condition',
+        'Unter welcher Bedingung bleibt es insgesamt weniger?',
+        'area',
+        [
+          own(
+            'Das erste Feld braucht 45 WE. Wann bleibt die Gesamtentnahme unter früher 60 WE? Prüfe auch genau 15 WE Zusatzentnahme.',
+            'Bei weniger als 15 WE Zusatzentnahme bleibt die Summe unter 60 WE. Bei genau 15 WE sind es 60 WE. Bei 20 WE sind es 65 WE. Das erklärt eine Modellbedingung, keine Vorhersage über Marokkos Wasserhaushalt.',
+          ),
+        ],
+        'Prüfe kleiner, gleich und größer.',
+        [
+          'Zusatzentnahme kleiner als 15 WE als Bedingung.',
+          'Grenzfall 15 WE ergibt insgesamt 60 WE.',
+          'Keine Ernte-/Einkommens- oder reale Wasserprognose.',
+        ],
+      ),
+    );
+  return differentiated(ts, p);
 }

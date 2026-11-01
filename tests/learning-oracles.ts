@@ -1,6 +1,9 @@
 import { episodeAnswers } from './simulation-oracles.ts';
 // Unabhängige Sollantworten nach 03_Mustersequenzen und vorab gerechneten Werten.
-export function answers(t: { id: string }): Record<string, string> {
+export function answers(t: {
+  id: string;
+  fields?: { id: string; kind: string }[];
+}): Record<string, string> {
   const id = t.id;
   const extended = episodeAnswers(t);
   if (extended) return extended;
