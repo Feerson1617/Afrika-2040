@@ -43,7 +43,7 @@ const fmt = (n: number, digits = 0) =>
     minimumFractionDigits: digits,
     maximumFractionDigits: digits,
   });
-const photos = {
+export const photos = {
   market: {
     url: new URL('./assets/asafo.jpg', import.meta.url).href,
     title: 'Markteingang in Kumasi',

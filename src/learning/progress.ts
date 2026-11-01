@@ -80,7 +80,9 @@ export function evaluate(
       : unchecked
         ? 'Eigene Antwort gespeichert – noch nicht fachlich geprüft'
         : opinion
-          ? 'Deine Priorität bleibt deine.'
+          ? task.personal
+            ? 'Deine erste Vorstellung bleibt unbewertet.'
+            : 'Deine Priorität bleibt deine.'
           : 'Diese Angaben passen.';
   return {
     parts,

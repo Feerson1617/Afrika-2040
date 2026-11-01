@@ -14,7 +14,18 @@ export const units = [
   's6',
   'r',
 ] as const;
-export type Unit = 'c' | 's1';
+export const implementedUnits = ['a', 'n', 'c', 'd', 'e', 's1'] as const;
+export type Unit = (typeof implementedUnits)[number];
+export const isUnit = (value: unknown): value is Unit =>
+  implementedUnits.includes(value as Unit);
+export const unitNames: Record<Unit, string> = {
+  a: 'Bilder und Orte',
+  n: 'Natur und Wasser',
+  c: 'Bevölkerung',
+  d: 'Wirtschaft',
+  e: 'Zukunft entscheiden',
+  s1: 'Kenia · früher Vergleich',
+};
 export const chapters = [
   {
     id: 'pictures',
@@ -57,11 +68,10 @@ export const variantCatalog = units.flatMap((unit) =>
     areaId: `${unit}.${profileId}.v1`,
     unit,
     profileId,
-    status:
-      unit === 'c'
-        ? 'implemented'
-        : unit === 's1'
-          ? 'early-comparison-only'
-          : 'planned',
+    status: ['a', 'n', 'c', 'd', 'e'].includes(unit)
+      ? 'implemented'
+      : unit === 's1'
+        ? 'early-comparison-only'
+        : 'planned',
   })),
 );

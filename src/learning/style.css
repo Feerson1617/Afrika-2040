@@ -63,3 +63,32 @@
     padding-inline: 16px;
   }
 }
+.learning-chain ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 0;
+  list-style-position: inside;
+}
+.learning-chain li {
+  border: 1px solid #536449;
+  padding: 10px;
+  border-radius: 8px;
+}
+.learning-chain li:not(:last-child)::after {
+  content: ' →';
+}
+.learning-context {
+  padding: 12px;
+  border-left: 4px solid #536449;
+  background: #eef1e7;
+}
+.learning-long-choice .choice {
+  min-height: 44px;
+  margin-block: 8px;
+  align-items: start;
+}
+.learning-long-choice .choice span {
+  white-space: normal;
+  overflow-wrap: anywhere;
+}

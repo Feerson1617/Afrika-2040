@@ -1,5 +1,6 @@
 import { profileIds, isProfile, profiles, type ProfileId } from './profiles.ts';
-import type { Unit } from './catalog.ts';
+import { isUnit, implementedUnits, type Unit } from './catalog.ts';
+import { futureReference } from './topic-variants.ts';
 import { tasksFor, type Task } from './tasks.ts';
 import { evaluate, exampleValue } from './progress.ts';
 export interface Identity {
@@ -13,6 +14,8 @@ export interface Identity {
   attemptId: string;
 }
 export interface Submission {
+  labels?: Record<string, string>;
+  contextPlan?: 'cool' | 'shade';
   answers: Record<string, string>;
   factual: string;
   support: 'example' | 'standard' | 'help' | 'own';
@@ -68,7 +71,8 @@ export type LearningAction = {
     | 'menu'
     | 'home'
     | 'rework'
-    | 'material';
+    | 'material'
+    | 'future-revise';
   value?: string;
   field?: string;
 };
@@ -90,8 +94,15 @@ export function identity(
     variantId: `${areaId(unit, profile)}:${task.id}`,
     profileId: profile,
     taskVersion: 1,
-    modelVersion: unit === 'c' ? 'population.balance.v1' : 'kenia.network.v1',
-    materialVersion: `${task.material}.a3be815.v1`,
+    modelVersion:
+      unit === 'c'
+        ? 'population.balance.v1'
+        : unit === 's1'
+          ? 'kenia.network.v1'
+          : `topic.${unit}.v1`,
+    materialVersion: task.focus
+      ? `${task.focus.topic}.8d73c02.v1`
+      : `${task.material}.a3be815.v1`,
     attemptId: `local-${sequence}`,
   };
 }
@@ -108,7 +119,7 @@ export function active(s: LearningState) {
     record,
     tasks,
     index,
-    task,
+    task: futureReference(task, record?.attempts ?? {}),
     attempt: record?.attempts[task.id],
   };
 }
@@ -167,6 +178,20 @@ function checked(s: LearningState, adopt = false) {
   p.process = e.ready ? (adopt ? 'explained' : 'submitted') : 'draft';
   p.factual = e.factual;
   appendSubmission(p, {
+    ...(a.task.reference
+      ? {
+          contextPlan: s.records[a.key].attempts['future.plan']?.answers
+            .plan as 'cool' | 'shade',
+          labels: Object.fromEntries(
+            a.task.fields.map((f) => [
+              f.id,
+              f.options?.find(([id]) => id === p.answers[f.id])?.[1] ??
+                p.answers[f.id] ??
+                '',
+            ]),
+          ),
+        }
+      : {}),
     answers: { ...p.answers },
     factual: e.factual,
     support: p.exampleUsed
@@ -195,7 +220,7 @@ export function reduceLearning(
   if (
     action.op === 'recommend' &&
     isProfile(action.value) &&
-    (action.field === 'c' || action.field === 's1')
+    isUnit(action.field)
   ) {
     if (s.profile && s.profile !== action.value) {
       s.pendingProfile = action.value;
@@ -246,7 +271,7 @@ export function reduceLearning(
     s.view = 'journal';
     return s;
   }
-  if (action.op === 'unit' && (action.value === 'c' || action.value === 's1')) {
+  if (action.op === 'unit' && isUnit(action.value)) {
     s.unit = action.value;
     s.view = s.profile ? 'task' : 'profiles';
     ensure(s);
@@ -265,6 +290,14 @@ export function reduceLearning(
     p.factual = 'ungraded';
     p.adopted = false;
     if (p.criteriaSeen) p.revised = true;
+    if (a.task.id === 'future.plan') {
+      for (const [id, later] of Object.entries(a.record.attempts))
+        if (id !== a.task.id && a.tasks.find((t) => t.id === id)?.reference) {
+          later.process = 'draft';
+          later.factual = 'ungraded';
+          later.adopted = false;
+        }
+    }
   }
   if (action.op === 'oral' && a.task.fields.every((f) => f.kind === 'text')) {
     p.oral = !p.oral;
@@ -316,6 +349,22 @@ export function reduceLearning(
     s.records[a.key].index--;
     ensure(s);
   }
+  if (
+    action.op === 'future-revise' &&
+    s.unit === 'e' &&
+    a.task.id === 'future.revision' &&
+    p.answers.revision === 'change'
+  ) {
+    s.records[a.key].index = a.tasks.findIndex((t) => t.id === 'future.plan');
+    s.view = 'task';
+    return s;
+  }
+  if (
+    action.op === 'next' &&
+    a.task.id === 'future.revision' &&
+    p.answers.revision === 'change'
+  )
+    return s;
   if (action.op === 'next' && p.process !== 'draft') {
     if (a.index < a.tasks.length - 1) {
       s.records[a.key].index++;
@@ -334,10 +383,10 @@ export function restoreLearning(raw: unknown): LearningState | undefined {
       ? v.sequence
       : 0;
   if (isProfile(v.profile)) s.profile = v.profile;
-  if (v.unit === 'c' || v.unit === 's1') s.unit = v.unit;
+  if (isUnit(v.unit)) s.unit = v.unit;
   if (['menu', 'profiles', 'task', 'journal'].includes(v.view)) s.view = v.view;
   const ids = new Set<string>();
-  for (const unit of ['c', 's1'] as const)
+  for (const unit of implementedUnits)
     for (const profile of profileIds) {
       const key = areaId(unit, profile),
         r = v.records?.[key];
@@ -351,7 +400,8 @@ export function restoreLearning(raw: unknown): LearningState | undefined {
           attempts: {} as Record<string, Attempt>,
         };
       s.records[key] = record;
-      for (const task of tasks) {
+      for (const sourceTask of tasks) {
+        const task = futureReference(sourceTask, record.attempts);
         const p = r.attempts?.[task.id];
         if (
           !p ||
@@ -434,8 +484,32 @@ export function restoreLearning(raw: unknown): LearningState | undefined {
               if (typeof item.answers[f.id] === 'string')
                 answer[f.id] = item.answers[f.id].slice(0, 2000);
             appendSubmission(a, {
+              ...(task.reference &&
+              item.labels &&
+              typeof item.labels === 'object'
+                ? {
+                    labels: Object.fromEntries(
+                      task.fields
+                        .filter((f) => typeof item.labels[f.id] === 'string')
+                        .map((f) => [f.id, item.labels[f.id].slice(0, 2000)]),
+                    ),
+                  }
+                : {}),
               answers: answer,
-              factual: evaluate(task, answer).factual,
+              factual: evaluate(
+                task.reference &&
+                  (item.contextPlan === 'cool' || item.contextPlan === 'shade')
+                  ? futureReference(sourceTask, {
+                      ...record.attempts,
+                      'future.plan': { answers: { plan: item.contextPlan } },
+                    })
+                  : task,
+                answer,
+              ).factual,
+              ...(task.reference &&
+              (item.contextPlan === 'cool' || item.contextPlan === 'shade')
+                ? { contextPlan: item.contextPlan }
+                : {}),
               support: ['example', 'standard', 'help', 'own'].includes(
                 item.support,
               )

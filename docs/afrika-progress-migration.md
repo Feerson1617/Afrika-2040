@@ -38,3 +38,9 @@ Ein späterer Wiederaufnahmedatensatz müsste mindestens enthalten:
 Nicht übertragen werden müssten ausgeschriebene Aufgabentexte, Optionen, Hilfen, Kriterien, Quellenblöcke, Diagramm-HTML/SVG, berechnete Modellfolgen und ausgeschriebene Rückmeldungen. Sie sind anhand der Versionen/IDs aus dem unveränderten Inhalt rekonstruierbar. Automatische Sachbewertung kann aus den Rohantworten neu berechnet werden; Herkunft/Abgabestatus darf dabei nicht verloren gehen. Die bis zu 40 historischen Rohabgaben sind für eine reine Fortsetzung nicht zwingend, aber nicht ohne gesonderte Entscheidung als Prüfungsarchiv zu versprechen oder zu löschen. Ein künftiger Transport müsste den gewählten Umfang ausdrücklich dokumentieren und testen.
 
 Keine solchen Felder an ein LMS übertragen, kein Codec/Adapter implementiert. Freie Texte benötigen vor späterem Transport eine eigene schulische Entscheidung. Das 64.000-Zeichen-Budget ist weiterhin keine zugesicherte Obergrenze für vollständige Altstände und zukünftige Varianten. Aktuelle konkrete Messszenarien stehen im Korrekturbericht; sie sind keine SCORM-Konformitätsprüfung.
+
+## Paket B / Gate 2
+
+Der optionale Umschlag bleibt Version 1. Neue Themen `a/n/d/e` haben eigene modell-/materialgebundene Identitäten; `c` und `s1` bleiben unverändert. Empfehlungslinks nutzen denselben geprüften Vertrag auch für die neuen Themen. Das Lesen prüft weiterhin jeden Aufgabenversuch einzeln.
+
+Planbezogene Themenabgaben speichern zusätzlich den damaligen Plan und den sichtbaren Wortlaut der Antwortbausteine. Späteres Neubearbeiten verändert diese historische Zuordnung nicht. Aktuelle abhängige Belege werden bei Planänderung zum Entwurf; ihre Bestätigung wird nicht auf den neuen Plan übertragen. Die 40er-Historienbegrenzung und die Zählung älterer Abgaben gelten unverändert.

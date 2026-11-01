@@ -1,5 +1,7 @@
 # Afrika 2040 – Gestalte die Zukunft
 
+Aktueller lokaler Ausbau: [Paket B / Gate 2](docs/afrika-paket-b-gate2.md) mit allen fünf Themen in vier Lernwegen. Die vollständige Differenzierung der Simulationen und die Gates 3–5 stehen noch aus.
+
 Aktueller Prüfstand: [gezielte Paket-A-Nachbesserung](docs/afrika-paket-a-correction.md) auf Basis `be814ec49263446c142953622789bf2570641c87`. Acht Pilotwege, kein Paket B. Die frühere Paket-A-Übergabe dokumentiert den Ausgangsstand.
 
 Fünf curriculare Untersuchungsbereiche und sechs direkt startbare Modell-Episoden für eine heterogene 7. Klasse. Reale Ortsbezüge und geprüfte Originalmaterialien werden von erfundenen Betrieben und Modellzahlen getrennt; freiwillige Worterklärungen und drei Hilfestufen unterstützen die Bearbeitung.

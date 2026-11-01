@@ -28,3 +28,7 @@ Freie Erklärungen: nur Vorliegen/Antwortform prüfen. Status immer fachlich ung
 Jeder tatsächliche Versuch trägt Bereich/Profil, conceptId, taskId, variantId, taskVersion, modelVersion, materialVersion und lokale attemptId. Antwortversuche, Hilfeherkunft, Prüfanteil und Prozessstatus werden getrennt gespeichert. Profilwechsel öffnet einen separaten Versuch; alter Entwurf bleibt unverändert. Kein Abschluss wird übertragen. Altstände bleiben „Bisheriger Lernweg, ohne Niveaueinstufung“.
 
 52 Bereichs-/Profilkennungen sind als Plan katalogisiert. **Aktiv:** Bevölkerung vollständig in vier Profilen; Kenia E1 nur früher Vergleich in vier Profilen. Alle übrigen Varianten sind ausdrücklich geplant, ohne automatische Ersatzvariante. Die Hauptstruktur besitzt fünf Kapitel; bestehende direkte Einstiege bleiben erreichbar. Der breite Kapitel-/Journalumbau folgt in Paket B.
+
+## Paket B / Gate 2
+
+Die ausdrückliche Freigabe vom 01.11.2026 erweitert die Umsetzung auf die fünf Themen `a/n/c/d/e`: **20 vollständig aufrufbare Themen-/Profilkombinationen**. Der frühe Kenia-Vergleich bleibt vorerst viermal begrenzt umgesetzt; 28 weitere Kombinationen bleiben geplant. Kein Katalogeintrag wird nur durch einen neuen Namen als vollständig ausgegeben. Konkrete Themenhandlungen, Materialien, Grenzen und Prüfungen: `afrika-paket-b-gate2.md`. Die vorhandene Bevölkerungsfolge wird wiederverwendet.

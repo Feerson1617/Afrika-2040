@@ -51,12 +51,12 @@ const store = () => {
     },
   };
 };
-test('catalog has 52 distinct area profiles but only eight explicit pilot entries; no silent fallback', () => {
+test('catalog has 52 distinct area profiles with twenty implemented topics and four early pilots; no silent fallback', () => {
   assert.equal(variantCatalog.length, 52);
   assert.equal(new Set(variantCatalog.map((v) => v.areaId)).size, 52);
   assert.equal(
     variantCatalog.filter((v) => v.status === 'implemented').length,
-    4,
+    20,
   );
   assert.equal(
     variantCatalog.filter((v) => v.status === 'early-comparison-only').length,
@@ -346,7 +346,7 @@ test('old fixture remains without profile; corrupted optional tasks cannot relab
 });
 
 test('planned or unknown variants never silently become population tasks', () => {
-  assert.throws(() => tasksFor('n' as any, 'esa'), /noch nicht/);
+  assert.throws(() => tasksFor('o' as any, 'esa'), /noch nicht/);
   assert.throws(() => tasksFor('c', 'unknown' as any), /noch nicht/);
 });
 

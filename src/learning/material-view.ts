@@ -1,3 +1,4 @@
+import { topicMaterial } from './topic-material.ts';
 import {
   populationBalance,
   populationData,
@@ -19,6 +20,7 @@ export const escapeHtml = (text: string) =>
       ]!,
   );
 export function materialView(task: Task, profile: ProfileId, attempt: Attempt) {
+  if (task.focus) return topicMaterial(task.focus, profile);
   if (task.material === 'm2') {
     const simple = profile === 'foerder';
     return `<h2>Ghana · Menschen in früheren Jahren</h2><p>${simple ? 'Die Zahlen gelten für frühere Jahre. Sie wurden aus Daten berechnet. Das heißt Schätzung. Es sind keine Zahlen für 2040. Quelle: Weltbank.' : 'Ghana · 2000–2024 · Bevölkerung in Personen zur Jahresmitte. Historische Schätzungen der Weltbank (WDI), keine Prognose für 2040.'}</p><table><caption>Ghana · ${simple ? 'etwa so viele Menschen' : 'Personen'}</caption><thead><tr><th scope="col">Jahr</th><th scope="col">Menschen</th></tr></thead><tbody>${populationData

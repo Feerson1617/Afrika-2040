@@ -24,6 +24,7 @@ const words = {
   justify: ['Begründe', 'Nutze einen passenden Beleg für deine Wahl.'],
 } as const;
 export function taskWords(task: Task) {
+  if (task.focus) return task.focus.words;
   const event = task.id.split('.').at(-1) as keyof typeof words;
   const keys: readonly (keyof typeof words)[] = task.id.includes('.event.')
     ? [event]

@@ -1,8 +1,10 @@
 import { populationModel, populationBalance } from '../inquiry/content.ts';
 import { journey } from '../model.ts';
 import { isProfile, type ProfileId } from './profiles.ts';
-import type { Unit } from './catalog.ts';
-export type MaterialId = 'm1' | 'm2' | 'm3' | 'm4' | 'counter' | 'kenia';
+import { isUnit, type Unit } from './catalog.ts';
+import { topicTasks, type Focus } from './topic-variants.ts';
+export type MaterialId =
+  'm1' | 'm2' | 'm3' | 'm4' | 'counter' | 'kenia' | 'topic';
 export interface LearningField {
   id: string;
   label: string;
@@ -23,6 +25,11 @@ export interface Task {
   criteria: string[];
   explained?: string;
   transfer?: boolean;
+  focus?: Focus;
+  reference?: boolean;
+  contextNote?: string;
+  personal?: boolean;
+  reduced?: boolean;
 }
 export const transferModel = {
   start: 800,
@@ -485,9 +492,10 @@ function conditions(profile: ProfileId) {
   ];
 }
 export function tasksFor(unit: Unit, profile: ProfileId): Task[] {
-  if ((unit !== 'c' && unit !== 's1') || !isProfile(profile))
+  if (!isUnit(unit) || !isProfile(profile))
     throw new Error('Dieser Lernbereich ist noch nicht als Lernweg umgesetzt.');
   if (unit === 's1') return kenyaTasks(profile);
+  if (unit !== 'c') return topicTasks(unit, profile);
   if (profile === 'foerder')
     return [
       ...events(profile),

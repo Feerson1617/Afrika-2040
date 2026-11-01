@@ -1,3 +1,4 @@
+import { unitNames } from './learning/catalog.ts';
 import { renderLearning } from './learning/chapter-ui.ts';
 import {
   active as activeLearning,
@@ -151,7 +152,7 @@ const arrow = `<svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true
 const mark = `<svg viewBox="0 0 32 32" aria-hidden="true"><path d="M7 24V9a3 3 0 013-3h12M10 25h15V10" fill="none" stroke="currentColor" stroke-width="3"/><circle cx="7" cy="25" r="4" fill="currentColor"/><circle cx="25" cy="7" r="4" fill="currentColor"/></svg>`;
 
 function header() {
-  return `<header class="site-header"><div class="brand"><span class="brand-mark">${mark}</span><span>AFRIKA <strong>2040</strong></span></div><span class="header-caption">${state.screen === 'learning' ? (state.learning?.unit === 's1' ? 'Kenia / Nairobi' : state.learning?.unit === 'c' ? 'Bevölkerung untersuchen' : 'Fünf Kapitel') : state.screen === 'inquiry' ? 'Afrika untersuchen' : state.screen === 'study' && state.activeStudy ? `${studies[state.activeStudy]!.country} / ${studies[state.activeStudy]!.place}` : state.screen === 'review' ? 'Drei Orte im Vergleich' : state.screen === 'start' ? 'Gestalte die Zukunft' : 'Kenia <span aria-hidden="true">/</span> Nairobi'}</span></header>`;
+  return `<header class="site-header"><div class="brand"><span class="brand-mark">${mark}</span><span>AFRIKA <strong>2040</strong></span></div><span class="header-caption">${state.screen === 'learning' ? (state.learning?.unit === 's1' ? 'Kenia / Nairobi' : state.learning?.unit === 'c' ? 'Bevölkerung untersuchen' : state.learning?.unit ? unitNames[state.learning.unit] : 'Fünf Kapitel') : state.screen === 'inquiry' ? 'Afrika untersuchen' : state.screen === 'study' && state.activeStudy ? `${studies[state.activeStudy]!.country} / ${studies[state.activeStudy]!.place}` : state.screen === 'review' ? 'Drei Orte im Vergleich' : state.screen === 'start' ? 'Gestalte die Zukunft' : 'Kenia <span aria-hidden="true">/</span> Nairobi'}</span></header>`;
 }
 
 function start() {
@@ -641,6 +642,7 @@ function dispatch(action: Action) {
       'menu',
       'home',
       'journal',
+      'future-revise',
     ].includes(action.op);
     const focus =
       action.op === 'check' || action.op === 'adopt'
@@ -920,8 +922,11 @@ app.addEventListener('keydown', (event) => {
 });
 app.addEventListener('change', (event) => {
   const el = event.target as HTMLInputElement | HTMLSelectElement;
-  if (el.name === 'learning-answer') {
-    if (el instanceof HTMLSelectElement)
+  if (el.name === 'learning-answer' || el.name.startsWith('learning-choice-')) {
+    if (
+      el instanceof HTMLSelectElement ||
+      (el instanceof HTMLInputElement && el.type === 'radio')
+    )
       dispatch({
         type: 'learning',
         op: 'answer',

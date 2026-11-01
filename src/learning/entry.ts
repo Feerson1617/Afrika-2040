@@ -1,5 +1,5 @@
 import { isProfile, type ProfileId } from './profiles.ts';
-import type { Unit } from './catalog.ts';
+import { isUnit, type Unit } from './catalog.ts';
 
 // A recommendation is a navigation request, never a permanent profile setting.
 // Accept exactly one of each parameter; incomplete/ambiguous links do nothing.
@@ -13,7 +13,7 @@ export function recommendation(
     params.getAll('lernweg').length === 1 &&
     params.getAll('bereich').length === 1 &&
     isProfile(profile) &&
-    (unit === 'c' || unit === 's1')
+    isUnit(unit)
   )
     return { profile, unit };
 }
