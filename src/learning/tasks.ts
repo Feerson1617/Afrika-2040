@@ -30,6 +30,8 @@ export interface Task {
   contextNote?: string;
   personal?: boolean;
   reduced?: boolean;
+  contextPlan?: 'cool' | 'shade';
+  contextGoal?: string;
 }
 export const transferModel = {
   start: 800,

@@ -1,5 +1,7 @@
 # Paket B – Gate 2: fünf Themen in vier Lernwegen
 
+Historischer Bericht zum Ausgangscommit 3c8b51b. Die anschließende gezielte Nachbesserung, aktuellen Testergebnisse und neue AHR-Aufgabe stehen im [Gate-2-Korrekturbericht](afrika-gate2-correction.md).
+
 Ausgang: `8d73c0229e9358b5efbfa0bf12ae69374d8a112a`, Branch `feat/afrika-vier-lernwege`. Der neue Auftrag gibt Paket B ausdrücklich frei. Dieser Bericht beschreibt ausschließlich den tatsächlich umgesetzten Themenausbau; Gates 3–5 sind damit nicht abgeschlossen.
 
 ## Umsetzung

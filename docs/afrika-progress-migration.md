@@ -44,3 +44,13 @@ Keine solchen Felder an ein LMS übertragen, kein Codec/Adapter implementiert. F
 Der optionale Umschlag bleibt Version 1. Neue Themen `a/n/d/e` haben eigene modell-/materialgebundene Identitäten; `c` und `s1` bleiben unverändert. Empfehlungslinks nutzen denselben geprüften Vertrag auch für die neuen Themen. Das Lesen prüft weiterhin jeden Aufgabenversuch einzeln.
 
 Planbezogene Themenabgaben speichern zusätzlich den damaligen Plan und den sichtbaren Wortlaut der Antwortbausteine. Späteres Neubearbeiten verändert diese historische Zuordnung nicht. Aktuelle abhängige Belege werden bei Planänderung zum Entwurf; ihre Bestätigung wird nicht auf den neuen Plan übertragen. Die 40er-Historienbegrenzung und die Zählung älterer Abgaben gelten unverändert.
+
+## Gezielte Gate-2-Korrektur auf Basis 3c8b51b
+
+Eine gültige offene Wahl wird durch Beispielübernahme nicht mehr verändert. Tatsächliche Änderungen laufen unabhängig vom Bedienweg durch dieselbe Invalidierung: Planwechsel betreffen die verbundenen Belege, Grenzen und Urteile; Ziel- oder Gewichtungswechsel die zugehörigen Urteile. Texte und frühere Abgaben bleiben erhalten. „Weiter“ prüft aktuelle Bereitschaft und Kontext statt eines alleinigen Abschlussflags.
+
+Neue planbezogene Abgaben speichern neben `contextPlan` auch `contextGoal`. Bei Gewichtung und Urteil muss die jüngste Abgabe zum aktuellen Ziel passen. Altstände ohne diesen Zielkontext behalten ihre Antworten und Geschichte; ihre aktuelle Gewichtung beziehungsweise ihr Urteil muss erneut abgegeben werden. Das ist keine nachträgliche falsche Bewertung einer legitimen Entscheidung. Die angezeigte Hilfe erklärt eine bestehende legitime Wahl. Erst eine tatsächliche Ergänzung oder Ersetzung wird als neue Beispielnutzung erfasst; bloßes Ansehen beziehungsweise erneutes Übernehmen identischer gültiger Auswahlen schreibt die alte Eigenleistung nicht um.
+
+Die zusätzliche AHR-Wirtschaftsaufgabe `economy.source-claim.v1` hat `taskVersion: 1` und eine neue vollständige Identität. Die früheren fünf Aufgaben behalten ihre Kennungen. Ein vollständig bearbeiteter alter Fünferstand enthält die neue Aufgabe nicht; sie beginnt leer. Keine automatische Fachbewertung ihres freien Textes, auch nach Kriterienaufruf.
+
+Die aktuellen Größen und Wiederherstellungsprüfungen stehen im Gate-2-Korrekturbericht. Ein späteres kompaktes Transportformat müsste Plan-/Zielkontext und Hilfeherkunft bewahren, muss aber die daraus rekonstruierbaren langen Bausteintexte nicht wiederholt übertragen. Keine SCORM-Anbindung, kein LMS-Tracking und keine Datenübermittlung wurden ergänzt.

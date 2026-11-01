@@ -3,6 +3,7 @@ import { chapters, unitNames, type Unit } from './catalog.ts';
 import { profileIds, profiles } from './profiles.ts';
 import {
   active,
+  canContinue,
   newLearning,
   type LearningState,
   type Attempt,
@@ -12,6 +13,7 @@ import { evaluate } from './progress.ts';
 import { escapeHtml as esc, materialView } from './material-view.ts';
 import { resetNotice } from '../reset.ts';
 import { futureReference } from './topic-variants.ts';
+import { explanationFor } from './help.ts';
 import { wordHelp } from './words.ts';
 const button = (label: string, op: string, value = '', extra = '') =>
   `<button type="button" class="button secondary" data-action="learning" data-op="${op}" data-value="${value}" ${extra}>${label}</button>`;
@@ -96,7 +98,16 @@ export function renderLearning(
       `<h1>Fünf Kapitel · Orte verstehen. Entscheidungen prüfen.</h1><p>2040 ist unser Zukunftsblick. Unsere Beispiele sagen die Zukunft nicht voraus.</p><p>${s.profile === 'foerder' ? 'Wähle ein Kapitel. Weitere Modelle findest du bei den direkten Episoden.' : 'Fünf Themen sind in vier Lernwegen erreichbar. Die vollständigen Episoden bleiben auch direkt spielbar.'}</p>${!s.profile ? button('Lernweg wählen', 'profiles') : `<p>Dein Weg: ${profiles[s.profile].name}</p>`}<div class="inquiry-menu">${chapters.map((c) => `<section><h2>${c.name}</h2>${button(unitNames[({ pictures: 'a', nature: 'n', people: 'c', economy: 'd', future: 'e' } as const)[c.id]], 'unit', ({ pictures: 'a', nature: 'n', people: 'c', economy: 'd', future: 'e' } as const)[c.id], `id="learn-${c.id === 'people' ? 'population' : c.topic}"`)}${c.id === 'people' ? `${''}${button('Kenia · früher Vergleich in vier Lernwegen', 'unit', 's1', 'id="learn-kenya"')}` : ''}<button type="button" data-action="inquiry" data-op="topic" data-value="${c.topic}">Bisherigen Themenweg öffnen</button>${c.episodes.map((id) => `<button type="button" data-action="study" data-op="start" data-episode="${id}">${id === 'water' ? 'Wasserlabor' : id === 'area' ? 'Zusatzfläche' : id === 'cocoa' ? 'Kakaoverarbeitung' : 'Verteilung'} direkt starten</button>`).join('')}${c.id === 'people' ? '<button type="button" data-action="start">Kenia Episode 1 direkt starten</button><button type="button" data-action="demand-start">Kenia Episode 2 direkt starten</button>' : ''}</section>`).join('')}</div>${hasLegacy ? legacyLink() : ''}` +
       footer
     );
-  const p = a.attempt,
+  const rawAttempt = a.attempt,
+    p =
+      rawAttempt.process !== 'draft' && !canContinue(a.task, rawAttempt)
+        ? {
+            ...rawAttempt,
+            process: 'draft' as const,
+            factual: evaluate(a.task, rawAttempt.answers).factual,
+            adopted: false,
+          }
+        : rawAttempt,
     task = a.task,
     e = evaluate(task, p.answers, p.failures === 2 ? 1 : 0),
     hasText = task.fields.some((f) => f.kind === 'text');
@@ -113,7 +124,7 @@ export function renderLearning(
       : '';
   return (
     open +
-    `<p class="eyebrow">${unitNames[s.unit!]} · Schritt ${a.index + 1} von ${a.tasks.length} · ${profiles[s.profile!].name}</p><h1>${esc(task.title)}</h1><div class="inquiry-work"><section class="inquiry-material" aria-label="Material zur Aufgabe">${materialView(task, s.profile!, p)}</section><section class="inquiry-task"><h2 id="learning-title" tabindex="-1">Dein Auftrag</h2><p>${esc(task.instruction)}</p>${task.contextNote ? `<p class="learning-context">${esc(task.contextNote)}</p>` : ''}${p.standardScaffold ? `<aside class="learning-scaffold"><strong>Denkhinweis</strong><p>${esc(task.hints[0])}</p></aside>` : ''}${task.explained ? `<p>${esc(task.explained)}</p>` : ''}${carried}${fields(task, p)}${task.fields.some((f) => f.kind === 'integer') ? '<p id="learning-number" class="small-note">Ganze Zahlen: -10 und −10 sowie 1020 und 1.020 gelten gleich. Unklare Schreibweisen zählen nicht als Rechenfehler.</p>' : ''}${hasText ? `<label class="choice"><input type="checkbox" name="learning-oral" ${p.oral ? 'checked' : ''}>Ich möchte mündlich erklären. Das ist nur meine Selbstmeldung, noch keine beobachtete Besprechung.</label>` : ''}${p.submissions.length && (p.process !== 'draft' || p.factual !== 'ungraded') ? `<section class="feedback ${e.kind}" data-learning-feedback role="status"><h3 id="learning-feedback-title" tabindex="-1">${p.oral ? 'Mündliche Bearbeitung selbstgemeldet – fachlich ungeprüft' : esc(e.title)}</h3>${e.parts.map((f) => `<p data-finding="${f.status}"><strong>${esc(f.label)}</strong>: ${f.status === 'correct' ? 'Diese Angabe passt.' : f.status === 'missing' ? 'Noch offen; kein Fehlversuch.' : f.status === 'format' ? 'Schreibe eine eindeutige ganze Zahl oder wähle eine Angabe. Kein fachlicher Fehlversuch.' : f.status === 'unchecked' ? 'Eigener Text, fachlich ungeprüft.' : f.status === 'opinion' ? (task.personal ? 'Deine Vorstellung ist gespeichert, nicht fachlich bewertet.' : 'Deine Priorität ist legitim.') : 'Diese Angabe passt noch nicht. Sieh den zugehörigen Materialteil an.'}</p>`).join('')}</section>` : ''}<div class="inquiry-actions">${button(hasText ? 'Antwort abgeben (ohne Fachbewertung)' : 'Angaben prüfen', 'check', '', 'id="learning-check"')}${button('Hilfe', 'help', '', 'id="learning-help"')}${p.process !== 'draft' ? (task.id === 'future.revision' && p.answers.revision === 'change' ? button('Anderen Plan wählen und Belege neu prüfen', 'future-revise', '', 'id="learning-revise"') : button(a.index === a.tasks.length - 1 ? 'Zum Lernjournal' : 'Weiter', 'next', '', 'id="learning-next"')) : ''}</div><p class="small-note">${s.profile === 'foerder' ? 'Noch nicht passende Antworten' : 'Fachliche Fehlversuche'}: ${p.failures} von 2. ${support(p, s.profile === 'foerder')}.</p>${
+    `<p class="eyebrow">${unitNames[s.unit!]} · Schritt ${a.index + 1} von ${a.tasks.length} · ${profiles[s.profile!].name}</p><h1>${esc(task.title)}</h1><div class="inquiry-work"><section class="inquiry-material" aria-label="Material zur Aufgabe">${materialView(task, s.profile!, p)}</section><section class="inquiry-task"><h2 id="learning-title" tabindex="-1">Dein Auftrag</h2><p>${esc(task.instruction)}</p>${task.contextNote ? `<p class="learning-context">${esc(task.contextNote)}</p>` : ''}${p.standardScaffold ? `<aside class="learning-scaffold"><strong>Denkhinweis</strong><p>${esc(task.hints[0])}</p></aside>` : ''}${task.explained ? `<p>${esc(task.explained)}</p>` : ''}${carried}${fields(task, p)}${task.fields.some((f) => f.kind === 'integer') ? '<p id="learning-number" class="small-note">Ganze Zahlen: -10 und −10 sowie 1020 und 1.020 gelten gleich. Unklare Schreibweisen zählen nicht als Rechenfehler.</p>' : ''}${hasText ? `<label class="choice"><input type="checkbox" name="learning-oral" ${p.oral ? 'checked' : ''}>Ich möchte mündlich erklären. Das ist nur meine Selbstmeldung, noch keine beobachtete Besprechung.</label>` : ''}${p.submissions.length && (p.process !== 'draft' || p.factual !== 'ungraded') ? `<section class="feedback ${e.kind}" data-learning-feedback role="status"><h3 id="learning-feedback-title" tabindex="-1">${p.oral ? 'Mündliche Bearbeitung selbstgemeldet – fachlich ungeprüft' : esc(e.title)}</h3>${e.parts.map((f) => `<p data-finding="${f.status}"><strong>${esc(f.label)}</strong>: ${f.status === 'correct' ? 'Diese Angabe passt.' : f.status === 'missing' ? 'Noch offen; kein Fehlversuch.' : f.status === 'format' ? 'Schreibe eine eindeutige ganze Zahl oder wähle eine Angabe. Kein fachlicher Fehlversuch.' : f.status === 'unchecked' ? 'Eigener Text, fachlich ungeprüft.' : f.status === 'opinion' ? (task.personal ? 'Deine Vorstellung ist gespeichert, nicht fachlich bewertet.' : 'Deine Priorität ist legitim.') : 'Diese Angabe passt noch nicht. Sieh den zugehörigen Materialteil an.'}</p>`).join('')}</section>` : ''}<div class="inquiry-actions">${button(hasText ? 'Antwort abgeben (ohne Fachbewertung)' : 'Angaben prüfen', 'check', '', 'id="learning-check"')}${button('Hilfe', 'help', '', 'id="learning-help"')}${canContinue(task, p) ? (task.id === 'future.revision' && p.answers.revision === 'change' ? button('Anderen Plan wählen und Belege neu prüfen', 'future-revise', '', 'id="learning-revise"') : button(a.index === a.tasks.length - 1 ? 'Zum Lernjournal' : 'Weiter', 'next', '', 'id="learning-next"')) : ''}</div><p class="small-note">${s.profile === 'foerder' ? 'Noch nicht passende Antworten' : 'Fachliche Fehlversuche'}: ${p.failures} von 2. ${support(p, s.profile === 'foerder')}.</p>${
       p.help
         ? `<aside class="help-panel"><h3 id="learning-help-title" tabindex="-1">Hilfe ${p.help} von 3</h3>${
             p.help === 3
@@ -127,11 +138,11 @@ export function renderLearning(
                   )
                   .map(
                     (f) =>
-                      `<section><h4>${esc(f.label)}</h4><p>${esc(f.kind === 'text' ? (f.example ?? '') : f.explanation)}</p></section>`,
+                      `<section><h4>${esc(f.label)}</h4><p>${esc(explanationFor(task, p, f))}</p></section>`,
                   )
                   .join('')
               : `<p>${esc(task.hints[p.help - 1])}</p>`
-          }${p.help === 3 ? button('Dieses Beispiel bewusst übernehmen', 'adopt', '', 'id="learning-adopt"') : button('Nächste Hilfestufe', 'help')}</aside>`
+          }${p.help === 3 ? `${hasText ? '<p>Bei der Übernahme wird dein aktueller Text durch das angezeigte Beispiel ersetzt. Frühere Abgaben bleiben erhalten.</p>' : '<p>Gültige eigene Auswahlen bleiben erhalten. Fehlende oder falsche Sachangaben werden mit dem Beispiel ergänzt.</p>'}${button('Dieses Beispiel bewusst übernehmen', 'adopt', '', 'id="learning-adopt"')}` : button('Nächste Hilfestufe', 'help')}</aside>`
         : ''
     }${hasText && (p.process !== 'draft' || p.help === 3 || task.fields.some((f) => p.answers[f.id]?.trim())) ? button('Kriterien zur Selbstkontrolle öffnen', 'criteria', '', 'id="learning-criteria"') : ''}${p.criteriaSeen ? `<aside class="learning-criteria"><h3>Selbstkontrolle – keine fachliche Freigabe</h3><ul>${task.criteria.map((c) => `<li>${esc(c)}</li>`).join('')}</ul><p>Du kannst deine Antwort überarbeiten. Eine Besprechung mit Lehrkraft oder Partner ist ein eigener Unterrichtsschritt.</p></aside>` : ''}<p data-learning-status>${status(p, s.profile === 'foerder')}</p></section></div>${wordHelp(task)}<div class="inquiry-actions">${button('Zurück', 'back')}${button('Aufgabe neu bearbeiten', 'rework')}</div>` +
     footer

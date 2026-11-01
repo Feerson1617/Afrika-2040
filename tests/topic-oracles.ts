@@ -46,6 +46,11 @@ export function topicAnswers(
     return { pair: 'together', proof: 'no' };
   if (id.startsWith('economy.transfer'))
     return { cause: 'no', distribution: 'distribution' };
+  if (id === 'economy.source-claim.v1')
+    return {
+      explanation:
+        'Die Weltbank zählt Stromzugang 2022/23. GEPA berichtet 2024 über Schulung. Heutiges Einkommen der Teilnehmerinnen ist in beiden Quellen nicht erhoben. Für die Kausalbehauptung fehlen vergleichbare Einkommensdaten und Angaben zu weiteren Einflüssen.',
+    };
   if (id === 'economy.explain')
     return {
       explanation:

@@ -16,6 +16,7 @@ export interface Identity {
 export interface Submission {
   labels?: Record<string, string>;
   contextPlan?: 'cool' | 'shade';
+  contextGoal?: 'loss' | 'access';
   answers: Record<string, string>;
   factual: string;
   support: 'example' | 'standard' | 'help' | 'own';
@@ -154,18 +155,82 @@ function ensure(s: LearningState) {
   }
   return active(s)!;
 }
+// All answer changes, including actual example replacements, use this one path.
+function setAnswer(
+  a: NonNullable<ReturnType<typeof active>>,
+  field: string,
+  value: string,
+) {
+  const p = a.attempt!;
+  value = value.slice(0, 2000);
+  if (p.answers[field] === value) return false;
+  p.answers[field] = value;
+  p.process = 'draft';
+  p.factual = 'ungraded';
+  p.adopted = false;
+  if (p.criteriaSeen) p.revised = true;
+  if (['future.plan', 'future.goal', 'future.weight'].includes(a.task.id)) {
+    for (const [id, later] of Object.entries(a.record.attempts)) {
+      const dependent =
+        a.task.id === 'future.plan'
+          ? a.tasks.find((t) => t.id === id)?.reference ||
+            ['future.relation', 'future.revision'].includes(id)
+          : a.task.id === 'future.weight'
+            ? [
+                'future.judgment',
+                'future.relation',
+                'future.revision',
+              ].includes(id)
+            : [
+                'future.weight',
+                'future.judgment',
+                'future.relation',
+                'future.revision',
+              ].includes(id);
+      if (dependent) {
+        later.process = 'draft';
+        later.factual = 'ungraded';
+        later.adopted = false;
+      }
+    }
+  }
+  return true;
+}
+export function canContinue(task: Task, p: Attempt) {
+  if (p.process === 'draft') return false;
+  if (task.reference) {
+    const proof = p.submissions.at(-1);
+    if (!task.contextPlan || proof?.contextPlan !== task.contextPlan)
+      return false;
+    if (
+      ['future.weight', 'future.judgment'].includes(task.id) &&
+      (!task.contextGoal || proof.contextGoal !== task.contextGoal)
+    )
+      return false;
+  }
+  return (
+    (p.oral && task.fields.every((f) => f.kind === 'text')) ||
+    evaluate(task, p.answers, p.failures).ready
+  );
+}
 function checked(s: LearningState, adopt = false) {
   const a = ensure(s);
   if (!a?.attempt) return;
   const p = a.attempt;
   const result = evaluate(a.task, p.answers, p.failures);
+  let usedExample = false;
   if (adopt) {
-    for (const f of a.task.fields)
-      if (result.parts.find((x) => x.field === f.id)?.status !== 'correct')
-        p.answers[f.id] = exampleValue(f);
-    p.exampleUsed = true;
-    p.adopted = true;
     p.exampleShown = true;
+    for (const f of a.task.fields) {
+      const status = result.parts.find((x) => x.field === f.id)?.status;
+      // A valid personal choice is a legitimate answer, not a failed fact.
+      if (status !== 'correct' && status !== 'opinion')
+        usedExample = setAnswer(a, f.id, exampleValue(f)) || usedExample;
+    }
+    if (usedExample) {
+      p.exampleUsed = true;
+      p.adopted = true;
+    } else if (canContinue(a.task, p)) return;
   }
   const e = evaluate(a.task, p.answers, p.failures);
   if (e.error) {
@@ -175,11 +240,13 @@ function checked(s: LearningState, adopt = false) {
       p.exampleShown = true;
     }
   }
-  p.process = e.ready ? (adopt ? 'explained' : 'submitted') : 'draft';
+  p.process = e.ready ? (usedExample ? 'explained' : 'submitted') : 'draft';
   p.factual = e.factual;
   appendSubmission(p, {
     ...(a.task.reference
       ? {
+          contextGoal: s.records[a.key].attempts['future.goal']?.answers
+            .goal as 'loss' | 'access',
           contextPlan: s.records[a.key].attempts['future.plan']?.answers
             .plan as 'cool' | 'shade',
           labels: Object.fromEntries(
@@ -285,19 +352,7 @@ export function reduceLearning(
     action.field &&
     a.task.fields.some((f) => f.id === action.field)
   ) {
-    p.answers[action.field] = (action.value ?? '').slice(0, 2000);
-    p.process = 'draft';
-    p.factual = 'ungraded';
-    p.adopted = false;
-    if (p.criteriaSeen) p.revised = true;
-    if (a.task.id === 'future.plan') {
-      for (const [id, later] of Object.entries(a.record.attempts))
-        if (id !== a.task.id && a.tasks.find((t) => t.id === id)?.reference) {
-          later.process = 'draft';
-          later.factual = 'ungraded';
-          later.adopted = false;
-        }
-    }
+    setAnswer(a, action.field, action.value ?? '');
   }
   if (action.op === 'oral' && a.task.fields.every((f) => f.kind === 'text')) {
     p.oral = !p.oral;
@@ -310,6 +365,12 @@ export function reduceLearning(
       p.process = 'submitted';
       p.factual = 'ungraded';
       appendSubmission(p, {
+        ...(a.task.reference
+          ? {
+              contextPlan: a.task.contextPlan,
+              contextGoal: a.task.contextGoal as 'loss' | 'access',
+            }
+          : {}),
         answers: { ...p.answers },
         factual: 'ungraded',
         support: p.exampleUsed
@@ -353,7 +414,8 @@ export function reduceLearning(
     action.op === 'future-revise' &&
     s.unit === 'e' &&
     a.task.id === 'future.revision' &&
-    p.answers.revision === 'change'
+    p.answers.revision === 'change' &&
+    canContinue(a.task, p)
   ) {
     s.records[a.key].index = a.tasks.findIndex((t) => t.id === 'future.plan');
     s.view = 'task';
@@ -365,7 +427,15 @@ export function reduceLearning(
     p.answers.revision === 'change'
   )
     return s;
-  if (action.op === 'next' && p.process !== 'draft') {
+  if (action.op === 'next' && !canContinue(a.task, p)) {
+    if (p.process !== 'draft') {
+      p.process = 'draft';
+      p.factual = evaluate(a.task, p.answers, p.failures).factual;
+      p.adopted = false;
+    }
+    return s;
+  }
+  if (action.op === 'next' && canContinue(a.task, p)) {
     if (a.index < a.tasks.length - 1) {
       s.records[a.key].index++;
       ensure(s);
@@ -495,6 +565,10 @@ export function restoreLearning(raw: unknown): LearningState | undefined {
                     ),
                   }
                 : {}),
+              ...(task.reference &&
+              (item.contextGoal === 'loss' || item.contextGoal === 'access')
+                ? { contextGoal: item.contextGoal }
+                : {}),
               answers: answer,
               factual: evaluate(
                 task.reference &&
@@ -522,6 +596,11 @@ export function restoreLearning(raw: unknown): LearningState | undefined {
           /^(amina|david)-(direct|north)$/.test(p.mapSelection)
         )
           a.mapSelection = p.mapSelection;
+        if (a.process !== 'draft' && !canContinue(task, a)) {
+          a.process = 'draft';
+          a.factual = 'ungraded';
+          a.adopted = false;
+        }
         record.attempts[task.id] = a;
       }
     }

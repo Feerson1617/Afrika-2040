@@ -727,35 +727,73 @@ function economy(p: ProfileId): Task[] {
   );
   const transfer = item(
     'economy.transfer',
-    'Neue Behauptung: „Zwei Werte steigen. Also verursacht einer den anderen.“',
+    'Behauptung: Mehr Stromzugang bedeutet automatisch mehr Einkommen für alle.',
     [
       pick(
         'cause',
-        'Ist die Ursache damit bewiesen?',
+        'Mehr Menschen haben Zugang zu Strom. Verdienen deshalb automatisch alle mehr Geld?',
         'no',
         [
-          ['yes', 'Ja. Gleichzeitiger Anstieg beweist die Ursache.'],
-          ['no', 'Nein. Dafür braucht man weitere Belege.'],
+          ['yes', 'Ja. Mehr Stromzugang beweist mehr Einkommen für alle.'],
+          ['no', 'Nein. Die Stromzahlen zeigen das Einkommen nicht.'],
         ],
-        'Gleichzeitige Veränderung allein beweist keine Ursache.',
+        'Die Stromwerte beschreiben Zugang, nicht Einkommen. Daraus ist kein automatischer Einkommensanstieg bewiesen.',
       ),
       pick(
         'distribution',
-        'Was fehlt für „Allen geht es besser“?',
+        'Welche Angaben fehlen zum Einkommen der Menschen?',
         'distribution',
         [
           [
             'distribution',
             'Angaben zu Einkommen, Verteilung und Lebensbedingungen',
           ],
-          ['nothing', 'Nichts. Das BIP zeigt schon jedes Haushaltseinkommen.'],
+          [
+            'nothing',
+            'Keine weiteren Angaben. Die Stromzahlen zeigen jedes Einkommen.',
+          ],
         ],
-        'Eine Gesamtgröße zeigt nicht, wie der Wert verteilt ist.',
+        'Für die Aussage über alle Menschen fehlen tatsächliche Einkommens- und Verteilungsangaben.',
       ),
     ],
-    data,
-    'Welche Information wurde wirklich erhoben?',
-    'Ein Zusammenhang in einer Tabelle ist noch kein Ursachenbeweis und keine Verteilungsanalyse.',
+    p === 'foerder' || p === 'esa'
+      ? focus(
+          'economy',
+          [
+            'Behauptung: In Ghana haben mehr Menschen Zugang zu Strom. Deshalb verdienen automatisch alle mehr Geld.',
+            'Die Tabelle zeigt den Zugang zu Strom. Prozent heißt: von hundert. Quelle: Weltbank. Historische Angaben, keine Zahlen für heute.',
+          ],
+          [
+            [
+              'Zugang',
+              'Ein Angebot erreichen oder nutzen können. Hier: Zugang zu Strom.',
+            ],
+            [
+              'Verteilung',
+              'Wie sich etwas auf verschiedene Menschen oder Gruppen verteilt.',
+            ],
+          ],
+          {
+            rows: [
+              ['Jahr', 'Stromzugang'],
+              ...economyData
+                .filter((r) => r.year >= 2022)
+                .map((r) => [
+                  String(r.year),
+                  r.electricity.toLocaleString('de-DE') + ' Prozent',
+                ]),
+            ],
+          },
+        )
+      : {
+          ...data,
+          paragraphs: [
+            ...data.paragraphs,
+            'Behauptung: Mehr Stromzugang bedeutet automatisch mehr Einkommen für alle. Die gezeigte BIP-Wachstumsrate sinkt von rund 3,8 auf 3,1 Prozent, bleibt aber positiv. Das bedeutet hier weiterhin Wachstum des preisbereinigten BIP, nicht ein sinkendes BIP.',
+          ],
+        },
+    'Prüfe die Einheit: Was wurde mit den Stromwerten überhaupt erfasst?',
+    'Die Tabelle erfasst Stromzugang. Um über Einkommen zu urteilen, brauchst du dazu passende Einkommensangaben.',
     [],
     true,
   );
@@ -821,6 +859,44 @@ function economy(p: ProfileId): Task[] {
         ],
       ),
     );
+  if (p === 'ahr')
+    result.push(
+      item(
+        'economy.source-claim.v1',
+        'Beweisen zwei Quellen einen heutigen Einkommensanstieg?',
+        [
+          own(
+            'explanation',
+            'Behauptung: „Weil in Ghana mehr Menschen Zugang zu Strom haben, verdienen die Teilnehmerinnen der GEPA-Schulung heute mehr Geld.“ Prüfe die Behauptung mit beiden Quellen. Welche zusätzliche Information brauchst du?',
+            'Die Stromreihe zeigt Zugang 2022 und 2023. Der GEPA-Eigenbericht von 2024 beschreibt eine Schulung, keine heutigen Einkommen. Damit ist die behauptete Ursache nicht bewiesen. Ich brauche vergleichbare Einkommensdaten der Teilnehmerinnen vor und nach der Schulung sowie Angaben zu weiteren Einflüssen; ein bloßer Vorher-Nachher-Anstieg allein beweist noch keine Ursache.',
+          ),
+        ],
+        focus(
+          'economy',
+          [
+            'Quelle 1: Weltbank (WDI), Ghana. 2022: 85,1 Prozent mit Stromzugang. 2023: 89,5 Prozent. Die Werte geben den Anteil der Bevölkerung mit Stromzugang an.',
+            'Quelle 2: GEPA berichtet am 23.10.2024 über eine eigene Schulung. Die Teilnehmerinnen führten bereits Kakaoverarbeitungsbetriebe. In der Schulung ging es um Preise, Transport und Regeln für den Verkauf ins Ausland.',
+          ],
+          [
+            ['Quelle', 'Herkunft einer Information.'],
+            ['Ursache', 'Etwas, das eine Veränderung bewirkt.'],
+            [
+              'Einkommen',
+              'Geld, das Menschen erhalten; hier nicht in den Quellen gemessen.',
+            ],
+          ],
+        ),
+        'Prüfe getrennt, was jede Quelle tatsächlich erhebt oder berichtet.',
+        'Vergleiche Personenbezug, Jahre und gemessene Größen. Welche Angabe müsste gerade die Einkommensbehauptung stützen?',
+        [
+          'Stromzugangsanteil mit Zeitraum und Einheit korrekt eingeordnet.',
+          'GEPA als Eigenbericht über Schulung beschrieben, nicht als Einkommenserhebung.',
+          'Die behauptete Ursache-Wirkung ist durch diese Quellen nicht bewiesen.',
+          'Konkrete zusätzliche Daten zu Einkommen der Teilnehmerinnen und weiteren Einflüssen benannt; bloß mehr Daten reicht nicht.',
+        ],
+        true,
+      ),
+    );
   return result;
 }
 export function futureReference(
@@ -838,6 +914,8 @@ export function futureReference(
   const goal = records['future.goal']?.answers.goal;
   return {
     ...task,
+    contextPlan: plan,
+    contextGoal: goal,
     focus:
       task.reduced && task.focus
         ? {
