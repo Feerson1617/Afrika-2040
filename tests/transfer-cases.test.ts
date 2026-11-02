@@ -69,7 +69,23 @@ for (const unit of ['s2', 's5', 's6'] as const)
         assert.equal(task.id, t.id);
         assert.equal(task.simulation!.transfer, cases[unit].id);
         const html = simulationMaterial(task, profile, active(s)!.attempt!);
-        assert.deepEqual(rows(html), cases[unit].rows);
+        assert.deepEqual(
+          rows(html),
+          profile === 'foerder'
+            ? cases[unit].rows
+            : cases[unit].rows.filter(
+                ([label]) => !['Tankrest', 'Gesamtentnahme'].includes(label),
+              ),
+        );
+        assert.deepEqual(
+          rows(
+            simulationMaterial(task, profile, {
+              ...active(s)!.attempt!,
+              help: 3,
+            }),
+          ),
+          cases[unit].rows,
+        );
         assert.match(html, /data-transfer-view="current"/);
         assert.match(
           task.contextNote!,

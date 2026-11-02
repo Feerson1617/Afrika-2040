@@ -146,8 +146,12 @@ for (const unit of ['s2', 's5', 's6'] as const)
           unit === 's2'
             ? ['18', '20', '12']
             : unit === 's5'
-              ? ['70', '50', '20']
-              : ['45', '10', '55', '25'];
+              ? profile === 'foerder'
+                ? ['70', '50', '20']
+                : ['70', '50']
+              : profile === 'foerder'
+                ? ['45', '10', '55', '25']
+                : ['45', '10', '60'];
         for (const value of values)
           await expect(
             page.locator('[data-transfer-view="current"]'),

@@ -14,7 +14,7 @@ import { cocoaModel, cocoa } from '../regions/cocoa.ts';
 import { share, shareModel, shareKeys } from '../regions/share.ts';
 import { allocationData } from './allocation.ts';
 import type { Task } from './tasks.ts';
-import type { Attempt } from './storage.ts';
+import { canContinue, type Attempt } from './storage.ts';
 import type { ProfileId } from './profiles.ts';
 import { renderMap } from '../map.ts';
 import { initialState } from '../state.ts';
@@ -51,7 +51,16 @@ export const table = (
   `<table><caption>${esc(caption)}</caption><thead><tr>${head.map((x) => `<th scope="col">${esc(x)}</th>`).join('')}</tr></thead><tbody>${rows.map((row) => `<tr>${row.map((x, i) => (i ? `<td>${esc(String(x))}</td>` : `<th scope="row">${esc(String(x))}</th>`)).join('')}</tr>`).join('')}</tbody></table>`;
 /** A view switch is not a new answer or a different task. Old saved selections
  * deliberately open the current case; only an explicit comparison opens the old one. */
-function transferMaterial(id: TransferCaseId, a: Attempt): string {
+function transferMaterial(
+  id: TransferCaseId,
+  a: Attempt,
+  task: Task,
+  profile: ProfileId,
+): string {
+  const revealed =
+    profile === 'foerder' ||
+    a.help === 3 ||
+    (a.factual === 'correct' && canContinue(task, a));
   const comparison = a.simulationSelection === 'comparison';
   const selected = comparison ? 'comparison' : 'current';
   const label = comparison
@@ -68,6 +77,52 @@ function transferMaterial(id: TransferCaseId, a: Attempt): string {
   const note = comparison
     ? '<p><strong>Nur zum Vergleich.</strong> Die Frage rechts gilt weiterhin für den neuen Fall. Deine Antwort bleibt erhalten.</p>'
     : '';
+  // Do not emit the solution into HTML, SVG geometry or accessible descriptions.
+  if (!comparison && !revealed) {
+    let initial: string;
+    if (id === 'demand-18') {
+      const c = transferCases[id];
+      initial = `<p>Dieses Beispiel ist erfunden. Es gilt für eine Stunde.</p>${table(
+        ['Größe', 'Wert'],
+        [
+          ['Menschen in dieser Stunde', c.people],
+          ['Plätze pro Stunde', c.capacity],
+          ['Betrachteter Fußweg (Minuten)', c.walk],
+        ],
+      )}${profile === 'esa' ? '<p>Vergleiche Menschen und Plätze. Prüfe danach die Angabe zum Fußweg.</p>' : '<p>Untersuche die Angaben. Begründe deine Antworten zum neuen Fall.</p>'}`;
+    } else {
+      const c = transferCases[id];
+      const data =
+        id === 'water-70'
+          ? transferCases['water-70']
+          : transferCases['area-10'];
+      const inputRows: (string | number)[][] =
+        id === 'water-70'
+          ? [
+              ['Tank am Anfang', data.initial],
+              ['Entnahme', transferCases['water-70'].withdrawal],
+            ]
+          : [
+              ['Tank am Anfang', data.initial],
+              ['Erstes Feld', transferCases['area-10'].first],
+              ['Zusatzfeld', transferCases['area-10'].extra],
+              ['Früher: nur das erste Feld', transferCases['area-10'].former],
+            ];
+      const facts = inputRows
+        .map(([label, value]) => `${label}: ${value} WE`)
+        .join('. ');
+      initial = `<p>Erfundene Runde bei Agadir. WE bedeutet Wassereinheiten. Kein Zufluss. Der Tank ist kein Grundwasser.</p><figure><svg class="study-scene" viewBox="0 0 660 280" role="img" aria-label="Ausgangsdaten. ${esc(facts)}. Die Bilanz ist noch zu bestimmen."><rect x="35" y="50" width="150" height="160" fill="#8eb5c1" stroke="#253e34"/><text x="110" y="35" text-anchor="middle">Anfang: ${c.initial} WE</text>${inputRows
+        .slice(1)
+        .map(
+          ([label, value], i) =>
+            `<text x="225" y="${80 + i * 50}">${esc(String(label))}: ${value} WE</text>`,
+        )
+        .join(
+          '',
+        )}</svg><figcaption>Der Tank zeigt den Anfang, vor der Entnahme. Bestimme die neue Bilanz.</figcaption></figure>${table(['Ausgangsgröße', 'WE'], inputRows)}${profile === 'esa' ? `<p>${id === 'water-70' ? `${transferCases['water-70'].initial} − ${transferCases['water-70'].withdrawal}` : `${transferCases['area-10'].first} + ${transferCases['area-10'].extra}`} = ___</p>` : '<p>Verknüpfe die Ausgangsgrößen. Beantworte die Frage zum neuen Fall.</p>'}`;
+    }
+    return `<section data-transfer-view="current" data-transfer-solution="withheld">${header}${initial}</section>`;
+  }
   let body: string;
   if (id === 'demand-18') {
     const c = comparison ? demandScenario() : transferCases[id];
@@ -121,7 +176,7 @@ function transferTank(initial: number, remaining: number): string {
 export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
   const cfg = t.simulation!,
     simple = p === 'foerder';
-  if (cfg.transfer) return transferMaterial(cfg.transfer, a);
+  if (cfg.transfer) return transferMaterial(cfg.transfer, a, t, p);
   if (cfg.kind === 'network') {
     const selected = a.simulationSelection ?? cfg.preset ?? 'amina-direct';
     const [rawWho, rawRoute] = selected.split('-');

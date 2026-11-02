@@ -101,3 +101,11 @@
   display: inline;
   font-size: 1.2rem;
 }
+
+/* Explicit block height also applies to WebKit's native select control. */
+.learning .inquiry-field select,
+.inquiry-field select[name='learning-answer'] {
+  height: 48px;
+  min-height: 48px;
+  box-sizing: border-box;
+}

@@ -6,7 +6,7 @@
     "episodes": "dependsOn encodes source task answers. contextKey must match the latest submission. Changing a source invalidates current dependent answers; historical labels remain.",
     "allocation": "All 28 budget plans accepted. Funded purposes provide legitimate consequences. A second comparison plan must differ. No moral ranking.",
     "exploration": "Required simulation states must actually be selected. Viewing a model is not proof of understanding.",
-    "transfer": "Task-bound current case, explicit old comparison. View switches preserve raw answers, submission history and support provenance. Old correct answers are retained, never reissued as new independent work."
+    "transfer": "Task-bound current case, explicit old comparison. View switches preserve raw answers, submission history and support provenance. Old correct answers are retained, never reissued as new independent work. Current transfer material is complete for foerder; other profiles initially receive inputs only (ESA adds an unfilled equation). Full results are emitted only at help 3 or after the current task is factually correct and can continue. Help display does not adopt an example. Editing a confirmed answer immediately refreshes the material and current status without removing historical submissions."
   },
   "variants": [
     {

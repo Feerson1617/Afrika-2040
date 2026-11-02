@@ -1,3 +1,4 @@
+import { simulationMaterial } from './learning/simulation-material.ts';
 import { unitNames } from './learning/catalog.ts';
 import { renderLearning } from './learning/chapter-ui.ts';
 import {
@@ -1129,4 +1130,22 @@ app.addEventListener('input', (event) => {
   persistState();
   document.querySelector('[data-learning-feedback]')?.remove();
   document.querySelector('#learning-next')?.remove();
+  // Refresh only the transfer material/status; keep the edited native input and focus.
+  const current = state.learning && activeLearning(state.learning);
+  if (
+    current?.task.simulation?.transfer &&
+    current.attempt &&
+    state.learning?.profile
+  ) {
+    const material = document.querySelector('.inquiry-material');
+    if (material)
+      material.innerHTML = simulationMaterial(
+        current.task,
+        state.learning.profile,
+        current.attempt,
+      );
+    const status = document.querySelector('[data-learning-status]');
+    if (status)
+      status.textContent = 'Deine Antwort wurde geändert. Prüfe sie erneut.';
+  }
 });

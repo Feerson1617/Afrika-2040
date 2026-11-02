@@ -1,0 +1,98 @@
+[
+  {
+    "engine": "chromium",
+    "version": "before",
+    "unit": "s2",
+    "material": "Neuer Fall · diese Aufgabe\n\nNeuer Fall: 18 Menschen, 20 Plätze pro Stunde. Der betrachtete Fußweg bleibt 12 Minuten lang. Beantworte die Frage zum neuen Fall.\n\nNeuen Fall ansehenFrüheren Fall vergleichen\n\nDieses Beispiel ist erfunden. Es gilt für eine Stunde.\n\n18 Menschen wollen mitfahren. Es gibt 20 Plätze. Der betrachtete Fußweg ist 12 Minuten lang. Freie Plätze verkürzen den Fußweg nicht.\n\n● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\n18 Menschen · 20 Plätze in einer Stunde. Die Punkte sind Menschen, keine Einwohnerzahl Nairobis.\nNeuer Fall · diese Aufgabe\nGröße\tWert\nMenschen in dieser Stunde\t18\nPlätze pro Stunde\t20\nBetrachteter Fußweg (Minuten)\t12\n\nNachfrage und Plätze sind Größen für eine Stunde. Der Fußweg beschreibt den Zugang. Wartezeit, Kosten und Fahrpreis fehlen.",
+    "svgLabels": [],
+    "selects": [
+      {
+        "id": "learn-enough",
+        "height": 48,
+        "native": "SELECT",
+        "appearance": "auto"
+      },
+      {
+        "id": "learn-access",
+        "height": 48,
+        "native": "SELECT",
+        "appearance": "auto"
+      }
+    ]
+  },
+  {
+    "engine": "chromium",
+    "version": "before",
+    "unit": "s5",
+    "material": "Neuer Fall · diese Aufgabe\n\nNeue Runde: 70 WE im Tank, 50 WE Entnahme. Kein Zufluss. Beantworte die Frage zu dieser Runde.\n\nNeuen Fall ansehenFrüheren Fall vergleichen\n\nErfundene Runde bei Agadir. WE bedeutet Wassereinheiten. Kein Zufluss. Der Tank ist kein Grundwasser.\n\nTank: Start 70 WE\nRest 20 WE\nEntnahme\n50 WE\nNur Tank und Entnahme. Für diese neue Runde sind keine Mengen am Feld angegeben.\nNeuer Fall · diese Aufgabe\nGröße\tWE\nTank am Anfang\t70\nEntnahme\t50\nTankrest\t20\n\nTankrest = Anfang minus Entnahme. Daraus folgt keine Aussage über Verbrauch oder Grundwasser.",
+    "svgLabels": [
+      "Neuer Fall · diese Aufgabe: Tank am Anfang 70 WE, Entnahme 50 WE, Rest 20 WE."
+    ],
+    "selects": []
+  },
+  {
+    "engine": "chromium",
+    "version": "before",
+    "unit": "s6",
+    "material": "Neuer Fall · diese Aufgabe\n\nNeues Zusatzfeld: 45 WE für das erste Feld, 10 WE für das Zusatzfeld. Tank am Anfang: 80 WE. Früher wurden 60 WE entnommen. Beantworte die Frage zum neuen Fall.\n\nNeuen Fall ansehenFrüheren Fall vergleichen\n\nErfundene Runde bei Agadir. WE bedeutet Wassereinheiten. Tank am Anfang: 80 WE. Kein Zufluss.\n\nTank: Start 80 WE\nRest 25 WE\nEntnahme\n55 WE\nErstes Feld\n45 WE\n10 WE\nZusatzfeld\nFelder ohne Hektarmaßstab. Das Zusatzfeld ist kleiner. Entnahme ist nicht gleich Verbrauch.\nNeuer Fall · diese Aufgabe\nGröße\tWE\nTank am Anfang\t80\nErstes Feld\t45\nZusatzfeld\t10\nGesamtentnahme\t55\nTankrest\t25\nFrüher: nur das erste Feld\t60\n\n45 + 10 = 55 WE. 55 WE sind 5 WE weniger als früher 60 WE. 80 − 55 = 25 WE bleiben im Tank.\n\nKeine Aussage über Grundwasser, Ernte oder Einkommen. Das Beispiel ist kein Messwert für Marokko.",
+    "svgLabels": [
+      "Neuer Fall · diese Aufgabe: Erstes Feld 45 WE, Zusatzfeld 10 WE, Gesamtentnahme 55 WE, Tankrest 25 WE."
+    ],
+    "selects": [
+      {
+        "id": "learn-less",
+        "height": 48,
+        "native": "SELECT",
+        "appearance": "auto"
+      }
+    ]
+  },
+  {
+    "engine": "chromium",
+    "version": "after",
+    "unit": "s2",
+    "material": "Neuer Fall · diese Aufgabe\n\nNeuer Fall: 18 Menschen, 20 Plätze pro Stunde. Der betrachtete Fußweg bleibt 12 Minuten lang. Beantworte die Frage zum neuen Fall.\n\nNeuen Fall ansehenFrüheren Fall vergleichen\n\nDieses Beispiel ist erfunden. Es gilt für eine Stunde.\n\nErfundenes Modell · Angaben für diese Runde\nGröße\tWert\nMenschen in dieser Stunde\t18\nPlätze pro Stunde\t20\nBetrachteter Fußweg (Minuten)\t12\n\nUntersuche die Angaben. Begründe deine Antworten zum neuen Fall.",
+    "svgLabels": [],
+    "selects": [
+      {
+        "id": "learn-enough",
+        "height": 48,
+        "native": "SELECT",
+        "appearance": "auto"
+      },
+      {
+        "id": "learn-access",
+        "height": 48,
+        "native": "SELECT",
+        "appearance": "auto"
+      }
+    ]
+  },
+  {
+    "engine": "chromium",
+    "version": "after",
+    "unit": "s5",
+    "material": "Neuer Fall · diese Aufgabe\n\nNeue Runde: 70 WE im Tank, 50 WE Entnahme. Kein Zufluss. Beantworte die Frage zu dieser Runde.\n\nNeuen Fall ansehenFrüheren Fall vergleichen\n\nErfundene Runde bei Agadir. WE bedeutet Wassereinheiten. Kein Zufluss. Der Tank ist kein Grundwasser.\n\nAnfang: 70 WE\nEntnahme: 50 WE\nDer Tank zeigt den Anfang, vor der Entnahme. Bestimme die neue Bilanz.\nErfundenes Modell · Angaben für diese Runde\nAusgangsgröße\tWE\nTank am Anfang\t70\nEntnahme\t50\n\nVerknüpfe die Ausgangsgrößen. Beantworte die Frage zum neuen Fall.",
+    "svgLabels": [
+      "Ausgangsdaten. Tank am Anfang: 70 WE. Entnahme: 50 WE. Die Bilanz ist noch zu bestimmen."
+    ],
+    "selects": []
+  },
+  {
+    "engine": "chromium",
+    "version": "after",
+    "unit": "s6",
+    "material": "Neuer Fall · diese Aufgabe\n\nNeues Zusatzfeld: 45 WE für das erste Feld, 10 WE für das Zusatzfeld. Tank am Anfang: 80 WE. Früher wurden 60 WE entnommen. Beantworte die Frage zum neuen Fall.\n\nNeuen Fall ansehenFrüheren Fall vergleichen\n\nErfundene Runde bei Agadir. WE bedeutet Wassereinheiten. Kein Zufluss. Der Tank ist kein Grundwasser.\n\nAnfang: 80 WE\nErstes Feld: 45 WE\nZusatzfeld: 10 WE\nFrüher: nur das erste Feld: 60 WE\nDer Tank zeigt den Anfang, vor der Entnahme. Bestimme die neue Bilanz.\nErfundenes Modell · Angaben für diese Runde\nAusgangsgröße\tWE\nTank am Anfang\t80\nErstes Feld\t45\nZusatzfeld\t10\nFrüher: nur das erste Feld\t60\n\nVerknüpfe die Ausgangsgrößen. Beantworte die Frage zum neuen Fall.",
+    "svgLabels": [
+      "Ausgangsdaten. Tank am Anfang: 80 WE. Erstes Feld: 45 WE. Zusatzfeld: 10 WE. Früher: nur das erste Feld: 60 WE. Die Bilanz ist noch zu bestimmen."
+    ],
+    "selects": [
+      {
+        "id": "learn-less",
+        "height": 48,
+        "native": "SELECT",
+        "appearance": "auto"
+      }
+    ]
+  }
+]

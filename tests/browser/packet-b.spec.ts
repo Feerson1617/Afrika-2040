@@ -74,6 +74,11 @@ for (const unit of ['s1', 's2', 's3', 's4', 's5', 's6', 'o', 'r'] as const)
                     ['Gesamtentnahme', '55'],
                     ['Tankrest', '25'],
                   ]) {
+              if (
+                profile !== 'foerder' &&
+                ['Tankrest', 'Gesamtentnahme'].includes(label)
+              )
+                continue;
               await expect(
                 rows
                   .filter({
