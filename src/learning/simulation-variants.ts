@@ -112,6 +112,57 @@ export function orderTaskFields(t: Task): Task {
     }),
   };
 }
+function splitHints(t: Task, f: LearningField): Task['hints'] {
+  if (t.id === 'share.paid' && f.id === 'free')
+    return [
+      'Lies die Einnahmen und die beiden schon bezahlten Beträge.',
+      'Ziehe von den Einnahmen zuerst die Löhne und dann die anderen Kosten ab.',
+      f.explanation,
+    ];
+  if (t.id === 'demand.now' && f.id === 'capacity')
+    return [
+      'Wie oft fährt der Bus? Wie viele Plätze gibt es bei jeder Fahrt?',
+      'Rechne: Fahrten pro Stunde mal Plätze bei jeder Fahrt.',
+      f.explanation,
+    ];
+  if (t.id === 'area.total' && f.id === 'rest')
+    return [
+      'Wie viel Wasser war am Anfang im Tank? Wie viel wurde für beide Felder entnommen?',
+      'Rechne: Wasser am Anfang minus Entnahme für beide Felder. Ziehe die beiden Felder nicht noch einmal einzeln ab.',
+      f.explanation,
+    ];
+
+  if (t.id === 'water.base') {
+    const hints: Record<string, [string, string]> = {
+      withdrawal: [
+        'Suche den Pfeil vom Tank zum Feld.',
+        'Entnahme heißt: Diese Menge verlässt den Tank. Lies die Zahl am Pfeil.',
+      ],
+      arrival: [
+        'Suche das Feld rechts vom Tank.',
+        'Lies die Zahl am Feld. Sie zeigt, wie viel dort ankommt.',
+      ],
+      rest: [
+        'Wie viel war am Anfang im Tank? Wie viel verlässt ihn?',
+        'Rechne: Wasser am Anfang minus Entnahme. Die Ankunft am Feld ziehst du nicht noch einmal ab.',
+      ],
+    };
+    if (hints[f.id]) return [...hints[f.id], f.explanation];
+  }
+  if (t.id === 'demand.explore') {
+    const bus = f.id === 'bus';
+    return [
+      bus
+        ? 'Schalte die zusätzliche Fahrt ein. Schau auf die Plätze.'
+        : 'Schalte den kurzen Fußweg ein. Schau auf die Gehzeit.',
+      bus
+        ? 'Vergleiche die Fahrten und die Plätze vorher und nachher.'
+        : 'Vergleiche die Gehzeit. Prüfe die Plätze getrennt davon.',
+      f.explanation,
+    ];
+  }
+  return t.hints;
+}
 export function differentiated(tasks: Task[], p: ProfileId): Task[] {
   return tasks
     .flatMap((t) =>
@@ -120,6 +171,7 @@ export function differentiated(tasks: Task[], p: ProfileId): Task[] {
             ...t,
             id: t.id + '.' + f.id,
             fields: [f],
+            hints: splitHints(t, f),
             title: f.label,
           }))
         : [t],
@@ -469,7 +521,9 @@ export function demandTasks(p: ProfileId): Task[] {
         : [
             number(
               'capacity',
-              p === 'esa' ? '2 Fahrten × 10 Plätze =' : 'Plätze pro Stunde',
+              p === 'esa'
+                ? 'Wie viele Plätze gibt es in einer Stunde?'
+                : 'Plätze pro Stunde',
               a.capacity,
               '2 × 10 = 20 Plätze.',
             ),
@@ -963,12 +1017,14 @@ export function shareTasks(p: ProfileId): Task[] {
             )
           : number(
               'free',
-              p === 'esa' ? '300 − 100 − 80 =' : 'Freier Betrag (GE)',
+              p === 'esa'
+                ? 'Wie viel Geld bleibt nach dem Bezahlen? (GE)'
+                : 'Freier Betrag (GE)',
               120,
               '300 − 100 − 80 = 120 GE.',
             ),
       ],
-      'Ziehe bereits bezahlte Kosten nicht ein zweites Mal ab.',
+      'Was hat der Betrieb eingenommen? Wie viel hat er schon bezahlt?',
     ),
     step(
       'share.effects',
@@ -1194,7 +1250,7 @@ export function waterTasks(p: ProfileId): Task[] {
               '80 − 60 = 20 WE.',
             ),
           ],
-      'Unterscheide den Pfeil am Tank vom Pfeil am Feld.',
+      'Welche Menge verlässt den Tank? Wie viel bleibt danach im Tank?',
     ),
     step(
       'water.compare',
@@ -1384,7 +1440,7 @@ export function areaTasks(p: ProfileId): Task[] {
             number(
               'total',
               p === 'esa'
-                ? '45 + 20 ='
+                ? 'Wie viel Wasser brauchen beide Felder zusammen? (WE)'
                 : 'Wie viel Wasser wird für beide Felder zusammen aus dem Tank genommen? Gesamtentnahme (WE)',
               extra.withdrawal,
               '45 + 20 = 65 WE.',

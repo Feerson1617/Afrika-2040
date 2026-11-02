@@ -131,9 +131,42 @@ function split(task: Task, profile: ProfileId) {
         steps: f.id === 'cycle' ? focus.steps : undefined,
       };
     }
+    let hints = task.hints;
+    if (task.id === 'nature.concepts') {
+      const first =
+        f.id === 'savanna'
+          ? 'Suche die Landschaft mit einer Regenzeit und einer Trockenzeit.'
+          : 'Denke an eine Pfütze, die in der Sonne trocknet. Wohin gelangt das Wasser?';
+      const second =
+        f.id === 'savanna'
+          ? 'Vergleiche: ganzjährig feucht oder Regenzeit und Trockenzeit?'
+          : 'Wasser wird zu Wasserdampf und gelangt in die Luft. Dieser Vorgang hat einen Fachnamen.';
+      hints = [first, second, f.explanation];
+    }
+    if (task.id === 'economy.data' && f.id === 'access' && focus) {
+      focus = {
+        ...focus,
+        paragraphs: [
+          'Ghana, Quelle: Weltbank. Prozent bedeutet: von 100. 89,5 Prozent sind ungefähr 90 von 100 Menschen. Das ist eine gerundete Angabe. Zugang zu Strom sagt nicht, wie oft er ausfällt.',
+        ],
+        rows: focus.rows?.map((row) => row.slice(0, 2)),
+      };
+      hints = [
+        'Lies die Spalte Stromzugang. Prozent bedeutet: von 100.',
+        'Die Zahl beschreibt einen Anteil der Menschen. Sie misst keine Stromausfälle.',
+        f.explanation,
+      ];
+    }
+    if (task.id === 'economy.conditions' && f.id === 'proof')
+      hints = [
+        'Lies: Worüber berichtet GEPA? Werden spätere Einnahmen genannt?',
+        'GEPA berichtet über eine eigene Schulung. Eine Schulung ist noch kein gemessener späterer Erfolg.',
+        f.explanation,
+      ];
     return {
       ...task,
       id: task.id + '.' + f.id,
+      hints,
       title: f.label,
       fields: [f],
       focus,
@@ -488,8 +521,8 @@ function nature(p: ProfileId): Task[] {
       natureWords,
       { steps: ['Verdunstung', 'Wolken', 'Niederschlag', 'Boden und Abfluss'] },
     ),
-    'Nutze die Begriffe und folge den Pfeilen.',
-    'Das Schema zeigt einen Zusammenhang. Der Modelltank ist keine Wasserbilanz einer ganzen Region.',
+    'Vergleiche die Jahreszeiten. Wie gelangt Wasser vom Boden in die Luft?',
+    'Trenne die beiden Fragen: Welche Landschaft hat Regenzeiten und Trockenzeiten? Wie bewegt sich Wasser im Wasserkreislauf?',
   );
   const transfer = item(
     'nature.transfer',

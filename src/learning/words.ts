@@ -61,7 +61,7 @@ const addedWords: [string, string][] = [
   ['Nachfrage', 'Wie viele Menschen in dieser Modellstunde fahren möchten.'],
   [
     'Kapazität',
-    'Wie viele Plätze in einer Stunde angeboten werden. Zwei Fahrten mit je 10 Plätzen bieten zusammen 20 Plätze. Das heißt hier Kapazität.',
+    'Wie viele Plätze in einer Stunde angeboten werden. Das hängt von der Zahl der Fahrten und den Plätzen bei jeder Fahrt ab. Das heißt hier Kapazität.',
   ],
   ['Einnahmen', 'Geld, das ein Betrieb bekommt.'],
   [

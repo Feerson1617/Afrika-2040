@@ -1,0 +1,3957 @@
+{
+  "method": "Synthetic task initial views rendered with project CSS in Chromium at 1024x768. Previous tasks use deliberately adopted examples to reach dependent tasks. Not a learner test; not a real-photo/layout/focus acceptance.",
+  "steps": [
+    {
+      "unit": "a",
+      "profile": "foerder",
+      "taskId": "image.initial",
+      "visibleWords": 120,
+      "materialWords": 25,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "foerder",
+      "taskId": "image.observe.built",
+      "visibleWords": 111,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "foerder",
+      "taskId": "image.observe.income",
+      "visibleWords": 122,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "foerder",
+      "taskId": "image.second.built",
+      "visibleWords": 116,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "foerder",
+      "taskId": "image.second.scope",
+      "visibleWords": 122,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "esa",
+      "taskId": "image.initial",
+      "visibleWords": 119,
+      "materialWords": 25,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "esa",
+      "taskId": "image.observe.built",
+      "visibleWords": 110,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "esa",
+      "taskId": "image.observe.income",
+      "visibleWords": 121,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "esa",
+      "taskId": "image.second.built",
+      "visibleWords": 115,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "esa",
+      "taskId": "image.second.scope",
+      "visibleWords": 121,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "esa",
+      "taskId": "image.headline.evidence",
+      "visibleWords": 149,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "esa",
+      "taskId": "image.headline.revision",
+      "visibleWords": 154,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "msa",
+      "taskId": "image.initial",
+      "visibleWords": 116,
+      "materialWords": 25,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "msa",
+      "taskId": "image.observe",
+      "visibleWords": 131,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "msa",
+      "taskId": "image.second",
+      "visibleWords": 131,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "msa",
+      "taskId": "image.headline",
+      "visibleWords": 169,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "msa",
+      "taskId": "image.revision",
+      "visibleWords": 153,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "ahr",
+      "taskId": "image.initial",
+      "visibleWords": 116,
+      "materialWords": 25,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "ahr",
+      "taskId": "image.observe",
+      "visibleWords": 131,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "ahr",
+      "taskId": "image.second",
+      "visibleWords": 131,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "ahr",
+      "taskId": "image.headline",
+      "visibleWords": 169,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "a",
+      "profile": "ahr",
+      "taskId": "image.perspective",
+      "visibleWords": 154,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "foerder",
+      "taskId": "nature.calendar.ghana",
+      "visibleWords": 181,
+      "materialWords": 106,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "foerder",
+      "taskId": "nature.use.growth",
+      "visibleWords": 142,
+      "materialWords": 55,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "foerder",
+      "taskId": "nature.use.limit",
+      "visibleWords": 158,
+      "materialWords": 55,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "foerder",
+      "taskId": "nature.concepts.savanna",
+      "visibleWords": 110,
+      "materialWords": 24,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "foerder",
+      "taskId": "nature.concepts.cycle",
+      "visibleWords": 134,
+      "materialWords": 40,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "foerder",
+      "taskId": "nature.transfer",
+      "visibleWords": 133,
+      "materialWords": 55,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "esa",
+      "taskId": "nature.calendar.ghana",
+      "visibleWords": 180,
+      "materialWords": 106,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "esa",
+      "taskId": "nature.calendar.morocco",
+      "visibleWords": 185,
+      "materialWords": 111,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "esa",
+      "taskId": "nature.use.growth",
+      "visibleWords": 141,
+      "materialWords": 55,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "esa",
+      "taskId": "nature.use.limit",
+      "visibleWords": 157,
+      "materialWords": 55,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "esa",
+      "taskId": "nature.regions.higher",
+      "visibleWords": 139,
+      "materialWords": 55,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "esa",
+      "taskId": "nature.regions.access",
+      "visibleWords": 151,
+      "materialWords": 55,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "esa",
+      "taskId": "nature.concepts.savanna",
+      "visibleWords": 141,
+      "materialWords": 56,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "esa",
+      "taskId": "nature.concepts.cycle",
+      "visibleWords": 149,
+      "materialWords": 56,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "esa",
+      "taskId": "nature.transfer",
+      "visibleWords": 132,
+      "materialWords": 55,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "msa",
+      "taskId": "nature.calendar.ghana",
+      "visibleWords": 179,
+      "materialWords": 106,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "msa",
+      "taskId": "nature.calendar.morocco",
+      "visibleWords": 183,
+      "materialWords": 111,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "msa",
+      "taskId": "nature.use",
+      "visibleWords": 162,
+      "materialWords": 55,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "msa",
+      "taskId": "nature.regions",
+      "visibleWords": 157,
+      "materialWords": 55,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "msa",
+      "taskId": "nature.concepts",
+      "visibleWords": 153,
+      "materialWords": 56,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "msa",
+      "taskId": "nature.transfer",
+      "visibleWords": 129,
+      "materialWords": 55,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "msa",
+      "taskId": "nature.equal-total",
+      "visibleWords": 122,
+      "materialWords": 30,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "ahr",
+      "taskId": "nature.calendar.ghana",
+      "visibleWords": 179,
+      "materialWords": 106,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "ahr",
+      "taskId": "nature.calendar.morocco",
+      "visibleWords": 183,
+      "materialWords": 111,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "ahr",
+      "taskId": "nature.use",
+      "visibleWords": 162,
+      "materialWords": 55,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "ahr",
+      "taskId": "nature.regions",
+      "visibleWords": 157,
+      "materialWords": 55,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "ahr",
+      "taskId": "nature.concepts",
+      "visibleWords": 153,
+      "materialWords": 56,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "ahr",
+      "taskId": "nature.transfer",
+      "visibleWords": 129,
+      "materialWords": 55,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "ahr",
+      "taskId": "nature.recommend",
+      "visibleWords": 211,
+      "materialWords": 106,
+      "overflow": false
+    },
+    {
+      "unit": "n",
+      "profile": "ahr",
+      "taskId": "nature.equal-total",
+      "visibleWords": 122,
+      "materialWords": 30,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "foerder",
+      "taskId": "population.event.birth",
+      "visibleWords": 126,
+      "materialWords": 45,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "foerder",
+      "taskId": "population.event.death",
+      "visibleWords": 124,
+      "materialWords": 44,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "foerder",
+      "taskId": "population.event.arrival",
+      "visibleWords": 130,
+      "materialWords": 47,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "foerder",
+      "taskId": "population.event.departure",
+      "visibleWords": 131,
+      "materialWords": 47,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "foerder",
+      "taskId": "population.base.natural-direction",
+      "visibleWords": 124,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "foerder",
+      "taskId": "population.base.migration-direction",
+      "visibleWords": 116,
+      "materialWords": 38,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "foerder",
+      "taskId": "population.base.total-direction",
+      "visibleWords": 153,
+      "materialWords": 57,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "foerder",
+      "taskId": "population.source.read.larger",
+      "visibleWords": 136,
+      "materialWords": 49,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "foerder",
+      "taskId": "population.source.read.status",
+      "visibleWords": 136,
+      "materialWords": 49,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "foerder",
+      "taskId": "population.condition.places",
+      "visibleWords": 119,
+      "materialWords": 35,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "foerder",
+      "taskId": "population.condition.teachers",
+      "visibleWords": 115,
+      "materialWords": 35,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "foerder",
+      "taskId": "population.transfer.natural-direction",
+      "visibleWords": 125,
+      "materialWords": 39,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "foerder",
+      "taskId": "population.transfer.migration-direction",
+      "visibleWords": 117,
+      "materialWords": 39,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "foerder",
+      "taskId": "population.transfer.total-direction",
+      "visibleWords": 154,
+      "materialWords": 58,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "esa",
+      "taskId": "population.event.birth",
+      "visibleWords": 114,
+      "materialWords": 34,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "esa",
+      "taskId": "population.event.death",
+      "visibleWords": 113,
+      "materialWords": 34,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "esa",
+      "taskId": "population.event.arrival",
+      "visibleWords": 116,
+      "materialWords": 34,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "esa",
+      "taskId": "population.event.departure",
+      "visibleWords": 117,
+      "materialWords": 34,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "esa",
+      "taskId": "population.base.natural",
+      "visibleWords": 119,
+      "materialWords": 34,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "esa",
+      "taskId": "population.base.migration",
+      "visibleWords": 119,
+      "materialWords": 34,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "esa",
+      "taskId": "population.base.end",
+      "visibleWords": 152,
+      "materialWords": 34,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "esa",
+      "taskId": "population.base.reason",
+      "visibleWords": 121,
+      "materialWords": 34,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "esa",
+      "taskId": "population.source.read",
+      "visibleWords": 207,
+      "materialWords": 87,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "esa",
+      "taskId": "population.condition.links",
+      "visibleWords": 158,
+      "materialWords": 49,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "esa",
+      "taskId": "population.transfer.natural",
+      "visibleWords": 120,
+      "materialWords": 35,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "esa",
+      "taskId": "population.transfer.migration",
+      "visibleWords": 120,
+      "materialWords": 35,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "esa",
+      "taskId": "population.transfer.end",
+      "visibleWords": 153,
+      "materialWords": 35,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "msa",
+      "taskId": "population.operations",
+      "visibleWords": 126,
+      "materialWords": 34,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "msa",
+      "taskId": "population.base.balance",
+      "visibleWords": 128,
+      "materialWords": 34,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "msa",
+      "taskId": "population.stock-change",
+      "visibleWords": 116,
+      "materialWords": 34,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "msa",
+      "taskId": "population.source.read",
+      "visibleWords": 224,
+      "materialWords": 87,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "msa",
+      "taskId": "population.condition.links",
+      "visibleWords": 152,
+      "materialWords": 49,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "msa",
+      "taskId": "population.condition.own",
+      "visibleWords": 149,
+      "materialWords": 49,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "msa",
+      "taskId": "population.transfer.balance",
+      "visibleWords": 131,
+      "materialWords": 35,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "msa",
+      "taskId": "population.bridge",
+      "visibleWords": 129,
+      "materialWords": 49,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "ahr",
+      "taskId": "population.base.balance",
+      "visibleWords": 128,
+      "materialWords": 34,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "ahr",
+      "taskId": "population.base.explain",
+      "visibleWords": 149,
+      "materialWords": 34,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "ahr",
+      "taskId": "population.source.read",
+      "visibleWords": 198,
+      "materialWords": 87,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "ahr",
+      "taskId": "population.source.explain",
+      "visibleWords": 200,
+      "materialWords": 87,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "ahr",
+      "taskId": "population.condition.explain",
+      "visibleWords": 148,
+      "materialWords": 49,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "ahr",
+      "taskId": "population.transfer.balance",
+      "visibleWords": 129,
+      "materialWords": 35,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "ahr",
+      "taskId": "population.counter.balance",
+      "visibleWords": 135,
+      "materialWords": 39,
+      "overflow": false
+    },
+    {
+      "unit": "c",
+      "profile": "ahr",
+      "taskId": "population.question",
+      "visibleWords": 149,
+      "materialWords": 49,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "foerder",
+      "taskId": "economy.balance.surplus",
+      "visibleWords": 121,
+      "materialWords": 43,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "foerder",
+      "taskId": "economy.balance.scope",
+      "visibleWords": 139,
+      "materialWords": 43,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "foerder",
+      "taskId": "economy.data.access",
+      "visibleWords": 145,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "foerder",
+      "taskId": "economy.conditions.pair",
+      "visibleWords": 139,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "foerder",
+      "taskId": "economy.conditions.proof",
+      "visibleWords": 144,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "foerder",
+      "taskId": "economy.transfer.cause",
+      "visibleWords": 153,
+      "materialWords": 54,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "foerder",
+      "taskId": "economy.transfer.distribution",
+      "visibleWords": 142,
+      "materialWords": 54,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "esa",
+      "taskId": "economy.balance.surplus-a",
+      "visibleWords": 127,
+      "materialWords": 44,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "esa",
+      "taskId": "economy.balance.surplus-b",
+      "visibleWords": 127,
+      "materialWords": 44,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "esa",
+      "taskId": "economy.balance.first",
+      "visibleWords": 133,
+      "materialWords": 44,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "esa",
+      "taskId": "economy.data.access",
+      "visibleWords": 142,
+      "materialWords": 49,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "esa",
+      "taskId": "economy.data.growth",
+      "visibleWords": 157,
+      "materialWords": 73,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "esa",
+      "taskId": "economy.conditions.pair",
+      "visibleWords": 138,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "esa",
+      "taskId": "economy.conditions.proof",
+      "visibleWords": 143,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "esa",
+      "taskId": "economy.transfer.cause",
+      "visibleWords": 152,
+      "materialWords": 54,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "esa",
+      "taskId": "economy.transfer.distribution",
+      "visibleWords": 141,
+      "materialWords": 54,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "msa",
+      "taskId": "economy.balance",
+      "visibleWords": 139,
+      "materialWords": 44,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "msa",
+      "taskId": "economy.data",
+      "visibleWords": 183,
+      "materialWords": 73,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "msa",
+      "taskId": "economy.conditions",
+      "visibleWords": 144,
+      "materialWords": 45,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "msa",
+      "taskId": "economy.transfer",
+      "visibleWords": 221,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "msa",
+      "taskId": "economy.explain",
+      "visibleWords": 150,
+      "materialWords": 45,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "ahr",
+      "taskId": "economy.balance",
+      "visibleWords": 139,
+      "materialWords": 44,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "ahr",
+      "taskId": "economy.data",
+      "visibleWords": 183,
+      "materialWords": 73,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "ahr",
+      "taskId": "economy.conditions",
+      "visibleWords": 144,
+      "materialWords": 45,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "ahr",
+      "taskId": "economy.transfer",
+      "visibleWords": 221,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "ahr",
+      "taskId": "economy.explain",
+      "visibleWords": 151,
+      "materialWords": 45,
+      "overflow": false
+    },
+    {
+      "unit": "d",
+      "profile": "ahr",
+      "taskId": "economy.source-claim.v1",
+      "visibleWords": 182,
+      "materialWords": 60,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "foerder",
+      "taskId": "future.reach.reach",
+      "visibleWords": 116,
+      "materialWords": 43,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "foerder",
+      "taskId": "future.investment.investment",
+      "visibleWords": 114,
+      "materialWords": 43,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "foerder",
+      "taskId": "future.running.running",
+      "visibleWords": 124,
+      "materialWords": 44,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "foerder",
+      "taskId": "future.ecology.energy",
+      "visibleWords": 147,
+      "materialWords": 70,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "foerder",
+      "taskId": "future.ecology.materials",
+      "visibleWords": 154,
+      "materialWords": 70,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "foerder",
+      "taskId": "future.goal",
+      "visibleWords": 179,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "foerder",
+      "taskId": "future.plan",
+      "visibleWords": 166,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "foerder",
+      "taskId": "future.evidence",
+      "visibleWords": 126,
+      "materialWords": 22,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "foerder",
+      "taskId": "future.limit",
+      "visibleWords": 141,
+      "materialWords": 31,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "foerder",
+      "taskId": "future.weight",
+      "visibleWords": 157,
+      "materialWords": 31,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "foerder",
+      "taskId": "future.uncertainty",
+      "visibleWords": 122,
+      "materialWords": 29,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "foerder",
+      "taskId": "future.revision",
+      "visibleWords": 134,
+      "materialWords": 29,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "esa",
+      "taskId": "future.reach.reach",
+      "visibleWords": 115,
+      "materialWords": 43,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "esa",
+      "taskId": "future.investment.investment",
+      "visibleWords": 113,
+      "materialWords": 43,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "esa",
+      "taskId": "future.running.running",
+      "visibleWords": 123,
+      "materialWords": 44,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "esa",
+      "taskId": "future.ecology.energy",
+      "visibleWords": 146,
+      "materialWords": 70,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "esa",
+      "taskId": "future.ecology.materials",
+      "visibleWords": 153,
+      "materialWords": 70,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "esa",
+      "taskId": "future.goal",
+      "visibleWords": 178,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "esa",
+      "taskId": "future.plan",
+      "visibleWords": 165,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "esa",
+      "taskId": "future.evidence",
+      "visibleWords": 202,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "esa",
+      "taskId": "future.limit",
+      "visibleWords": 208,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "esa",
+      "taskId": "future.weight",
+      "visibleWords": 224,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "esa",
+      "taskId": "future.uncertainty",
+      "visibleWords": 121,
+      "materialWords": 29,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "esa",
+      "taskId": "future.revision",
+      "visibleWords": 133,
+      "materialWords": 29,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "msa",
+      "taskId": "future.reach",
+      "visibleWords": 113,
+      "materialWords": 43,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "msa",
+      "taskId": "future.investment",
+      "visibleWords": 112,
+      "materialWords": 43,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "msa",
+      "taskId": "future.running",
+      "visibleWords": 119,
+      "materialWords": 44,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "msa",
+      "taskId": "future.ecology",
+      "visibleWords": 162,
+      "materialWords": 70,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "msa",
+      "taskId": "future.goal",
+      "visibleWords": 173,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "msa",
+      "taskId": "future.plan",
+      "visibleWords": 165,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "msa",
+      "taskId": "future.evidence",
+      "visibleWords": 199,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "msa",
+      "taskId": "future.limit",
+      "visibleWords": 201,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "msa",
+      "taskId": "future.weight",
+      "visibleWords": 219,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "msa",
+      "taskId": "future.judgment",
+      "visibleWords": 211,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "msa",
+      "taskId": "future.uncertainty",
+      "visibleWords": 111,
+      "materialWords": 29,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "msa",
+      "taskId": "future.revision",
+      "visibleWords": 129,
+      "materialWords": 29,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "ahr",
+      "taskId": "future.reach",
+      "visibleWords": 113,
+      "materialWords": 43,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "ahr",
+      "taskId": "future.investment",
+      "visibleWords": 112,
+      "materialWords": 43,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "ahr",
+      "taskId": "future.running",
+      "visibleWords": 119,
+      "materialWords": 44,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "ahr",
+      "taskId": "future.ecology",
+      "visibleWords": 162,
+      "materialWords": 70,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "ahr",
+      "taskId": "future.goal",
+      "visibleWords": 173,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "ahr",
+      "taskId": "future.plan",
+      "visibleWords": 165,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "ahr",
+      "taskId": "future.evidence",
+      "visibleWords": 199,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "ahr",
+      "taskId": "future.limit",
+      "visibleWords": 201,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "ahr",
+      "taskId": "future.weight",
+      "visibleWords": 219,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "ahr",
+      "taskId": "future.judgment",
+      "visibleWords": 211,
+      "materialWords": 99,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "ahr",
+      "taskId": "future.uncertainty",
+      "visibleWords": 111,
+      "materialWords": 29,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "ahr",
+      "taskId": "future.revision",
+      "visibleWords": 129,
+      "materialWords": 29,
+      "overflow": false
+    },
+    {
+      "unit": "e",
+      "profile": "ahr",
+      "taskId": "future.relation",
+      "visibleWords": 138,
+      "materialWords": 29,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.walk",
+      "visibleWords": 228,
+      "materialWords": 138,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.compare",
+      "visibleWords": 242,
+      "materialWords": 138,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.benefit",
+      "visibleWords": 229,
+      "materialWords": 138,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.limit",
+      "visibleWords": 230,
+      "materialWords": 138,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.full.explore",
+      "visibleWords": 225,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.full.leila",
+      "visibleWords": 205,
+      "materialWords": 129,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.first.choice",
+      "visibleWords": 203,
+      "materialWords": 129,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.first.proof.evidence",
+      "visibleWords": 242,
+      "materialWords": 129,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.first.proof.limit",
+      "visibleWords": 236,
+      "materialWords": 129,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.first.weight",
+      "visibleWords": 241,
+      "materialWords": 129,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.event.path",
+      "visibleWords": 246,
+      "materialWords": 149,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.event.times",
+      "visibleWords": 226,
+      "materialWords": 149,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.revised.choice",
+      "visibleWords": 224,
+      "materialWords": 149,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.revised.proof.evidence",
+      "visibleWords": 262,
+      "materialWords": 149,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.revised.proof.limit",
+      "visibleWords": 256,
+      "materialWords": 149,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.revised.weight",
+      "visibleWords": 261,
+      "materialWords": 149,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "foerder",
+      "taskId": "kenia.full.limit",
+      "visibleWords": 216,
+      "materialWords": 129,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.times.amina-direct",
+      "visibleWords": 227,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.times.amina-north",
+      "visibleWords": 227,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.times.david-direct",
+      "visibleWords": 227,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.times.david-north",
+      "visibleWords": 227,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.effects",
+      "visibleWords": 241,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.recommendation",
+      "visibleWords": 232,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.full.explore",
+      "visibleWords": 219,
+      "materialWords": 127,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.full.times.direct",
+      "visibleWords": 216,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.full.times.north",
+      "visibleWords": 218,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.full.times.south",
+      "visibleWords": 218,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.first.choice",
+      "visibleWords": 197,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.first.proof.evidence",
+      "visibleWords": 236,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.first.proof.limit",
+      "visibleWords": 230,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.first.weight",
+      "visibleWords": 235,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.event.path",
+      "visibleWords": 240,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.event.times.direct",
+      "visibleWords": 235,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.event.times.north",
+      "visibleWords": 237,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.event.times.south",
+      "visibleWords": 237,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.revised.choice",
+      "visibleWords": 218,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.revised.proof.evidence",
+      "visibleWords": 256,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.revised.proof.limit",
+      "visibleWords": 250,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.revised.weight",
+      "visibleWords": 255,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "esa",
+      "taskId": "kenia.full.limit",
+      "visibleWords": 210,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "msa",
+      "taskId": "kenia.used-section",
+      "visibleWords": 219,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "msa",
+      "taskId": "kenia.times",
+      "visibleWords": 237,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "msa",
+      "taskId": "kenia.effects",
+      "visibleWords": 236,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "msa",
+      "taskId": "kenia.recommendation",
+      "visibleWords": 225,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "msa",
+      "taskId": "kenia.full.explore",
+      "visibleWords": 215,
+      "materialWords": 127,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "msa",
+      "taskId": "kenia.full.times",
+      "visibleWords": 213,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "msa",
+      "taskId": "kenia.first.choice",
+      "visibleWords": 195,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "msa",
+      "taskId": "kenia.first.proof",
+      "visibleWords": 280,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "msa",
+      "taskId": "kenia.first.weight",
+      "visibleWords": 229,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "msa",
+      "taskId": "kenia.event.path",
+      "visibleWords": 235,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "msa",
+      "taskId": "kenia.event.times",
+      "visibleWords": 237,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "msa",
+      "taskId": "kenia.revised.choice",
+      "visibleWords": 216,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "msa",
+      "taskId": "kenia.revised.proof",
+      "visibleWords": 300,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "msa",
+      "taskId": "kenia.revised.weight",
+      "visibleWords": 249,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "msa",
+      "taskId": "kenia.full.limit",
+      "visibleWords": 208,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.times",
+      "visibleWords": 237,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.explain",
+      "visibleWords": 235,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.judgment",
+      "visibleWords": 240,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.transfer",
+      "visibleWords": 220,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.full.explore",
+      "visibleWords": 215,
+      "materialWords": 127,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.full.times",
+      "visibleWords": 213,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.first.choice",
+      "visibleWords": 195,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.first.proof",
+      "visibleWords": 280,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.first.weight",
+      "visibleWords": 229,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.event.path",
+      "visibleWords": 235,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.event.times",
+      "visibleWords": 237,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.revised.choice",
+      "visibleWords": 216,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.revised.proof",
+      "visibleWords": 300,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.revised.weight",
+      "visibleWords": 249,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.revised.own",
+      "visibleWords": 253,
+      "materialWords": 144,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.full.spatial",
+      "visibleWords": 238,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s1",
+      "profile": "ahr",
+      "taskId": "kenia.full.limit",
+      "visibleWords": 208,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "foerder",
+      "taskId": "demand.before",
+      "visibleWords": 123,
+      "materialWords": 41,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "foerder",
+      "taskId": "demand.now",
+      "visibleWords": 123,
+      "materialWords": 41,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "foerder",
+      "taskId": "demand.explore.bus",
+      "visibleWords": 194,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "foerder",
+      "taskId": "demand.explore.path",
+      "visibleWords": 191,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "foerder",
+      "taskId": "demand.final.choice",
+      "visibleWords": 170,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "foerder",
+      "taskId": "demand.final.proof.evidence",
+      "visibleWords": 200,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "foerder",
+      "taskId": "demand.final.proof.limit",
+      "visibleWords": 193,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "foerder",
+      "taskId": "demand.final.weight",
+      "visibleWords": 209,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "foerder",
+      "taskId": "demand.transfer.enough",
+      "visibleWords": 249,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "foerder",
+      "taskId": "demand.transfer.access",
+      "visibleWords": 239,
+      "materialWords": 132,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "esa",
+      "taskId": "demand.before",
+      "visibleWords": 122,
+      "materialWords": 41,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "esa",
+      "taskId": "demand.now.capacity",
+      "visibleWords": 169,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "esa",
+      "taskId": "demand.now.later",
+      "visibleWords": 185,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "esa",
+      "taskId": "demand.explore.bus",
+      "visibleWords": 193,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "esa",
+      "taskId": "demand.explore.path",
+      "visibleWords": 190,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "esa",
+      "taskId": "demand.final.choice",
+      "visibleWords": 169,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "esa",
+      "taskId": "demand.final.proof.evidence",
+      "visibleWords": 199,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "esa",
+      "taskId": "demand.final.proof.limit",
+      "visibleWords": 192,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "esa",
+      "taskId": "demand.final.weight",
+      "visibleWords": 208,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "esa",
+      "taskId": "demand.transfer.enough",
+      "visibleWords": 188,
+      "materialWords": 72,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "esa",
+      "taskId": "demand.transfer.access",
+      "visibleWords": 178,
+      "materialWords": 72,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "msa",
+      "taskId": "demand.before",
+      "visibleWords": 118,
+      "materialWords": 41,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "msa",
+      "taskId": "demand.now",
+      "visibleWords": 156,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "msa",
+      "taskId": "demand.explore",
+      "visibleWords": 198,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "msa",
+      "taskId": "demand.final.choice",
+      "visibleWords": 167,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "msa",
+      "taskId": "demand.final.proof",
+      "visibleWords": 218,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "msa",
+      "taskId": "demand.final.weight",
+      "visibleWords": 202,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "msa",
+      "taskId": "demand.transfer",
+      "visibleWords": 179,
+      "materialWords": 71,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "ahr",
+      "taskId": "demand.before",
+      "visibleWords": 118,
+      "materialWords": 41,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "ahr",
+      "taskId": "demand.now",
+      "visibleWords": 156,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "ahr",
+      "taskId": "demand.explore",
+      "visibleWords": 198,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "ahr",
+      "taskId": "demand.final.choice",
+      "visibleWords": 167,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "ahr",
+      "taskId": "demand.final.proof",
+      "visibleWords": 218,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "ahr",
+      "taskId": "demand.final.weight",
+      "visibleWords": 202,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "ahr",
+      "taskId": "demand.final.own",
+      "visibleWords": 204,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "ahr",
+      "taskId": "demand.transfer",
+      "visibleWords": 179,
+      "materialWords": 71,
+      "overflow": false
+    },
+    {
+      "unit": "s2",
+      "profile": "ahr",
+      "taskId": "demand.cause",
+      "visibleWords": 205,
+      "materialWords": 94,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "foerder",
+      "taskId": "cocoa.chain.beans",
+      "visibleWords": 132,
+      "materialWords": 59,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "foerder",
+      "taskId": "cocoa.chain.roast",
+      "visibleWords": 134,
+      "materialWords": 59,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "foerder",
+      "taskId": "cocoa.chain.mass",
+      "visibleWords": 136,
+      "materialWords": 59,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "foerder",
+      "taskId": "cocoa.chain.press",
+      "visibleWords": 136,
+      "materialWords": 59,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "foerder",
+      "taskId": "cocoa.base",
+      "visibleWords": 183,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "foerder",
+      "taskId": "cocoa.compare.quality",
+      "visibleWords": 200,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "foerder",
+      "taskId": "cocoa.compare.process",
+      "visibleWords": 198,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "foerder",
+      "taskId": "cocoa.investment.pot",
+      "visibleWords": 192,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "foerder",
+      "taskId": "cocoa.investment.cause",
+      "visibleWords": 196,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "foerder",
+      "taskId": "cocoa.final.choice",
+      "visibleWords": 173,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "foerder",
+      "taskId": "cocoa.final.proof.evidence",
+      "visibleWords": 205,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "foerder",
+      "taskId": "cocoa.final.proof.limit",
+      "visibleWords": 200,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "foerder",
+      "taskId": "cocoa.final.weight",
+      "visibleWords": 213,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "foerder",
+      "taskId": "cocoa.transfer",
+      "visibleWords": 187,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "esa",
+      "taskId": "cocoa.chain.beans",
+      "visibleWords": 136,
+      "materialWords": 59,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "esa",
+      "taskId": "cocoa.chain.roast",
+      "visibleWords": 139,
+      "materialWords": 59,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "esa",
+      "taskId": "cocoa.chain.mass",
+      "visibleWords": 140,
+      "materialWords": 59,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "esa",
+      "taskId": "cocoa.chain.press",
+      "visibleWords": 139,
+      "materialWords": 59,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "esa",
+      "taskId": "cocoa.base",
+      "visibleWords": 185,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "esa",
+      "taskId": "cocoa.compare.quality",
+      "visibleWords": 205,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "esa",
+      "taskId": "cocoa.compare.process",
+      "visibleWords": 203,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "esa",
+      "taskId": "cocoa.investment.pot",
+      "visibleWords": 188,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "esa",
+      "taskId": "cocoa.investment.cause",
+      "visibleWords": 192,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "esa",
+      "taskId": "cocoa.final.choice",
+      "visibleWords": 169,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "esa",
+      "taskId": "cocoa.final.proof.evidence",
+      "visibleWords": 201,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "esa",
+      "taskId": "cocoa.final.proof.limit",
+      "visibleWords": 196,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "esa",
+      "taskId": "cocoa.final.weight",
+      "visibleWords": 209,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "esa",
+      "taskId": "cocoa.transfer",
+      "visibleWords": 183,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "msa",
+      "taskId": "cocoa.chain.beans",
+      "visibleWords": 135,
+      "materialWords": 59,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "msa",
+      "taskId": "cocoa.chain.roast",
+      "visibleWords": 136,
+      "materialWords": 59,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "msa",
+      "taskId": "cocoa.chain.mass",
+      "visibleWords": 136,
+      "materialWords": 59,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "msa",
+      "taskId": "cocoa.chain.press",
+      "visibleWords": 136,
+      "materialWords": 59,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "msa",
+      "taskId": "cocoa.base",
+      "visibleWords": 179,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "msa",
+      "taskId": "cocoa.compare",
+      "visibleWords": 199,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "msa",
+      "taskId": "cocoa.investment",
+      "visibleWords": 207,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "msa",
+      "taskId": "cocoa.final.choice",
+      "visibleWords": 167,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "msa",
+      "taskId": "cocoa.final.proof",
+      "visibleWords": 220,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "msa",
+      "taskId": "cocoa.final.weight",
+      "visibleWords": 203,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "msa",
+      "taskId": "cocoa.transfer",
+      "visibleWords": 180,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "ahr",
+      "taskId": "cocoa.chain.beans",
+      "visibleWords": 135,
+      "materialWords": 59,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "ahr",
+      "taskId": "cocoa.chain.roast",
+      "visibleWords": 136,
+      "materialWords": 59,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "ahr",
+      "taskId": "cocoa.chain.mass",
+      "visibleWords": 136,
+      "materialWords": 59,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "ahr",
+      "taskId": "cocoa.chain.press",
+      "visibleWords": 136,
+      "materialWords": 59,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "ahr",
+      "taskId": "cocoa.base",
+      "visibleWords": 179,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "ahr",
+      "taskId": "cocoa.compare",
+      "visibleWords": 199,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "ahr",
+      "taskId": "cocoa.investment",
+      "visibleWords": 207,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "ahr",
+      "taskId": "cocoa.final.choice",
+      "visibleWords": 167,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "ahr",
+      "taskId": "cocoa.final.proof",
+      "visibleWords": 220,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "ahr",
+      "taskId": "cocoa.final.weight",
+      "visibleWords": 203,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "ahr",
+      "taskId": "cocoa.final.own",
+      "visibleWords": 208,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "ahr",
+      "taskId": "cocoa.transfer",
+      "visibleWords": 180,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s3",
+      "profile": "ahr",
+      "taskId": "cocoa.cause",
+      "visibleWords": 218,
+      "materialWords": 98,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "foerder",
+      "taskId": "share.paid.wages",
+      "visibleWords": 152,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "foerder",
+      "taskId": "share.paid.free",
+      "visibleWords": 162,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "foerder",
+      "taskId": "share.effects.now",
+      "visibleWords": 171,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "foerder",
+      "taskId": "share.effects.future",
+      "visibleWords": 166,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "foerder",
+      "taskId": "share.plan",
+      "visibleWords": 183,
+      "materialWords": 96,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "foerder",
+      "taskId": "share.proof.evidence",
+      "visibleWords": 170,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "foerder",
+      "taskId": "share.proof.limit",
+      "visibleWords": 182,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "foerder",
+      "taskId": "share.tradeoff",
+      "visibleWords": 162,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "esa",
+      "taskId": "share.paid.wages",
+      "visibleWords": 151,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "esa",
+      "taskId": "share.paid.free",
+      "visibleWords": 156,
+      "materialWords": 60,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "esa",
+      "taskId": "share.effects.now",
+      "visibleWords": 170,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "esa",
+      "taskId": "share.effects.future",
+      "visibleWords": 165,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "esa",
+      "taskId": "share.plan",
+      "visibleWords": 182,
+      "materialWords": 96,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "esa",
+      "taskId": "share.proof.evidence",
+      "visibleWords": 169,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "esa",
+      "taskId": "share.proof.limit",
+      "visibleWords": 181,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "esa",
+      "taskId": "share.tradeoff",
+      "visibleWords": 161,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "msa",
+      "taskId": "share.paid",
+      "visibleWords": 153,
+      "materialWords": 60,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "msa",
+      "taskId": "share.effects",
+      "visibleWords": 161,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "msa",
+      "taskId": "share.plan",
+      "visibleWords": 175,
+      "materialWords": 96,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "msa",
+      "taskId": "share.proof",
+      "visibleWords": 207,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "msa",
+      "taskId": "share.tradeoff",
+      "visibleWords": 160,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "msa",
+      "taskId": "share.plan.second",
+      "visibleWords": 183,
+      "materialWords": 104,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "ahr",
+      "taskId": "share.paid",
+      "visibleWords": 153,
+      "materialWords": 60,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "ahr",
+      "taskId": "share.effects",
+      "visibleWords": 161,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "ahr",
+      "taskId": "share.plan",
+      "visibleWords": 175,
+      "materialWords": 96,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "ahr",
+      "taskId": "share.proof",
+      "visibleWords": 207,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "ahr",
+      "taskId": "share.tradeoff",
+      "visibleWords": 160,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "ahr",
+      "taskId": "share.plan.second",
+      "visibleWords": 183,
+      "materialWords": 104,
+      "overflow": false
+    },
+    {
+      "unit": "s4",
+      "profile": "ahr",
+      "taskId": "share.perspective",
+      "visibleWords": 184,
+      "materialWords": 68,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "foerder",
+      "taskId": "water.base.withdrawal",
+      "visibleWords": 196,
+      "materialWords": 110,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "foerder",
+      "taskId": "water.base.arrival",
+      "visibleWords": 190,
+      "materialWords": 110,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "foerder",
+      "taskId": "water.compare.repair",
+      "visibleWords": 215,
+      "materialWords": 110,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "foerder",
+      "taskId": "water.compare.tech",
+      "visibleWords": 217,
+      "materialWords": 110,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "foerder",
+      "taskId": "water.scope.same",
+      "visibleWords": 205,
+      "materialWords": 110,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "foerder",
+      "taskId": "water.scope.consumption",
+      "visibleWords": 211,
+      "materialWords": 110,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "foerder",
+      "taskId": "water.final.choice",
+      "visibleWords": 184,
+      "materialWords": 110,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "foerder",
+      "taskId": "water.final.proof.evidence",
+      "visibleWords": 218,
+      "materialWords": 110,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "foerder",
+      "taskId": "water.final.proof.limit",
+      "visibleWords": 215,
+      "materialWords": 110,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "foerder",
+      "taskId": "water.final.weight",
+      "visibleWords": 228,
+      "materialWords": 110,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "foerder",
+      "taskId": "water.transfer",
+      "visibleWords": 210,
+      "materialWords": 100,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "esa",
+      "taskId": "water.base.withdrawal",
+      "visibleWords": 196,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "esa",
+      "taskId": "water.base.rest",
+      "visibleWords": 198,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "esa",
+      "taskId": "water.compare.repair",
+      "visibleWords": 218,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "esa",
+      "taskId": "water.compare.tech",
+      "visibleWords": 218,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "esa",
+      "taskId": "water.scope.same",
+      "visibleWords": 201,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "esa",
+      "taskId": "water.scope.consumption",
+      "visibleWords": 207,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "esa",
+      "taskId": "water.final.choice",
+      "visibleWords": 180,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "esa",
+      "taskId": "water.final.proof.evidence",
+      "visibleWords": 214,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "esa",
+      "taskId": "water.final.proof.limit",
+      "visibleWords": 211,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "esa",
+      "taskId": "water.final.weight",
+      "visibleWords": 224,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "esa",
+      "taskId": "water.transfer",
+      "visibleWords": 194,
+      "materialWords": 84,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "msa",
+      "taskId": "water.base",
+      "visibleWords": 196,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "msa",
+      "taskId": "water.compare",
+      "visibleWords": 206,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "msa",
+      "taskId": "water.scope",
+      "visibleWords": 209,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "msa",
+      "taskId": "water.final.choice",
+      "visibleWords": 178,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "msa",
+      "taskId": "water.final.proof",
+      "visibleWords": 238,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "msa",
+      "taskId": "water.final.weight",
+      "visibleWords": 218,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "msa",
+      "taskId": "water.transfer",
+      "visibleWords": 192,
+      "materialWords": 88,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "ahr",
+      "taskId": "water.base",
+      "visibleWords": 196,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "ahr",
+      "taskId": "water.compare",
+      "visibleWords": 206,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "ahr",
+      "taskId": "water.scope",
+      "visibleWords": 209,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "ahr",
+      "taskId": "water.final.choice",
+      "visibleWords": 178,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "ahr",
+      "taskId": "water.final.proof",
+      "visibleWords": 238,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "ahr",
+      "taskId": "water.final.weight",
+      "visibleWords": 218,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "ahr",
+      "taskId": "water.final.own",
+      "visibleWords": 218,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "ahr",
+      "taskId": "water.transfer",
+      "visibleWords": 192,
+      "materialWords": 88,
+      "overflow": false
+    },
+    {
+      "unit": "s5",
+      "profile": "ahr",
+      "taskId": "water.system",
+      "visibleWords": 238,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "foerder",
+      "taskId": "area.single",
+      "visibleWords": 197,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "foerder",
+      "taskId": "area.total",
+      "visibleWords": 211,
+      "materialWords": 108,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "foerder",
+      "taskId": "area.cause",
+      "visibleWords": 192,
+      "materialWords": 106,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "foerder",
+      "taskId": "area.final.choice",
+      "visibleWords": 184,
+      "materialWords": 106,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "foerder",
+      "taskId": "area.final.proof.evidence",
+      "visibleWords": 216,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "foerder",
+      "taskId": "area.final.proof.limit",
+      "visibleWords": 217,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "foerder",
+      "taskId": "area.final.weight",
+      "visibleWords": 227,
+      "materialWords": 107,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "foerder",
+      "taskId": "area.transfer",
+      "visibleWords": 268,
+      "materialWords": 147,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "esa",
+      "taskId": "area.single.single",
+      "visibleWords": 204,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "esa",
+      "taskId": "area.single.saving",
+      "visibleWords": 194,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "esa",
+      "taskId": "area.total.total",
+      "visibleWords": 197,
+      "materialWords": 88,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "esa",
+      "taskId": "area.total.rest",
+      "visibleWords": 208,
+      "materialWords": 102,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "esa",
+      "taskId": "area.cause",
+      "visibleWords": 185,
+      "materialWords": 100,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "esa",
+      "taskId": "area.final.choice",
+      "visibleWords": 177,
+      "materialWords": 100,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "esa",
+      "taskId": "area.final.proof.evidence",
+      "visibleWords": 209,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "esa",
+      "taskId": "area.final.proof.limit",
+      "visibleWords": 210,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "esa",
+      "taskId": "area.final.weight",
+      "visibleWords": 220,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "esa",
+      "taskId": "area.transfer.total",
+      "visibleWords": 238,
+      "materialWords": 116,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "esa",
+      "taskId": "area.transfer.less",
+      "visibleWords": 231,
+      "materialWords": 116,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "msa",
+      "taskId": "area.single",
+      "visibleWords": 202,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "msa",
+      "taskId": "area.total",
+      "visibleWords": 192,
+      "materialWords": 83,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "msa",
+      "taskId": "area.cause",
+      "visibleWords": 181,
+      "materialWords": 100,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "msa",
+      "taskId": "area.final.choice",
+      "visibleWords": 175,
+      "materialWords": 100,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "msa",
+      "taskId": "area.final.proof",
+      "visibleWords": 237,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "msa",
+      "taskId": "area.final.weight",
+      "visibleWords": 214,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "msa",
+      "taskId": "area.transfer",
+      "visibleWords": 249,
+      "materialWords": 120,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "ahr",
+      "taskId": "area.single",
+      "visibleWords": 202,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "ahr",
+      "taskId": "area.total",
+      "visibleWords": 192,
+      "materialWords": 83,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "ahr",
+      "taskId": "area.cause",
+      "visibleWords": 181,
+      "materialWords": 100,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "ahr",
+      "taskId": "area.final.choice",
+      "visibleWords": 175,
+      "materialWords": 100,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "ahr",
+      "taskId": "area.final.proof",
+      "visibleWords": 237,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "ahr",
+      "taskId": "area.final.weight",
+      "visibleWords": 214,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "ahr",
+      "taskId": "area.final.own",
+      "visibleWords": 213,
+      "materialWords": 101,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "ahr",
+      "taskId": "area.transfer",
+      "visibleWords": 249,
+      "materialWords": 120,
+      "overflow": false
+    },
+    {
+      "unit": "s6",
+      "profile": "ahr",
+      "taskId": "area.condition",
+      "visibleWords": 233,
+      "materialWords": 100,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "foerder",
+      "taskId": "orientation.country.GHA",
+      "visibleWords": 143,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "foerder",
+      "taskId": "orientation.city.GHA",
+      "visibleWords": 127,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "foerder",
+      "taskId": "orientation.country.KEN",
+      "visibleWords": 143,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "foerder",
+      "taskId": "orientation.city.KEN",
+      "visibleWords": 127,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "foerder",
+      "taskId": "orientation.country.MAR",
+      "visibleWords": 143,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "foerder",
+      "taskId": "orientation.city.MAR",
+      "visibleWords": 127,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "foerder",
+      "taskId": "orientation.scope",
+      "visibleWords": 129,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "esa",
+      "taskId": "orientation.country.GHA",
+      "visibleWords": 142,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "esa",
+      "taskId": "orientation.city.GHA",
+      "visibleWords": 126,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "esa",
+      "taskId": "orientation.country.KEN",
+      "visibleWords": 142,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "esa",
+      "taskId": "orientation.city.KEN",
+      "visibleWords": 126,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "esa",
+      "taskId": "orientation.country.MAR",
+      "visibleWords": 142,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "esa",
+      "taskId": "orientation.city.MAR",
+      "visibleWords": 126,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "esa",
+      "taskId": "orientation.equator.south",
+      "visibleWords": 126,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "esa",
+      "taskId": "orientation.equator.north",
+      "visibleWords": 127,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "esa",
+      "taskId": "orientation.scope",
+      "visibleWords": 128,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "msa",
+      "taskId": "orientation.country.GHA",
+      "visibleWords": 141,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "msa",
+      "taskId": "orientation.country.KEN",
+      "visibleWords": 141,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "msa",
+      "taskId": "orientation.country.MAR",
+      "visibleWords": 141,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "msa",
+      "taskId": "orientation.equator",
+      "visibleWords": 134,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "msa",
+      "taskId": "orientation.scope",
+      "visibleWords": 124,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "ahr",
+      "taskId": "orientation.country.GHA",
+      "visibleWords": 141,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "ahr",
+      "taskId": "orientation.country.KEN",
+      "visibleWords": 141,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "ahr",
+      "taskId": "orientation.country.MAR",
+      "visibleWords": 141,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "ahr",
+      "taskId": "orientation.equator",
+      "visibleWords": 134,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "ahr",
+      "taskId": "orientation.scope",
+      "visibleWords": 124,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "o",
+      "profile": "ahr",
+      "taskId": "orientation.describe",
+      "visibleWords": 166,
+      "materialWords": 51,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "foerder",
+      "taskId": "review.KEN.claim",
+      "visibleWords": 153,
+      "materialWords": 57,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "foerder",
+      "taskId": "review.KEN.scope",
+      "visibleWords": 158,
+      "materialWords": 57,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "foerder",
+      "taskId": "review.GHA.claim",
+      "visibleWords": 168,
+      "materialWords": 72,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "foerder",
+      "taskId": "review.GHA.scope",
+      "visibleWords": 168,
+      "materialWords": 72,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "foerder",
+      "taskId": "review.MAR.claim",
+      "visibleWords": 164,
+      "materialWords": 67,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "foerder",
+      "taskId": "review.MAR.scope",
+      "visibleWords": 166,
+      "materialWords": 67,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "foerder",
+      "taskId": "review.common.consequences",
+      "visibleWords": 212,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "foerder",
+      "taskId": "review.common.weigh",
+      "visibleWords": 218,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "foerder",
+      "taskId": "review.transfer",
+      "visibleWords": 210,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "foerder",
+      "taskId": "review.revision",
+      "visibleWords": 219,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "esa",
+      "taskId": "review.KEN.claim",
+      "visibleWords": 152,
+      "materialWords": 57,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "esa",
+      "taskId": "review.KEN.scope",
+      "visibleWords": 157,
+      "materialWords": 57,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "esa",
+      "taskId": "review.GHA.claim",
+      "visibleWords": 167,
+      "materialWords": 72,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "esa",
+      "taskId": "review.GHA.scope",
+      "visibleWords": 167,
+      "materialWords": 72,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "esa",
+      "taskId": "review.MAR.claim",
+      "visibleWords": 163,
+      "materialWords": 67,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "esa",
+      "taskId": "review.MAR.scope",
+      "visibleWords": 165,
+      "materialWords": 67,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "esa",
+      "taskId": "review.common.consequences",
+      "visibleWords": 211,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "esa",
+      "taskId": "review.common.weigh",
+      "visibleWords": 217,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "esa",
+      "taskId": "review.transfer",
+      "visibleWords": 209,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "esa",
+      "taskId": "review.revision",
+      "visibleWords": 218,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "msa",
+      "taskId": "review.KEN",
+      "visibleWords": 169,
+      "materialWords": 57,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "msa",
+      "taskId": "review.GHA",
+      "visibleWords": 180,
+      "materialWords": 72,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "msa",
+      "taskId": "review.MAR",
+      "visibleWords": 182,
+      "materialWords": 67,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "msa",
+      "taskId": "review.common",
+      "visibleWords": 229,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "msa",
+      "taskId": "review.transfer",
+      "visibleWords": 203,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "msa",
+      "taskId": "review.revision",
+      "visibleWords": 235,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "ahr",
+      "taskId": "review.KEN",
+      "visibleWords": 169,
+      "materialWords": 57,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "ahr",
+      "taskId": "review.GHA",
+      "visibleWords": 180,
+      "materialWords": 72,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "ahr",
+      "taskId": "review.MAR",
+      "visibleWords": 182,
+      "materialWords": 67,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "ahr",
+      "taskId": "review.common",
+      "visibleWords": 229,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "ahr",
+      "taskId": "review.transfer",
+      "visibleWords": 203,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "ahr",
+      "taskId": "review.revision",
+      "visibleWords": 235,
+      "materialWords": 124,
+      "overflow": false
+    },
+    {
+      "unit": "r",
+      "profile": "ahr",
+      "taskId": "review.cause",
+      "visibleWords": 238,
+      "materialWords": 124,
+      "overflow": false
+    }
+  ]
+}

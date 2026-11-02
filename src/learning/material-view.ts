@@ -21,7 +21,19 @@ export const escapeHtml = (text: string) =>
       ]!,
   );
 export function materialView(task: Task, profile: ProfileId, attempt: Attempt) {
-  if (task.simulation) return simulationMaterial(task, profile, attempt);
+  if (task.simulation) {
+    const material = simulationMaterial(task, profile, attempt);
+    if (task.simulation.kind !== 'review') return material;
+    return (
+      (/\bGE\b/.test(material)
+        ? '<p>GE heißt Geldeinheiten. Das Geld ist erfunden. Die Beträge sind keine echten Preise.</p>'
+        : '') +
+      (/\bWE\b/.test(material)
+        ? '<p>WE bedeutet Wassereinheiten. Es sind erfundene Mengen, keine echten Literangaben.</p>'
+        : '') +
+      material
+    );
+  }
   if (task.focus) return topicMaterial(task.focus, profile);
   if (task.material === 'm2') {
     const simple = profile === 'foerder';

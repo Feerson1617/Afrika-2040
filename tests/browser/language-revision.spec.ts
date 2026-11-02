@@ -266,3 +266,56 @@ test('Afrika curriculum editorial AHR save button, oral self report, self contro
     fullPage: true,
   });
 });
+
+for (const [unit, target, result] of [
+  ['s2', 'demand.now.capacity', '20'],
+  ['s4', 'share.paid.free', '120'],
+  ['s6', 'area.total.total', '65'],
+] as const)
+  test(`Afrika curriculum barriers ESA ${unit}: calculate without disclosed result, help, reload and retained exploration`, async ({
+    page,
+    browserName,
+  }) => {
+    await page.setViewportSize({ width: 1024, height: 768 });
+    await seed(page, fixture(unit, 'esa', target));
+    const material = page.locator('.inquiry-material');
+    await expect(material).not.toContainText(
+      new RegExp('\\b' + result + '\\b'),
+    );
+    expect(
+      await material
+        .locator('svg')
+        .evaluateAll((els) =>
+          els.map((e) => e.getAttribute('aria-label')).join(' '),
+        ),
+    ).not.toMatch(new RegExp('\\b' + result + '\\b'));
+    await page.screenshot({
+      path: evidencePath(`barrier-${unit}-${browserName}-inputs.png`),
+      fullPage: true,
+    });
+    await page.reload();
+    await expect(material).not.toContainText(
+      new RegExp('\\b' + result + '\\b'),
+    );
+    if (unit === 's6')
+      for (const id of ['same', 'extra'])
+        await page
+          .locator('[data-op="simulate"][data-value="' + id + '"]')
+          .click();
+    const field = active(await get(page))!.task.fields[0];
+    await page.locator('#learn-' + field.id).fill(result);
+    await page.locator('#learning-check').press('Enter');
+    await expect(page.locator('[data-learning-feedback]')).toHaveClass(
+      /correct/,
+    );
+    expect(active(await get(page))!.attempt!.exampleUsed).toBe(false);
+    await page.reload();
+    await expect(page.locator('#learn-' + field.id)).toHaveValue(result);
+    await page.locator('[data-op="rework"]').click();
+    await expect(material).not.toContainText(
+      new RegExp('\\b' + result + '\\b'),
+    );
+    for (let h = 0; h < 2; h++) await page.locator('#learning-help').click();
+    await expect(page.locator('.help-panel')).toContainText(result);
+    expect(active(await get(page))!.attempt!.exampleUsed).toBe(false);
+  });

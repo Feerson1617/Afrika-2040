@@ -111,7 +111,7 @@ function transferMaterial(
       const facts = inputRows
         .map(([label, value]) => `${label}: ${value} WE`)
         .join('. ');
-      initial = `<p>Erfundene Runde bei Agadir. WE bedeutet Wassereinheiten. Kein Zufluss. Der Tank ist kein Grundwasser.</p><figure><svg class="study-scene" viewBox="0 0 660 280" role="img" aria-label="Angaben für deine Rechnung. ${esc(facts)}. Wie viel Wasser danach bleibt, musst du noch berechnen."><rect x="35" y="50" width="150" height="160" fill="#8eb5c1" stroke="#253e34"/><text x="110" y="35" text-anchor="middle">Anfang: ${c.initial} WE</text>${inputRows
+      initial = `<p>Erfundene Runde bei Agadir. WE bedeutet Wassereinheiten. Es sind erfundene Mengen, keine echten Literangaben. Kein Zufluss. Der Tank ist kein Grundwasser.</p><figure><svg class="study-scene" viewBox="0 0 660 280" role="img" aria-label="Angaben für deine Rechnung. ${esc(facts)}. Wie viel Wasser danach bleibt, musst du noch berechnen."><rect x="35" y="50" width="150" height="160" fill="#8eb5c1" stroke="#253e34"/><text x="110" y="35" text-anchor="middle">Anfang: ${c.initial} WE</text>${inputRows
         .slice(1)
         .map(
           ([label, value], i) =>
@@ -137,7 +137,7 @@ function transferMaterial(
     )}<p>Nachfrage und Plätze sind Größen für eine Stunde. Der Fußweg beschreibt den Zugang. Wartezeit, Kosten und Fahrpreis fehlen.</p>`;
   } else if (id === 'water-70') {
     const c = comparison ? waterModel('repair') : transferCases[id];
-    body = `<p>Erfundene Runde bei Agadir. WE bedeutet Wassereinheiten. Kein Zufluss. Der Tank ist kein Grundwasser.</p><figure><svg class="study-scene" viewBox="0 0 660 280" role="img" aria-label="${esc(label)}: Tank am Anfang ${c.initial} WE, Entnahme ${c.withdrawal} WE, Rest ${c.remaining} WE.">${transferTank(c.initial, c.remaining)}<path d="M190 130H360" stroke="#356a76" stroke-width="9"/><text x="280" y="70" text-anchor="middle">Entnahme</text><text x="280" y="100" text-anchor="middle">${c.withdrawal} WE</text></svg><figcaption>Nur Tank und Entnahme. ${comparison ? 'Die frühere Reparatur wird verglichen.' : 'Für diese neue Runde sind keine Mengen am Feld angegeben.'}</figcaption></figure>${table(
+    body = `<p>Erfundene Runde bei Agadir. WE bedeutet Wassereinheiten. Es sind erfundene Mengen, keine echten Literangaben. Kein Zufluss. Der Tank ist kein Grundwasser.</p><figure><svg class="study-scene" viewBox="0 0 660 280" role="img" aria-label="${esc(label)}: Tank am Anfang ${c.initial} WE, Entnahme ${c.withdrawal} WE, Rest ${c.remaining} WE.">${transferTank(c.initial, c.remaining)}<path d="M190 130H360" stroke="#356a76" stroke-width="9"/><text x="280" y="70" text-anchor="middle">Entnahme</text><text x="280" y="100" text-anchor="middle">${c.withdrawal} WE</text></svg><figcaption>Nur Tank und Entnahme. ${comparison ? 'Die frühere Reparatur wird verglichen.' : 'Für diese neue Runde sind keine Mengen am Feld angegeben.'}</figcaption></figure>${table(
       ['Größe', 'WE'],
       [
         ['Tank am Anfang', c.initial],
@@ -177,6 +177,73 @@ export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
   const cfg = t.simulation!,
     simple = p === 'foerder';
   if (cfg.transfer) return transferMaterial(cfg.transfer, a, t, p);
+  if (
+    cfg.kind === 'demand' &&
+    (t.id === 'demand.before' || (simple && t.id === 'demand.now'))
+  ) {
+    const model = demandScenario(
+      'base',
+      t.id === 'demand.before' ? 'before' : 'now',
+    );
+    return `<h2>Reichen die Plätze?</h2><p>Ein erfundenes Busbeispiel in Nairobi. Die Angaben gelten für eine Stunde.</p>${table(
+      ['Angabe', 'Anzahl'],
+      [
+        ['Menschen, die fahren möchten', model.people],
+        ['Angebotene Plätze', model.capacity],
+      ],
+    )}<p>Vergleiche die Menschen und die Plätze.</p><details><summary>Mehr zum Beispiel ansehen</summary><p>Acht Menschen ziehen hinzu. Wir betrachten später auch den Fußweg der acht neuen Nachbarn. Die Fahrgäste hier sind nicht die gesamte Bevölkerung Nairobis.</p></details>`;
+  }
+  // A calculation needs inputs, not its answer in a second table or SVG label.
+  const reveal =
+    simple || a.help === 3 || (a.factual === 'correct' && canContinue(t, a));
+  if (
+    !reveal &&
+    t.id.startsWith('demand.now') &&
+    t.fields.some((f) => f.id === 'capacity')
+  )
+    return `<h2>Plätze in einer Stunde</h2><p>Dieses Busbeispiel in Nairobi ist erfunden. Ein Bus fährt zweimal pro Stunde. Jede Fahrt hat 10 Plätze.</p>${table(
+      ['Angabe', 'Wert'],
+      [
+        ['Fahrten in einer Stunde', 2],
+        ['Plätze bei jeder Fahrt', 10],
+        ['Menschen in dieser Stunde', 24],
+        ['Fußweg der acht neuen Nachbarn (Minuten)', demandScenario().walk],
+      ],
+    )}<p>Wie viele Plätze sind es zusammen? Das Zeichen × bedeutet mal: 2 × 10 = ___.</p>`;
+  if (
+    !reveal &&
+    t.id.startsWith('share.paid') &&
+    t.fields.some((f) => f.id === 'free')
+  )
+    return `<h2>Was bleibt nach dem Bezahlen?</h2><p>Eine erfundene Runde bei Kumasi. GE heißt Geldeinheiten. Wir rechnen mit erfundenem Geld. Die Beträge sind keine echten Preise.</p>${table(
+      ['Angabe', 'GE'],
+      [
+        ['Einnahmen', 300],
+        ['Bereits bezahlte Löhne', 100],
+        ['Bereits bezahlte andere Kosten', 80],
+      ],
+    )}<p>Ziehe die beiden bezahlten Beträge von den Einnahmen ab. 300 − 100 − 80 = ___.</p>`;
+  if (
+    !reveal &&
+    t.id.startsWith('area.total') &&
+    t.fields.some((f) => f.id === 'total')
+  )
+    return `<h2>Wasser für beide Felder</h2>${controls(
+      [
+        ['same', 'Gleiches Feld'],
+        ['extra', 'Mit Zusatzfeld'],
+      ],
+      a.simulationSelection ?? 'extra',
+    )}<p>Für deine Rechnung gilt der Plan mit Zusatzfeld. Untersuche beide Pläne mit den Tasten.</p><p>Eine erfundene Runde bei Agadir. WE bedeutet Wassereinheiten. Mit diesen erfundenen Mengen rechnen wir. Es sind keine echten Literangaben.</p>${table(
+      ['Feld', 'Entnahme (WE)'],
+      [
+        ['Erstes Feld', areaModel('extra').first],
+        ['Zusatzfeld', areaModel('extra').extra],
+        ['Frühere Entnahme: ein Feld', 60],
+        ['Tank am Anfang', 80],
+      ],
+    )}<p>Wie viel Wasser verlässt den Tank für beide Felder zusammen? Rechne erstes Feld plus Zusatzfeld.</p><details><summary>Grenzen des Modells ansehen</summary><p>Es fließt kein Wasser nach. Der Tank ist kein Grundwasser. Die Entnahme zeigt nicht den tatsächlichen Wasserverbrauch.</p></details>${p === 'esa' ? '<p>45 + 20 = ___</p>' : ''}`;
+
   if (cfg.kind === 'network') {
     const selected = a.simulationSelection ?? cfg.preset ?? 'amina-direct';
     const [rawWho, rawRoute] = selected.split('-');
@@ -255,7 +322,7 @@ export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
       selection === 'bus' || selection === 'path' ? selection : 'base',
       selection === 'before' ? 'before' : 'now',
     );
-    return `<h2>Nairobi · Plätze und Fußwege</h2><p>Dieses Beispiel ist erfunden. Es gilt für eine Stunde. Vorher wollen 16 Menschen fahren, nach Zuzug 24. Acht neue Nachbarn kommen dazu. Die Fußwegzeiten beziehen sich auf diese acht neuen Nachbarn. Ein Bus hat 10 Plätze. Bisher: zwei Fahrten pro Stunde. Du kannst die zusätzliche Fahrt und den neuen Weg einzeln testen.</p>${controls(options, selection)}<p aria-live="polite">${esc(options.find(([id]) => id === selection)?.[1] ?? 'Jetzt')}: ${model.people} Menschen · ${model.capacity} Plätze${selection === 'before' ? '' : ` · ${model.walk} Minuten Fußweg für die neuen Nachbarn`}.</p><figure aria-label="Menschen und Plätze"><div>${'● '.repeat(model.people)}</div><figcaption>${model.people} Menschen; ${model.capacity} Plätze in einer Stunde. Die Punkte sind Menschen, keine Einwohnerzahl Nairobis.</figcaption></figure>${table(
+    return `<h2>Nairobi · Plätze und Fußwege</h2><p>Erfundenes Beispiel für eine Stunde. Nach dem Zuzug wollen 24 statt 16 Menschen fahren. Die Gehzeit gilt für die acht neuen Nachbarn. Ein Bus hat 10 Plätze. Bisher gibt es zwei Fahrten pro Stunde.</p>${controls(options, selection)}<p aria-live="polite">${esc(options.find(([id]) => id === selection)?.[1] ?? 'Jetzt')}: ${model.people} Menschen · ${model.capacity} Plätze${selection === 'before' ? '' : ` · ${model.walk} Minuten Fußweg für die neuen Nachbarn`}.</p><details><summary>Menschenpunkte ansehen</summary><figure aria-label="Menschen und Plätze"><div>${'● '.repeat(model.people)}</div><figcaption>${model.people} Menschen; ${model.capacity} Plätze in einer Stunde. Die Punkte sind Menschen, keine Einwohnerzahl Nairobis.</figcaption></figure></details>${table(
       ['Größe', 'Wert'],
       [
         ['Fahrten pro Stunde', model.trips],
@@ -265,7 +332,7 @@ export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
           ? []
           : [['Fußweg der neuen Nachbarn (Minuten)', model.walk]]),
       ],
-    )}<p>Eine zusätzliche Fahrt und ein neuer Fußweg lösen verschiedene Probleme. Die genaue Wartezeit, Kosten und der Fahrpreis fehlen.</p>`;
+    )}<details><summary>Was das Modell nicht zeigt</summary><p>Die genaue Wartezeit, Kosten und der Fahrpreis fehlen. Menschen und Zeiten sind erfunden.</p></details>`;
   }
   if (cfg.kind === 'cocoa') {
     const selection = a.simulationSelection ?? cfg.preset ?? 'base',
@@ -283,13 +350,13 @@ export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
     if (t.id.startsWith('cocoa.chain'))
       return (
         introduction +
-        '<p>Aus Kakaobohnen entstehen andere Produkte. Das heißt Verarbeitung. Ordne die Karten.</p><figure><ul class="learning-material-cards" aria-label="Ungeordnete Materialkarten"><li>Pressen: Butter und Presskuchen</li><li>Getrocknete Bohnen</li><li>Kakaomasse</li><li>Rösten und mahlen</li></ul><figcaption>Die Karten stehen noch nicht in der richtigen Reihenfolge.</figcaption></figure><details id="learning-cocoa-money"><summary>Geld und Angaben zum Modell ansehen</summary><p>GE sind erfundene Geldeinheiten, keine echten Preise.</p>' +
+        '<p>Aus Kakaobohnen entstehen andere Produkte. Das heißt Verarbeitung. Ordne die Karten.</p><figure><ul class="learning-material-cards" aria-label="Ungeordnete Materialkarten"><li>Pressen: Butter und Presskuchen</li><li>Getrocknete Bohnen</li><li>Kakaomasse</li><li>Rösten und mahlen</li></ul><figcaption>Die Karten stehen noch nicht in der richtigen Reihenfolge.</figcaption></figure><details id="learning-cocoa-money"><summary>Geld und Angaben zum Modell ansehen</summary><p>GE heißt Geldeinheiten. Wir rechnen hier mit erfundenem Geld. Die Beträge sind keine echten Preise.</p>' +
         economicView +
         '</details>'
       );
     return (
       introduction +
-      '<p>GE sind erfundene Geldeinheiten, keine echten Preise.</p>' +
+      '<p>GE heißt Geldeinheiten. Wir rechnen hier mit erfundenem Geld. Die Beträge sind keine echten Preise.</p>' +
       economicView
     );
   }
@@ -310,7 +377,7 @@ export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
       training:
         'Mitglieder können dazulernen. Zusätzliche Aufträge sind nicht sicher.',
     };
-    return `<h2>120 GE gemeinsam verteilen · Ghana</h2><p>Eine neue erfundene Runde bei Kumasi. 300 GE Einnahmen. 100 GE Löhne und 80 GE andere Kosten sind bereits bezahlt. Nun sind 120 GE frei. Keine Verteilung ist automatisch die beste.</p>${
+    return `<h2>Geld gemeinsam verteilen · Ghana</h2><p>GE heißt Geldeinheiten. Wir rechnen hier mit erfundenem Geld. Die Beträge sind keine echten Preise.</p><p>Eine neue erfundene Runde bei Kumasi. 300 GE Einnahmen. 100 GE Löhne und 80 GE andere Kosten sind bereits bezahlt. Nun sind 120 GE frei. Keine Verteilung ist automatisch die beste.</p>${
       t.budget
         ? `<div role="group" aria-label="120 GE verteilen">${shareKeys.map((key) => `<section><h3>${names[key]}: ${d.allocations[key] ?? 0} GE</h3><button type="button" id="allocate-${key}-minus" data-action="learning" data-op="allocate" data-field="${key}" data-value="-20" ${!d.allocations[key] ? 'disabled' : ''}>${names[key]} −20 GE</button><button type="button" id="allocate-${key}-plus" data-action="learning" data-op="allocate" data-field="${key}" data-value="20" ${m.left < 20 ? 'disabled' : ''}>${names[key]} +20 GE</button></section>`).join('')}</div><p role="status">Noch zu verteilen: ${m.left} GE.</p>${t.differentBudget ? '<p>Ändere mindestens einen Betrag gegenüber deinem ersten Plan.</p>' : ''}`
         : controls(
@@ -338,7 +405,7 @@ export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
     const diagram = simple
       ? shape
       : shape.replace(`Rest ${m.remaining} WE`, 'Rest selbst bestimmen');
-    return `<h2>Ein Betrieb bei Agadir · Marokko</h2><p>Diese erfundene Runde beginnt neu. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.</p>${controls(options, selection)}<p><strong>Aktuelle Modellansicht: ${esc(options.find(([id]) => id === selection)?.[1] ?? options[0][1])}.</strong> Prüfe, auf welche Maßnahme sich die Frage bezieht.</p><figure><svg class="study-scene" viewBox="0 0 660 280" role="img" aria-label="Tank, Entnahme und Feld getrennt. ${m.withdrawal} WE werden entnommen.">${diagram}<path d="M190 130H370" stroke="#356a76" stroke-width="9"/><text x="220" y="70">Entnahme</text><text x="235" y="100">${m.withdrawal} WE</text><rect x="380" y="80" width="150" height="85" fill="#d4e0bd" stroke="#234e42"/><text x="390" y="112">${isWater ? 'Am Feld' : 'Erstes Feld'}</text><text x="410" y="144">${isWater ? '40' : (m as ReturnType<typeof areaModel>).first} WE</text>${!isWater && selection === 'extra' ? `<rect x="545" y="105" width="85" height="60" fill="#d4e0bd" stroke="#234e42"/><text x="587" y="143" text-anchor="middle">${(m as ReturnType<typeof areaModel>).extra} WE</text><text x="587" y="192" text-anchor="middle">Zusatzfeld</text>` : ''}</svg><figcaption>${isWater ? 'Entnahme aus dem Tank ist nicht gleich Ankunft am Feld. Der Verbleib des übrigen Wassers wird nicht berechnet.' : 'Feldsymbole sind schematisch, ohne Hektarmaßstab. Die Zusatzfläche ist kleiner.'}</figcaption></figure>${
+    return `<h2>Ein Betrieb bei Agadir · Marokko</h2><p>Diese erfundene Runde beginnt neu. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE bedeutet Wassereinheiten. Mit diesen erfundenen Mengen rechnen wir. Es sind keine echten Literangaben. Der Tank ist kein Grundwasser.</p>${controls(options, selection)}<p><strong>Aktuelle Modellansicht: ${esc(options.find(([id]) => id === selection)?.[1] ?? options[0][1])}.</strong> Prüfe, auf welche Maßnahme sich die Frage bezieht.</p><figure><svg class="study-scene" viewBox="0 0 660 280" role="img" aria-label="Tank, Entnahme und Feld getrennt. ${m.withdrawal} WE werden entnommen.">${diagram}<path d="M190 130H370" stroke="#356a76" stroke-width="9"/><text x="220" y="70">Entnahme</text><text x="235" y="100">${m.withdrawal} WE</text><rect x="380" y="80" width="150" height="85" fill="#d4e0bd" stroke="#234e42"/><text x="390" y="112">${isWater ? 'Am Feld' : 'Erstes Feld'}</text><text x="410" y="144">${isWater ? '40' : (m as ReturnType<typeof areaModel>).first} WE</text>${!isWater && selection === 'extra' ? `<rect x="545" y="105" width="85" height="60" fill="#d4e0bd" stroke="#234e42"/><text x="587" y="143" text-anchor="middle">${(m as ReturnType<typeof areaModel>).extra} WE</text><text x="587" y="192" text-anchor="middle">Zusatzfeld</text>` : ''}</svg><figcaption>${isWater ? 'Entnahme aus dem Tank ist nicht gleich Ankunft am Feld. Der Verbleib des übrigen Wassers wird nicht berechnet.' : 'Feldsymbole sind schematisch, ohne Hektarmaßstab. Die Zusatzfläche ist kleiner.'}</figcaption></figure>${
       isWater
         ? table(
             ['Messstelle', 'WE'],
