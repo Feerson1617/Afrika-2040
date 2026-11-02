@@ -1,0 +1,59 @@
+
+> afrika-2040@0.1.0 test:e2e
+> playwright test
+
+[WebServer] (node:4791) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:4804) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:4829) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 29 tests using 2 workers
+
+(node:4841) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:4842) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 tests/browser/game.spec.ts:110:1 › partial and incorrect feedback, two-attempt explanation, three hints and transfer (2.4s)
+  ✓   1 tests/browser/game.spec.ts:27:1 › complete mouse flow, route changes, all times, both valid recommendations and restart (2.6s)
+  ✓   3 tests/browser/game.spec.ts:163:1 › free text is stored locally, never keyword-graded, escaped and editable after reload (2.0s)
+  ✓   4 tests/browser/game.spec.ts:202:1 › open decision feedback recognizes a partial argument without rejecting the route (1.7s)
+  ✓   6 tests/browser/game.spec.ts:257:1 › keyboard can operate start, SVG paths, radio groups, checking and word help (1.2s)
+  ✓   5 tests/browser/game.spec.ts:226:1 › rapid clicks cannot skip tasks and restart requires a deliberate confirmation (1.3s)
+  ✓   8 tests/browser/game.spec.ts:317:1 › production assets work under the GitHub Pages repository prefix (739ms)
+  ✓   7 tests/browser/game.spec.ts:293:1 › blocked session storage does not prevent the full workflow (1.9s)
+  ✓   9 tests/browser/game.spec.ts:335:1 › axe finds no WCAG A/AA issues in start, task, expanded help, decision and ending (5.1s)
+  ✓  10 tests/browser/game.spec.ts:377:1 › all closed feedback colors and the neutral decision remain accessible (5.1s)
+  ✓  11 tests/browser/game.spec.ts:417:3 › touch layout and complete supported play at desktop (2.0s)
+  ✓  12 tests/browser/game.spec.ts:417:3 › touch layout and complete supported play at ipad-landscape (1.9s)
+  ✓  13 tests/browser/game.spec.ts:417:3 › touch layout and complete supported play at ipad-portrait (2.0s)
+  ✓  14 tests/browser/game.spec.ts:417:3 › touch layout and complete supported play at phone (1.9s)
+  ✓  15 tests/browser/review-regressions.spec.ts:71:1 › R1: direct visible times survive back, rework, reload and a legacy saved north state (2.3s)
+  ✓  16 tests/browser/review-regressions.spec.ts:108:3 › R2: direct wrong evidence gets neutral support, deliberate adoption and a labeled learning product (3.5s)
+  ✓  17 tests/browser/review-regressions.spec.ts:108:3 › R2: north wrong evidence gets neutral support, deliberate adoption and a labeled learning product (3.3s)
+  ✓  18 tests/browser/review-regressions.spec.ts:178:1 › R2: all voluntary hints and a changed proposal offer the matching example without counting failures (1.9s)
+  ✓  20 tests/browser/review-regressions.spec.ts:253:3 › R3: incomplete Zum Platz gets accurate yellow feedback without consuming attempts (830ms)
+  ✓  19 tests/browser/review-regressions.spec.ts:212:1 › R2: unclear free text is never counted as a failed evidence check or silently confirmed (2.0s)
+  ✓  21 tests/browser/review-regressions.spec.ts:253:3 › R3: incomplete Platz → Zentrum gets accurate yellow feedback without consuming attempts (961ms)
+  ✓  22 tests/browser/review-regressions.spec.ts:253:3 › R3: incomplete Nach Nord gets accurate yellow feedback without consuming attempts (936ms)
+  ✓  23 tests/browser/review-regressions.spec.ts:253:3 › R3: incomplete Nord → Zentrum gets accurate yellow feedback without consuming attempts (1.0s)
+{"readability":{"viewport":"desktop","route":"direct","minimumCssPixels":16,"labelsFit":true}}
+{"readability":{"viewport":"desktop","route":"north","minimumCssPixels":16,"labelsFit":true}}
+  ✓  24 tests/browser/review-regressions.spec.ts:284:5 › complete direct recommendation on desktop, with measured map readability (2.2s)
+  ✓  25 tests/browser/review-regressions.spec.ts:284:5 › complete north recommendation on desktop, with measured map readability (2.3s)
+{"readability":{"viewport":"ipad-landscape","route":"direct","minimumCssPixels":14.47,"labelsFit":true}}
+{"readability":{"viewport":"ipad-landscape","route":"north","minimumCssPixels":14.47,"labelsFit":true}}
+  ✓  26 tests/browser/review-regressions.spec.ts:284:5 › complete direct recommendation on ipad-landscape, with measured map readability (2.5s)
+  ✓  27 tests/browser/review-regressions.spec.ts:284:5 › complete north recommendation on ipad-landscape, with measured map readability (2.6s)
+{"readability":{"viewport":"ipad-portrait","route":"direct","minimumCssPixels":17.82,"labelsFit":true}}
+{"readability":{"viewport":"ipad-portrait","route":"north","minimumCssPixels":17.82,"labelsFit":true}}
+  ✓  28 tests/browser/review-regressions.spec.ts:284:5 › complete direct recommendation on ipad-portrait, with measured map readability (2.3s)
+  ✓  29 tests/browser/review-regressions.spec.ts:284:5 › complete north recommendation on ipad-portrait, with measured map readability (2.3s)
+
+  29 passed (34.1s)
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

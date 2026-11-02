@@ -1,0 +1,56 @@
+[
+  {
+    "device": "desktop",
+    "route": "direct",
+    "minimumCssPixels": 15.522388059701493,
+    "labelsFit": true
+  },
+  {
+    "device": "desktop",
+    "route": "north",
+    "minimumCssPixels": 15.522388059701493,
+    "labelsFit": true
+  },
+  {
+    "device": "desktop",
+    "route": "south",
+    "minimumCssPixels": 15.522388059701493,
+    "labelsFit": true
+  },
+  {
+    "device": "ipad-landscape",
+    "route": "direct",
+    "minimumCssPixels": 14.46875,
+    "labelsFit": true
+  },
+  {
+    "device": "ipad-landscape",
+    "route": "north",
+    "minimumCssPixels": 14.46875,
+    "labelsFit": true
+  },
+  {
+    "device": "ipad-landscape",
+    "route": "south",
+    "minimumCssPixels": 14.46875,
+    "labelsFit": true
+  },
+  {
+    "device": "ipad-portrait",
+    "route": "direct",
+    "minimumCssPixels": 15.522388059701493,
+    "labelsFit": true
+  },
+  {
+    "device": "ipad-portrait",
+    "route": "north",
+    "minimumCssPixels": 15.522388059701493,
+    "labelsFit": true
+  },
+  {
+    "device": "ipad-portrait",
+    "route": "south",
+    "minimumCssPixels": 15.522388059701493,
+    "labelsFit": true
+  }
+]

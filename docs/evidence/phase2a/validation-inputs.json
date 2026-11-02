@@ -1,0 +1,21 @@
+{
+  "built_at_utc": "2026-10-23T09:44:56.736560+00:00",
+  "inputs": {
+    "index.html": "049015c4c2ea9793547f66d4be5a14a99255d15dac51e2a320955d5596019cb4",
+    "package-lock.json": "fbcb1ed6afb5dc250da1d683d642702af36b068d9a8fbb1f01f9409728570be8",
+    "package.json": "ae0bf6c18602fa5f270552de3c47095109610fe52bf216bcb32f384c1bd2c948",
+    "src/content.ts": "9f8e066aa483e8c836961cd8274ce89717b03719027f878512dc2d9a5f3a4a52",
+    "src/feedback.ts": "5a14fd116a7383037703868d027f0f54a6bc4df747220318124bedef84190635",
+    "src/main.ts": "1a5394931c51fda04d7b64f8dc28940341c812e2f0ea63b64ad97deb5547c4f7",
+    "src/map.ts": "c5f692198aa520cfc6c6ac6326a9806c2915916de0875c6f3895ec4d6b3d19bd",
+    "src/model.ts": "95b221782e9311dab3e69707dba2ccdbfb5ef26b011efe78a8f0648be55d996e",
+    "src/state.ts": "57bee7051065e472e331ce59a504e2e8c3cbbeeb88706f0e70e6035149520833",
+    "src/storage.ts": "44031c3e75ede07b26d708e46dad88e9303cbcd2eb6711fa6715013f7d76cbbe",
+    "src/style.css": "5a657fcc734a02fff23e0b3c2af4c6a02a1b5e478a22b1cd938439873730a951",
+    "src/vite-env.d.ts": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5",
+    "vite.config.ts": "bb36496b3441d0fa953144a7b5362734fad945c5480a6c4003b30c4e69225a01"
+  },
+  "node": "v24.19.0",
+  "npm": "11.9.0",
+  "chromium": "Chromium 154.0.8037.57 built on Debian GNU/Linux 13 (trixie)"
+}

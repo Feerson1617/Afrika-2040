@@ -1,0 +1,44 @@
+
+> afrika-2040@0.1.0 test
+> node --test tests/*.test.ts
+
+✔ all four journeys include the right walk and boarding point (1.701919ms)
+✔ route change benefits Amina by 12 minutes and costs David 6 (4.278683ms)
+✔ missing choices are prompts, not failed attempts (0.281904ms)
+✔ step 1 distinguishes all combinations and both partial answers (0.151778ms)
+✔ benefit and disadvantage use distinct criteria (0.122795ms)
+✔ second failed attempt explains and permits continuation in every closed task (0.440012ms)
+✔ both routes are legitimate; only relevant evidence completes a structured answer (5.18696ms)
+✔ partial reasoning acknowledges what fits and requests the missing perspective (0.158728ms)
+✔ unexpected phrasing and even contradictory free text are never keyword-graded (0.394403ms)
+✔ no false saved claim when storage is blocked (0.238779ms)
+✔ R1: back and rework restore the direct starting route without losing other answers (3.100603ms)
+✔ R1: legacy saved north state in task 1 is normalized; renderer is safe independently (0.793273ms)
+✔ R2: direct gets concrete support after two wrong evidence checks and deliberate adoption (0.540393ms)
+✔ R2: north gets concrete support after two wrong evidence checks and deliberate adoption (0.228143ms)
+✔ R2: voluntary help 3 offers adoption without failures, route change and rework stay safe (0.329205ms)
+✔ R2: unclear free text and correct-but-incomplete evidence never consume failures (0.397978ms)
+✔ R3: either correct incomplete part is explicitly recognized without a failed attempt (0.323687ms)
+✔ R3: incorrect incomplete choices are not confirmed or counted as failures (0.183646ms)
+✔ navigation guards cannot skip an unprocessed task, even under repeated clicks (2.793831ms)
+✔ two failures unlock explanation, not endless rated guesses (0.271398ms)
+✔ hints are voluntary, monotonic, and do not consume attempts (0.289816ms)
+✔ back preserves work and explicit rework resets only the current task (0.188724ms)
+✔ transfer gives a second-attempt explanation and keeps the model unchanged (0.158318ms)
+✔ changing evidence or text invalidates an already checked recommendation (0.319991ms)
+✔ restart deletes all answers, hints and progress (0.662045ms)
+✔ session round trip and corrupted data are handled (0.577919ms)
+✔ blocked session storage never prevents play (0.77193ms)
+ℹ tests 27
+ℹ suites 0
+ℹ pass 27
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 156.882253
+npm notice
+npm notice New major version of npm available! 11.9.0 -> 12.2.1
+npm notice Changelog: https://github.com/npm/cli/releases/tag/v12.2.1
+npm notice To update run: npm install -g npm@12.2.1
+npm notice

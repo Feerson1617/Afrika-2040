@@ -1,0 +1,1136 @@
+[
+  {
+    "file": "Fachanforderungen Geographie Sekundarstufe (2015).pdf",
+    "sha256": "68a06c168ac13ac3f4915cb2c77293927b821d93bc91fbceb9896893b696f6fb",
+    "pages": 60,
+    "page_audit": [
+      {
+        "page": 1,
+        "chars": 200,
+        "images": 0,
+        "drawings": 27,
+        "render_ok": true
+      },
+      {
+        "page": 2,
+        "chars": 999,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 3,
+        "chars": 92,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 4,
+        "chars": 3467,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 5,
+        "chars": 2708,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 6,
+        "chars": 3813,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 7,
+        "chars": 2099,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 8,
+        "chars": 4028,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 9,
+        "chars": 4198,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 10,
+        "chars": 1807,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 11,
+        "chars": 4497,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 12,
+        "chars": 3161,
+        "images": 1,
+        "drawings": 4,
+        "render_ok": true
+      },
+      {
+        "page": 13,
+        "chars": 2405,
+        "images": 0,
+        "drawings": 100,
+        "render_ok": true
+      },
+      {
+        "page": 14,
+        "chars": 2745,
+        "images": 0,
+        "drawings": 5,
+        "render_ok": true
+      },
+      {
+        "page": 15,
+        "chars": 3745,
+        "images": 0,
+        "drawings": 2,
+        "render_ok": true
+      },
+      {
+        "page": 16,
+        "chars": 1886,
+        "images": 0,
+        "drawings": 44,
+        "render_ok": true
+      },
+      {
+        "page": 17,
+        "chars": 4220,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 18,
+        "chars": 3488,
+        "images": 0,
+        "drawings": 72,
+        "render_ok": true
+      },
+      {
+        "page": 19,
+        "chars": 3713,
+        "images": 0,
+        "drawings": 115,
+        "render_ok": true
+      },
+      {
+        "page": 20,
+        "chars": 2861,
+        "images": 0,
+        "drawings": 119,
+        "render_ok": true
+      },
+      {
+        "page": 21,
+        "chars": 2488,
+        "images": 0,
+        "drawings": 86,
+        "render_ok": true
+      },
+      {
+        "page": 22,
+        "chars": 3118,
+        "images": 0,
+        "drawings": 107,
+        "render_ok": true
+      },
+      {
+        "page": 23,
+        "chars": 3267,
+        "images": 0,
+        "drawings": 114,
+        "render_ok": true
+      },
+      {
+        "page": 24,
+        "chars": 1556,
+        "images": 0,
+        "drawings": 23,
+        "render_ok": true
+      },
+      {
+        "page": 25,
+        "chars": 2206,
+        "images": 0,
+        "drawings": 201,
+        "render_ok": true
+      },
+      {
+        "page": 26,
+        "chars": 1783,
+        "images": 0,
+        "drawings": 184,
+        "render_ok": true
+      },
+      {
+        "page": 27,
+        "chars": 1286,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 28,
+        "chars": 2247,
+        "images": 0,
+        "drawings": 14,
+        "render_ok": true
+      },
+      {
+        "page": 29,
+        "chars": 2856,
+        "images": 0,
+        "drawings": 34,
+        "render_ok": true
+      },
+      {
+        "page": 30,
+        "chars": 1769,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 31,
+        "chars": 1281,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 32,
+        "chars": 2856,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 33,
+        "chars": 2122,
+        "images": 0,
+        "drawings": 13,
+        "render_ok": true
+      },
+      {
+        "page": 34,
+        "chars": 1938,
+        "images": 0,
+        "drawings": 5,
+        "render_ok": true
+      },
+      {
+        "page": 35,
+        "chars": 2454,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 36,
+        "chars": 2667,
+        "images": 0,
+        "drawings": 83,
+        "render_ok": true
+      },
+      {
+        "page": 37,
+        "chars": 2645,
+        "images": 0,
+        "drawings": 130,
+        "render_ok": true
+      },
+      {
+        "page": 38,
+        "chars": 2543,
+        "images": 0,
+        "drawings": 125,
+        "render_ok": true
+      },
+      {
+        "page": 39,
+        "chars": 2572,
+        "images": 0,
+        "drawings": 132,
+        "render_ok": true
+      },
+      {
+        "page": 40,
+        "chars": 2578,
+        "images": 0,
+        "drawings": 106,
+        "render_ok": true
+      },
+      {
+        "page": 41,
+        "chars": 2633,
+        "images": 0,
+        "drawings": 110,
+        "render_ok": true
+      },
+      {
+        "page": 42,
+        "chars": 2586,
+        "images": 0,
+        "drawings": 133,
+        "render_ok": true
+      },
+      {
+        "page": 43,
+        "chars": 2596,
+        "images": 0,
+        "drawings": 118,
+        "render_ok": true
+      },
+      {
+        "page": 44,
+        "chars": 2599,
+        "images": 0,
+        "drawings": 113,
+        "render_ok": true
+      },
+      {
+        "page": 45,
+        "chars": 1143,
+        "images": 0,
+        "drawings": 4,
+        "render_ok": true
+      },
+      {
+        "page": 46,
+        "chars": 1965,
+        "images": 0,
+        "drawings": 93,
+        "render_ok": true
+      },
+      {
+        "page": 47,
+        "chars": 2190,
+        "images": 0,
+        "drawings": 48,
+        "render_ok": true
+      },
+      {
+        "page": 48,
+        "chars": 2249,
+        "images": 0,
+        "drawings": 22,
+        "render_ok": true
+      },
+      {
+        "page": 49,
+        "chars": 1642,
+        "images": 0,
+        "drawings": 28,
+        "render_ok": true
+      },
+      {
+        "page": 50,
+        "chars": 2393,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 51,
+        "chars": 1117,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 52,
+        "chars": 4167,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 53,
+        "chars": 4125,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 54,
+        "chars": 3478,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 55,
+        "chars": 3418,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 56,
+        "chars": 2759,
+        "images": 0,
+        "drawings": 81,
+        "render_ok": true
+      },
+      {
+        "page": 57,
+        "chars": 1217,
+        "images": 0,
+        "drawings": 43,
+        "render_ok": true
+      },
+      {
+        "page": 58,
+        "chars": 31,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 59,
+        "chars": 0,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 60,
+        "chars": 0,
+        "images": 0,
+        "drawings": 2,
+        "render_ok": true
+      }
+    ]
+  },
+  {
+    "file": "Leitfaden_zu_den_Fachanforderungen_Geographie-2.pdf",
+    "sha256": "eaf6aece327198fa2c1d1fb6c7b615b3f0881fa6b1e55f298ff044f8da4fe326",
+    "pages": 92,
+    "page_audit": [
+      {
+        "page": 1,
+        "chars": 206,
+        "images": 0,
+        "drawings": 29,
+        "render_ok": true
+      },
+      {
+        "page": 2,
+        "chars": 998,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 3,
+        "chars": 79,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 4,
+        "chars": 3778,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 5,
+        "chars": 3002,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 6,
+        "chars": 3664,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 7,
+        "chars": 47,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 8,
+        "chars": 3588,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 9,
+        "chars": 2795,
+        "images": 0,
+        "drawings": 20,
+        "render_ok": true
+      },
+      {
+        "page": 10,
+        "chars": 1440,
+        "images": 2,
+        "drawings": 64,
+        "render_ok": true
+      },
+      {
+        "page": 11,
+        "chars": 2675,
+        "images": 1,
+        "drawings": 32,
+        "render_ok": true
+      },
+      {
+        "page": 12,
+        "chars": 1078,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 13,
+        "chars": 2873,
+        "images": 0,
+        "drawings": 69,
+        "render_ok": true
+      },
+      {
+        "page": 14,
+        "chars": 1601,
+        "images": 0,
+        "drawings": 26,
+        "render_ok": true
+      },
+      {
+        "page": 15,
+        "chars": 582,
+        "images": 0,
+        "drawings": 36,
+        "render_ok": true
+      },
+      {
+        "page": 16,
+        "chars": 1562,
+        "images": 0,
+        "drawings": 39,
+        "render_ok": true
+      },
+      {
+        "page": 17,
+        "chars": 906,
+        "images": 0,
+        "drawings": 37,
+        "render_ok": true
+      },
+      {
+        "page": 18,
+        "chars": 3076,
+        "images": 0,
+        "drawings": 37,
+        "render_ok": true
+      },
+      {
+        "page": 19,
+        "chars": 2527,
+        "images": 0,
+        "drawings": 86,
+        "render_ok": true
+      },
+      {
+        "page": 20,
+        "chars": 3357,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 21,
+        "chars": 1803,
+        "images": 0,
+        "drawings": 166,
+        "render_ok": true
+      },
+      {
+        "page": 22,
+        "chars": 1463,
+        "images": 1,
+        "drawings": 1,
+        "render_ok": true
+      },
+      {
+        "page": 23,
+        "chars": 2814,
+        "images": 0,
+        "drawings": 1,
+        "render_ok": true
+      },
+      {
+        "page": 24,
+        "chars": 2360,
+        "images": 1,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 25,
+        "chars": 1153,
+        "images": 1,
+        "drawings": 9,
+        "render_ok": true
+      },
+      {
+        "page": 26,
+        "chars": 1661,
+        "images": 0,
+        "drawings": 35,
+        "render_ok": true
+      },
+      {
+        "page": 27,
+        "chars": 1225,
+        "images": 0,
+        "drawings": 49,
+        "render_ok": true
+      },
+      {
+        "page": 28,
+        "chars": 2728,
+        "images": 0,
+        "drawings": 26,
+        "render_ok": true
+      },
+      {
+        "page": 29,
+        "chars": 2580,
+        "images": 0,
+        "drawings": 48,
+        "render_ok": true
+      },
+      {
+        "page": 30,
+        "chars": 3336,
+        "images": 0,
+        "drawings": 20,
+        "render_ok": true
+      },
+      {
+        "page": 31,
+        "chars": 1974,
+        "images": 0,
+        "drawings": 29,
+        "render_ok": true
+      },
+      {
+        "page": 32,
+        "chars": 1907,
+        "images": 0,
+        "drawings": 23,
+        "render_ok": true
+      },
+      {
+        "page": 33,
+        "chars": 1349,
+        "images": 0,
+        "drawings": 34,
+        "render_ok": true
+      },
+      {
+        "page": 34,
+        "chars": 1628,
+        "images": 0,
+        "drawings": 21,
+        "render_ok": true
+      },
+      {
+        "page": 35,
+        "chars": 926,
+        "images": 0,
+        "drawings": 29,
+        "render_ok": true
+      },
+      {
+        "page": 36,
+        "chars": 1970,
+        "images": 0,
+        "drawings": 23,
+        "render_ok": true
+      },
+      {
+        "page": 37,
+        "chars": 1365,
+        "images": 0,
+        "drawings": 34,
+        "render_ok": true
+      },
+      {
+        "page": 38,
+        "chars": 2386,
+        "images": 0,
+        "drawings": 24,
+        "render_ok": true
+      },
+      {
+        "page": 39,
+        "chars": 1070,
+        "images": 0,
+        "drawings": 29,
+        "render_ok": true
+      },
+      {
+        "page": 40,
+        "chars": 1986,
+        "images": 0,
+        "drawings": 27,
+        "render_ok": true
+      },
+      {
+        "page": 41,
+        "chars": 1167,
+        "images": 0,
+        "drawings": 34,
+        "render_ok": true
+      },
+      {
+        "page": 42,
+        "chars": 2356,
+        "images": 0,
+        "drawings": 28,
+        "render_ok": true
+      },
+      {
+        "page": 43,
+        "chars": 1225,
+        "images": 0,
+        "drawings": 29,
+        "render_ok": true
+      },
+      {
+        "page": 44,
+        "chars": 2649,
+        "images": 0,
+        "drawings": 28,
+        "render_ok": true
+      },
+      {
+        "page": 45,
+        "chars": 1687,
+        "images": 0,
+        "drawings": 34,
+        "render_ok": true
+      },
+      {
+        "page": 46,
+        "chars": 3072,
+        "images": 0,
+        "drawings": 29,
+        "render_ok": true
+      },
+      {
+        "page": 47,
+        "chars": 1807,
+        "images": 0,
+        "drawings": 39,
+        "render_ok": true
+      },
+      {
+        "page": 48,
+        "chars": 2224,
+        "images": 0,
+        "drawings": 28,
+        "render_ok": true
+      },
+      {
+        "page": 49,
+        "chars": 1672,
+        "images": 0,
+        "drawings": 34,
+        "render_ok": true
+      },
+      {
+        "page": 50,
+        "chars": 1664,
+        "images": 0,
+        "drawings": 23,
+        "render_ok": true
+      },
+      {
+        "page": 51,
+        "chars": 1506,
+        "images": 0,
+        "drawings": 34,
+        "render_ok": true
+      },
+      {
+        "page": 52,
+        "chars": 1597,
+        "images": 0,
+        "drawings": 23,
+        "render_ok": true
+      },
+      {
+        "page": 53,
+        "chars": 1397,
+        "images": 0,
+        "drawings": 34,
+        "render_ok": true
+      },
+      {
+        "page": 54,
+        "chars": 1460,
+        "images": 0,
+        "drawings": 23,
+        "render_ok": true
+      },
+      {
+        "page": 55,
+        "chars": 1273,
+        "images": 0,
+        "drawings": 34,
+        "render_ok": true
+      },
+      {
+        "page": 56,
+        "chars": 1907,
+        "images": 0,
+        "drawings": 23,
+        "render_ok": true
+      },
+      {
+        "page": 57,
+        "chars": 1505,
+        "images": 0,
+        "drawings": 34,
+        "render_ok": true
+      },
+      {
+        "page": 58,
+        "chars": 1596,
+        "images": 0,
+        "drawings": 23,
+        "render_ok": true
+      },
+      {
+        "page": 59,
+        "chars": 1640,
+        "images": 0,
+        "drawings": 34,
+        "render_ok": true
+      },
+      {
+        "page": 60,
+        "chars": 1647,
+        "images": 0,
+        "drawings": 22,
+        "render_ok": true
+      },
+      {
+        "page": 61,
+        "chars": 1083,
+        "images": 0,
+        "drawings": 33,
+        "render_ok": true
+      },
+      {
+        "page": 62,
+        "chars": 2490,
+        "images": 0,
+        "drawings": 95,
+        "render_ok": true
+      },
+      {
+        "page": 63,
+        "chars": 48,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 64,
+        "chars": 2739,
+        "images": 0,
+        "drawings": 108,
+        "render_ok": true
+      },
+      {
+        "page": 65,
+        "chars": 1652,
+        "images": 0,
+        "drawings": 281,
+        "render_ok": true
+      },
+      {
+        "page": 66,
+        "chars": 2488,
+        "images": 0,
+        "drawings": 98,
+        "render_ok": true
+      },
+      {
+        "page": 67,
+        "chars": 2935,
+        "images": 0,
+        "drawings": 37,
+        "render_ok": true
+      },
+      {
+        "page": 68,
+        "chars": 2827,
+        "images": 0,
+        "drawings": 108,
+        "render_ok": true
+      },
+      {
+        "page": 69,
+        "chars": 1184,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 70,
+        "chars": 2522,
+        "images": 0,
+        "drawings": 100,
+        "render_ok": true
+      },
+      {
+        "page": 71,
+        "chars": 1647,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 72,
+        "chars": 2606,
+        "images": 0,
+        "drawings": 98,
+        "render_ok": true
+      },
+      {
+        "page": 73,
+        "chars": 1538,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 74,
+        "chars": 2413,
+        "images": 0,
+        "drawings": 98,
+        "render_ok": true
+      },
+      {
+        "page": 75,
+        "chars": 2323,
+        "images": 0,
+        "drawings": 17,
+        "render_ok": true
+      },
+      {
+        "page": 76,
+        "chars": 2367,
+        "images": 0,
+        "drawings": 98,
+        "render_ok": true
+      },
+      {
+        "page": 77,
+        "chars": 1551,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 78,
+        "chars": 3726,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 79,
+        "chars": 717,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 80,
+        "chars": 787,
+        "images": 1,
+        "drawings": 28,
+        "render_ok": true
+      },
+      {
+        "page": 81,
+        "chars": 1002,
+        "images": 0,
+        "drawings": 20,
+        "render_ok": true
+      },
+      {
+        "page": 82,
+        "chars": 845,
+        "images": 1,
+        "drawings": 1,
+        "render_ok": true
+      },
+      {
+        "page": 83,
+        "chars": 377,
+        "images": 2,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 84,
+        "chars": 1203,
+        "images": 0,
+        "drawings": 13,
+        "render_ok": true
+      },
+      {
+        "page": 85,
+        "chars": 1377,
+        "images": 0,
+        "drawings": 13,
+        "render_ok": true
+      },
+      {
+        "page": 86,
+        "chars": 2561,
+        "images": 0,
+        "drawings": 50,
+        "render_ok": true
+      },
+      {
+        "page": 87,
+        "chars": 1472,
+        "images": 3,
+        "drawings": 3,
+        "render_ok": true
+      },
+      {
+        "page": 88,
+        "chars": 705,
+        "images": 0,
+        "drawings": 226,
+        "render_ok": true
+      },
+      {
+        "page": 89,
+        "chars": 48,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 90,
+        "chars": 48,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 91,
+        "chars": 0,
+        "images": 0,
+        "drawings": 0,
+        "render_ok": true
+      },
+      {
+        "page": 92,
+        "chars": 0,
+        "images": 0,
+        "drawings": 4,
+        "render_ok": true
+      }
+    ]
+  },
+  {
+    "file": "Fachinternes Curriculum Geographie.pdf",
+    "sha256": "0ea706083d438aee052d79a1be8675c642509ad9097c0e9eea0d031e942a7b0f",
+    "pages": 7,
+    "page_audit": [
+      {
+        "page": 1,
+        "chars": 2448,
+        "images": 0,
+        "drawings": 1,
+        "render_ok": true
+      },
+      {
+        "page": 2,
+        "chars": 1607,
+        "images": 0,
+        "drawings": 82,
+        "render_ok": true
+      },
+      {
+        "page": 3,
+        "chars": 1399,
+        "images": 0,
+        "drawings": 81,
+        "render_ok": true
+      },
+      {
+        "page": 4,
+        "chars": 1578,
+        "images": 0,
+        "drawings": 81,
+        "render_ok": true
+      },
+      {
+        "page": 5,
+        "chars": 1816,
+        "images": 0,
+        "drawings": 80,
+        "render_ok": true
+      },
+      {
+        "page": 6,
+        "chars": 927,
+        "images": 0,
+        "drawings": 46,
+        "render_ok": true
+      },
+      {
+        "page": 7,
+        "chars": 1551,
+        "images": 0,
+        "drawings": 80,
+        "render_ok": true
+      }
+    ]
+  }
+]
