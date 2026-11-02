@@ -115,7 +115,7 @@ for (const profile of profileIds)
         );
         await expect(page.locator('#learning-next')).toHaveCount(0);
         await expect(page.locator('[data-learning-status]')).not.toContainText(
-          'Sie passen.',
+          'Richtig. Diese Angaben passen.',
         );
         current = await state(page);
         const evidence = current.records[recordKey].attempts['future.evidence'];

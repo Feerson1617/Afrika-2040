@@ -250,7 +250,11 @@ for (const device of [
           expect(s.decision.limit).toBe(v.limit);
           await page.reload();
           await feedback(page, v.kind);
-          expect((await saved()).progress[2].failures).toBe(1);
+          await expect(page.locator('#feedback-title')).toBeFocused();
+          const restored = await saved();
+          expect(restored.progress[2].failures).toBe(1);
+          expect(restored.decision.benefit).toBe(v.benefit);
+          expect(restored.decision.limit).toBe(v.limit);
           await click('#check-answer');
           const second = await feedback(page, 'hint');
           expect(second.text).toContain('Unten steht ein passendes Beispiel.');
@@ -333,7 +337,7 @@ for (const device of [
         await page.locator('#study-text').fill('??? eigener Gedanke');
         for (let i = 0; i < 3; i++) await click('#check-answer');
         const own = await feedback(page, 'neutral');
-        expect(own.text).toContain('nicht sicher prüfen');
+        expect(own.text).toContain('nicht fachlich prüfen');
         expect((await saved()).progress[2]).toMatchObject({
           failures: 0,
           help: 0,

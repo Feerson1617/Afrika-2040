@@ -296,9 +296,9 @@ test('Afrika curriculum correction simple materials, relevant words and honest j
   expect(scan.violations).toEqual([]);
   await op(page, 'journal').tap();
   const journal = await page.locator('main').evaluate((el) => el.innerText);
-  expect(journal).toContain('Die App hat diese Angaben geprüft. Sie passen.');
+  expect(journal).toContain('Richtig. Diese Angaben passen.');
   expect(journal).not.toMatch(
-    /Kompetenznachweis|Variante:|Denkhinweis von Anfang an:|Sachangaben|factual/,
+    /Kompetenznachweis|Variante:|Hinweis von Anfang an sichtbar:|Sachangaben|factual/,
   );
   await page.screenshot({
     path: evidencePath(`correction-foerder-journal-${browserName}.png`),
@@ -354,7 +354,7 @@ test('Afrika curriculum correction AHR applies source criticism without a prefil
   await page.locator('#learning-check').press('Enter');
   await expect(page.locator('[data-learning-feedback]')).toHaveClass(/neutral/);
   await expect(page.locator('[data-learning-feedback]')).toContainText(
-    'fachlich ungeprüft',
+    'Die App kann deinen eigenen Text nicht fachlich prüfen.',
   );
   let a = (await get(page)).records['c.ahr.v1'].attempts[
     'population.source.explain'

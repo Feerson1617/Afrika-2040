@@ -1111,6 +1111,14 @@ app.addEventListener('input', (event) => {
 // Do not rely on previous tasks' services or an existing in-memory state.
 if (!state) state = initialState();
 render(undefined, false);
+// Restore the saved feedback explicitly: WebKit does not reliably restore the
+// scroll position after reload. Keep answers and assessment state untouched.
+if (state.screen === 'study' && currentProgress(state).feedback)
+  requestAnimationFrame(() => {
+    const feedback = document.getElementById('feedback-title');
+    feedback?.focus({ preventScroll: true });
+    feedback?.scrollIntoView({ block: 'center', behavior: 'instant' });
+  });
 if (['event-find', 'event-effects', 'event-review'].includes(state.screen))
   requestAnimationFrame(() =>
     document

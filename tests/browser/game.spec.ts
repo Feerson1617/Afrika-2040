@@ -192,7 +192,7 @@ test('free text is stored locally, never keyword-graded, escaped and editable af
   await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
   await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
   await expect(page.locator('[data-feedback]')).toContainText(
-    'kann sie nicht sicher prüfen',
+    'kann deinen Text nicht fachlich prüfen',
   );
   await expect(page.locator('[data-feedback]')).toContainText(
     'wurde gespeichert',

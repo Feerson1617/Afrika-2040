@@ -209,7 +209,7 @@ export const topics: Record<TopicId, Topic> = {
       },
     ],
     prompts: [
-      'Lies deine erste Vorstellung noch einmal. Was würdest du jetzt ändern? Nenne dazu etwas, das du auf einem Foto siehst.',
+      'Lies deine erste Vorstellung noch einmal. Was denkst du jetzt? Nenne etwas, das du auf einem Foto siehst. Deine Vorstellung darf sich ändern oder gleich bleiben.',
       'Nutze jetzt das andere Foto. Was zeigt es zusätzlich? Was erfährst du durch die zwei Fotos trotzdem nicht?',
       'Eine Schulzeitung in Deutschland zeigt nur das Waldfoto. Was sollte sie zusätzlich zeigen? Begründe deinen Vorschlag.',
     ],
@@ -225,7 +225,7 @@ export const topics: Record<TopicId, Topic> = {
     title: 'B · Natur und Nutzung',
     question: 'Wann kommt Regen – und wofür reicht er?',
     terms:
-      'Wetter: Wie ist es jetzt an einem Ort? Zum Beispiel warm, kalt oder regnerisch.\nKlima: Wie ist das Wetter an einem Ort meist? Dafür betrachtet man viele Jahre.\nVegetation: die Pflanzen in einem Gebiet.\nNiederschlag: Wasser aus Wolken. Zum Beispiel Regen oder Schnee.\n1 mm Niederschlag: 1 Liter Wasser auf 1 Quadratmeter Fläche.',
+      'Wetter: Wie ist es jetzt an einem Ort? Zum Beispiel warm, kalt oder regnerisch.\nKlima: Wie ist das Wetter an einem Ort meist? Dafür betrachtet man viele Jahre.\nVegetation: Die Pflanzen in einem Gebiet, zum Beispiel Gräser und Bäume.\nNiederschlag: Wasser aus Wolken. Zum Beispiel Regen oder Schnee.\n1 mm Niederschlag: 1 Liter Wasser auf 1 Quadratmeter Fläche.',
     checks: [
       {
         title: 'Lage und Regenzeiten lesen',
@@ -326,7 +326,7 @@ export const topics: Record<TopicId, Topic> = {
     title: 'C · Bevölkerung verändert sich',
     question: 'Woher kommt Veränderung – und was folgt daraus?',
     terms:
-      'Natürliche Veränderung: Geburten minus Sterbefälle.\nZuzug: Menschen ziehen in einen Ort.\nFortzug: Menschen ziehen aus einem Ort weg.\nWanderungssaldo: Menschen ziehen hinzu oder weg. Rechne Zuzug minus Fortzug. Ziehen mehr weg als hinzu, steht vor dem Ergebnis ein Minus.\nSchätzung: Ein Wert wird aus vorhandenen Daten berechnet. Er kann später geändert werden.\nProjektion: eine mögliche Zukunft. Dafür nimmt man an, wie sich wichtige Bedingungen entwickeln.\nUrbanisierung: Ein größerer Anteil der Bevölkerung lebt in Städten. Mehr Menschen in einer Stadt allein beweisen das noch nicht.',
+      'Natürliche Veränderung: Geburten minus Sterbefälle.\nZuzug: Menschen ziehen in einen Ort.\nFortzug: Menschen ziehen aus einem Ort weg.\nWanderungssaldo: Menschen ziehen hinzu oder weg. Rechne Zuzug minus Fortzug. Ziehen mehr weg als hinzu, steht vor dem Ergebnis ein Minus.\nSchätzung: Ein Wert wird aus vorhandenen Daten berechnet. Er kann später geändert werden.\nProjektion: eine mögliche Zukunft. Dafür nimmt man an, wie sich wichtige Bedingungen entwickeln.\nUrbanisierung: Von den Menschen eines Landes lebt ein größerer Teil in Städten. Das nennt man Urbanisierung. Dass eine einzelne Stadt wächst, reicht dafür nicht als Beleg. Auch auf dem Land können mehr Menschen leben.',
     checks: [
       {
         title: 'So verändert sich die Zahl der Menschen',
@@ -425,7 +425,7 @@ export const topics: Record<TopicId, Topic> = {
     title: 'D · Wirtschaft: Wer hat etwas davon?',
     question: 'Was wächst – und wer hat etwas davon?',
     terms:
-      'Rohstoff: Material, aus dem etwas hergestellt wird. Zum Beispiel Kakaobohnen.\nVerarbeitung: Aus einem Rohstoff entstehen andere Produkte.\nWertschöpfung: Bei der Arbeit entsteht neuer wirtschaftlicher Wert.\nEinnahmen: Geld, das ein Betrieb bekommt.\nÜberschuss: Der Betrieb bekommt Geld und bezahlt laufende Kosten. Das übrige Geld heißt Überschuss.\nInvestition: Geld für eine Anschaffung. Hier wird sie einmal bezahlt.\nBIP (Bruttoinlandsprodukt): Ein Maß für den wirtschaftlichen Wert, der in einem Land in einem Jahr neu entsteht. Es ist kein Kontostand.\nPreisbereinigt: Der Einfluss veränderter Preise wird herausgerechnet. So lässt sich das BIP verschiedener Jahre besser vergleichen.',
+      'Rohstoff: Material, aus dem etwas hergestellt wird. Zum Beispiel Kakaobohnen.\nVerarbeitung: Aus einem Rohstoff entstehen andere Produkte.\nWertschöpfung: Ein Betrieb verarbeitet zum Beispiel Bohnen. Dabei entsteht neuer wirtschaftlicher Wert. Der Wert der eingekauften Waren und Leistungen wird nicht noch einmal mitgezählt.\nEinnahmen: Geld, das ein Betrieb bekommt.\nÜberschuss: Der Betrieb bekommt Geld. Er bezahlt seine laufenden Kosten. Das übrige Geld heißt Überschuss.\nInvestition: Geld für eine Anschaffung. Hier wird sie einmal bezahlt.\nBIP (Bruttoinlandsprodukt): Ein Maß für den wirtschaftlichen Wert, der in einem Land in einem Jahr neu entsteht. Es ist kein Kontostand.\nPreisbereinigt: Der Einfluss veränderter Preise wird herausgerechnet. So lässt sich das BIP verschiedener Jahre besser vergleichen.',
     checks: [
       {
         title: 'Ein Betrieb ist nicht das ganze Land',
@@ -469,7 +469,10 @@ export const topics: Record<TopicId, Topic> = {
             [
               ['money', 'Jeder Betrieb verdient 89,5 GE.'],
               ['share', '89,5 Prozent der Bevölkerung haben Zugang zu Strom.'],
-              ['reliable', 'Alle haben jederzeit kostenlosen Strom.'],
+              [
+                'reliable',
+                'Der Strom fällt bei den angeschlossenen Haushalten nicht aus.',
+              ],
             ],
           ),
           choose(
@@ -479,7 +482,10 @@ export const topics: Record<TopicId, Topic> = {
             'Das BIP steigt von 2022 bis 2023 um etwa 3,1 Prozent. Preisänderungen sind dabei herausgerechnet. Daraus wissen wir nicht, wie viel die einzelnen Menschen haben oder wie sie leben.',
             [
               ['everyone', 'Jeder Haushalt wird um 3,1 Prozent reicher.'],
-              ['real', 'Das preisbereinigte BIP steigt gegenüber dem Vorjahr.'],
+              [
+                'real',
+                'Das BIP ist höher als im Jahr davor. Preisänderungen sind herausgerechnet.',
+              ],
               ['profit', 'Der Modellbetrieb macht 3,1 GE Überschuss.'],
             ],
           ),
@@ -618,7 +624,7 @@ export function decisionFields(plan: Plan): Field[] {
       [
         ['shade', plans.shade.unknown],
         ['cool', plans.cool.unknown],
-        ['irrelevant', 'Welche Lieblingsfarbe haben alle Beschäftigten?'],
+        ['irrelevant', 'Wie viele Stände kann der Kühlraum aufnehmen?'],
       ],
     ),
   ];

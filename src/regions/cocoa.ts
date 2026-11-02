@@ -74,7 +74,7 @@ export const cocoa: StudySpec = {
       ['Ausgaben', 'Geld, das der Betrieb für diese Runde bezahlt.'],
       [
         'Überschuss',
-        'Einnahmen minus laufende Ausgaben. Hier keine vollständige Gewinnrechnung.',
+        'Der Betrieb bekommt Geld und bezahlt laufende Kosten. Das übrige Geld heißt hier Überschuss. Die Rechnung enthält nicht alle Kosten eines echten Betriebs.',
       ],
     ],
   ],
@@ -87,7 +87,7 @@ export const cocoa: StudySpec = {
       benefit: 'Qualität: 200 − 110 = 90 GE Überschuss.',
       limit: 'Die eigene Verarbeitung wird damit nicht ausgebaut.',
       facts: [
-        'Einmalig 20 GE investieren; 40 GE im Investitionstopf übrig.',
+        'Einmal 20 GE für die Anschaffung bezahlen. Im eigenen Topf bleiben 40 GE.',
         'In der folgenden Modellrunde: 200 GE Einnahmen, 110 GE laufende Ausgaben.',
       ],
     },
@@ -99,7 +99,7 @@ export const cocoa: StudySpec = {
       limit:
         'Die laufenden Ausgaben steigen. Es bleiben weniger GE als bei der Qualitätsmaßnahme.',
       facts: [
-        'Einmalig 60 GE investieren; der Investitionstopf ist aufgebraucht.',
+        'Einmal 60 GE für die Anschaffung bezahlen. Der eigene Topf ist danach leer.',
         'In der folgenden Modellrunde: 260 GE Einnahmen, 185 GE laufende Ausgaben.',
       ],
     },

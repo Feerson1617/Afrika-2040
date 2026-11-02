@@ -123,7 +123,7 @@ function concreteSupport(id: string, material: MaterialId): string {
     return 'Folge dem Pfeil: Eine Person verlässt den Ort und wohnt danach außerhalb.';
   }
   if (material === 'm2')
-    return 'Lies Jahr und Wert zusammen: 2000 und 2024. Die Quelle nennt historische Schätzungen. Die Gesamtlinie trennt Geburten, Sterbefälle und Umzüge nicht auf.';
+    return 'Lies Jahr und Wert zusammen: 2000 und 2024. Die Zahlen sind Schätzungen für frühere Jahre. Die Grafik zeigt die gesamte Zahl der Menschen. Sie zeigt nicht einzeln, wie viele geboren wurden, starben, zuzogen oder wegzogen.';
   if (material === 'm4')
     return id.includes('bridge')
       ? '24 sind Fahrgäste in einer Stunde. Die Ghana-Tabelle zählt Menschen im ganzen Land.'
@@ -153,7 +153,7 @@ function concreteSupport(id: string, material: MaterialId): string {
     return `Markiere ${m.arrivals} Zuzüge und ${m.departures} Fortzüge. Rechne Zuzug minus Fortzug. Ziehen mehr Menschen weg als hinzu, werden es durch Umzüge weniger Menschen.`;
   if (id.includes('operations'))
     return 'Geburten und Sterbefälle bilden ein Paar; Zuzug und Fortzug das andere. Zähle nicht alle vier Größen zusammen.';
-  return `Nutze beide Teilwirkungen: ${b.natural} und (${b.migration}). Die Anfangszahl ${m.start} gehört erst zum Endbestand. Setze kein zweites Minus vor einen schon negativen Saldo.`;
+  return `Nutze beide Ergebnisse: ${b.natural} und (${b.migration}). Rechne sie zur Anfangszahl ${m.start} dazu. Dann weißt du, wie viele Menschen am Ende dort leben. Übernimm ein vorhandenes Minuszeichen nur einmal.`;
 }
 function task(
   id: string,
@@ -372,7 +372,7 @@ function arithmetic(
     : [
         task(
           prefix + '.balance',
-          'Berechne die Teiländerungen und den Endbestand.',
+          'Wie verändert sich die Zahl? Wie viele Menschen leben am Ende im Ort?',
           material,
           f,
           'Rechne natürliche Veränderung und Umzüge getrennt. Addiere beide Beiträge zur Anfangszahl.',
@@ -425,7 +425,7 @@ function source(profile: ProfileId) {
         ['future', 'Sichere Zahlen für 2040'],
         ['estimate', 'Schätzungen für vergangene Jahre'],
       ],
-      'Historische Schätzungen sind keine Zukunftsprognosen.',
+      'Die Zahlen beschreiben frühere Jahre. Sie wurden aus vorhandenen Daten berechnet. Sie sagen nicht sicher, wie viele Menschen später dort leben.',
     ),
   );
   if (profile === 'msa')
@@ -446,7 +446,7 @@ function source(profile: ProfileId) {
     );
   return task(
     'population.source.read',
-    'Lies Jahre, Werte und Datenstatus.',
+    'Lies die Jahre und Zahlen. Wie wurden die Zahlen ermittelt?',
     'm2',
     fields,
     'Lies jeweils Jahr und Wert zusammen. Schätzung heißt: aus vorhandenen Daten berechnet.',
@@ -515,7 +515,7 @@ function conditions(profile: ProfileId) {
             ['automatic', 'dadurch sofort alle Arbeit haben.'],
             ['jobs', 'auch passende Arbeitsplätze entstehen.'],
           ],
-          'Ausbildung kann helfen, garantiert aber keine Beschäftigung.',
+          'Eine Ausbildung kann helfen, später Arbeit zu finden. Sie garantiert aber keinen Arbeitsplatz.',
         ),
         choice(
           'risk',
@@ -525,7 +525,7 @@ function conditions(profile: ProfileId) {
             ['pressure', 'können die Versorgung schwieriger machen.'],
             ['always', 'machen jeden Ort sofort ärmer.'],
           ],
-          'Schulplätze und Lehrkräfte sind eine Bedingung; keine pauschale Armutsbehauptung.',
+          'Kinder brauchen Schulplätze und Lehrkräfte. Aus Bevölkerungswachstum allein folgt nicht, dass alle Menschen arm sind.',
         ),
       ],
       'Achte darauf, unter welcher Bedingung eine Folge möglich ist.',
@@ -573,7 +573,7 @@ function buildTasks(unit: Unit, profile: ProfileId): Task[] {
                 'Die natürliche Zunahme ist größer als die Abnahme durch Umzüge.',
               ],
             ],
-            'Die natürliche Zunahme +30 übersteigt den Wanderungsverlust 10.',
+            'Durch Geburten und Sterbefälle sind es 30 Menschen mehr. Durch Umzüge sind es 10 weniger. Insgesamt sind es mehr.',
           ),
         ],
         'Vergleiche +30 und −10.',
@@ -586,7 +586,7 @@ function buildTasks(unit: Unit, profile: ProfileId): Task[] {
     return [
       task(
         'population.operations',
-        'Welche Zahlen und Operationen gehören zusammen?',
+        'Welche Zahlen rechnest du zusammen? Wie rechnest du?',
         'm1',
         [
           choice(
@@ -667,7 +667,7 @@ function buildTasks(unit: Unit, profile: ProfileId): Task[] {
             '24 bezeichnet Fahrgäste in einer Modellstunde, keine Landesbevölkerung.',
           ),
         ],
-        'Lies Ort, Einheit und Zeitraum.',
+        'Für welchen Ort gelten die Zahlen? Was wird gezählt? Für welche Zeit gelten sie?',
       ),
     ];
   return [
@@ -679,14 +679,14 @@ function buildTasks(unit: Unit, profile: ProfileId): Task[] {
       [
         text(
           'explanation',
-          'Verbinde beide Teiländerungen.',
+          'Erkläre die Änderung durch Geburten und Sterbefälle. Erkläre auch die Änderung durch Umzüge. Wie wirken beide zusammen?',
           'Durch Geburten und Sterbefälle kommen 30 Menschen hinzu. Durch Umzüge sind es 10 weniger. Zusammen sind es 20 mehr. Am Ende leben dort 1020 Menschen.',
-          'Beide Teiländerungen und die Gesamtwirkung unterscheiden.',
+          'Wie verändert sich die Zahl durch Geburten und Sterbefälle? Wie verändert sie sich durch Umzüge? Was passiert insgesamt?',
         ),
       ],
       'Vergleiche die beiden Beiträge.',
       [
-        'Beide Salden stimmen und sind einbezogen.',
+        'Deine Rechnung zu Geburten und Sterbefällen stimmt. Deine Rechnung zu Zuzug und Fortzug stimmt. Du nutzt beide Ergebnisse.',
         'Du unterscheidest Änderung +20 und Endbestand 1020.',
       ],
     ),
@@ -703,10 +703,10 @@ function buildTasks(unit: Unit, profile: ProfileId): Task[] {
           'Historische Gesamtzahlen sind keine getrennten Ursachen.',
         ),
       ],
-      'Prüfe Datenart und Aussagegrenze.',
+      'Wie wurden die Zahlen ermittelt? Was kannst du aus ihnen nicht erkennen?',
       [
         'Zwei Jahre und passende Werte mit Einheit.',
-        'Schätzung für vergangene Jahre, keine Prognose.',
+        'Du sagst: Die Werte sind Schätzungen für frühere Jahre. Sie sagen die Zukunft nicht voraus.',
         'Keine einzelne Ursache aus der Gesamtlinie behaupten.',
       ],
     ),
@@ -719,14 +719,14 @@ function buildTasks(unit: Unit, profile: ProfileId): Task[] {
           'explanation',
           'Unter welchen Bedingungen können beide entstehen?',
           'Ausbildung und passende Arbeitsplätze können Menschen helfen, später Arbeit zu finden. Ohne neue Schulplätze und Lehrkräfte kann es schwieriger werden, alle Kinder zu unterrichten.',
-          'Beide Folgen sind bedingt, nicht zwangsläufig.',
+          'Beide Folgen sind möglich. Sie entstehen aber nicht von allein.',
         ),
       ],
       'Welche Bedingungen verändern die Folgen?',
       [
         'Eine konkrete Chance und passende Bedingung.',
         'Eine Herausforderung und passende Bedingung.',
-        'Keine sofortige Erwerbstätigkeit durch mehr Geburten.',
+        'Mehr Geburten bedeuten nicht, dass sofort mehr Erwachsene arbeiten können.',
       ],
     ),
     ...arithmetic('m3'),
@@ -743,9 +743,9 @@ function buildTasks(unit: Unit, profile: ProfileId): Task[] {
           'Frage nach einer relevanten zusätzlichen Information.',
         ),
       ],
-      'Was fehlt für ein Urteil über Versorgung?',
+      'Was musst du noch wissen, um zu entscheiden, ob es genug Schulen, Lehrkräfte oder andere Angebote gibt?',
       [
-        'Die Frage betrifft Versorgung, etwa Altersverteilung oder vorhandene Angebote.',
+        'Du fragst zum Beispiel: Wie alt sind die Menschen? Welche Schulen oder anderen Angebote gibt es schon?',
         'Die Gesamtbevölkerung allein beantwortet deine Frage noch nicht.',
       ],
     ),
@@ -841,7 +841,7 @@ function kenyaTasks(profile: ProfileId): Task[] {
     ];
   const numbers = task(
     'kenia.times',
-    'Berechne die persönlichen Gesamtzeiten.',
+    'Wie lange brauchen Amina und David? Rechne für jede Person Fußweg und Busfahrt zusammen.',
     'kenia',
     [
       num(
@@ -905,7 +905,7 @@ function kenyaTasks(profile: ProfileId): Task[] {
                   'Amina steigt an der Nordhaltestelle ein und fährt den letzten Abschnitt (8 Minuten).',
                 ),
               ],
-              'Unterscheide gesamte Linie und späteren Einstieg.',
+              'Amina steigt erst bei Nord ein. Sie fährt nicht die ganze Linie mit. Welchen Teil fährt sie?',
             ),
             numbers,
           ]),
@@ -971,14 +971,14 @@ function kenyaTasks(profile: ProfileId): Task[] {
           'explanation',
           'Welche Angabe aus dem Material spricht für deine Wahl?',
           'Ich empfehle Nord wegen Aminas Zeitvorteil von 22 auf 10 Minuten. Dafür akzeptiere ich, dass David 18 statt 12 Minuten braucht.',
-          'Direkt oder Nord mit passendem Vorteil und Nachteil sind zulässig.',
+          'Du darfst Direkt oder Nord wählen. Vorteil und Nachteil müssen zu deiner Wahl passen.',
         ),
       ],
       'Welche Person profitiert und welche braucht länger?',
       [
         'Vorschlag und tatsächlich passende Zeitfolge.',
-        'Nachteil einer anderen Person und eigene Gewichtung.',
-        'Auch Direkt ist mit umgekehrter Gewichtung begründbar.',
+        'Du nennst einen Nachteil für eine andere Person. Du sagst, warum dir dein Ziel wichtiger ist.',
+        'Auch die direkte Linie kann passen, wenn dir Davids kurzer Weg wichtiger ist.',
       ],
     ),
     task(
@@ -994,7 +994,7 @@ function kenyaTasks(profile: ProfileId): Task[] {
             ['price', 'Fahrpreis oder Wartezeit'],
             ['forecast', 'Die sichere Verkehrslage im Jahr 2040'],
           ],
-          'Fahrpreis und Wartezeit fehlen; das Modell ist keine Prognose.',
+          'Fahrpreis und Wartezeit fehlen. Das Modell sagt die Zukunft nicht voraus.',
         ),
       ],
       'Was berechnet das Modell nicht?',

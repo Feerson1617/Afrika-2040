@@ -235,7 +235,7 @@ export function textNotice(persisted: boolean, material = 'auf der Karte') {
     (persisted
       ? 'Deine Antwort wurde gespeichert.'
       : 'Deine Antwort bleibt für dieses Spiel erhalten. Der Browser erlaubt kein Speichern.') +
-    ` Das Spiel kann sie nicht sicher prüfen. Zeige deinen Beleg ${material}.`
+    ` Die App kann deinen Text nicht fachlich prüfen. Nutze ${material} eine passende Angabe.`
   );
 }
 export function evaluateExplanation(
@@ -690,7 +690,7 @@ export function evaluateDemandDecision(
     return result(
       failures >= 1 ? 'hint' : acknowledged ? 'partial' : 'incorrect',
       '↺ Prüfe die Folgen deines Vorschlags',
-      `${acknowledged} ${failures >= 1 ? `Beispiel: ${demandProduct(example)} Du kannst dieses Beispiel bewusst übernehmen.` : 'Prüfe: Welche Größe verändert deine Maßnahme? Was bleibt gleich?'}`,
+      `${acknowledged} ${failures >= 1 ? `Beispiel: ${demandProduct(example)} Du kannst dieses Beispiel bewusst übernehmen.` : 'Prüfe: Was verändert dein Vorschlag? Was bleibt gleich?'}`,
       false,
       true,
     );

@@ -284,7 +284,7 @@ test('Phase2A free explanation is preserved, escaped and never graded even with 
     await page.getByRole('button', { name: 'Erklärung prüfen' }).click();
     await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
     await expect(page.locator('[data-feedback]')).toContainText(
-      'nicht sicher prüfen',
+      'nicht fachlich prüfen',
     );
     expect((await saved(page)).progress[3].failures).toBe(0);
   }
@@ -430,7 +430,7 @@ test('Phase2A an explicitly named goal is required without guessing it from free
   }
   expect((await saved(page)).progress[5].failures).toBe(0);
   await expect(page.locator('[data-feedback]')).toContainText(
-    'Ziel oder Kriterium',
+    'Wähle noch dein Ziel.',
   );
   await expect(page.getByRole('button', { name: 'Zum Abschluss' })).toHaveCount(
     0,
@@ -450,7 +450,7 @@ test('Phase2A an explicitly named goal is required without guessing it from free
   await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
   await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
   await expect(page.locator('[data-feedback]')).toContainText(
-    'nicht sicher prüfen',
+    'nicht fachlich prüfen',
   );
   await expect(page.getByRole('button', { name: 'Zum Abschluss' })).toHaveCount(
     0,

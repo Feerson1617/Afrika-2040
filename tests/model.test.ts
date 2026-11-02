@@ -147,7 +147,14 @@ test('all 972 evidence pairs are judged by truth, reference route and different 
     for (const advantage of evidenceIds)
       for (const disadvantage of evidenceIds) {
         const f = evaluateDecision(
-          { route, criterion: 'tradeoff', advantage, disadvantage, weighting: advantage, text: '' },
+          {
+            route,
+            criterion: 'tradeoff',
+            advantage,
+            disadvantage,
+            weighting: advantage,
+            text: '',
+          },
           true,
         );
         const expected =
@@ -166,7 +173,13 @@ test('different valid weightings and comparison references are accepted', () => 
   for (const route of routes) {
     assert.equal(
       evaluateDecision(
-        { route, criterion: 'tradeoff', ...evidenceFor(route), weighting: evidenceFor(route).advantage, text: '' },
+        {
+          route,
+          criterion: 'tradeoff',
+          ...evidenceFor(route),
+          weighting: evidenceFor(route).advantage,
+          text: '',
+        },
         true,
       ).complete,
       true,
@@ -242,7 +255,7 @@ test('unusual or contradictory free text is saved without keyword grading', () =
     );
     assert.equal(f.kind, 'neutral');
     assert.equal(f.complete, true);
-    assert.match(f.text, /kann sie nicht sicher prüfen/);
+    assert.match(f.text, /kann deinen Text nicht fachlich prüfen/);
     assert.doesNotMatch(f.text, /richtig|falsch|korrekt/i);
   }
 });

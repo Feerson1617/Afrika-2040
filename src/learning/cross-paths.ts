@@ -110,7 +110,7 @@ export function orientationTasks(p: ProfileId): Task[] {
           'Eine Übersichtskarte enthält keinen Fahrplan und keine Modellbuszeiten.',
         ),
       ],
-      'Prüfe Maßstab und dargestellte Informationen.',
+      'Was zeigt die Karte? Welche Angaben fehlen?',
     ),
   );
   if (p === 'ahr')
@@ -121,15 +121,15 @@ export function orientationTasks(p: ProfileId): Task[] {
         'orientation',
         [
           own(
-            'Wähle zwei Städte. Beschreibe ihre Lage zueinander und zum Äquator. Was kannst du auf der Karte nicht genau erkennen?',
+            'Wähle zwei Städte. Welche liegt weiter nördlich? Wo liegen sie zum Äquator? Was zeigt die Karte nicht genau?',
             'Agadir liegt nördlicher als Nairobi. Nairobi liegt südlich des Äquators, Agadir nördlich. Eine genaue Reisezeit folgt aus der vereinfachten Übersicht nicht.',
           ),
         ],
         'Nutze den Nordpfeil und den Äquator. Was zeigt die Karte nicht genau?',
         [
-          'Zwei tatsächlich markierte Städte gewählt.',
-          'Lagebeziehung und Äquatorbezug passen.',
-          'Keine genaue Strecke oder Fahrzeit aus der Übersicht behauptet.',
+          'Du wählst zwei Städte, die auf der Karte eingezeichnet sind.',
+          'Du beschreibst richtig, welche Stadt weiter nördlich liegt. Du nennst die Lage zum Äquator.',
+          'Du behauptest nicht, dass die Karte genaue Strecken oder Fahrzeiten zeigt.',
         ],
       ),
     );
@@ -158,7 +158,11 @@ export function reviewTasks(p: ProfileId): Task[] {
           ),
           pick(
             'scope',
-            'Gilt dieses Modell für alle Menschen und Betriebe im Land?',
+            code === 'KEN'
+              ? 'Zeigen die drei Buswege, wie lange alle Menschen in Kenia unterwegs sind?'
+              : code === 'GHA'
+                ? 'Sind alle Betriebe in Ghana wie unser erfundener Betrieb?'
+                : 'Zeigt unser erfundener Tank, wie viel Wasser es in Marokko wirklich gibt?',
             'local',
             [
               ['all', 'Ja, für das ganze Land.'],
@@ -199,14 +203,17 @@ export function reviewTasks(p: ProfileId): Task[] {
           [
             [
               'evidence',
-              'Passender Beleg und Nachteil, dann die wichtigere Folge.',
+              'Eine passende Angabe und einen Nachteil nennen. Sagen, welche Folge wichtiger ist.',
             ],
-            ['automatic', 'Immer die erste angebotene Maßnahme wählen.'],
+            [
+              'automatic',
+              'Den Vorteil nennen. Ein Nachteil gehört nicht zur Begründung.',
+            ],
           ],
           'Du darfst selbst wählen. Die Angaben aus dem Material müssen zu deiner Wahl passen.',
         ),
       ],
-      'Vergleiche Nutzen und verbleibendes Problem in jedem Fall.',
+      'Was wird bei jedem Vorschlag besser? Welches Problem bleibt?',
     ),
   );
   ts.push(
@@ -226,13 +233,13 @@ export function reviewTasks(p: ProfileId): Task[] {
           'Laufender Überschuss ist Einnahmen minus laufende Ausgaben. Größere Einnahmen allein genügen nicht.',
         ),
       ],
-      'Übertrage das Verfahren statt eine alte Zahl zu kopieren.',
+      'Nutze die neuen Angaben. Vergleiche wieder Einnahmen und Ausgaben.',
     ),
   );
   ts.push(
     step(
       'review.revision',
-      'Dein Afrikabild erneut betrachten',
+      'Was denkst du jetzt über Afrika?',
       'review',
       p === 'foerder' || p === 'esa'
         ? [
@@ -258,9 +265,9 @@ export function reviewTasks(p: ProfileId): Task[] {
           ],
       'Nutze ein Beispiel. Sage auch, für wen und für welchen Ort es gilt.',
       [
-        'Konkreter Beleg statt pauschaler Behauptung.',
+        'Du nennst eine passende Angabe. Du sagst nicht, dass es überall so ist.',
         'Modell und wirklicher Raum getrennt.',
-        'Offene eigene Erklärung braucht noch menschliche Rückmeldung.',
+        'Deine eigene Erklärung muss noch mit jemandem besprochen werden.',
       ],
     ),
   );
@@ -276,11 +283,11 @@ export function reviewTasks(p: ProfileId): Task[] {
             'Mit neuer Technik kann ein Betrieb mehr Geld einnehmen. Ein Feld kann weniger Wasser brauchen. Entscheidend ist aber auch: Wie viel verkauft der Betrieb? Wie viele Felder werden bewässert? Ich brauche echte Angaben zu Kosten und Käufern. Beim Wasser brauche ich Angaben zu Flächen, Zufluss und Wasser, das zurückfließt. Eine Entscheidung im Spiel beweist noch keine Wirkung in der Wirklichkeit.',
           ),
         ],
-        'Unterscheide Mechanismus, Gesamtwirkung und fehlende Daten.',
+        'Wie wirkt die Maßnahme? Was ändert sich insgesamt? Welche Angaben fehlen dir noch?',
         [
           'Zwei Fälle sachlich korrekt verbunden.',
-          'Bedingung oder konkurrierendes Interesse konkret erklärt.',
-          'Relevante reale Zusatzinformation je Fall.',
+          'Du erklärst eine Bedingung oder ein anderes Interesse.',
+          'Du nennst für jeden Fall eine fehlende Angabe aus der Wirklichkeit.',
         ],
       ),
     );

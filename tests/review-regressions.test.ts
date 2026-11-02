@@ -125,7 +125,8 @@ test('R2: unclear free text and correct-but-incomplete evidence never consume fa
     assert.equal(s.progress[5].failures, 0);
     assert.equal(s.progress[5].help, 0);
     assert.equal(s.progress[5].feedback?.kind, 'neutral');
-    if (text) assert.match(s.progress[5].feedback!.text, /nicht sicher prüfen/);
+    if (text)
+      assert.match(s.progress[5].feedback!.text, /nicht fachlich prüfen/);
   }
 });
 

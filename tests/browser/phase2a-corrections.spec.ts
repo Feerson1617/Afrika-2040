@@ -307,7 +307,7 @@ test('B1 keyboard: both conflict paths and deliberate ungraded text; Pages prefi
     .click();
   await page.locator('#next-step').click();
   await expect(page.locator('[data-ungraded]')).toContainText(
-    'nicht bestätigt',
+    'Ob Ziel, Angaben und Begründung zusammenpassen, wurde noch nicht geprüft.',
   );
   await expect(page.locator('.recommendation img')).toHaveCount(0);
   await page.reload();

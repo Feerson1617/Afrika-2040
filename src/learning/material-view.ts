@@ -35,7 +35,7 @@ export function materialView(task: Task, profile: ProfileId, attempt: Attempt) {
       )
       .join(
         '',
-      )}</tbody></table>${simple ? '' : '<p>Schätzung: Die Zahl wurde aus vorhandenen Daten berechnet. Zwischen zwei gezeigten Jahren muss die Zahl nicht gleichmäßig gestiegen sein.</p>'}<details id="learning-original"><summary>${simple ? 'Genaue Zahlen und Quelle ansehen' : 'Vollständige Reihe, Diagramm und Quelle'}</summary>${oldMaterial('population', 1, newRecord())}<h3>Quelle: Weltbank</h3>${sources('population')}</details>`;
+      )}</tbody></table>${simple ? '' : '<p>Schätzung: Die Zahl wurde aus vorhandenen Daten berechnet. Zwischen zwei gezeigten Jahren muss die Zahl nicht gleichmäßig gestiegen sein.</p>'}<details id="learning-original"><summary>${simple ? 'Genaue Zahlen und Quelle ansehen' : 'Alle Zahlen, Grafik und Quelle ansehen'}</summary>${oldMaterial('population', 1, newRecord())}<h3>Quelle: Weltbank</h3>${sources('population')}</details>`;
   }
   if (task.material === 'm4')
     return profile === 'foerder'
@@ -76,7 +76,7 @@ export function materialView(task: Task, profile: ProfileId, attempt: Attempt) {
     profile === 'foerder'
       ? rows.filter(([label]) => keys.includes(label))
       : rows;
-  return `<h2>${profile === 'foerder' ? (task.material === 'm1' ? 'Unser erfundener Ort' : 'Ein anderer erfundener Ort') : task.material === 'm1' ? 'M1' : task.material === 'm3' ? 'M3 · neuer Fall' : 'Gegenfall · Fortzug verändert'}</h2><p><strong>${profile === 'foerder' ? 'Die Zahlen sind erfunden. Sie gelten für einen Ort und ein Jahr.' : 'Erfundenes Modell: ein Ort, ein Jahr, Personen.'}</strong></p>${profile === 'foerder' ? eventPicture(task.id) : ''}${table(subset)}${profile === 'foerder' ? `<details id="learning-full-model"><summary>Alle Zahlen zum Ort ansehen</summary>${table(rows)}</details>` : ''}${profile === 'foerder' && task.id.endsWith('total-direction') ? `<p class="model-card">${balance.natural} mehr durch Geburten und Sterbefälle. ${Math.abs(balance.migration)} weniger durch Umzüge. Vergleiche beide Zahlen. Du entscheidest: Werden es insgesamt mehr oder weniger?</p>` : ''}<p>Die Werte zeigen nicht die echte Bevölkerung Ghanas.</p>`;
+  return `<h2>${profile === 'foerder' ? (task.material === 'm1' ? 'Unser erfundener Ort' : 'Ein anderer erfundener Ort') : task.material === 'm1' ? 'Unser erfundener Ort' : task.material === 'm3' ? 'Ein anderer erfundener Ort' : 'Im selben Ort ziehen jetzt mehr Menschen weg'}</h2><p><strong>${profile === 'foerder' ? 'Die Zahlen sind erfunden. Sie gelten für einen Ort und ein Jahr.' : 'Erfundenes Modell: ein Ort, ein Jahr, Personen.'}</strong></p>${profile === 'foerder' ? eventPicture(task.id) : ''}${table(subset)}${profile === 'foerder' ? `<details id="learning-full-model"><summary>Alle Zahlen zum Ort ansehen</summary>${table(rows)}</details>` : ''}${profile === 'foerder' && task.id.endsWith('total-direction') ? `<p class="model-card">${balance.natural} mehr durch Geburten und Sterbefälle. ${Math.abs(balance.migration)} weniger durch Umzüge. Vergleiche beide Zahlen. Du entscheidest: Werden es insgesamt mehr oder weniger?</p>` : ''}<p>Die Werte zeigen nicht die echte Bevölkerung Ghanas.</p>`;
 }
 function eventPicture(id: string) {
   const event = id.split('.').at(-1);

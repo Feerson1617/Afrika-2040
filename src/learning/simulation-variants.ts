@@ -39,7 +39,7 @@ export const own = (label: string, example: string): LearningField => ({
   kind: 'text',
   example,
   explanation:
-    'Deine Erklärung bleibt fachlich ungeprüft. Nutze die Selbstkontrolle oder besprich sie.',
+    'Die App kann deine Erklärung nicht fachlich prüfen. Vergleiche sie mit der Selbstkontrolle oder besprich sie.',
 });
 export function step(
   id: string,
@@ -57,8 +57,8 @@ export function step(
     material: 'simulation',
     simulation: { kind },
     instruction: fields.some((f) => f.kind === 'text')
-      ? 'Ein kurzer Satz oder Stichwörter reichen. Dein Text wird nicht automatisch fachlich geprüft.'
-      : 'Untersuche das Modell. Wähle oder rechne selbst.',
+      ? 'Ein kurzer Satz oder Stichwörter reichen. Die App kann deinen Text nicht fachlich prüfen.'
+      : '',
     fields,
     hints: [
       hint,
@@ -73,9 +73,9 @@ export function step(
             : kind === 'share'
               ? 'Verteile genau 120 GE. Wer bekommt jetzt Geld? Wofür bleibt Geld im Betrieb? Was könnte später helfen?'
               : kind === 'water'
-                ? 'Tankrest = Anfang minus Entnahme. Die Ankunft am Feld ist eine andere Messstelle. Verbrauch wird hier nicht berechnet.'
+                ? 'Wie viel bleibt im Tank? Rechne Anfang minus Entnahme. Schau getrennt darauf, wie viel am Feld ankommt. Das Modell zeigt nicht, wie viel Wasser verbraucht wird.'
                 : kind === 'area'
-                  ? 'Erstes Feld plus Zusatzfeld ergibt die gesamte Entnahme. Vergleiche erst dieselbe Fläche, dann die Summe mit früher 60 WE.'
+                  ? 'Rechne das Wasser für das erste Feld und das Zusatzfeld zusammen. Vergleiche zuerst das erste Feld mit früher. Vergleiche dann die Summe mit früher 60 WE.'
                   : kind === 'orientation'
                     ? 'Stadtpunkte liegen innerhalb der Länderflächen. Norden ist oben. Die Äquatorlinie trennt Nordhalbkugel und Südhalbkugel.'
                     : 'Suche eine passende Angabe im Beispiel. Die Angabe dient als Beleg. Kann sie auch etwas über andere Orte beweisen?',
@@ -84,8 +84,10 @@ export function step(
     criteria: criteria.length
       ? criteria
       : [
-          'Sachangaben zum dargestellten Modell zugeordnet.',
-          'Eigene Entscheidungen sind keine automatische Fachbewertung.',
+          kind === 'orientation'
+            ? 'Du hast Land und Stadt richtig zugeordnet. Deine Lageangaben passen zur Karte.'
+            : 'Deine Angaben passen zu dem gezeigten Beispiel.',
+          'Du darfst selbst entscheiden, was dir wichtiger ist. Das macht deine Angaben noch nicht richtig.',
         ],
     ...extra,
   };
@@ -212,11 +214,11 @@ export function decision(
         'Erkläre deine Entscheidung kurz selbst',
         kind,
         [own('Warum wählst du diesen Vorschlag trotz seines Nachteils?', '')],
-        'Verbinde einen Beleg, einen Nachteil und deine wichtigere Folge.',
+        'Nenne eine passende Zahl. Nenne einen Nachteil. Sage, was dir wichtiger ist.',
         [
           'Vorschlag passt zu den genannten Zahlen.',
           'Vorteil und Nachteil betreffen denselben Vorschlag.',
-          'Wichtigere Folge mit einem konkreten Grund verbunden.',
+          'Du sagst, welche Folge dir wichtiger ist. Du erklärst auch, warum.',
         ],
         common,
       ),
@@ -393,11 +395,11 @@ export function kenyaCompletion(p: ProfileId): Task[] {
             'Amina steigt später ein und geht nur 2 statt 12 Minuten. David steigt am Platz ein und fährt beide Nordabschnitte. Die Baustelle verlängert nur Leilas Fußweg zum Platz; ihre Südverbindung bleibt 10 Minuten.',
           ),
         ],
-        'Verbinde Wohnort, Einstieg und die neue Bedingung.',
+        'Wo wohnt die Person? Wo steigt sie ein? Was ändert die Baustelle an ihrem Weg?',
         [
-          'Persönlicher Einstieg von gesamter Linie unterschieden.',
-          'Beide Personen mit richtigen Teilwegen erklärt.',
-          'Baustelle nur Leilas betroffenem Fußweg zugeordnet.',
+          'Du unterscheidest: Wo steigt die Person ein? Welchen Teil der Linie fährt sie mit?',
+          'Du erklärst die Fußwege und Busfahrten beider Personen richtig.',
+          'Du erklärst, welchen Fußweg von Leila die Baustelle verändert.',
         ],
       ),
     );
@@ -409,7 +411,7 @@ export function kenyaCompletion(p: ProfileId): Task[] {
       [
         pick(
           'missing',
-          'Welche Information fehlt für echte Erreichbarkeit?',
+          'Was musst du für eine echte Busfahrt noch wissen?',
           'cost',
           [
             ['certain', 'Eine sichere Vorhersage für 2040'],
@@ -508,7 +510,7 @@ export function demandTasks(p: ProfileId): Task[] {
           'Der Fußweg verkürzt sich auf 4 Minuten. Es bleiben 20 Plätze und 4 Menschen müssen später fahren.',
         ),
       ],
-      'Schalte beide Maßnahmen an. Lies Plätze und Fußweg getrennt.',
+      'Teste zuerst die zusätzliche Fahrt. Wie viele Plätze gibt es jetzt? Teste danach den kürzeren Fußweg. Wie lange gehen die Menschen noch zur Haltestelle?',
       [],
       { simulation: { kind: 'demand', required: ['bus', 'path'] } },
     ),
@@ -544,7 +546,7 @@ export function demandTasks(p: ProfileId): Task[] {
             ['yes', 'Ja'],
             ['no', 'Nein'],
           ],
-          'Freie Plätze und Erreichbarkeit sind verschiedene Größen.',
+          'Freie Plätze sagen nicht, wie lange jemand zur Haltestelle geht.',
         ),
       ],
       `Der neue Fall hat ${transferCases['demand-18'].people} Menschen. Vergleiche Nachfrage und Plätze. Prüfe den Fußweg getrennt.`,
@@ -563,15 +565,15 @@ export function demandTasks(p: ProfileId): Task[] {
         'demand',
         [
           own(
-            'Warum sind die Maßnahmen nicht austauschbar? Welche weitere Angabe könnte deine Wahl ändern?',
+            'Warum lösen die beiden Vorschläge verschiedene Probleme? Welche weitere Angabe könnte deine Wahl ändern?',
             'Mit einer zusätzlichen Fahrt gibt es insgesamt drei Fahrten pro Stunde. Jede Fahrt hat 10 Plätze. Zusammen gibt es 30 Plätze pro Stunde. Der Fußweg bleibt 12 Minuten lang. Der neue Fußweg ist kürzer. Die Menschen müssen nur noch 4 Minuten zur Haltestelle gehen. Es bleiben aber 20 Plätze pro Stunde. Wir kennen die Kosten und die genauen Fahrzeiten der Menschen nicht. Deshalb können wir nicht alles sicher vergleichen. Eine genaue Wartezeit wird nicht berechnet.',
           ),
         ],
-        'Unterscheide Beförderung pro Stunde und persönlichen Zugang.',
+        'Wie viele Menschen können in einer Stunde fahren? Wie lange gehen sie zur Haltestelle?',
         [
-          'Beide Maßnahmen mit verschiedenen Größen erklärt.',
-          'Zeitraum und Modellgrenze genannt.',
-          'Konkrete weitere Information und ihre mögliche Bedeutung benannt.',
+          'Du erklärst, was sich bei jedem Vorschlag ändert: die Plätze oder der Fußweg.',
+          'Du sagst, dass die Zahlen für eine Stunde gelten. Du nennst auch etwas, das im Modell fehlt.',
+          'Du nennst eine fehlende Angabe. Du erklärst, warum sie deine Wahl ändern könnte.',
         ],
       ),
     );
@@ -678,7 +680,10 @@ function resolveSimulationInner(
     link.kind === 'kenya'
       ? [
           ...list,
-          ['unrelated', 'Alle Menschen brauchen immer gleich lange.'] as const,
+          [
+            'unrelated',
+            'Die Dauer der ganzen Buslinie ist die Gesamtzeit jeder Person.',
+          ] as const,
         ]
       : list;
   const chosen = (list: typeof benefits) =>
@@ -766,7 +771,12 @@ export function cocoaTasks(p: ProfileId): Task[] {
             'Die Kette: Bohnen → Rösten und mahlen → Kakaomasse → Pressen. Beim Pressen entstehen Butter und Presskuchen.',
           ),
         ],
-        'Welche Veränderung ist zuerst nötig?',
+        [
+          'Womit beginnt die Verarbeitung?',
+          'Was passiert mit den getrockneten Bohnen?',
+          'Was entsteht nach dem Rösten und Mahlen?',
+          'Was geschieht beim Pressen der Kakaomasse?',
+        ][i],
       ),
     );
   const base = cocoaModel('base');
@@ -849,11 +859,11 @@ export function cocoaTasks(p: ProfileId): Task[] {
             ['running', 'Aus dem laufenden Überschuss noch einmal abziehen'],
             ['separate', 'Aus einem getrennten Topf mit 60 GE'],
           ],
-          'Einmalige Anschaffung und laufende Runde sind getrennte Rechnungen.',
+          'Die Anschaffung wird nur einmal bezahlt. Rechne sie getrennt von den laufenden Ausgaben.',
         ),
         pick(
           'cause',
-          'Warum bedeutet mehr Einnahme hier nicht mehr Überschuss?',
+          'Der Betrieb bekommt mehr Geld. Warum bleibt trotzdem weniger als Überschuss übrig?',
           'costs',
           [
             ['automatic', 'Die Presse garantiert später Gewinn.'],
@@ -894,15 +904,15 @@ export function cocoaTasks(p: ProfileId): Task[] {
         'cocoa',
         [
           own(
-            'Trenne Überschuss in dieser Runde und längerfristiges Ziel. Welche Absatzangabe brauchst du?',
+            'Wie viel Geld bleibt jetzt übrig? Warum könnte die neue Maschine später trotzdem helfen? Was musst du noch über den Verkauf wissen?',
             'Mit der Presse kommen 260 GE herein. Nach den laufenden Ausgaben bleiben aber nur 75 statt 90 GE übrig. Mir kann trotzdem wichtig sein, selbst mehr zu verarbeiten. Ich muss noch prüfen: Wer kauft die Produkte? Zu welchen Preisen kann der Betrieb sie verkaufen?',
           ),
         ],
         'Verbinde Rechnung, Ziel und eine fehlende Information.',
         [
           'Mehr Einnahmen von mehr Überschuss unterschieden.',
-          'Einmalige Investition separat.',
-          'Konkrete Absatzinformation und ihre Bedeutung.',
+          'Du rechnest die einmalige Anschaffung getrennt von den laufenden Ausgaben.',
+          'Du nennst eine fehlende Angabe zum Verkauf. Du erklärst, warum sie wichtig ist.',
         ],
       ),
     );
@@ -987,7 +997,7 @@ export function shareTasks(p: ProfileId): Task[] {
           'Fortbildung kann helfen, garantiert aber keine Aufträge.',
         ),
       ],
-      'Tippe jeden Zweck an. Prüfe heutige Wirkung und Unsicherheit.',
+      'Tippe jeden Zweck an. Was passiert mit dem Geld jetzt? Was wissen wir über später noch nicht?',
       [],
       {
         simulation: {
@@ -1038,7 +1048,7 @@ export function shareTasks(p: ProfileId): Task[] {
       [
         pick(
           'tradeoff',
-          'Was passiert bei festem Budget, wenn 20 GE mehr in die Rücklage gehen?',
+          'Es bleiben insgesamt 120 GE. Was passiert, wenn du 20 GE mehr für Reparaturen zurücklegst?',
           'less',
           [
             ['more', 'Für alle anderen Zwecke gibt es zugleich mehr.'],
@@ -1084,9 +1094,9 @@ export function shareTasks(p: ProfileId): Task[] {
         ],
         'Nenne einen tatsächlichen Betrag aus jedem deiner Pläne.',
         [
-          'Beide eigenen Pläne korrekt verglichen.',
-          'Andere Perspektive und Zeitpunkt einbezogen.',
-          'Konkrete Unsicherheit statt Renditeversprechen.',
+          'Du vergleichst deinen ersten und zweiten Plan. Du zeigst, welche Geldbeträge unterschiedlich sind.',
+          'Du erklärst, was einem anderen Mitglied wichtig sein könnte. Du unterscheidest jetzt und später.',
+          'Du nennst, was wir noch nicht wissen. Du behauptest nicht, dass später sicher mehr Geld übrig bleibt.',
         ],
         { dependsOn: ['share.plan', 'share.plan.second'] },
       ),
@@ -1212,7 +1222,7 @@ export function waterTasks(p: ProfileId): Task[] {
               `80 − ${m.withdrawal} = ${m.remaining} WE.`,
             );
       }),
-      'Wähle beide Maßnahmen. Vergleiche für dasselbe Feld.',
+      'Schau dir zuerst die Reparatur an. Schau dir danach die neue Verteilung an. Vergleiche die Zahlen für dasselbe Feld.',
       [],
       { simulation: { kind: 'water', required: ['repair', 'tech'] } },
     ),
@@ -1242,7 +1252,7 @@ export function waterTasks(p: ProfileId): Task[] {
           'Tankentnahme, Ankunft und Verbrauch sind verschiedene Größen.',
         ),
       ],
-      'Prüfe Messstelle und Modellgrenze.',
+      'Wie viel Wasser verlässt den Tank? Wie viel kommt am Feld an? Was zeigt das Modell nicht?',
     ),
     ...decision(
       'water.final',
@@ -1303,11 +1313,11 @@ export function waterTasks(p: ProfileId): Task[] {
             'Mit der neuen Verteilung erreichen 40 WE das Feld. Aus dem Tank werden 45 statt 60 WE entnommen. Im Tank bleiben 35 WE. Das Wasser im Tank ist kein Grundwasser. Das Modell berechnet nicht, wie viel Wasser verbraucht wird, zurückfließt oder neu hinzukommt.',
           ),
         ],
-        'Benenne die Grenze des berechneten Systems.',
+        'Was zeigt die Rechnung über den Tank? Welche Angaben zum Wasser fehlen?',
         [
           'Entnahme, Ankunft und Rest unterschieden.',
-          'Kontrollierter Vergleich desselben Felds.',
-          'Keine Grundwasser- oder Erntegarantie behauptet.',
+          'Du vergleichst die Vorschläge für dasselbe Feld.',
+          'Du behauptest nicht, dass es sicher mehr Grundwasser oder mehr Ernte gibt.',
         ],
       ),
     );
@@ -1375,7 +1385,7 @@ export function areaTasks(p: ProfileId): Task[] {
               'total',
               p === 'esa'
                 ? '45 + 20 ='
-                : 'Gesamtentnahme für beide Felder (WE)',
+                : 'Wie viel Wasser wird für beide Felder zusammen aus dem Tank genommen? Gesamtentnahme (WE)',
               extra.withdrawal,
               '45 + 20 = 65 WE.',
             ),
@@ -1472,11 +1482,11 @@ export function areaTasks(p: ProfileId): Task[] {
     ts.push(
       step(
         'area.condition',
-        'Unter welcher Bedingung bleibt es insgesamt weniger?',
+        'Wann brauchen beide Felder zusammen weniger Wasser als früher?',
         'area',
         [
           own(
-            'Das erste Feld braucht 45 WE. Wann bleibt die Gesamtentnahme unter früher 60 WE? Prüfe auch genau 15 WE Zusatzentnahme.',
+            'Das erste Feld braucht 45 WE. Wie viel Wasser darf das neue Feld brauchen, damit zusammen weniger als früher 60 WE entnommen werden? Prüfe auch genau 15 WE für das neue Feld.',
             'Bei weniger als 15 WE Zusatzentnahme bleibt die Summe unter 60 WE. Bei genau 15 WE sind es 60 WE. Bei 20 WE sind es 65 WE. Das gilt für diese erfundene Rechnung. Es sagt nicht voraus, wie viel Wasser Marokko haben wird.',
           ),
         ],
@@ -1484,7 +1494,7 @@ export function areaTasks(p: ProfileId): Task[] {
         [
           'Zusatzentnahme kleiner als 15 WE als Bedingung.',
           'Grenzfall 15 WE ergibt insgesamt 60 WE.',
-          'Keine Ernte-/Einkommens- oder reale Wasserprognose.',
+          'Du sagst nicht voraus, wie viel Ernte, Geld oder Wasser es in der Wirklichkeit geben wird.',
         ],
       ),
     );

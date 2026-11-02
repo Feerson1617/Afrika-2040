@@ -306,7 +306,7 @@ test('Phase2B goal conflict: acknowledges correct facts, keeps open without weig
     'Du belegst den Vorteil',
   );
   await expect(page.locator('[data-feedback]')).toContainText(
-    'noch nicht verbunden',
+    'Dein Ziel und deine Begründung passen noch nicht zusammen.',
   );
   await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
   await expect(page.locator('.goal-note')).toContainText('28 Minuten');

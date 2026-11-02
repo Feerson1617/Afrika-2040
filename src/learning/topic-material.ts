@@ -11,7 +11,7 @@ const esc = (s: string) =>
         c
       ]!,
   );
-export function topicMaterial(f: Focus, p: ProfileId) {
+export function topicMaterial(f: Focus, _p: ProfileId) {
   let view = f.paragraphs.map((t) => `<p>${esc(t)}</p>`).join('');
   if (f.picture) {
     const photo = photos[f.picture];
@@ -33,7 +33,7 @@ export function topicMaterial(f: Focus, p: ProfileId) {
         'Nov',
         'Dez',
       ];
-    view += `<table class="learning-season"><caption>${esc(s.name)} · typische Jahreszeiten, keine Monatsmessungen</caption><thead><tr><th scope="col">Monat</th><th scope="col">Regen im Vergleich</th></tr></thead><tbody>${months.map((m, i) => `<tr><th scope="row">${m}</th><td>${(s.wet as readonly number[]).includes(i + 1) ? '● ● ● mehr' : '● weniger'}</td></tr>`).join('')}</tbody></table>`;
+    view += `<table class="learning-season"><caption>${esc(s.name)} · wann es meist mehr oder weniger regnet; keine genauen Regenmengen für einzelne Monate</caption><thead><tr><th scope="col">Monat</th><th scope="col">Regen im Vergleich</th></tr></thead><tbody>${months.map((m, i) => `<tr><th scope="row">${m}</th><td>${(s.wet as readonly number[]).includes(i + 1) ? '● ● ● mehr' : '● weniger'}</td></tr>`).join('')}</tbody></table>`;
   }
   if (f.rows)
     view += `<table><caption>Angaben für diesen Schritt</caption><thead><tr>${f.rows[0].map((x) => `<th scope="col">${esc(f.topic === 'future' ? x.replace('Gemeinsamer Kühlraum', 'Kühlraum').replace('Schattendächer und Mehrwegkisten', 'Dächer/Kisten') : x)}</th>`).join('')}</tr></thead><tbody>${f.rows
@@ -63,5 +63,5 @@ export function topicMaterial(f: Focus, p: ProfileId) {
   const withoutControls = full
     .replace(/<div class="material-tabs"[\s\S]*?<\/div>/g, '')
     .replace(/<p class="small-note">Bereits geöffnet:[\s\S]*?<\/p>/g, '');
-  return `<h2>${f.topic === 'image' ? 'Foto untersuchen' : f.topic === 'nature' ? 'Natur und Nutzung' : f.topic === 'economy' ? 'Betrieb und Land' : 'Zwei Angebote vergleichen'}</h2>${view}<details id="learning-topic-full"><summary>${p === 'foerder' ? 'Mehr Angaben und Quellen ansehen' : 'Vollständige Materialien und Quellen'}</summary>${withoutControls}${sources(f.topic)}</details>`;
+  return `<h2>${f.topic === 'image' ? 'Foto untersuchen' : f.topic === 'nature' ? 'Natur und Nutzung' : f.topic === 'economy' ? 'Betrieb und Land' : 'Zwei Angebote vergleichen'}</h2>${view}<details id="learning-topic-full"><summary>Mehr Angaben und Quellen ansehen</summary>${withoutControls}${sources(f.topic)}</details>`;
 }

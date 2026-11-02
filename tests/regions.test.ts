@@ -915,7 +915,7 @@ for (const build of [cocoaDecision, shareDecision, waterDecision, areaDecision])
     assert.equal(record(s).progress[2].feedback!.kind, 'neutral');
     assert.equal(record(s).progress[2].failures, 0);
     assert.equal(record(s).progress[2].help, 0);
-    assert.match(record(s).progress[2].feedback!.text, /nicht sicher prüfen/);
+    assert.match(record(s).progress[2].feedback!.text, /nicht fachlich prüfen/);
     s = action(s, 'submit');
     assert.equal(record(s).decision.ungraded, true);
     assert.equal(record(s).progress[2].complete, true);

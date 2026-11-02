@@ -370,6 +370,8 @@ test('Afrika curriculum supported path for all five, keyboard progression, all r
   browser,
   browserName,
 }) => {
+  // Five complete topics and ten axe scans also run in the full parallel suite.
+  test.setTimeout(90000);
   const context = await browser.newContext({
     viewport: { width: 720, height: 900 },
     baseURL: 'http://127.0.0.1:4174',

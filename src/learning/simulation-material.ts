@@ -374,7 +374,7 @@ export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
       /data-action="geography" data-op="review-tab"/g,
       'data-action="learning" data-op="simulate"',
     );
-    return `<h2>Drei Länder in Afrika</h2><p>Nordrichtung: oben. Die gestrichelte Linie ist der Äquator, keine Landesgrenze. Punkte zeigen Städte. Diese Übersicht nutzt echte Natural-Earth-Umrisse. Sie ist keine Karte unserer erfundenen Nachbarschaft.</p>${map}${controls(
+    return `<h2>Drei Länder in Afrika</h2><p>Oben ist Norden. Die gestrichelte Linie ist der Äquator, keine Landesgrenze. Punkte zeigen Städte. Die Länder sind an ihrem wirklichen Ort eingezeichnet. Unsere erfundene Nachbarschaft ist hier nicht eingezeichnet.</p>${map}${controls(
       Object.entries(regions).map(([id, r]) => [id, r.name]),
       a.simulationSelection ?? '',
     )}<details><summary>Städte und Quelle nachsehen</summary>${table(

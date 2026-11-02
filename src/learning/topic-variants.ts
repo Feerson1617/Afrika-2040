@@ -70,7 +70,7 @@ const moneyWords: [string, string][] = [
   ['Einnahmen', 'Geld, das ein Betrieb bekommt.'],
   [
     'Überschuss',
-    'Der Betrieb bekommt Geld und bezahlt laufende Kosten. Das übrige Geld heißt Überschuss.',
+    'Der Betrieb bekommt Geld. Er bezahlt seine laufenden Kosten. Das übrige Geld heißt Überschuss.',
   ],
   [
     'Investition',
@@ -101,7 +101,7 @@ function item(
     focus: material,
     instruction: fields.some((f) => f.kind === 'text')
       ? 'Ein kurzer Satz oder Stichwörter reichen. Die App bewertet deinen Text nicht fachlich.'
-      : 'Nutze das Material. Wähle oder rechne selbst.',
+      : '',
     hints: [
       h1,
       h2,
@@ -243,7 +243,7 @@ function images(p: ProfileId): Task[] {
     'Eine erfundene Schulzeitung schreibt: „Afrika ist nur unberührte Natur.“ Sie behauptet: Menschen haben dort nichts gebaut.';
   const initial = item(
     'image.initial',
-    'Welche Vorstellung bringst du mit?',
+    'Was denkst du bisher über Afrika?',
     [
       pick(
         'idea',
@@ -288,7 +288,7 @@ function images(p: ProfileId): Task[] {
         [
           'Mögliche Wirkung der Auswahl erklärt.',
           'Sichtbares Detail aus dem anderen Foto genutzt.',
-          'Keine pauschale Gegenaussage über ganz Afrika.',
+          'Du beachtest: Die beiden Fotos zeigen nicht, wie es überall in Afrika aussieht.',
         ],
         true,
       ),
@@ -297,7 +297,7 @@ function images(p: ProfileId): Task[] {
     tasks.push(
       item(
         'image.revision',
-        'Überarbeite die Vorstellung kurz selbst.',
+        'Was denkst du jetzt? Was hast du auf den Fotos gesehen?',
         [
           own(
             'explanation',
@@ -394,7 +394,7 @@ function nature(p: ProfileId): Task[] {
       ),
       pick(
         'limit',
-        'Welche Grenze hat ein Regenwasserspeicher?',
+        'Welches Problem kann es bei einem Speicher für Regenwasser geben?',
         'limited',
         [
           ['endless', 'Er liefert auch ohne neuen Regen dauerhaft Wasser.'],
@@ -404,7 +404,7 @@ function nature(p: ProfileId): Task[] {
       ),
     ],
     water,
-    'Verbinde eine Naturbedingung mit einer möglichen Nutzung.',
+    'Was hilft Pflanzen beim Wachsen? Wie können Menschen das Regenwasser nutzen?',
     'Regen kann Wachstum ermöglichen. Speicherung und Zugang müssen aber funktionieren.',
   );
   const regions = focus(
@@ -425,7 +425,7 @@ function nature(p: ProfileId): Task[] {
   );
   const comparison = item(
     'nature.regions',
-    'Vergleiche gleiche Einheiten und Zeiträume.',
+    'Achte auf die Einheit. Achte auf die Jahre. Erst dann vergleichst du die Zahlen.',
     [
       pick(
         'higher',
@@ -445,12 +445,12 @@ function nature(p: ProfileId): Task[] {
           ['yes', 'Ja. Niederschlag ist immer nutzbares Trinkwasser.'],
           ['no', 'Nein. Saison, Qualität, Bedarf und Zugang fehlen.'],
         ],
-        'Jahresniederschlag beweist keine gesicherte Versorgung.',
+        'Auch wenn in einer Region mehr Regen fällt, müssen nicht alle Menschen genug Wasser haben.',
       ),
     ],
     regions,
-    'Lies Region, Einheit und Zeitraum zusammen.',
-    'Mehr Jahresregen ist nicht automatisch mehr nutzbares Wasser für jeden Menschen.',
+    'Für welche Region gelten die Zahlen? Was wird gemessen? Für welche Jahre gelten die Werte?',
+    'Mehr Regen im Jahr bedeutet nicht, dass jeder Mensch mehr Wasser nutzen kann.',
   );
   const concepts = item(
     'nature.concepts',
@@ -458,7 +458,7 @@ function nature(p: ProfileId): Task[] {
     [
       pick(
         'savanna',
-        'Wo wechseln ausgeprägte Regen- und Trockenzeiten?',
+        'Wo gibt es deutlich erkennbare Regenzeiten und Trockenzeiten?',
         'savanna',
         [
           ['savanna', 'Savanne'],
@@ -468,11 +468,14 @@ function nature(p: ProfileId): Task[] {
       ),
       pick(
         'cycle',
-        'Was führt Wasser wieder in die Atmosphäre?',
+        'Wie kommt Wasser wieder in die Luft?',
         'evaporation',
         [
           ['evaporation', 'Verdunstung'],
-          ['stop', 'Der Kreislauf endet für immer im Tank.'],
+          [
+            'stop',
+            'Nur neu fallender Regen bringt Wasser vom Boden in die Luft.',
+          ],
         ],
         'Wasser kann verdunsten und später als Niederschlag fallen.',
       ),
@@ -560,7 +563,7 @@ function nature(p: ProfileId): Task[] {
                 'Nein. Speicherung, Bedarf und Zugang können sich unterscheiden.',
               ],
             ],
-            'Gleiche Jahressumme legt Verfügbarkeit während einer Trockenzeit nicht fest.',
+            'Gleich viel Regen im Jahr bedeutet nicht, dass während einer Trockenzeit gleich viel Wasser verfügbar ist.',
           ),
         ],
         focus(
@@ -570,7 +573,7 @@ function nature(p: ProfileId): Task[] {
           ],
           natureWords,
         ),
-        'Unterscheide Jahressumme und Verteilung über die Monate.',
+        'In beiden Orten regnet es im Jahr gleich viel. Fällt der Regen aber in denselben Monaten?',
         'Gleich viel Wasser im Jahr ist nicht automatisch zur selben Zeit nutzbar.',
         [],
         true,
@@ -636,7 +639,7 @@ function economy(p: ProfileId): Task[] {
             'first',
             p === 'esa'
               ? '60 − 40 = nach einmaliger Anschaffung (GE)'
-              : 'B: Rest nach einmaliger Anschaffung (GE)',
+              : 'B: Wie viel Geld bleibt im eigenen Topf für Anschaffungen? (GE)',
             20,
             '60 − 40 = 20 GE. Die Anschaffung nicht doppelt abziehen.',
           ),
@@ -648,7 +651,7 @@ function economy(p: ProfileId): Task[] {
   const data = focus(
     'economy',
     [
-      'Ghana, Quelle: Weltbank (WDI). Stromzugang zeigt: Wie viel Prozent der Menschen haben Zugang zu Strom? Das BIP beschreibt den neu geschaffenen wirtschaftlichen Wert im Land. Die Wachstumsrate zeigt die Veränderung zum Vorjahr in Prozent. Preisänderungen sind herausgerechnet. Die Zahlen gelten für frühere Jahre. Sie sagen die Zukunft nicht voraus.',
+      'Ghana, Quelle: Weltbank. Stromzugang zeigt: Wie viel Prozent der Menschen haben Zugang zu Strom? Das BIP beschreibt den neu geschaffenen wirtschaftlichen Wert im Land. Die Wachstumsrate zeigt die Veränderung zum Vorjahr in Prozent. Preisänderungen sind herausgerechnet. Die Zahlen gelten für frühere Jahre. Sie sagen die Zukunft nicht voraus.',
     ],
     moneyWords,
     {
@@ -673,20 +676,26 @@ function economy(p: ProfileId): Task[] {
         'Was bedeutet 89,5 Prozent Stromzugang im Jahr 2023?',
         'share',
         [
-          ['reliable', 'Alle haben immer kostenlosen Strom.'],
+          [
+            'reliable',
+            'Der Strom fällt bei den angeschlossenen Haushalten nicht aus.',
+          ],
           ['share', '89,5 von 100 Menschen haben Zugang zu Strom.'],
         ],
-        'Zugang beschreibt weder Ausfallzeiten noch Bezahlbarkeit.',
+        'Die Zahl zum Strom zeigt nicht, wie oft er ausfällt oder wer ihn bezahlen kann.',
       ),
       pick(
         'growth',
         'Was sagt 3,1 Prozent BIP-Wachstum 2023?',
         'country',
         [
-          ['country', 'Das preisbereinigte BIP steigt gegenüber 2022.'],
+          [
+            'country',
+            'Das BIP ist höher als 2022. Preisänderungen sind herausgerechnet.',
+          ],
           ['profit', 'Jeder Betrieb hat 3,1 GE Überschuss.'],
         ],
-        'BIP betrifft den neu entstandenen wirtschaftlichen Wert im Land, nicht den Überschuss eines Betriebs.',
+        'Das BIP zeigt den neu geschaffenen wirtschaftlichen Wert im ganzen Land. Es zeigt nicht den Überschuss eines Betriebs.',
       ),
     ],
     data,
@@ -707,7 +716,7 @@ function economy(p: ProfileId): Task[] {
     [
       pick(
         'pair',
-        'Welche Verbindung ist möglich?',
+        'Wie können Strom und Wissen dem Kakaobetrieb helfen?',
         'together',
         [
           ['machine', 'Eine Maschine garantiert Gewinn.'],
@@ -716,7 +725,7 @@ function economy(p: ProfileId): Task[] {
             'Zuverlässiger Strom und Wissen können zusammen helfen.',
           ],
         ],
-        'Mit Strom können Maschinen arbeiten. Wissen kann bei der Verarbeitung und beim Verkauf helfen. Ob der Betrieb Erfolg hat, hängt auch von anderen Bedingungen ab.',
+        'Mit Strom können Maschinen arbeiten. Wissen kann bei der Verarbeitung und beim Verkauf helfen. Für Erfolg braucht der Betrieb noch mehr, zum Beispiel Käufer.',
       ),
       pick(
         'proof',
@@ -726,7 +735,7 @@ function economy(p: ProfileId): Task[] {
           ['no', 'Nein. Dafür fehlen weitere Angaben.'],
           ['yes', 'Ja. Alle Teilnehmenden verdienen nun sicher mehr.'],
         ],
-        'Ein Eigenbericht über Schulung beweist keinen späteren Gewinn.',
+        'GEPA berichtet über eine eigene Schulung. Der Bericht zeigt nicht, ob die Betriebe später mehr Geld übrig haben.',
       ),
     ],
     gepa,
@@ -745,7 +754,7 @@ function economy(p: ProfileId): Task[] {
           ['yes', 'Ja. Mehr Stromzugang beweist mehr Einkommen für alle.'],
           ['no', 'Nein. Die Stromzahlen zeigen das Einkommen nicht.'],
         ],
-        'Die Stromwerte beschreiben Zugang, nicht Einkommen. Daraus ist kein automatischer Einkommensanstieg bewiesen.',
+        'Die Stromwerte zeigen, wer Zugang zu Strom hat. Sie zeigen nicht, wie viel Geld die Menschen verdienen. Sie beweisen nicht, dass die Menschen jetzt mehr verdienen.',
       ),
       pick(
         'distribution',
@@ -761,7 +770,7 @@ function economy(p: ProfileId): Task[] {
             'Keine weiteren Angaben. Die Stromzahlen zeigen jedes Einkommen.',
           ],
         ],
-        'Für die Aussage über alle Menschen fehlen tatsächliche Einkommens- und Verteilungsangaben.',
+        'Für die Aussage über alle Menschen fehlen Angaben dazu, wie viel Geld die einzelnen Menschen verdienen.',
       ),
     ],
     p === 'foerder' || p === 'esa'
@@ -800,7 +809,7 @@ function economy(p: ProfileId): Task[] {
             'Behauptung: Mehr Stromzugang bedeutet automatisch mehr Einkommen für alle. Die gezeigte BIP-Wachstumsrate sinkt von rund 3,8 auf 3,1 Prozent, bleibt aber positiv. Das bedeutet hier weiterhin Wachstum des preisbereinigten BIP, nicht ein sinkendes BIP.',
           ],
         },
-    'Prüfe die Einheit: Was wurde mit den Stromwerten überhaupt erfasst?',
+    'Was zeigen die Stromwerte? Lies die Einheit.',
     'Die Tabelle zeigt den Zugang zu Strom. Was Menschen verdienen, steht dort nicht. Dafür brauchst du Angaben zu ihrem Einkommen.',
     [],
     true,
@@ -882,7 +891,7 @@ function economy(p: ProfileId): Task[] {
         focus(
           'economy',
           [
-            'Quelle 1: Weltbank (WDI), Ghana. 2022: 85,1 Prozent mit Stromzugang. 2023: 89,5 Prozent. Die Werte geben den Anteil der Bevölkerung mit Stromzugang an.',
+            'Quelle 1: Weltbank, Ghana. 2022: 85,1 Prozent mit Stromzugang. 2023: 89,5 Prozent. Die Werte geben den Anteil der Bevölkerung mit Stromzugang an.',
             'Quelle 2: GEPA berichtet am 23.10.2024 über eine eigene Schulung. Die Teilnehmerinnen führten bereits Kakaoverarbeitungsbetriebe. In der Schulung ging es um Preise, Transport und Regeln für den Verkauf ins Ausland.',
           ],
           [
@@ -894,11 +903,11 @@ function economy(p: ProfileId): Task[] {
             ],
           ],
         ),
-        'Prüfe getrennt, was jede Quelle tatsächlich erhebt oder berichtet.',
+        'Lies beide Quellen einzeln. Was zeigt die erste Quelle? Was berichtet die zweite? Was kannst du daraus nicht sicher schließen?',
         'Wessen Einkommen wird behauptet? Für welche Jahre gelten die Quellen? Was wurde gemessen? Welche Angabe zum Einkommen fehlt?',
         [
-          'Stromzugangsanteil mit Zeitraum und Einheit korrekt eingeordnet.',
-          'GEPA als Eigenbericht über Schulung beschrieben, nicht als Einkommenserhebung.',
+          'Du nennst richtig: Wie viel Prozent haben Zugang zu Strom? Für welche Jahre gelten die Angaben?',
+          'Du erklärst: GEPA berichtet über die eigene Schulung. Der Bericht untersucht nicht, wie viel Geld die Teilnehmerinnen verdienen.',
           'Die behauptete Ursache-Wirkung ist durch diese Quellen nicht bewiesen.',
           'Genannt, welche Einkommensdaten der Teilnehmerinnen fehlen. Auch andere mögliche Ursachen genannt.',
         ],
@@ -1213,7 +1222,7 @@ function future(p: ProfileId): Task[] {
     [
       pick(
         'weight',
-        'Was ist dir bei deiner tatsächlichen Wahl wichtiger?',
+        'Was ist dir bei deinem Plan am wichtigsten?',
         'either',
         [
           [
@@ -1252,15 +1261,15 @@ function future(p: ProfileId): Task[] {
         'Welche Frage hilft bei beiden Plänen?',
         'maintenance',
         [
-          ['colour', 'Welche Lieblingsfarbe haben alle?'],
+          ['colour', 'Wie viele Stände kann der Kühlraum aufnehmen?'],
           ['maintenance', 'Wer prüft, pflegt und repariert? Wer bezahlt das?'],
         ],
         'Bei beiden Angeboten ist offen: Wer prüft, pflegt und repariert die Anlage?',
       ),
     ],
     maintenance,
-    'Suche die fehlende Zuständigkeit.',
-    'Ein Planwechsel löst die Wartungsfrage nicht automatisch.',
+    'Wer soll später den Kühlraum, die Dächer oder die Kisten prüfen und reparieren?',
+    'Auch nach einem Planwechsel musst du klären, wer später prüft und repariert.',
     [],
     true,
   );
@@ -1270,7 +1279,7 @@ function future(p: ProfileId): Task[] {
     [
       pick(
         'revision',
-        'Wie entscheidest du unter der neuen Unsicherheit?',
+        'Du weißt jetzt nicht, wer später repariert. Bleibst du bei deinem Plan oder änderst du ihn?',
         'either',
         [
           [
@@ -1304,7 +1313,7 @@ function future(p: ProfileId): Task[] {
   if (p === 'msa' || p === 'ahr') {
     const judgment = item(
       'future.judgment',
-      'Begründe deine Gewichtung kurz selbst.',
+      'Was ist dir wichtiger? Warum?',
       [
         own(
           'explanation',
@@ -1340,7 +1349,7 @@ function future(p: ProfileId): Task[] {
         'Verbinde zwei Folgen statt sie nur aufzuzählen.',
         'Wenn …, dann kann … gelten. Benenne eine dazu passende fehlende Angabe.',
         [
-          'Mögliche Beziehung erklärt, keine garantierte Wirkung.',
+          'Du erklärst, wie die Folgen zusammenhängen können. Du behauptest nicht, dass diese Wirkung sicher eintritt.',
           'Konkrete fehlende Information.',
           'Beibehalten und Ändern sachlich begründet möglich.',
         ],

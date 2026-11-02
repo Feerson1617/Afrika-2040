@@ -211,7 +211,7 @@ test('R2: unclear free text is never counted as a failed evidence check or silen
     await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
     await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
     await expect(page.locator('[data-feedback]')).toContainText(
-      'nicht sicher prüfen',
+      'nicht fachlich prüfen',
     );
     expect((await saved(page)).progress[5].failures).toBe(0);
   }

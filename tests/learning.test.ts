@@ -72,7 +72,14 @@ test('each subtask has complete contract and unique identity; forms require diff
         const key = areaId(unit, profile) + ':' + t.id;
         assert.ok(!ids.has(key), key);
         ids.add(key);
-        assert.ok(t.material && t.instruction && t.conceptId);
+        assert.ok(t.material && t.conceptId);
+        // A1: no redundant generic instruction if every visible field asks its own question.
+        assert.ok(
+          t.instruction.trim() ||
+            (t.fields.length > 0 &&
+              t.fields.every((f) => f.label.trim().length > 5)),
+          `Missing concrete task instruction: ${t.id}`,
+        );
         assert.equal(t.hints.length, 3);
         assert.ok(t.criteria.length);
         assert.ok(t.fields.length);

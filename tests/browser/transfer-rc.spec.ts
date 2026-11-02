@@ -288,7 +288,7 @@ for (const unit of ['s2', 's5', 's6'] as const)
           }),
         });
         await expect(article).toHaveCount(1);
-        await expect(article).toContainText('Sie passen.');
+        await expect(article).toContainText('Richtig. Diese Angaben passen.');
         await article
           .locator('details')
           .first()
@@ -343,7 +343,7 @@ if (!before) {
       await page.locator('[data-op="journal"]').click();
       const article = page.locator('.journal-record article');
       await expect(article).toHaveCount(1);
-      await expect(article).toContainText('Sie passen.');
+      await expect(article).toContainText('Richtig. Diese Angaben passen.');
       await article
         .locator('details')
         .first()

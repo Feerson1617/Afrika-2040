@@ -13,9 +13,12 @@ const words = {
   ],
   migration: [
     'Wanderungssaldo',
-    'Menschen ziehen hinzu oder weg. Zuzug minus Fortzug heißt Wanderungssaldo.',
+    'Menschen ziehen hinzu oder weg. Rechne Zuzug minus Fortzug. Das Ergebnis heißt Wanderungssaldo. Ziehen mehr Menschen weg als zu, werden es durch Umzüge weniger.',
   ],
-  stock: ['Bestand', 'Zahl der Menschen zu einem Zeitpunkt.'],
+  stock: [
+    'Bestand',
+    'Wie viele Menschen zu einem bestimmten Zeitpunkt an einem Ort leben. Diese Zahl heißt Bestand.',
+  ],
   estimate: [
     'Schätzung',
     'Die Zahl wurde aus vorhandenen Daten berechnet. Sie kann später geändert werden.',
@@ -56,11 +59,14 @@ const addedWords: [string, string][] = [
     'Wasser verdunstet zum Beispiel. Es ist dann vor Ort zunächst nicht mehr nutzbar. Das zählt zum Verbrauch. Das Spiel berechnet den Verbrauch nicht.',
   ],
   ['Nachfrage', 'Wie viele Menschen in dieser Modellstunde fahren möchten.'],
-  ['Kapazität', 'Wie viele Plätze in einer Stunde angeboten werden.'],
+  [
+    'Kapazität',
+    'Wie viele Plätze in einer Stunde angeboten werden. Zwei Fahrten mit je 10 Plätzen bieten zusammen 20 Plätze. Das heißt hier Kapazität.',
+  ],
   ['Einnahmen', 'Geld, das ein Betrieb bekommt.'],
   [
     'Überschuss',
-    'Der Betrieb bekommt Geld und bezahlt laufende Kosten. Das übrige Geld heißt Überschuss.',
+    'Der Betrieb bekommt Geld. Er bezahlt seine laufenden Kosten. Das übrige Geld heißt Überschuss.',
   ],
   [
     'Investition',
@@ -70,7 +76,10 @@ const addedWords: [string, string][] = [
     'Verdunstung',
     'Flüssiges Wasser wird zu Wasserdampf und gelangt in die Luft.',
   ],
-  ['Atmosphäre', 'Die Lufthülle der Erde.'],
+  [
+    'Atmosphäre',
+    'Die Luft umgibt die Erde wie eine Hülle. Diese Lufthülle heißt Atmosphäre.',
+  ],
   ['Marktstand', 'Ein Platz auf einem Markt, an dem Waren verkauft werden.'],
   ['Kühlraum', 'Ein gekühlter Raum, der empfindliche Waren schützen kann.'],
   ['Mehrwegkiste', 'Eine Kiste, die man reinigt und wieder benutzt.'],
@@ -82,11 +91,14 @@ const addedWords: [string, string][] = [
     'Verteilung',
     'Wie sich etwas auf verschiedene Menschen oder Gruppen verteilt.',
   ],
-  ['Wartung', 'Etwas regelmäßig prüfen und pflegen.'],
+  [
+    'Wartung',
+    'Etwas regelmäßig prüfen und pflegen, damit es weiter funktioniert. Zum Beispiel eine Kühlanlage. Das heißt Wartung.',
+  ],
   ['Prozent', 'Von hundert. 50 Prozent bedeutet 50 von 100.'],
   [
     'BIP',
-    'Bruttoinlandsprodukt: Menschen stellen Waren her und bieten Leistungen an. Der dabei neu geschaffene wirtschaftliche Wert eines Jahres heißt BIP. Es geht um ein ganzes Land, nicht um das Geld eines Betriebs.',
+    'Das BIP beschreibt die wirtschaftliche Leistung eines Landes in einem Jahr. Es erfasst den neu geschaffenen Wert von Waren und Dienstleistungen. Bereits eingekaufte Waren und Leistungen werden nicht noch einmal mitgezählt. Es sagt nicht, wie viel Geld einzelne Menschen bekommen. BIP heißt Bruttoinlandsprodukt.',
   ],
   [
     'Preisbereinigt',
@@ -96,7 +108,10 @@ const addedWords: [string, string][] = [
     'Einkommen',
     'Geld, das Menschen bekommen. Die Zahlen zum Zugang zu Strom zeigen dieses Geld nicht.',
   ],
-  ['Ressourcen', 'Material und Energie, die für etwas gebraucht werden.'],
+  [
+    'Ressourcen',
+    'Was für etwas gebraucht wird, zum Beispiel Holz, Wasser oder Energie. Das nennt man Ressourcen.',
+  ],
 ];
 const wordKey = (word: string) =>
   word

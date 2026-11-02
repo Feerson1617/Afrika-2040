@@ -1,0 +1,1053 @@
+[
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Deine Erklärung bleibt fachlich ungeprüft. Nutze die Selbstkontrolle oder besprich sie.",
+    "after": "Die App kann deine Erklärung nicht fachlich prüfen. Vergleiche sie mit der Selbstkontrolle oder besprich sie.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Ein kurzer Satz oder Stichwörter reichen. Dein Text wird nicht automatisch fachlich geprüft.",
+    "after": "Ein kurzer Satz oder Stichwörter reichen. Die App kann deinen Text nicht fachlich prüfen.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "'Untersuche das Modell. Wähle oder rechne selbst.'",
+    "after": "''",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Tankrest = Anfang minus Entnahme. Die Ankunft am Feld ist eine andere Messstelle. Verbrauch wird hier nicht berechnet.",
+    "after": "Wie viel bleibt im Tank? Rechne Anfang minus Entnahme. Schau getrennt darauf, wie viel am Feld ankommt. Das Modell zeigt nicht, wie viel Wasser verbraucht wird.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Erstes Feld plus Zusatzfeld ergibt die gesamte Entnahme. Vergleiche erst dieselbe Fläche, dann die Summe mit früher 60 WE.",
+    "after": "Rechne das Wasser für beide Felder zusammen. Vergleiche zuerst das erste Feld mit früher. Vergleiche dann die Summe mit früher 60 WE.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Sachangaben zum dargestellten Modell zugeordnet.",
+    "after": "Deine Angaben passen zu dem gezeigten Beispiel.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Eigene Entscheidungen sind keine automatische Fachbewertung.",
+    "after": "Du darfst selbst entscheiden, was dir wichtiger ist. Das macht deine Angaben noch nicht richtig.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Verbinde einen Beleg, einen Nachteil und deine wichtigere Folge.",
+    "after": "Nenne eine passende Zahl. Nenne einen Nachteil. Sage, was dir wichtiger ist.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Wichtigere Folge mit einem konkreten Grund verbunden.",
+    "after": "Du sagst, welche Folge dir wichtiger ist. Du erklärst auch, warum.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Verbinde Wohnort, Einstieg und die neue Bedingung.",
+    "after": "Wo wohnt die Person? Wo steigt sie ein? Was ändert die Baustelle an ihrem Weg?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Persönlicher Einstieg von gesamter Linie unterschieden.",
+    "after": "Du unterscheidest: Wo steigt die Person ein? Welchen Teil der Linie fährt sie mit?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Beide Personen mit richtigen Teilwegen erklärt.",
+    "after": "Du erklärst die Fußwege und Busfahrten beider Personen richtig.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Baustelle nur Leilas betroffenem Fußweg zugeordnet.",
+    "after": "Du erklärst, welchen Fußweg von Leila die Baustelle verändert.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Welche Information fehlt für echte Erreichbarkeit?",
+    "after": "Was musst du für eine echte Busfahrt noch wissen?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Schalte beide Maßnahmen an. Lies Plätze und Fußweg getrennt.",
+    "after": "Teste zuerst die zusätzliche Fahrt. Wie viele Plätze gibt es jetzt? Teste danach den kürzeren Fußweg. Wie lange gehen die Menschen noch zur Haltestelle?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Warum sind die Maßnahmen nicht austauschbar? Welche weitere Angabe könnte deine Wahl ändern?",
+    "after": "Warum lösen die beiden Vorschläge verschiedene Probleme? Welche weitere Angabe könnte deine Wahl ändern?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Unterscheide Beförderung pro Stunde und persönlichen Zugang.",
+    "after": "Wie viele Menschen können in einer Stunde fahren? Wie lange gehen sie zur Haltestelle?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Beide Maßnahmen mit verschiedenen Größen erklärt.",
+    "after": "Du erklärst, was sich bei jedem Vorschlag ändert: die Plätze oder der Fußweg.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Zeitraum und Modellgrenze genannt.",
+    "after": "Du sagst, dass die Zahlen für eine Stunde gelten. Du nennst auch etwas, das im Modell fehlt.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Konkrete weitere Information und ihre mögliche Bedeutung benannt.",
+    "after": "Du nennst eine fehlende Angabe. Du erklärst, warum sie deine Wahl ändern könnte.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Freie Plätze und Erreichbarkeit sind verschiedene Größen.",
+    "after": "Freie Plätze sagen nicht, wie lange jemand zur Haltestelle geht.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "'Welche Veränderung ist zuerst nötig?'",
+    "after": "[\n          'Womit beginnt die Verarbeitung?',\n          'Was passiert mit den getrockneten Bohnen?',\n          'Was entsteht nach dem Rösten und Mahlen?',\n          'Was geschieht beim Pressen der Kakaomasse?',\n        ][i]",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Warum bedeutet mehr Einnahme hier nicht mehr Überschuss?",
+    "after": "Der Betrieb bekommt mehr Geld. Warum bleibt trotzdem weniger als Überschuss übrig?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Einmalige Anschaffung und laufende Runde sind getrennte Rechnungen.",
+    "after": "Die Anschaffung wird nur einmal bezahlt. Rechne sie getrennt von den laufenden Ausgaben.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Trenne Überschuss in dieser Runde und längerfristiges Ziel. Welche Absatzangabe brauchst du?",
+    "after": "Wie viel Geld bleibt jetzt übrig? Warum könnte die neue Maschine später trotzdem helfen? Was musst du noch über den Verkauf wissen?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Einmalige Investition separat.",
+    "after": "Du rechnest die einmalige Anschaffung getrennt von den laufenden Ausgaben.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Konkrete Absatzinformation und ihre Bedeutung.",
+    "after": "Du nennst eine fehlende Angabe zum Verkauf. Du erklärst, warum sie wichtig ist.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Tippe jeden Zweck an. Prüfe heutige Wirkung und Unsicherheit.",
+    "after": "Tippe jeden Zweck an. Was passiert mit dem Geld jetzt? Was wissen wir über später noch nicht?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Beide eigenen Pläne korrekt verglichen.",
+    "after": "Du vergleichst deinen ersten und zweiten Plan. Du zeigst, welche Geldbeträge unterschiedlich sind.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Andere Perspektive und Zeitpunkt einbezogen.",
+    "after": "Du erklärst, was einem anderen Mitglied wichtig sein könnte. Du unterscheidest jetzt und später.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Konkrete Unsicherheit statt Renditeversprechen.",
+    "after": "Du nennst, was wir noch nicht wissen. Du behauptest nicht, dass später sicher mehr Geld übrig bleibt.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Was passiert bei festem Budget, wenn 20 GE mehr in die Rücklage gehen?",
+    "after": "Es bleiben insgesamt 120 GE. Was passiert, wenn du 20 GE mehr für Reparaturen zurücklegst?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Wähle beide Maßnahmen. Vergleiche für dasselbe Feld.",
+    "after": "Schau dir zuerst die Reparatur an. Schau dir danach die neue Verteilung an. Vergleiche die Zahlen für dasselbe Feld.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Prüfe Messstelle und Modellgrenze.",
+    "after": "Wie viel Wasser verlässt den Tank? Wie viel kommt am Feld an? Was zeigt das Modell nicht?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Benenne die Grenze des berechneten Systems.",
+    "after": "Was zeigt die Rechnung über den Tank? Welche Angaben zum Wasser fehlen?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Kontrollierter Vergleich desselben Felds.",
+    "after": "Du vergleichst die Vorschläge für dasselbe Feld.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Keine Grundwasser- oder Erntegarantie behauptet.",
+    "after": "Du behauptest nicht, dass es sicher mehr Grundwasser oder mehr Ernte gibt.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Gesamtentnahme für beide Felder (WE)",
+    "after": "Wie viel Wasser wird für beide Felder zusammen aus dem Tank genommen? Gesamtentnahme (WE)",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Unter welcher Bedingung bleibt es insgesamt weniger?",
+    "after": "Wann brauchen beide Felder zusammen weniger Wasser als früher?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Das erste Feld braucht 45 WE. Wann bleibt die Gesamtentnahme unter früher 60 WE? Prüfe auch genau 15 WE Zusatzentnahme.",
+    "after": "Das erste Feld braucht 45 WE. Wie viel Wasser darf das neue Feld brauchen, damit zusammen weniger als früher 60 WE entnommen werden? Prüfe auch genau 15 WE für das neue Feld.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Keine Ernte-/Einkommens- oder reale Wasserprognose.",
+    "after": "Du sagst nicht voraus, wie viel Ernte, Geld oder Wasser es in der Wirklichkeit geben wird.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Prüfe Maßstab und dargestellte Informationen.",
+    "after": "Was zeigt die Karte? Welche Angaben fehlen?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Wähle zwei Städte. Beschreibe ihre Lage zueinander und zum Äquator. Was kannst du auf der Karte nicht genau erkennen?",
+    "after": "Wähle zwei Städte. Welche liegt weiter nördlich? Wo liegen sie zum Äquator? Was zeigt die Karte nicht genau?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Lagebeziehung und Äquatorbezug passen.",
+    "after": "Du beschreibst richtig, welche Stadt weiter nördlich liegt. Du nennst die Lage zum Äquator.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Zwei tatsächlich markierte Städte gewählt.",
+    "after": "Du wählst zwei Städte, die auf der Karte eingezeichnet sind.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Keine genaue Strecke oder Fahrzeit aus der Übersicht behauptet.",
+    "after": "Du behauptest nicht, dass die Karte genaue Strecken oder Fahrzeiten zeigt.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "'Gilt dieses Modell für alle Menschen und Betriebe im Land?'",
+    "after": "code === 'KEN'\n              ? 'Zeigen die drei Buswege, wie lange alle Menschen in Kenia unterwegs sind?'\n              : code === 'GHA'\n                ? 'Sind alle Betriebe in Ghana wie unser erfundener Betrieb?'\n                : 'Zeigt unser erfundener Tank, wie viel Wasser es in Marokko wirklich gibt?'",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Passender Beleg und Nachteil, dann die wichtigere Folge.",
+    "after": "Eine passende Angabe und einen Nachteil nennen. Sagen, welche Folge wichtiger ist.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Vergleiche Nutzen und verbleibendes Problem in jedem Fall.",
+    "after": "Was wird bei jedem Vorschlag besser? Welches Problem bleibt?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Übertrage das Verfahren statt eine alte Zahl zu kopieren.",
+    "after": "Nutze die neuen Angaben. Vergleiche wieder Einnahmen und Ausgaben.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Dein Afrikabild erneut betrachten",
+    "after": "Was denkst du jetzt über Afrika?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Konkreter Beleg statt pauschaler Behauptung.",
+    "after": "Du nennst eine passende Angabe. Du sagst nicht, dass es überall so ist.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Offene eigene Erklärung braucht noch menschliche Rückmeldung.",
+    "after": "Deine eigene Erklärung muss noch mit jemandem besprochen werden.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Unterscheide Mechanismus, Gesamtwirkung und fehlende Daten.",
+    "after": "Wie wirkt die Maßnahme? Was ändert sich insgesamt? Welche Angaben fehlen dir noch?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Bedingung oder konkurrierendes Interesse konkret erklärt.",
+    "after": "Du erklärst eine Bedingung oder ein anderes Interesse.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Relevante reale Zusatzinformation je Fall.",
+    "after": "Du nennst für jeden Fall eine fehlende Angabe aus der Wirklichkeit.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Die Quelle nennt historische Schätzungen. Die Gesamtlinie trennt Geburten, Sterbefälle und Umzüge nicht auf.",
+    "after": "Die Zahlen sind Schätzungen für frühere Jahre. Die Grafik zeigt die gesamte Zahl der Menschen. Sie zeigt nicht einzeln, wie viele geboren wurden, starben, zuzogen oder wegzogen.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Historische Schätzungen sind keine Zukunftsprognosen.",
+    "after": "Die Zahlen beschreiben frühere Jahre. Sie wurden aus vorhandenen Daten berechnet. Sie sagen nicht sicher, wie viele Menschen später dort leben.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Lies Jahre, Werte und Datenstatus.",
+    "after": "Lies die Jahre und Zahlen. Wie wurden die Zahlen ermittelt?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Ausbildung kann helfen, garantiert aber keine Beschäftigung.",
+    "after": "Eine Ausbildung kann helfen, später Arbeit zu finden. Sie garantiert aber keinen Arbeitsplatz.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Schulplätze und Lehrkräfte sind eine Bedingung; keine pauschale Armutsbehauptung.",
+    "after": "Kinder brauchen Schulplätze und Lehrkräfte. Aus Bevölkerungswachstum allein folgt nicht, dass alle Menschen arm sind.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Welche Zahlen und Operationen gehören zusammen?",
+    "after": "Welche Zahlen rechnest du zusammen? Wie rechnest du?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Beide Teiländerungen und die Gesamtwirkung unterscheiden.",
+    "after": "Wie verändert sich die Zahl durch Geburten und Sterbefälle? Wie verändert sie sich durch Umzüge? Was passiert insgesamt?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Beide Salden stimmen und sind einbezogen.",
+    "after": "Deine Rechnung zu Geburten und Sterbefällen stimmt. Deine Rechnung zu Zuzug und Fortzug stimmt. Du nutzt beide Ergebnisse.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Was fehlt für ein Urteil über Versorgung?",
+    "after": "Was musst du noch wissen, um zu entscheiden, ob es genug Schulen, Lehrkräfte oder andere Angebote gibt?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Prüfe Datenart und Aussagegrenze.",
+    "after": "Wie wurden die Zahlen ermittelt? Was kannst du aus ihnen nicht erkennen?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Beide Folgen sind bedingt, nicht zwangsläufig.",
+    "after": "Beide Folgen sind möglich. Sie entstehen aber nicht von allein.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Keine sofortige Erwerbstätigkeit durch mehr Geburten.",
+    "after": "Mehr Geburten bedeuten nicht, dass sofort mehr Erwachsene arbeiten können.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Unterscheide gesamte Linie und späteren Einstieg.",
+    "after": "Amina steigt erst bei Nord ein. Sie fährt nicht die ganze Linie mit. Welchen Teil fährt sie?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Berechne die persönlichen Gesamtzeiten.",
+    "after": "Wie lange brauchen Amina und David? Rechne für jede Person Fußweg und Busfahrt zusammen.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Nachteil einer anderen Person und eigene Gewichtung.",
+    "after": "Du nennst einen Nachteil für eine andere Person. Du sagst, warum dir dein Ziel wichtiger ist.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Auch Direkt ist mit umgekehrter Gewichtung begründbar.",
+    "after": "Auch die direkte Linie kann passen, wenn dir Davids kurzer Weg wichtiger ist.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Welche Vorstellung bringst du mit?",
+    "after": "Was denkst du bisher über Afrika?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Keine pauschale Gegenaussage über ganz Afrika.",
+    "after": "Du beachtest: Die beiden Fotos zeigen nicht, wie es überall in Afrika aussieht.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Überarbeite die Vorstellung kurz selbst.",
+    "after": "Was denkst du jetzt? Was hast du auf den Fotos gesehen?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Verbinde eine Naturbedingung mit einer möglichen Nutzung.",
+    "after": "Was hilft Pflanzen beim Wachsen? Wie können Menschen das Regenwasser nutzen?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Welche Grenze hat ein Regenwasserspeicher?",
+    "after": "Welches Problem kann es bei einem Speicher für Regenwasser geben?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Vergleiche gleiche Einheiten und Zeiträume.",
+    "after": "Achte auf die Einheit. Achte auf die Jahre. Erst dann vergleichst du die Zahlen.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Jahresniederschlag beweist keine gesicherte Versorgung.",
+    "after": "Auch wenn in einer Region mehr Regen fällt, müssen nicht alle Menschen genug Wasser haben.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Wo wechseln ausgeprägte Regen- und Trockenzeiten?",
+    "after": "Wo gibt es deutlich erkennbare Regenzeiten und Trockenzeiten?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Was führt Wasser wieder in die Atmosphäre?",
+    "after": "Wie kommt Wasser wieder in die Luft?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Unterscheide Jahressumme und Verteilung über die Monate.",
+    "after": "In beiden Orten regnet es im Jahr gleich viel. Fällt der Regen aber in denselben Monaten?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Gleiche Jahressumme legt Verfügbarkeit während einer Trockenzeit nicht fest.",
+    "after": "Gleich viel Regen im Jahr bedeutet nicht, dass während einer Trockenzeit gleich viel Wasser verfügbar ist.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "B: Rest nach einmaliger Anschaffung (GE)",
+    "after": "B: Wie viel Geld bleibt im eigenen Topf für Anschaffungen? (GE)",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Ghana, Quelle: Weltbank (WDI).",
+    "after": "Ghana, Quelle: Weltbank.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Quelle 1: Weltbank (WDI), Ghana.",
+    "after": "Quelle 1: Weltbank, Ghana.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Das preisbereinigte BIP steigt gegenüber 2022.",
+    "after": "Das BIP ist höher als 2022. Preisänderungen sind herausgerechnet.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Welche Verbindung ist möglich?",
+    "after": "Wie können Strom und Wissen dem Kakaobetrieb helfen?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Ob der Betrieb Erfolg hat, hängt auch von anderen Bedingungen ab.",
+    "after": "Für Erfolg braucht der Betrieb noch mehr, zum Beispiel Käufer.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Ein Eigenbericht über Schulung beweist keinen späteren Gewinn.",
+    "after": "GEPA berichtet über eine eigene Schulung. Der Bericht zeigt nicht, ob die Betriebe später mehr Geld übrig haben.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "GEPA als Eigenbericht über Schulung beschrieben, nicht als Einkommenserhebung.",
+    "after": "Du erklärst: GEPA berichtet über die eigene Schulung. Der Bericht untersucht nicht, wie viel Geld die Teilnehmerinnen verdienen.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Prüfe getrennt, was jede Quelle tatsächlich erhebt oder berichtet.",
+    "after": "Lies beide Quellen einzeln. Was zeigt die erste Quelle? Was berichtet die zweite? Was kannst du daraus nicht sicher schließen?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Stromzugangsanteil mit Zeitraum und Einheit korrekt eingeordnet.",
+    "after": "Du nennst richtig: Wie viel Prozent haben Zugang zu Strom? Für welche Jahre gelten die Angaben?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Was ist dir bei deiner tatsächlichen Wahl wichtiger?",
+    "after": "Was ist dir bei deinem Plan am wichtigsten?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Suche die fehlende Zuständigkeit.",
+    "after": "Wer soll später den Kühlraum, die Dächer oder die Kisten prüfen und reparieren?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Ein Planwechsel löst die Wartungsfrage nicht automatisch.",
+    "after": "Auch nach einem Planwechsel musst du klären, wer später prüft und repariert.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Wie entscheidest du unter der neuen Unsicherheit?",
+    "after": "Du weißt jetzt nicht, wer später repariert. Bleibst du bei deinem Plan oder änderst du ihn?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Begründe deine Gewichtung kurz selbst.",
+    "after": "Was ist dir wichtiger? Warum?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/simulation-material.ts",
+    "before": "Nordrichtung: oben. Die gestrichelte Linie ist der Äquator, keine Landesgrenze. Punkte zeigen Städte. Diese Übersicht nutzt echte Natural-Earth-Umrisse. Sie ist keine Karte unserer erfundenen Nachbarschaft.",
+    "after": "Oben ist Norden. Die gestrichelte Linie ist der Äquator, keine Landesgrenze. Punkte zeigen Städte. Die Länder sind an ihrem wirklichen Ort eingezeichnet. Unsere erfundene Nachbarschaft ist hier nicht eingezeichnet.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-material.ts",
+    "before": "typische Jahreszeiten, keine Monatsmessungen",
+    "after": "wann es meist mehr oder weniger regnet; keine genauen Regenmengen für einzelne Monate",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-material.ts",
+    "before": "${p === 'foerder' ? 'Mehr Angaben und Quellen ansehen' : 'Vollständige Materialien und Quellen'}",
+    "after": "Mehr Angaben und Quellen ansehen",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/material-view.ts",
+    "before": "Vollständige Reihe, Diagramm und Quelle",
+    "after": "Alle Zahlen, Grafik und Quelle ansehen",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/material-view.ts",
+    "before": "task.material === 'm1' ? 'M1' : task.material === 'm3' ? 'M3 · neuer Fall' : 'Gegenfall · Fortzug verändert'",
+    "after": "task.material === 'm1' ? 'Unser erfundener Ort' : task.material === 'm3' ? 'Ein anderer erfundener Ort' : 'Im selben Ort ziehen jetzt mehr Menschen weg'",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Denkhinweis sichtbar",
+    "after": "Du siehst einen Hinweis",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Beispiel noch nicht geöffnet",
+    "after": "Du hast noch kein Beispiel geöffnet",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Deine Antwort ist abgegeben.",
+    "after": "Deine Antwort ist gespeichert.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Die App hat diese Angaben geprüft. Sie passen.",
+    "after": "Richtig. Diese Angaben passen.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Ein Teil passt schon. Prüfe die anderen Angaben.",
+    "after": "Ein Teil stimmt schon. Prüfe die anderen Angaben noch einmal.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Noch nicht geprüft. Besprich deine eigene Erklärung mit jemandem.",
+    "after": "Die App kann nicht prüfen, ob deine Erklärung fachlich richtig ist. Besprich sie mit jemandem.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Ich möchte mündlich erklären. Das melde ich selbst. Ein Gespräch wurde noch nicht geprüft.",
+    "after": "Ich möchte meine Antwort mündlich geben. Die App kann das nicht prüfen.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Antwort abgeben (ohne Fachbewertung)",
+    "after": "Antwort speichern",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Eigener Text, fachlich ungeprüft.",
+    "after": "Die App kann deinen eigenen Text nicht fachlich prüfen.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Nächste Hilfestufe",
+    "after": "Weitere Hilfe",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Dieses Beispiel bewusst übernehmen",
+    "after": "Beispiel als Antwort übernehmen",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Frühere Antwortabgabe",
+    "after": "Frühere gespeicherte Antwort",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Denkhinweis von Anfang an",
+    "after": "Hinweis von Anfang an sichtbar",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Frühere Werkzeuge${hasLegacy ? ' und Ergebnisse' : ''}",
+    "after": "Frühere Aufgaben und Ergebnisse",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "<p>${esc(task.instruction)}</p>",
+    "after": "${task.instruction ? `<p>${esc(task.instruction)}</p>` : ''}",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "${s.profile === 'foerder' ? 'Noch nicht passende Antworten' : 'Fachliche Fehlversuche'}: ${p.failures} von 2. ${support(p, s.profile === 'foerder')}.",
+    "after": "${p.failures ? `Noch nicht passende Antworten: ${p.failures} von 2. ${p.failures === 1 ? 'Du kannst es erneut versuchen.' : 'Lies die Erklärung. Du kannst das Beispiel übernehmen.'} ` : ''}${support(p, s.profile === 'foerder')}.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "'<p role=\"status\">Teste die angegebenen Wege oder Maßnahmen mit den Tasten im Material. Danach kannst du deine Antwort prüfen.</p>'",
+    "after": "`<p role=\"status\">${explorationHint(task)}</p>`",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "${hasText ? `<label",
+    "after": "${hasText ? `<p>Die App kann deinen eigenen Text nicht fachlich prüfen.</p><label",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Zahl der Menschen zu einem Zeitpunkt.",
+    "after": "Wie viele Menschen zu einem bestimmten Zeitpunkt an einem Ort leben. Diese Zahl heißt Bestand.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Wie viele Plätze in einer Stunde angeboten werden.",
+    "after": "Wie viele Plätze in einer Stunde angeboten werden. Zwei Fahrten mit je 10 Plätzen bieten zusammen 20 Plätze. Das heißt hier Kapazität.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Die Lufthülle der Erde.",
+    "after": "Die Luft umgibt die Erde wie eine Hülle. Diese Lufthülle heißt Atmosphäre.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Material und Energie, die für etwas gebraucht werden.",
+    "after": "Was für etwas gebraucht wird, zum Beispiel Holz, Wasser oder Energie. Das nennt man Ressourcen.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Etwas regelmäßig prüfen und pflegen.",
+    "after": "Etwas regelmäßig prüfen und pflegen, damit es weiter funktioniert. Zum Beispiel eine Kühlanlage. Das heißt Wartung.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Der Betrieb bekommt Geld und bezahlt laufende Kosten. Das übrige Geld heißt Überschuss.",
+    "after": "Der Betrieb bekommt Geld. Er bezahlt seine laufenden Kosten. Das übrige Geld heißt Überschuss.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Welche Lieblingsfarbe haben alle?",
+    "after": "Wie viele Stände kann der Kühlraum aufnehmen?",
+    "classification": "fachlich erklärt",
+    "distractor": true
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Alle haben immer kostenlosen Strom.",
+    "after": "Der Strom fällt bei den angeschlossenen Haushalten nicht aus.",
+    "classification": "fachlich erklärt",
+    "distractor": true
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Der Kreislauf endet für immer im Tank.",
+    "after": "Nur neu fallender Regen bringt Wasser vom Boden in die Luft.",
+    "classification": "fachlich erklärt",
+    "distractor": true
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Immer die erste angebotene Maßnahme wählen.",
+    "after": "Den Vorteil nennen. Ein Nachteil gehört nicht zur Begründung.",
+    "classification": "fachlich erklärt",
+    "distractor": true
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Alle Menschen brauchen immer gleich lange.",
+    "after": "Die Dauer der ganzen Buslinie ist die Gesamtzeit jeder Person.",
+    "classification": "fachlich erklärt",
+    "distractor": true
+  },
+  {
+    "file": "src/inquiry/content.ts",
+    "before": "Welche Lieblingsfarbe haben alle Beschäftigten?",
+    "after": "Wie viele Stände kann der Kühlraum aufnehmen?",
+    "classification": "fachlich erklärt",
+    "distractor": true
+  },
+  {
+    "file": "src/inquiry/content.ts",
+    "before": "Alle haben jederzeit kostenlosen Strom.",
+    "after": "Der Strom fällt bei den angeschlossenen Haushalten nicht aus.",
+    "classification": "fachlich erklärt",
+    "distractor": true
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "'Nutze das Material. Wähle oder rechne selbst.'",
+    "after": "''",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Der Betrieb bekommt Geld und bezahlt laufende Kosten. Das übrige Geld heißt Überschuss.",
+    "after": "Der Betrieb bekommt Geld. Er bezahlt seine laufenden Kosten. Das übrige Geld heißt Überschuss.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Prüfe die Einheit: Was wurde mit den Stromwerten überhaupt erfasst?",
+    "after": "Was zeigen die Stromwerte? Lies die Einheit.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Nutze beide Teilwirkungen: ${b.natural} und (${b.migration}). Die Anfangszahl ${m.start} gehört erst zum Endbestand. Setze kein zweites Minus vor einen schon negativen Saldo.",
+    "after": "Nutze beide Ergebnisse: ${b.natural} und (${b.migration}). Rechne sie zur Anfangszahl ${m.start} dazu. Dann weißt du, wie viele Menschen am Ende dort leben. Übernimm ein vorhandenes Minuszeichen nur einmal.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Berechne die Teiländerungen und den Endbestand.",
+    "after": "Wie verändert sich die Zahl? Wie viele Menschen leben am Ende im Ort?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Verbinde beide Teiländerungen.",
+    "after": "Erkläre die Änderung durch Geburten und Sterbefälle. Erkläre auch die Änderung durch Umzüge. Wie wirken beide zusammen?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Lies Ort, Einheit und Zeitraum.",
+    "after": "Für welchen Ort gelten die Zahlen? Was wird gezählt? Für welche Zeit gelten sie?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Die natürliche Zunahme +30 übersteigt den Wanderungsverlust 10.",
+    "after": "Durch Geburten und Sterbefälle sind es 30 Menschen mehr. Durch Umzüge sind es 10 weniger. Insgesamt sind es mehr.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Bruttoinlandsprodukt: Menschen stellen Waren her und bieten Leistungen an. Der dabei neu geschaffene wirtschaftliche Wert eines Jahres heißt BIP. Es geht um ein ganzes Land, nicht um das Geld eines Betriebs.",
+    "after": "Das BIP beschreibt die wirtschaftliche Leistung eines Landes in einem Jahr. Es erfasst den neu geschaffenen Wert von Waren und Dienstleistungen. Vorleistungen werden abgezogen. Es sagt nicht, wie viel Geld einzelne Menschen bekommen. BIP heißt Bruttoinlandsprodukt.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Menschen ziehen hinzu oder weg. Zuzug minus Fortzug heißt Wanderungssaldo.",
+    "after": "Menschen ziehen hinzu oder weg. Rechne Zuzug minus Fortzug. Das Ergebnis heißt Wanderungssaldo. Ziehen mehr Menschen weg als zu, werden es durch Umzüge weniger.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Vorleistungen werden abgezogen.",
+    "after": "Bereits eingekaufte Waren und Leistungen werden nicht noch einmal mitgezählt.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/inquiry/content.ts",
+    "before": "Wertschöpfung: Bei der Arbeit entsteht neuer wirtschaftlicher Wert.",
+    "after": "Wertschöpfung: Ein Betrieb verarbeitet zum Beispiel Bohnen. Dabei entsteht neuer wirtschaftlicher Wert. Der Wert der eingekauften Waren und Leistungen wird nicht noch einmal mitgezählt.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/inquiry/content.ts",
+    "before": "Vegetation: die Pflanzen in einem Gebiet.",
+    "after": "Vegetation: Die Pflanzen in einem Gebiet, zum Beispiel Gräser und Bäume.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/inquiry/content.ts",
+    "before": "Urbanisierung: Ein größerer Anteil der Bevölkerung lebt in Städten. Mehr Menschen in einer Stadt allein beweisen das noch nicht.",
+    "after": "Urbanisierung: Von allen Menschen eines Landes leben anteilig mehr in Städten. Das nennt man Urbanisierung. Nur die Zahl in einer Stadt reicht als Beleg nicht: Auch auf dem Land können mehr Menschen leben.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/inquiry/content.ts",
+    "before": "Lies deine erste Vorstellung noch einmal. Was würdest du jetzt ändern? Nenne dazu etwas, das du auf einem Foto siehst.",
+    "after": "Lies deine erste Vorstellung noch einmal. Was denkst du jetzt? Nenne etwas, das du auf einem Foto siehst. Deine Vorstellung darf sich ändern oder gleich bleiben.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/inquiry/content.ts",
+    "before": "Das preisbereinigte BIP steigt gegenüber dem Vorjahr.",
+    "after": "Das BIP ist höher als im Jahr davor. Preisänderungen sind herausgerechnet.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/inquiry/content.ts",
+    "before": "Der Betrieb bekommt Geld und bezahlt laufende Kosten. Das übrige Geld heißt Überschuss.",
+    "after": "Der Betrieb bekommt Geld. Er bezahlt seine laufenden Kosten. Das übrige Geld heißt Überschuss.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/inquiry/ui.ts",
+    "before": "Nächste Hilfestufe",
+    "after": "Weitere Hilfe",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/inquiry/ui.ts",
+    "before": "Dieses Beispiel bewusst übernehmen",
+    "after": "Beispiel als Antwort übernehmen",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/inquiry/ui.ts",
+    "before": "Fehlversuche bei vollständig ausgefüllten Antworten:",
+    "after": "Noch nicht passende vollständige Antworten:",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/inquiry/ui.ts",
+    "before": "Aber man braucht Geld, Wartung und Zugang zum Wasser.",
+    "after": "Aber man braucht Geld und Zugang zum Wasser. Die Anlagen müssen regelmäßig geprüft und gepflegt werden.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/regions/cocoa.ts",
+    "before": "Einnahmen minus laufende Ausgaben. Hier keine vollständige Gewinnrechnung.",
+    "after": "Der Betrieb bekommt Geld und bezahlt laufende Kosten. Das übrige Geld heißt hier Überschuss. Die Rechnung enthält nicht alle Kosten eines echten Betriebs.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/regions/cocoa.ts",
+    "before": "Einmalig 20 GE investieren; 40 GE im Investitionstopf übrig.",
+    "after": "Einmal 20 GE für die Anschaffung bezahlen. Im eigenen Topf bleiben 40 GE.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/regions/cocoa.ts",
+    "before": "Einmalig 60 GE investieren; der Investitionstopf ist aufgebraucht.",
+    "after": "Einmal 60 GE für die Anschaffung bezahlen. Der eigene Topf ist danach leer.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/regions/ui.ts",
+    "before": "Zeige deinen Beleg. Erkläre, welche Grenze bleibt.",
+    "after": "Zeige die passende Angabe. Erkläre, welches Problem bleibt.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/regions/ui.ts",
+    "before": "Untersuche die Ausgangslage.",
+    "after": "Schau dir die Situation am Anfang an.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/feedback.ts",
+    "before": "Das Spiel kann sie nicht sicher prüfen. Zeige deinen Beleg ${material}.",
+    "after": "Die App kann deinen Text nicht fachlich prüfen. Nutze ${material} eine passende Angabe.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/feedback.ts",
+    "before": "Prüfe: Welche Größe verändert deine Maßnahme? Was bleibt gleich?",
+    "after": "Prüfe: Was verändert dein Vorschlag? Was bleibt gleich?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Lies Region, Einheit und Zeitraum zusammen.",
+    "after": "Für welche Region gelten die Zahlen? Was wird gemessen? Für welche Jahre gelten die Werte?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Mehr Jahresregen ist nicht automatisch mehr nutzbares Wasser für jeden Menschen.",
+    "after": "Mehr Regen im Jahr bedeutet nicht, dass jeder Mensch mehr Wasser nutzen kann.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Zugang beschreibt weder Ausfallzeiten noch Bezahlbarkeit.",
+    "after": "Die Zahl zum Strom zeigt nicht, wie oft er ausfällt oder wer ihn bezahlen kann.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "BIP betrifft den neu entstandenen wirtschaftlichen Wert im Land, nicht den Überschuss eines Betriebs.",
+    "after": "Das BIP zeigt den neu geschaffenen wirtschaftlichen Wert im ganzen Land. Es zeigt nicht den Überschuss eines Betriebs.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Die Stromwerte beschreiben Zugang, nicht Einkommen. Daraus ist kein automatischer Einkommensanstieg bewiesen.",
+    "after": "Die Stromwerte zeigen, wer Zugang zu Strom hat. Sie zeigen nicht, wie viel Geld die Menschen verdienen. Sie beweisen nicht, dass die Menschen jetzt mehr verdienen.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Für die Aussage über alle Menschen fehlen tatsächliche Einkommens- und Verteilungsangaben.",
+    "after": "Für die Aussage über alle Menschen fehlen Angaben dazu, wie viel Geld die einzelnen Menschen verdienen.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Mögliche Beziehung erklärt, keine garantierte Wirkung.",
+    "after": "Du erklärst, wie die Folgen zusammenhängen können. Du behauptest nicht, dass diese Wirkung sicher eintritt.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Direkt oder Nord mit passendem Vorteil und Nachteil sind zulässig.",
+    "after": "Du darfst Direkt oder Nord wählen. Vorteil und Nachteil müssen zu deiner Wahl passen.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Fahrpreis und Wartezeit fehlen; das Modell ist keine Prognose.",
+    "after": "Fahrpreis und Wartezeit fehlen. Das Modell sagt die Zukunft nicht voraus.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Schätzung für vergangene Jahre, keine Prognose.",
+    "after": "Du sagst: Die Werte sind Schätzungen für frühere Jahre. Sie sagen die Zukunft nicht voraus.",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Die Frage betrifft Versorgung, etwa Altersverteilung oder vorhandene Angebote.",
+    "after": "Du fragst zum Beispiel: Wie alt sind die Menschen? Welche Schulen oder anderen Angebote gibt es schon?",
+    "classification": "sprachlich vereinfacht"
+  },
+  {
+    "file": "src/inquiry/content.ts",
+    "before": "Von allen Menschen eines Landes leben anteilig mehr in Städten. Das nennt man Urbanisierung. Nur die Zahl in einer Stadt reicht als Beleg nicht: Auch auf dem Land können mehr Menschen leben.",
+    "after": "Von den Menschen eines Landes lebt ein größerer Teil in Städten. Das nennt man Urbanisierung. Dass eine einzelne Stadt wächst, reicht dafür nicht als Beleg. Auch auf dem Land können mehr Menschen leben.",
+    "classification": "sprachlich vereinfacht"
+  }
+]
