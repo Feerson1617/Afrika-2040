@@ -172,7 +172,7 @@ export function evaluateStudyDecision(
       'neutral',
       'Dein Argument ist noch nicht verbunden',
       ack +
-        ` Dein Ziel ist: ${spec.goals[d.goal]} Dein Beleg zeigt: ${spec.goals[o.goal]} Passe dein Ziel an oder gewichte diese konkrete Folge ausdrücklich höher.`,
+        ` Dein Ziel ist: ${spec.goals[d.goal]} Dein Beleg zeigt: ${spec.goals[o.goal]} Ändere dein Ziel. Oder erkläre, warum dir diese andere Folge wichtiger ist.`,
     );
   return result(
     'neutral',

@@ -25,7 +25,7 @@ export function materialView(task: Task, profile: ProfileId, attempt: Attempt) {
   if (task.focus) return topicMaterial(task.focus, profile);
   if (task.material === 'm2') {
     const simple = profile === 'foerder';
-    return `<h2>Ghana · Menschen in früheren Jahren</h2><p>${simple ? 'Die Zahlen gelten für frühere Jahre. Sie wurden aus Daten berechnet. Das heißt Schätzung. Es sind keine Zahlen für 2040. Quelle: Weltbank.' : 'Ghana · 2000–2024 · Bevölkerung in Personen zur Jahresmitte. Historische Schätzungen der Weltbank (WDI), keine Prognose für 2040.'}</p><table><caption>Ghana · ${simple ? 'etwa so viele Menschen' : 'Personen'}</caption><thead><tr><th scope="col">Jahr</th><th scope="col">Menschen</th></tr></thead><tbody>${populationData
+    return `<h2>Ghana · Menschen in früheren Jahren</h2><p>${simple ? 'Die Zahlen gelten für frühere Jahre. Sie wurden aus Daten berechnet. Das heißt Schätzung. Es sind keine Zahlen für 2040. Quelle: Weltbank.' : 'Ghana, 2000–2024. Die Zahlen zeigen, wie viele Menschen jeweils zur Jahresmitte dort lebten. Die Weltbank hat die Zahlen aus Daten berechnet. Es sind Schätzungen für frühere Jahre, keine Vorhersage für 2040.'}</p><table><caption>Ghana · ${simple ? 'etwa so viele Menschen' : 'Personen'}</caption><thead><tr><th scope="col">Jahr</th><th scope="col">Menschen</th></tr></thead><tbody>${populationData
       .filter(
         ([year]) => profile !== 'foerder' || year === 2000 || year === 2024,
       )
@@ -35,12 +35,12 @@ export function materialView(task: Task, profile: ProfileId, attempt: Attempt) {
       )
       .join(
         '',
-      )}</tbody></table>${simple ? '' : '<p>Schätzung: Die Zahl wurde aus vorhandenen Daten berechnet. Zwischenjahre sind nicht automatisch ein gleichmäßiger Anstieg.</p>'}<details id="learning-original"><summary>${simple ? 'Genaue Zahlen und Quelle ansehen' : 'Vollständige Reihe, Diagramm und Quelle'}</summary>${oldMaterial('population', 1, newRecord())}<h3>Quelle: Weltbank</h3>${sources('population')}</details>`;
+      )}</tbody></table>${simple ? '' : '<p>Schätzung: Die Zahl wurde aus vorhandenen Daten berechnet. Zwischen zwei gezeigten Jahren muss die Zahl nicht gleichmäßig gestiegen sein.</p>'}<details id="learning-original"><summary>${simple ? 'Genaue Zahlen und Quelle ansehen' : 'Vollständige Reihe, Diagramm und Quelle'}</summary>${oldMaterial('population', 1, newRecord())}<h3>Quelle: Weltbank</h3>${sources('population')}</details>`;
   }
   if (task.material === 'm4')
     return profile === 'foerder'
       ? '<h2>Eine neue erfundene Situation</h2><p>In einem Ort leben nun mehr Kinder und Jugendliche. Das nehmen wir hier an. Das steht nicht in den Ghana-Zahlen.</p><p>Die Menschen im Ort überlegen: Wie können alle Kinder gut lernen?</p>'
-      : `<h2>Zusätzliche erfundene Situation</h2><p>In einem Ort leben nun mehr Kinder und Jugendliche. Diese Annahme ist nicht aus der Ghana-Gesamtzahl abgelesen.</p><p>Menschen diskutieren Bildung, Ausbildung und Versorgung. Schulplätze, Lehrkräfte und später passende Arbeitsplätze können nötig sein. Mehr Geburten bedeuten nicht sofort mehr erwachsene Arbeitskräfte.</p>`;
+      : `<h2>Zusätzliche erfundene Situation</h2><p>In einem Ort leben nun mehr Kinder und Jugendliche. Das nehmen wir hier an. Das steht nicht in den Ghana-Zahlen.</p><p>Die Menschen überlegen: Was brauchen die Kinder und Jugendlichen? Schulplätze, Lehrkräfte und später passende Arbeitsplätze können nötig sein. Mehr Geburten bedeuten nicht sofort mehr erwachsene Arbeitskräfte.</p>`;
   if (task.material === 'kenia')
     return kenyaMaterial(profile, attempt.mapSelection ?? 'amina-direct');
   const m =

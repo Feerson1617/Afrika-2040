@@ -11,9 +11,9 @@ export const profiles: Record<
     standardHint: true,
   },
   esa: {
-    name: 'Mit Rechenrahmen',
+    name: 'Mit Hilfe',
     teacher: 'ESA',
-    description: 'Du ordnest zu und rechnest mit einem sichtbaren Gerüst.',
+    description: 'Du ordnest zu und rechnest. Hinweise helfen dir dabei.',
     standardHint: true,
   },
   msa: {
@@ -27,7 +27,7 @@ export const profiles: Record<
     name: 'Zusammenhänge erklären',
     teacher: 'AHR / ÜOS · Jahrgang 7',
     description:
-      'Du erklärst Beziehungen und prüfst neue Bedingungen. Hilfe ist immer erreichbar.',
+      'Du erklärst, wie Dinge zusammenhängen. Du prüfst neue Situationen. Du kannst jederzeit Hilfe öffnen.',
     standardHint: false,
   },
 };

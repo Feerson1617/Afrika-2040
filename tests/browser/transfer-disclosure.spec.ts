@@ -226,7 +226,7 @@ test('Afrika curriculum T1 native select uses keyboard and retains semantic answ
   await seed(page, fixture('s2', 'msa', 'demand.transfer'));
   const select = page.locator('#learn-enough');
   await expect(select).toHaveAccessibleName(
-    'Jetzt sind es 18 Menschen bei 20 Plätzen. Reicht die Kapazität?',
+    'Jetzt sind es 18 Menschen bei 20 Plätzen. Reichen die Plätze?',
   );
   expect((await select.boundingBox())!.height).toBe(48);
   // Traverse the actual tab order, then use the native select's keyboard handling.

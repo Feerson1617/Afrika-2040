@@ -7,8 +7,14 @@ const words = {
   death: ['Sterbefall', 'Ein Mensch stirbt.'],
   arrival: ['Zuzug', 'Ein Mensch zieht in den Ort.'],
   departure: ['Fortzug', 'Ein Mensch zieht aus dem Ort weg.'],
-  natural: ['Natürliche Veränderung', 'Geburten minus Sterbefälle.'],
-  migration: ['Wanderungssaldo', 'Zuzug minus Fortzug.'],
+  natural: [
+    'Natürliche Veränderung',
+    'Menschen kommen zur Welt. Menschen sterben. Geburten minus Sterbefälle heißt natürliche Veränderung.',
+  ],
+  migration: [
+    'Wanderungssaldo',
+    'Menschen ziehen hinzu oder weg. Zuzug minus Fortzug heißt Wanderungssaldo.',
+  ],
   stock: ['Bestand', 'Zahl der Menschen zu einem Zeitpunkt.'],
   estimate: [
     'Schätzung',
@@ -17,40 +23,49 @@ const words = {
   million: ['Million', 'Eine Million sind tausend mal tausend.'],
   condition: [
     'Bedingung',
-    'Etwas, das nötig ist, damit eine Folge eintreten kann.',
+    'Etwas muss erfüllt sein. Beispiel: Zum Lernen in der Schule braucht man Lehrkräfte.',
   ],
   walk: ['Fußweg', 'Der Weg zu Fuß zur Haltestelle.'],
   section: ['Busabschnitt', 'Nur der Teil der Linie, den die Person mitfährt.'],
   total: ['Gesamtzeit', 'Fußweg plus benutzte Busfahrt.'],
   describe: ['Beschreibe', 'Sage, was im Material steht.'],
   explain: ['Erkläre', 'Sage, wie Angaben zusammenhängen.'],
-  justify: ['Begründe', 'Nutze einen passenden Beleg für deine Wahl.'],
+  justify: [
+    'Begründe',
+    'Sage, warum du etwas wählst. Nutze eine passende Angabe aus dem Material.',
+  ],
 } as const;
 const addedWords: [string, string][] = [
   ['Land', 'Ein Staat, zum Beispiel Ghana. Eine Stadt ist ein Ort darin.'],
   ['Stadt', 'Ein bebauter Ort, zum Beispiel Kumasi in Ghana.'],
   [
     'Äquator',
-    'Eine gedachte Linie um die Erde zwischen Nordhalbkugel und Südhalbkugel.',
+    'Eine gedachte Linie um die Mitte der Erde. Nördlich davon liegt die Nordhalbkugel, südlich die Südhalbkugel.',
   ],
   [
     'Modell',
-    'Eine vereinfachte Darstellung mit bestimmten Annahmen. Hier sind viele Zahlen erfunden.',
+    'Ein Modell zeigt nur einen Teil der Wirklichkeit. Wir nehmen dabei manches an. Hier sind viele Zahlen erfunden.',
   ],
   ['Entnahme', 'Wasser, das aus dem Tank herausgenommen wird.'],
   [
     'Tankrest',
-    'Wasser, das nach der Entnahme im Tank bleibt. Kein Grundwasserbestand.',
+    'Wasser, das nach der Entnahme im Tank bleibt. Der Tankrest zeigt nicht, wie viel Grundwasser es gibt.',
   ],
   [
     'Verbrauch',
-    'Zum Beispiel Wasser, das verdunstet und vor Ort zunächst nicht wieder nutzbar ist. Hier nicht berechnet.',
+    'Wasser verdunstet zum Beispiel. Es ist dann vor Ort zunächst nicht mehr nutzbar. Das zählt zum Verbrauch. Das Spiel berechnet den Verbrauch nicht.',
   ],
   ['Nachfrage', 'Wie viele Menschen in dieser Modellstunde fahren möchten.'],
   ['Kapazität', 'Wie viele Plätze in einer Stunde angeboten werden.'],
   ['Einnahmen', 'Geld, das ein Betrieb bekommt.'],
-  ['Überschuss', 'Einnahmen minus laufende Ausgaben.'],
-  ['Investition', 'Eine Anschaffung, die hier einmal bezahlt wird.'],
+  [
+    'Überschuss',
+    'Der Betrieb bekommt Geld und bezahlt laufende Kosten. Das übrige Geld heißt Überschuss.',
+  ],
+  [
+    'Investition',
+    'Der Betrieb kauft etwas, etwa eine Maschine. Diese Anschaffung heißt Investition. Hier wird sie einmal bezahlt.',
+  ],
   [
     'Verdunstung',
     'Flüssiges Wasser wird zu Wasserdampf und gelangt in die Luft.',
@@ -58,10 +73,7 @@ const addedWords: [string, string][] = [
   ['Atmosphäre', 'Die Lufthülle der Erde.'],
   ['Marktstand', 'Ein Platz auf einem Markt, an dem Waren verkauft werden.'],
   ['Kühlraum', 'Ein gekühlter Raum, der empfindliche Waren schützen kann.'],
-  [
-    'Mehrwegkiste',
-    'Eine Kiste, die nach Reinigung erneut genutzt werden kann.',
-  ],
+  ['Mehrwegkiste', 'Eine Kiste, die man reinigt und wieder benutzt.'],
   [
     'Zugang',
     'Ein Angebot erreichen oder nutzen können. Hier zum Beispiel Strom oder einen Kühlraum.',
@@ -74,12 +86,15 @@ const addedWords: [string, string][] = [
   ['Prozent', 'Von hundert. 50 Prozent bedeutet 50 von 100.'],
   [
     'BIP',
-    'Bruttoinlandsprodukt: wirtschaftlicher Wert, der in einem Land in einem Jahr neu entsteht. Kein Betriebskontostand.',
+    'Bruttoinlandsprodukt: Menschen stellen Waren her und bieten Leistungen an. Der dabei neu geschaffene wirtschaftliche Wert eines Jahres heißt BIP. Es geht um ein ganzes Land, nicht um das Geld eines Betriebs.',
   ],
-  ['Preisbereinigt', 'Der Einfluss veränderter Preise ist herausgerechnet.'],
+  [
+    'Preisbereinigt',
+    'Preise können steigen oder sinken. Dieser Einfluss ist aus der Zahl herausgerechnet.',
+  ],
   [
     'Einkommen',
-    'Geld, das Menschen erhalten. Die Stromzugangsstatistik misst es nicht.',
+    'Geld, das Menschen bekommen. Die Zahlen zum Zugang zu Strom zeigen dieses Geld nicht.',
   ],
   ['Ressourcen', 'Material und Energie, die für etwas gebraucht werden.'],
 ];
@@ -129,6 +144,8 @@ export function taskWords(task: Task) {
     return byName('Modell', 'Beleg', 'Grenze');
   if (task.simulation?.kind === 'water' || task.simulation?.kind === 'area')
     return byName('Entnahme', 'Tankrest', 'Verbrauch');
+  if (task.simulation?.kind === 'cocoa' && task.id.startsWith('cocoa.chain'))
+    return byName('Rohstoff', 'Verarbeitung');
   if (task.simulation?.kind === 'cocoa')
     return byName('Einnahmen', 'Überschuss', 'Investition');
   if (task.simulation?.kind === 'share')

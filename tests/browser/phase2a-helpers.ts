@@ -48,7 +48,7 @@ export async function finish2A(page: Page, touch = false) {
   await act(page.getByRole('button', { name: 'Weg prüfen', exact: true }));
   await expect(page.locator('[data-feedback]')).toHaveClass(/correct/);
   await act(page.getByRole('button', { name: 'Weiter →', exact: true }));
-  await page.getByLabel('Mein Ziel oder Kriterium').selectOption('tradeoff');
+  await page.getByLabel('Mein Ziel').selectOption('tradeoff');
 }
 export async function fullToDecision(page: Page, touch = false) {
   const act = actOn(touch);
@@ -128,7 +128,7 @@ export async function chooseRoute(page: Page, name: string, touch = false) {
 }
 export async function setGoal(page: Page, value: string) {
   await panel(page, 'plan');
-  await page.getByLabel('Mein Ziel oder Kriterium').selectOption(value);
+  await page.getByLabel('Mein Ziel').selectOption(value);
 }
 export async function ownTextPanel(page: Page) {
   if (await page.locator('.decision-tabs').count()) await panel(page, 'weigh');

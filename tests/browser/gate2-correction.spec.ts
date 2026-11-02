@@ -111,7 +111,7 @@ for (const profile of profileIds)
         await page.locator('#learning-check').press('Enter');
         await page.locator('#learning-next').click();
         await expect(page.locator('h1')).toHaveText(
-          'Welcher Beleg passt zu deinem Vorschlag?',
+          'Welche Angabe aus dem Material passt zu deinem Vorschlag?',
         );
         await expect(page.locator('#learning-next')).toHaveCount(0);
         await expect(page.locator('[data-learning-status]')).not.toContainText(
@@ -198,7 +198,7 @@ for (const profile of profileIds)
         await page.locator('[data-op="journal"]').click();
         const article = page.locator('.journal-record article').filter({
           has: page.getByRole('heading', {
-            name: 'Welcher Beleg passt zu deinem Vorschlag?',
+            name: 'Welche Angabe aus dem Material passt zu deinem Vorschlag?',
             exact: true,
           }),
         });

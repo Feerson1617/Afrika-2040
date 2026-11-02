@@ -9,7 +9,7 @@ export function decisionView(spec: StudySpec, r: StudyState, h: StudyUI) {
   const titles: Record<StudyPanel, string> = {
     plan: '1. Vorschlag und Ziel',
     benefit: '2. Passenden Beleg wählen',
-    limit: '3. Grenze und Gewichtung',
+    limit: '3. Welches Problem bleibt? Was ist dir wichtiger?',
   };
   const nav = `<nav class="study-tabs" aria-label="Drei Abschnitte deiner Begründung">${studyPanels.map((k) => control(h, titles[k], 'panel', k, '', 'study-panel-' + k, 'button secondary').replace('data-op=', `${panel === k ? 'aria-current="step" ' : ''}data-op=`)).join('')}</nav>`;
   const facts = selected

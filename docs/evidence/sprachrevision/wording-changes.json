@@ -1,0 +1,980 @@
+[
+  {
+    "file": "src/learning/profiles.ts",
+    "before": "Mit Rechenrahmen",
+    "after": "Mit Hilfe",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/profiles.ts",
+    "before": "Du ordnest zu und rechnest mit einem sichtbaren Gerüst.",
+    "after": "Du ordnest zu und rechnest. Hinweise helfen dir dabei.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/profiles.ts",
+    "before": "Du erklärst Beziehungen und prüfst neue Bedingungen. Hilfe ist immer erreichbar.",
+    "after": "Du erklärst, wie Dinge zusammenhängen. Du prüfst neue Situationen. Du kannst jederzeit Hilfe öffnen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Welcher Beleg stützt deinen Vorschlag?",
+    "after": "Welche Angabe aus dem Material spricht für deinen Vorschlag?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Beleg und Grenze zu deinem Vorschlag",
+    "after": "Was spricht für deinen Vorschlag? Welches Problem bleibt?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Eine Fahrt schafft 30 Plätze pro Stunde, lässt den Fußweg aber bei 12 Minuten. Ein neuer Weg verkürzt auf 4 Minuten, lässt aber 20 Plätze. Kosten und die zeitliche Nachfrageverteilung könnten meine Wahl ändern. Eine genaue Wartezeit wird nicht berechnet.",
+    "after": "Mit einer zusätzlichen Fahrt gibt es insgesamt drei Fahrten pro Stunde. Jede Fahrt hat 10 Plätze. Zusammen gibt es 30 Plätze pro Stunde. Der Fußweg bleibt 12 Minuten lang. Der neue Fußweg ist kürzer. Die Menschen müssen nur noch 4 Minuten zur Haltestelle gehen. Es bleiben aber 20 Plätze pro Stunde. Wir kennen die Kosten und die genauen Fahrzeiten der Menschen nicht. Deshalb können wir nicht alles sicher vergleichen. Eine genaue Wartezeit wird nicht berechnet.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Reicht die Kapazität?",
+    "after": "Reichen die Plätze?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Die Runde ist erfunden. Eine Zukunftsrendite wird nicht berechnet.",
+    "after": "Die Runde ist erfunden. Wir wissen nicht, wie viel Geld später zusätzlich hereinkommt.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Einzelfeld und alle bewässerten Felder sind verschiedene Bezugsebenen.",
+    "after": "Prüfe erst ein Feld. Dann alle Felder zusammen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Plätze pro Stunde = Fahrten mal Plätze je Fahrt. Vergleiche dies mit der Nachfrage. Der Fußweg ist eine andere Größe.",
+    "after": "Rechne: Fahrten pro Stunde mal Plätze je Fahrt. Vergleiche die Plätze mit der Zahl der Menschen. Prüfe den Fußweg getrennt.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Laufender Überschuss = Einnahmen minus laufende Ausgaben. Halte die einmalige Anschaffung im getrennten Topf.",
+    "after": "Rechne: Einnahmen minus laufende Ausgaben. Das übrige Geld heißt Überschuss. Bezahle die Anschaffung aus dem eigenen Topf.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Alle Beträge zusammen müssen 120 GE ergeben. Unterscheide zusätzliches Geld heute, Vorsorge und mögliche spätere Wirkungen.",
+    "after": "Verteile genau 120 GE. Wer bekommt jetzt Geld? Wofür bleibt Geld im Betrieb? Was könnte später helfen?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Suche zuerst den konkreten Beleg im jeweiligen Fall. Prüfe dann, ob die Behauptung über den erfundenen Fall hinausgeht.",
+    "after": "Suche eine passende Angabe im Beispiel. Kann die Angabe auch etwas über andere Orte beweisen?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Die Presse bringt mit 260 GE höhere Einnahmen, aber nur 75 statt 90 GE Überschuss. Mehr eigene Verarbeitung kann mir trotzdem wichtig sein. Ob Nachfrage und Absatzpreise künftig reichen, müsste ich zusätzlich prüfen.",
+    "after": "Mit der Presse kommen 260 GE herein. Nach den laufenden Ausgaben bleiben aber nur 75 statt 90 GE übrig. Mir kann trotzdem wichtig sein, selbst mehr zu verarbeiten. Ich muss noch prüfen: Wer kauft die Produkte? Zu welchen Preisen kann der Betrieb sie verkaufen?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Ich vergleiche die Beträge meiner beiden Pläne. Mehr Rücklage lässt weniger sofortige Auszahlung zu. Mir ist die Vorsorge wichtiger, obwohl noch unklar ist, ob das Geld für eine echte Reparatur reicht. Fortbildung ist ebenfalls keine Garantie für zusätzliche Einnahmen.",
+    "after": "Ich vergleiche die Geldbeträge meiner beiden Pläne. Wenn mehr Geld im Betrieb bleibt, bekommen die Mitglieder jetzt weniger. Mir ist Geld für spätere Reparaturen wichtiger. Ob das Geld reicht, weiß ich noch nicht. Auch nach einer Fortbildung muss nicht mehr Geld hereinkommen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Welche Umweltwirkung ist damit noch nicht belegt?",
+    "after": "Was wissen wir noch nicht über die Folgen für die Umwelt?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Erkläre Entnahme, Ankunft und Tankrest. Warum beweist ein größerer Tankrest noch keinen besseren Grundwasserzustand?",
+    "after": "Wie viel Wasser verlässt den Tank? Wie viel erreicht das Feld? Wie viel bleibt im Tank? Warum wissen wir dadurch noch nicht, wie es dem Grundwasser geht?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Bei neuer Verteilung erreichen 40 WE das Feld, während 45 statt 60 WE aus dem Tank entnommen werden. Es bleiben 35 WE. Der Tank ist kein Grundwasser. Verbrauch, Rückflüsse und echte Zuflüsse werden nicht berechnet.",
+    "after": "Mit der neuen Verteilung erreichen 40 WE das Feld. Aus dem Tank werden 45 statt 60 WE entnommen. Im Tank bleiben 35 WE. Das Wasser im Tank ist kein Grundwasser. Das Modell berechnet nicht, wie viel Wasser verbraucht wird, zurückfließt oder neu hinzukommt.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Das erklärt eine Modellbedingung, keine Vorhersage über Marokkos Wasserhaushalt.",
+    "after": "Das gilt für diese erfundene Rechnung. Es sagt nicht voraus, wie viel Wasser Marokko haben wird.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Gehen mehr weg, ist der Saldo negativ.",
+    "after": "Ziehen mehr Menschen weg als hinzu, werden es durch Umzüge weniger Menschen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Ausbildung kann später Erwerbsmöglichkeiten eröffnen, wenn …",
+    "after": "Ausbildung kann helfen, später Arbeit zu finden, wenn …",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Wenn Ausbildung und passende Arbeitsplätze entstehen, können sich später Erwerbsmöglichkeiten eröffnen.",
+    "after": "Wenn es Ausbildung und passende Arbeitsplätze gibt, können Menschen später Arbeit finden.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Verbinde eine Bedingung mit einer möglichen Folge: etwa nutzbare Schulplätze mit Lehrkräften oder Ausbildung mit passenden Arbeitsplätzen. Eine Bedingung allein ist keine Erfolgsgarantie.",
+    "after": "Was brauchen die Menschen? Zum Beispiel Schulplätze mit Lehrkräften oder Ausbildung mit passenden Arbeitsplätzen. Erkläre, was dann möglich wäre. Eine Bedingung allein reicht oft nicht.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Die natürliche Zunahme +30 ist größer als der Wanderungsverlust 10. Insgesamt sind es 20 mehr und am Ende 1020 Personen.",
+    "after": "Durch Geburten und Sterbefälle kommen 30 Menschen hinzu. Durch Umzüge sind es 10 weniger. Zusammen sind es 20 mehr. Am Ende leben dort 1020 Menschen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Ausbildung und passende Arbeitsplätze können später Chancen eröffnen. Ohne weitere Schulplätze und Lehrkräfte kann die Versorgung schwieriger werden.",
+    "after": "Ausbildung und passende Arbeitsplätze können Menschen helfen, später Arbeit zu finden. Ohne neue Schulplätze und Lehrkräfte kann es schwieriger werden, alle Kinder zu unterrichten.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Beide Prioritäten sind möglich.",
+    "after": "Du darfst wählen, was dir wichtiger ist.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Eine Priorität ist keine falsche Rechnung. Beide Folgen müssen stimmen.",
+    "after": "Du darfst selbst entscheiden. Die Zeitangaben für beide Personen müssen stimmen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Welcher Beleg trägt deine Wahl?",
+    "after": "Welche Angabe aus dem Material spricht für deine Wahl?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Welcher Beleg widerspricht der Überschrift?",
+    "after": "Was siehst du auf den Fotos? Was zeigt, dass die Behauptung nicht stimmt?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Welche neue Überschrift bleibt begrenzt?",
+    "after": "Welche neue Überschrift passt zu den beiden Fotos? Sie soll nicht für ganz Afrika sprechen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Gebauter Weg und Markttor zeigen menschliche Nutzung.",
+    "after": "Menschen haben den Weg und das Markttor gebaut. Sie nutzen die Orte.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Ein Gegenbeleg muss etwas Sichtbares benennen. Eine neue Pauschalaussage wäre wieder zu weit.",
+    "after": "Nenne etwas, das du auf einem Foto siehst. Sprich nur über die gezeigten Orte.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Wir prüfen später mit Fotos, was sich belegen lässt. Eine persönliche erste Vorstellung ist noch kein Beleg über einen Kontinent.",
+    "after": "Später prüfst du zwei Fotos. Was zeigen die Fotos wirklich? Deine Vorstellung allein beweist noch nichts über Afrika.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Empfiehl eine Ergänzung. Nutze ein Detail und nenne eine Grenze.",
+    "after": "Was sollte die Zeitung zusätzlich zeigen? Nenne etwas auf dem anderen Foto. Was zeigen auch beide Fotos nicht?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Nur das Waldfoto kann den Blick auf Natur verengen. Das Marktbild ergänzt einen genutzten Ort. Auch beide Fotos zeigen nicht ganz Afrika.",
+    "after": "Wer nur das Waldfoto sieht, denkt vielleicht nur an Natur. Das Marktfoto zeigt auch einen Ort, den Menschen nutzen. Beide Fotos zusammen zeigen trotzdem nicht ganz Afrika.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Verbinde Auswahl, mögliches Bild im Kopf und einen konkreten Gegenbeleg.",
+    "after": "Was könnte jemand beim Waldfoto denken? Was zeigt das andere Foto zusätzlich?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Welche begrenzte Aussage würdest du zu beiden Bildern schreiben?",
+    "after": "Was kannst du über die beiden gezeigten Orte sagen? Schreibe nur, was die Fotos zeigen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Sichtbares Detail und begrenzte Reichweite.",
+    "after": "Etwas Sichtbares genannt. Nur über die gezeigten Orte gesprochen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Dies ist ein anderer Raum.",
+    "after": "Jetzt geht es um Nordwestmarokko.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Nur einen Kalender, Wasser ist egal",
+    "after": "Nur Wärme, auch ohne Wasser",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Er liefert immer unbegrenzt sauberes Wasser.",
+    "after": "Er liefert auch ohne neuen Regen dauerhaft Wasser.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Zwei Regionen in Marokko. Jahresmittel 1991–2020 in Millimetern. Das sind Flächenmittel, keine Werte einer einzelnen Wetterstation.",
+    "after": "Zwei Regionen in Marokko. Die Werte zeigen den durchschnittlichen Niederschlag pro Jahr von 1991 bis 2020. Die Einheit ist Millimeter. Die Werte gelten für die ganze Region, nicht für eine einzelne Wetterstation.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Aus wenigen Angaben folgt keine sichere Gesamtökobilanz.",
+    "after": "Mit diesen wenigen Angaben kennen wir noch nicht alle Folgen für die Umwelt.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Die Wartungszuständigkeit ist bei beiden Angeboten ungeklärt.",
+    "after": "Bei beiden Angeboten ist offen: Wer prüft, pflegt und repariert die Anlage?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Laufende Kosten können die Nutzbarkeit beeinflussen. Ohne Angaben zu Finanzierung und Wartung weiß ich nicht, wie verlässlich das Angebot nutzbar wäre. Eine Gesamtökobilanz kann ich aus den Daten nicht sicher ableiten.",
+    "after": "Laufende Kosten müssen regelmäßig bezahlt werden. Ich muss wissen: Wer bezahlt die Kosten? Wer prüft, pflegt und repariert die Anlage? Sonst weiß ich nicht, wie lange die Menschen das Angebot nutzen können. Die Angaben zeigen auch nicht alle Folgen für die Umwelt.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Beide Vorschläge sind legitim. Passende Belege und Grenzen gehören dazu.",
+    "after": "Du darfst beide Vorschläge wählen. Die Angaben und das genannte Problem müssen zu deiner Wahl passen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Eine legitime Wahl ersetzt noch keinen passenden Sachbeleg.",
+    "after": "Du darfst selbst wählen. Die Angabe aus dem Material muss zu deiner Wahl passen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Welcher Beleg passt zu deinem Vorschlag?",
+    "after": "Welche Angabe aus dem Material passt zu deinem Vorschlag?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Verbinde einen Beleg mit deiner Priorität.",
+    "after": "Nenne eine passende Angabe. Warum ist dir diese Folge wichtiger?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Vergleiche Personenbezug, Jahre und gemessene Größen. Welche Angabe müsste gerade die Einkommensbehauptung stützen?",
+    "after": "Wessen Einkommen wird behauptet? Für welche Jahre gelten die Quellen? Was wurde gemessen? Welche Angabe zum Einkommen fehlt?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Konkrete zusätzliche Daten zu Einkommen der Teilnehmerinnen und weiteren Einflüssen benannt; bloß mehr Daten reicht nicht.",
+    "after": "Genannt, welche Einkommensdaten der Teilnehmerinnen fehlen. Auch andere mögliche Ursachen genannt.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Die Stromreihe zeigt Zugang 2022 und 2023. Der GEPA-Eigenbericht von 2024 beschreibt eine Schulung, keine heutigen Einkommen. Damit ist die behauptete Ursache nicht bewiesen. Ich brauche vergleichbare Einkommensdaten der Teilnehmerinnen vor und nach der Schulung sowie Angaben zu weiteren Einflüssen; ein bloßer Vorher-Nachher-Anstieg allein beweist noch keine Ursache.",
+    "after": "Die Stromreihe zeigt den Zugang zu Strom 2022 und 2023. GEPA berichtet 2024 über die eigene Schulung. Beide Quellen zeigen nicht, was die Teilnehmerinnen heute verdienen. Ich brauche vergleichbare Angaben zu ihrem Einkommen vor und nach der Schulung. Ich muss auch andere mögliche Ursachen prüfen. Selbst wenn die Einkommen gestiegen sind, muss die Schulung nicht die Ursache sein.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Zuverlässiger Strom kann Maschinenbetrieb ermöglichen. Wissen über Preise und Transport kann beim Verkauf helfen. Der GEPA-Eigenbericht und die Zugangswerte beweisen keinen Gewinn für alle.",
+    "after": "Mit zuverlässigem Strom können Maschinen arbeiten. Wissen über Preise und Transport kann beim Verkauf helfen. GEPA berichtet über die eigene Schulung. Der Bericht und die Stromwerte beweisen nicht, dass alle mehr Geld verdienen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Nutze GEPA für die Schulung und WDI für den Stromanteil. Trenne eine mögliche Wirkung vom Nachweis.",
+    "after": "Was berichtet GEPA über die Schulung? Was zeigen die Weltbank-Daten zum Strom? Unterscheide: Was könnte helfen? Was belegen die Quellen wirklich?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Strom kann Maschinenbetrieb ermöglichen. Kenntnisse können Verarbeitung und Verkauf unterstützen. Erfolg bleibt bedingt.",
+    "after": "Mit Strom können Maschinen arbeiten. Wissen kann bei der Verarbeitung und beim Verkauf helfen. Ob der Betrieb Erfolg hat, hängt auch von anderen Bedingungen ab.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Lagebeziehungen untersuchen",
+    "after": "Wo liegen die Orte?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Welche Genauigkeitsgrenze bleibt?",
+    "after": "Was kannst du auf der Karte nicht genau erkennen?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Verbinde Nordrichtung, Äquator und Darstellungsgrenze.",
+    "after": "Nutze den Nordpfeil und den Äquator. Was zeigt die Karte nicht genau?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": ": Beleg und Reichweite",
+    "after": ": Was zeigt das Beispiel?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Welche gemeinsame Erkenntnis tragen die Fälle?",
+    "after": "Was zeigen die drei Beispiele gemeinsam?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Kürzere Wege, Überschuss und Wasser haben verschiedene Nutznießer und Grenzen.",
+    "after": "Ein kürzerer Weg, mehr Geld oder mehr Wasser hilft nicht allen gleich. Bei jedem Vorschlag bleiben Probleme.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Die persönliche Wahl ist offen; die Sachbelege müssen zu ihr passen.",
+    "after": "Du darfst selbst wählen. Die Angaben aus dem Material müssen zu deiner Wahl passen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Nenne einen konkreten Beleg aus einem Fall. Wie begrenzt er eine pauschale Aussage über Afrika?",
+    "after": "Nenne eine Angabe aus einem Beispiel. Warum gilt die Angabe nicht für ganz Afrika?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Nutze einen konkreten Fall und begrenze seine Reichweite.",
+    "after": "Nutze ein Beispiel. Sage auch, für wen und für welchen Ort es gilt.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "before": "Mehr Technik kann die Einnahmen oder den Bedarf pro Feld verändern. Absatz beziehungsweise zusätzliche Flächennutzung beeinflussen aber das Gesamtergebnis. Ich brauche echte Kosten und Nachfrage beziehungsweise Fläche, Zufluss und Rückflüsse. Eine Klickentscheidung weist noch keine reale Wirkung nach.",
+    "after": "Mit neuer Technik kann ein Betrieb mehr Geld einnehmen. Ein Feld kann weniger Wasser brauchen. Entscheidend ist aber auch: Wie viel verkauft der Betrieb? Wie viele Felder werden bewässert? Ich brauche echte Angaben zu Kosten und Käufern. Beim Wasser brauche ich Angaben zu Flächen, Zufluss und Wasser, das zurückfließt. Eine Entscheidung im Spiel beweist noch keine Wirkung in der Wirklichkeit.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/material-view.ts",
+    "before": "Ghana · 2000–2024 · Bevölkerung in Personen zur Jahresmitte. Historische Schätzungen der Weltbank (WDI), keine Prognose für 2040.",
+    "after": "Ghana, 2000–2024. Die Zahlen zeigen, wie viele Menschen jeweils zur Jahresmitte dort lebten. Die Weltbank hat die Zahlen aus Daten berechnet. Es sind Schätzungen für frühere Jahre, keine Vorhersage für 2040.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/material-view.ts",
+    "before": "Zwischenjahre sind nicht automatisch ein gleichmäßiger Anstieg.",
+    "after": "Zwischen zwei gezeigten Jahren muss die Zahl nicht gleichmäßig gestiegen sein.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/material-view.ts",
+    "before": "Diese Annahme ist nicht aus der Ghana-Gesamtzahl abgelesen.",
+    "after": "Das nehmen wir hier an. Das steht nicht in den Ghana-Zahlen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/material-view.ts",
+    "before": "Menschen diskutieren Bildung, Ausbildung und Versorgung.",
+    "after": "Die Menschen überlegen: Was brauchen die Kinder und Jugendlichen?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-material.ts",
+    "before": "Bestimme die neue Bilanz.",
+    "after": "Wie viel Wasser bleibt nach der Entnahme im Tank?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-material.ts",
+    "before": "Die Bilanz ist noch zu bestimmen.",
+    "after": "Wie viel Wasser danach bleibt, musst du noch berechnen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-material.ts",
+    "before": "Ausgangsdaten.",
+    "after": "Angaben für deine Rechnung.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-material.ts",
+    "before": "['Ausgangsgröße', 'WE']",
+    "after": "['Angabe', 'WE']",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-material.ts",
+    "before": "Verknüpfe die Ausgangsgrößen. Beantworte die Frage zum neuen Fall.",
+    "after": "Nutze die Zahlen. Beantworte die Frage zum neuen Fall.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-material.ts",
+    "before": "Beide Maßnahmen sind unabhängig voneinander prüfbar.",
+    "after": "Du kannst die zusätzliche Fahrt und den neuen Weg einzeln testen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Zuzug minus Fortzug.",
+    "after": "Menschen ziehen hinzu oder weg. Zuzug minus Fortzug heißt Wanderungssaldo.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Etwas, das nötig ist, damit eine Folge eintreten kann.",
+    "after": "Etwas muss erfüllt sein. Beispiel: Zum Lernen in der Schule braucht man Lehrkräfte.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Nutze einen passenden Beleg für deine Wahl.",
+    "after": "Sage, warum du etwas wählst. Nutze eine passende Angabe aus dem Material.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Eine gedachte Linie um die Erde zwischen Nordhalbkugel und Südhalbkugel.",
+    "after": "Eine gedachte Linie um die Mitte der Erde. Nördlich davon liegt die Nordhalbkugel, südlich die Südhalbkugel.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Eine vereinfachte Darstellung mit bestimmten Annahmen. Hier sind viele Zahlen erfunden.",
+    "after": "Ein Modell zeigt nur einen Teil der Wirklichkeit. Wir nehmen dabei manches an. Hier sind viele Zahlen erfunden.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Wasser, das nach der Entnahme im Tank bleibt. Kein Grundwasserbestand.",
+    "after": "Wasser, das nach der Entnahme im Tank bleibt. Der Tankrest zeigt nicht, wie viel Grundwasser es gibt.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Zum Beispiel Wasser, das verdunstet und vor Ort zunächst nicht wieder nutzbar ist. Hier nicht berechnet.",
+    "after": "Wasser verdunstet zum Beispiel. Es ist dann vor Ort zunächst nicht mehr nutzbar. Das zählt zum Verbrauch. Das Spiel berechnet den Verbrauch nicht.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Eine Kiste, die nach Reinigung erneut genutzt werden kann.",
+    "after": "Eine Kiste, die man reinigt und wieder benutzt.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Bruttoinlandsprodukt: wirtschaftlicher Wert, der in einem Land in einem Jahr neu entsteht. Kein Betriebskontostand.",
+    "after": "Bruttoinlandsprodukt: Menschen stellen Waren her und bieten Leistungen an. Der dabei neu geschaffene wirtschaftliche Wert eines Jahres heißt BIP. Es geht um ein ganzes Land, nicht um das Geld eines Betriebs.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Der Einfluss veränderter Preise ist herausgerechnet.",
+    "after": "Preise können steigen oder sinken. Dieser Einfluss ist aus der Zahl herausgerechnet.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Geld, das Menschen erhalten. Die Stromzugangsstatistik misst es nicht.",
+    "after": "Geld, das Menschen bekommen. Die Zahlen zum Zugang zu Strom zeigen dieses Geld nicht.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "if (task.simulation?.kind === 'cocoa')\n    return",
+    "after": "if (task.simulation?.kind === 'cocoa' && task.id.startsWith('cocoa.chain'))\n    return byName('Rohstoff', 'Verarbeitung');\n  if (task.simulation?.kind === 'cocoa')\n    return",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Einnahmen minus laufende Ausgaben.",
+    "after": "Der Betrieb bekommt Geld und bezahlt laufende Kosten. Das übrige Geld heißt Überschuss.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Hier: eine einmal bezahlte Anschaffung.",
+    "after": "Der Betrieb kauft etwas, etwa eine Maschine. Diese Anschaffung heißt Investition. Hier wird sie einmal bezahlt.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Ghana, Weltbank (WDI). Stromzugang: Anteil der Bevölkerung in Prozent. BIP-Wachstum: preisbereinigte Veränderung zum Vorjahr in Prozent. Historische Werte, keine Prognose.",
+    "after": "Ghana, Quelle: Weltbank (WDI). Stromzugang zeigt: Wie viel Prozent der Menschen haben Zugang zu Strom? Das BIP beschreibt den neu geschaffenen wirtschaftlichen Wert im Land. Die Wachstumsrate zeigt die Veränderung zum Vorjahr in Prozent. Preisänderungen sind herausgerechnet. Die Zahlen gelten für frühere Jahre. Sie sagen die Zukunft nicht voraus.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Die Tabelle erfasst Stromzugang. Um über Einkommen zu urteilen, brauchst du dazu passende Einkommensangaben.",
+    "after": "Die Tabelle zeigt den Zugang zu Strom. Was Menschen verdienen, steht dort nicht. Dafür brauchst du Angaben zu ihrem Einkommen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Dein Text bleibt fachlich ungeprüft. Vergleiche ihn mit den Kriterien.",
+    "after": "Die App prüft deinen Text nicht fachlich. Öffne die Selbstkontrolle und vergleiche.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Mit sichtbarem Gerüst",
+    "after": "Denkhinweis sichtbar",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Ohne geöffnetes Aufgabenbeispiel",
+    "after": "Beispiel noch nicht geöffnet",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "? 'Entwurf'",
+    "after": "? 'Antwort noch offen'",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "'Sachangaben geprüft'",
+    "after": "'Angaben geprüft'",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "'Sachangaben teilweise passend'",
+    "after": "'Ein Teil passt'",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "'Sachangaben noch unpassend'",
+    "after": "'Angaben passen noch nicht'",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "'Noch nicht fachlich geprüft'",
+    "after": "'Noch nicht geprüft'",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "mündlich selbstgemeldet, nicht beobachtet",
+    "after": "Du möchtest mündlich erklären. Das Gespräch wurde nicht geprüft",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Deine bisherigen Antworten bleiben bei ihrem Lernweg. Im anderen Weg bearbeitest du eigene Aufgaben. Es wird kein Abschluss übertragen.",
+    "after": "Deine bisherigen Antworten bleiben gespeichert. Jeder Lernweg hat eigene Aufgaben. Im neuen Lernweg musst du die Aufgaben neu bearbeiten.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Es gibt keine Rangliste und keine automatische Einstufung.",
+    "after": "Die App sagt nicht, welcher Weg für dich richtig ist.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Standardgerüst:",
+    "after": "Denkhinweis von Anfang an:",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "protokollierte Antwortversuche",
+    "after": "gespeicherte Antworten",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "ältere Versuche verdichtet",
+    "after": "ältere Antworten nur noch gezählt",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Prüfstatus zum Antwortinhalt:",
+    "after": "Prüfung dieser früheren Antwort:",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Deine geprüften Teilwerte:",
+    "after": "Deine geprüften Ergebnisse:",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Endbestand:",
+    "after": "Menschen am Ende:",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Der Wanderungssaldo steht schon mit seinem Vorzeichen da.",
+    "after": "Die Zahl zu den Umzügen hat schon ein Plus oder Minus. Übernimm das Zeichen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Mündliche Bearbeitung selbstgemeldet – fachlich ungeprüft",
+    "after": "Du möchtest mündlich erklären. Noch nicht fachlich geprüft.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Diese Angabe passt noch nicht. Sieh den zugehörigen Materialteil an.",
+    "after": "Diese Angabe passt noch nicht. Prüfe die passende Stelle im Material.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Gültige eigene Auswahlen bleiben erhalten. Fehlende oder falsche Sachangaben werden mit dem Beispiel ergänzt.",
+    "after": "Passende eigene Antworten bleiben erhalten. Das Beispiel ergänzt fehlende Angaben und berichtigt Fehler.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Selbstkontrolle – keine fachliche Freigabe",
+    "after": "Selbst prüfen – die App bewertet deinen Text nicht",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Eine Besprechung mit Lehrkraft oder Partner ist ein eigener Unterrichtsschritt.",
+    "after": "Besprich deine Antwort danach mit deiner Lehrkraft oder einer anderen Person.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/chapter-ui.ts",
+    "before": "Frühere Ergebnisse bleiben bei ihrem bisherigen Lernweg, ohne Niveaueinstufung. Sie bestätigen keine neue Profilaufgabe.",
+    "after": "Deine früheren Ergebnisse bleiben erhalten. Die neuen Lernwegaufgaben musst du selbst bearbeiten.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/regions/cocoa.ts",
+    "before": "Erfundener Betrieb im Kontext Ghanas. Ghana hat bereits eigene Kakaoverarbeitung. Alle Geldeinheiten (GE), Einnahmen und Kosten sind erfunden. Eine Spielrunde, keine echten Preise oder Mengen. Keine Umrechnung von Bohnen in Produktmengen. Ein getrennter Investitionstopf enthält 60 GE. Einmalige Investitionen und laufende Ausgaben werden nicht vermischt. Nachfrage, Ausbildung, Energie und Transport können reale Ergebnisse beeinflussen.",
+    "after": "Der Betrieb ist erfunden. Ghana hat bereits eigene Kakaoverarbeitung. Alle Geldeinheiten (GE), Einnahmen und Kosten sind erfunden. Die Zahlen gelten für eine Spielrunde. Es sind keine echten Preise oder Mengen. Wir berechnen nicht, wie viel Produkt aus den Bohnen entsteht. Für Anschaffungen gibt es einen eigenen Topf mit 60 GE. Eine Anschaffung wird einmal bezahlt. Laufende Ausgaben werden getrennt gerechnet. In Wirklichkeit kommt es auch auf Käufer, Ausbildung, Energie und Transport an.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/regions/share.ts",
+    "before": "Eine neue, unabhängige Modellrunde; keine Fortrechnung aus Episode 3. Alle GE sind erfunden. 300 GE Einnahmen minus 100 GE bereits bezahlte Löhne minus 80 GE andere bezahlte Kosten ergeben 120 GE freien Überschuss. Auszahlungen gehen an Mitglieder, nicht als Ersatz für geschuldete Löhne. Rücklagen sind keine Garantie gegen jede Reparatur. Fortbildung garantiert weder höhere Erträge noch neue Aufträge. Keine Verteilung wird als moralisch beste belohnt.",
+    "after": "Diese Runde beginnt neu. Du rechnest nicht mit den Ergebnissen aus Episode 3 weiter. Alle GE sind erfunden. Der Betrieb bekommt 300 GE. Er hat 100 GE Löhne und 80 GE andere Kosten schon bezahlt. Es bleiben 120 GE Überschuss. Dieses Geld wird verteilt. Die Mitglieder bekommen zusätzliches Geld. Ihre Löhne sind bereits bezahlt. Geld für Reparaturen kann trotzdem zu wenig sein. Auch nach einer Fortbildung muss der Betrieb nicht mehr verkaufen oder neue Aufträge bekommen. Du darfst verschiedene Pläne wählen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/regions/share.ts",
+    "before": "Rücklagen oder Lernen betreffen mögliche spätere Bedürfnisse.",
+    "after": "Geld für Reparaturen oder Lernen kann später helfen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/regions/water.ts",
+    "before": "Erfundener Betrieb bei einem realen Ort. Marokko wird hier nicht als einheitlicher Naturraum dargestellt. Alle Wassereinheiten (WE) und Wirkungen sind Modellannahmen, keine örtlichen Messwerte oder echten Einsparquoten. Eine Runde: 80 WE im Tank, kein Zufluss. Die gleiche Fläche erhält im Modell jeweils 40 WE; daraus folgt keine sichere Ernte. Nicht am Feld ankommendes Wasser kann etwa versickern oder verdunsten; die Aufteilung und Rückflüsse werden nicht berechnet. Entnahme ist Wasser aus dem Tank. Verbrauch bedeutet etwa: Wasser verdunstet und ist vor Ort zunächst nicht wieder nutzbar. Er wird hier nicht berechnet. Der Tankrest ist kein Grundwasserbestand. Keine Aussage über den realen Wasserhaushalt Marokkos.",
+    "after": "Agadir ist ein echter Ort. Der Betrieb ist erfunden. Marokkos Landschaften sind unterschiedlich. Alle Wassereinheiten (WE) und Wirkungen sind für das Spiel angenommen. Es sind keine Messwerte aus Marokko. Eine Runde beginnt mit 80 WE im Tank. Es kommt kein Wasser hinzu. Das gleiche Feld bekommt jeweils 40 WE. Eine gute Ernte ist dadurch nicht sicher. Unterwegs kann Wasser versickern oder verdunsten. Wie viel wohin gelangt oder zurückfließt, wird nicht berechnet. Wasser verlässt den Tank: Das heißt Entnahme. Verdunstetes Wasser ist vor Ort zunächst nicht mehr nutzbar. Das zählt zum Verbrauch. Der Verbrauch wird hier nicht berechnet. Der Tankrest zeigt nicht, wie viel Grundwasser es gibt. Die Rechnung beschreibt nicht Marokkos echten Wasserhaushalt.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/regions/area.ts",
+    "before": "Unabhängige Modellrunde, keine Voraussetzung aus Episode 5. 80 erfundene WE im Tank; kein Zufluss, keine Rückflüsse oder Grundwasserdynamik berechnet. Früher: gleiches erstes Feld mit 60 WE Entnahme. Mit verbesserter Technik: 45 WE für genau dieses Feld. Das kleinere Zusatzfeld benötigt im Modell weitere 20 WE; kein Verdoppeln gleich großer Flächen. Gesamt 45 + 20 = 65 WE. Die Flächensymbole sind schematisch, ohne Hektarangabe oder Maßstab. WE sind keine realen Messwerte Marokkos. Tankrest ist kein Grundwasser. Zusätzlicher Anbau kann wirtschaftliche Möglichkeiten bieten; Einkommen, Arbeitsplätze und Ernten sind nicht garantiert. Entnahme ist nicht mit Verbrauch gleichzusetzen; Verbrauch wird hier nicht berechnet.",
+    "after": "Diese Runde beginnt neu. Du brauchst keine Ergebnisse aus Episode 5. Im Tank sind 80 erfundene WE. Es kommt kein Wasser hinzu. Zurückfließendes Wasser und Veränderungen des Grundwassers werden nicht berechnet. Früher wurden 60 WE für das erste Feld entnommen. Mit besserer Technik sind es 45 WE für dasselbe Feld. Das kleinere Zusatzfeld braucht weitere 20 WE. Die Felder sind nicht gleich groß. Zusammen sind es 45 + 20 = 65 WE. Die Symbole zeigen keine genauen Flächengrößen. WE sind keine Messwerte aus Marokko. Der Tankrest zeigt nicht, wie viel Grundwasser es gibt. Ein weiteres Feld kann Chancen bieten. Mehr Einkommen, Arbeitsplätze oder eine gute Ernte sind aber nicht sicher. Entnahme heißt: Wasser verlässt den Tank. Entnahme ist nicht dasselbe wie Verbrauch. Der Verbrauch wird hier nicht berechnet.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "before": "Suche eine passende Angabe im Beispiel. Kann die Angabe auch etwas über andere Orte beweisen?",
+    "after": "Suche eine passende Angabe im Beispiel. Die Angabe dient als Beleg. Kann sie auch etwas über andere Orte beweisen?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Geburten minus Sterbefälle.",
+    "after": "Menschen kommen zur Welt. Menschen sterben. Geburten minus Sterbefälle heißt natürliche Veränderung.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Einnahmen minus laufende Ausgaben.",
+    "after": "Der Betrieb bekommt Geld und bezahlt laufende Kosten. Das übrige Geld heißt Überschuss.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/words.ts",
+    "before": "Eine Anschaffung, die hier einmal bezahlt wird.",
+    "after": "Der Betrieb kauft etwas, etwa eine Maschine. Diese Anschaffung heißt Investition. Hier wird sie einmal bezahlt.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/main.ts",
+    "before": "Weiter zur Gewichtung →",
+    "after": "Weiter: Was ist dir wichtiger? →",
+    "occurrences": 1
+  },
+  {
+    "file": "src/main.ts",
+    "before": "'Vorschlag', 'Vorteil', 'Nachteil', 'Gewichtung'",
+    "after": "'Vorschlag', 'Vorteil', 'Nachteil', 'Was ist dir wichtiger?'",
+    "occurrences": 1
+  },
+  {
+    "file": "src/main.ts",
+    "before": "Mein Ziel oder Kriterium",
+    "after": "Mein Ziel",
+    "occurrences": 1
+  },
+  {
+    "file": "src/main.ts",
+    "before": "Dein Ziel oder Kriterium:",
+    "after": "Dein Ziel:",
+    "occurrences": 1
+  },
+  {
+    "file": "src/main.ts",
+    "before": "Gewichtung noch einmal öffnen",
+    "after": "Noch einmal wählen, was wichtiger ist",
+    "occurrences": 1
+  },
+  {
+    "file": "src/main.ts",
+    "before": "Wähle einen zutreffenden Vorteil für eine andere Person. Dann kannst du diese Folge stärker gewichten.",
+    "after": "Wähle einen passenden Vorteil für eine andere Person. Dann kannst du sagen, warum dir dieser Vorteil wichtiger ist.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/main.ts",
+    "before": "Bei der Gewichtung entscheidest du, welche Folge dir wichtiger ist.",
+    "after": "Du entscheidest, welche Folge dir wichtiger ist.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/main.ts",
+    "before": "Hast du einen zutreffenden Beleg und einen Nachteil für eine andere Person genannt?",
+    "after": "Passt deine Angabe aus dem Material? Hast du auch einen Nachteil für eine andere Person genannt?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/main.ts",
+    "before": "Deine Gewichtung:",
+    "after": "Das ist dir wichtiger:",
+    "occurrences": 1
+  },
+  {
+    "file": "src/main.ts",
+    "before": "Bewusst unbewertet abgegeben. Die Verbindung von Ziel, Belegen und Gewichtung ist damit nicht bestätigt.",
+    "after": "Du hast deinen Text ohne Bewertung abgegeben. Ob Ziel, Angaben und Begründung zusammenpassen, wurde noch nicht geprüft.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/feedback.ts",
+    "before": "Wähle noch dein Ziel oder Kriterium.",
+    "after": "Wähle noch dein Ziel.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/feedback.ts",
+    "before": "Dein Argument ist noch nicht verbunden. Ändere dein Ziel oder wähle konkret, welche Folge dir wichtiger ist.",
+    "after": "Dein Ziel und deine Begründung passen noch nicht zusammen. Ändere dein Ziel. Oder wähle, welche andere Folge dir wichtiger ist.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/feedback.ts",
+    "before": "Die ausgewählten Belege und dein Ziel sind verbunden. Du hast deine Empfehlung mit Bausteinen begründet.",
+    "after": "Die gewählten Angaben passen zu deinem Ziel. Du hast deine Empfehlung mit Bausteinen begründet.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/feedback.ts",
+    "before": "Du übernimmst damit auch diese Gewichtung.",
+    "after": "Du übernimmst auch die Erklärung, warum diese Folge wichtiger ist.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/demand-ui.ts",
+    "before": "Du übernimmst auch diese Gewichtung.",
+    "after": "Du übernimmst auch die Erklärung, warum diese Folge wichtiger ist.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/demand-ui.ts",
+    "before": "Erfundenes Viertel im Kontext Nairobis. Alle Zahlen sind Modellwerte.",
+    "after": "Nairobi ist ein echter Ort. Das Viertel und alle Zahlen sind erfunden.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/regions/decision-ui.ts",
+    "before": "3. Grenze und Gewichtung",
+    "after": "3. Welches Problem bleibt? Was ist dir wichtiger?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/regions/shared.ts",
+    "before": "Passe dein Ziel an oder gewichte diese konkrete Folge ausdrücklich höher.",
+    "after": "Ändere dein Ziel. Oder erkläre, warum dir diese andere Folge wichtiger ist.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/geography/context.ts",
+    "before": "Auch ihr Viertel, die Buswege und alle Zahlen sind Spielmodelle.",
+    "after": "Auch ihr Viertel, die Buswege und alle Zahlen sind erfunden.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/geography/context.ts",
+    "before": "Wasser-Einheiten und Flächen sind Modellwerte.",
+    "after": "Auch die Wassermengen und Felder sind erfunden.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-material.ts",
+    "before": "Vereinfachtes Schema: Wasser kann erneut verdunsten. Keine gemessene regionale Wasserbilanz.",
+    "after": "Die Zeichnung zeigt: Wasser kann erneut verdunsten. Sie zeigt keine gemessenen Wassermengen einer Region.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/inquiry/content.ts",
+    "before": "Überschuss: Einnahmen minus laufende Ausgaben.",
+    "after": "Überschuss: Der Betrieb bekommt Geld und bezahlt laufende Kosten. Das übrige Geld heißt Überschuss.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/inquiry/content.ts",
+    "before": "Wanderungssaldo: Zuzug minus Fortzug. Der Wert kann negativ sein.",
+    "after": "Wanderungssaldo: Menschen ziehen hinzu oder weg. Rechne Zuzug minus Fortzug. Ziehen mehr weg als hinzu, steht vor dem Ergebnis ein Minus.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/inquiry/content.ts",
+    "before": "Zuverlässiger Strom kann Maschinenbetrieb ermöglichen. Kenntnisse über Verarbeitung, Preisgestaltung und Transport können helfen, Produkte anzubieten. Keine dieser Bedingungen garantiert Verkaufserfolg.",
+    "after": "Mit zuverlässigem Strom können Maschinen arbeiten. Wissen über Verarbeitung, Preise und Transport kann beim Verkauf helfen. Es ist trotzdem nicht sicher, dass der Betrieb genug verkauft.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Eine passende Überschrift nennt konkrete Orte und bleibt begrenzt.",
+    "after": "Eine passende Überschrift nennt die gezeigten Orte. Sie spricht nicht für ganz Afrika.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Ich sehe den Zielkonflikt. Ich gewichte ",
+    "after": "Mein erstes Ziel bleibt wichtig. Trotzdem ist mir hier ",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Kühlung stärker als breiten Zugang und akzeptiere 30 statt 60 Stände",
+    "after": "die Kühlung wichtiger. Dafür akzeptiere ich, dass nur 30 statt 60 Stände das Angebot nutzen",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Zugang für 60 Stände stärker als Kühlung empfindlicher Ware und akzeptiere deren geringeren Schutz",
+    "after": "der Zugang für 60 Stände wichtiger. Dafür akzeptiere ich, dass empfindliche Waren weniger gut gekühlt werden",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Beide Ziele sind möglich. Du kannst später bewusst anders gewichten.",
+    "after": "Beide Ziele sind möglich. Du kannst später ein anderes Ziel wichtiger finden.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Du darfst selbst gewichten.",
+    "after": "Du darfst selbst wählen, was dir wichtiger ist.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Prüfe Kühlfunktion, Zugang und benötigte Ressourcen.",
+    "after": "Was wird gekühlt? Wer kann das Angebot nutzen? Wie viel Material und Energie braucht es?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Benenne den tatsächlichen Vorteil, den du stärker gewichtest, und den akzeptierten Nachteil.",
+    "after": "Welcher Vorteil ist dir wichtiger? Welchen Nachteil nimmst du dafür in Kauf?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Eine Gewichtung nennt eine konkrete wichtigere Folge und einen akzeptierten Nachteil.",
+    "after": "Sage, welche Folge dir wichtiger ist. Nenne auch den Nachteil, den du dafür in Kauf nimmst.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "before": "Verknüpfe Folgen und Unsicherheit.",
+    "after": "Wie hängen die Folgen zusammen? Welche wichtigen Angaben fehlen noch?",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "before": "Du darfst beide Zeitfolgen unterschiedlich gewichten.",
+    "after": "Du darfst selbst wählen, wessen Zeit dir hier wichtiger ist.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/main.ts",
+    "before": "Ein Vergleich der Zeiten ist noch keine umfassende Nachhaltigkeitsbewertung.",
+    "after": "Die Zeiten allein zeigen noch nicht alle Folgen für Menschen, Wirtschaft und Umwelt.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-material.ts",
+    "before": "Das ist kein Nachweis einer früheren Bearbeitung.",
+    "after": "Die Angaben bedeuten nicht, dass du die Episode schon bearbeitet hast.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-material.ts",
+    "before": "Keine genaue Reisezeitmessung.",
+    "after": "Genaue Reisezeiten kannst du hier nicht ablesen.",
+    "occurrences": 1
+  },
+  {
+    "file": "src/learning/simulation-material.ts",
+    "before": "Unabhängige erfundene Runde.",
+    "after": "Diese erfundene Runde beginnt neu.",
+    "occurrences": 1
+  }
+]

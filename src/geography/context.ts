@@ -6,7 +6,7 @@ export const placeContexts: Record<
   KEN: {
     real: 'Nairobi ist die Hauptstadt von Kenia. Die Stadt liegt südlich des Äquators.',
     model:
-      'Amina, David und Leila sind erfunden. Auch ihr Viertel, die Buswege und alle Zahlen sind Spielmodelle.',
+      'Amina, David und Leila sind erfunden. Auch ihr Viertel, die Buswege und alle Zahlen sind erfunden.',
     scope:
       'Das Viertel zeigt einen Ausschnitt im Spiel. Es steht nicht für das Leben aller Menschen in Nairobi oder Kenia.',
   },
@@ -19,7 +19,7 @@ export const placeContexts: Record<
   MAR: {
     real: 'Agadir ist eine Stadt in Marokko. Die Hauptstadt Rabat liegt weiter nördlich.',
     model:
-      'Unser Landwirtschaftsbetrieb bei Agadir und sein Tank sind erfunden. Wasser-Einheiten und Flächen sind Modellwerte.',
+      'Unser Landwirtschaftsbetrieb bei Agadir und sein Tank sind erfunden. Auch die Wassermengen und Felder sind erfunden.',
     scope:
       'Der Tank zeigt keine Messung für Agadir oder ganz Marokko. Er sagt nichts über das Grundwasser aus.',
   },

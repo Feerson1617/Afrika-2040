@@ -129,7 +129,7 @@ function concreteSupport(id: string, material: MaterialId): string {
       ? '24 sind Fahrgäste in einer Stunde. Die Ghana-Tabelle zählt Menschen im ganzen Land.'
       : id.includes('question')
         ? 'Frage nach einer konkreten fehlenden Angabe, etwa Altersverteilung oder vorhandenen Angeboten.'
-        : 'Verbinde eine Bedingung mit einer möglichen Folge: etwa nutzbare Schulplätze mit Lehrkräften oder Ausbildung mit passenden Arbeitsplätzen. Eine Bedingung allein ist keine Erfolgsgarantie.';
+        : 'Was brauchen die Menschen? Zum Beispiel Schulplätze mit Lehrkräften oder Ausbildung mit passenden Arbeitsplätzen. Erkläre, was dann möglich wäre. Eine Bedingung allein reicht oft nicht.';
   if (material === 'kenia')
     return id === 'kenia.walk'
       ? 'Der gestrichelte erste Teil führt zu Fuß zur Haltestelle. Erst der zweite Teil ist die Busfahrt.'
@@ -150,7 +150,7 @@ function concreteSupport(id: string, material: MaterialId): string {
   if (id.includes('natural'))
     return `Markiere ${m.births} Geburten und ${m.deaths} Sterbefälle. Bei einer Rechnung ziehst du die Sterbefälle von den Geburten ab.`;
   if (id.includes('migration'))
-    return `Markiere ${m.arrivals} Zuzüge und ${m.departures} Fortzüge. Rechne Zuzug minus Fortzug. Gehen mehr weg, ist der Saldo negativ.`;
+    return `Markiere ${m.arrivals} Zuzüge und ${m.departures} Fortzüge. Rechne Zuzug minus Fortzug. Ziehen mehr Menschen weg als hinzu, werden es durch Umzüge weniger Menschen.`;
   if (id.includes('operations'))
     return 'Geburten und Sterbefälle bilden ein Paar; Zuzug und Fortzug das andere. Zähle nicht alle vier Größen zusammen.';
   return `Nutze beide Teilwirkungen: ${b.natural} und (${b.migration}). Die Anfangszahl ${m.start} gehört erst zum Endbestand. Setze kein zweites Minus vor einen schon negativen Saldo.`;
@@ -509,7 +509,7 @@ function conditions(profile: ProfileId) {
       [
         choice(
           'chance',
-          'Ausbildung kann später Erwerbsmöglichkeiten eröffnen, wenn …',
+          'Ausbildung kann helfen, später Arbeit zu finden, wenn …',
           'jobs',
           [
             ['automatic', 'dadurch sofort alle Arbeit haben.'],
@@ -640,7 +640,7 @@ function buildTasks(unit: Unit, profile: ProfileId): Task[] {
           text(
             'explanation',
             'Wann können mehr junge Menschen eine Chance sein?',
-            'Wenn Ausbildung und passende Arbeitsplätze entstehen, können sich später Erwerbsmöglichkeiten eröffnen.',
+            'Wenn es Ausbildung und passende Arbeitsplätze gibt, können Menschen später Arbeit finden.',
             'Eine Bedingung und eine mögliche Folge verbinden.',
           ),
         ],
@@ -680,7 +680,7 @@ function buildTasks(unit: Unit, profile: ProfileId): Task[] {
         text(
           'explanation',
           'Verbinde beide Teiländerungen.',
-          'Die natürliche Zunahme +30 ist größer als der Wanderungsverlust 10. Insgesamt sind es 20 mehr und am Ende 1020 Personen.',
+          'Durch Geburten und Sterbefälle kommen 30 Menschen hinzu. Durch Umzüge sind es 10 weniger. Zusammen sind es 20 mehr. Am Ende leben dort 1020 Menschen.',
           'Beide Teiländerungen und die Gesamtwirkung unterscheiden.',
         ),
       ],
@@ -718,7 +718,7 @@ function buildTasks(unit: Unit, profile: ProfileId): Task[] {
         text(
           'explanation',
           'Unter welchen Bedingungen können beide entstehen?',
-          'Ausbildung und passende Arbeitsplätze können später Chancen eröffnen. Ohne weitere Schulplätze und Lehrkräfte kann die Versorgung schwieriger werden.',
+          'Ausbildung und passende Arbeitsplätze können Menschen helfen, später Arbeit zu finden. Ohne neue Schulplätze und Lehrkräfte kann es schwieriger werden, alle Kinder zu unterrichten.',
           'Beide Folgen sind bedingt, nicht zwangsläufig.',
         ),
       ],
@@ -923,7 +923,7 @@ function kenyaTasks(profile: ProfileId): Task[] {
         [
           choice(
             'priority',
-            'Beide Prioritäten sind möglich.',
+            'Du darfst wählen, was dir wichtiger ist.',
             'either',
             [
               [
@@ -935,10 +935,10 @@ function kenyaTasks(profile: ProfileId): Task[] {
                 'Davids kürzerer Direktweg. Ich akzeptiere Aminas längeren Weg.',
               ],
             ],
-            'Eine Priorität ist keine falsche Rechnung. Beide Folgen müssen stimmen.',
+            'Du darfst selbst entscheiden. Die Zeitangaben für beide Personen müssen stimmen.',
           ),
         ],
-        'Du darfst beide Zeitfolgen unterschiedlich gewichten.',
+        'Du darfst selbst wählen, wessen Zeit dir hier wichtiger ist.',
       ),
     ];
   return [
@@ -969,7 +969,7 @@ function kenyaTasks(profile: ProfileId): Task[] {
       [
         text(
           'explanation',
-          'Welcher Beleg trägt deine Wahl?',
+          'Welche Angabe aus dem Material spricht für deine Wahl?',
           'Ich empfehle Nord wegen Aminas Zeitvorteil von 22 auf 10 Minuten. Dafür akzeptiere ich, dass David 18 statt 12 Minuten braucht.',
           'Direkt oder Nord mit passendem Vorteil und Nachteil sind zulässig.',
         ),

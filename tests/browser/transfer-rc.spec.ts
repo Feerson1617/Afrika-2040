@@ -351,7 +351,7 @@ if (!before) {
         .first()
         .click();
       await expect(article).toContainText(
-        `${previous.submissions.length} protokollierte Antwortversuche`,
+        `${previous.submissions.length} gespeicherte Antworten`,
       );
       await expect(article).toContainText('bewusst genutzt: nein');
       expect(

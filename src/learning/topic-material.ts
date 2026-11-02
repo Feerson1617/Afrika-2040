@@ -47,7 +47,7 @@ export function topicMaterial(f: Focus, p: ProfileId) {
     view +=
       '<p>Kühlraum: Gemeinsamer Kühlraum. Dächer/Kisten: Schattendächer und Mehrwegkisten.</p>';
   if (f.steps)
-    view += `<figure class="learning-chain"><ol>${f.steps.map((s) => `<li>${esc(s)}</li>`).join('')}</ol><figcaption>Vereinfachtes Schema: Wasser kann erneut verdunsten. Keine gemessene regionale Wasserbilanz.</figcaption></figure>`;
+    view += `<figure class="learning-chain"><ol>${f.steps.map((s) => `<li>${esc(s)}</li>`).join('')}</ol><figcaption>Die Zeichnung zeigt: Wasser kann erneut verdunsten. Sie zeigt keine gemessenen Wassermengen einer Region.</figcaption></figure>`;
   const r = newRecord();
   r.material = f.picture ?? (f.topic === 'future' ? 'cool' : r.material);
   const full =

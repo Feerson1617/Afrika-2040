@@ -45,7 +45,7 @@ export const share: StudySpec = {
   intro:
     'Ghana liegt in Westafrika. Die Szene spielt bei Kumasi. Eine erfundene Genossenschaft entscheidet gemeinsam. Löhne und alle anderen Kosten sind bereits bezahlt. Verteile den freien Überschuss und untersuche die Folgen.',
   modelNote:
-    'Eine neue, unabhängige Modellrunde; keine Fortrechnung aus Episode 3. Alle GE sind erfunden. 300 GE Einnahmen minus 100 GE bereits bezahlte Löhne minus 80 GE andere bezahlte Kosten ergeben 120 GE freien Überschuss. Auszahlungen gehen an Mitglieder, nicht als Ersatz für geschuldete Löhne. Rücklagen sind keine Garantie gegen jede Reparatur. Fortbildung garantiert weder höhere Erträge noch neue Aufträge. Keine Verteilung wird als moralisch beste belohnt.',
+    'Diese Runde beginnt neu. Du rechnest nicht mit den Ergebnissen aus Episode 3 weiter. Alle GE sind erfunden. Der Betrieb bekommt 300 GE. Er hat 100 GE Löhne und 80 GE andere Kosten schon bezahlt. Es bleiben 120 GE Überschuss. Dieses Geld wird verteilt. Die Mitglieder bekommen zusätzliches Geld. Ihre Löhne sind bereits bezahlt. Geld für Reparaturen kann trotzdem zu wenig sein. Auch nach einer Fortbildung muss der Betrieb nicht mehr verkaufen oder neue Aufträge bekommen. Du darfst verschiedene Pläne wählen.',
   goals: {
     payout: 'Mitglieder sollen jetzt zusätzlich Geld erhalten.',
     reserve: 'Geld für mögliche Reparaturen zurücklegen.',
@@ -151,7 +151,7 @@ export const share: StudySpec = {
         },
       ],
       failures,
-      'Dein Plan verteilt genau 120 GE. Mehr für einen Zweck bedeutet weniger für andere Zwecke. Eine Auszahlung hilft jetzt; Rücklagen oder Lernen betreffen mögliche spätere Bedürfnisse. Es gibt keinen für alle Ziele besten Plan.',
+      'Dein Plan verteilt genau 120 GE. Mehr für einen Zweck bedeutet weniger für andere Zwecke. Eine Auszahlung hilft jetzt; Geld für Reparaturen oder Lernen kann später helfen. Es gibt keinen für alle Ziele besten Plan.',
     );
   },
   example(step, d) {

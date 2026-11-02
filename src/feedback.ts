@@ -338,7 +338,7 @@ export function explainDecision(
   const example = decisionExample(answer, situation);
   if (!example)
     return 'Wähle zuerst deinen Busweg und dein Ziel. Dann zeigen wir ein Beispiel für genau diese Auswahl.';
-  return `Beispiel für ${routeNames[example.route!]} und dein gewähltes Ziel: Vorteil: ${evidenceLabel(example.advantage!, situation)} Nachteil: ${evidenceLabel(example.disadvantage!, situation)} ${weightingProduct(example, situation)} Du übernimmst damit auch diese Gewichtung. Dein Ziel und dein eigener Text bleiben erhalten.`;
+  return `Beispiel für ${routeNames[example.route!]} und dein gewähltes Ziel: Vorteil: ${evidenceLabel(example.advantage!, situation)} Nachteil: ${evidenceLabel(example.disadvantage!, situation)} ${weightingProduct(example, situation)} Du übernimmst auch die Erklärung, warum diese Folge wichtiger ist. Dein Ziel und dein eigener Text bleiben erhalten.`;
 }
 export function evaluateDecision(
   answer: Decision,
@@ -366,7 +366,7 @@ export function evaluateDecision(
   const distinct = differentPeople(answer.advantage, answer.disadvantage);
   const hasText = Boolean(answer.text.trim());
   const parts: string[] = [];
-  if (!answer.criterion) parts.push('Wähle noch dein Ziel oder Kriterium.');
+  if (!answer.criterion) parts.push('Wähle noch dein Ziel.');
   if (answer.supported) parts.push('Du hast das erklärte Beispiel übernommen.');
   if (good)
     parts.push(
@@ -399,7 +399,7 @@ export function evaluateDecision(
   const connected = !needsWeighting || hasWeighting(answer, situation);
   if (needsWeighting && !connected)
     parts.push(
-      'Dein Argument ist noch nicht verbunden. Ändere dein Ziel oder wähle konkret, welche Folge dir wichtiger ist.',
+      'Dein Ziel und deine Begründung passen noch nicht zusammen. Ändere dein Ziel. Oder wähle, welche andere Folge dir wichtiger ist.',
     );
   if (hasWeighting(answer, situation))
     parts.push(weightingProduct(answer, situation));
@@ -407,7 +407,7 @@ export function evaluateDecision(
     good && downside && distinct && Boolean(answer.criterion) && connected;
   if (structured)
     parts.push(
-      'Die ausgewählten Belege und dein Ziel sind verbunden. Du hast deine Empfehlung mit Bausteinen begründet.',
+      'Die gewählten Angaben passen zu deinem Ziel. Du hast deine Empfehlung mit Bausteinen begründet.',
     );
   return {
     kind: 'neutral',

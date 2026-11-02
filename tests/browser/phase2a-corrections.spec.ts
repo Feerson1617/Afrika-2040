@@ -44,7 +44,9 @@ for (const route of ['direct', 'north', 'south'] as const)
       await expect(feedback).toContainText('Du beachtest auch den Nachteil');
       const conflict = goal !== matching[route];
       if (conflict) {
-        await expect(feedback).toContainText('noch nicht verbunden');
+        await expect(feedback).toContainText(
+          'Dein Ziel und deine Begründung passen noch nicht zusammen',
+        );
         await expect(feedback).toContainText(`${totals[route][index]} Minuten`);
         await expect(feedback).toContainText(`${shortest[index]} Minuten`);
         await expect(page.locator('#next-step')).toHaveCount(0);
@@ -72,9 +74,7 @@ for (const route of ['direct', 'north', 'south'] as const)
         await page
           .getByRole('button', { name: 'Ich möchte mein Ziel ändern' })
           .click();
-        await page
-          .getByLabel('Mein Ziel oder Kriterium')
-          .selectOption(matching[route]);
+        await page.getByLabel('Mein Ziel').selectOption(matching[route]);
         expect((await saved(page)).decision.weighting).toBeUndefined();
         await panel(page, 'weigh');
         await expect(page.locator('#next-step')).toHaveCount(0);
@@ -169,7 +169,7 @@ for (const device of [
       'Du belegst den Vorteil',
     );
     await expect(page.locator('[data-feedback]')).toContainText(
-      'noch nicht verbunden',
+      'Dein Ziel und deine Begründung passen noch nicht zusammen',
     );
     await page.screenshot({
       path: evidencePath(`correction-${device.name}-conflict.png`),
@@ -178,7 +178,7 @@ for (const device of [
     await page
       .getByRole('button', { name: 'Ich möchte mein Ziel ändern' })
       .tap();
-    await page.getByLabel('Mein Ziel oder Kriterium').selectOption('training');
+    await page.getByLabel('Mein Ziel').selectOption('training');
     await panel(page, 'weigh', true);
     await page.getByRole('button', { name: 'Empfehlung prüfen' }).tap();
     await expect(page.locator('#next-step')).toBeVisible();
@@ -212,7 +212,7 @@ for (const device of [
     await page.reload();
     expect((await saved(page)).decision.supported).toBe(true);
     await page
-      .getByRole('button', { name: 'Gewichtung noch einmal öffnen' })
+      .getByRole('button', { name: 'Noch einmal wählen, was wichtiger ist' })
       .tap();
     await expect(page.locator('#next-step')).toHaveCount(0);
     expect((await saved(page)).decision.supported).toBeUndefined();

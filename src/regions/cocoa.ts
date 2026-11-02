@@ -49,7 +49,7 @@ export const cocoa: StudySpec = {
   intro:
     'Ghana liegt in Westafrika. Die Szene spielt bei Kumasi. Eine erfundene Genossenschaft verkauft Kakaoprodukte. Sie möchte ihren Betrieb verbessern. Du untersuchst zwei Ideen.',
   modelNote:
-    'Erfundener Betrieb im Kontext Ghanas. Ghana hat bereits eigene Kakaoverarbeitung. Alle Geldeinheiten (GE), Einnahmen und Kosten sind erfunden. Eine Spielrunde, keine echten Preise oder Mengen. Keine Umrechnung von Bohnen in Produktmengen. Ein getrennter Investitionstopf enthält 60 GE. Einmalige Investitionen und laufende Ausgaben werden nicht vermischt. Nachfrage, Ausbildung, Energie und Transport können reale Ergebnisse beeinflussen.',
+    'Der Betrieb ist erfunden. Ghana hat bereits eigene Kakaoverarbeitung. Alle Geldeinheiten (GE), Einnahmen und Kosten sind erfunden. Die Zahlen gelten für eine Spielrunde. Es sind keine echten Preise oder Mengen. Wir berechnen nicht, wie viel Produkt aus den Bohnen entsteht. Für Anschaffungen gibt es einen eigenen Topf mit 60 GE. Eine Anschaffung wird einmal bezahlt. Laufende Ausgaben werden getrennt gerechnet. In Wirklichkeit kommt es auch auf Käufer, Ausbildung, Energie und Transport an.',
   goals: {
     surplus: 'Mehr Überschuss in dieser Runde.',
     processing: 'Mehr Verarbeitung im eigenen Betrieb ermöglichen.',

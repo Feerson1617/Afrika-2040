@@ -298,7 +298,7 @@ test('Afrika curriculum correction simple materials, relevant words and honest j
   const journal = await page.locator('main').evaluate((el) => el.innerText);
   expect(journal).toContain('Die App hat diese Angaben geprüft. Sie passen.');
   expect(journal).not.toMatch(
-    /Kompetenznachweis|Variante:|Standardgerüst:|Sachangaben|factual/,
+    /Kompetenznachweis|Variante:|Denkhinweis von Anfang an:|Sachangaben|factual/,
   );
   await page.screenshot({
     path: evidencePath(`correction-foerder-journal-${browserName}.png`),
@@ -333,7 +333,7 @@ test('Afrika curriculum correction AHR applies source criticism without a prefil
     .evaluate((el) => el.innerText);
   expect(material).toMatch(/Ghana/);
   expect(material).toMatch(/2000–2024/);
-  expect(material).toMatch(/Personen zur Jahresmitte/);
+  expect(material).toMatch(/Menschen jeweils zur Jahresmitte/);
   expect(material).toMatch(/Schätzungen/);
   expect(material).toMatch(/Weltbank/);
   expect(material).not.toMatch(
@@ -411,7 +411,7 @@ test('Afrika curriculum correction oral history has 40 newest plus older count i
     const record = page.locator('.journal-record article').nth(1);
     await record.locator('details > summary').first().click();
     await expect(record).toContainText(
-      '40 protokollierte Antwortversuche, 5 ältere Versuche verdichtet',
+      '40 gespeicherte Antworten, 5 ältere Antworten nur noch gezählt',
     );
     const a = (await get(page)).records['c.ahr.v1'].attempts[
       'population.base.explain'
@@ -440,7 +440,7 @@ test('Afrika curriculum correction oral history has 40 newest plus older count i
   const restoredArticle = page.locator('.journal-record article').nth(1);
   await restoredArticle.locator('details > summary').first().click();
   await expect(restoredArticle).toContainText(
-    '40 protokollierte Antwortversuche, 22 ältere Versuche verdichtet',
+    '40 gespeicherte Antworten, 22 ältere Antworten nur noch gezählt',
   );
   await expect(restoredArticle.locator('.own-answer')).toContainText(
     'Mündliche Notiz 44',

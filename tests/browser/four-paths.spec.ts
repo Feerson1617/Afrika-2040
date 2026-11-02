@@ -71,7 +71,7 @@ for (const profile of profileIds)
           );
           if (profile === 'esa' && task.id.endsWith('.end'))
             await expect(page.locator('p.learning-scaffold')).toContainText(
-              'Der Wanderungssaldo steht schon mit seinem Vorzeichen da.',
+              'Die Zahl zu den Umzügen hat schon ein Plus oder Minus. Übernimm das Zeichen.',
             );
           if (unit === 's1' && i === 0) {
             const svg = page.locator(
@@ -346,7 +346,7 @@ test('Afrika curriculum four paths legacy, narrow Pages content, blocked storage
   await op(page, 'menu').click();
   await page.locator('#learning-legacy > summary').click();
   await expect(page.locator('#learning-legacy')).toContainText(
-    'ohne Niveaueinstufung',
+    'Die neuen Lernwegaufgaben musst du selbst bearbeiten.',
   );
   await page.locator('#learn-population').click();
   await page.locator('#learning-help').click();

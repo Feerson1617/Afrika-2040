@@ -326,7 +326,7 @@ export const topics: Record<TopicId, Topic> = {
     title: 'C · Bevölkerung verändert sich',
     question: 'Woher kommt Veränderung – und was folgt daraus?',
     terms:
-      'Natürliche Veränderung: Geburten minus Sterbefälle.\nZuzug: Menschen ziehen in einen Ort.\nFortzug: Menschen ziehen aus einem Ort weg.\nWanderungssaldo: Zuzug minus Fortzug. Der Wert kann negativ sein.\nSchätzung: Ein Wert wird aus vorhandenen Daten berechnet. Er kann später geändert werden.\nProjektion: eine mögliche Zukunft. Dafür nimmt man an, wie sich wichtige Bedingungen entwickeln.\nUrbanisierung: Ein größerer Anteil der Bevölkerung lebt in Städten. Mehr Menschen in einer Stadt allein beweisen das noch nicht.',
+      'Natürliche Veränderung: Geburten minus Sterbefälle.\nZuzug: Menschen ziehen in einen Ort.\nFortzug: Menschen ziehen aus einem Ort weg.\nWanderungssaldo: Menschen ziehen hinzu oder weg. Rechne Zuzug minus Fortzug. Ziehen mehr weg als hinzu, steht vor dem Ergebnis ein Minus.\nSchätzung: Ein Wert wird aus vorhandenen Daten berechnet. Er kann später geändert werden.\nProjektion: eine mögliche Zukunft. Dafür nimmt man an, wie sich wichtige Bedingungen entwickeln.\nUrbanisierung: Ein größerer Anteil der Bevölkerung lebt in Städten. Mehr Menschen in einer Stadt allein beweisen das noch nicht.',
     checks: [
       {
         title: 'So verändert sich die Zahl der Menschen',
@@ -425,7 +425,7 @@ export const topics: Record<TopicId, Topic> = {
     title: 'D · Wirtschaft: Wer hat etwas davon?',
     question: 'Was wächst – und wer hat etwas davon?',
     terms:
-      'Rohstoff: Material, aus dem etwas hergestellt wird. Zum Beispiel Kakaobohnen.\nVerarbeitung: Aus einem Rohstoff entstehen andere Produkte.\nWertschöpfung: Bei der Arbeit entsteht neuer wirtschaftlicher Wert.\nEinnahmen: Geld, das ein Betrieb bekommt.\nÜberschuss: Einnahmen minus laufende Ausgaben.\nInvestition: Geld für eine Anschaffung. Hier wird sie einmal bezahlt.\nBIP (Bruttoinlandsprodukt): Ein Maß für den wirtschaftlichen Wert, der in einem Land in einem Jahr neu entsteht. Es ist kein Kontostand.\nPreisbereinigt: Der Einfluss veränderter Preise wird herausgerechnet. So lässt sich das BIP verschiedener Jahre besser vergleichen.',
+      'Rohstoff: Material, aus dem etwas hergestellt wird. Zum Beispiel Kakaobohnen.\nVerarbeitung: Aus einem Rohstoff entstehen andere Produkte.\nWertschöpfung: Bei der Arbeit entsteht neuer wirtschaftlicher Wert.\nEinnahmen: Geld, das ein Betrieb bekommt.\nÜberschuss: Der Betrieb bekommt Geld und bezahlt laufende Kosten. Das übrige Geld heißt Überschuss.\nInvestition: Geld für eine Anschaffung. Hier wird sie einmal bezahlt.\nBIP (Bruttoinlandsprodukt): Ein Maß für den wirtschaftlichen Wert, der in einem Land in einem Jahr neu entsteht. Es ist kein Kontostand.\nPreisbereinigt: Der Einfluss veränderter Preise wird herausgerechnet. So lässt sich das BIP verschiedener Jahre besser vergleichen.',
     checks: [
       {
         title: 'Ein Betrieb ist nicht das ganze Land',
@@ -511,7 +511,7 @@ export const topics: Record<TopicId, Topic> = {
     ],
     example: [
       'Von 2022 bis 2023 steigt der Zugang von 85,1 auf 89,5 Prozent der Bevölkerung. Das sind 4,4 Prozentpunkte. Über Stromausfälle sagt dieser Anteil nichts.',
-      'Zuverlässiger Strom kann Maschinenbetrieb ermöglichen. Kenntnisse über Verarbeitung, Preisgestaltung und Transport können helfen, Produkte anzubieten. Keine dieser Bedingungen garantiert Verkaufserfolg.',
+      'Mit zuverlässigem Strom können Maschinen arbeiten. Wissen über Verarbeitung, Preise und Transport kann beim Verkauf helfen. Es ist trotzdem nicht sicher, dass der Betrieb genug verkauft.',
       'Ich vergleiche Einnahmen und laufende Ausgaben. Eine einmalige Anschaffung rechne ich getrennt ab. Für ein Urteil über das Land muss ich mehr wissen: Wie sind die Arbeitsbedingungen? Wer bekommt wie viel Geld?',
     ],
     deeper:

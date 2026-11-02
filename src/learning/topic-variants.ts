@@ -49,7 +49,7 @@ const own = (id: string, label: string, example: string): LearningField => ({
   kind: 'text',
   example,
   explanation:
-    'Dein Text bleibt fachlich ungeprüft. Vergleiche ihn mit den Kriterien.',
+    'Die App prüft deinen Text nicht fachlich. Öffne die Selbstkontrolle und vergleiche.',
 });
 const focus = (
   topic: TopicId,
@@ -68,8 +68,14 @@ const natureWords: [string, string][] = [
 ];
 const moneyWords: [string, string][] = [
   ['Einnahmen', 'Geld, das ein Betrieb bekommt.'],
-  ['Überschuss', 'Einnahmen minus laufende Ausgaben.'],
-  ['Investition', 'Hier: eine einmal bezahlte Anschaffung.'],
+  [
+    'Überschuss',
+    'Der Betrieb bekommt Geld und bezahlt laufende Kosten. Das übrige Geld heißt Überschuss.',
+  ],
+  [
+    'Investition',
+    'Der Betrieb kauft etwas, etwa eine Maschine. Diese Anschaffung heißt Investition. Hier wird sie einmal bezahlt.',
+  ],
 ];
 const futureWords: [string, string][] = [
   ['Beleg', 'Eine passende Angabe für deinen Vorschlag.'],
@@ -210,29 +216,31 @@ function images(p: ProfileId): Task[] {
     [
       pick(
         'evidence',
-        'Welcher Beleg widerspricht der Überschrift?',
+        'Was siehst du auf den Fotos? Was zeigt, dass die Behauptung nicht stimmt?',
         'built',
         [
           ['beautiful', 'Beide Fotos sind schön.'],
           ['built', 'Markttor und Baumkronenweg wurden gebaut.'],
         ],
-        'Gebauter Weg und Markttor zeigen menschliche Nutzung.',
+        'Menschen haben den Weg und das Markttor gebaut. Sie nutzen die Orte.',
       ),
       pick(
         'revision',
-        'Welche neue Überschrift bleibt begrenzt?',
+        'Welche neue Überschrift passt zu den beiden Fotos? Sie soll nicht für ganz Afrika sprechen.',
         'places',
         [
           ['all', 'Afrika ist überall reich.'],
           ['places', 'Zwei Einblicke in Orte in Ghana'],
         ],
-        'Eine passende Überschrift nennt konkrete Orte und bleibt begrenzt.',
+        'Eine passende Überschrift nennt die gezeigten Orte. Sie spricht nicht für ganz Afrika.',
       ),
     ],
     photo('forest'),
     'Vergleiche die Behauptung mit beiden Bildern.',
-    'Ein Gegenbeleg muss etwas Sichtbares benennen. Eine neue Pauschalaussage wäre wieder zu weit.',
+    'Nenne etwas, das du auf einem Foto siehst. Sprich nur über die gezeigten Orte.',
   );
+  headline.contextNote =
+    'Eine erfundene Schulzeitung schreibt: „Afrika ist nur unberührte Natur.“ Sie behauptet: Menschen haben dort nichts gebaut.';
   const initial = item(
     'image.initial',
     'Welche Vorstellung bringst du mit?',
@@ -252,7 +260,7 @@ function images(p: ProfileId): Task[] {
     focus(
       'image',
       [
-        'Wir prüfen später mit Fotos, was sich belegen lässt. Eine persönliche erste Vorstellung ist noch kein Beleg über einen Kontinent.',
+        'Später prüfst du zwei Fotos. Was zeigen die Fotos wirklich? Deine Vorstellung allein beweist noch nichts über Afrika.',
       ],
       imageWords,
     ),
@@ -270,13 +278,13 @@ function images(p: ProfileId): Task[] {
         [
           own(
             'explanation',
-            'Empfiehl eine Ergänzung. Nutze ein Detail und nenne eine Grenze.',
-            'Nur das Waldfoto kann den Blick auf Natur verengen. Das Marktbild ergänzt einen genutzten Ort. Auch beide Fotos zeigen nicht ganz Afrika.',
+            'Was sollte die Zeitung zusätzlich zeigen? Nenne etwas auf dem anderen Foto. Was zeigen auch beide Fotos nicht?',
+            'Wer nur das Waldfoto sieht, denkt vielleicht nur an Natur. Das Marktfoto zeigt auch einen Ort, den Menschen nutzen. Beide Fotos zusammen zeigen trotzdem nicht ganz Afrika.',
           ),
         ],
         photo('forest'),
         'Was wird gezeigt, was fehlt?',
-        'Verbinde Auswahl, mögliches Bild im Kopf und einen konkreten Gegenbeleg.',
+        'Was könnte jemand beim Waldfoto denken? Was zeigt das andere Foto zusätzlich?',
         [
           'Mögliche Wirkung der Auswahl erklärt.',
           'Sichtbares Detail aus dem anderen Foto genutzt.',
@@ -293,14 +301,14 @@ function images(p: ProfileId): Task[] {
         [
           own(
             'explanation',
-            'Welche begrenzte Aussage würdest du zu beiden Bildern schreiben?',
+            'Was kannst du über die beiden gezeigten Orte sagen? Schreibe nur, was die Fotos zeigen.',
             'Die Bilder zeigen Natur und gebaute Orte in Ghana. Sie zeigen nicht ganz Afrika.',
           ),
         ],
         photo('market'),
         'Nenne Orte statt ganz Afrika.',
         'Verbinde ein Detail mit der Grenze deiner Aussage.',
-        ['Sichtbares Detail und begrenzte Reichweite.'],
+        ['Etwas Sichtbares genannt. Nur über die gezeigten Orte gesprochen.'],
         true,
       ),
     );
@@ -352,7 +360,7 @@ function nature(p: ProfileId): Task[] {
       ),
     ],
     calendar(1),
-    'Dies ist ein anderer Raum.',
+    'Jetzt geht es um Nordwestmarokko.',
     'Vergleiche die Wintermonate mit den Sommermonaten.',
   );
   const water = focus(
@@ -380,7 +388,7 @@ function nature(p: ProfileId): Task[] {
         'conditions',
         [
           ['conditions', 'Passende Bedingungen, zum Beispiel genug Wasser'],
-          ['always', 'Nur einen Kalender, Wasser ist egal'],
+          ['always', 'Nur Wärme, auch ohne Wasser'],
         ],
         'Pflanzen brauchen passende Bedingungen. Ein Kalender erzeugt keinen Regen.',
       ),
@@ -389,7 +397,7 @@ function nature(p: ProfileId): Task[] {
         'Welche Grenze hat ein Regenwasserspeicher?',
         'limited',
         [
-          ['endless', 'Er liefert immer unbegrenzt sauberes Wasser.'],
+          ['endless', 'Er liefert auch ohne neuen Regen dauerhaft Wasser.'],
           ['limited', 'Er kann leer werden. Nicht alle können ihn nutzen.'],
         ],
         'Platz, Wasserqualität und Zugang begrenzen die Nutzung.',
@@ -402,7 +410,7 @@ function nature(p: ProfileId): Task[] {
   const regions = focus(
     'nature',
     [
-      'Zwei Regionen in Marokko. Jahresmittel 1991–2020 in Millimetern. Das sind Flächenmittel, keine Werte einer einzelnen Wetterstation.',
+      'Zwei Regionen in Marokko. Die Werte zeigen den durchschnittlichen Niederschlag pro Jahr von 1991 bis 2020. Die Einheit ist Millimeter. Die Werte gelten für die ganze Region, nicht für eine einzelne Wetterstation.',
     ],
     natureWords,
     {
@@ -640,7 +648,7 @@ function economy(p: ProfileId): Task[] {
   const data = focus(
     'economy',
     [
-      'Ghana, Weltbank (WDI). Stromzugang: Anteil der Bevölkerung in Prozent. BIP-Wachstum: preisbereinigte Veränderung zum Vorjahr in Prozent. Historische Werte, keine Prognose.',
+      'Ghana, Quelle: Weltbank (WDI). Stromzugang zeigt: Wie viel Prozent der Menschen haben Zugang zu Strom? Das BIP beschreibt den neu geschaffenen wirtschaftlichen Wert im Land. Die Wachstumsrate zeigt die Veränderung zum Vorjahr in Prozent. Preisänderungen sind herausgerechnet. Die Zahlen gelten für frühere Jahre. Sie sagen die Zukunft nicht voraus.',
     ],
     moneyWords,
     {
@@ -708,7 +716,7 @@ function economy(p: ProfileId): Task[] {
             'Zuverlässiger Strom und Wissen können zusammen helfen.',
           ],
         ],
-        'Strom kann Maschinenbetrieb ermöglichen. Kenntnisse können Verarbeitung und Verkauf unterstützen. Erfolg bleibt bedingt.',
+        'Mit Strom können Maschinen arbeiten. Wissen kann bei der Verarbeitung und beim Verkauf helfen. Ob der Betrieb Erfolg hat, hängt auch von anderen Bedingungen ab.',
       ),
       pick(
         'proof',
@@ -793,7 +801,7 @@ function economy(p: ProfileId): Task[] {
           ],
         },
     'Prüfe die Einheit: Was wurde mit den Stromwerten überhaupt erfasst?',
-    'Die Tabelle erfasst Stromzugang. Um über Einkommen zu urteilen, brauchst du dazu passende Einkommensangaben.',
+    'Die Tabelle zeigt den Zugang zu Strom. Was Menschen verdienen, steht dort nicht. Dafür brauchst du Angaben zu ihrem Einkommen.',
     [],
     true,
   );
@@ -845,12 +853,12 @@ function economy(p: ProfileId): Task[] {
           own(
             'explanation',
             'Wie können Strom und Wissen helfen? Was ist damit noch nicht bewiesen?',
-            'Zuverlässiger Strom kann Maschinenbetrieb ermöglichen. Wissen über Preise und Transport kann beim Verkauf helfen. Der GEPA-Eigenbericht und die Zugangswerte beweisen keinen Gewinn für alle.',
+            'Mit zuverlässigem Strom können Maschinen arbeiten. Wissen über Preise und Transport kann beim Verkauf helfen. GEPA berichtet über die eigene Schulung. Der Bericht und die Stromwerte beweisen nicht, dass alle mehr Geld verdienen.',
           ),
         ],
         gepa,
         'Nenne zwei Bedingungen und ihren Zusammenhang.',
-        'Nutze GEPA für die Schulung und WDI für den Stromanteil. Trenne eine mögliche Wirkung vom Nachweis.',
+        'Was berichtet GEPA über die Schulung? Was zeigen die Weltbank-Daten zum Strom? Unterscheide: Was könnte helfen? Was belegen die Quellen wirklich?',
         [
           'Beide Materialien genutzt.',
           'Mögliche Verbindung konkret erklärt.',
@@ -868,7 +876,7 @@ function economy(p: ProfileId): Task[] {
           own(
             'explanation',
             'Behauptung: „Weil in Ghana mehr Menschen Zugang zu Strom haben, verdienen die Teilnehmerinnen der GEPA-Schulung heute mehr Geld.“ Prüfe die Behauptung mit beiden Quellen. Welche zusätzliche Information brauchst du?',
-            'Die Stromreihe zeigt Zugang 2022 und 2023. Der GEPA-Eigenbericht von 2024 beschreibt eine Schulung, keine heutigen Einkommen. Damit ist die behauptete Ursache nicht bewiesen. Ich brauche vergleichbare Einkommensdaten der Teilnehmerinnen vor und nach der Schulung sowie Angaben zu weiteren Einflüssen; ein bloßer Vorher-Nachher-Anstieg allein beweist noch keine Ursache.',
+            'Die Stromreihe zeigt den Zugang zu Strom 2022 und 2023. GEPA berichtet 2024 über die eigene Schulung. Beide Quellen zeigen nicht, was die Teilnehmerinnen heute verdienen. Ich brauche vergleichbare Angaben zu ihrem Einkommen vor und nach der Schulung. Ich muss auch andere mögliche Ursachen prüfen. Selbst wenn die Einkommen gestiegen sind, muss die Schulung nicht die Ursache sein.',
           ),
         ],
         focus(
@@ -887,12 +895,12 @@ function economy(p: ProfileId): Task[] {
           ],
         ),
         'Prüfe getrennt, was jede Quelle tatsächlich erhebt oder berichtet.',
-        'Vergleiche Personenbezug, Jahre und gemessene Größen. Welche Angabe müsste gerade die Einkommensbehauptung stützen?',
+        'Wessen Einkommen wird behauptet? Für welche Jahre gelten die Quellen? Was wurde gemessen? Welche Angabe zum Einkommen fehlt?',
         [
           'Stromzugangsanteil mit Zeitraum und Einheit korrekt eingeordnet.',
           'GEPA als Eigenbericht über Schulung beschrieben, nicht als Einkommenserhebung.',
           'Die behauptete Ursache-Wirkung ist durch diese Quellen nicht bewiesen.',
-          'Konkrete zusätzliche Daten zu Einkommen der Teilnehmerinnen und weiteren Einflüssen benannt; bloß mehr Daten reicht nicht.',
+          'Genannt, welche Einkommensdaten der Teilnehmerinnen fehlen. Auch andere mögliche Ursachen genannt.',
         ],
         true,
       ),
@@ -958,7 +966,7 @@ export function futureReference(
                 ],
                 [
                   'tradeoff',
-                  `Ich sehe den Zielkonflikt. Ich gewichte ${plan === 'cool' ? 'Kühlung stärker als breiten Zugang und akzeptiere 30 statt 60 Stände' : 'Zugang für 60 Stände stärker als Kühlung empfindlicher Ware und akzeptiere deren geringeren Schutz'}.`,
+                  `Mein erstes Ziel bleibt wichtig. Trotzdem ist mir hier ${plan === 'cool' ? 'die Kühlung wichtiger. Dafür akzeptiere ich, dass nur 30 statt 60 Stände das Angebot nutzen' : 'der Zugang für 60 Stände wichtiger. Dafür akzeptiere ich, dass empfindliche Waren weniger gut gekühlt werden'}.`,
                 ],
               ] as const),
         };
@@ -1110,7 +1118,7 @@ function future(p: ProfileId): Task[] {
       ],
       offer('ecology'),
       'Prüfe Energie und Material getrennt.',
-      'Aus wenigen Angaben folgt keine sichere Gesamtökobilanz.',
+      'Mit diesen wenigen Angaben kennen wir noch nicht alle Folgen für die Umwelt.',
     ),
   ];
   const material = offer('all');
@@ -1131,11 +1139,11 @@ function future(p: ProfileId): Task[] {
           ['loss', 'Empfindliche Lebensmittel schützen'],
           ['access', 'Möglichst vielen Ständen Zugang geben'],
         ],
-        'Beide Ziele sind möglich. Du kannst später bewusst anders gewichten.',
+        'Beide Ziele sind möglich. Du kannst später ein anderes Ziel wichtiger finden.',
       ),
     ],
     material,
-    'Du darfst selbst gewichten.',
+    'Du darfst selbst wählen, was dir wichtiger ist.',
     'Kühlung und breiter Zugang sind verschiedene Vorteile.',
   );
   const plan = item(
@@ -1150,16 +1158,16 @@ function future(p: ProfileId): Task[] {
           ['cool', 'Kühlraum'],
           ['shade', 'Dächer und Kisten'],
         ],
-        'Beide Vorschläge sind legitim. Passende Belege und Grenzen gehören dazu.',
+        'Du darfst beide Vorschläge wählen. Die Angaben und das genannte Problem müssen zu deiner Wahl passen.',
       ),
     ],
     material,
     'Vergleiche beide Angebote.',
-    'Eine legitime Wahl ersetzt noch keinen passenden Sachbeleg.',
+    'Du darfst selbst wählen. Die Angabe aus dem Material muss zu deiner Wahl passen.',
   );
   const evidence = item(
     'future.evidence',
-    'Welcher Beleg passt zu deinem Vorschlag?',
+    'Welche Angabe aus dem Material passt zu deinem Vorschlag?',
     [
       pick(
         'evidence',
@@ -1196,7 +1204,7 @@ function future(p: ProfileId): Task[] {
     ],
     material,
     'Eine Wahl kann zugleich einen Vorteil und einen Nachteil haben.',
-    'Prüfe Kühlfunktion, Zugang und benötigte Ressourcen.',
+    'Was wird gekühlt? Wer kann das Angebot nutzen? Wie viel Material und Energie braucht es?',
   );
   limit.reference = true;
   const weighting = item(
@@ -1217,12 +1225,12 @@ function future(p: ProfileId): Task[] {
             'Zugang für 60 Stände ist mir wichtiger. Dafür akzeptiere ich die geringere Kühlung empfindlicher Ware.',
           ],
         ],
-        'Benenne den tatsächlichen Vorteil, den du stärker gewichtest, und den akzeptierten Nachteil.',
+        'Welcher Vorteil ist dir wichtiger? Welchen Nachteil nimmst du dafür in Kauf?',
       ),
     ],
     material,
     'Dein erstes Ziel darf sich ändern.',
-    'Eine Gewichtung nennt eine konkrete wichtigere Folge und einen akzeptierten Nachteil.',
+    'Sage, welche Folge dir wichtiger ist. Nenne auch den Nachteil, den du dafür in Kauf nimmst.',
   );
   weighting.reference = true;
   // The weighting must actually refer to the current proposal, even when the earlier goal differs.
@@ -1247,7 +1255,7 @@ function future(p: ProfileId): Task[] {
           ['colour', 'Welche Lieblingsfarbe haben alle?'],
           ['maintenance', 'Wer prüft, pflegt und repariert? Wer bezahlt das?'],
         ],
-        'Die Wartungszuständigkeit ist bei beiden Angeboten ungeklärt.',
+        'Bei beiden Angeboten ist offen: Wer prüft, pflegt und repariert die Anlage?',
       ),
     ],
     maintenance,
@@ -1305,7 +1313,7 @@ function future(p: ProfileId): Task[] {
         ),
       ],
       material,
-      'Verbinde einen Beleg mit deiner Priorität.',
+      'Nenne eine passende Angabe. Warum ist dir diese Folge wichtiger?',
       'Mir ist … wichtiger. Dafür nehme ich … in Kauf.',
       [
         'Beleg und Grenze passen zum aktuellen Vorschlag.',
@@ -1320,12 +1328,12 @@ function future(p: ProfileId): Task[] {
     result.push(
       item(
         'future.relation',
-        'Verknüpfe Folgen und Unsicherheit.',
+        'Wie hängen die Folgen zusammen? Welche wichtigen Angaben fehlen noch?',
         [
           own(
             'explanation',
             'Wie können zwei Folgen zusammenhängen? Welche Information könnte dein Urteil ändern?',
-            'Laufende Kosten können die Nutzbarkeit beeinflussen. Ohne Angaben zu Finanzierung und Wartung weiß ich nicht, wie verlässlich das Angebot nutzbar wäre. Eine Gesamtökobilanz kann ich aus den Daten nicht sicher ableiten.',
+            'Laufende Kosten müssen regelmäßig bezahlt werden. Ich muss wissen: Wer bezahlt die Kosten? Wer prüft, pflegt und repariert die Anlage? Sonst weiß ich nicht, wie lange die Menschen das Angebot nutzen können. Die Angaben zeigen auch nicht alle Folgen für die Umwelt.',
           ),
         ],
         maintenance,

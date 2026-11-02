@@ -65,7 +65,7 @@ export function orientationTasks(p: ProfileId): Task[] {
     ts.push(
       step(
         'orientation.equator',
-        'Lagebeziehungen untersuchen',
+        'Wo liegen die Orte?',
         'orientation',
         [
           pick(
@@ -121,11 +121,11 @@ export function orientationTasks(p: ProfileId): Task[] {
         'orientation',
         [
           own(
-            'Wähle zwei Städte. Beschreibe ihre Lage zueinander und zum Äquator. Welche Genauigkeitsgrenze bleibt?',
+            'Wähle zwei Städte. Beschreibe ihre Lage zueinander und zum Äquator. Was kannst du auf der Karte nicht genau erkennen?',
             'Agadir liegt nördlicher als Nairobi. Nairobi liegt südlich des Äquators, Agadir nördlich. Eine genaue Reisezeit folgt aus der vereinfachten Übersicht nicht.',
           ),
         ],
-        'Verbinde Nordrichtung, Äquator und Darstellungsgrenze.',
+        'Nutze den Nordpfeil und den Äquator. Was zeigt die Karte nicht genau?',
         [
           'Zwei tatsächlich markierte Städte gewählt.',
           'Lagebeziehung und Äquatorbezug passen.',
@@ -146,7 +146,7 @@ export function reviewTasks(p: ProfileId): Task[] {
     ts.push(
       step(
         'review.' + code,
-        `${code === 'KEN' ? 'Kenia' : code === 'GHA' ? 'Ghana' : 'Marokko'}: Beleg und Reichweite`,
+        `${code === 'KEN' ? 'Kenia' : code === 'GHA' ? 'Ghana' : 'Marokko'}: Was zeigt das Beispiel?`,
         'review',
         [
           pick(
@@ -181,7 +181,7 @@ export function reviewTasks(p: ProfileId): Task[] {
       [
         pick(
           'consequences',
-          'Welche gemeinsame Erkenntnis tragen die Fälle?',
+          'Was zeigen die drei Beispiele gemeinsam?',
           'different',
           [
             ['same', 'Eine Maßnahme hilft allen gleich.'],
@@ -190,7 +190,7 @@ export function reviewTasks(p: ProfileId): Task[] {
               'Dieselbe Maßnahme kann unterschiedliche Folgen haben.',
             ],
           ],
-          'Kürzere Wege, Überschuss und Wasser haben verschiedene Nutznießer und Grenzen.',
+          'Ein kürzerer Weg, mehr Geld oder mehr Wasser hilft nicht allen gleich. Bei jedem Vorschlag bleiben Probleme.',
         ),
         pick(
           'weigh',
@@ -203,7 +203,7 @@ export function reviewTasks(p: ProfileId): Task[] {
             ],
             ['automatic', 'Immer die erste angebotene Maßnahme wählen.'],
           ],
-          'Die persönliche Wahl ist offen; die Sachbelege müssen zu ihr passen.',
+          'Du darfst selbst wählen. Die Angaben aus dem Material müssen zu deiner Wahl passen.',
         ),
       ],
       'Vergleiche Nutzen und verbleibendes Problem in jedem Fall.',
@@ -252,11 +252,11 @@ export function reviewTasks(p: ProfileId): Task[] {
           ]
         : [
             own(
-              'Nenne einen konkreten Beleg aus einem Fall. Wie begrenzt er eine pauschale Aussage über Afrika?',
+              'Nenne eine Angabe aus einem Beispiel. Warum gilt die Angabe nicht für ganz Afrika?',
               'Im Kenia-Modell hilft Nord Amina, aber David braucht länger. Das erklärt einen erfundenen Wegkonflikt und nicht alle Verkehrsverhältnisse Nairobis oder Afrikas.',
             ),
           ],
-      'Nutze einen konkreten Fall und begrenze seine Reichweite.',
+      'Nutze ein Beispiel. Sage auch, für wen und für welchen Ort es gilt.',
       [
         'Konkreter Beleg statt pauschaler Behauptung.',
         'Modell und wirklicher Raum getrennt.',
@@ -273,7 +273,7 @@ export function reviewTasks(p: ProfileId): Task[] {
         [
           own(
             'Verbinde zwei der Fälle. Welche gemeinsame Bedingung oder Unsicherheit erkennst du? Welche reale Information brauchst du jeweils?',
-            'Mehr Technik kann die Einnahmen oder den Bedarf pro Feld verändern. Absatz beziehungsweise zusätzliche Flächennutzung beeinflussen aber das Gesamtergebnis. Ich brauche echte Kosten und Nachfrage beziehungsweise Fläche, Zufluss und Rückflüsse. Eine Klickentscheidung weist noch keine reale Wirkung nach.',
+            'Mit neuer Technik kann ein Betrieb mehr Geld einnehmen. Ein Feld kann weniger Wasser brauchen. Entscheidend ist aber auch: Wie viel verkauft der Betrieb? Wie viele Felder werden bewässert? Ich brauche echte Angaben zu Kosten und Käufern. Beim Wasser brauche ich Angaben zu Flächen, Zufluss und Wasser, das zurückfließt. Eine Entscheidung im Spiel beweist noch keine Wirkung in der Wirklichkeit.',
           ),
         ],
         'Unterscheide Mechanismus, Gesamtwirkung und fehlende Daten.',
