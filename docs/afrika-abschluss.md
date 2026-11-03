@@ -1,5 +1,7 @@
 # Konsolidierter Abschluss · Abnahmevorbereitung
 
+Historischer Prüfstand `cc9bfe054c0171c953acb080fb11be526e5a033e`. Die anschließende gezielte Korrektur N1/S1/S2/T1 ist im [technischen Abschluss](afrika-final-technical.md) dokumentiert. Das hier beschriebene vollständige Prüfmanifest wird dadurch nicht automatisch für neue Quellenstände freigegeben.
+
 Ausgangscommit: `4d6327a75fbd91030b9292ee0cca20bfd6953b4b`, Entwicklungsbranch `feat/afrika-vier-lernwege`. HEAD, sauberer Arbeitsbaum und identischer Remote wurden vor Beginn bestätigt. Der Abschlusscommit steht vollständig in der Übergabe und im Prüfpaket.
 
 ## Inhaltliche Prüfung und ihre Grenzen

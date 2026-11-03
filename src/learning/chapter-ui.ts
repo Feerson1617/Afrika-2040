@@ -71,7 +71,7 @@ function optionText(task: Task, field: string, label: string): string {
     task.linked &&
     label.match(/^Mir ist wichtig: (.+) Dafür akzeptiere ich: (.+)$/);
   return parts
-    ? `<strong>Mir ist wichtig:</strong> ${esc(parts[1])}<br><strong>Dafür nehme ich in Kauf:</strong> ${esc(parts[2])}`
+    ? `<strong>Mir ist wichtig:</strong> ${esc(parts[1])}<br><strong>Ein Nachteil bleibt:</strong> ${esc(parts[2])}<br>Trotzdem wähle ich diesen Plan.`
     : esc(label);
 }
 function fields(task: Task, p: Attempt) {

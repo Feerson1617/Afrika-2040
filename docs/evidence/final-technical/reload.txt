@@ -1,0 +1,27 @@
+[WebServer] (node:12134) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:12191) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 6 tests using 2 workers
+
+(node:12205) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12204) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  2 [chromium] › tests/browser/language-revision.spec.ts:102:1 › RC-final T1 normal cocoa flow: saved feedback really visible on repeated reloads after earlier tasks (4.2s)
+  ✓  1 [chromium] › tests/browser/language-revision.spec.ts:102:1 › RC-final T1 normal cocoa flow: saved feedback really visible on repeated reloads after earlier tasks (4.4s)
+(node:12484) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:12477) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  4 [chromium] › tests/browser/language-revision.spec.ts:102:1 › RC-final T1 normal cocoa flow: saved feedback really visible on repeated reloads after earlier tasks (3.7s)
+(node:12704) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  3 [webkit] › tests/browser/language-revision.spec.ts:102:1 › RC-final T1 normal cocoa flow: saved feedback really visible on repeated reloads after earlier tasks (5.1s)
+(node:12733) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  5 [webkit] › tests/browser/language-revision.spec.ts:102:1 › RC-final T1 normal cocoa flow: saved feedback really visible on repeated reloads after earlier tasks (4.5s)
+  ✓  6 [webkit] › tests/browser/language-revision.spec.ts:102:1 › RC-final T1 normal cocoa flow: saved feedback really visible on repeated reloads after earlier tasks (3.7s)
+
+  6 passed (18.4s)

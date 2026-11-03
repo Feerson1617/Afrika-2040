@@ -1,4 +1,5 @@
 import { materialView } from './learning/material-view.ts';
+import { updateMaterial } from './learning/update-material.ts';
 import { unitNames } from './learning/catalog.ts';
 import { renderLearning } from './learning/chapter-ui.ts';
 import {
@@ -1111,14 +1112,28 @@ app.addEventListener('input', (event) => {
 // Do not rely on previous tasks' services or an existing in-memory state.
 if (!state) state = initialState();
 render(undefined, false);
-// Restore the saved feedback explicitly: WebKit does not reliably restore the
-// scroll position after reload. Keep answers and assessment state untouched.
+// Wait until the browser has restored its own reload position. An earlier
+// scroll can be overwritten while leaving focus on an invisible heading.
+// Run once on page entry, never on subsequent answers or manual scrolling.
 if (state.screen === 'study' && currentProgress(state).feedback)
-  requestAnimationFrame(() => {
-    const feedback = document.getElementById('feedback-title');
-    feedback?.focus({ preventScroll: true });
-    feedback?.scrollIntoView({ block: 'center', behavior: 'instant' });
-  });
+  window.addEventListener(
+    'pageshow',
+    () => {
+      requestAnimationFrame(() =>
+        requestAnimationFrame(() => {
+          const feedback = document.getElementById('feedback-title');
+          if (!feedback) return;
+          feedback.focus({ preventScroll: true });
+          const bounds = feedback
+            .closest('[data-feedback]')!
+            .getBoundingClientRect();
+          if (bounds.top < 0 || bounds.bottom > window.innerHeight)
+            feedback.scrollIntoView({ block: 'center', behavior: 'instant' });
+        }),
+      );
+    },
+    { once: true },
+  );
 if (['event-find', 'event-effects', 'event-review'].includes(state.screen))
   requestAnimationFrame(() =>
     document
@@ -1129,7 +1144,8 @@ if (['event-find', 'event-effects', 'event-review'].includes(state.screen))
 app.addEventListener('input', (event) => {
   const el = event.target as HTMLInputElement | HTMLTextAreaElement;
   if (el.name !== 'learning-answer' || el instanceof HTMLSelectElement) return;
-  const oldAttempt = state.learning && activeLearning(state.learning)?.attempt;
+  const previous = state.learning && activeLearning(state.learning);
+  const oldAttempt = previous?.attempt;
   if (oldAttempt?.answers[el.dataset.field ?? ''] === el.value) return;
   state = reduce(state, {
     type: 'learning',
@@ -1144,11 +1160,11 @@ app.addEventListener('input', (event) => {
   const current = state.learning && activeLearning(state.learning);
   if (current?.attempt && state.learning?.profile) {
     const material = document.querySelector('.inquiry-material');
-    if (material)
-      material.innerHTML = materialView(
-        current.task,
-        state.learning.profile,
-        current.attempt,
+    if (material && previous && oldAttempt)
+      updateMaterial(
+        material,
+        materialView(previous.task, state.learning.profile, oldAttempt),
+        materialView(current.task, state.learning.profile, current.attempt),
       );
     const status = document.querySelector('[data-learning-status]');
     if (status)

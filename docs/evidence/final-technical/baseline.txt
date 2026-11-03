@@ -1,0 +1,498 @@
+[WebServer] (node:1653) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:1678) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 10 tests using 4 workers
+
+(node:1690) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1698) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1692) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:1691) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   1 [chromium] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 future.judgment/msa: writing retains sources, nested panels, caret, reading position and history (3.1s)
+  ✘   4 [chromium] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 economy.source-claim.v1/ahr: writing retains sources, nested panels, caret, reading position and history (3.2s)
+  ✘   2 [chromium] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 future.judgment/ahr: writing retains sources, nested panels, caret, reading position and history (3.3s)
+  ✘   3 [chromium] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history (3.5s)
+(node:2221) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:2235) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:2229) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:2246) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   7 [webkit] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 future.judgment/msa: writing retains sources, nested panels, caret, reading position and history (2.9s)
+  ✘   6 [webkit] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 future.judgment/ahr: writing retains sources, nested panels, caret, reading position and history (3.0s)
+  ✘   8 [webkit] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history (2.9s)
+  ✘   5 [chromium] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 nature.recommend/ahr: writing retains sources, nested panels, caret, reading position and history (3.0s)
+(node:2583) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:2591) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   9 [webkit] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 economy.source-claim.v1/ahr: writing retains sources, nested panels, caret, reading position and history (1.6s)
+  ✘  10 [webkit] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 nature.recommend/ahr: writing retains sources, nested panels, caret, reading position and history (2.0s)
+
+
+  1) [chromium] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 future.judgment/msa: writing retains sources, nested panels, caret, reading position and history
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+        },
+      ]
+
+      91 |       expect(await panels.evaluateAll((els) =>
+      92 |         els.map((el) => ({ id: el.id, open: (el as HTMLDetailsElement).open })),
+    > 93 |       )).toEqual(panelState);
+         |          ^
+      94 |       await expect(input).toBeFocused();
+      95 |     }
+      96 |     expect(await input.evaluate((el: HTMLTextAreaElement) => el.selectionStart)).toBe(before.caret + ' Noch ein Gedanke'.length);
+        at /workspace/Afrika-2040/tests/browser/language-revision.spec.ts:93:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-5565d-eading-position-and-history-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/language-revision-RC-final-5565d-eading-position-and-history-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-5565d-eading-position-and-history-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/language-revision-RC-final-5565d-eading-position-and-history-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 future.judgment/ahr: writing retains sources, nested panels, caret, reading position and history
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+        },
+      ]
+
+      91 |       expect(await panels.evaluateAll((els) =>
+      92 |         els.map((el) => ({ id: el.id, open: (el as HTMLDetailsElement).open })),
+    > 93 |       )).toEqual(panelState);
+         |          ^
+      94 |       await expect(input).toBeFocused();
+      95 |     }
+      96 |     expect(await input.evaluate((el: HTMLTextAreaElement) => el.selectionStart)).toBe(before.caret + ' Noch ein Gedanke'.length);
+        at /workspace/Afrika-2040/tests/browser/language-revision.spec.ts:93:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-ef4b4-eading-position-and-history-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/language-revision-RC-final-ef4b4-eading-position-and-history-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-ef4b4-eading-position-and-history-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/language-revision-RC-final-ef4b4-eading-position-and-history-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+        },
+      ]
+
+      91 |       expect(await panels.evaluateAll((els) =>
+      92 |         els.map((el) => ({ id: el.id, open: (el as HTMLDetailsElement).open })),
+    > 93 |       )).toEqual(panelState);
+         |          ^
+      94 |       await expect(input).toBeFocused();
+      95 |     }
+      96 |     expect(await input.evaluate((el: HTMLTextAreaElement) => el.selectionStart)).toBe(before.caret + ' Noch ein Gedanke'.length);
+        at /workspace/Afrika-2040/tests/browser/language-revision.spec.ts:93:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-db023-eading-position-and-history-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/language-revision-RC-final-db023-eading-position-and-history-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-db023-eading-position-and-history-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/language-revision-RC-final-db023-eading-position-and-history-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 economy.source-claim.v1/ahr: writing retains sources, nested panels, caret, reading position and history
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+        },
+      ]
+
+      91 |       expect(await panels.evaluateAll((els) =>
+      92 |         els.map((el) => ({ id: el.id, open: (el as HTMLDetailsElement).open })),
+    > 93 |       )).toEqual(panelState);
+         |          ^
+      94 |       await expect(input).toBeFocused();
+      95 |     }
+      96 |     expect(await input.evaluate((el: HTMLTextAreaElement) => el.selectionStart)).toBe(before.caret + ' Noch ein Gedanke'.length);
+        at /workspace/Afrika-2040/tests/browser/language-revision.spec.ts:93:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-62d79-eading-position-and-history-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/language-revision-RC-final-62d79-eading-position-and-history-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-62d79-eading-position-and-history-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/language-revision-RC-final-62d79-eading-position-and-history-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 nature.recommend/ahr: writing retains sources, nested panels, caret, reading position and history
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+        },
+        Object {
+          "id": "inquiry-lagekarte",
+    -     "open": true,
+    +     "open": false,
+        },
+        Object {
+          "id": "nature-overview",
+          "open": false,
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+        },
+      ]
+
+      91 |       expect(await panels.evaluateAll((els) =>
+      92 |         els.map((el) => ({ id: el.id, open: (el as HTMLDetailsElement).open })),
+    > 93 |       )).toEqual(panelState);
+         |          ^
+      94 |       await expect(input).toBeFocused();
+      95 |     }
+      96 |     expect(await input.evaluate((el: HTMLTextAreaElement) => el.selectionStart)).toBe(before.caret + ' Noch ein Gedanke'.length);
+        at /workspace/Afrika-2040/tests/browser/language-revision.spec.ts:93:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-5073b-eading-position-and-history-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/language-revision-RC-final-5073b-eading-position-and-history-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-5073b-eading-position-and-history-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/language-revision-RC-final-5073b-eading-position-and-history-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [webkit] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 future.judgment/msa: writing retains sources, nested panels, caret, reading position and history
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+        },
+      ]
+
+      91 |       expect(await panels.evaluateAll((els) =>
+      92 |         els.map((el) => ({ id: el.id, open: (el as HTMLDetailsElement).open })),
+    > 93 |       )).toEqual(panelState);
+         |          ^
+      94 |       await expect(input).toBeFocused();
+      95 |     }
+      96 |     expect(await input.evaluate((el: HTMLTextAreaElement) => el.selectionStart)).toBe(before.caret + ' Noch ein Gedanke'.length);
+        at /workspace/Afrika-2040/tests/browser/language-revision.spec.ts:93:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-5565d-eading-position-and-history-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/language-revision-RC-final-5565d-eading-position-and-history-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-5565d-eading-position-and-history-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/language-revision-RC-final-5565d-eading-position-and-history-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [webkit] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 future.judgment/ahr: writing retains sources, nested panels, caret, reading position and history
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+        },
+      ]
+
+      91 |       expect(await panels.evaluateAll((els) =>
+      92 |         els.map((el) => ({ id: el.id, open: (el as HTMLDetailsElement).open })),
+    > 93 |       )).toEqual(panelState);
+         |          ^
+      94 |       await expect(input).toBeFocused();
+      95 |     }
+      96 |     expect(await input.evaluate((el: HTMLTextAreaElement) => el.selectionStart)).toBe(before.caret + ' Noch ein Gedanke'.length);
+        at /workspace/Afrika-2040/tests/browser/language-revision.spec.ts:93:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-ef4b4-eading-position-and-history-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/language-revision-RC-final-ef4b4-eading-position-and-history-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-ef4b4-eading-position-and-history-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/language-revision-RC-final-ef4b4-eading-position-and-history-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [webkit] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+        },
+      ]
+
+      91 |       expect(await panels.evaluateAll((els) =>
+      92 |         els.map((el) => ({ id: el.id, open: (el as HTMLDetailsElement).open })),
+    > 93 |       )).toEqual(panelState);
+         |          ^
+      94 |       await expect(input).toBeFocused();
+      95 |     }
+      96 |     expect(await input.evaluate((el: HTMLTextAreaElement) => el.selectionStart)).toBe(before.caret + ' Noch ein Gedanke'.length);
+        at /workspace/Afrika-2040/tests/browser/language-revision.spec.ts:93:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-db023-eading-position-and-history-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/language-revision-RC-final-db023-eading-position-and-history-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-db023-eading-position-and-history-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/language-revision-RC-final-db023-eading-position-and-history-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [webkit] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 economy.source-claim.v1/ahr: writing retains sources, nested panels, caret, reading position and history
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 2
+    + Received  + 2
+
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+        },
+      ]
+
+      91 |       expect(await panels.evaluateAll((els) =>
+      92 |         els.map((el) => ({ id: el.id, open: (el as HTMLDetailsElement).open })),
+    > 93 |       )).toEqual(panelState);
+         |          ^
+      94 |       await expect(input).toBeFocused();
+      95 |     }
+      96 |     expect(await input.evaluate((el: HTMLTextAreaElement) => el.selectionStart)).toBe(before.caret + ' Noch ein Gedanke'.length);
+        at /workspace/Afrika-2040/tests/browser/language-revision.spec.ts:93:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-62d79-eading-position-and-history-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/language-revision-RC-final-62d79-eading-position-and-history-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-62d79-eading-position-and-history-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/language-revision-RC-final-62d79-eading-position-and-history-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [webkit] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 nature.recommend/ahr: writing retains sources, nested panels, caret, reading position and history
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+        },
+        Object {
+          "id": "inquiry-lagekarte",
+    -     "open": true,
+    +     "open": false,
+        },
+        Object {
+          "id": "nature-overview",
+          "open": false,
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+        },
+      ]
+
+      91 |       expect(await panels.evaluateAll((els) =>
+      92 |         els.map((el) => ({ id: el.id, open: (el as HTMLDetailsElement).open })),
+    > 93 |       )).toEqual(panelState);
+         |          ^
+      94 |       await expect(input).toBeFocused();
+      95 |     }
+      96 |     expect(await input.evaluate((el: HTMLTextAreaElement) => el.selectionStart)).toBe(before.caret + ' Noch ein Gedanke'.length);
+        at /workspace/Afrika-2040/tests/browser/language-revision.spec.ts:93:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-5073b-eading-position-and-history-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/language-revision-RC-final-5073b-eading-position-and-history-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/language-revision-RC-final-5073b-eading-position-and-history-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/language-revision-RC-final-5073b-eading-position-and-history-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10 failed
+    [chromium] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 future.judgment/msa: writing retains sources, nested panels, caret, reading position and history
+    [chromium] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 future.judgment/ahr: writing retains sources, nested panels, caret, reading position and history
+    [chromium] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history
+    [chromium] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 economy.source-claim.v1/ahr: writing retains sources, nested panels, caret, reading position and history
+    [chromium] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 nature.recommend/ahr: writing retains sources, nested panels, caret, reading position and history
+    [webkit] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 future.judgment/msa: writing retains sources, nested panels, caret, reading position and history
+    [webkit] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 future.judgment/ahr: writing retains sources, nested panels, caret, reading position and history
+    [webkit] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history
+    [webkit] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 economy.source-claim.v1/ahr: writing retains sources, nested panels, caret, reading position and history
+    [webkit] › tests/browser/language-revision.spec.ts:56:3 › RC-final N1 nature.recommend/ahr: writing retains sources, nested panels, caret, reading position and history

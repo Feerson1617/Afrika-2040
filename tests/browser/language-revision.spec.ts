@@ -11,6 +11,7 @@ import { profileIds, type ProfileId } from '../../src/learning/profiles.ts';
 import { answers } from '../learning-oracles.ts';
 import { topicAnswers } from '../topic-oracles.ts';
 import { evidencePath } from './artifacts.ts';
+import { updateMaterial } from '../../src/learning/update-material.ts';
 const key = 'afrika-2040:kenia-bus:v2a';
 const act = (
   s: LearningState,
@@ -46,6 +47,218 @@ const get = (page: Page) =>
     (key) => JSON.parse(sessionStorage.getItem(key)!).learning,
     key,
   );
+test('RC-final N1 derived material: nested open and deliberately closed panels survive necessary result updates', async ({
+  page,
+}) => {
+  await page.goto('/');
+  const result = await page.evaluate((source) => {
+    // Isolated DOM contract in each real engine, including anonymous nested panels.
+    const update = new Function(`return (${source})`)();
+    const material = document.createElement('section');
+    const html = (value: string) =>
+      `<p>${value}</p><details id="outer"><summary>Quelle</summary><details><summary>Zusatz</summary>Text</details><details open><summary>Andere Angaben</summary>Text</details></details>`;
+    material.innerHTML = html('Bestätigtes Ergebnis');
+    document.body.append(material);
+    const initial = material.querySelectorAll('details');
+    initial[0].open = true;
+    initial[1].open = true;
+    initial[2].open = false;
+    update(material, html('Bestätigtes Ergebnis'), html('Antwort noch offen'));
+    return {
+      text: material.querySelector('p')!.textContent,
+      panels: [...material.querySelectorAll('details')].map((d) => d.open),
+    };
+  }, updateMaterial.toString());
+  expect(result).toEqual({
+    text: 'Antwort noch offen',
+    panels: [true, true, false],
+  });
+});
+test('RC-final S2 ESA migration: negative movement is not total population decline', async ({
+  page,
+  browserName,
+}) => {
+  await page.setViewportSize({ width: 1024, height: 768 });
+  await seed(page, fixture('c', 'esa', 'population.base.migration'));
+  const material = page.locator('.inquiry-material');
+  await expect(material).toContainText('Mehr Menschen ziehen weg als zu.');
+  await expect(material).toContainText(
+    'Ob die Gesamtzahl sinkt, hängt auch von Geburten und Sterbefällen ab.',
+  );
+  await expect(material).not.toContainText('Es sind weniger Menschen geworden');
+  await expect(material).not.toContainText(/−10|-10/);
+  await page.screenshot({
+    path: evidencePath(`S2-migration-${browserName}.png`),
+    fullPage: true,
+  });
+  await page.locator('#learn-migration').fill('-10');
+  await page.locator('#learning-check').click();
+  await expect(page.locator('[data-learning-feedback]')).toHaveClass(/correct/);
+  await page.locator('#learning-next').click();
+  await page.locator('#learn-end').fill('1020');
+  await page.locator('#learning-check').click();
+  await expect(page.locator('[data-learning-feedback]')).toHaveClass(/correct/);
+});
+test('RC-final T1 normal cocoa flow: saved feedback really visible on repeated reloads after earlier tasks', async ({
+  page,
+  browserName,
+}) => {
+  test.setTimeout(90000);
+  await page.setViewportSize({ width: 1024, height: 768 });
+  await page.goto('/?ansicht=bisher');
+  await page
+    .getByRole('button', { name: 'Spiel starten', exact: true })
+    .click();
+  for (const selectors of [
+    ['#foot-platz', '#bus-direct'],
+    ['#person-amina'],
+    ['#person-david'],
+  ]) {
+    for (const selector of selectors) await page.locator(selector).check();
+    await page.locator('#check-answer').click();
+    await page.locator('#next-step').click();
+  }
+  await page
+    .getByRole('button', { name: 'Episoden auswählen', exact: true })
+    .click();
+  await page.locator('#episode-3').click();
+  for (const id of ['beans', 'roast', 'mass', 'press'])
+    await page.locator('#chain-' + id).click();
+  await page.locator('#check-answer').click();
+  const saved = await page.evaluate(
+    (key) => JSON.parse(sessionStorage.getItem(key)!),
+    key,
+  );
+  for (let repeat = 0; repeat < 5; repeat++) {
+    await page.evaluate(() => window.scrollTo(0, 0));
+    await page.reload();
+    const feedback = page.locator('#feedback-title');
+    await expect(feedback).toBeFocused();
+    await expect(feedback).toBeInViewport({ ratio: 1 });
+    await expect(page.locator('[data-feedback]')).toBeInViewport({ ratio: 1 });
+    const state = await page.evaluate(
+      (key) => JSON.parse(sessionStorage.getItem(key)!),
+      key,
+    );
+    expect(state.studies).toEqual(saved.studies);
+    expect(state.progress).toEqual(saved.progress);
+  }
+  await page.screenshot({
+    path: evidencePath(`T1-cocoa-reload-${browserName}.png`),
+  });
+});
+for (const [unit, target, profile] of [
+  ['e', 'future.judgment', 'msa'],
+  ['e', 'future.judgment', 'ahr'],
+  ['a', 'image.perspective', 'ahr'],
+  ['d', 'economy.source-claim.v1', 'ahr'],
+  ['n', 'nature.recommend', 'ahr'],
+] as const)
+  test(`RC-final N1 ${target}/${profile}: writing retains sources, nested panels, caret, reading position and history`, async ({
+    page,
+    browserName,
+  }) => {
+    await page.setViewportSize({ width: 1024, height: 768 });
+    await seed(page, fixture(unit, profile, target));
+    const input = page.locator('#learn-explanation');
+    await input.fill('Meine erste Überlegung.');
+    await page.locator('#learning-check').click();
+    const history = active(await get(page))!.attempt!.submissions;
+    expect(history).toHaveLength(1);
+    const panels = page.locator('.inquiry-material details');
+    // Open the actual material and its nested sources through their controls.
+    for (let i = 0; i < (await panels.count()); i++) {
+      const summary = panels.nth(i).locator(':scope > summary');
+      if (!(await panels.nth(i).evaluate((el: HTMLDetailsElement) => el.open)))
+        await summary.click();
+    }
+    expect(await panels.count()).toBeGreaterThan(1);
+    if (target === 'nature.recommend') {
+      // Deliberately closed siblings must remain closed while sources stay open.
+      await page.locator('#nature-overview > summary').click();
+    }
+    const panelState = await panels.evaluateAll((els) =>
+      els.map((el) => ({ id: el.id, open: (el as HTMLDetailsElement).open })),
+    );
+    await input.focus();
+    await input.press('ArrowLeft');
+    const before = await input.evaluate((el: HTMLTextAreaElement) => {
+      (window as any).__n1Material =
+        document.querySelector('.inquiry-material')!.firstElementChild;
+      (window as any).__n1Input = el;
+      return { caret: el.selectionStart, scroll: window.scrollY };
+    });
+    for (const text of [' Noch', ' ein', ' Gedanke']) {
+      await page.keyboard.insertText(text);
+      expect(
+        await panels.evaluateAll((els) =>
+          els.map((el) => ({
+            id: el.id,
+            open: (el as HTMLDetailsElement).open,
+          })),
+        ),
+      ).toEqual(panelState);
+      await expect(input).toBeFocused();
+    }
+    expect(
+      await input.evaluate((el: HTMLTextAreaElement) => el.selectionStart),
+    ).toBe(before.caret + ' Noch ein Gedanke'.length);
+    expect(
+      Math.abs((await page.evaluate(() => window.scrollY)) - before.scroll),
+    ).toBeLessThanOrEqual(2);
+    expect(await input.evaluate((el) => (window as any).__n1Input === el)).toBe(
+      true,
+    );
+    expect(
+      await page.evaluate(
+        () =>
+          (window as any).__n1Material ===
+          document.querySelector('.inquiry-material')!.firstElementChild,
+      ),
+    ).toBe(true);
+    const text = await input.inputValue();
+    const attempt = active(await get(page))!.attempt!;
+    expect(attempt.answers.explanation).toBe(text);
+    expect(attempt.submissions).toEqual(history);
+    expect(attempt.factual).toBe('ungraded');
+    expect(attempt.exampleUsed).toBe(false);
+    await expect(page.locator('[data-learning-status]')).toContainText(
+      'geändert',
+    );
+    await page.screenshot({
+      path: evidencePath(`N1-${target}-${profile}-${browserName}.png`),
+      fullPage: true,
+    });
+    await page.locator('[data-op="back"]').click();
+    await page.locator('#learning-next').click();
+    await expect(input).toHaveValue(text);
+    await page.reload();
+    await expect(input).toHaveValue(text);
+    expect(active(await get(page))!.attempt!.submissions).toEqual(history);
+    expect(active(await get(page))!.attempt!.factual).toBe('ungraded');
+    for (let h = 0; h < 3; h++) await page.locator('#learning-help').click();
+    await page.locator('#learning-topic-full > summary').click();
+    await page.locator('#inquiry-sources > summary').click();
+    const helpPanels = await panels.evaluateAll((els) =>
+      els.map((el) => (el as HTMLDetailsElement).open),
+    );
+    await input.focus();
+    await page.keyboard.insertText(' Mit Erklärung weitergedacht.');
+    expect(
+      await panels.evaluateAll((els) =>
+        els.map((el) => (el as HTMLDetailsElement).open),
+      ),
+    ).toEqual(helpPanels);
+    const supported = active(await get(page))!.attempt!;
+    expect(supported.help).toBe(3);
+    expect(supported.exampleShown).toBe(true);
+    expect(supported.exampleUsed).toBe(false);
+    expect(supported.submissions).toEqual(history);
+    expect(supported.factual).toBe('ungraded');
+    await expect(page.locator('[data-learning-status]')).toContainText(
+      'Hilfe 3 ist weiterhin geöffnet',
+    );
+  });
 test('Afrika curriculum language P2-01 ESA context survives both split steps, reload and back', async ({
   browser,
   browserName,
@@ -459,8 +672,10 @@ for (const profile of profileIds)
         .filter({ has: page.locator('input[value="benefit"]') });
       await expect(option.locator('strong')).toHaveText([
         'Mir ist wichtig:',
-        'Dafür nehme ich in Kauf:',
+        'Ein Nachteil bleibt:',
       ]);
+      await expect(option).toContainText('Trotzdem wähle ich diesen Plan.');
+      await expect(option).not.toContainText('Dafür nehme ich in Kauf');
       await option.locator('input').focus();
       await page.keyboard.press('Space');
       await page.locator('#learning-check').click();
