@@ -261,16 +261,16 @@
       "unit": "n",
       "profile": "esa",
       "taskId": "nature.regions.higher",
-      "visibleWords": 139,
-      "materialWords": 55,
+      "visibleWords": 143,
+      "materialWords": 65,
       "overflow": false
     },
     {
       "unit": "n",
       "profile": "esa",
       "taskId": "nature.regions.access",
-      "visibleWords": 151,
-      "materialWords": 55,
+      "visibleWords": 161,
+      "materialWords": 65,
       "overflow": false
     },
     {
@@ -325,8 +325,8 @@
       "unit": "n",
       "profile": "msa",
       "taskId": "nature.regions",
-      "visibleWords": 157,
-      "materialWords": 55,
+      "visibleWords": 167,
+      "materialWords": 65,
       "overflow": false
     },
     {
@@ -381,8 +381,8 @@
       "unit": "n",
       "profile": "ahr",
       "taskId": "nature.regions",
-      "visibleWords": 157,
-      "materialWords": 55,
+      "visibleWords": 167,
+      "materialWords": 65,
       "overflow": false
     },
     {
@@ -565,7 +565,7 @@
       "unit": "c",
       "profile": "esa",
       "taskId": "population.base.natural",
-      "visibleWords": 119,
+      "visibleWords": 120,
       "materialWords": 34,
       "overflow": false
     },
@@ -573,16 +573,16 @@
       "unit": "c",
       "profile": "esa",
       "taskId": "population.base.migration",
-      "visibleWords": 119,
-      "materialWords": 34,
+      "visibleWords": 145,
+      "materialWords": 59,
       "overflow": false
     },
     {
       "unit": "c",
       "profile": "esa",
       "taskId": "population.base.end",
-      "visibleWords": 152,
-      "materialWords": 34,
+      "visibleWords": 170,
+      "materialWords": 51,
       "overflow": false
     },
     {
@@ -613,7 +613,7 @@
       "unit": "c",
       "profile": "esa",
       "taskId": "population.transfer.natural",
-      "visibleWords": 120,
+      "visibleWords": 121,
       "materialWords": 35,
       "overflow": false
     },
@@ -621,16 +621,16 @@
       "unit": "c",
       "profile": "esa",
       "taskId": "population.transfer.migration",
-      "visibleWords": 120,
-      "materialWords": 35,
+      "visibleWords": 146,
+      "materialWords": 60,
       "overflow": false
     },
     {
       "unit": "c",
       "profile": "esa",
       "taskId": "population.transfer.end",
-      "visibleWords": 153,
-      "materialWords": 35,
+      "visibleWords": 171,
+      "materialWords": 52,
       "overflow": false
     },
     {
@@ -645,15 +645,15 @@
       "unit": "c",
       "profile": "msa",
       "taskId": "population.base.balance",
-      "visibleWords": 128,
-      "materialWords": 34,
+      "visibleWords": 171,
+      "materialWords": 76,
       "overflow": false
     },
     {
       "unit": "c",
       "profile": "msa",
       "taskId": "population.stock-change",
-      "visibleWords": 116,
+      "visibleWords": 117,
       "materialWords": 34,
       "overflow": false
     },
@@ -685,8 +685,8 @@
       "unit": "c",
       "profile": "msa",
       "taskId": "population.transfer.balance",
-      "visibleWords": 131,
-      "materialWords": 35,
+      "visibleWords": 174,
+      "materialWords": 77,
       "overflow": false
     },
     {
@@ -701,8 +701,8 @@
       "unit": "c",
       "profile": "ahr",
       "taskId": "population.base.balance",
-      "visibleWords": 128,
-      "materialWords": 34,
+      "visibleWords": 171,
+      "materialWords": 76,
       "overflow": false
     },
     {
@@ -741,16 +741,16 @@
       "unit": "c",
       "profile": "ahr",
       "taskId": "population.transfer.balance",
-      "visibleWords": 129,
-      "materialWords": 35,
+      "visibleWords": 172,
+      "materialWords": 77,
       "overflow": false
     },
     {
       "unit": "c",
       "profile": "ahr",
       "taskId": "population.counter.balance",
-      "visibleWords": 135,
-      "materialWords": 39,
+      "visibleWords": 178,
+      "materialWords": 81,
       "overflow": false
     },
     {
@@ -789,16 +789,16 @@
       "unit": "d",
       "profile": "foerder",
       "taskId": "economy.conditions.pair",
-      "visibleWords": 139,
-      "materialWords": 51,
+      "visibleWords": 140,
+      "materialWords": 55,
       "overflow": false
     },
     {
       "unit": "d",
       "profile": "foerder",
       "taskId": "economy.conditions.proof",
-      "visibleWords": 144,
-      "materialWords": 51,
+      "visibleWords": 148,
+      "materialWords": 55,
       "overflow": false
     },
     {
@@ -821,7 +821,7 @@
       "unit": "d",
       "profile": "esa",
       "taskId": "economy.balance.surplus-a",
-      "visibleWords": 127,
+      "visibleWords": 128,
       "materialWords": 44,
       "overflow": false
     },
@@ -829,7 +829,7 @@
       "unit": "d",
       "profile": "esa",
       "taskId": "economy.balance.surplus-b",
-      "visibleWords": 127,
+      "visibleWords": 128,
       "materialWords": 44,
       "overflow": false
     },
@@ -837,7 +837,7 @@
       "unit": "d",
       "profile": "esa",
       "taskId": "economy.balance.first",
-      "visibleWords": 133,
+      "visibleWords": 134,
       "materialWords": 44,
       "overflow": false
     },
@@ -853,24 +853,24 @@
       "unit": "d",
       "profile": "esa",
       "taskId": "economy.data.growth",
-      "visibleWords": 157,
-      "materialWords": 73,
+      "visibleWords": 162,
+      "materialWords": 78,
       "overflow": false
     },
     {
       "unit": "d",
       "profile": "esa",
       "taskId": "economy.conditions.pair",
-      "visibleWords": 138,
-      "materialWords": 51,
+      "visibleWords": 139,
+      "materialWords": 55,
       "overflow": false
     },
     {
       "unit": "d",
       "profile": "esa",
       "taskId": "economy.conditions.proof",
-      "visibleWords": 143,
-      "materialWords": 51,
+      "visibleWords": 147,
+      "materialWords": 55,
       "overflow": false
     },
     {
@@ -893,7 +893,7 @@
       "unit": "d",
       "profile": "msa",
       "taskId": "economy.balance",
-      "visibleWords": 139,
+      "visibleWords": 140,
       "materialWords": 44,
       "overflow": false
     },
@@ -901,39 +901,39 @@
       "unit": "d",
       "profile": "msa",
       "taskId": "economy.data",
-      "visibleWords": 183,
-      "materialWords": 73,
+      "visibleWords": 188,
+      "materialWords": 78,
       "overflow": false
     },
     {
       "unit": "d",
       "profile": "msa",
       "taskId": "economy.conditions",
-      "visibleWords": 144,
-      "materialWords": 45,
+      "visibleWords": 148,
+      "materialWords": 49,
       "overflow": false
     },
     {
       "unit": "d",
       "profile": "msa",
       "taskId": "economy.transfer",
-      "visibleWords": 221,
-      "materialWords": 107,
+      "visibleWords": 226,
+      "materialWords": 112,
       "overflow": false
     },
     {
       "unit": "d",
       "profile": "msa",
       "taskId": "economy.explain",
-      "visibleWords": 150,
-      "materialWords": 45,
+      "visibleWords": 154,
+      "materialWords": 49,
       "overflow": false
     },
     {
       "unit": "d",
       "profile": "ahr",
       "taskId": "economy.balance",
-      "visibleWords": 139,
+      "visibleWords": 140,
       "materialWords": 44,
       "overflow": false
     },
@@ -941,32 +941,32 @@
       "unit": "d",
       "profile": "ahr",
       "taskId": "economy.data",
-      "visibleWords": 183,
-      "materialWords": 73,
+      "visibleWords": 188,
+      "materialWords": 78,
       "overflow": false
     },
     {
       "unit": "d",
       "profile": "ahr",
       "taskId": "economy.conditions",
-      "visibleWords": 144,
-      "materialWords": 45,
+      "visibleWords": 148,
+      "materialWords": 49,
       "overflow": false
     },
     {
       "unit": "d",
       "profile": "ahr",
       "taskId": "economy.transfer",
-      "visibleWords": 221,
-      "materialWords": 107,
+      "visibleWords": 226,
+      "materialWords": 112,
       "overflow": false
     },
     {
       "unit": "d",
       "profile": "ahr",
       "taskId": "economy.explain",
-      "visibleWords": 151,
-      "materialWords": 45,
+      "visibleWords": 155,
+      "materialWords": 49,
       "overflow": false
     },
     {
@@ -1445,7 +1445,7 @@
       "unit": "s1",
       "profile": "foerder",
       "taskId": "kenia.first.weight",
-      "visibleWords": 241,
+      "visibleWords": 243,
       "materialWords": 129,
       "overflow": false
     },
@@ -1493,7 +1493,7 @@
       "unit": "s1",
       "profile": "foerder",
       "taskId": "kenia.revised.weight",
-      "visibleWords": 261,
+      "visibleWords": 263,
       "materialWords": 149,
       "overflow": false
     },
@@ -1509,7 +1509,7 @@
       "unit": "s1",
       "profile": "esa",
       "taskId": "kenia.times.amina-direct",
-      "visibleWords": 227,
+      "visibleWords": 228,
       "materialWords": 132,
       "overflow": false
     },
@@ -1517,7 +1517,7 @@
       "unit": "s1",
       "profile": "esa",
       "taskId": "kenia.times.amina-north",
-      "visibleWords": 227,
+      "visibleWords": 228,
       "materialWords": 132,
       "overflow": false
     },
@@ -1525,7 +1525,7 @@
       "unit": "s1",
       "profile": "esa",
       "taskId": "kenia.times.david-direct",
-      "visibleWords": 227,
+      "visibleWords": 228,
       "materialWords": 132,
       "overflow": false
     },
@@ -1533,7 +1533,7 @@
       "unit": "s1",
       "profile": "esa",
       "taskId": "kenia.times.david-north",
-      "visibleWords": 227,
+      "visibleWords": 228,
       "materialWords": 132,
       "overflow": false
     },
@@ -1565,7 +1565,7 @@
       "unit": "s1",
       "profile": "esa",
       "taskId": "kenia.full.times.direct",
-      "visibleWords": 216,
+      "visibleWords": 217,
       "materialWords": 124,
       "overflow": false
     },
@@ -1573,7 +1573,7 @@
       "unit": "s1",
       "profile": "esa",
       "taskId": "kenia.full.times.north",
-      "visibleWords": 218,
+      "visibleWords": 219,
       "materialWords": 124,
       "overflow": false
     },
@@ -1581,7 +1581,7 @@
       "unit": "s1",
       "profile": "esa",
       "taskId": "kenia.full.times.south",
-      "visibleWords": 218,
+      "visibleWords": 219,
       "materialWords": 124,
       "overflow": false
     },
@@ -1613,7 +1613,7 @@
       "unit": "s1",
       "profile": "esa",
       "taskId": "kenia.first.weight",
-      "visibleWords": 235,
+      "visibleWords": 237,
       "materialWords": 124,
       "overflow": false
     },
@@ -1629,7 +1629,7 @@
       "unit": "s1",
       "profile": "esa",
       "taskId": "kenia.event.times.direct",
-      "visibleWords": 235,
+      "visibleWords": 236,
       "materialWords": 144,
       "overflow": false
     },
@@ -1637,7 +1637,7 @@
       "unit": "s1",
       "profile": "esa",
       "taskId": "kenia.event.times.north",
-      "visibleWords": 237,
+      "visibleWords": 238,
       "materialWords": 144,
       "overflow": false
     },
@@ -1645,7 +1645,7 @@
       "unit": "s1",
       "profile": "esa",
       "taskId": "kenia.event.times.south",
-      "visibleWords": 237,
+      "visibleWords": 238,
       "materialWords": 144,
       "overflow": false
     },
@@ -1677,7 +1677,7 @@
       "unit": "s1",
       "profile": "esa",
       "taskId": "kenia.revised.weight",
-      "visibleWords": 255,
+      "visibleWords": 257,
       "materialWords": 144,
       "overflow": false
     },
@@ -1701,7 +1701,7 @@
       "unit": "s1",
       "profile": "msa",
       "taskId": "kenia.times",
-      "visibleWords": 237,
+      "visibleWords": 238,
       "materialWords": 132,
       "overflow": false
     },
@@ -1733,7 +1733,7 @@
       "unit": "s1",
       "profile": "msa",
       "taskId": "kenia.full.times",
-      "visibleWords": 213,
+      "visibleWords": 214,
       "materialWords": 124,
       "overflow": false
     },
@@ -1757,7 +1757,7 @@
       "unit": "s1",
       "profile": "msa",
       "taskId": "kenia.first.weight",
-      "visibleWords": 229,
+      "visibleWords": 231,
       "materialWords": 124,
       "overflow": false
     },
@@ -1773,7 +1773,7 @@
       "unit": "s1",
       "profile": "msa",
       "taskId": "kenia.event.times",
-      "visibleWords": 237,
+      "visibleWords": 238,
       "materialWords": 144,
       "overflow": false
     },
@@ -1797,7 +1797,7 @@
       "unit": "s1",
       "profile": "msa",
       "taskId": "kenia.revised.weight",
-      "visibleWords": 249,
+      "visibleWords": 251,
       "materialWords": 144,
       "overflow": false
     },
@@ -1813,7 +1813,7 @@
       "unit": "s1",
       "profile": "ahr",
       "taskId": "kenia.times",
-      "visibleWords": 237,
+      "visibleWords": 238,
       "materialWords": 132,
       "overflow": false
     },
@@ -1853,7 +1853,7 @@
       "unit": "s1",
       "profile": "ahr",
       "taskId": "kenia.full.times",
-      "visibleWords": 213,
+      "visibleWords": 214,
       "materialWords": 124,
       "overflow": false
     },
@@ -1877,7 +1877,7 @@
       "unit": "s1",
       "profile": "ahr",
       "taskId": "kenia.first.weight",
-      "visibleWords": 229,
+      "visibleWords": 231,
       "materialWords": 124,
       "overflow": false
     },
@@ -1893,7 +1893,7 @@
       "unit": "s1",
       "profile": "ahr",
       "taskId": "kenia.event.times",
-      "visibleWords": 237,
+      "visibleWords": 238,
       "materialWords": 144,
       "overflow": false
     },
@@ -1917,7 +1917,7 @@
       "unit": "s1",
       "profile": "ahr",
       "taskId": "kenia.revised.weight",
-      "visibleWords": 249,
+      "visibleWords": 251,
       "materialWords": 144,
       "overflow": false
     },
@@ -2005,7 +2005,7 @@
       "unit": "s2",
       "profile": "foerder",
       "taskId": "demand.final.weight",
-      "visibleWords": 209,
+      "visibleWords": 211,
       "materialWords": 94,
       "overflow": false
     },
@@ -2037,7 +2037,7 @@
       "unit": "s2",
       "profile": "esa",
       "taskId": "demand.now.capacity",
-      "visibleWords": 169,
+      "visibleWords": 170,
       "materialWords": 68,
       "overflow": false
     },
@@ -2045,7 +2045,7 @@
       "unit": "s2",
       "profile": "esa",
       "taskId": "demand.now.later",
-      "visibleWords": 185,
+      "visibleWords": 186,
       "materialWords": 94,
       "overflow": false
     },
@@ -2093,7 +2093,7 @@
       "unit": "s2",
       "profile": "esa",
       "taskId": "demand.final.weight",
-      "visibleWords": 208,
+      "visibleWords": 210,
       "materialWords": 94,
       "overflow": false
     },
@@ -2125,7 +2125,7 @@
       "unit": "s2",
       "profile": "msa",
       "taskId": "demand.now",
-      "visibleWords": 156,
+      "visibleWords": 157,
       "materialWords": 68,
       "overflow": false
     },
@@ -2157,7 +2157,7 @@
       "unit": "s2",
       "profile": "msa",
       "taskId": "demand.final.weight",
-      "visibleWords": 202,
+      "visibleWords": 204,
       "materialWords": 94,
       "overflow": false
     },
@@ -2181,7 +2181,7 @@
       "unit": "s2",
       "profile": "ahr",
       "taskId": "demand.now",
-      "visibleWords": 156,
+      "visibleWords": 157,
       "materialWords": 68,
       "overflow": false
     },
@@ -2213,7 +2213,7 @@
       "unit": "s2",
       "profile": "ahr",
       "taskId": "demand.final.weight",
-      "visibleWords": 202,
+      "visibleWords": 204,
       "materialWords": 94,
       "overflow": false
     },
@@ -2245,32 +2245,32 @@
       "unit": "s3",
       "profile": "foerder",
       "taskId": "cocoa.chain.beans",
-      "visibleWords": 132,
-      "materialWords": 59,
+      "visibleWords": 138,
+      "materialWords": 65,
       "overflow": false
     },
     {
       "unit": "s3",
       "profile": "foerder",
       "taskId": "cocoa.chain.roast",
-      "visibleWords": 134,
-      "materialWords": 59,
+      "visibleWords": 140,
+      "materialWords": 65,
       "overflow": false
     },
     {
       "unit": "s3",
       "profile": "foerder",
       "taskId": "cocoa.chain.mass",
-      "visibleWords": 136,
-      "materialWords": 59,
+      "visibleWords": 142,
+      "materialWords": 65,
       "overflow": false
     },
     {
       "unit": "s3",
       "profile": "foerder",
       "taskId": "cocoa.chain.press",
-      "visibleWords": 136,
-      "materialWords": 59,
+      "visibleWords": 142,
+      "materialWords": 65,
       "overflow": false
     },
     {
@@ -2341,7 +2341,7 @@
       "unit": "s3",
       "profile": "foerder",
       "taskId": "cocoa.final.weight",
-      "visibleWords": 213,
+      "visibleWords": 215,
       "materialWords": 101,
       "overflow": false
     },
@@ -2357,39 +2357,39 @@
       "unit": "s3",
       "profile": "esa",
       "taskId": "cocoa.chain.beans",
-      "visibleWords": 136,
-      "materialWords": 59,
+      "visibleWords": 142,
+      "materialWords": 65,
       "overflow": false
     },
     {
       "unit": "s3",
       "profile": "esa",
       "taskId": "cocoa.chain.roast",
-      "visibleWords": 139,
-      "materialWords": 59,
+      "visibleWords": 145,
+      "materialWords": 65,
       "overflow": false
     },
     {
       "unit": "s3",
       "profile": "esa",
       "taskId": "cocoa.chain.mass",
-      "visibleWords": 140,
-      "materialWords": 59,
+      "visibleWords": 146,
+      "materialWords": 65,
       "overflow": false
     },
     {
       "unit": "s3",
       "profile": "esa",
       "taskId": "cocoa.chain.press",
-      "visibleWords": 139,
-      "materialWords": 59,
+      "visibleWords": 145,
+      "materialWords": 65,
       "overflow": false
     },
     {
       "unit": "s3",
       "profile": "esa",
       "taskId": "cocoa.base",
-      "visibleWords": 185,
+      "visibleWords": 186,
       "materialWords": 98,
       "overflow": false
     },
@@ -2397,7 +2397,7 @@
       "unit": "s3",
       "profile": "esa",
       "taskId": "cocoa.compare.quality",
-      "visibleWords": 205,
+      "visibleWords": 206,
       "materialWords": 98,
       "overflow": false
     },
@@ -2405,7 +2405,7 @@
       "unit": "s3",
       "profile": "esa",
       "taskId": "cocoa.compare.process",
-      "visibleWords": 203,
+      "visibleWords": 204,
       "materialWords": 98,
       "overflow": false
     },
@@ -2453,7 +2453,7 @@
       "unit": "s3",
       "profile": "esa",
       "taskId": "cocoa.final.weight",
-      "visibleWords": 209,
+      "visibleWords": 211,
       "materialWords": 98,
       "overflow": false
     },
@@ -2469,39 +2469,39 @@
       "unit": "s3",
       "profile": "msa",
       "taskId": "cocoa.chain.beans",
-      "visibleWords": 135,
-      "materialWords": 59,
+      "visibleWords": 141,
+      "materialWords": 65,
       "overflow": false
     },
     {
       "unit": "s3",
       "profile": "msa",
       "taskId": "cocoa.chain.roast",
-      "visibleWords": 136,
-      "materialWords": 59,
+      "visibleWords": 142,
+      "materialWords": 65,
       "overflow": false
     },
     {
       "unit": "s3",
       "profile": "msa",
       "taskId": "cocoa.chain.mass",
-      "visibleWords": 136,
-      "materialWords": 59,
+      "visibleWords": 142,
+      "materialWords": 65,
       "overflow": false
     },
     {
       "unit": "s3",
       "profile": "msa",
       "taskId": "cocoa.chain.press",
-      "visibleWords": 136,
-      "materialWords": 59,
+      "visibleWords": 142,
+      "materialWords": 65,
       "overflow": false
     },
     {
       "unit": "s3",
       "profile": "msa",
       "taskId": "cocoa.base",
-      "visibleWords": 179,
+      "visibleWords": 180,
       "materialWords": 98,
       "overflow": false
     },
@@ -2509,7 +2509,7 @@
       "unit": "s3",
       "profile": "msa",
       "taskId": "cocoa.compare",
-      "visibleWords": 199,
+      "visibleWords": 200,
       "materialWords": 98,
       "overflow": false
     },
@@ -2541,7 +2541,7 @@
       "unit": "s3",
       "profile": "msa",
       "taskId": "cocoa.final.weight",
-      "visibleWords": 203,
+      "visibleWords": 205,
       "materialWords": 98,
       "overflow": false
     },
@@ -2557,39 +2557,39 @@
       "unit": "s3",
       "profile": "ahr",
       "taskId": "cocoa.chain.beans",
-      "visibleWords": 135,
-      "materialWords": 59,
+      "visibleWords": 141,
+      "materialWords": 65,
       "overflow": false
     },
     {
       "unit": "s3",
       "profile": "ahr",
       "taskId": "cocoa.chain.roast",
-      "visibleWords": 136,
-      "materialWords": 59,
+      "visibleWords": 142,
+      "materialWords": 65,
       "overflow": false
     },
     {
       "unit": "s3",
       "profile": "ahr",
       "taskId": "cocoa.chain.mass",
-      "visibleWords": 136,
-      "materialWords": 59,
+      "visibleWords": 142,
+      "materialWords": 65,
       "overflow": false
     },
     {
       "unit": "s3",
       "profile": "ahr",
       "taskId": "cocoa.chain.press",
-      "visibleWords": 136,
-      "materialWords": 59,
+      "visibleWords": 142,
+      "materialWords": 65,
       "overflow": false
     },
     {
       "unit": "s3",
       "profile": "ahr",
       "taskId": "cocoa.base",
-      "visibleWords": 179,
+      "visibleWords": 180,
       "materialWords": 98,
       "overflow": false
     },
@@ -2597,7 +2597,7 @@
       "unit": "s3",
       "profile": "ahr",
       "taskId": "cocoa.compare",
-      "visibleWords": 199,
+      "visibleWords": 200,
       "materialWords": 98,
       "overflow": false
     },
@@ -2629,7 +2629,7 @@
       "unit": "s3",
       "profile": "ahr",
       "taskId": "cocoa.final.weight",
-      "visibleWords": 203,
+      "visibleWords": 205,
       "materialWords": 98,
       "overflow": false
     },
@@ -2725,15 +2725,15 @@
       "unit": "s4",
       "profile": "esa",
       "taskId": "share.paid.wages",
-      "visibleWords": 151,
-      "materialWords": 68,
+      "visibleWords": 135,
+      "materialWords": 52,
       "overflow": false
     },
     {
       "unit": "s4",
       "profile": "esa",
       "taskId": "share.paid.free",
-      "visibleWords": 156,
+      "visibleWords": 157,
       "materialWords": 60,
       "overflow": false
     },
@@ -2789,7 +2789,7 @@
       "unit": "s4",
       "profile": "msa",
       "taskId": "share.paid",
-      "visibleWords": 153,
+      "visibleWords": 154,
       "materialWords": 60,
       "overflow": false
     },
@@ -2837,7 +2837,7 @@
       "unit": "s4",
       "profile": "ahr",
       "taskId": "share.paid",
-      "visibleWords": 153,
+      "visibleWords": 154,
       "materialWords": 60,
       "overflow": false
     },
@@ -2893,584 +2893,584 @@
       "unit": "s5",
       "profile": "foerder",
       "taskId": "water.base.withdrawal",
-      "visibleWords": 196,
-      "materialWords": 110,
+      "visibleWords": 208,
+      "materialWords": 122,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "foerder",
       "taskId": "water.base.arrival",
-      "visibleWords": 190,
-      "materialWords": 110,
+      "visibleWords": 202,
+      "materialWords": 122,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "foerder",
       "taskId": "water.compare.repair",
-      "visibleWords": 215,
-      "materialWords": 110,
+      "visibleWords": 227,
+      "materialWords": 122,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "foerder",
       "taskId": "water.compare.tech",
-      "visibleWords": 217,
-      "materialWords": 110,
+      "visibleWords": 229,
+      "materialWords": 122,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "foerder",
       "taskId": "water.scope.same",
-      "visibleWords": 205,
-      "materialWords": 110,
+      "visibleWords": 217,
+      "materialWords": 122,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "foerder",
       "taskId": "water.scope.consumption",
-      "visibleWords": 211,
-      "materialWords": 110,
+      "visibleWords": 223,
+      "materialWords": 122,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "foerder",
       "taskId": "water.final.choice",
-      "visibleWords": 184,
-      "materialWords": 110,
+      "visibleWords": 196,
+      "materialWords": 122,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "foerder",
       "taskId": "water.final.proof.evidence",
-      "visibleWords": 218,
-      "materialWords": 110,
+      "visibleWords": 230,
+      "materialWords": 122,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "foerder",
       "taskId": "water.final.proof.limit",
-      "visibleWords": 215,
-      "materialWords": 110,
+      "visibleWords": 227,
+      "materialWords": 122,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "foerder",
       "taskId": "water.final.weight",
-      "visibleWords": 228,
-      "materialWords": 110,
+      "visibleWords": 242,
+      "materialWords": 122,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "foerder",
       "taskId": "water.transfer",
-      "visibleWords": 210,
-      "materialWords": 100,
+      "visibleWords": 222,
+      "materialWords": 112,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "esa",
       "taskId": "water.base.withdrawal",
-      "visibleWords": 196,
-      "materialWords": 107,
+      "visibleWords": 209,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "esa",
       "taskId": "water.base.rest",
-      "visibleWords": 198,
-      "materialWords": 107,
+      "visibleWords": 211,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "esa",
       "taskId": "water.compare.repair",
-      "visibleWords": 218,
-      "materialWords": 107,
+      "visibleWords": 231,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "esa",
       "taskId": "water.compare.tech",
-      "visibleWords": 218,
-      "materialWords": 107,
+      "visibleWords": 231,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "esa",
       "taskId": "water.scope.same",
-      "visibleWords": 201,
-      "materialWords": 107,
+      "visibleWords": 213,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "esa",
       "taskId": "water.scope.consumption",
-      "visibleWords": 207,
-      "materialWords": 107,
+      "visibleWords": 219,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "esa",
       "taskId": "water.final.choice",
-      "visibleWords": 180,
-      "materialWords": 107,
+      "visibleWords": 192,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "esa",
       "taskId": "water.final.proof.evidence",
-      "visibleWords": 214,
-      "materialWords": 107,
+      "visibleWords": 226,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "esa",
       "taskId": "water.final.proof.limit",
-      "visibleWords": 211,
-      "materialWords": 107,
+      "visibleWords": 223,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "esa",
       "taskId": "water.final.weight",
-      "visibleWords": 224,
-      "materialWords": 107,
+      "visibleWords": 238,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "esa",
       "taskId": "water.transfer",
-      "visibleWords": 194,
-      "materialWords": 84,
+      "visibleWords": 207,
+      "materialWords": 96,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "msa",
       "taskId": "water.base",
-      "visibleWords": 196,
-      "materialWords": 107,
+      "visibleWords": 209,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "msa",
       "taskId": "water.compare",
-      "visibleWords": 206,
-      "materialWords": 107,
+      "visibleWords": 219,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "msa",
       "taskId": "water.scope",
-      "visibleWords": 209,
-      "materialWords": 107,
+      "visibleWords": 221,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "msa",
       "taskId": "water.final.choice",
-      "visibleWords": 178,
-      "materialWords": 107,
+      "visibleWords": 190,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "msa",
       "taskId": "water.final.proof",
-      "visibleWords": 238,
-      "materialWords": 107,
+      "visibleWords": 250,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "msa",
       "taskId": "water.final.weight",
-      "visibleWords": 218,
-      "materialWords": 107,
+      "visibleWords": 232,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "msa",
       "taskId": "water.transfer",
-      "visibleWords": 192,
-      "materialWords": 88,
+      "visibleWords": 205,
+      "materialWords": 100,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "ahr",
       "taskId": "water.base",
-      "visibleWords": 196,
-      "materialWords": 107,
+      "visibleWords": 209,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "ahr",
       "taskId": "water.compare",
-      "visibleWords": 206,
-      "materialWords": 107,
+      "visibleWords": 219,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "ahr",
       "taskId": "water.scope",
-      "visibleWords": 209,
-      "materialWords": 107,
+      "visibleWords": 221,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "ahr",
       "taskId": "water.final.choice",
-      "visibleWords": 178,
-      "materialWords": 107,
+      "visibleWords": 190,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "ahr",
       "taskId": "water.final.proof",
-      "visibleWords": 238,
-      "materialWords": 107,
+      "visibleWords": 250,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "ahr",
       "taskId": "water.final.weight",
-      "visibleWords": 218,
-      "materialWords": 107,
+      "visibleWords": 232,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "ahr",
       "taskId": "water.final.own",
-      "visibleWords": 218,
-      "materialWords": 107,
+      "visibleWords": 230,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "ahr",
       "taskId": "water.transfer",
-      "visibleWords": 192,
-      "materialWords": 88,
+      "visibleWords": 205,
+      "materialWords": 100,
       "overflow": false
     },
     {
       "unit": "s5",
       "profile": "ahr",
       "taskId": "water.system",
-      "visibleWords": 238,
-      "materialWords": 107,
+      "visibleWords": 250,
+      "materialWords": 119,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "foerder",
       "taskId": "area.single",
-      "visibleWords": 197,
-      "materialWords": 107,
+      "visibleWords": 214,
+      "materialWords": 124,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "foerder",
       "taskId": "area.total",
-      "visibleWords": 211,
-      "materialWords": 108,
+      "visibleWords": 243,
+      "materialWords": 140,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "foerder",
       "taskId": "area.cause",
-      "visibleWords": 192,
-      "materialWords": 106,
+      "visibleWords": 209,
+      "materialWords": 123,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "foerder",
       "taskId": "area.final.choice",
-      "visibleWords": 184,
-      "materialWords": 106,
+      "visibleWords": 201,
+      "materialWords": 123,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "foerder",
       "taskId": "area.final.proof.evidence",
-      "visibleWords": 216,
-      "materialWords": 107,
+      "visibleWords": 233,
+      "materialWords": 124,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "foerder",
       "taskId": "area.final.proof.limit",
-      "visibleWords": 217,
-      "materialWords": 107,
+      "visibleWords": 234,
+      "materialWords": 124,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "foerder",
       "taskId": "area.final.weight",
-      "visibleWords": 227,
-      "materialWords": 107,
+      "visibleWords": 246,
+      "materialWords": 124,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "foerder",
       "taskId": "area.transfer",
-      "visibleWords": 268,
-      "materialWords": 147,
+      "visibleWords": 271,
+      "materialWords": 150,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "esa",
       "taskId": "area.single.single",
-      "visibleWords": 204,
-      "materialWords": 101,
+      "visibleWords": 222,
+      "materialWords": 118,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "esa",
       "taskId": "area.single.saving",
-      "visibleWords": 194,
-      "materialWords": 101,
+      "visibleWords": 212,
+      "materialWords": 118,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "esa",
       "taskId": "area.total.total",
-      "visibleWords": 197,
-      "materialWords": 88,
+      "visibleWords": 210,
+      "materialWords": 92,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "esa",
       "taskId": "area.total.rest",
-      "visibleWords": 208,
-      "materialWords": 102,
+      "visibleWords": 241,
+      "materialWords": 134,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "esa",
       "taskId": "area.cause",
-      "visibleWords": 185,
-      "materialWords": 100,
+      "visibleWords": 202,
+      "materialWords": 117,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "esa",
       "taskId": "area.final.choice",
-      "visibleWords": 177,
-      "materialWords": 100,
+      "visibleWords": 194,
+      "materialWords": 117,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "esa",
       "taskId": "area.final.proof.evidence",
-      "visibleWords": 209,
-      "materialWords": 101,
+      "visibleWords": 226,
+      "materialWords": 118,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "esa",
       "taskId": "area.final.proof.limit",
-      "visibleWords": 210,
-      "materialWords": 101,
+      "visibleWords": 227,
+      "materialWords": 118,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "esa",
       "taskId": "area.final.weight",
-      "visibleWords": 220,
-      "materialWords": 101,
+      "visibleWords": 239,
+      "materialWords": 118,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "esa",
       "taskId": "area.transfer.total",
-      "visibleWords": 238,
-      "materialWords": 116,
+      "visibleWords": 251,
+      "materialWords": 128,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "esa",
       "taskId": "area.transfer.less",
-      "visibleWords": 231,
-      "materialWords": 116,
+      "visibleWords": 243,
+      "materialWords": 128,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "msa",
       "taskId": "area.single",
-      "visibleWords": 202,
-      "materialWords": 101,
+      "visibleWords": 220,
+      "materialWords": 118,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "msa",
       "taskId": "area.total",
-      "visibleWords": 192,
-      "materialWords": 83,
+      "visibleWords": 197,
+      "materialWords": 87,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "msa",
       "taskId": "area.cause",
-      "visibleWords": 181,
-      "materialWords": 100,
+      "visibleWords": 198,
+      "materialWords": 117,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "msa",
       "taskId": "area.final.choice",
-      "visibleWords": 175,
-      "materialWords": 100,
+      "visibleWords": 192,
+      "materialWords": 117,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "msa",
       "taskId": "area.final.proof",
-      "visibleWords": 237,
-      "materialWords": 101,
+      "visibleWords": 254,
+      "materialWords": 118,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "msa",
       "taskId": "area.final.weight",
-      "visibleWords": 214,
-      "materialWords": 101,
+      "visibleWords": 233,
+      "materialWords": 118,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "msa",
       "taskId": "area.transfer",
-      "visibleWords": 249,
-      "materialWords": 120,
+      "visibleWords": 262,
+      "materialWords": 132,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "ahr",
       "taskId": "area.single",
-      "visibleWords": 202,
-      "materialWords": 101,
+      "visibleWords": 220,
+      "materialWords": 118,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "ahr",
       "taskId": "area.total",
-      "visibleWords": 192,
-      "materialWords": 83,
+      "visibleWords": 197,
+      "materialWords": 87,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "ahr",
       "taskId": "area.cause",
-      "visibleWords": 181,
-      "materialWords": 100,
+      "visibleWords": 198,
+      "materialWords": 117,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "ahr",
       "taskId": "area.final.choice",
-      "visibleWords": 175,
-      "materialWords": 100,
+      "visibleWords": 192,
+      "materialWords": 117,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "ahr",
       "taskId": "area.final.proof",
-      "visibleWords": 237,
-      "materialWords": 101,
+      "visibleWords": 254,
+      "materialWords": 118,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "ahr",
       "taskId": "area.final.weight",
-      "visibleWords": 214,
-      "materialWords": 101,
+      "visibleWords": 233,
+      "materialWords": 118,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "ahr",
       "taskId": "area.final.own",
-      "visibleWords": 213,
-      "materialWords": 101,
+      "visibleWords": 230,
+      "materialWords": 118,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "ahr",
       "taskId": "area.transfer",
-      "visibleWords": 249,
-      "materialWords": 120,
+      "visibleWords": 262,
+      "materialWords": 132,
       "overflow": false
     },
     {
       "unit": "s6",
       "profile": "ahr",
       "taskId": "area.condition",
-      "visibleWords": 233,
-      "materialWords": 100,
+      "visibleWords": 250,
+      "materialWords": 117,
       "overflow": false
     },
     {
@@ -3725,48 +3725,48 @@
       "unit": "r",
       "profile": "foerder",
       "taskId": "review.MAR.claim",
-      "visibleWords": 164,
-      "materialWords": 67,
+      "visibleWords": 176,
+      "materialWords": 79,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "foerder",
       "taskId": "review.MAR.scope",
-      "visibleWords": 166,
-      "materialWords": 67,
+      "visibleWords": 178,
+      "materialWords": 79,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "foerder",
       "taskId": "review.common.consequences",
-      "visibleWords": 212,
-      "materialWords": 124,
+      "visibleWords": 224,
+      "materialWords": 136,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "foerder",
       "taskId": "review.common.weigh",
-      "visibleWords": 218,
-      "materialWords": 124,
+      "visibleWords": 230,
+      "materialWords": 136,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "foerder",
       "taskId": "review.transfer",
-      "visibleWords": 210,
-      "materialWords": 124,
+      "visibleWords": 222,
+      "materialWords": 136,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "foerder",
       "taskId": "review.revision",
-      "visibleWords": 219,
-      "materialWords": 124,
+      "visibleWords": 231,
+      "materialWords": 136,
       "overflow": false
     },
     {
@@ -3805,48 +3805,48 @@
       "unit": "r",
       "profile": "esa",
       "taskId": "review.MAR.claim",
-      "visibleWords": 163,
-      "materialWords": 67,
+      "visibleWords": 175,
+      "materialWords": 79,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "esa",
       "taskId": "review.MAR.scope",
-      "visibleWords": 165,
-      "materialWords": 67,
+      "visibleWords": 177,
+      "materialWords": 79,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "esa",
       "taskId": "review.common.consequences",
-      "visibleWords": 211,
-      "materialWords": 124,
+      "visibleWords": 223,
+      "materialWords": 136,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "esa",
       "taskId": "review.common.weigh",
-      "visibleWords": 217,
-      "materialWords": 124,
+      "visibleWords": 229,
+      "materialWords": 136,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "esa",
       "taskId": "review.transfer",
-      "visibleWords": 209,
-      "materialWords": 124,
+      "visibleWords": 221,
+      "materialWords": 136,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "esa",
       "taskId": "review.revision",
-      "visibleWords": 218,
-      "materialWords": 124,
+      "visibleWords": 230,
+      "materialWords": 136,
       "overflow": false
     },
     {
@@ -3869,32 +3869,32 @@
       "unit": "r",
       "profile": "msa",
       "taskId": "review.MAR",
-      "visibleWords": 182,
-      "materialWords": 67,
+      "visibleWords": 194,
+      "materialWords": 79,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "msa",
       "taskId": "review.common",
-      "visibleWords": 229,
-      "materialWords": 124,
+      "visibleWords": 241,
+      "materialWords": 136,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "msa",
       "taskId": "review.transfer",
-      "visibleWords": 203,
-      "materialWords": 124,
+      "visibleWords": 215,
+      "materialWords": 136,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "msa",
       "taskId": "review.revision",
-      "visibleWords": 235,
-      "materialWords": 124,
+      "visibleWords": 247,
+      "materialWords": 136,
       "overflow": false
     },
     {
@@ -3917,40 +3917,40 @@
       "unit": "r",
       "profile": "ahr",
       "taskId": "review.MAR",
-      "visibleWords": 182,
-      "materialWords": 67,
+      "visibleWords": 194,
+      "materialWords": 79,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "ahr",
       "taskId": "review.common",
-      "visibleWords": 229,
-      "materialWords": 124,
+      "visibleWords": 241,
+      "materialWords": 136,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "ahr",
       "taskId": "review.transfer",
-      "visibleWords": 203,
-      "materialWords": 124,
+      "visibleWords": 215,
+      "materialWords": 136,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "ahr",
       "taskId": "review.revision",
-      "visibleWords": 235,
-      "materialWords": 124,
+      "visibleWords": 247,
+      "materialWords": 136,
       "overflow": false
     },
     {
       "unit": "r",
       "profile": "ahr",
       "taskId": "review.cause",
-      "visibleWords": 238,
-      "materialWords": 124,
+      "visibleWords": 250,
+      "materialWords": 136,
       "overflow": false
     }
   ]

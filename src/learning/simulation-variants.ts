@@ -61,24 +61,34 @@ export function step(
       : '',
     fields,
     hints: [
-      hint,
-      kind === 'network'
-        ? 'Suche den Einstieg. Addiere den Fußweg und nur die Busabschnitte ab diesem Einstieg. Lies bei jedem Beleg auch die Vergleichslinie.'
-        : kind === 'demand'
-          ? 'Rechne: Fahrten pro Stunde mal Plätze je Fahrt. Vergleiche die Plätze mit der Zahl der Menschen. Prüfe den Fußweg getrennt.'
-          : kind === 'cocoa'
-            ? id.startsWith('cocoa.chain')
-              ? 'Rösten und Mahlen verändern die Bohnen. Die Presse verarbeitet die entstandene Masse weiter.'
-              : 'Rechne: Einnahmen minus laufende Ausgaben. Das übrige Geld heißt Überschuss. Bezahle die Anschaffung aus dem eigenen Topf.'
-            : kind === 'share'
-              ? 'Verteile genau 120 GE. Wer bekommt jetzt Geld? Wofür bleibt Geld im Betrieb? Was könnte später helfen?'
-              : kind === 'water'
-                ? 'Wie viel bleibt im Tank? Rechne Anfang minus Entnahme. Schau getrennt darauf, wie viel am Feld ankommt. Das Modell zeigt nicht, wie viel Wasser verbraucht wird.'
-                : kind === 'area'
-                  ? 'Rechne das Wasser für das erste Feld und das Zusatzfeld zusammen. Vergleiche zuerst das erste Feld mit früher. Vergleiche dann die Summe mit früher 60 WE.'
-                  : kind === 'orientation'
-                    ? 'Stadtpunkte liegen innerhalb der Länderflächen. Norden ist oben. Die Äquatorlinie trennt Nordhalbkugel und Südhalbkugel.'
-                    : 'Suche eine passende Angabe im Beispiel. Die Angabe dient als Beleg. Kann sie auch etwas über andere Orte beweisen?',
+      id === 'share.paid'
+        ? 'Wie viel Geld bekommt der Betrieb? Welche Beträge hat er schon bezahlt?'
+        : hint,
+      id === 'share.paid'
+        ? 'Ziehe zuerst die Löhne von den Einnahmen ab. Ziehe dann die anderen Kosten ab.'
+        : kind === 'network'
+          ? 'Suche den Einstieg. Addiere den Fußweg und nur die Busabschnitte ab diesem Einstieg. Lies bei jedem Beleg auch die Vergleichslinie.'
+          : kind === 'demand'
+            ? 'Rechne: Fahrten pro Stunde mal Plätze je Fahrt. Vergleiche die Plätze mit der Zahl der Menschen. Prüfe den Fußweg getrennt.'
+            : kind === 'cocoa'
+              ? id.startsWith('cocoa.chain')
+                ? id.endsWith('beans')
+                  ? 'Suche auf den Karten das Material, mit dem die Verarbeitung beginnt.'
+                  : id.endsWith('roast')
+                    ? 'Welche Karte nennt Tätigkeiten, die die getrockneten Bohnen verändern?'
+                    : id.endsWith('mass')
+                      ? 'Was entsteht aus den Bohnen, wenn sie geröstet und gemahlen werden?'
+                      : 'Die Presse trennt die Masse. Suche die Karte mit dieser Tätigkeit.'
+                : 'Rechne: Einnahmen minus laufende Ausgaben. Das übrige Geld heißt Überschuss. Bezahle die Anschaffung aus dem eigenen Topf.'
+              : kind === 'share'
+                ? 'Verteile genau 120 GE. Wer bekommt jetzt Geld? Wofür bleibt Geld im Betrieb? Was könnte später helfen?'
+                : kind === 'water'
+                  ? 'Wie viel bleibt im Tank? Rechne Anfang minus Entnahme. Schau getrennt darauf, wie viel am Feld ankommt. Das Modell zeigt nicht, wie viel Wasser verbraucht wird.'
+                  : kind === 'area'
+                    ? 'Rechne das Wasser für das erste Feld und das Zusatzfeld zusammen. Vergleiche zuerst das erste Feld mit früher. Vergleiche dann die Summe mit früher 60 WE.'
+                    : kind === 'orientation'
+                      ? 'Stadtpunkte liegen innerhalb der Länderflächen. Norden ist oben. Die Äquatorlinie trennt Nordhalbkugel und Südhalbkugel.'
+                      : 'Suche eine passende Angabe im Beispiel. Die Angabe dient als Beleg. Kann sie auch etwas über andere Orte beweisen?',
       'Prüfe das erklärte Beispiel. Du entscheidest, ob du es übernehmen möchtest.',
     ],
     criteria: criteria.length
@@ -113,6 +123,12 @@ export function orderTaskFields(t: Task): Task {
   };
 }
 function splitHints(t: Task, f: LearningField): Task['hints'] {
+  if (t.id === 'share.paid' && f.id === 'wages')
+    return [
+      'Lies die Zeile mit den Löhnen. Was steht dort zum Bezahlen?',
+      'Sind die Löhne schon bezahlt oder steht das noch bevor?',
+      f.explanation,
+    ];
   if (t.id === 'share.paid' && f.id === 'free')
     return [
       'Lies die Einnahmen und die beiden schon bezahlten Beträge.',
@@ -1440,7 +1456,7 @@ export function areaTasks(p: ProfileId): Task[] {
             number(
               'total',
               p === 'esa'
-                ? 'Wie viel Wasser brauchen beide Felder zusammen? (WE)'
+                ? 'Wie viel Wasser wird für beide Felder aus dem Tank genommen? (WE)'
                 : 'Wie viel Wasser wird für beide Felder zusammen aus dem Tank genommen? Gesamtentnahme (WE)',
               extra.withdrawal,
               '45 + 20 = 65 WE.',

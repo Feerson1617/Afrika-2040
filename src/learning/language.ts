@@ -58,3 +58,7 @@ export function simpleTask(t: Task): Task {
       : {}),
   };
 }
+
+// Format instructions must never disclose an arithmetic task's result.
+export const integerFormatHint =
+  'Schreibe eine ganze Zahl. Minuszeichen (- oder −) und Tausenderpunkte sind erlaubt. Unklare Schreibweisen zählen nicht als Rechenfehler.';

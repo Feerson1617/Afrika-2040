@@ -187,11 +187,25 @@ for (const profile of profileIds)
           'Hilfe 2 von 3',
         );
         await expect(page.locator('.help-panel')).toContainText(
-          'Rösten und Mahlen verändern die Bohnen',
+          [
+            'Suche auf den Karten das Material, mit dem die Verarbeitung beginnt.',
+            'Welche Karte nennt Tätigkeiten, die die getrockneten Bohnen verändern?',
+            'Was entsteht aus den Bohnen, wenn sie geröstet und gemahlen werden?',
+            'Die Presse trennt die Masse. Suche die Karte mit dieser Tätigkeit.',
+          ][i],
         );
       } else {
         await page.locator('#learning-help').tap();
         await expect(page.locator('.help-panel')).toContainText(hint);
+        await page.locator('#learning-help').tap();
+        await expect(page.locator('.help-panel')).toContainText(
+          [
+            'Suche auf den Karten das Material',
+            'Welche Karte nennt Tätigkeiten',
+            'Was entsteht aus den Bohnen',
+            'Die Presse trennt die Masse',
+          ][i],
+        );
       }
       expect(active(await get(page))!.attempt!.exampleUsed).toBe(false);
       await page.locator('#learn-step').selectOption(value);
@@ -318,4 +332,194 @@ for (const [unit, target, result] of [
     for (let h = 0; h < 2; h++) await page.locator('#learning-help').click();
     await expect(page.locator('.help-panel')).toContainText(result);
     expect(active(await get(page))!.attempt!.exampleUsed).toBe(false);
+  });
+
+for (const profile of ['esa', 'msa', 'ahr'] as const) {
+  test(`RC-final F1 area view ${profile}: actual distinct cases without answers`, async ({
+    page,
+  }) => {
+    const target = profile === 'esa' ? 'area.total.total' : 'area.total';
+    await seed(page, fixture('s6', profile, target));
+    const material = page.locator('.inquiry-material');
+    await material.locator('[data-value="same"]').click();
+    await expect(material).toContainText(
+      'Aktuelle Modellansicht: Gleiches Feld',
+    );
+    await expect(
+      material.locator('tr').filter({ hasText: 'Zusatzfeld' }),
+    ).toHaveCount(0);
+    await expect(material).not.toContainText(/\b65\b|\b15\b/);
+    await material.locator('[data-value="extra"]').click();
+    await expect(material).toContainText(
+      'Aktuelle Modellansicht: Mit Zusatzfeld',
+    );
+    await expect(
+      material.locator('tr').filter({ hasText: 'Zusatzfeld' }),
+    ).toContainText('20');
+    await expect(material).not.toContainText(/\b65\b|\b15\b/);
+    await expect(page.locator('.inquiry-task')).toContainText(
+      /Zusatzfeld|beide Felder/,
+    );
+  });
+  test(`RC-final F2 free money ${profile}: help stage two without arithmetic result`, async ({
+    page,
+  }) => {
+    await seed(
+      page,
+      fixture(
+        's4',
+        profile,
+        profile === 'esa' ? 'share.paid.free' : 'share.paid',
+      ),
+    );
+    while (active(await get(page))!.attempt!.help < 2)
+      await page.locator('#learning-help').click();
+    await expect(page.locator('.help-panel')).not.toContainText('120');
+    await expect(page.locator('.help-panel')).toContainText(/Löhne/);
+    await page.locator('#learning-help').click();
+    await expect(page.locator('.help-panel')).toContainText('120');
+    expect(active(await get(page))!.attempt!.exampleUsed).toBe(false);
+  });
+  for (const [unit, prefix, field, value] of [
+    ['s2', 'demand.now', 'capacity', '20'],
+    ['s4', 'share.paid', 'free', '120'],
+    ['s6', 'area.total', 'total', '65'],
+  ] as const)
+    test(`RC-final F3 ${unit}/${profile}: edit invalidates visible proof without replacing input`, async ({
+      page,
+    }) => {
+      await seed(
+        page,
+        fixture(
+          unit,
+          profile,
+          profile === 'esa' ? prefix + '.' + field : prefix,
+        ),
+      );
+      let task = active(await get(page))!.task;
+      for (const id of task.simulation?.required ?? [])
+        await page
+          .locator('[data-op="simulate"][data-value="' + id + '"]')
+          .click();
+      const values = answers(task);
+      for (const f of task.fields) {
+        const el = page.locator('#learn-' + f.id);
+        if (f.kind === 'integer')
+          await el.fill(f.id === field ? value : values[f.id]);
+        else if (f.kind === 'choice') await el.selectOption(values[f.id]);
+      }
+      await page.locator('#learning-check').click();
+      await expect(page.locator('[data-learning-status]')).toContainText(
+        /geprüft|Richtig/,
+      );
+      const saved = active(await get(page))!.attempt!.submissions;
+      const input = page.locator('#learn-' + field);
+      await input.evaluate((el) => ((window as any).__testedInput = el));
+      await input.fill('998');
+      await expect(page.locator('[data-learning-status]')).toContainText(
+        'geändert',
+      );
+      await expect(page.locator('[data-learning-feedback]')).toHaveCount(0);
+      await expect(page.locator('#learning-next')).toHaveCount(0);
+      await expect(input).toBeFocused();
+      expect(
+        await input.evaluate((el) => (window as any).__testedInput === el),
+      ).toBe(true);
+      await input.press('ArrowLeft');
+      await page.keyboard.insertText('7');
+      await expect(input).toHaveValue('9978');
+      expect(active(await get(page))!.attempt!.submissions).toEqual(saved);
+      expect(active(await get(page))!.attempt!.factual).toBe('ungraded');
+      const material = page.locator('.inquiry-material');
+      await expect(material).not.toContainText(
+        new RegExp('\\b' + value + '\\b'),
+      );
+      await page.reload();
+      await expect(input).toHaveValue('9978');
+    });
+}
+
+for (const profile of profileIds)
+  for (const [unit, target] of [
+    ['s1', 'kenia.first.weight'],
+    ['s1', 'kenia.revised.weight'],
+    ['s2', 'demand.final.weight'],
+    ['s3', 'cocoa.final.weight'],
+    ['s5', 'water.final.weight'],
+    ['s6', 'area.final.weight'],
+  ] as const)
+    test(`RC-final weight ${unit}/${target}/${profile}: one option links priority and accepted drawback`, async ({
+      page,
+      browserName,
+    }) => {
+      await page.setViewportSize({ width: 1024, height: 768 });
+      await seed(page, fixture(unit, profile, target));
+      const option = page
+        .locator('label')
+        .filter({ has: page.locator('input[value="benefit"]') });
+      await expect(option.locator('strong')).toHaveText([
+        'Mir ist wichtig:',
+        'Dafür nehme ich in Kauf:',
+      ]);
+      await option.locator('input').focus();
+      await page.keyboard.press('Space');
+      await page.locator('#learning-check').click();
+      expect(active(await get(page))!.attempt!.answers.weight).toBe('benefit');
+      await page.reload();
+      await expect(option.locator('input')).toBeChecked();
+      if (profile === 'foerder' && unit === 's5')
+        await page.screenshot({
+          path: evidencePath(`RC-weight-${browserName}.png`),
+          fullPage: true,
+        });
+    });
+for (const profile of ['esa', 'msa', 'ahr'] as const)
+  for (const [unit, prefix, field, value] of [
+    ['s2', 'demand.now', 'capacity', '20'],
+    ['s4', 'share.paid', 'free', '120'],
+    ['s6', 'area.total', 'total', '65'],
+  ] as const)
+    test(`RC-final F3-help3 ${unit}/${profile}: conscious explanation remains identified after editing`, async ({
+      page,
+    }) => {
+      await seed(
+        page,
+        fixture(
+          unit,
+          profile,
+          profile === 'esa' ? prefix + '.' + field : prefix,
+        ),
+      );
+      while (active(await get(page))!.attempt!.help < 3)
+        await page.locator('#learning-help').click();
+      await page.locator('#learn-' + field).fill('998');
+      await expect(page.locator('[data-learning-status]')).toContainText(
+        'Hilfe 3',
+      );
+      await expect(page.locator('.help-panel')).toBeVisible();
+      await expect(page.locator('.inquiry-material')).toContainText(value);
+      const attempt = active(await get(page))!.attempt!;
+      expect(attempt.help).toBe(3);
+      expect(attempt.exampleUsed).toBe(false);
+      expect(attempt.factual).toBe('ungraded');
+      await page.reload();
+      expect(active(await get(page))!.attempt!.answers[field]).toBe('998');
+    });
+for (const [profile, target, answer] of [
+  ['esa', 'population.base.migration', '-10'],
+  ['esa', 'population.base.end', '1020'],
+  ['msa', 'population.base.balance', '1020'],
+  ['ahr', 'population.base.balance', '1020'],
+] as const)
+  test(`RC-final number hint ${profile}/${target}: no solution hidden in format examples`, async ({
+    page,
+  }) => {
+    await seed(page, fixture('c', profile, target));
+    await expect(page.locator('#learning-number')).not.toContainText(/\d/);
+    await expect(page.locator('#learning-number')).toContainText(
+      'Tausenderpunkte',
+    );
+    const text = await page.locator('main').innerText();
+    if (answer === '1020') expect(text).not.toMatch(/\b1\.?020\b/);
+    else expect(text).not.toMatch(/[-−]10\b/);
   });

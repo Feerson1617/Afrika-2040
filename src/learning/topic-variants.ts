@@ -157,6 +157,18 @@ function split(task: Task, profile: ProfileId) {
         f.explanation,
       ];
     }
+    if (task.id === 'nature.regions' && f.id === 'higher')
+      hints = [
+        'Lies bei beiden Regionen die Zahl in derselben Spalte.',
+        'Beide Werte gelten für ein Jahr und haben dieselbe Einheit. Welche Zahl ist größer?',
+        f.explanation,
+      ];
+    if (task.id === 'economy.conditions' && f.id === 'pair')
+      hints = [
+        'Was könnte dem Betrieb helfen?',
+        'Was zeigt der Bericht wirklich? Steht dort, dass später alle mehr Geld verdienen?',
+        f.explanation,
+      ];
     if (task.id === 'economy.conditions' && f.id === 'proof')
       hints = [
         'Lies: Worüber berichtet GEPA? Werden spätere Einnahmen genannt?',
@@ -443,7 +455,7 @@ function nature(p: ProfileId): Task[] {
   const regions = focus(
     'nature',
     [
-      'Zwei Regionen in Marokko. Die Werte zeigen den durchschnittlichen Niederschlag pro Jahr von 1991 bis 2020. Die Einheit ist Millimeter. Die Werte gelten für die ganze Region, nicht für eine einzelne Wetterstation.',
+      'Zwei Regionen in Marokko. Die Werte zeigen den durchschnittlichen Niederschlag pro Jahr von 1991 bis 2020. mm bedeutet Millimeter. 1 mm Niederschlag entspricht einem Liter Wasser auf einem Quadratmeter Fläche. Die Werte gelten für die ganze Region, nicht für eine einzelne Wetterstation.',
     ],
     natureWords,
     {
@@ -684,7 +696,7 @@ function economy(p: ProfileId): Task[] {
   const data = focus(
     'economy',
     [
-      'Ghana, Quelle: Weltbank. Stromzugang zeigt: Wie viel Prozent der Menschen haben Zugang zu Strom? Das BIP beschreibt den neu geschaffenen wirtschaftlichen Wert im Land. Die Wachstumsrate zeigt die Veränderung zum Vorjahr in Prozent. Preisänderungen sind herausgerechnet. Die Zahlen gelten für frühere Jahre. Sie sagen die Zukunft nicht voraus.',
+      'Ghana, Quelle: Weltbank. Prozent bedeutet: von 100. Stromzugang zeigt: Wie viel Prozent der Menschen haben Zugang zu Strom? Das BIP beschreibt die wirtschaftliche Leistung eines Landes in einem Jahr. Die Wachstumsrate zeigt die Veränderung zum Vorjahr in Prozent. Preisänderungen sind herausgerechnet. Die Zahlen gelten für frühere Jahre. Sie sagen die Zukunft nicht voraus.',
     ],
     moneyWords,
     {
@@ -739,7 +751,7 @@ function economy(p: ProfileId): Task[] {
     'economy',
     [
       'GEPA fördert den Export in Ghana. Am 23.10.2024 berichtete GEPA über eine eigene Schulung. Die Teilnehmerinnen betrieben bereits Kakaoverarbeitung. Themen waren Preise, Transport und Verkaufsregeln.',
-      'Stromzugang Ghana: 2022 85,1 %, 2023 89,5 %. Quelle: Weltbank, historischer Projektstand.',
+      'Stromzugang Ghana: 2022 85,1 %, 2023 89,5 %. Quelle: Weltbank. Die Angaben gelten für frühere Jahre.',
     ],
     moneyWords,
   );
@@ -787,7 +799,7 @@ function economy(p: ProfileId): Task[] {
           ['yes', 'Ja. Mehr Stromzugang beweist mehr Einkommen für alle.'],
           ['no', 'Nein. Die Stromzahlen zeigen das Einkommen nicht.'],
         ],
-        'Die Stromwerte zeigen, wer Zugang zu Strom hat. Sie zeigen nicht, wie viel Geld die Menschen verdienen. Sie beweisen nicht, dass die Menschen jetzt mehr verdienen.',
+        'Die Stromwerte zeigen, wie viele von 100 Menschen Zugang zu Strom haben. Sie zeigen nicht, wie viel Geld die Menschen verdienen. Sie beweisen nicht, dass die Menschen jetzt mehr verdienen.',
       ),
       pick(
         'distribution',

@@ -61,3 +61,35 @@ test('capacity glossary explains the quantity without disclosing the current ari
   assert.match(definition, /Stunde/);
   assert.match(definition, /Fahrten/);
 });
+
+test('RC source and interaction wording preserve the required learning action', async () => {
+  // Rendering full pages is covered by actual browser tests; these checks protect material text.
+  for (const p of ['foerder', 'esa', 'msa', 'ahr'] as const) {
+    for (const t of tasksFor('s3', p).filter((t) =>
+      t.id.startsWith('cocoa.chain'),
+    )) {
+      const html = simulationMaterial(t, p, draft);
+      assert.doesNotMatch(html, /Ordne die Karten/);
+      assert.match(html, /Wähle den passenden Schritt/);
+    }
+    const transfer = tasksFor('d', p).find((t) =>
+      t.id.startsWith('economy.transfer'),
+    )!;
+    assert.match(
+      transfer.fields.find((f) => f.id === 'cause')!.explanation,
+      /wie viele von 100/,
+    );
+  }
+});
+test('RC earlier ESA wage reading does not disclose the following free-money result', () => {
+  const t = tasksFor('s4', 'esa').find((t) => t.id === 'share.paid.wages')!;
+  assert.doesNotMatch(simulationMaterial(t, 'esa', draft), /120/);
+  assert.match(t.hints[1], /Löhne/);
+});
+
+test('number-format explanation cannot disclose any arithmetic answer', async () => {
+  const { integerFormatHint } = await import('../src/learning/language.ts');
+  assert.doesNotMatch(integerFormatHint, /\d/);
+  assert.match(integerFormatHint, /Minuszeichen/);
+  assert.match(integerFormatHint, /Tausenderpunkte/);
+});

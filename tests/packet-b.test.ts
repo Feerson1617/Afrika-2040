@@ -189,8 +189,8 @@ test('PaketB helpers use concrete model operations and a budget example names bo
   for (const [unit, term] of [
     ['s1', 'Einstieg'],
     ['s2', 'Plätze'],
-    ['s3', 'Bohnen'],
-    ['s4', '120 GE'],
+    ['s3', 'Material'],
+    ['s4', 'Löhne'],
     ['s5', 'Entnahme'],
     ['s6', 'Zusatzfeld'],
     ['o', 'Stadtpunkte'],
@@ -198,6 +198,11 @@ test('PaketB helpers use concrete model operations and a budget example names bo
   ] as const) {
     const task = tasksFor(unit, 'esa').find((t) => t.simulation)!;
     assert.ok(task.hints[1].includes(term), unit);
+  }
+  for (const p of ['esa', 'msa', 'ahr'] as const) {
+    const task = tasksFor('s4', p).find((t) => t.id.startsWith('share.paid'))!;
+    assert.doesNotMatch(task.hints.slice(0, 2).join(' '), /120/);
+    assert.match(task.hints[1], /Löhne/);
   }
   let s = act(newLearning(), 'recommend', 'ahr', 's4');
   for (const raw of tasksFor('s4', 'ahr')) {

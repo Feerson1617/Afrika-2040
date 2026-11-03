@@ -1,4 +1,4 @@
-import { simulationMaterial } from './learning/simulation-material.ts';
+import { materialView } from './learning/material-view.ts';
 import { unitNames } from './learning/catalog.ts';
 import { renderLearning } from './learning/chapter-ui.ts';
 import {
@@ -1129,6 +1129,8 @@ if (['event-find', 'event-effects', 'event-review'].includes(state.screen))
 app.addEventListener('input', (event) => {
   const el = event.target as HTMLInputElement | HTMLTextAreaElement;
   if (el.name !== 'learning-answer' || el instanceof HTMLSelectElement) return;
+  const oldAttempt = state.learning && activeLearning(state.learning)?.attempt;
+  if (oldAttempt?.answers[el.dataset.field ?? ''] === el.value) return;
   state = reduce(state, {
     type: 'learning',
     op: 'answer',
@@ -1138,22 +1140,22 @@ app.addEventListener('input', (event) => {
   persistState();
   document.querySelector('[data-learning-feedback]')?.remove();
   document.querySelector('#learning-next')?.remove();
-  // Refresh only the transfer material/status; keep the edited native input and focus.
+  // Refresh derived material and status only; preserve the native input and caret.
   const current = state.learning && activeLearning(state.learning);
-  if (
-    current?.task.simulation?.transfer &&
-    current.attempt &&
-    state.learning?.profile
-  ) {
+  if (current?.attempt && state.learning?.profile) {
     const material = document.querySelector('.inquiry-material');
     if (material)
-      material.innerHTML = simulationMaterial(
+      material.innerHTML = materialView(
         current.task,
         state.learning.profile,
         current.attempt,
       );
     const status = document.querySelector('[data-learning-status]');
     if (status)
-      status.textContent = 'Deine Antwort wurde geändert. Prüfe sie erneut.';
+      status.textContent =
+        'Deine Antwort wurde geändert. Prüfe sie erneut.' +
+        (current.attempt.help === 3
+          ? ' Hilfe 3 ist weiterhin geöffnet; die neue Antwort ist ungeprüft.'
+          : '');
   }
 });

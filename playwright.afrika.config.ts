@@ -4,7 +4,9 @@ const match =
   /(?:inquiry(?:-correction)?|gate0|gate2-correction|transfer-rc|transfer-disclosure|language-revision|packet-b(?:-integration|-quality)?|topics-gate2|four-paths(?:-correction)?|game|phase2b|episode2|episode2-accessibility|regions|morocco|final-integration|pedagogical-final|release-rc1|final-scorm|phase5-integration|release-live)\.spec\.ts/;
 export default defineConfig(release, {
   testMatch: match,
-  grep: new RegExp((release.grep as RegExp).source + '|Afrika curriculum'),
+  grep: new RegExp(
+    (release.grep as RegExp).source + '|Afrika curriculum|RC-final',
+  ),
   projects: release.projects!.map((project) => ({
     ...project,
     testMatch: match,
