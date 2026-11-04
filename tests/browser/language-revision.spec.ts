@@ -11,7 +11,12 @@ import { profileIds, type ProfileId } from '../../src/learning/profiles.ts';
 import { answers } from '../learning-oracles.ts';
 import { topicAnswers } from '../topic-oracles.ts';
 import { evidencePath } from './artifacts.ts';
-import { updateMaterial } from '../../src/learning/update-material.ts';
+import {
+  updateMaterial,
+  materialPanelEntries,
+  captureMaterialPanels,
+  restoreMaterialPanels,
+} from '../../src/learning/update-material.ts';
 const key = 'afrika-2040:kenia-bus:v2a';
 const act = (
   s: LearningState,
@@ -51,27 +56,62 @@ test('RC-final N1 derived material: nested open and deliberately closed panels s
   page,
 }) => {
   await page.goto('/');
-  const result = await page.evaluate((source) => {
-    // Isolated DOM contract in each real engine, including anonymous nested panels.
-    const update = new Function(`return (${source})`)();
-    const material = document.createElement('section');
-    const html = (value: string) =>
-      `<p>${value}</p><details id="outer"><summary>Quelle</summary><details><summary>Zusatz</summary>Text</details><details open><summary>Andere Angaben</summary>Text</details></details>`;
-    material.innerHTML = html('Bestätigtes Ergebnis');
-    document.body.append(material);
-    const initial = material.querySelectorAll('details');
-    initial[0].open = true;
-    initial[1].open = true;
-    initial[2].open = false;
-    update(material, html('Bestätigtes Ergebnis'), html('Antwort noch offen'));
-    return {
-      text: material.querySelector('p')!.textContent,
-      panels: [...material.querySelectorAll('details')].map((d) => d.open),
-    };
-  }, updateMaterial.toString());
+  const result = await page.evaluate(
+    (source) => {
+      // Isolated DOM contract in each real engine, including anonymous nested panels.
+      const entries = new Function(`return (${source.entries})`)();
+      const capture = new Function(
+        'materialPanelEntries',
+        `return (${source.capture})`,
+      )(entries);
+      const restore = new Function(
+        'materialPanelEntries',
+        `return (${source.restore})`,
+      )(entries);
+      const update = new Function(
+        'captureMaterialPanels',
+        'restoreMaterialPanels',
+        `return (${source.update})`,
+      )(capture, restore);
+      const material = document.createElement('section');
+      const html = (value: string) =>
+        `<p>${value}</p><details id="outer"><summary>Quelle</summary><details><summary>Zusatz</summary>Text</details><details open><summary>Andere Angaben</summary>Text</details></details>`;
+      material.innerHTML = html('Bestätigtes Ergebnis');
+      document.body.append(material);
+      const initial = material.querySelectorAll('details');
+      initial[0].open = true;
+      initial[1].open = true;
+      initial[2].open = false;
+      update(
+        material,
+        html('Bestätigtes Ergebnis'),
+        html('Antwort noch offen'),
+      );
+      const live = {
+        text: material.querySelector('p')!.textContent,
+        panels: [...material.querySelectorAll('details')].map((d) => d.open),
+      };
+      const roundTrip = JSON.parse(JSON.stringify(capture(material)));
+      material.innerHTML = html('Antwort noch offen');
+      restore(material, roundTrip);
+      return {
+        ...live,
+        restoredPanels: [...material.querySelectorAll('details')].map(
+          (d) => d.open,
+        ),
+      };
+    },
+    {
+      update: updateMaterial.toString(),
+      entries: materialPanelEntries.toString(),
+      capture: captureMaterialPanels.toString(),
+      restore: restoreMaterialPanels.toString(),
+    },
+  );
   expect(result).toEqual({
     text: 'Antwort noch offen',
     panels: [true, true, false],
+    restoredPanels: [true, true, false],
   });
 });
 test('RC-final S2 ESA migration: negative movement is not total population decline', async ({
@@ -232,13 +272,28 @@ for (const [unit, target, profile] of [
     await page.locator('[data-op="back"]').click();
     await page.locator('#learning-next').click();
     await expect(input).toHaveValue(text);
+    expect(
+      await panels.evaluateAll((els) =>
+        els.map((el) => ({ id: el.id, open: (el as HTMLDetailsElement).open })),
+      ),
+    ).toEqual(panelState);
     await page.reload();
     await expect(input).toHaveValue(text);
+    expect(
+      await panels.evaluateAll((els) =>
+        els.map((el) => ({ id: el.id, open: (el as HTMLDetailsElement).open })),
+      ),
+    ).toEqual(panelState);
     expect(active(await get(page))!.attempt!.submissions).toEqual(history);
     expect(active(await get(page))!.attempt!.factual).toBe('ungraded');
     for (let h = 0; h < 3; h++) await page.locator('#learning-help').click();
-    await page.locator('#learning-topic-full > summary').click();
-    await page.locator('#inquiry-sources > summary').click();
+    for (const id of ['learning-topic-full', 'inquiry-sources'])
+      if (
+        !(await page
+          .locator('#' + id)
+          .evaluate((el: HTMLDetailsElement) => el.open))
+      )
+        await page.locator('#' + id + ' > summary').click();
     const helpPanels = await panels.evaluateAll((els) =>
       els.map((el) => (el as HTMLDetailsElement).open),
     );

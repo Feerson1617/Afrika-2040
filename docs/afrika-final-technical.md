@@ -1,5 +1,7 @@
 # Letzte technische Korrektur · Release-Kandidat
 
+Historischer Stand `4bcee44415b670a27eec991dd047e9937c04eb1c`. Der anschließend unabhängig festgestellte Rest bei Rückkehr und Reload ist im [N1-Nachtrag](afrika-n1-return.md) dokumentiert. Die nachstehenden Ergebnisse beziehen sich auf den damaligen Stand.
+
 Ausgangscommit: `cc9bfe054c0171c953acb080fb11be526e5a033e`, Branch `feat/afrika-vier-lernwege`. Lokaler HEAD, sauberer Arbeitsbaum und gleichlautender Remote waren vor Beginn bestätigt. Die vollständige SHA des neuen Commits steht in der Übergabe und in `handover.json` des Prüfpakets; die Quellhashes in `docs/evidence/final-technical/checks.json` binden diese Prüfungen an den Anwendungscode.
 
 ## Gezielte Änderungen

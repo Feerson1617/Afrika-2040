@@ -1,0 +1,2554 @@
+[
+  {
+    "target": "economy.source-claim.v1",
+    "profile": "ahr",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "browserName": "chromium",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "economy.balance",
+      "economy.data",
+      "economy.conditions",
+      "economy.transfer",
+      "economy.explain",
+      "economy.source-claim.v1"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "economy.source-claim.v1",
+    "profile": "ahr",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "browserName": "webkit",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "economy.balance",
+      "economy.data",
+      "economy.conditions",
+      "economy.transfer",
+      "economy.explain",
+      "economy.source-claim.v1"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "economy.source-claim.v1",
+    "profile": "ahr",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "browserName": "chromium",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "economy.balance",
+      "economy.data",
+      "economy.conditions",
+      "economy.transfer",
+      "economy.explain",
+      "economy.source-claim.v1"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "economy.source-claim.v1",
+    "profile": "ahr",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "browserName": "webkit",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "economy.balance",
+      "economy.data",
+      "economy.conditions",
+      "economy.transfer",
+      "economy.explain",
+      "economy.source-claim.v1"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "future.judgment",
+    "profile": "ahr",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "browserName": "chromium",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "future.reach",
+      "future.investment",
+      "future.running",
+      "future.ecology",
+      "future.goal",
+      "future.plan",
+      "future.evidence",
+      "future.limit",
+      "future.weight",
+      "future.judgment"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "contextGoal": "access",
+        "contextPlan": "cool",
+        "labels": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "contextGoal": "access",
+        "contextPlan": "cool",
+        "labels": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "future.judgment",
+    "profile": "ahr",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "browserName": "webkit",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "future.reach",
+      "future.investment",
+      "future.running",
+      "future.ecology",
+      "future.goal",
+      "future.plan",
+      "future.evidence",
+      "future.limit",
+      "future.weight",
+      "future.judgment"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "contextGoal": "access",
+        "contextPlan": "cool",
+        "labels": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "contextGoal": "access",
+        "contextPlan": "cool",
+        "labels": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "future.judgment",
+    "profile": "ahr",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "browserName": "chromium",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "future.reach",
+      "future.investment",
+      "future.running",
+      "future.ecology",
+      "future.goal",
+      "future.plan",
+      "future.evidence",
+      "future.limit",
+      "future.weight",
+      "future.judgment"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "contextGoal": "access",
+        "contextPlan": "cool",
+        "labels": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "contextGoal": "access",
+        "contextPlan": "cool",
+        "labels": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "future.judgment",
+    "profile": "ahr",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "browserName": "webkit",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "future.reach",
+      "future.investment",
+      "future.running",
+      "future.ecology",
+      "future.goal",
+      "future.plan",
+      "future.evidence",
+      "future.limit",
+      "future.weight",
+      "future.judgment"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "contextGoal": "access",
+        "contextPlan": "cool",
+        "labels": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "contextGoal": "access",
+        "contextPlan": "cool",
+        "labels": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "future.judgment",
+    "profile": "msa",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "browserName": "chromium",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "future.reach",
+      "future.investment",
+      "future.running",
+      "future.ecology",
+      "future.goal",
+      "future.plan",
+      "future.evidence",
+      "future.limit",
+      "future.weight",
+      "future.judgment"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "contextGoal": "access",
+        "contextPlan": "cool",
+        "labels": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "contextGoal": "access",
+        "contextPlan": "cool",
+        "labels": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "future.judgment",
+    "profile": "msa",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "browserName": "webkit",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "future.reach",
+      "future.investment",
+      "future.running",
+      "future.ecology",
+      "future.goal",
+      "future.plan",
+      "future.evidence",
+      "future.limit",
+      "future.weight",
+      "future.judgment"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "contextGoal": "access",
+        "contextPlan": "cool",
+        "labels": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "contextGoal": "access",
+        "contextPlan": "cool",
+        "labels": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "future.judgment",
+    "profile": "msa",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "browserName": "chromium",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "future.reach",
+      "future.investment",
+      "future.running",
+      "future.ecology",
+      "future.goal",
+      "future.plan",
+      "future.evidence",
+      "future.limit",
+      "future.weight",
+      "future.judgment"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "contextGoal": "access",
+        "contextPlan": "cool",
+        "labels": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "contextGoal": "access",
+        "contextPlan": "cool",
+        "labels": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "future.judgment",
+    "profile": "msa",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "browserName": "webkit",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "future.reach",
+      "future.investment",
+      "future.running",
+      "future.ecology",
+      "future.goal",
+      "future.plan",
+      "future.evidence",
+      "future.limit",
+      "future.weight",
+      "future.judgment"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "contextGoal": "access",
+        "contextPlan": "cool",
+        "labels": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "contextGoal": "access",
+        "contextPlan": "cool",
+        "labels": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "image.perspective",
+    "profile": "ahr",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "browserName": "chromium",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "image.initial",
+      "image.observe",
+      "image.second",
+      "image.headline",
+      "image.perspective"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "image.perspective",
+    "profile": "ahr",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "browserName": "webkit",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "image.initial",
+      "image.observe",
+      "image.second",
+      "image.headline",
+      "image.perspective"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "image.perspective",
+    "profile": "ahr",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "browserName": "chromium",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "image.initial",
+      "image.observe",
+      "image.second",
+      "image.headline",
+      "image.perspective"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "image.perspective",
+    "profile": "ahr",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "browserName": "webkit",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "image.initial",
+      "image.observe",
+      "image.second",
+      "image.headline",
+      "image.perspective"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "nature.recommend",
+    "profile": "ahr",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "browserName": "chromium",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "nature.calendar.ghana",
+      "nature.calendar.morocco",
+      "nature.use",
+      "nature.regions",
+      "nature.concepts",
+      "nature.transfer",
+      "nature.recommend"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "nature.recommend",
+    "profile": "ahr",
+    "viewport": {
+      "width": 1024,
+      "height": 768
+    },
+    "browserName": "webkit",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "nature.calendar.ghana",
+      "nature.calendar.morocco",
+      "nature.use",
+      "nature.regions",
+      "nature.concepts",
+      "nature.transfer",
+      "nature.recommend"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "nature.recommend",
+    "profile": "ahr",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "browserName": "chromium",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "nature.calendar.ghana",
+      "nature.calendar.morocco",
+      "nature.use",
+      "nature.regions",
+      "nature.concepts",
+      "nature.transfer",
+      "nature.recommend"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  },
+  {
+    "target": "nature.recommend",
+    "profile": "ahr",
+    "viewport": {
+      "width": 768,
+      "height": 1024
+    },
+    "browserName": "webkit",
+    "path": "http://127.0.0.1:4174/Afrika-2040/",
+    "visited": [
+      "nature.calendar.ghana",
+      "nature.calendar.morocco",
+      "nature.use",
+      "nature.regions",
+      "nature.concepts",
+      "nature.transfer",
+      "nature.recommend"
+    ],
+    "before": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "afterBack": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": true
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": false
+      }
+    ],
+    "otherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterOtherTask": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "beforeReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "afterReload": [
+      {
+        "id": "learning-topic-full",
+        "summary": "Mehr Angaben und Quellen ansehen",
+        "open": false
+      },
+      {
+        "id": "inquiry-lagekarte",
+        "summary": "Die beiden Räume auf der Karte suchen",
+        "open": true
+      },
+      {
+        "id": "nature-overview",
+        "summary": "Regenwald, Savanne, Übergang und Wüste",
+        "open": true
+      },
+      {
+        "id": "inquiry-sources",
+        "summary": "Quellen, Daten und Grenzen",
+        "open": true
+      }
+    ],
+    "text": "Meine er Hier denke ich weiterste Überlegung.",
+    "history": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "restoredSubmissions": [
+      {
+        "answers": {
+          "explanation": "Meine erste Überlegung."
+        },
+        "factual": "ungraded",
+        "support": "own"
+      }
+    ],
+    "errors": []
+  }
+]

@@ -44,6 +44,8 @@ export interface Attempt {
   mapSelection?: string;
   simulationSelection?: string;
   explored?: string[];
+  // Optional task/profile UI state, never an answer or part of an assessment.
+  materialPanels?: Record<string, boolean>;
 }
 export interface LearningState {
   version: 1;
@@ -701,6 +703,21 @@ export function restoreLearning(raw: unknown): LearningState | undefined {
               ),
             ),
           ].slice(-30);
+        if (
+          p.materialPanels &&
+          typeof p.materialPanels === 'object' &&
+          !Array.isArray(p.materialPanels)
+        )
+          a.materialPanels = Object.fromEntries(
+            Object.entries(p.materialPanels)
+              .filter(
+                ([key, value]) =>
+                  key.length > 0 &&
+                  key.length <= 1024 &&
+                  typeof value === 'boolean',
+              )
+              .slice(-64),
+          ) as Record<string, boolean>;
         if (a.process !== 'draft' && !canContinue(task, a)) {
           a.process = 'draft';
           a.factual = 'ungraded';

@@ -1,5 +1,9 @@
 import { materialView } from './learning/material-view.ts';
-import { updateMaterial } from './learning/update-material.ts';
+import {
+  captureMaterialPanels,
+  restoreMaterialPanels,
+  updateMaterial,
+} from './learning/update-material.ts';
 import { unitNames } from './learning/catalog.ts';
 import { renderLearning } from './learning/chapter-ui.ts';
 import {
@@ -97,6 +101,48 @@ function persistState() {
   updateStorageWarning(!saved);
   return saved;
 }
+const displayedPanelStates = new WeakMap<Element, Record<string, boolean>>();
+function rememberMaterialPanels() {
+  if (state.screen !== 'learning' || state.learning?.view !== 'task')
+    return false;
+  const current = activeLearning(state.learning);
+  const material = document.querySelector<HTMLElement>('.inquiry-material');
+  if (
+    !current?.attempt ||
+    !material ||
+    material.dataset.learningMaterial !== current.attempt.identity.variantId
+  )
+    return false;
+  const chosen = captureMaterialPanels(material);
+  const previous = displayedPanelStates.get(material);
+  if (!previous) return false;
+  if (!Object.entries(chosen).some(([key, open]) => previous[key] !== open))
+    return false;
+  // Retain choices for temporarily absent result-dependent panels as well.
+  current.attempt.materialPanels = {
+    ...current.attempt.materialPanels,
+    ...chosen,
+  };
+  displayedPanelStates.set(material, chosen);
+  return true;
+}
+app.addEventListener(
+  'toggle',
+  (event) => {
+    const target = event.target;
+    if (
+      target instanceof HTMLDetailsElement &&
+      app.contains(target) &&
+      target.closest('.inquiry-material') &&
+      rememberMaterialPanels()
+    )
+      persistState();
+  },
+  true,
+);
+window.addEventListener('pagehide', () => {
+  if (rememberMaterialPanels()) persistState();
+});
 function consumeEntry() {
   history.replaceState(
     history.state,
@@ -613,6 +659,15 @@ function render(focusId?: string, taskChange = false) {
     const detail = document.getElementById(id) as HTMLDetailsElement | null;
     if (detail) detail.open = true;
   }
+  if (state.screen === 'learning' && state.learning?.view === 'task') {
+    const current = activeLearning(state.learning);
+    const material = document.querySelector<HTMLElement>('.inquiry-material');
+    if (material && current?.attempt) {
+      material.dataset.learningMaterial = current.attempt.identity.variantId;
+      restoreMaterialPanels(material, current.attempt.materialPanels);
+      displayedPanelStates.set(material, captureMaterialPanels(material));
+    }
+  }
   if (focusId)
     document.getElementById(focusId)?.focus({
       preventScroll: ![
@@ -632,6 +687,9 @@ function render(focusId?: string, taskChange = false) {
 }
 
 function dispatch(action: Action) {
+  // Capture before navigation changes the active task, including a toggle whose
+  // native event has not been delivered yet. The normal save follows reduce().
+  rememberMaterialPanels();
   const geo = action.type === 'geography';
   const oldFocus = document.activeElement?.id;
   state = reduce(state, action);
@@ -818,6 +876,7 @@ function dispatch(action: Action) {
 }
 
 function activate(el: Element) {
+  if (rememberMaterialPanels()) persistState();
   const name = el.getAttribute('data-action')!;
   if (name === 'legacy-home') {
     const url = new URL(location.href);
@@ -1144,6 +1203,7 @@ if (['event-find', 'event-effects', 'event-review'].includes(state.screen))
 app.addEventListener('input', (event) => {
   const el = event.target as HTMLInputElement | HTMLTextAreaElement;
   if (el.name !== 'learning-answer' || el instanceof HTMLSelectElement) return;
+  rememberMaterialPanels();
   const previous = state.learning && activeLearning(state.learning);
   const oldAttempt = previous?.attempt;
   if (oldAttempt?.answers[el.dataset.field ?? ''] === el.value) return;
@@ -1160,12 +1220,14 @@ app.addEventListener('input', (event) => {
   const current = state.learning && activeLearning(state.learning);
   if (current?.attempt && state.learning?.profile) {
     const material = document.querySelector('.inquiry-material');
-    if (material && previous && oldAttempt)
+    if (material && previous && oldAttempt) {
       updateMaterial(
         material,
         materialView(previous.task, state.learning.profile, oldAttempt),
         materialView(current.task, state.learning.profile, current.attempt),
       );
+      displayedPanelStates.set(material, captureMaterialPanels(material));
+    }
     const status = document.querySelector('[data-learning-status]');
     if (status)
       status.textContent =

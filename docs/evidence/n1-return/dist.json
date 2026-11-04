@@ -1,0 +1,27 @@
+[
+  {
+    "file": "assets/asafo-CiD1wyHi.jpg",
+    "bytes": 1988168,
+    "sha256": "b764593e666dbeb085a22b175de59b2fa84f7068dcff78446d490e257f524302"
+  },
+  {
+    "file": "assets/index-C1yXUXDm.js",
+    "bytes": 455762,
+    "sha256": "801c7084f1333138c1300a70c3ddebf58d2b50a71975caed1778ffc2500f4e95"
+  },
+  {
+    "file": "assets/index-CH25Qqmu.css",
+    "bytes": 41304,
+    "sha256": "e2d0c230027b23d9e4033e6c168849fe4587dcd337025a1934adead1f2299140"
+  },
+  {
+    "file": "assets/kakum-v8Jew1-6.jpg",
+    "bytes": 1534641,
+    "sha256": "4447349bea9a1aa522bf1697d66cb8e89ab13807bc9e33bd94c08b49e943a03c"
+  },
+  {
+    "file": "index.html",
+    "bytes": 1052,
+    "sha256": "f14ae7f7c45d3dcbee9c84183b1384b3ea8c1a32324b0e0dddba840a1cd9be40"
+  }
+]
