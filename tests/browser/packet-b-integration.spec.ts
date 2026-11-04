@@ -22,7 +22,13 @@ test('Afrika curriculum PaketB integrated main: five chapters, direct unlocked e
     .locator('[data-op="request-profile"][data-value="foerder"]')
     .click();
   await page.locator('[data-op="confirm-profile"]').click();
-  await expect(page.locator('h1')).toContainText('Schritt 1');
+  await expect(page.locator('h1')).toHaveText('Kakaobohnen verarbeiten');
+  await expect(
+    page.getByRole('combobox', { name: 'Was ist der Rohstoff?', exact: true }),
+  ).toBeVisible();
+  await expect(page.locator('label[for="learn-step"]')).toContainText(
+    'Was ist der Rohstoff?',
+  );
   await page.locator('#learn-step').selectOption('beans');
   await page.locator('#learning-check').press('Enter');
   await page.locator('[data-op="menu"]').click();
