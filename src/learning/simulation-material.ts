@@ -13,6 +13,7 @@ import { tankGraphic } from '../regions/water-model.ts';
 import { cocoaModel, cocoa, cocoaChain, chainNames } from '../regions/cocoa.ts';
 import { share, shareModel, shareKeys } from '../regions/share.ts';
 import { allocationData } from './allocation.ts';
+import { moneyLedger, capacityPicture, allocationPicture } from './visual.ts';
 import type { Task } from './tasks.ts';
 import { canContinue, type Attempt } from './storage.ts';
 import type { ProfileId } from './profiles.ts';
@@ -42,7 +43,7 @@ export const controls = (
   selection: string,
   group = 'Modell untersuchen',
 ) =>
-  `<div role="group" aria-label="${group}">${options.map(([id, name]) => `<button type="button" id="sim-${group.replace(/[^a-zA-Z]/g, '')}-${id}" class="button secondary" data-action="learning" data-op="simulate" data-value="${id}" aria-pressed="${selection === id}">${esc(name)}</button>`).join('')}</div>`;
+  `<div role="group" aria-label="${group}">${options.map(([id, name]) => `<button type="button" id="sim-${group.replace(/[^a-zA-Z]/g, '')}-${id}" class="button secondary simulation-option" data-action="learning" data-op="simulate" data-value="${id}" aria-pressed="${selection === id}">${esc(name)}</button>`).join('')}</div>`;
 export const table = (
   head: string[],
   rows: (string | number)[][],
@@ -316,7 +317,7 @@ export function simulationMaterial(
           ];
         }),
       ),
-    )}<p>Aktuell untersucht: ${personNames[who]}, ${routeNames[route]}, ${j.walk} Minuten zu Fuß und ${j.bus} Minuten im Bus.</p>`;
+    )}<p class="journey-focus">Aktuell untersucht: <strong>${personNames[who]}, ${routeNames[route]}</strong> <span>${j.walk} Minuten zu Fuß <span aria-hidden="true">→</span> ${j.bus} Minuten im Bus.</span></p>`;
   }
   if (cfg.kind === 'demand') {
     const options = [
@@ -330,7 +331,7 @@ export function simulationMaterial(
       selection === 'bus' || selection === 'path' ? selection : 'base',
       selection === 'before' ? 'before' : 'now',
     );
-    return `<h2>Nairobi · Plätze und Fußwege</h2><p>Erfundenes Beispiel für eine Stunde. Nach dem Zuzug wollen 24 statt 16 Menschen fahren. Die Gehzeit gilt für die acht neuen Nachbarn. Ein Bus hat 10 Plätze. Bisher gibt es zwei Fahrten pro Stunde.</p>${controls(options, selection)}<p aria-live="polite">${esc(options.find(([id]) => id === selection)?.[1] ?? 'Jetzt')}: ${model.people} Menschen · ${model.capacity} Plätze${selection === 'before' ? '' : ` · ${model.walk} Minuten Fußweg für die neuen Nachbarn`}.</p><details><summary>Menschenpunkte ansehen</summary><figure aria-label="Menschen und Plätze"><div>${'● '.repeat(model.people)}</div><figcaption>${model.people} Menschen; ${model.capacity} Plätze in einer Stunde. Die Punkte sind Menschen, keine Einwohnerzahl Nairobis.</figcaption></figure></details>${table(
+    return `<h2>Nairobi · Plätze und Fußwege</h2><p>Erfundenes Beispiel für eine Stunde. Nach dem Zuzug wollen 24 statt 16 Menschen fahren. Die Gehzeit gilt für die acht neuen Nachbarn. Ein Bus hat 10 Plätze. Bisher gibt es zwei Fahrten pro Stunde.</p>${controls(options, selection)}<p aria-live="polite">${esc(options.find(([id]) => id === selection)?.[1] ?? 'Jetzt')}: ${model.people} Menschen · ${model.capacity} Plätze${selection === 'before' ? '' : ` · ${model.walk} Minuten Fußweg für die neuen Nachbarn`}.</p>${capacityPicture(model.people, model.capacity)}<details><summary>Menschenpunkte ansehen</summary><figure aria-label="Menschen und Plätze"><div>${'● '.repeat(model.people)}</div><figcaption>${model.people} Menschen; ${model.capacity} Plätze in einer Stunde. Die Punkte sind Menschen, keine Einwohnerzahl Nairobis.</figcaption></figure></details>${table(
       ['Größe', 'Wert'],
       [
         ['Fahrten pro Stunde', model.trips],
@@ -352,7 +353,7 @@ export function simulationMaterial(
         ['process', 'Presse'],
       ],
       selection,
-    )}${table(['Laufende Runde', 'GE'], [['Einnahmen', m.income], ['Laufende Ausgaben', m.costs], ...(simple ? [['Erklärter Überschuss', m.surplus]] : [])])}<section aria-label="Getrennter Anschaffungstopf"><h3>Einmalige Anschaffung · eigener Topf</h3><p>Topf vorher: 60 GE. Anschaffung: ${m.investment} GE. Im Topf bleiben ${m.investmentLeft} GE. Die Anschaffung zahlst du einmal aus diesem eigenen Topf. Die laufenden Ausgaben stehen im anderen Topf oben. Die Anschaffung wird dort nicht noch einmal abgezogen.</p></section><details><summary>Modellgrenzen ansehen</summary><p>${esc(cocoa.modelNote)}</p></details>`;
+    )}${moneyLedger(m, simple)}<section aria-label="Getrennter Anschaffungstopf"><h3>Einmalige Anschaffung · eigener Topf</h3><p>Topf vorher: 60 GE. Anschaffung: ${m.investment} GE. Im Topf bleiben ${m.investmentLeft} GE. Die Anschaffung zahlst du einmal aus diesem eigenen Topf. Die laufenden Ausgaben stehen im anderen Topf oben. Die Anschaffung wird dort nicht noch einmal abgezogen.</p></section><details><summary>Modellgrenzen ansehen</summary><p>${esc(cocoa.modelNote)}</p></details>`;
     const introduction =
       '<h2>Ein Betrieb bei Kumasi · Ghana</h2><p>Der Betrieb ist erfunden. Er gehört seinen Mitgliedern gemeinsam. Das heißt Genossenschaft. Ghana hat bereits eigene Kakaoverarbeitung.</p>';
     if (t.id.startsWith('cocoa.chain')) {
@@ -367,7 +368,7 @@ export function simulationMaterial(
             const answer = saved?.answers.step;
             const checked =
               saved?.factual === 'correct' && saved.process !== 'draft';
-            return `<li ${i === current ? 'aria-current="step"' : ''}><strong>${i + 1}.</strong> ${answer ? esc(chainNames[answer] ?? answer) : i === current ? 'Jetzt auswählen' : 'Noch offen'}${answer ? `<small>${checked ? (saved.exampleUsed ? 'Beispiel genutzt' : 'Geprüft') : 'Noch prüfen'}</small>` : ''}</li>`;
+            return `<li data-checked="${checked}" ${i === current ? 'aria-current="step"' : ''}><strong>${i + 1}.</strong> ${answer ? esc(chainNames[answer] ?? answer) : i === current ? 'Jetzt auswählen' : 'Noch offen'}${answer ? `<small>${checked ? (saved.exampleUsed ? 'Beispiel genutzt' : 'Geprüft') : 'Noch prüfen'}</small>` : ''}</li>`;
           })
           .join(
             '',
@@ -399,12 +400,12 @@ export function simulationMaterial(
     };
     return `<h2>Geld gemeinsam verteilen · Ghana</h2><p>GE heißt Geldeinheiten. Wir rechnen hier mit erfundenem Geld. Die Beträge sind keine echten Preise.</p><p>Eine neue erfundene Runde bei Kumasi. 300 GE Einnahmen. 100 GE Löhne und 80 GE andere Kosten sind bereits bezahlt. Nun sind 120 GE frei. Keine Verteilung ist automatisch die beste.</p>${
       t.budget
-        ? `<div role="group" aria-label="120 GE verteilen">${shareKeys.map((key) => `<section><h3>${names[key]}: ${d.allocations[key] ?? 0} GE</h3><button type="button" id="allocate-${key}-minus" data-action="learning" data-op="allocate" data-field="${key}" data-value="-20" ${!d.allocations[key] ? 'disabled' : ''}>${names[key]} −20 GE</button><button type="button" id="allocate-${key}-plus" data-action="learning" data-op="allocate" data-field="${key}" data-value="20" ${m.left < 20 ? 'disabled' : ''}>${names[key]} +20 GE</button></section>`).join('')}</div><p role="status">Noch zu verteilen: ${m.left} GE.</p>${t.differentBudget ? '<p>Ändere mindestens einen Betrag gegenüber deinem ersten Plan.</p>' : ''}`
+        ? `${allocationPicture(d.allocations, m.left)}<div class="allocation-controls" role="group" aria-label="120 GE verteilen">${shareKeys.map((key) => `<section><h3>${names[key]}: ${d.allocations[key] ?? 0} GE</h3><button type="button" id="allocate-${key}-minus" data-action="learning" data-op="allocate" data-field="${key}" data-value="-20" aria-label="${names[key]} −20 GE" ${!d.allocations[key] ? 'disabled' : ''}>−20 GE</button><button type="button" id="allocate-${key}-plus" data-action="learning" data-op="allocate" data-field="${key}" data-value="20" aria-label="${names[key]} +20 GE" ${m.left < 20 ? 'disabled' : ''}>+20 GE</button></section>`).join('')}</div><p role="status">Noch zu verteilen: ${m.left} GE.</p>${t.differentBudget ? '<p>Ändere mindestens einen Betrag gegenüber deinem ersten Plan.</p>' : ''}`
         : controls(
             shareKeys.map((key) => [key, names[key]]),
             selection,
           )
-    }<p>${effects[selection as keyof typeof effects] ?? effects.payout}</p><details><summary>Unabhängige Runde und Grenzen</summary><p>${esc(share.modelNote)}</p></details>`;
+    }<p class="simulation-effect">${effects[selection as keyof typeof effects] ?? effects.payout}</p><details><summary>Unabhängige Runde und Grenzen</summary><p>${esc(share.modelNote)}</p></details>`;
   }
   if (cfg.kind === 'water' || cfg.kind === 'area') {
     const isWater = cfg.kind === 'water',
@@ -425,7 +426,7 @@ export function simulationMaterial(
     const diagram = simple
       ? shape
       : shape.replace(`Rest ${m.remaining} WE`, 'Rest selbst bestimmen');
-    return `<h2>Ein Betrieb bei Agadir · Marokko</h2><p>Am Anfang sind 80 WE im Tank. Es fließt kein Wasser nach. WE bedeutet Wassereinheiten. Die Mengen sind für das Spiel erfunden. Es sind keine Literangaben. Grundwasser ist Wasser unter der Erde in Lücken von Boden und Gestein. Der Tank ist kein Grundwasser.</p>${controls(options, selection)}<p><strong>Aktuelle Modellansicht: ${esc(options.find(([id]) => id === selection)?.[1] ?? options[0][1])}.</strong> Prüfe, auf welche Maßnahme sich die Frage bezieht.</p>${!isWater && t.id.startsWith('area.total') ? '<p>Die Rechenfrage gilt weiterhin für den Plan mit Zusatzfeld. Die Tasten wechseln nur die Vergleichsansicht.</p>' : ''}<figure><svg class="study-scene" viewBox="0 0 660 280" role="img" aria-label="Tank, Entnahme und Feld getrennt. ${m.withdrawal} WE werden entnommen.">${diagram}<path d="M190 130H370" stroke="#356a76" stroke-width="9"/><text x="220" y="70">Entnahme</text><text x="235" y="100">${m.withdrawal} WE</text><rect x="380" y="80" width="150" height="85" fill="#d4e0bd" stroke="#234e42"/><text x="390" y="112">${isWater ? 'Am Feld' : 'Erstes Feld'}</text><text x="410" y="144">${isWater ? '40' : (m as ReturnType<typeof areaModel>).first} WE</text>${!isWater && selection === 'extra' ? `<rect x="545" y="105" width="85" height="60" fill="#d4e0bd" stroke="#234e42"/><text x="587" y="143" text-anchor="middle">${(m as ReturnType<typeof areaModel>).extra} WE</text><text x="587" y="192" text-anchor="middle">Zusatzfeld</text>` : ''}</svg><figcaption>${isWater ? 'Entnahme aus dem Tank ist nicht gleich Ankunft am Feld. Der Verbleib des übrigen Wassers wird nicht berechnet.' : 'Die Zeichnung zeigt nicht, wie groß die Felder wirklich sind. Die Zusatzfläche ist kleiner.'}</figcaption></figure>${
+    return `<h2>Ein Betrieb bei Agadir · Marokko</h2><p>Am Anfang sind 80 WE im Tank. Es fließt kein Wasser nach. WE bedeutet Wassereinheiten. Die Mengen sind für das Spiel erfunden. Es sind keine Literangaben. Grundwasser ist Wasser unter der Erde in Lücken von Boden und Gestein. Der Tank ist kein Grundwasser.</p>${controls(options, selection)}<p><strong>Aktuelle Modellansicht: ${esc(options.find(([id]) => id === selection)?.[1] ?? options[0][1])}.</strong> Prüfe, auf welche Maßnahme sich die Frage bezieht.</p>${!isWater && t.id.startsWith('area.total') ? '<p>Die Rechenfrage gilt weiterhin für den Plan mit Zusatzfeld. Die Tasten wechseln nur die Vergleichsansicht.</p>' : ''}<figure class="water-figure"><svg class="study-scene water-scene" viewBox="0 0 660 280" role="img" aria-label="Tank, Entnahme und Feld getrennt. ${m.withdrawal} WE werden entnommen.">${diagram}<path d="M190 130H366m-15-12l15 12-15 12" stroke="#356a76" stroke-width="9" stroke-linecap="round" stroke-linejoin="round" fill="none"/>${!isWater && selection === 'extra' ? '<path class="extra-field-branch" d="M275 130V220H648V135H634m10-10l-10 10 10 10" stroke="#356a76" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" fill="none" aria-hidden="true"/>' : ''}<text x="220" y="70">Entnahme</text><text x="235" y="100">${m.withdrawal} WE</text><rect x="380" y="80" width="150" height="85" rx="10" fill="#d4e0bd" stroke="#234e42"/><path d="M390 178h130m-130 10h130m-130 10h130" stroke="#79966f" stroke-width="3" aria-hidden="true"/><text x="390" y="112">${isWater ? 'Am Feld' : 'Erstes Feld'}</text><text x="410" y="144">${isWater ? '40' : (m as ReturnType<typeof areaModel>).first} WE</text>${!isWater && selection === 'extra' ? `<rect x="545" y="105" width="85" height="60" fill="#d4e0bd" stroke="#234e42"/><text x="587" y="143" text-anchor="middle">${(m as ReturnType<typeof areaModel>).extra} WE</text><text x="587" y="192" text-anchor="middle">Zusatzfeld</text>` : ''}</svg><figcaption>${isWater ? 'Entnahme aus dem Tank ist nicht gleich Ankunft am Feld. Der Verbleib des übrigen Wassers wird nicht berechnet.' : 'Die Zeichnung zeigt nicht, wie groß die Felder wirklich sind. Die Zusatzfläche ist kleiner.'}</figcaption></figure>${
       isWater
         ? table(
             ['Messstelle', 'WE'],

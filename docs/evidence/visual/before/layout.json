@@ -1,0 +1,58 @@
+[
+  {
+    "name": "foerder",
+    "checkY": 529.453125,
+    "materialY": 292.71875,
+    "height": 1074,
+    "width": 1024
+  },
+  {
+    "name": "esa",
+    "checkY": 690.734375,
+    "materialY": 292.71875,
+    "height": 1409,
+    "width": 1024
+  },
+  {
+    "name": "kenia",
+    "checkY": 591.046875,
+    "materialY": 292.71875,
+    "height": 1366,
+    "width": 1024
+  },
+  {
+    "name": "ghana",
+    "checkY": 615.84375,
+    "materialY": 292.71875,
+    "height": 1314,
+    "width": 1024
+  },
+  {
+    "name": "verteilung",
+    "checkY": 491.859375,
+    "materialY": 292.71875,
+    "height": 1235,
+    "width": 1024
+  },
+  {
+    "name": "marokko",
+    "checkY": 615.84375,
+    "materialY": 292.71875,
+    "height": 1498,
+    "width": 1024
+  },
+  {
+    "name": "zusatzfeld",
+    "checkY": 529.453125,
+    "materialY": 292.71875,
+    "height": 1554,
+    "width": 1024
+  },
+  {
+    "name": "entscheidung",
+    "checkY": 640.640625,
+    "materialY": 292.71875,
+    "height": 1314,
+    "width": 1024
+  }
+]

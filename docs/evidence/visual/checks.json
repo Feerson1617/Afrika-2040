@@ -1,0 +1,51 @@
+{
+  "fallbackCommit": "e9664a2cf7f689657508c693521ff83b327f10bf",
+  "fallbackCI": {
+    "runId": 41883485054,
+    "status": "success",
+    "chromiumPassed": 470,
+    "webkitPassed": 470
+  },
+  "logic": {
+    "passed": 511,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "passed": 1006,
+    "failed": 0,
+    "skipped": 0,
+    "flaky": 0,
+    "chromium": 503,
+    "webkit": 503,
+    "newVisualCases": 66,
+    "existingCases": 940
+  },
+  "productionBuild": "passed with TypeScript",
+  "artifactAudit": "passed; five files, same two approved photographs",
+  "variants": 52,
+  "areas": 13,
+  "profiles": 4,
+  "tasks": 472,
+  "byteIdenticalExistingSourceFiles": 65,
+  "screenshots": "before green fallback / after production; identical prepared states, 1024x768",
+  "additionalViewports": [
+    [
+      768,
+      1024
+    ],
+    [
+      390,
+      844
+    ]
+  ],
+  "physicalIPadTested": false,
+  "learningEffectEmpiricallyTested": false,
+  "intermediateFindings": [
+    "New test selectors refined to distinguish route/person and visible live summary.",
+    "New test oracle corrected: Leila South is 2 minutes walk plus 8 minutes bus, unchanged approved model.",
+    "One production run deliberately interrupted before final water-branch drawing; not included in passing count.",
+    "Visual rehearsal runs are not the final production evidence."
+  ],
+  "newCommitCI": "GitHub checks for the immutable PR head, reported after push in PR #2 and handover"
+}
