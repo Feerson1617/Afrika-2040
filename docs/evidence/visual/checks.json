@@ -3,49 +3,45 @@
   "fallbackCI": {
     "runId": 41883485054,
     "status": "success",
-    "chromiumPassed": 470,
-    "webkitPassed": 470
+    "browserCasesPerEngine": 470
   },
-  "logic": {
-    "passed": 511,
-    "failed": 0,
-    "skipped": 0
+  "firstVisualCommit": "bf527b45b2f1334cc4219885c155ed2d879b6f2d",
+  "firstVisualLocal": {
+    "logicPassed": 511,
+    "browserPassed": 1006,
+    "skipped": 0,
+    "failed": 0
   },
-  "browser": {
-    "passed": 1006,
+  "firstVisualCI": {
+    "runId": 41897455709,
+    "conclusion": "cancelled",
+    "chromiumPassed": 503,
+    "webkit": "job total time limit after slow dependency installation; also two failed cases, corrected in this follow-up"
+  },
+  "currentLocal": {
+    "logicPassed": 511,
     "failed": 0,
     "skipped": 0,
-    "flaky": 0,
-    "chromium": 503,
-    "webkit": 503,
-    "newVisualCases": 66,
-    "existingCases": 940
+    "targetedBrowserPassed": 108,
+    "stabilityRepetitionsPassed": 40,
+    "includesVisualCases": 68,
+    "typescript": "passed",
+    "build": "passed",
+    "artifactAudit": "passed"
   },
-  "productionBuild": "passed with TypeScript",
-  "artifactAudit": "passed; five files, same two approved photographs",
-  "variants": 52,
-  "areas": 13,
-  "profiles": 4,
-  "tasks": 472,
+  "newContrastTestOnOldProduction": {
+    "chromium": "expected failure: opacity 0.7",
+    "webkit": "expected failure: opacity 0.7"
+  },
+  "currentFullCIGate": {
+    "cases": 1008,
+    "perEngine": 504,
+    "status": "Actual result for the final commit is reported in PR #2 and handover after push."
+  },
   "byteIdenticalExistingSourceFiles": 65,
-  "screenshots": "before green fallback / after production; identical prepared states, 1024x768",
-  "additionalViewports": [
-    [
-      768,
-      1024
-    ],
-    [
-      390,
-      844
-    ]
-  ],
+  "variants": 52,
+  "tasks": 472,
   "physicalIPadTested": false,
   "learningEffectEmpiricallyTested": false,
-  "intermediateFindings": [
-    "New test selectors refined to distinguish route/person and visible live summary.",
-    "New test oracle corrected: Leila South is 2 minutes walk plus 8 minutes bus, unchanged approved model.",
-    "One production run deliberately interrupted before final water-branch drawing; not included in passing count.",
-    "Visual rehearsal runs are not the final production evidence."
-  ],
-  "newCommitCI": "GitHub checks for the immutable PR head, reported after push in PR #2 and handover"
+  "screenshots": "Ten after-images and layout re-rendered from corrected production build; byte-identical to committed reduced-motion comparison images."
 }

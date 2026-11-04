@@ -19,7 +19,9 @@ jobs:
   check:
     name: Release checks (${{ matrix.browser }})
     runs-on: ubuntu-24.04
-    timeout-minutes: 25
+    # Include the full browser gate even when OS-library installation is slow.
+    # Individual test timeouts and assertions remain unchanged.
+    timeout-minutes: 35
     strategy:
       fail-fast: false
       matrix:

@@ -1,6 +1,6 @@
 # Vorher–Nachher: tatsächlich gerenderte Oberfläche
 
-Vorher: bestätigter Rückfallpunkt `e9664a2cf7f689657508c693521ff83b327f10bf` (gleiche Anwendung wie `dd962339`). Nachher: Produktionsbuild dieses Grafikcommits. Chromium, 1024 × 768, Touch-Kontext, gleiche synthetische Spielstände, reduzierte Bewegung. Die langen Aufgabenbilder zeigen die ganze Seite; die Screenshotbreite bleibt 1024 Pixel.
+Vorher: bestätigter Rückfallpunkt `e9664a2cf7f689657508c693521ff83b327f10bf` (gleiche Anwendung wie `dd962339`). Nachher: Produktionsbuild dieses Grafikcommits. Chromium, 1024 × 768, Touch-Kontext, gleiche synthetische Spielstände, reduzierte Bewegung. Nach der CI-Nachkorrektur erneut gerendert: alle zehn Nachher-Bilder und die Layoutmesswerte sind bytegleich. Die langen Aufgabenbilder zeigen die ganze Seite; die Screenshotbreite bleibt 1024 Pixel.
 
 | Ansicht | Vorher | Nachher |
 |---|---|---|

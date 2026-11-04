@@ -10,7 +10,7 @@ computing gzip size...
 dist/index.html                     1.05 kB │ gzip:   0.62 kB
 dist/assets/kakum-v8Jew1-6.jpg  1,534.64 kB
 dist/assets/asafo-CiD1wyHi.jpg  1,988.16 kB
-dist/assets/index-DPo0IFEP.css     53.57 kB │ gzip:  12.18 kB
-dist/assets/index-Czj3ToRP.js     465.02 kB │ gzip: 148.08 kB
+dist/assets/index-DBQcGqWt.css     53.40 kB │ gzip:  12.12 kB
+dist/assets/index-DDxq-9aw.js     465.02 kB │ gzip: 148.08 kB
 
-✓ built in 163ms
+✓ built in 242ms

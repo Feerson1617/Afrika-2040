@@ -464,19 +464,6 @@ body:has(.learning-screen) .site-header {
 .learning-screen .feedback h3 {
   line-height: 1.4;
 }
-.learning-screen .feedback.correct {
-  animation: atlas-confirm 180ms ease-out;
-}
-@keyframes atlas-confirm {
-  from {
-    opacity: 0.7;
-    transform: translateY(3px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
 .learning-screen footer > .button,
 .learning-screen > .inquiry-actions > .button {
   background: transparent;

@@ -22,7 +22,7 @@ Der vorhandene Startknopf, alle 13 direkten Bereichseinstiege und die vier gleic
 - **Ghana 3:** zusammenhängende, nummerierte Verarbeitungsschritte, eigener geprüfter Stand und aktueller Schritt unterscheidbar. Keine späteren Antworten als Bildhinweis. Einnahmen und laufende Ausgaben erhalten proportionale Balken mit derselben Skala; Überschuss nur dort, wo er bereits vorher ausdrücklich gezeigt wurde. Der Anschaffungstopf bleibt getrennt.
 - **Ghana 4:** ein proportionaler Balken zeigt Auszahlung, Rücklage, Fortbildung und noch verfügbares Geld. Alle Teile ergeben zusammen 120 GE. Kompakte Regler bewahren die bestehenden ±20-Aktionen; ihre zugänglichen Namen nennen weiterhin den jeweiligen Zweck. Es wird keine Verteilung ausgezeichnet.
 - **Marokko 5/6:** Tank, Entnahmepfeil und Feld sind räumlich klarer gestaltet. Das Zusatzfeld bleibt eine separate Fläche. Beim Zusatzfeld verzweigt der Pfeil sichtbar zu beiden Flächen. Keine neue Aussage zu Verbrauch oder Grundwasser; sämtliche Mengen und Einblenderegeln bleiben gleich.
-- **Feedback:** unveränderte fachliche Farben und Texte, ruhige Gestaltung; richtige Rückmeldung erscheint kurz mit 180 ms. Bei `prefers-reduced-motion` entfällt diese Bewegung vollständig. Keine Töne, Punkte, Ranglisten oder Belohnung für bloßes Weiterklicken.
+- **Feedback:** unveränderte fachliche Farben und Texte, ruhige Gestaltung; richtige Rückmeldung erscheint sofort mit vollem Textkontrast. Die zunächst vorgesehene 180-ms-Einblendung wurde nach dem CI-Befund vollständig entfernt; die Darstellung benötigt keine Animation. Keine Töne, Punkte, Ranglisten oder Belohnung für bloßes Weiterklicken.
 
 [Vorher-Nachher-Aufnahmen und Messwerte](evidence/visual/README.md)
 
@@ -34,29 +34,34 @@ Vorher-Nachher-Aufnahmen verwenden dieselben vorbereiteten, synthetischen Spiels
 
 ## 4. Endgültige Prüfungen
 
-Die endgültigen Browserläufe prüfen den Produktionsbuild nach der letzten SVG-Korrektur (sichtbare Verzweigung zum Zusatzfeld). Quell- und Build-Prüfsummen verknüpfen die Läufe mit genau diesem Stand. Die Ergebnisse werden vor dem Commit gegen die maschinenlesbaren Protokolle geprüft.
+Der erste Grafikcommit `bf527b45b2f1334cc4219885c155ed2d879b6f2d` bestand lokal 511 Logiktests und 1.006 Browserfälle, 503 je Engine. GitHub bestätigte Chromium ebenfalls mit 503/503. Der WebKit-Job in [Lauf 41897455709](https://github.com/Feerson1617/Afrika-2040/actions/runs/41897455709) erreichte nach knapp acht Minuten Bibliotheksinstallation das 25-Minuten-Gesamtlimit. Seine Fehlerbelege zeigten zusätzlich zwei konkrete Probleme. Dieser CI-Lauf wird **nicht** als erfolgreich ausgegeben.
+
+Die enge Nachkorrektur umfasst:
+
+- **Kontrast:** Die Einblendung mit Deckkraft 0,7 senkte den Kontrast vorübergehend auf 3,65:1. Sie entfällt vollständig. Eine neue Regression friert mögliche künftige Effekte am ersten Bild ein und verlangt sofort volle Textdeckkraft und bestandene WCAG-A/AA-Prüfungen. Am alten Produktionsbuild schlug sie in beiden Engines nachweislich fehl.
+- **N1-Messbeginn:** Der Trace zeigte die Eingabe-Fokussierung noch bei Scrollposition 1042; WebKit brachte das zuvor außerhalb des Bilds liegende Feld erst beim ersten Tastendruck auf Position 503 ins Bild. Der Test stellt nun vor der Messung ein vollständig sichtbares, fokussiertes Eingabefeld her. Danach bleiben dieselbe Zwei-Pixel-Grenze, DOM-Identität, Cursor-, Quellen-, Abgabe-, Rückkehr- und Reload-Prüfungen bestehen. Keine Änderung an Eingabe- oder Speicherlogik.
+- **CI-Laufzeit:** 35 statt 25 Minuten Gesamtbudget erlauben vollständige Browserprüfungen auch bei langsamer Systembibliotheksinstallation. Einzelfall-Zeitlimits, Assertions, Fallauswahl und fehlende automatische Wiederholungen bleiben unverändert.
+
+Prüfungen nach dieser letzten Änderung:
 
 | Prüfung | Ergebnis |
 |---|---|
-| `npm test` | 511 bestanden; keine fehlgeschlagenen oder übersprungenen Logiktests |
+| `npm test` | 511 bestanden, keine Fehler oder übersprungenen Tests |
 | `npm run build` | TypeScript und Vite-Produktionsbuild erfolgreich |
-| `node scripts/check-dist.mjs` | Strenge Artefaktprüfung erfolgreich; genau fünf Dateien |
-| Neue visuelle Produktionsprüfungen | 66 bestanden, 33 je Engine |
-| Bisherige Produktionsregressionen | 940 bestanden, 470 je Engine; keine Fehler, Wiederholungsfehler oder ausgelassenen Fälle |
-| Vollständige Auswahl des CI-Gates | 1.006 bestanden: 503 Chromium und 503 WebKit |
-| Formatprüfung der geänderten TypeScript-/CSS-Dateien | erfolgreich |
+| `node scripts/check-dist.mjs` | Strenge Artefaktprüfung erfolgreich, genau fünf Dateien |
+| Visuelle Fälle, N1 und betroffener Bevölkerungsweg in beiden Engines | 108/108 bestanden, keine Fehler oder übersprungenen Fälle |
+| Zwei CI-Fälle, je zehnmal pro Engine | 40/40 bestanden, keine Fehler |
+| Vollständige neue CI-Auswahl | 1.008 Fälle, 504 je Engine; tatsächlicher Abschluss wird für die neue SHA in PR #2 und der Übergabe bestätigt |
 
-Die Browserbefehle verwenden `playwright.afrika.config.ts` mit Chromium und WebKit. Der neue Lauf wählt `--grep 'Afrika curriculum visual'`; der anschließende bestehende Lauf wählt `--grep-invert 'Afrika curriculum visual'`. Zusammen entsprechen sie exakt der vollständigen aktuellen CI-Auswahl. Kein Test wird ausgelassen oder abgeschwächt. Die neuen Prüfungen sind dauerhaft in das bestehende CI-Gate aufgenommen.
+Die gezielten Browserbefehle verwenden `playwright.afrika.config.ts` und die Auswahl `Afrika curriculum visual|RC-final N1|Afrika curriculum N1|four paths c/msa supported=true`. Die Wiederholungsprüfung wählt die beiden betroffenen Fälle mit `--repeat-each=10`. Der ursprüngliche vollständige lokale Lauf bleibt als Nachweis des ersten Grafikcommits erhalten und wird nicht als neuer Komplettlauf ausgegeben. Die neue vollständige CI prüft nach dem Push sämtliche bestehenden Regressionen und 68 visuelle Fälle.
 
-Tatsächlich geprüft werden alle vier Profile und sechs Simulationen, alle 52 Varianten mit eigenen und unterstützten Antworten, N1/F1–F3/T1, Quellenzustände, Rücksprung, Reload und erneute Bearbeitung. Neue Prüfungen kontrollieren insbesondere die sichtbaren Vorher-/Nachher-Werte, proportionalen Geldbalken, getrennten Felder, berechneten zugänglichen Namen, `aria-pressed`, Fokus, Touch- und Tastaturaktionen sowie rote, gelbe und grüne Rückmeldungen. Die bewusste Beispielübernahme bleibt von automatisch angezeigter Erklärung getrennt. Reduzierte Bewegung schaltet die neue Animation ab.
+Tatsächlich geprüft werden alle vier Profile und sechs Simulationen, sichtbare Vorher-/Nachher-Werte, proportionale Geldbalken, getrennte Felder, berechnete zugängliche Namen, `aria-pressed`, Fokus, Touch- und Tastaturaktionen sowie rote, gelbe und grüne Rückmeldungen. Die bewusste Beispielübernahme bleibt von automatisch angezeigter Erklärung getrennt. Die bestehende CI-Auswahl umfasst alle 52 Varianten, N1/F1–F3/T1, Quellenzustände, Rücksprung, Reload und erneute Bearbeitung.
 
 Die gerenderten Seiten wurden bei **1024 × 768**, ergänzend **768 × 1024** und **390 × 844** geprüft. Die neuen Zugänglichkeitsprüfungen verwenden `wcag2a`, `wcag2aa`, `wcag21a`, `wcag21aa`, `wcag22a` und `wcag22aa`. Das ist ein automatisierter Ausschnitt der Barrierefreiheitsprüfung, keine vollständige WCAG-Zertifizierung.
 
-65 bestehende Quelldateien bleiben bytegleich zum Rückfallpunkt. Insbesondere Fachmodelle, Aufgaben, Bewertung, Speicherlogik und geografische Quelldaten sind unverändert. Die drei geänderten bestehenden Anwendungsdateien und das neue SVG-/Diagrammmodul betreffen die Darstellung. Der geprüfte Build enthält HTML, JavaScript, CSS und dieselben zwei freigegebenen Fotos: keine Schülerdaten, PDFs, privaten Quellen, Testberichte oder Abhängigkeitsordner. Der zusätzliche komprimierte JavaScript-/CSS-Umfang beträgt ungefähr 5 KB.
+65 bestehende Quelldateien bleiben bytegleich zum Rückfallpunkt. Fachmodelle, Aufgaben, Bewertung, Speicherlogik und geografische Quelldaten sind unverändert. Der Build enthält HTML, JavaScript, CSS und dieselben zwei freigegebenen Fotos: keine Schülerdaten, PDFs, privaten Quellen, Testberichte oder Abhängigkeitsordner. Der zusätzliche komprimierte JavaScript-/CSS-Umfang beträgt ungefähr 5 KB.
 
-Nachweise: [Prüfsummen](evidence/visual/source-hashes.json), [unveränderte Dateien](evidence/visual/protected-files.json), [Logiktestprotokoll](evidence/visual/logic.txt), [Build](evidence/visual/build.txt), [Artefakte](evidence/visual/dist.json), [Browserfälle](evidence/visual/browser-cases.json), [Zusammenfassung](evidence/visual/checks.json).
-
-Die CI für die neue Commit-SHA wird nach dem normalen Entwicklungsbranch-Push gesondert in Draft-PR #2 und der Übergabe bestätigt. Der oben genannte grüne Rückfallpunkt ist kein Ersatz für diese Prüfung.
+Nachweise des endgültigen lokalen Stands: [Prüfsummen](evidence/visual/source-hashes.json), [unveränderte Dateien](evidence/visual/protected-files.json), [Logiktestprotokoll](evidence/visual/logic.txt), [Build](evidence/visual/build.txt), [Artefakte](evidence/visual/dist.json), [gezielte Browserfälle](evidence/visual/correction-cases.json), [Zusammenfassung mit getrennten Prüfläufen](evidence/visual/checks.json). Der [erste vollständige lokale Browserlauf](evidence/visual/browser-cases.json) gehört ausdrücklich zu `bf527b4`.
 
 ## 5. Empfehlung und verbleibende Grenzen
 

@@ -381,3 +381,26 @@ for (const viewport of [
       });
     }
   });
+
+test('Afrika curriculum visual feedback: full text contrast from the first animation frame', async ({
+  page,
+}) => {
+  await page.emulateMedia({ reducedMotion: 'no-preference' });
+  await seed(page, fixture('c', 'msa', tasksFor('c', 'msa')[0].id));
+  // Freeze any future decoration at its first frame: text must already be
+  // readable there, not only after an animation has finished.
+  await page.addStyleTag({
+    content:
+      '[data-learning-feedback] { animation-play-state: paused !important; }',
+  });
+  await input(page, active(await saved(page))!.task);
+  await page.locator('#learning-check').click();
+  await expect(page.locator('[data-learning-feedback]')).toHaveClass(/correct/);
+  await expect(page.locator('[data-learning-feedback]')).toHaveCSS(
+    'opacity',
+    '1',
+  );
+  expect(
+    (await new AxeBuilder({ page }).withTags(tags).analyze()).violations,
+  ).toEqual([]);
+});

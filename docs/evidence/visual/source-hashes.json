@@ -30,7 +30,7 @@
   "src/learning/topic-variants.ts": "4f5dc880313212e9206d549b2226e282f7f7596caf42b5ba25526ad784e44506",
   "src/learning/topic-material.ts": "0ce05259123b877be5c45b2231284a0f4cb49ac482a669845f2775ccf7cbebca",
   "src/learning/tasks.ts": "47660e4985a8f5895012a26bf5f4168bf7ecc4ccaace76c4482c59b22fd18be1",
-  "src/learning/style.css": "4cbeab426b5c4844aae57fa209d5ab3c2141119ee870deffe8e4fad00de9d3a5",
+  "src/learning/style.css": "45a9934d77a3a4df9b58a20cc461bb4e76339ab2d9044e17c14d7302beb4d36e",
   "src/learning/storage.ts": "c9de318575e55348a18493d53fc16f379d1bccd4a9c36da77a095fdf6608f3f8",
   "src/learning/simulation-variants.ts": "993b594093116cf98c47b95a8d6d4688f5ea9c28027838c786078a7face65e25",
   "src/learning/simulation-material.ts": "f5008a8745f301deb30d278e2d8713fb2e74a31737a54736f71c59a146c327bc",
@@ -99,7 +99,7 @@
   "tests/endredaktion.test.ts": "31c4488c4b3d0edbf1c385db723fbf3a832e09341ec92c4ea8ecd779d47845a0",
   "tests/browser/n1-return.spec.ts": "993dad91a282bf1f770abe0f226d607366084ba07a03d77fdfcf37f9f5b74998",
   "tests/browser/streamline.spec.ts": "034591967481b0fe8d84f4328752f83a78f87ad4280acbb8c53ced842a4f3e6d",
-  "tests/browser/visual-polish.spec.ts": "96f45f845f64f5bd0459386c943600b1350030137a37c9c2e792c5be2c03dea3",
+  "tests/browser/visual-polish.spec.ts": "8d8d6a0400571a391f912c1837ae43dd74ee9db272d639e3463a598e8a5a1bc5",
   "tests/browser/transfer-rc.spec.ts": "5a05db1f4060e1c0b2f7e6737ceff3286884aa08a618fd492633b65ca2d30694",
   "tests/browser/transfer-disclosure.spec.ts": "5ed896d06f6af8195a1f2eea2b0115d6ab60f9ad67b0b6c9304d9f8d131bb5a3",
   "tests/browser/topics-gate2.spec.ts": "8c2a8f030b2feb4b692e31dc04ea97ba268ac46b1ea6e7177111cd63d68d77dc",
@@ -122,7 +122,7 @@
   "tests/browser/packet-b-quality.spec.ts": "e7558a74be49ead3e0956584cbd8f97afaccc651dde53da73fba398bf62c9106",
   "tests/browser/packet-b-integration.spec.ts": "8cd3d8e999db1753d2d98c846df25690cadac0b30825b563934b4bd633b09cc0",
   "tests/browser/morocco.spec.ts": "da768936339244e167841ec4239a1b5cd7eeef2c0a3a21bf44d0354f0ae35a4f",
-  "tests/browser/language-revision.spec.ts": "feb31f0ac8a29d7c540555b31abe0130cd74eec1a316bb0d660004dcfe8d7b38",
+  "tests/browser/language-revision.spec.ts": "87ce8d8f9ca779aa573a6d028eeec82ae5e8cb103bba805692ce74bff1b5c8f0",
   "tests/browser/inquiry.spec.ts": "43e52ce9368640eaf2a190037dbd9df95bf75b60a9afd7c4d789ae558da4db2e",
   "tests/browser/inquiry-correction.spec.ts": "ea9f9af76145ddad986dcd93c4c6b1579787ab3554848d2c4d828e68ff527906",
   "tests/browser/gate2-correction.spec.ts": "0a81365d26c882babf7848cda0437e43b083639b969c1bd7be21eae6db731e7b",
@@ -152,5 +152,6 @@
   "playwright.config.ts": "0891cb2a1cddd4a050a9f0331657bf9e02bcb67b762e3afbb499f3b8647567a0",
   "playwright.release.config.ts": "0f3fbcc20785706b941caa47cb37deca0a2256f4ffbf8ecd9a81d048add3dd45",
   "package.json": "ae0bf6c18602fa5f270552de3c47095109610fe52bf216bcb32f384c1bd2c948",
-  "package-lock.json": "fbcb1ed6afb5dc250da1d683d642702af36b068d9a8fbb1f01f9409728570be8"
+  "package-lock.json": "fbcb1ed6afb5dc250da1d683d642702af36b068d9a8fbb1f01f9409728570be8",
+  ".github/workflows/release-checks.yml": "466abecbd5a4fb8f8315d0c8f26eef2ff5db695a4c5e1b1f0eb9abdd65a0e3ce"
 }

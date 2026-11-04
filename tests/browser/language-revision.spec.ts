@@ -220,8 +220,13 @@ for (const [unit, target, profile] of [
     const panelState = await panels.evaluateAll((els) =>
       els.map((el) => ({ id: el.id, open: (el as HTMLDetailsElement).open })),
     );
+    // Establish a visible writing position before measuring typing stability.
+    // WebKit can defer the native scroll from focusing an offscreen textarea
+    // until the first keystroke. That focus movement is not an input rerender.
+    await input.scrollIntoViewIfNeeded();
     await input.focus();
     await input.press('ArrowLeft');
+    await expect(input).toBeInViewport({ ratio: 1 });
     const before = await input.evaluate((el: HTMLTextAreaElement) => {
       (window as any).__n1Material =
         document.querySelector('.inquiry-material')!.firstElementChild;
