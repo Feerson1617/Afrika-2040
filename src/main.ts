@@ -692,6 +692,8 @@ function dispatch(action: Action) {
   rememberMaterialPanels();
   const geo = action.type === 'geography';
   const oldFocus = document.activeElement?.id;
+  const oldWorkspace =
+    state.learning && activeLearning(state.learning)?.task.workspace;
   state = reduce(state, action);
   if (
     action.type === 'learning' &&
@@ -726,7 +728,16 @@ function dispatch(action: Action) {
           : navigation
             ? 'main'
             : oldFocus;
-    render(focus, navigation);
+    const sameWorkspace = Boolean(
+      oldWorkspace &&
+      state.learning &&
+      oldWorkspace === activeLearning(state.learning)?.task.workspace &&
+      ['next', 'back'].includes(action.op),
+    );
+    render(
+      sameWorkspace ? 'learning-title' : focus,
+      navigation && !sameWorkspace,
+    );
     announcer.textContent =
       action.op === 'check'
         ? (document.querySelector('[data-learning-feedback]')?.textContent ??
@@ -1223,8 +1234,18 @@ app.addEventListener('input', (event) => {
     if (material && previous && oldAttempt) {
       updateMaterial(
         material,
-        materialView(previous.task, state.learning.profile, oldAttempt),
-        materialView(current.task, state.learning.profile, current.attempt),
+        materialView(
+          previous.task,
+          state.learning.profile,
+          oldAttempt,
+          previous.record.attempts,
+        ),
+        materialView(
+          current.task,
+          state.learning.profile,
+          current.attempt,
+          current.record.attempts,
+        ),
       );
       displayedPanelStates.set(material, captureMaterialPanels(material));
     }

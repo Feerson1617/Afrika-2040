@@ -112,11 +112,13 @@ export function evaluateStudyDecision(
       textNotice(persisted, 'in den Angaben zu deinem Vorschlag'),
       true,
     );
+  const chosenLimit = spec.options(data).find((x) => x.id === d.limit);
   const good = d.benefit === o.id,
-    limit = d.limit === o.id;
+    limit =
+      d.limit === o.id || Boolean(chosenLimit?.limitAlsoFits?.includes(o.id));
   const ack = [
     good ? 'Dein Beleg passt: ' + o.benefit : '',
-    limit ? 'Du beachtest die Grenze: ' + o.limit : '',
+    limit ? 'Du beachtest die Grenze: ' + chosenLimit!.limit : '',
   ]
     .filter(Boolean)
     .join(' ');
@@ -211,11 +213,18 @@ export function productParts(
   d: StudyDecision,
 ) {
   const o = optionOf(spec, data, d);
+  const selectedLimit = spec.options(data).find((x) => x.id === d.limit);
+  const matchingLimit =
+    o &&
+    selectedLimit &&
+    (selectedLimit.id === o.id || selectedLimit.limitAlsoFits?.includes(o.id))
+      ? selectedLimit.limit
+      : o?.limit;
   return o
     ? [
         `Ich empfehle: ${o.label}.`,
         `Mein Beleg: ${o.benefit}`,
-        d.weighted ? weighting(spec, data, d) : 'Aber: ' + o.limit,
+        d.weighted ? weighting(spec, data, d) : 'Aber: ' + matchingLimit,
         spec.conclusion?.(data, d) ?? '',
       ]
     : [];

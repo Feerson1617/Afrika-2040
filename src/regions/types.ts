@@ -58,6 +58,7 @@ export interface StudyOption {
   goal: string;
   benefit: string;
   limit: string;
+  limitAlsoFits?: readonly string[];
   facts: string[];
   eligible?: boolean;
 }

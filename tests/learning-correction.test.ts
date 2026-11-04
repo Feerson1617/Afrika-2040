@@ -151,7 +151,7 @@ test('every pilot task has independent factual oracles, retained IDs/counts and 
     for (const unit of ['c', 's1'] as const) {
       assert.equal(
         tasksFor(unit, profile).filter((t) => !t.simulation).length,
-        (unit === 'c' ? [14, 13, 8, 8] : [4, 6, 4, 4])[index],
+        (unit === 'c' ? [14, 13, 8, 8] : [4, 4, 4, 4])[index],
       );
       let s = act(newLearning(), 'recommend', profile, unit);
       for (const task of tasksFor(unit, profile)) {

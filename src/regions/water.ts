@@ -64,7 +64,8 @@ export const water: StudySpec = {
       goal: 'repair',
       benefit: 'Reparatur: 50 WE entnommen, 30 WE bleiben im Tank.',
       limit:
-        'Die Leitung bleibt wartungsbedürftig. Nicht alles entnommene Wasser erreicht das Feld.',
+        'Wartung bleibt nötig. Nicht alles entnommene Wasser erreicht das Feld.',
+      limitAlsoFits: ['tech'],
       facts: [
         '80 WE am Anfang − 50 WE Entnahme = 30 WE Rest.',
         '40 WE erreichen das gleiche Feld. Vorhandene Leitung wird weiter genutzt.',

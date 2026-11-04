@@ -3,7 +3,12 @@ import { profileIds, isProfile, profiles, type ProfileId } from './profiles.ts';
 import { isUnit, implementedUnits, type Unit } from './catalog.ts';
 import { resolveSimulation } from './simulation-variants.ts';
 import { futureReference } from './topic-variants.ts';
-import { tasksFor, type Task } from './tasks.ts';
+import {
+  tasksFor,
+  legacyTasksFor,
+  storedTasksFor,
+  type Task,
+} from './tasks.ts';
 import { evaluate, exampleValue } from './progress.ts';
 export interface Identity {
   conceptId: string;
@@ -49,6 +54,7 @@ export interface Attempt {
 }
 export interface LearningState {
   version: 1;
+  routeVersion?: 2;
   profile?: ProfileId;
   pendingProfile?: ProfileId;
   pendingUnit?: Unit;
@@ -87,7 +93,13 @@ export type LearningAction = {
   field?: string;
 };
 export function newLearning(): LearningState {
-  return { version: 1, view: 'menu', sequence: 0, records: {} };
+  return {
+    version: 1,
+    routeVersion: 2,
+    view: 'menu',
+    sequence: 0,
+    records: {},
+  };
 }
 export function areaId(unit: Unit, profile: ProfileId) {
   return `${unit}.${profile}.v1`;
@@ -533,12 +545,20 @@ export function restoreLearning(raw: unknown): LearningState | undefined {
       const key = areaId(unit, profile),
         r = v.records?.[key];
       if (!r || typeof r !== 'object') continue;
-      const tasks = tasksFor(unit, profile),
+      const route = tasksFor(unit, profile),
+        tasks = storedTasksFor(unit, profile),
+        previous = v.routeVersion === 2 ? route : legacyTasksFor(unit, profile),
+        oldIndex =
+          Number.isInteger(r.index) && r.index >= 0 && r.index < previous.length
+            ? r.index
+            : 0,
+        nextTask = previous
+          .slice(oldIndex)
+          .find((t) => route.some((x) => x.id === t.id)),
         record = {
-          index:
-            Number.isInteger(r.index) && r.index >= 0 && r.index < tasks.length
-              ? r.index
-              : 0,
+          index: nextTask
+            ? route.findIndex((t) => t.id === nextTask.id)
+            : route.length - 1,
           attempts: {} as Record<string, Attempt>,
         };
       s.records[key] = record;
@@ -610,7 +630,11 @@ export function restoreLearning(raw: unknown): LearningState | undefined {
           exampleUsed,
           adopted:
             p.adopted === true &&
-            task.fields.every((f) => answers[f.id] === exampleValue(f)),
+            task.fields.every(
+              (f) =>
+                answers[f.id] === exampleValue(f) ||
+                f.accepted?.includes(answers[f.id]),
+            ),
           criteriaSeen: p.criteriaSeen === true,
           revised: p.revised === true,
           oral,
@@ -724,6 +748,17 @@ export function restoreLearning(raw: unknown): LearningState | undefined {
           a.adopted = false;
         }
         record.attempts[task.id] = a;
+      }
+      // A reordered/new question must not skip an unseen prerequisite in an old save.
+      if (
+        v.routeVersion !== 2 &&
+        unit === 'r' &&
+        (profile === 'foerder' || profile === 'esa')
+      ) {
+        const missing = route.findIndex(
+          (t, i) => i < record.index && !record.attempts[t.id],
+        );
+        if (missing >= 0) record.index = missing;
       }
     }
   if (s.view === 'task' && (!s.profile || !s.unit)) s.view = 'menu';

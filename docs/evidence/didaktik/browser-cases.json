@@ -1,0 +1,5100 @@
+{
+  "initial": {
+    "stats": {
+      "startTime": "2026-11-04T16:45:19.912Z",
+      "duration": 1024041.355,
+      "expected": 435,
+      "skipped": 0,
+      "unexpected": 15,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/foerder supported=false: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 16185
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/foerder supported=true: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 23300
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/foerder supported=false: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 22276
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/foerder supported=true: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "timedOut",
+        "durationMs": 30183
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/esa supported=false: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 16354
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/esa supported=true: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 22220
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/esa supported=false: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 21489
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/esa supported=true: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "timedOut",
+        "durationMs": 31032
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/msa supported=false: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13397
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 15175
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/msa supported=false: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 20972
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/msa supported=true: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "timedOut",
+        "durationMs": 30363
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/ahr supported=false: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 16617
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/ahr supported=true: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 16807
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/ahr supported=false: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 27862
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/ahr supported=true: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "timedOut",
+        "durationMs": 30590
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths all twelve switches preserve drafts and restore the actual attempt",
+        "engine": "chromium",
+        "status": "timedOut",
+        "durationMs": 32932
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths numeric feedback colors, format, explicit example and editing stay distinct",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4131
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths legacy, narrow Pages content, blocked storage and global restart",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 5421
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths actual narrow content iframe supports material keyboard and arithmetic",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3405
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/foerder supported=false: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 20691
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/foerder supported=true: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "timedOut",
+        "durationMs": 30381
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/foerder supported=false: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "timedOut",
+        "durationMs": 30861
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/foerder supported=true: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "timedOut",
+        "durationMs": 30936
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/esa supported=false: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 19934
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/esa supported=true: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "timedOut",
+        "durationMs": 31720
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/esa supported=false: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "timedOut",
+        "durationMs": 30226
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/esa supported=true: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "timedOut",
+        "durationMs": 30280
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/msa supported=false: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 21412
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 25909
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/msa supported=false: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 27144
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/msa supported=true: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "timedOut",
+        "durationMs": 30390
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/ahr supported=false: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 18376
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/ahr supported=true: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 21361
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/ahr supported=false: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "timedOut",
+        "durationMs": 31722
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/ahr supported=true: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "timedOut",
+        "durationMs": 30411
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths all twelve switches preserve drafts and restore the actual attempt",
+        "engine": "webkit",
+        "status": "timedOut",
+        "durationMs": 31890
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths numeric feedback colors, format, explicit example and editing stay distinct",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3920
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths legacy, narrow Pages content, blocked storage and global restart",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 9609
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths actual narrow content iframe supports material keyboard and arithmetic",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4928
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final N1 derived material: nested open and deliberately closed panels survive necessary result updates",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 1393
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final S2 ESA migration: negative movement is not total population decline",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3282
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final T1 normal cocoa flow: saved feedback really visible on repeated reloads after earlier tasks",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 8027
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final N1 future.judgment/msa: writing retains sources, nested panels, caret, reading position and history",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 6126
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final N1 future.judgment/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 6267
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 7581
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final N1 economy.source-claim.v1/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 7862
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final N1 nature.recommend/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 10486
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum language P2-01 ESA context survives both split steps, reload and back",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 6368
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum language P2-02 AHR full help and deliberate adoption retain correct journey meaning",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4308
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum language cocoa foerder: processing comes first and full money data remain reachable",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4499
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum language cocoa esa: processing comes first and full money data remain reachable",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3898
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum language cocoa msa: processing comes first and full money data remain reachable",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3836
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum language cocoa ahr: processing comes first and full money data remain reachable",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4458
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum editorial foerder: visible cocoa hints, honest saved text and no initial failure counter",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 11370
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum editorial esa: visible cocoa hints, honest saved text and no initial failure counter",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 9344
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum editorial msa: visible cocoa hints, honest saved text and no initial failure counter",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 10135
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum editorial ahr: visible cocoa hints, honest saved text and no initial failure counter",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 10505
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum editorial AHR save button, oral self report, self control, historical text and keyboard",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 5636
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum barriers ESA s2: calculate without disclosed result, help, reload and retained exploration",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 5385
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum barriers ESA s4: calculate without disclosed result, help, reload and retained exploration",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 5415
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum barriers ESA s6: calculate without disclosed result, help, reload and retained exploration",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 6383
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F1 area view esa: actual distinct cases without answers",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3742
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F2 free money esa: help stage two without arithmetic result",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3482
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s2/esa: edit invalidates visible proof without replacing input",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3995
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s4/esa: edit invalidates visible proof without replacing input",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 5128
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s6/esa: edit invalidates visible proof without replacing input",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 5893
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F1 area view msa: actual distinct cases without answers",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3137
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F2 free money msa: help stage two without arithmetic result",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4306
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s2/msa: edit invalidates visible proof without replacing input",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 5256
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s4/msa: edit invalidates visible proof without replacing input",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 5356
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s6/msa: edit invalidates visible proof without replacing input",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 5795
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F1 area view ahr: actual distinct cases without answers",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3340
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F2 free money ahr: help stage two without arithmetic result",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3698
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s2/ahr: edit invalidates visible proof without replacing input",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4727
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s4/ahr: edit invalidates visible proof without replacing input",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4600
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s6/ahr: edit invalidates visible proof without replacing input",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 5777
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s1/kenia.first.weight/foerder: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4533
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s1/kenia.revised.weight/foerder: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4682
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s2/demand.final.weight/foerder: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3961
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s3/cocoa.final.weight/foerder: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3958
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s5/water.final.weight/foerder: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4597
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s6/area.final.weight/foerder: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3895
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s1/kenia.first.weight/esa: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4857
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s1/kenia.revised.weight/esa: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 5370
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s2/demand.final.weight/esa: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4649
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s3/cocoa.final.weight/esa: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4188
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s5/water.final.weight/esa: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3848
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s6/area.final.weight/esa: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3761
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s1/kenia.first.weight/msa: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4839
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s1/kenia.revised.weight/msa: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 5074
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s2/demand.final.weight/msa: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4175
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s3/cocoa.final.weight/msa: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4219
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s5/water.final.weight/msa: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3815
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s6/area.final.weight/msa: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4364
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s1/kenia.first.weight/ahr: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4399
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s1/kenia.revised.weight/ahr: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4772
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s2/demand.final.weight/ahr: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4129
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s3/cocoa.final.weight/ahr: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4529
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s5/water.final.weight/ahr: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3777
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s6/area.final.weight/ahr: one option links priority and accepted drawback",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4616
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s2/esa: conscious explanation remains identified after editing",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3599
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s4/esa: conscious explanation remains identified after editing",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4436
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s6/esa: conscious explanation remains identified after editing",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4073
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s2/msa: conscious explanation remains identified after editing",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4575
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s4/msa: conscious explanation remains identified after editing",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4348
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s6/msa: conscious explanation remains identified after editing",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4798
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s2/ahr: conscious explanation remains identified after editing",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4440
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s4/ahr: conscious explanation remains identified after editing",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3936
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s6/ahr: conscious explanation remains identified after editing",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3862
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final number hint esa/population.base.migration: no solution hidden in format examples",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 2880
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final number hint esa/population.base.end: no solution hidden in format examples",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 2682
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final number hint msa/population.base.balance: no solution hidden in format examples",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 2951
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final number hint ahr/population.base.balance: no solution hidden in format examples",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3392
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final N1 derived material: nested open and deliberately closed panels survive necessary result updates",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 1778
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final S2 ESA migration: negative movement is not total population decline",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 5469
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final T1 normal cocoa flow: saved feedback really visible on repeated reloads after earlier tasks",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 14088
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final N1 future.judgment/msa: writing retains sources, nested panels, caret, reading position and history",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 11328
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final N1 future.judgment/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 10926
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 7586
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final N1 economy.source-claim.v1/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 8699
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final N1 nature.recommend/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 10092
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum language P2-01 ESA context survives both split steps, reload and back",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 6651
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum language P2-02 AHR full help and deliberate adoption retain correct journey meaning",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3890
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum language cocoa foerder: processing comes first and full money data remain reachable",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3541
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum language cocoa esa: processing comes first and full money data remain reachable",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3173
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum language cocoa msa: processing comes first and full money data remain reachable",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2435
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum language cocoa ahr: processing comes first and full money data remain reachable",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2589
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum editorial foerder: visible cocoa hints, honest saved text and no initial failure counter",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 8502
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum editorial esa: visible cocoa hints, honest saved text and no initial failure counter",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 8566
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum editorial msa: visible cocoa hints, honest saved text and no initial failure counter",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 7835
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum editorial ahr: visible cocoa hints, honest saved text and no initial failure counter",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 7092
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum editorial AHR save button, oral self report, self control, historical text and keyboard",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4227
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum barriers ESA s2: calculate without disclosed result, help, reload and retained exploration",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3807
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum barriers ESA s4: calculate without disclosed result, help, reload and retained exploration",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4301
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "Afrika curriculum barriers ESA s6: calculate without disclosed result, help, reload and retained exploration",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 5185
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F1 area view esa: actual distinct cases without answers",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2338
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F2 free money esa: help stage two without arithmetic result",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2994
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s2/esa: edit invalidates visible proof without replacing input",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3796
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s4/esa: edit invalidates visible proof without replacing input",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3975
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s6/esa: edit invalidates visible proof without replacing input",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3813
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F1 area view msa: actual distinct cases without answers",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3199
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F2 free money msa: help stage two without arithmetic result",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2702
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s2/msa: edit invalidates visible proof without replacing input",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2977
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s4/msa: edit invalidates visible proof without replacing input",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4152
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s6/msa: edit invalidates visible proof without replacing input",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 5095
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F1 area view ahr: actual distinct cases without answers",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2776
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F2 free money ahr: help stage two without arithmetic result",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2788
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s2/ahr: edit invalidates visible proof without replacing input",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4095
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s4/ahr: edit invalidates visible proof without replacing input",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2822
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3 s6/ahr: edit invalidates visible proof without replacing input",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4902
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s1/kenia.first.weight/foerder: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3055
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s1/kenia.revised.weight/foerder: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3831
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s2/demand.final.weight/foerder: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2812
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s3/cocoa.final.weight/foerder: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3568
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s5/water.final.weight/foerder: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4171
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s6/area.final.weight/foerder: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4606
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s1/kenia.first.weight/esa: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 6067
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s1/kenia.revised.weight/esa: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 6447
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s2/demand.final.weight/esa: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 5047
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s3/cocoa.final.weight/esa: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 5421
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s5/water.final.weight/esa: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 5261
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s6/area.final.weight/esa: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4710
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s1/kenia.first.weight/msa: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4519
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s1/kenia.revised.weight/msa: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3989
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s2/demand.final.weight/msa: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3255
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s3/cocoa.final.weight/msa: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3194
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s5/water.final.weight/msa: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3778
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s6/area.final.weight/msa: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4259
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s1/kenia.first.weight/ahr: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4002
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s1/kenia.revised.weight/ahr: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4781
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s2/demand.final.weight/ahr: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4043
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s3/cocoa.final.weight/ahr: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3260
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s5/water.final.weight/ahr: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2987
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final weight s6/area.final.weight/ahr: one option links priority and accepted drawback",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3137
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s2/esa: conscious explanation remains identified after editing",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3594
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s4/esa: conscious explanation remains identified after editing",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3088
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s6/esa: conscious explanation remains identified after editing",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3266
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s2/msa: conscious explanation remains identified after editing",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3619
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s4/msa: conscious explanation remains identified after editing",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3623
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s6/msa: conscious explanation remains identified after editing",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2917
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s2/ahr: conscious explanation remains identified after editing",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3569
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s4/ahr: conscious explanation remains identified after editing",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3163
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final F3-help3 s6/ahr: conscious explanation remains identified after editing",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3207
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final number hint esa/population.base.migration: no solution hidden in format examples",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2296
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final number hint esa/population.base.end: no solution hidden in format examples",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2161
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final number hint msa/population.base.balance: no solution hidden in format examples",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2111
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "scope": [
+          "language-revision.spec.ts"
+        ],
+        "title": "RC-final number hint ahr/population.base.balance: no solution hidden in format examples",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2210
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 anonymous live material panel keeps both choices across independent reloads",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4997
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 profile isolation, reset cancellation and confirmed session reset",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 24796
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 blocked storage: in-memory panels, answers, back and warning stay usable",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 10950
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return future.judgment/msa 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 14958
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return future.judgment/msa 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 16496
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return future.judgment/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13654
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return future.judgment/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 16821
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return image.perspective/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 14907
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return image.perspective/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 20250
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return economy.source-claim.v1/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 20227
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return economy.source-claim.v1/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 21352
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return nature.recommend/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 26703
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return nature.recommend/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 24251
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 anonymous live material panel keeps both choices across independent reloads",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3414
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 profile isolation, reset cancellation and confirmed session reset",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 27357
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 blocked storage: in-memory panels, answers, back and warning stay usable",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 8754
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return future.judgment/msa 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 18812
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return future.judgment/msa 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 17356
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return future.judgment/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 18020
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return future.judgment/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 17420
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return image.perspective/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 19786
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return image.perspective/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 15077
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return economy.source-claim.v1/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 12298
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return economy.source-claim.v1/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 13390
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return nature.recommend/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 17405
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "scope": [
+          "n1-return.spec.ts"
+        ],
+        "title": "Afrika curriculum N1 return nature.recommend/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 18389
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s1/foerder supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 34099
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s1/foerder supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 37977
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s1/esa supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 27199
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s1/esa supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 38051
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s1/msa supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 22708
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s1/msa supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 29995
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s1/ahr supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 27312
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s1/ahr supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 37604
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s2/foerder supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 15694
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s2/foerder supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 20546
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s2/esa supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 15892
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s2/esa supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 22322
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s2/msa supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 11623
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s2/msa supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 15296
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s2/ahr supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13763
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s2/ahr supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 18195
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s3/foerder supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 27977
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s3/foerder supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 40097
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s3/esa supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 30893
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s3/esa supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 40422
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s3/msa supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 28198
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s3/msa supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 35699
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s3/ahr supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 26391
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s3/ahr supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 28866
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s4/foerder supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 14398
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s4/foerder supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 20780
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s4/esa supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 14956
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s4/esa supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 23733
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s4/msa supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13880
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s4/msa supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 16179
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s4/ahr supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 15118
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s4/ahr supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 16541
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s5/foerder supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 17110
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s5/foerder supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 23336
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s5/esa supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 16340
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s5/esa supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 23916
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s5/msa supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 10815
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s5/msa supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 15595
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s5/ahr supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 16033
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s5/ahr supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 23463
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s6/foerder supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 15808
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s6/foerder supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 23071
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s6/esa supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 21909
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s6/esa supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 27633
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s6/msa supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 15736
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s6/msa supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 16581
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s6/ahr supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 14586
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s6/ahr supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 21508
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB o/foerder supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 12970
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB o/foerder supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 19247
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB o/esa supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 16835
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB o/esa supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 24683
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB o/msa supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 12169
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB o/msa supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 14352
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB o/ahr supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 12587
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB o/ahr supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 16815
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB r/foerder supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 12140
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB r/foerder supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 16713
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB r/esa supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 12940
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB r/esa supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 18073
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB r/msa supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 12126
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB r/msa supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 12503
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB r/ahr supported=false",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 11971
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB r/ahr supported=true",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 15311
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s1/foerder supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 33282
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s1/foerder supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 44908
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s1/esa supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 33766
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s1/esa supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 45510
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s1/msa supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 32822
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s1/msa supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 43294
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s1/ahr supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 35250
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s1/ahr supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 48912
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s2/foerder supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 23854
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s2/foerder supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 25710
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s2/esa supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 22209
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s2/esa supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 21594
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s2/msa supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 11543
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s2/msa supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 13943
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s2/ahr supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 12793
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s2/ahr supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 18133
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s3/foerder supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 19251
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s3/foerder supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 26511
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s3/esa supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 18689
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s3/esa supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 25357
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s3/msa supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 14771
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s3/msa supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 19145
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s3/ahr supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 17904
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s3/ahr supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 23851
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s4/foerder supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 11213
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s4/foerder supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 16675
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s4/esa supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 11086
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s4/esa supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 15836
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s4/msa supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 10706
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s4/msa supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 12426
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s4/ahr supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 11818
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s4/ahr supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 14852
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s5/foerder supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 18386
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s5/foerder supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 24855
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s5/esa supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 17887
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s5/esa supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 21985
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s5/msa supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 11457
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s5/msa supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 15523
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s5/ahr supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 14826
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s5/ahr supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 20345
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s6/foerder supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 13468
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s6/foerder supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 18090
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s6/esa supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 18823
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s6/esa supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 27693
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s6/msa supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 13520
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s6/msa supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 16946
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s6/ahr supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 16507
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB s6/ahr supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 22127
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB o/foerder supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 13201
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB o/foerder supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 17699
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB o/esa supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 16609
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB o/esa supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 22962
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB o/msa supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 10789
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB o/msa supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 15650
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB o/ahr supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 12894
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB o/ahr supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 17810
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB r/foerder supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 12404
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB r/foerder supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 18391
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB r/esa supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 10644
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB r/esa supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 15294
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB r/msa supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 10968
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB r/msa supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 14054
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB r/ahr supported=false",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 11682
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "scope": [
+          "packet-b.spec.ts"
+        ],
+        "title": "Afrika curriculum PaketB r/ahr supported=true",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 13894
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline s3/foerder: true and false proof, two failures, explicit help, return and reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13320
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline s5/foerder: true and false proof, two failures, explicit help, return and reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13355
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline s3/esa: true and false proof, two failures, explicit help, return and reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13789
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline s5/esa: true and false proof, two failures, explicit help, return and reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 11335
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline s3/msa: true and false proof, two failures, explicit help, return and reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 11970
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline s5/msa: true and false proof, two failures, explicit help, return and reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13386
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline s3/ahr: true and false proof, two failures, explicit help, return and reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 12598
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline s5/ahr: true and false proof, two failures, explicit help, return and reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13476
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline chain foerder: stable touch workspace, own progress, hints and keyboard",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 7602
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline chain esa: stable touch workspace, own progress, hints and keyboard",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 8181
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline chain msa: stable touch workspace, own progress, hints and keyboard",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 8650
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline chain ahr: stable touch workspace, own progress, hints and keyboard",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 8256
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline comparison foerder: costs accessible, photo pair and no horizontal overflow",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 1646
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline comparison esa: costs accessible, photo pair and no horizontal overflow",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4586
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline comparison msa: costs accessible, photo pair and no horizontal overflow",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4121
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline comparison ahr: costs accessible, photo pair and no horizontal overflow",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4056
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline old save s1/esa: journal, current task and archived records after reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3869
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline old save e/foerder: journal, current task and archived records after reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3829
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline old save r/foerder: journal, current task and archived records after reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 2908
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline old save r/esa: journal, current task and archived records after reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 3602
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline s3/foerder: true and false proof, two failures, explicit help, return and reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 12594
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline s5/foerder: true and false proof, two failures, explicit help, return and reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 11962
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline s3/esa: true and false proof, two failures, explicit help, return and reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 12732
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline s5/esa: true and false proof, two failures, explicit help, return and reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 12045
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline s3/msa: true and false proof, two failures, explicit help, return and reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 12226
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline s5/msa: true and false proof, two failures, explicit help, return and reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 13588
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline s3/ahr: true and false proof, two failures, explicit help, return and reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 13318
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline s5/ahr: true and false proof, two failures, explicit help, return and reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 12634
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline chain foerder: stable touch workspace, own progress, hints and keyboard",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 8203
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline chain esa: stable touch workspace, own progress, hints and keyboard",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 7481
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline chain msa: stable touch workspace, own progress, hints and keyboard",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 8139
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline chain ahr: stable touch workspace, own progress, hints and keyboard",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 8859
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline comparison foerder: costs accessible, photo pair and no horizontal overflow",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2422
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline comparison esa: costs accessible, photo pair and no horizontal overflow",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4302
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline comparison msa: costs accessible, photo pair and no horizontal overflow",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3799
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline comparison ahr: costs accessible, photo pair and no horizontal overflow",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 5072
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline old save s1/esa: journal, current task and archived records after reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2992
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline old save e/foerder: journal, current task and archived records after reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2793
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline old save r/foerder: journal, current task and archived records after reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2265
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline old save r/esa: journal, current task and archived records after reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2858
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 a/foerder supported=false: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 12286
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 a/foerder supported=true: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 14224
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 a/esa supported=false: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 11090
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 a/esa supported=true: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 16345
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 a/msa supported=false: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13009
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 a/msa supported=true: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 14255
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 a/ahr supported=false: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 12734
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 a/ahr supported=true: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13563
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 n/foerder supported=false: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 12792
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 n/foerder supported=true: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 15284
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 n/esa supported=false: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13959
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 n/esa supported=true: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 19123
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 n/msa supported=false: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13821
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 n/msa supported=true: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 15954
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 n/ahr supported=false: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13668
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 n/ahr supported=true: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 17685
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 d/foerder supported=false: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13091
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 d/foerder supported=true: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13651
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 d/esa supported=false: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 12961
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 d/esa supported=true: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 16989
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 d/msa supported=false: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 11879
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 d/msa supported=true: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 12907
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 d/ahr supported=false: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 11020
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 d/ahr supported=true: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 14957
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 e/foerder supported=false: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13498
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 e/foerder supported=true: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 17944
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 e/esa supported=false: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 14960
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 e/esa supported=true: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 17098
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 e/msa supported=false: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 13960
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 e/msa supported=true: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 17224
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 e/ahr supported=false: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 14878
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 e/ahr supported=true: complete actual learning route",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 18527
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 future wrong parts, goal conflict, full sources, plan change and historical wording",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 8096
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 explicit revision requires a new plan and new evidence; long statements stay visible with keyboard",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 8658
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 a/foerder supported=false: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 14093
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 a/foerder supported=true: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 15848
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 a/esa supported=false: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 14036
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 a/esa supported=true: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 19242
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 a/msa supported=false: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 14681
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 a/msa supported=true: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 15852
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 a/ahr supported=false: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 14044
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 a/ahr supported=true: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 15228
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 n/foerder supported=false: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 11823
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 n/foerder supported=true: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 16671
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 n/esa supported=false: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 16129
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 n/esa supported=true: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 21394
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 n/msa supported=false: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 13612
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 n/msa supported=true: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 16765
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 n/ahr supported=false: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 16728
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 n/ahr supported=true: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 22378
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 d/foerder supported=false: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 12091
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 d/foerder supported=true: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 15421
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 d/esa supported=false: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 13918
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 d/esa supported=true: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 19192
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 d/msa supported=false: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 11528
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 d/msa supported=true: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 15283
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 d/ahr supported=false: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 13087
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 d/ahr supported=true: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 15288
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 e/foerder supported=false: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 14114
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 e/foerder supported=true: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 19105
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 e/esa supported=false: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 14884
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 e/esa supported=true: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 19950
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 e/msa supported=false: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 11645
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 e/msa supported=true: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 17913
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 e/ahr supported=false: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 16118
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 e/ahr supported=true: complete actual learning route",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 14376
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 future wrong parts, goal conflict, full sources, plan change and historical wording",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 9024
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "scope": [
+          "topics-gate2.spec.ts"
+        ],
+        "title": "Afrika curriculum Gate2 explicit revision requires a new plan and new evidence; long statements stay visible with keyboard",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 8017
+      }
+    ]
+  },
+  "recheck": {
+    "stats": {
+      "startTime": "2026-11-04T17:02:40.191Z",
+      "duration": 103013.89,
+      "expected": 15,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/foerder supported=true: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 14024
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/esa supported=true: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 14233
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/msa supported=true: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 11230
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/ahr supported=true: actual complete flow and honest journal",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 12855
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths all twelve switches preserve drafts and restore the actual attempt",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 12206
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/foerder supported=true: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 11761
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/foerder supported=false: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 10818
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/foerder supported=true: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 15165
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths c/esa supported=true: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 9827
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/esa supported=false: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 10495
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/esa supported=true: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 15165
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/msa supported=true: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 13442
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/ahr supported=false: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 11680
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths s1/ahr supported=true: actual complete flow and honest journal",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 15723
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "scope": [
+          "four-paths.spec.ts"
+        ],
+        "title": "Afrika curriculum four paths all twelve switches preserve drafts and restore the actual attempt",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 13392
+      }
+    ]
+  },
+  "additional": {
+    "stats": {
+      "startTime": "2026-11-04T17:04:45.444Z",
+      "duration": 159362.063,
+      "expected": 40,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "file": "feedback-classification.spec.ts",
+        "scope": [
+          "feedback-classification.spec.ts",
+          "desktop"
+        ],
+        "title": "feedback matrix episode 3: visible colors, counters and conscious continuation",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 20609
+      },
+      {
+        "file": "feedback-classification.spec.ts",
+        "scope": [
+          "feedback-classification.spec.ts",
+          "desktop"
+        ],
+        "title": "feedback matrix episode 5: visible colors, counters and conscious continuation",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 20263
+      },
+      {
+        "file": "feedback-classification.spec.ts",
+        "scope": [
+          "feedback-classification.spec.ts",
+          "desktop"
+        ],
+        "title": "feedback matrix episode 3: visible colors, counters and conscious continuation",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 22419
+      },
+      {
+        "file": "feedback-classification.spec.ts",
+        "scope": [
+          "feedback-classification.spec.ts",
+          "desktop"
+        ],
+        "title": "feedback matrix episode 5: visible colors, counters and conscious continuation",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 22847
+      },
+      {
+        "file": "feedback-classification.spec.ts",
+        "scope": [
+          "feedback-classification.spec.ts",
+          "ipad-portrait"
+        ],
+        "title": "feedback matrix episode 3: visible colors, counters and conscious continuation",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 20041
+      },
+      {
+        "file": "feedback-classification.spec.ts",
+        "scope": [
+          "feedback-classification.spec.ts",
+          "ipad-portrait"
+        ],
+        "title": "feedback matrix episode 5: visible colors, counters and conscious continuation",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 20422
+      },
+      {
+        "file": "feedback-classification.spec.ts",
+        "scope": [
+          "feedback-classification.spec.ts",
+          "ipad-portrait"
+        ],
+        "title": "feedback matrix episode 3: visible colors, counters and conscious continuation",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 18832
+      },
+      {
+        "file": "feedback-classification.spec.ts",
+        "scope": [
+          "feedback-classification.spec.ts",
+          "ipad-portrait"
+        ],
+        "title": "feedback matrix episode 5: visible colors, counters and conscious continuation",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 18599
+      },
+      {
+        "file": "feedback-classification.spec.ts",
+        "scope": [
+          "feedback-classification.spec.ts",
+          "ipad-landscape"
+        ],
+        "title": "feedback matrix episode 3: visible colors, counters and conscious continuation",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 18773
+      },
+      {
+        "file": "feedback-classification.spec.ts",
+        "scope": [
+          "feedback-classification.spec.ts",
+          "ipad-landscape"
+        ],
+        "title": "feedback matrix episode 5: visible colors, counters and conscious continuation",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 18955
+      },
+      {
+        "file": "feedback-classification.spec.ts",
+        "scope": [
+          "feedback-classification.spec.ts",
+          "ipad-landscape"
+        ],
+        "title": "feedback matrix episode 3: visible colors, counters and conscious continuation",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 18867
+      },
+      {
+        "file": "feedback-classification.spec.ts",
+        "scope": [
+          "feedback-classification.spec.ts",
+          "ipad-landscape"
+        ],
+        "title": "feedback matrix episode 5: visible colors, counters and conscious continuation",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 18355
+      },
+      {
+        "file": "morocco.spec.ts",
+        "scope": [
+          "morocco.spec.ts"
+        ],
+        "title": "Morocco B1 full repair, tank balance and independently preserved product",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 2603
+      },
+      {
+        "file": "morocco.spec.ts",
+        "scope": [
+          "morocco.spec.ts"
+        ],
+        "title": "Morocco B1 full tech, tank balance and independently preserved product",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 2372
+      },
+      {
+        "file": "morocco.spec.ts",
+        "scope": [
+          "morocco.spec.ts"
+        ],
+        "title": "Morocco B1 partials, wrong answers, bounded help and full supported path without claiming groundwater or harvest",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 2496
+      },
+      {
+        "file": "morocco.spec.ts",
+        "scope": [
+          "morocco.spec.ts"
+        ],
+        "title": "Morocco B1 A/AA in all learning states, computed SVG labels and bidirectional keyboard/HTML controls",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4227
+      },
+      {
+        "file": "morocco.spec.ts",
+        "scope": [
+          "morocco.spec.ts"
+        ],
+        "title": "Morocco B1 full repair, tank balance and independently preserved product",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2779
+      },
+      {
+        "file": "morocco.spec.ts",
+        "scope": [
+          "morocco.spec.ts"
+        ],
+        "title": "Morocco B1 full tech, tank balance and independently preserved product",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2824
+      },
+      {
+        "file": "morocco.spec.ts",
+        "scope": [
+          "morocco.spec.ts"
+        ],
+        "title": "Morocco B1 partials, wrong answers, bounded help and full supported path without claiming groundwater or harvest",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2983
+      },
+      {
+        "file": "morocco.spec.ts",
+        "scope": [
+          "morocco.spec.ts"
+        ],
+        "title": "Morocco B1 A/AA in all learning states, computed SVG labels and bidirectional keyboard/HTML controls",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4950
+      },
+      {
+        "file": "regions.spec.ts",
+        "scope": [
+          "regions.spec.ts"
+        ],
+        "title": "Ghana A1 full quality: production, both trials, explanation, decision, reload and independent entry",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 2302
+      },
+      {
+        "file": "regions.spec.ts",
+        "scope": [
+          "regions.spec.ts"
+        ],
+        "title": "Ghana A1 full process: production, both trials, explanation, decision, reload and independent entry",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 2834
+      },
+      {
+        "file": "regions.spec.ts",
+        "scope": [
+          "regions.spec.ts"
+        ],
+        "title": "Ghana A1 supported route, partial acknowledgment, visible help, neutral target conflict and current provenance",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 2707
+      },
+      {
+        "file": "regions.spec.ts",
+        "scope": [
+          "regions.spec.ts"
+        ],
+        "title": "Ghana A1 complete shared A/AA audit includes interactive scene and correct computed labels",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 4084
+      },
+      {
+        "file": "regions.spec.ts",
+        "scope": [
+          "regions.spec.ts"
+        ],
+        "title": "Ghana A1 full actual touch on simulated iPad portrait with calculation beside answers",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 2784
+      },
+      {
+        "file": "regions.spec.ts",
+        "scope": [
+          "regions.spec.ts"
+        ],
+        "title": "Ghana A1 full actual touch on simulated iPad landscape with calculation beside answers",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 2764
+      },
+      {
+        "file": "regions.spec.ts",
+        "scope": [
+          "regions.spec.ts"
+        ],
+        "title": "Ghana A1 full quality: production, both trials, explanation, decision, reload and independent entry",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3157
+      },
+      {
+        "file": "regions.spec.ts",
+        "scope": [
+          "regions.spec.ts"
+        ],
+        "title": "Ghana A1 full process: production, both trials, explanation, decision, reload and independent entry",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3072
+      },
+      {
+        "file": "regions.spec.ts",
+        "scope": [
+          "regions.spec.ts"
+        ],
+        "title": "Ghana A1 supported route, partial acknowledgment, visible help, neutral target conflict and current provenance",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 3118
+      },
+      {
+        "file": "regions.spec.ts",
+        "scope": [
+          "regions.spec.ts"
+        ],
+        "title": "Ghana A1 complete shared A/AA audit includes interactive scene and correct computed labels",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 4537
+      },
+      {
+        "file": "regions.spec.ts",
+        "scope": [
+          "regions.spec.ts"
+        ],
+        "title": "Ghana A1 full actual touch on simulated iPad portrait with calculation beside answers",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2644
+      },
+      {
+        "file": "regions.spec.ts",
+        "scope": [
+          "regions.spec.ts"
+        ],
+        "title": "Ghana A1 full actual touch on simulated iPad landscape with calculation beside answers",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 2495
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline keyboard foerder: select with arrows, tab to check, Enter and reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 1058
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline keyboard esa: select with arrows, tab to check, Enter and reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 1443
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline keyboard msa: select with arrows, tab to check, Enter and reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 1249
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline keyboard ahr: select with arrows, tab to check, Enter and reload",
+        "engine": "chromium",
+        "status": "passed",
+        "durationMs": 1078
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline keyboard foerder: select with arrows, tab to check, Enter and reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 1031
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline keyboard esa: select with arrows, tab to check, Enter and reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 1212
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline keyboard msa: select with arrows, tab to check, Enter and reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 1176
+      },
+      {
+        "file": "streamline.spec.ts",
+        "scope": [
+          "streamline.spec.ts"
+        ],
+        "title": "Afrika curriculum streamline keyboard ahr: select with arrows, tab to check, Enter and reload",
+        "engine": "webkit",
+        "status": "passed",
+        "durationMs": 930
+      }
+    ]
+  }
+}

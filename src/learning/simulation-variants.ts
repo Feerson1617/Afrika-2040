@@ -713,6 +713,7 @@ function resolveSimulationInner(
   let benefits: readonly (readonly [string, string])[] = [],
     limits: typeof benefits = [],
     selectedName = plan;
+  let acceptedLimits: string[] | undefined;
   if (link.kind === 'kenya' && routes.includes(plan as any)) {
     const r = plan as (typeof routes)[number],
       s = link.now ? 'now' : 'before';
@@ -741,6 +742,8 @@ function resolveSimulationInner(
     selectedName = options.find((x) => x.id === plan)?.label ?? plan;
     benefits = options.map((x) => [x.id, x.benefit]);
     limits = options.map((x) => [x.id, x.limit]);
+    if (link.kind === 'water' && plan === 'tech')
+      acceptedLimits = ['repair', 'tech'];
   }
   if (task.simpleLanguage && link.kind === 'kenya') {
     benefits = benefits.slice(0, 2);
@@ -788,7 +791,9 @@ function resolveSimulationInner(
               ...f,
               expected: limit?.[0] ?? '__missing__',
               accepted:
-                link.kind === 'kenya' ? limits.map((x) => x[0]) : undefined,
+                link.kind === 'kenya'
+                  ? limits.map((x) => x[0])
+                  : acceptedLimits,
               options: opts(limits),
               explanation: limit?.[1] ?? '',
             }
@@ -838,7 +843,12 @@ export function cocoaTasks(p: ProfileId): Task[] {
               : `Was kommt als Schritt ${i + 1}?`,
             id,
             simple ? [[id, label], chain[(i + 1) % 4]] : chain,
-            'Die Kette: Bohnen → Rösten und mahlen → Kakaomasse → Pressen. Beim Pressen entstehen Butter und Presskuchen.',
+            [
+              'Am Anfang stehen die getrockneten Bohnen. Sie sind der Rohstoff.',
+              'Die Bohnen werden geröstet und gemahlen.',
+              'Durch Rösten und Mahlen entsteht Kakaomasse.',
+              'Beim Pressen entstehen Kakaobutter und Presskuchen.',
+            ][i],
           ),
         ],
         [

@@ -20,9 +20,14 @@ export const escapeHtml = (text: string) =>
         c
       ]!,
   );
-export function materialView(task: Task, profile: ProfileId, attempt: Attempt) {
+export function materialView(
+  task: Task,
+  profile: ProfileId,
+  attempt: Attempt,
+  attempts: Record<string, Attempt> = {},
+) {
   if (task.simulation) {
-    const material = simulationMaterial(task, profile, attempt);
+    const material = simulationMaterial(task, profile, attempt, attempts);
     if (task.simulation.kind !== 'review') return material;
     return (
       (material.includes('Grundwasser')

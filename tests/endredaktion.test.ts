@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { tasksFor, type Task } from '../src/learning/tasks.ts';
+import { storedTasksFor, tasksFor, type Task } from '../src/learning/tasks.ts';
 import { implementedUnits } from '../src/learning/catalog.ts';
 import { profileIds } from '../src/learning/profiles.ts';
 import { evaluate } from '../src/learning/progress.ts';
@@ -43,7 +43,7 @@ for (const example of distractors)
     let found = 0;
     for (const unit of implementedUnits)
       for (const profile of profileIds)
-        for (const t of tasksFor(unit, profile))
+        for (const t of storedTasksFor(unit, profile))
           for (const f of t.fields) {
             if (
               !f.options?.some(
@@ -117,7 +117,7 @@ for (const profile of profileIds)
       ['beans', 'roast', 'mass', 'press'],
     );
     for (const unit of implementedUnits)
-      for (const t of tasksFor(unit, profile)) {
+      for (const t of storedTasksFor(unit, profile)) {
         assert.doesNotMatch(t.instruction, /Wähle oder rechne selbst/);
         assert.ok(
           t.instruction || t.fields.every((f) => f.label.trim().length > 5),

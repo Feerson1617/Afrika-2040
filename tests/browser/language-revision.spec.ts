@@ -396,7 +396,11 @@ for (const p of profileIds)
     });
     const page = await ctx.newPage();
     await seed(page, fixture('s3', p, 'cocoa.chain.beans'));
-    await expect(page.locator('.learning-material-cards')).toBeVisible();
+    await expect(page.locator('.learning-process')).toBeVisible();
+    await expect(page.locator('.learning-process li')).toHaveCount(4);
+    await expect(page.locator('.learning-process')).not.toContainText(
+      /Rösten|Kakaomasse|Presskuchen/,
+    );
     await expect(page.locator('#learning-cocoa-money')).not.toHaveAttribute(
       'open',
       '',

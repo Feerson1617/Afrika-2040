@@ -13,9 +13,16 @@ const esc = (s: string) =>
   );
 export function topicMaterial(f: Focus, _p: ProfileId) {
   let view = f.paragraphs.map((t) => `<p>${esc(t)}</p>`).join('');
-  if (f.picture) {
-    const photo = photos[f.picture];
-    view += `<figure><img class="inquiry-photo" src="${photo.url}" alt="${esc(photo.alt)}"><figcaption>${esc(photo.title)} · Ghana · ${photo.date}<br>Foto: ${photo.author} · <a href="${photo.licenseUrl}" target="_blank" rel="noopener noreferrer">${photo.license}</a> · unverändert.</figcaption></figure>`;
+  if (f.picture || f.comparePictures) {
+    const pictures = f.comparePictures
+      ? (['market', 'forest'] as const)
+      : [f.picture!];
+    view += `<div class="${f.comparePictures ? 'learning-photo-pair' : ''}">${pictures
+      .map((id) => {
+        const photo = photos[id];
+        return `<figure><img class="inquiry-photo" src="${photo.url}" alt="${esc(photo.alt)}"><figcaption>${esc(photo.title)} · Ghana · ${photo.date}<br>Foto: ${photo.author} · <a href="${photo.licenseUrl}" target="_blank" rel="noopener noreferrer">${photo.license}</a> · unverändert.</figcaption></figure>`;
+      })
+      .join('')}</div>`;
   }
   if (f.season !== undefined) {
     const s = seasons[f.season],

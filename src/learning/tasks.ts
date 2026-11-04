@@ -1,3 +1,4 @@
+import { streamline } from './streamline.ts';
 import type { TransferCaseId } from './transfer-cases.ts';
 import { simpleTask } from './language.ts';
 import { orientationTasks, reviewTasks } from './cross-paths.ts';
@@ -36,6 +37,7 @@ export interface Task {
   hints: [string, string, string];
   criteria: string[];
   explained?: string;
+  workspace?: string;
   transfer?: boolean;
   focus?: Focus;
   reference?: boolean;
@@ -751,13 +753,27 @@ function buildTasks(unit: Unit, profile: ProfileId): Task[] {
     ),
   ];
 }
-export function tasksFor(unit: Unit, profile: ProfileId): Task[] {
+export function legacyTasksFor(unit: Unit, profile: ProfileId): Task[] {
   return buildTasks(unit, profile).map((t) =>
     simpleTask({
       ...t,
       simpleLanguage: profile === 'foerder' || profile === 'esa',
     }),
   );
+}
+export function tasksFor(unit: Unit, profile: ProfileId): Task[] {
+  return streamline(legacyTasksFor(unit, profile), unit, profile);
+}
+// Includes retired practice tasks so that old answers and their histories remain readable.
+export function storedTasksFor(unit: Unit, profile: ProfileId): Task[] {
+  const current = new Map(tasksFor(unit, profile).map((t) => [t.id, t]));
+  const previous = legacyTasksFor(unit, profile);
+  return [
+    ...previous.map((t) => current.get(t.id) ?? t),
+    ...[...current.values()].filter(
+      (t) => !previous.some((old) => old.id === t.id),
+    ),
+  ];
 }
 function kenyaTasks(profile: ProfileId): Task[] {
   const a = journey('amina', 'direct'),

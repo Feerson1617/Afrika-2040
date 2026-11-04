@@ -70,7 +70,8 @@ test('RC source and interaction wording preserve the required learning action', 
     )) {
       const html = simulationMaterial(t, p, draft);
       assert.doesNotMatch(html, /Ordne die Karten/);
-      assert.match(html, /Wähle den passenden Schritt/);
+      assert.match(html, /Wähle die Verarbeitungsschritte der Reihe nach/);
+      assert.match(html, /Prüfe jeweils deine Auswahl/);
     }
     const transfer = tasksFor('d', p).find((t) =>
       t.id.startsWith('economy.transfer'),

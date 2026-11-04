@@ -95,9 +95,10 @@ export const cocoa: StudySpec = {
       id: 'process',
       label: 'Eine zusätzliche Presse nutzen',
       goal: 'processing',
-      benefit: 'Verarbeitung: 260 − 185 = 75 GE Überschuss.',
+      benefit:
+        'Die Presse ermöglicht mehr eigene Verarbeitung und 260 GE Einnahmen.',
       limit:
-        'Die laufenden Ausgaben steigen. Es bleiben weniger GE als bei der Qualitätsmaßnahme.',
+        '185 GE laufende Kosten: Nur 75 GE Überschuss statt bisher 80 oder 90 GE mit besserer Lagerung. Spätere Gewinne sind nicht sicher.',
       facts: [
         'Einmal 60 GE für die Anschaffung bezahlen. Der eigene Topf ist danach leer.',
         'In der folgenden Modellrunde: 260 GE Einnahmen, 185 GE laufende Ausgaben.',

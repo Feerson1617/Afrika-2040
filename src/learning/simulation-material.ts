@@ -10,7 +10,7 @@ import { renderContext } from '../geography/context.ts';
 import { waterModel, water } from '../regions/water.ts';
 import { areaModel, area } from '../regions/area.ts';
 import { tankGraphic } from '../regions/water-model.ts';
-import { cocoaModel, cocoa } from '../regions/cocoa.ts';
+import { cocoaModel, cocoa, cocoaChain, chainNames } from '../regions/cocoa.ts';
 import { share, shareModel, shareKeys } from '../regions/share.ts';
 import { allocationData } from './allocation.ts';
 import type { Task } from './tasks.ts';
@@ -173,7 +173,12 @@ function transferTank(initial: number, remaining: number): string {
   const height = (152 * remaining) / initial;
   return `<rect x="35" y="50" width="150" height="160" rx="8" fill="#fffef8" stroke="#253e34" stroke-width="3"/><rect x="39" y="${206 - height}" width="142" height="${height}" fill="#8eb5c1"/><text x="110" y="35" text-anchor="middle">Tank: Start ${initial} WE</text><text x="110" y="240" text-anchor="middle">Rest ${remaining} WE</text>`;
 }
-export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
+export function simulationMaterial(
+  t: Task,
+  p: ProfileId,
+  a: Attempt,
+  attempts: Record<string, Attempt> = {},
+): string {
   const cfg = t.simulation!,
     simple = p === 'foerder';
   if (cfg.transfer) return transferMaterial(cfg.transfer, a, t, p);
@@ -350,13 +355,25 @@ export function simulationMaterial(t: Task, p: ProfileId, a: Attempt): string {
     )}${table(['Laufende Runde', 'GE'], [['Einnahmen', m.income], ['Laufende Ausgaben', m.costs], ...(simple ? [['Erklärter Überschuss', m.surplus]] : [])])}<section aria-label="Getrennter Anschaffungstopf"><h3>Einmalige Anschaffung · eigener Topf</h3><p>Topf vorher: 60 GE. Anschaffung: ${m.investment} GE. Im Topf bleiben ${m.investmentLeft} GE. Die Anschaffung zahlst du einmal aus diesem eigenen Topf. Die laufenden Ausgaben stehen im anderen Topf oben. Die Anschaffung wird dort nicht noch einmal abgezogen.</p></section><details><summary>Modellgrenzen ansehen</summary><p>${esc(cocoa.modelNote)}</p></details>`;
     const introduction =
       '<h2>Ein Betrieb bei Kumasi · Ghana</h2><p>Der Betrieb ist erfunden. Er gehört seinen Mitgliedern gemeinsam. Das heißt Genossenschaft. Ghana hat bereits eigene Kakaoverarbeitung.</p>';
-    if (t.id.startsWith('cocoa.chain'))
+    if (t.id.startsWith('cocoa.chain')) {
+      const current = cocoaChain.indexOf(
+        t.id.split('.').at(-1) as (typeof cocoaChain)[number],
+      );
       return (
         introduction +
-        '<p>Aus Kakaobohnen entstehen andere Produkte. Das heißt Verarbeitung. Schau dir die Karten an. Wähle den passenden Schritt.</p><figure><ul class="learning-material-cards" aria-label="Ungeordnete Materialkarten"><li>Pressen: Butter und Presskuchen</li><li>Getrocknete Bohnen</li><li>Kakaomasse</li><li>Rösten und mahlen</li></ul><figcaption>Die Karten stehen noch nicht in der richtigen Reihenfolge.</figcaption></figure><details id="learning-cocoa-money"><summary>Geld und Angaben zum Modell ansehen</summary><p>GE heißt Geldeinheiten. Wir rechnen hier mit erfundenem Geld. Die Beträge sind keine echten Preise.</p>' +
-        economicView +
-        '</details>'
+        `<p>Wähle die Verarbeitungsschritte der Reihe nach. Prüfe jeweils deine Auswahl.</p><ol class="learning-process" aria-label="Deine Verarbeitungskette">${cocoaChain
+          .map((id, i) => {
+            const saved = attempts['cocoa.chain.' + id];
+            const answer = saved?.answers.step;
+            const checked =
+              saved?.factual === 'correct' && saved.process !== 'draft';
+            return `<li ${i === current ? 'aria-current="step"' : ''}><strong>${i + 1}.</strong> ${answer ? esc(chainNames[answer] ?? answer) : i === current ? 'Jetzt auswählen' : 'Noch offen'}${answer ? `<small>${checked ? (saved.exampleUsed ? 'Beispiel genutzt' : 'Geprüft') : 'Noch prüfen'}</small>` : ''}</li>`;
+          })
+          .join(
+            '',
+          )}</ol><details id="learning-cocoa-money"><summary>Geld und Angaben zum Modell ansehen</summary><p>GE heißt Geldeinheiten. Wir rechnen hier mit erfundenem Geld. Die Beträge sind keine echten Preise.</p>${economicView}</details>`
       );
+    }
     return (
       introduction +
       '<p>GE heißt Geldeinheiten. Wir rechnen hier mit erfundenem Geld. Die Beträge sind keine echten Preise.</p>' +

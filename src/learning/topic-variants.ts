@@ -13,6 +13,7 @@ export interface Focus {
   paragraphs: string[];
   rows?: string[][];
   picture?: 'market' | 'forest';
+  comparePictures?: boolean;
   season?: 0 | 1;
   steps?: string[];
   words: [string, string][];

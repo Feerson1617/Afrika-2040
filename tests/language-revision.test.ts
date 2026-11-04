@@ -1,7 +1,7 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
-import { tasksFor, type Task } from '../src/learning/tasks.ts';
+import { tasksFor, legacyTasksFor, type Task } from '../src/learning/tasks.ts';
 import { implementedUnits } from '../src/learning/catalog.ts';
 import { profileIds, profiles } from '../src/learning/profiles.ts';
 import { allWords, taskWords } from '../src/learning/words.ts';
@@ -50,15 +50,17 @@ const protect = (t: Task) => {
   };
 };
 for (const v of baseline)
-  test(`language revision preserves protected structure ${v.unit}/${v.profile}`, () => {
+  test(`archived language contract remains readable with protected structure ${v.unit}/${v.profile}`, () => {
     assert.deepEqual(
-      JSON.parse(JSON.stringify(tasksFor(v.unit, v.profile).map(protect))),
+      JSON.parse(
+        JSON.stringify(legacyTasksFor(v.unit, v.profile).map(protect)),
+      ),
       v.tasks,
     );
   });
-test('language revision keeps all 494 steps, 607 fields and 66 glossary terms for one age group', () => {
+test('legacy archive keeps all 494 tasks and 607 fields; active routes keep 66 glossary terms', () => {
   const tasks = implementedUnits.flatMap((u) =>
-    profileIds.flatMap((p) => tasksFor(u, p)),
+    profileIds.flatMap((p) => legacyTasksFor(u, p)),
   );
   assert.equal(tasks.length, 494);
   assert.equal(tasks.flatMap((t) => t.fields).length, 607);
@@ -105,7 +107,10 @@ test('processing cards lead; money remains optional there and fully available la
     });
     const a = active(s)!.attempt!;
     const html = simulationMaterial(chain, p, a);
-    assert.match(html, /learning-material-cards/);
+    assert.match(html, /learning-process/);
+    assert.equal((html.match(/<li /g) ?? []).length, 4);
+    assert.match(html, /Jetzt auswählen/);
+    assert.equal((html.match(/Noch offen/g) ?? []).length, 3);
     const [visible, extra] = html.split('<details id="learning-cocoa-money">');
     assert.doesNotMatch(visible, /Einnahmen|Überschuss|Anschaffungstopf/);
     assert.match(extra, /Einnahmen/);
@@ -143,9 +148,14 @@ test('language revision preserves evaluated IDs and values in every documented r
       else if (t.linked)
         records[t.linked.task] = { answers: { [t.linked.field]: choice } };
       const actual = resolveSimulation(futureReference(t, records), records);
+      const corrected = structuredClone(expected) as any[];
+      // A2: maintenance + water not reaching the field also hold for the new distribution.
+      if (row.unit === 's5' && choice === 'tech')
+        for (const f of corrected)
+          if (f.id === 'limit') f.accepted = ['repair', 'tech'];
       assert.deepEqual(
         JSON.parse(JSON.stringify(protect(actual).fields)),
-        expected,
+        corrected,
         `${row.unit}/${row.profile}/${row.id}/${choice}`,
       );
     }

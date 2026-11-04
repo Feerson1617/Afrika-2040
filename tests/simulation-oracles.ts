@@ -144,6 +144,7 @@ export function episodeAnswers(t: {
       explanation:
         'Agadir liegt nördlicher als Nairobi. Nairobi liegt südlich des Äquators. Eine genaue Fahrzeit zeigt diese Übersicht nicht.',
     };
+  if (id === 'review.scope') return { scope: 'local' };
   if (/^review\.(KEN|GHA|MAR)/.test(id))
     return { claim: 'model', scope: 'local' };
   if (id.startsWith('review.common'))
