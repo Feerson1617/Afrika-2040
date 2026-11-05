@@ -1,0 +1,1186 @@
+[
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 8679,
+    "run": "targeted"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 9076,
+    "run": "targeted"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 derived material: nested open and deliberately closed panels survive necessary result updates",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 1179,
+    "run": "targeted"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 future.judgment/msa: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2604,
+    "run": "targeted"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 future.judgment/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2576,
+    "run": "targeted"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2699,
+    "run": "targeted"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 economy.source-claim.v1/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3180,
+    "run": "targeted"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 nature.recommend/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3650,
+    "run": "targeted"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 derived material: nested open and deliberately closed panels survive necessary result updates",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 957,
+    "run": "targeted"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 future.judgment/msa: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3479,
+    "run": "targeted"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 future.judgment/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3200,
+    "run": "targeted"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3788,
+    "run": "targeted"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 economy.source-claim.v1/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3617,
+    "run": "targeted"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 nature.recommend/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 4621,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 anonymous live material panel keeps both choices across independent reloads",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 1858,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 profile isolation, reset cancellation and confirmed session reset",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 10471,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 blocked storage: in-memory panels, answers, back and warning stay usable",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3698,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return future.judgment/msa 1024x768: normal path, mixed panels, writing, back and separate reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 7183,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return future.judgment/msa 768x1024: normal path, mixed panels, writing, back and separate reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 6182,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return future.judgment/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 6457,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return future.judgment/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 6117,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return image.perspective/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 5960,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return image.perspective/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 6274,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return economy.source-claim.v1/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 6742,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return economy.source-claim.v1/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 5815,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return nature.recommend/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 7749,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return nature.recommend/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 8030,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 anonymous live material panel keeps both choices across independent reloads",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 1833,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 profile isolation, reset cancellation and confirmed session reset",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 11358,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 blocked storage: in-memory panels, answers, back and warning stay usable",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 4394,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return future.judgment/msa 1024x768: normal path, mixed panels, writing, back and separate reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 6930,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return future.judgment/msa 768x1024: normal path, mixed panels, writing, back and separate reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 7326,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return future.judgment/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 7514,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return future.judgment/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 7713,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return image.perspective/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 8295,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return image.perspective/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 8407,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return economy.source-claim.v1/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 7113,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return economy.source-claim.v1/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 7503,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return nature.recommend/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 9703,
+    "run": "targeted"
+  },
+  {
+    "file": "n1-return.spec.ts",
+    "title": "Afrika curriculum N1 return nature.recommend/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 9420,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual atlas 1024: direct chapters, keyboard, contrast and no extra entry step",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2982,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual atlas 768: direct chapters, keyboard, contrast and no extra entry step",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2988,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual atlas 390: direct chapters, keyboard, contrast and no extra entry step",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2875,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s1/foerder: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3506,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s2/foerder: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3429,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s3/foerder: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3199,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s4/foerder: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3008,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s5/foerder: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3039,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s6/foerder: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3133,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s1/esa: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3512,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s2/esa: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3467,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s3/esa: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3260,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s4/esa: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2822,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s5/esa: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3034,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s6/esa: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3088,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s1/msa: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3464,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s2/msa: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3280,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s3/msa: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3221,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s4/msa: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2850,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s5/msa: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3117,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s6/msa: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3176,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s1/ahr: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3932,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s2/ahr: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3819,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s3/ahr: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3241,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s4/ahr: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3020,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s5/ahr: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3082,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s6/ahr: touch, visible change, keyboard and reload",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3236,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual feedback foerder: true partial wrong, support, reduced motion and back",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2438,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual feedback esa: true partial wrong, support, reduced motion and back",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2056,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual feedback msa: true partial wrong, support, reduced motion and back",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2137,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual feedback ahr: true partial wrong, support, reduced motion and back",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2284,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual compact 768: six scenes remain usable without horizontal scrolling",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 4569,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual compact 390: six scenes remain usable without horizontal scrolling",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3979,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual feedback: full text contrast from the first animation frame",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 1868,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual atlas 1024: direct chapters, keyboard, contrast and no extra entry step",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3656,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual atlas 768: direct chapters, keyboard, contrast and no extra entry step",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3275,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual atlas 390: direct chapters, keyboard, contrast and no extra entry step",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3228,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s1/foerder: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 4068,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s2/foerder: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3652,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s3/foerder: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3313,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s4/foerder: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3154,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s5/foerder: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3653,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s6/foerder: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3771,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s1/esa: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 4015,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s2/esa: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3618,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s3/esa: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3374,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s4/esa: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3205,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s5/esa: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3580,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s6/esa: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3753,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s1/msa: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 4062,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s2/msa: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3553,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s3/msa: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3351,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s4/msa: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3182,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s5/msa: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3553,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s6/msa: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3396,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s1/ahr: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 4197,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s2/ahr: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3517,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s3/ahr: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3343,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s4/ahr: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3052,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s5/ahr: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3431,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual models s6/ahr: touch, visible change, keyboard and reload",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3330,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual feedback foerder: true partial wrong, support, reduced motion and back",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 2707,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual feedback esa: true partial wrong, support, reduced motion and back",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 2590,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual feedback msa: true partial wrong, support, reduced motion and back",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 2552,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual feedback ahr: true partial wrong, support, reduced motion and back",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 2555,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual compact 768: six scenes remain usable without horizontal scrolling",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 4633,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual compact 390: six scenes remain usable without horizontal scrolling",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 4113,
+    "run": "targeted"
+  },
+  {
+    "file": "visual-polish.spec.ts",
+    "title": "Afrika curriculum visual feedback: full text contrast from the first animation frame",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 2045,
+    "run": "targeted"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 8670,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 8150,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 8521,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 8070,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 8273,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 8083,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 8529,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 8563,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 8856,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 8377,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 9223,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 8634,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 9491,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 10020,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 9101,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 8517,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 9061,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 9054,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 9446,
+    "run": "repeated"
+  },
+  {
+    "file": "four-paths.spec.ts",
+    "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 9199,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3558,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3029,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3112,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2846,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3262,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2973,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2974,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 3087,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2974,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "chromium",
+    "status": "passed",
+    "durationMs": 2852,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3798,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3761,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3741,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 4083,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3961,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3772,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3881,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3735,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3838,
+    "run": "repeated"
+  },
+  {
+    "file": "language-revision.spec.ts",
+    "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+    "engine": "webkit",
+    "status": "passed",
+    "durationMs": 3697,
+    "run": "repeated"
+  }
+]

@@ -13,11 +13,27 @@ export default defineConfig({
     viewport: { width: 1440, height: 1000 },
     trace: 'retain-on-failure',
     screenshot: 'only-on-failure',
-    launchOptions: {
-      executablePath: existsSync(systemChromium) ? systemChromium : undefined,
-      args: ['--no-sandbox', '--disable-dev-shm-usage'],
-    },
   },
+  projects: [
+    {
+      name: 'chromium',
+      use: {
+        browserName: 'chromium',
+        launchOptions: {
+          executablePath: existsSync(systemChromium)
+            ? systemChromium
+            : undefined,
+          args: ['--no-sandbox', '--disable-dev-shm-usage'],
+        },
+      },
+    },
+    {
+      name: 'webkit',
+      testMatch:
+        /(?:phase2b(?:-correction)?|episode2(?:-accessibility)?|regions|morocco|final-integration|correction-six|correction-kenya-reports|feedback-classification|pedagogical-final|release-rc1|final-scorm|phase5-(?:map|context|transfer|integration))\.spec\.ts/,
+      use: { browserName: 'webkit' },
+    },
+  ],
   webServer: [
     {
       command: 'npm run preview -- --port 4173 --strictPort',

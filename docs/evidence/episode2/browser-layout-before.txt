@@ -1,0 +1,111 @@
+[WebServer] (node:94720) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:94745) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 18 tests using 2 workers
+
+(node:94758) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:94757) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/18] [chromium] › tests/browser/episode2.spec.ts:172:5 › Episode 2 complete path on desktop: direct entry, real model experiments and supported judgment limits
+[2/18] [chromium] › tests/browser/episode2.spec.ts:172:5 › Episode 2 complete bus on desktop: direct entry, real model experiments and supported judgment limits
+[3/18] [chromium] › tests/browser/episode2.spec.ts:172:5 › Episode 2 complete bus on ipad-landscape: direct entry, real model experiments and supported judgment limits
+[4/18] [chromium] › tests/browser/episode2.spec.ts:172:5 › Episode 2 complete path on ipad-landscape: direct entry, real model experiments and supported judgment limits
+[5/18] [chromium] › tests/browser/episode2.spec.ts:172:5 › Episode 2 complete bus on ipad-portrait: direct entry, real model experiments and supported judgment limits
+[6/18] [chromium] › tests/browser/episode2.spec.ts:172:5 › Episode 2 complete path on ipad-portrait: direct entry, real model experiments and supported judgment limits
+  1) [chromium] › tests/browser/episode2.spec.ts:172:5 › Episode 2 complete bus on ipad-portrait: direct entry, real model experiments and supported judgment limits 
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 0
+    Received:    -29.75
+
+      72 |       };
+      73 |     });
+    > 74 |     expect(core.quantities.top).toBeGreaterThanOrEqual(0);
+         |                                 ^
+      75 |     expect(core.answer.bottom).toBeLessThanOrEqual(core.viewport.height);
+      76 |     expect(core.overflow).toBe(false);
+      77 |     const name = `episode2-${test.info().project.name}-${core.viewport.width}x${core.viewport.height}-current-comparison`;
+        at first (/workspace/Afrika-2040/tests/browser/episode2.spec.ts:74:33)
+        at /workspace/Afrika-2040/tests/browser/episode2.spec.ts:194:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-complet-c178f-d-supported-judgment-limits-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/episode2-Episode-2-complet-c178f-d-supported-judgment-limits-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-complet-c178f-d-supported-judgment-limits-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/episode2-Episode-2-complet-c178f-d-supported-judgment-limits-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  2) [chromium] › tests/browser/episode2.spec.ts:172:5 › Episode 2 complete path on ipad-portrait: direct entry, real model experiments and supported judgment limits 
+
+    Error: expect(received).toBeGreaterThanOrEqual(expected)
+
+    Expected: >= 0
+    Received:    -29.75
+
+      72 |       };
+      73 |     });
+    > 74 |     expect(core.quantities.top).toBeGreaterThanOrEqual(0);
+         |                                 ^
+      75 |     expect(core.answer.bottom).toBeLessThanOrEqual(core.viewport.height);
+      76 |     expect(core.overflow).toBe(false);
+      77 |     const name = `episode2-${test.info().project.name}-${core.viewport.width}x${core.viewport.height}-current-comparison`;
+        at first (/workspace/Afrika-2040/tests/browser/episode2.spec.ts:74:33)
+        at /workspace/Afrika-2040/tests/browser/episode2.spec.ts:194:7
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-complet-2ddbc-d-supported-judgment-limits-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/episode2-Episode-2-complet-2ddbc-d-supported-judgment-limits-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-complet-2ddbc-d-supported-judgment-limits-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/episode2-Episode-2-complet-2ddbc-d-supported-judgment-limits-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:95159) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[7/18] [chromium] › tests/browser/episode2.spec.ts:258:1 › Episode 2 missing and partial inputs, automatic help after two errors, both trial effects and deliberate adoption
+(node:95168) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[8/18] [chromium] › tests/browser/episode2.spec.ts:319:3 › Episode 2 conscious goal conflict bus has two valid revision paths and a concrete weighted product
+[9/18] [chromium] › tests/browser/episode2.spec.ts:319:3 › Episode 2 conscious goal conflict path has two valid revision paths and a concrete weighted product
+[10/18] [chromium] › tests/browser/episode2.spec.ts:359:1 › Episode 2 unclear free text remains ungraded, escaped and editable; example adoption keeps own text and honest provenance
+[11/18] [chromium] › tests/browser/episode2.spec.ts:396:1 › Episode 2 uses an existing first recommendation, keeps it through reload/back/menu and opens its saved report
+[12/18] [chromium] › tests/browser/episode2.spec.ts:430:1 › Episode 2 native keyboard alone operates complete direct entry, real map controls, choices and report
+[13/18] [chromium] › tests/browser/episode2.spec.ts:471:1 › Episode 2 blocked storage permits a complete supported flow, word help and confirmed restart
+[14/18] [chromium] › tests/browser/episode2.spec.ts:500:1 › Episode 2 damaged optional storage and explicit step reset have safe continuations
+[15/18] [chromium] › tests/browser/episode2.spec.ts:530:3 › Episode 2 full bus works below the local Pages prefix with clean resources
+[16/18] [chromium] › tests/browser/episode2.spec.ts:530:3 › Episode 2 full path works below the local Pages prefix with clean resources
+[17/18] [chromium] › tests/browser/episode2.spec.ts:544:1 › Episode 2 start, comparison, trial, open conflict, supported product pass scoped axe rules
+[18/18] [chromium] › tests/browser/episode2.spec.ts:578:1 › Episode 2 preserves both actual Episode 1 products after the revised South recommendation supplies its starting route
+  2 failed
+    [chromium] › tests/browser/episode2.spec.ts:172:5 › Episode 2 complete bus on ipad-portrait: direct entry, real model experiments and supported judgment limits 
+    [chromium] › tests/browser/episode2.spec.ts:172:5 › Episode 2 complete path on ipad-portrait: direct entry, real model experiments and supported judgment limits 
+  16 passed (28.9s)

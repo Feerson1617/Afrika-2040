@@ -1,0 +1,17 @@
+[
+  {
+    "file": "Eingefügter Text.txt",
+    "bytes": 20770,
+    "sha256": "c692458d54c684d646cc7ab04829d1fc0352424d2508654e814123b40c10801b"
+  },
+  {
+    "file": "Korrekturprompt-Phase2B.txt",
+    "bytes": 5871,
+    "sha256": "aef8b86013e79648ca21a45f3f4412b10abb7cfae113f5372b485c6799a4a977"
+  },
+  {
+    "file": "Gegenpruefung-Phase2B.md",
+    "bytes": 23461,
+    "sha256": "e7343102d0a99844b136cf7de1b870c82bae90b6c63b1337b33baaada82fa951"
+  }
+]

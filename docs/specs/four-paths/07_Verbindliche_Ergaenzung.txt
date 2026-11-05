@@ -1,0 +1,179 @@
+# VERBINDLICHE ERGÄNZUNG – QUALITÄTSSICHERUNG DER VIER LERNWEGE
+
+Diese Ergänzung gilt zusätzlich zum Codex-Entwicklungsauftrag `05_Codex_Entwicklungsauftrag.txt`.
+
+Sie verändert die bereits festgelegten Entwicklungsphasen nicht. Sie präzisiert die Umsetzung und die Abnahmekriterien.
+
+## A. Lernbereich, Aufgabe und Aufgabenvariante eindeutig unterscheiden
+
+Die 52 Kennungen aus `02_Vier_Niveaus_Matrix.md` bezeichnen zunächst 13 Lernbereiche in vier Profilen.
+
+Sie sind nicht automatisch eindeutige Kennungen für sämtliche einzelnen Teilaufgaben.
+
+Unterscheide technisch mindestens:
+
+- Lernbereich und Profil
+- fachliches Lernziel
+- konkrete Teilaufgabe
+- konkrete Aufgabenvariante
+- verwendete Material- und Modellversion
+- tatsächlicher Antwortversuch
+- Unterstützung und Herkunft
+- fachlich geprüften beziehungsweise ungeprüften Antwortanteil
+
+Beispiel:
+
+Bereich: `c.foerder.v1`
+
+Konkrete Aufgaben innerhalb dieses Bereichs erhalten zusätzliche stabile Kennungen, etwa für natürliche Veränderung, Wanderung, Gesamtwirkung und Transfer.
+
+Zwei verschiedene Teilaufgaben dürfen nicht versehentlich denselben gespeicherten Antwort- oder Abschlusszustand verwenden.
+
+Prüfe die eindeutige Aufgabenidentität beim Wechsel des Lernwegs, beim Neuladen, bei der Neubearbeitung und bei der Wiederherstellung älterer Spielstände.
+
+## B. Vor der Implementierung jedes weiteren Lernbereichs den konkreten Aufgabenvertrag vervollständigen
+
+Die 52er-Matrix ist die didaktische Grundlage, aber nicht in jedem Bereich eine vollständige Programmieranweisung für sämtliche Einzelschritte.
+
+Erstelle deshalb vor der Umsetzung jedes weiteren Lernbereichs einen überprüfbaren Aufgabenvertrag.
+
+Dieser muss festlegen:
+
+- den einzelnen sichtbaren Arbeitsauftrag,
+- die dazu notwendigen Materialien,
+- die tatsächlich erwartete Lernhandlung,
+- richtige und fachlich unpassende Antworten,
+- zulässige alternative Lösungen,
+- typische Teilantworten,
+- gestufte Hilfen und deren konkrete Inhalte,
+- die Bedingung für einen unterstützten Abschluss,
+- den tatsächlich prüfbaren Umfang,
+- den Transfer auf neue Angaben,
+- die Herkunftskennzeichnung und Speicherung.
+
+Erfinde keine zusätzlichen realen Statistiken oder vermeintlich authentischen Materialien.
+
+Wenn sich eine Aufgabe aus der Spezifikation nicht eindeutig ableiten lässt, dokumentiere die fachliche Unklarheit und löse sie vor ihrer Programmierung.
+
+Nicht viermal dieselbe Antwortaufgabe mit lediglich anderen Hilfetexten implementieren.
+
+## C. Eigene Erklärungen müssen sinnvoll rückgemeldet werden können
+
+Besonders für MSA und AHR sind eigene Erklärungen und Urteile ein wichtiger Lernbestandteil.
+
+Eine gespeicherte Erklärung gilt weiterhin nicht automatisch als fachlich richtig.
+
+Ergänze deshalb für diese Aufgaben ein kurzes, aufgabenspezifisches Kriterienraster, das nach der eigenen Bearbeitung eingesehen werden kann.
+
+Die Kriterien müssen sich auf den konkreten Zusammenhang beziehen, nicht nur auf allgemeine Aufforderungen wie „Begründe deine Antwort“.
+
+Ein mögliches Verfahren:
+
+Zunächst eigene Erklärung erstellen.
+
+Danach fachliche Kriterien öffnen und die Erklärung vergleichen.
+
+Anschließend kann die Erklärung überarbeitet werden.
+
+Die Anwendung kennzeichnet dies als Selbstkontrolle beziehungsweise Überarbeitung, niemals als automatisch bestätigte fachliche Leistung.
+
+Eine Besprechung durch Lehrkraft oder Partner bleibt ein tatsächlicher Unterrichtsschritt und darf nicht als bereits erfolgt markiert werden.
+
+Für Förder und ESA stehen stattdessen angemessen strukturierte Erklärungs- und Entscheidungswege zur Verfügung.
+
+Keine zusätzlichen langen Pflichtfreitexte entwickeln.
+
+## D. Profilwahl schülergerecht gestalten
+
+Die vier Profile bleiben intern eindeutig:
+
+`foerder`, `esa`, `msa`, `ahr`.
+
+Lehrkräfte müssen diese Profile erkennen und gezielt auswählen können.
+
+Im normalen Schülerbetrieb soll die Profilzuordnung jedoch möglichst unauffällig und nicht als öffentliche Leistungsbewertung dargestellt werden.
+
+Prüfe deshalb neutrale beziehungsweise sachlich beschreibende Schülerbezeichnungen.
+
+Eine Zuordnung zur niedrigeren Stufe darf weder durch Farbe, Symbol noch Wortwahl abwertend wirken.
+
+Sprachliche Hilfen, Wörterklärungen und Bedienunterstützung bleiben grundsätzlich unabhängig vom Profil verfügbar.
+
+Kein Kind wird automatisch aufgrund von Sprache, Fehlern oder Bearbeitungsgeschwindigkeit einem bestimmten Profil zugeordnet.
+
+Ein möglicher direkter Einstieg in einen von der Lehrkraft empfohlenen Lernweg darf keine Konten, personenbezogenen Profile oder zusätzlichen Verwaltungsfunktionen voraussetzen.
+
+## E. Speicherung, Wiederherstellung und spätere SCORM-Portabilität
+
+Durch vier Lernwege, getrennte Versuche, zusätzliche Belege und eigene Texte wird der mögliche Spielzustand umfangreicher.
+
+Prüfe deshalb nach Gate 1 und erneut nach vollständiger Integration:
+
+- Zustand nur eines aktiven Profils
+- mehrere bearbeitete Profile
+- Profilwechsel mit vorhandenen Entwürfen
+- vollständige Bearbeitung aller Kapitel
+- zusätzliche freie Texte
+- Unterstützungs- und Beispielhistorie
+- Wiederherstellung älterer Spielstände
+- beschädigte optionale Daten
+- blockierte Browserspeicherung
+
+Miss dabei auch die tatsächliche Größe des serialisierten Zustands.
+
+Dokumentiere, welche Daten für einen späteren kompakten Wiederaufnahmedatensatz wirklich notwendig wären.
+
+Für die mögliche spätere SCORM-2004-3rd-Edition-Auslieferung ist das vorgesehene portable Budget von 64.000 Zeichen für `cmi.suspend_data` zu beachten.
+
+Noch keinen SCORM-Adapter entwickeln und keine Schülerantworten an ein LMS senden.
+
+Behaupte keine SCORM-Kompatibilität, solange diese nicht praktisch umgesetzt und getestet wurde.
+
+## F. Unterrichtszeit, Lernumfang und Klassenarbeitsanschluss prüfen
+
+Die fünf Kapitel sollen innerhalb des ungefähr 20 Unterrichtsstunden umfassenden Afrika-Schwerpunkts sinnvoll einsetzbar sein.
+
+Erstelle eine realistische, ausdrücklich vorläufige Unterrichtszuordnung mit Raum für:
+
+- Einführung und reale geographische Materialien,
+- Spielhandlungen,
+- Besprechung der Ergebnisse,
+- fachliche Sicherung,
+- neue Übungs- und Transferfälle,
+- Wiederholung vor der Klassenarbeit.
+
+Das Spiel darf nicht verlangen, dass alle Lernenden sämtliche optionalen Vertiefungen und mehrfachen Freitextaufgaben bearbeiten.
+
+Für jedes Kapitel muss erkennbar sein, welche Lernziele tatsächlich geübt wurden und welche zusätzlichen Methoden noch im Unterricht benötigt werden.
+
+Ein Kapitelabschluss ist kein Kompetenznachweis.
+
+Vollständige Klimadiagramme, nicht geübte Bevölkerungsraten oder zusätzliche Wirtschaftsindikatoren dürfen nicht allein aufgrund eines verwandten Spielinhalts als beherrscht ausgewiesen werden.
+
+Plane keine neue große Aufgabenstrecke, um lediglich eine höhere Zahl digitaler Übungen zu erreichen.
+
+## G. Zusätzliche Abnahmebedingungen
+
+Erweitere die bisherigen Tests um folgende Prüfungen:
+
+Die einzelne Aufgabenidentität muss auch bei mehreren Teilaufgaben desselben Lernbereichs eindeutig bleiben.
+
+Alle vier Profile müssen sich durch tatsächliche Lernhandlungen unterscheiden.
+
+Ein Profilwechsel darf niemals einen ungeprüften Freitext in eine bestätigte Fachleistung oder einen früheren Förder-Abschluss in einen AHR-Abschluss umdeuten.
+
+Die sprachlich vereinfachte Materialansicht muss wichtige Bedingungen, Einheiten, Zeiträume, Quellen und verbleibende Nachteile erhalten.
+
+Ein AHR-Lernweg darf nicht dadurch als erfolgreich fachlich geprüft gelten, dass sämtliche Freitextfelder ausgefüllt sind.
+
+Die vollständigen fachlichen Aufgabenverträge müssen vor dem breiten Rollout vorliegen.
+
+Nach Gate 1 soll die unabhängige Musterabnahme besonders die fachliche Eigenleistung und die Verständlichkeit der vier Lernwege untersuchen.
+
+Nach Möglichkeit soll vor Gate 2 zusätzlich eine sehr kleine, begleitete Erprobung mit unterschiedlich leistungsstarken Lernenden auf einem echten Schul-iPad erfolgen.
+
+Die Ergebnisse einer solchen Erprobung sind Beobachtungen und noch kein allgemeiner Nachweis der Lernwirksamkeit.
+
+Alle bisherigen fachlichen, technischen und datenschutzbezogenen Schutzregeln bleiben gültig.
+
+Keine zusätzlichen großen Spielemechaniken, keine automatische Benotung freier Texte und keine Veröffentlichung ohne ausdrückliche Freigabe.

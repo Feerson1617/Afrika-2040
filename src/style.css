@@ -1552,37 +1552,1067 @@ summary span {
 }
 
 /* Final recommendation: one short reasoning step beside its own evidence. */
-.decision-screen .game-layout { display: flex; flex-direction: column; max-width: 900px; margin-inline: auto; gap: 16px; }
-.decision-screen .task-panel { display: block; order: 0; width: 100%; max-width: none; }
-.decision-map { width: 100%; order: 1; border: 1px solid var(--line); border-radius: 12px; padding: 0 18px; }
-.decision-map > summary { min-height: 52px; cursor: pointer; padding-block: 15px; }
-.decision-map .map-column { padding-bottom: 18px; }
-.decision-screen .task-prompt { padding-bottom: 16px; }
-.decision-screen .task-work { border: 0; padding-top: 0; }
-.decision-tabs { display: flex; flex-wrap: wrap; gap: 4px; margin-bottom: 12px; }
-.decision-tabs button { flex: 1; min-height: 44px; padding: 8px; border: 1px solid var(--line); border-radius: 6px; }
-.decision-tabs [aria-current="step"] { background: #e3eadb; font-weight: 700; border-color: #45644c; }
-.decision-context { display: flex; flex-wrap: wrap; gap: 6px 24px; padding: 12px; background: #eef0e5; font-size: 15px; margin-bottom: 16px; border-radius: 6px; }
-.decision-context span { flex: 1 1 200px; }
-.decision-part h3 { font-size: 20px; margin: 0 0 16px; }
-.decision-screen .three-choices { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
-.decision-screen .choice { min-height: 52px; padding: 12px; }
-.evidence-heading { display: grid; grid-template-columns: 1.2fr 1fr 1fr; padding: 8px 12px 8px 44px; font-size: 15px; gap: 10px; }
-.evidence-rows .choice > span { display: grid; grid-template-columns: 1.2fr 1fr 1fr; gap: 10px; flex: 1; }
-.evidence-rows .choice { display: flex; gap: 12px; margin-bottom: 8px; }
-.evidence-rows legend small { display: block; font-weight: 400; margin-top: 4px; }
-.chosen-evidence { padding: 12px; border: 1px solid var(--line); border-radius: 6px; font-size: 15px; line-height: 1.6; }
-.chosen-evidence p + p { margin-top: 8px; }
-.goal-note { padding: 14px; background: #edf0e6; border-left: 3px solid #62795a; line-height: 1.6; margin-block: 16px; }
-.weighting .button { margin-bottom: 10px; }
-.weighting .choice { line-height: 1.6; }
-.decision-screen .task-actions { margin-top: 18px; }
-@media (max-width: 600px) {
-  .decision-screen .three-choices { grid-template-columns: 1fr; }
-  .decision-tabs button { flex-basis: 40%; }
-  .evidence-heading { font-size: 14px; }
+.decision-screen .game-layout {
+  display: flex;
+  flex-direction: column;
+  max-width: 900px;
+  margin-inline: auto;
+  gap: 16px;
 }
-.decision-screen .field-intro, .decision-screen legend, .decision-screen .choice, .decision-screen .goal-note { font-size: 16px; }
-.decision-screen .small-note, .decision-screen .instruction, .decision-screen .chosen-evidence { font-size: 15px; }
-.decision-screen .task-prompt { border: 0; background: transparent; padding: 0 0 16px; }
-.decision-screen .field-intro { margin-bottom: 14px; line-height: 1.5; }
+.decision-screen .task-panel {
+  display: block;
+  order: 0;
+  width: 100%;
+  max-width: none;
+}
+.decision-map {
+  width: 100%;
+  order: 1;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 0 18px;
+}
+.decision-map > summary {
+  min-height: 52px;
+  cursor: pointer;
+  padding-block: 15px;
+}
+.decision-map .map-column {
+  padding-bottom: 18px;
+}
+.decision-screen .task-prompt {
+  padding-bottom: 16px;
+}
+.decision-screen .task-work {
+  border: 0;
+  padding-top: 0;
+}
+.decision-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 4px;
+  margin-bottom: 12px;
+}
+.decision-tabs button {
+  flex: 1;
+  min-height: 44px;
+  padding: 8px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+}
+.decision-tabs [aria-current='step'] {
+  background: #e3eadb;
+  font-weight: 700;
+  border-color: #45644c;
+}
+.decision-context {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px 24px;
+  padding: 12px;
+  background: #eef0e5;
+  font-size: 15px;
+  margin-bottom: 16px;
+  border-radius: 6px;
+}
+.decision-context span {
+  flex: 1 1 200px;
+}
+.decision-part h3 {
+  font-size: 20px;
+  margin: 0 0 16px;
+}
+.decision-screen .three-choices {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 8px;
+}
+.decision-screen .choice {
+  min-height: 52px;
+  padding: 12px;
+}
+.evidence-heading {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  padding: 8px 12px 8px 44px;
+  font-size: 15px;
+  gap: 10px;
+}
+.evidence-rows .choice > span {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 10px;
+  flex: 1;
+}
+.evidence-rows .choice {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+.evidence-rows legend small {
+  display: block;
+  font-weight: 400;
+  margin-top: 4px;
+}
+.chosen-evidence {
+  padding: 12px;
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  font-size: 15px;
+  line-height: 1.6;
+}
+.chosen-evidence p + p {
+  margin-top: 8px;
+}
+.goal-note {
+  padding: 14px;
+  background: #edf0e6;
+  border-left: 3px solid #62795a;
+  line-height: 1.6;
+  margin-block: 16px;
+}
+.weighting .button {
+  margin-bottom: 10px;
+}
+.weighting .choice {
+  line-height: 1.6;
+}
+.decision-screen .task-actions {
+  margin-top: 18px;
+}
+@media (max-width: 600px) {
+  .decision-screen .three-choices {
+    grid-template-columns: 1fr;
+  }
+  .decision-tabs button {
+    flex-basis: 40%;
+  }
+  .evidence-heading {
+    font-size: 14px;
+  }
+}
+.decision-screen .field-intro,
+.decision-screen legend,
+.decision-screen .choice,
+.decision-screen .goal-note {
+  font-size: 16px;
+}
+.decision-screen .small-note,
+.decision-screen .instruction,
+.decision-screen .chosen-evidence {
+  font-size: 15px;
+}
+.decision-screen .task-prompt {
+  border: 0;
+  background: transparent;
+  padding: 0 0 16px;
+}
+.decision-screen .field-intro {
+  margin-bottom: 14px;
+  line-height: 1.5;
+}
+
+/* Phase 2B: one model map, a nearby time comparison, and a separate revision. */
+.event-transition {
+  margin: 28px auto;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  background: #edf0e5;
+  text-align: left;
+}
+.event-transition h2 {
+  font-family: Georgia, serif;
+  margin-bottom: 12px;
+}
+.event-transition .button {
+  margin-top: 18px;
+}
+.event-screen {
+  max-width: 1100px;
+}
+.event-screen .episode-heading h1 {
+  font-size: clamp(26px, 3vw, 35px);
+}
+.event-task {
+  display: block;
+  width: 100%;
+  max-width: none;
+}
+.event-task > .task-step {
+  margin-bottom: 18px;
+}
+.event-screen .choice,
+.event-screen legend,
+.event-screen .field-intro {
+  font-size: 16px;
+}
+.event-screen .choice {
+  min-height: 52px;
+}
+.event-story {
+  font-size: 17px;
+  line-height: 1.65;
+  margin-bottom: 16px;
+  max-width: 760px;
+}
+.event-change {
+  padding: 14px;
+  background: #edf0e6;
+  border-left: 3px solid #8d6740;
+  line-height: 1.6;
+  margin-block: 18px;
+}
+.event-views {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+.event-views .selected {
+  background: #dce6d3;
+  font-weight: 700;
+}
+.event-views > span {
+  margin-left: auto;
+  font-size: 15px;
+}
+.event-map {
+  max-width: 900px;
+  margin-inline: auto;
+}
+.event-map .neighborhood {
+  max-height: 500px;
+}
+.event-paths {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  margin: 18px 0;
+}
+.event-paths legend {
+  margin-bottom: 10px;
+}
+.event-detour.path-line,
+.event-detour .path-line {
+  stroke: #8d4d2a;
+  stroke-width: 6;
+  stroke-dasharray: 9 7;
+}
+.old-footpath {
+  fill: none;
+  stroke: #9c8269;
+  stroke-width: 3;
+  stroke-dasharray: 3 7;
+  opacity: 0.7;
+}
+.event-works {
+  pointer-events: none;
+}
+.event-map-note {
+  font-size: 18px;
+  fill: #713b20;
+  font-weight: 700;
+}
+.event-comparison {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: auto;
+  margin-block: 14px 24px;
+  font-size: 16px;
+}
+.event-comparison caption {
+  text-align: left;
+  font-weight: 700;
+  padding-bottom: 12px;
+}
+.event-comparison caption span {
+  font-weight: 400;
+  margin-left: 12px;
+}
+.event-comparison th,
+.event-comparison td {
+  border-bottom: 1px solid var(--line);
+  padding: 12px 8px;
+  text-align: left;
+}
+.event-comparison td:nth-child(2),
+.event-comparison td:nth-child(3) {
+  font-size: 21px;
+  font-weight: 700;
+}
+.event-comparison .current-view {
+  background: #e5ecdd;
+}
+.event-comparison fieldset {
+  margin: 0;
+}
+.event-answer {
+  display: flex;
+  gap: 8px;
+}
+.event-answer .choice {
+  flex: 1;
+  padding: 10px;
+  margin: 0;
+}
+.event-explanation {
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+}
+.event-explanation h2 {
+  margin-bottom: 18px;
+}
+.event-screen details {
+  border-top: 1px solid var(--line);
+  margin-block: 18px;
+  padding-block: 8px;
+}
+.event-screen summary {
+  min-height: 44px;
+  padding-block: 12px;
+  cursor: pointer;
+}
+.event-screen .three-choices {
+  grid-template-columns: repeat(3, 1fr);
+}
+.event-screen .chosen-evidence {
+  margin-block: 18px;
+}
+.change-evidence,
+.revision-priority {
+  margin-block: 20px;
+}
+.change-evidence .choice,
+.revision-priority .choice {
+  margin-top: 8px;
+}
+.original-recommendation {
+  padding: 14px;
+  background: #f1f2e9;
+  font-size: 15px;
+  line-height: 1.7;
+}
+.original-recommendation p + p {
+  margin-top: 8px;
+}
+.event-end .recommendation h2 {
+  margin-top: 22px;
+}
+@media (max-width: 850px) {
+  .event-task {
+    padding: 22px;
+  }
+  .event-screen .episode-heading {
+    align-items: flex-start;
+  }
+  .event-screen .episode-heading h1 {
+    font-size: 28px;
+  }
+  .event-comparison th,
+  .event-comparison td {
+    padding-inline: 6px;
+  }
+}
+@media (max-width: 600px) {
+  .event-paths,
+  .event-screen .three-choices {
+    grid-template-columns: 1fr;
+  }
+  .event-comparison {
+    font-size: 14px;
+  }
+  .event-answer {
+    flex-direction: column;
+  }
+  .event-task {
+    padding-inline: 14px;
+  }
+  .event-views > span {
+    flex-basis: 100%;
+  }
+}
+
+/* Episode 2: same paper/green map language, two measured quantities, no motion. */
+.episode-picker {
+  margin-top: 22px;
+  display: grid;
+  gap: 12px;
+  max-width: 450px;
+}
+.episode-picker .button {
+  justify-self: start;
+}
+.demand-screen {
+  max-width: 1340px;
+}
+.demand-screen .episode-heading h1 {
+  font-size: clamp(1.5rem, 3vw, 2.1rem);
+}
+.demand-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+  align-items: start;
+  gap: 24px;
+}
+.demand-world {
+  min-width: 0;
+}
+.demand-map {
+  width: 100%;
+  height: auto;
+  max-height: 290px;
+}
+.demand-map text {
+  font-size: 24px;
+  fill: var(--ink);
+  font-family: Arial, Helvetica, sans-serif;
+}
+.demand-map-target[role='button'] {
+  cursor: pointer;
+}
+.demand-map-target[role='button']:focus-visible {
+  outline: 3px solid #23599b;
+}
+.demand-task {
+  padding: 24px;
+  min-width: 0;
+}
+.demand-task h2 {
+  font-size: 1.5rem;
+}
+.demand-task > * + * {
+  margin-top: 16px;
+}
+.demand-quantities {
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: var(--paper);
+  padding: 16px;
+  display: grid;
+  gap: 14px;
+}
+.demand-quantities p {
+  line-height: 1.4;
+}
+.people-symbols {
+  display: grid;
+  grid-template-columns: repeat(8, 17px);
+  gap: 7px 12px;
+  margin: 12px 0;
+}
+.demand-person {
+  display: block;
+  height: 18px;
+  width: 15px;
+  background: var(--green);
+  border-radius: 8px 8px 3px 3px;
+  border: 1px solid #254c3d;
+}
+.demand-person.new-person {
+  background: #e4c36c;
+  border-color: #68592c;
+}
+.bus-symbols {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: 10px 0;
+}
+.bus-card {
+  border: 2px solid var(--green);
+  border-radius: 10px;
+  padding: 8px;
+}
+.bus-card > span {
+  display: block;
+  font-size: 0.85rem;
+  margin-bottom: 6px;
+}
+.bus-card > div {
+  display: grid;
+  grid-template-columns: repeat(5, 10px);
+  gap: 4px;
+}
+.seat {
+  width: 10px;
+  height: 11px;
+  display: block;
+  border: 1px solid var(--green);
+  border-radius: 2px;
+  background: #e0e8d5;
+}
+.demand-current-facts {
+  display: flex;
+  gap: 12px 22px;
+  flex-wrap: wrap;
+  padding: 16px;
+  background: #eef1e7;
+  border-left: 4px solid #637f55;
+}
+.demand-current-facts span {
+  display: block;
+}
+.demand-current-facts strong {
+  font-size: 1.2em;
+}
+.demand-measures {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+.demand-task .choice {
+  min-height: 48px;
+}
+.demand-decision-layout {
+  display: block;
+  max-width: 840px;
+  margin: auto;
+}
+.demand-task .goal-note .choice {
+  margin-top: 12px;
+}
+.demand-model {
+  margin-top: 22px;
+  border-top: 1px solid var(--line);
+  padding: 15px 0;
+}
+.demand-model summary,
+.demand-screen #demand-deeper summary {
+  min-height: 44px;
+  padding: 8px 0;
+}
+.demand-model p + p {
+  margin-top: 12px;
+}
+.demand-screen .recommendation > * + * {
+  margin-top: 18px;
+}
+@media (max-width: 850px) {
+  .demand-workspace {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+  .demand-map {
+    max-height: 230px;
+  }
+  .demand-quantities {
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .demand-task {
+    padding: 20px;
+  }
+}
+@media (max-width: 520px) {
+  .demand-quantities {
+    grid-template-columns: 1fr;
+  }
+  .demand-task .three-choices {
+    grid-template-columns: 1fr;
+  }
+  .demand-screen .episode-heading {
+    align-items: start;
+  }
+}
+
+.demand-task .three-choices {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.demand-transition {
+  margin: -10px 0 16px;
+}
+@media (max-width: 520px) {
+  .demand-task .three-choices {
+    grid-template-columns: 1fr;
+  }
+}
+
+.demand-task {
+  display: block;
+}
+.demand-world > fieldset {
+  margin-top: 12px;
+}
+.demand-world .three-choices {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+.demand-world .event-views {
+  margin: 12px 0;
+}
+#demand-spatial-context {
+  margin-top: 12px;
+}
+#demand-spatial-context summary {
+  min-height: 44px;
+  padding: 12px 0;
+}
+.demand-task .small-note {
+  font-size: 0.875rem;
+}
+@media (max-width: 520px) {
+  .demand-world .three-choices {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Keep the actual before/now symbols beside the answer, including after touch scrolling. */
+.demand-task .demand-quantities {
+  grid-template-columns: 1fr 1fr;
+}
+.demand-task .people-symbols {
+  grid-template-columns: repeat(8, 15px);
+  gap: 7px 8px;
+}
+.demand-task .bus-card {
+  padding: 6px;
+}
+@media (max-width: 520px) {
+  .demand-task .demand-quantities {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Shared regional learning surfaces: one scene, one current task. */
+.study-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 24px;
+  align-items: start;
+  margin-top: 20px;
+}
+.study-scene {
+  width: 100%;
+  height: auto;
+  margin: 18px 0;
+}
+.study-scene text {
+  font:
+    22px Arial,
+    sans-serif;
+  fill: var(--ink);
+}
+.study-scene [role='button'] {
+  cursor: pointer;
+}
+.study-scene [role='button']:focus-visible {
+  outline: 3px solid #23599b;
+}
+.study-task {
+  display: block;
+  padding: 24px;
+  min-width: 0;
+}
+.study-task > * + * {
+  margin-top: 16px;
+}
+.study-task h2 {
+  font-size: 1.5rem;
+}
+.study-task .choice {
+  min-height: 48px;
+}
+.study-task fieldset .choice + .choice {
+  margin-top: 8px;
+}
+.study-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 12px;
+}
+.study-options .button {
+  min-height: 48px;
+}
+.study-ledger {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  background: #edf0e3;
+  padding: 16px;
+  border-radius: 12px;
+}
+.study-ledger span {
+  display: grid;
+  gap: 8px;
+}
+.study-ledger strong {
+  font-size: 1.35rem;
+}
+.study-facts {
+  padding: 16px;
+  background: #edf0e3;
+  border-left: 4px solid #637f55;
+}
+.study-facts p {
+  margin-top: 10px;
+}
+.study-question {
+  font-size: 1.15rem;
+}
+.study-model {
+  margin-top: 24px;
+  border-top: 1px solid var(--line);
+  padding: 14px 0;
+}
+.study-model summary {
+  padding: 10px 0;
+  min-height: 44px;
+}
+.study-model p {
+  margin-top: 14px;
+}
+.study-decision {
+  display: block;
+  max-width: 840px;
+  margin: 20px auto;
+}
+.study-screen .recommendation > * + * {
+  margin-top: 16px;
+}
+@media (max-width: 1100px) {
+  .study-layout {
+    grid-template-columns: 1fr;
+  }
+  .study-task {
+    display: block;
+  }
+  .study-scene {
+    max-height: 280px;
+  }
+}
+.study-mini-balance {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--paper);
+  padding: 12px;
+  border: 2px solid var(--green);
+  border-radius: 8px;
+}
+.study-allocation {
+  border-block-end: 1px solid var(--line);
+  padding-block: 6px 14px;
+}
+.study-inline-ledger {
+  background: #edf0e4;
+  padding: 12px;
+  border-radius: 8px;
+  font-weight: 700;
+}
+.study-country h2,
+.kenya-picker h2 {
+  font:
+    700 1.15rem Arial,
+    sans-serif;
+  margin-block: 0 12px;
+}
+.study-country + .study-country {
+  margin-top: 24px;
+}
+.study-country .button {
+  display: block;
+  margin-block: 10px;
+  text-align: left;
+}
+.study-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.study-tabs .button {
+  min-height: 48px;
+  font-size: 0.9rem;
+}
+.study-tabs [aria-current='step'] {
+  border: 2px solid var(--green);
+  background: #e4ebda;
+}
+.study-decision-part > * + * {
+  margin-top: 16px;
+}
+.study-decision-part .study-facts p:first-child {
+  margin-top: 0;
+}
+.study-chosen-evidence {
+  border-left: 3px solid var(--line);
+  padding-left: 12px;
+}
+.orientation {
+  align-self: start;
+  min-width: 0;
+  padding: 24px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--paper);
+}
+.orientation h2 {
+  font:
+    400 1.7rem Georgia,
+    serif;
+  margin-bottom: 14px;
+}
+.orientation p {
+  margin-top: 14px;
+  line-height: 1.6;
+}
+.geo-targets,
+.geo-alternatives,
+.geo-actions {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin-block: 16px;
+}
+.orientation .button {
+  min-height: 48px;
+}
+.geo-targets .button {
+  font-size: 0.85rem;
+}
+.geo-question {
+  font-size: 1.1rem;
+}
+.africa-overview {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 660px;
+  margin-block: 16px;
+}
+.africa-overview text {
+  font:
+    24px Arial,
+    sans-serif;
+  fill: var(--ink);
+  pointer-events: none;
+}
+.africa-overview [role='button'] {
+  cursor: pointer;
+}
+.africa-overview [role='button']:focus-visible {
+  outline: 4px solid #23599b;
+}
+.geo-place {
+  padding: 12px;
+  background: #e4ebda;
+  border-left: 4px solid var(--green);
+}
+.geo-license {
+  margin-top: 20px;
+}
+.geo-license summary {
+  min-height: 44px;
+  padding-block: 10px;
+  cursor: pointer;
+}
+@media (max-width: 1100px) {
+  .start-screen {
+    grid-template-columns: 1fr;
+  }
+  .orientation {
+    width: 100%;
+    max-width: 760px;
+    margin-inline: auto;
+  }
+  .hero-copy {
+    padding-bottom: 0;
+  }
+}
+.africa-overview .geo-city-label {
+  font-size: 22px;
+  font-weight: 700;
+  paint-order: stroke;
+  stroke: var(--paper);
+  stroke-width: 3px;
+}
+.start-screen {
+  grid-template-areas: 'intro map' 'episodes map' 'privacy privacy';
+  align-items: start;
+  row-gap: 24px;
+}
+.start-screen > .hero-copy {
+  grid-area: intro;
+  padding-bottom: 0;
+}
+.start-screen > .orientation {
+  grid-area: map;
+}
+.start-screen > .episode-list {
+  grid-area: episodes;
+  min-width: 0;
+}
+.start-screen > .privacy-note {
+  grid-area: privacy;
+}
+.hero-copy > a {
+  display: inline-block;
+  margin-top: 16px;
+  min-height: 44px;
+  padding-block: 12px;
+}
+@media (max-width: 1100px) {
+  .start-screen {
+    grid-template-areas: 'intro' 'map' 'episodes' 'privacy';
+  }
+  .episode-list {
+    scroll-margin-top: 24px;
+  }
+}
+
+/* Optional source detail keeps the active task brief. */
+.real-context {
+  margin: 1.2rem 0;
+  padding: 0.9rem 1rem;
+  border: 1px solid var(--line, #c8cfc3);
+  border-radius: 12px;
+  background: #fffef8;
+}
+.real-context summary {
+  cursor: pointer;
+  font-weight: 650;
+  padding: 0.4rem 0;
+}
+.real-context p {
+  max-width: 65ch;
+}
+.context-source {
+  font-size: 0.9rem;
+}
+.real-context a {
+  color: #244f40;
+  text-decoration: underline;
+}
+
+.review-screen {
+  max-width: 1120px;
+  margin: auto;
+  padding: 1.5rem 2rem 3rem;
+}
+.review-screen h1 {
+  max-width: 28ch;
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+}
+.review-overview {
+  display: grid;
+  grid-template-columns: minmax(260px, 0.8fr) minmax(320px, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+.review-overview .africa-overview {
+  max-height: 390px;
+  width: 100%;
+}
+.review-insights section {
+  margin-bottom: 0.8rem;
+  padding: 0.8rem 1rem;
+  border-left: 4px solid #a44d2e;
+  background: #fffef8;
+}
+.review-insights h2 {
+  font-size: 1.1rem;
+  margin: 0 0 0.3rem;
+}
+.review-insights p {
+  margin: 0.3rem 0;
+}
+.review-status {
+  font-size: 0.85rem;
+  color: #405448;
+}
+.review-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0;
+}
+.review-tabs [aria-pressed='true'] {
+  background: #244f40;
+  color: #fffef8;
+}
+.review-task {
+  max-width: 850px;
+}
+.review-task legend {
+  font-weight: 650;
+}
+.review-example {
+  padding: 0.8rem;
+  background: #eef3e8;
+  border-radius: 8px;
+}
+.review-completion {
+  border-left: 4px solid #244f40;
+  padding: 0.7rem;
+}
+@media (max-width: 760px) {
+  .review-screen {
+    padding: 1rem;
+  }
+  .review-overview {
+    grid-template-columns: 1fr;
+    gap: 0.7rem;
+  }
+  .review-overview .africa-overview {
+    max-height: 320px;
+  }
+}
+
+.review-map text {
+  font-size: 26px;
+}
+.review-map .geo-city-label {
+  font-size: 26px;
+  paint-order: stroke;
+  stroke: #fffef8;
+  stroke-width: 3px;
+}
+.review-map g text {
+  font-weight: 650;
+}
+
+.study-product,
+.demand-product {
+  display: grid;
+  gap: 0.65rem;
+  margin: 1.1rem 0;
+}
+.study-product > p,
+.demand-product > p {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  border-left: 3px solid #becbb8;
+  background: #f5f6ee;
+  max-width: 62ch;
+  line-height: 1.65;
+}
+.study-product > p:first-child,
+.demand-product > p:first-child {
+  border-left-color: #244f40;
+}
+.study-product > p:last-child:not(:first-child),
+.demand-product > p:last-child:not(:first-child) {
+  border-left-color: #a44d2e;
+}
+
+.storage-warning {
+  padding: 1rem;
+  margin: 0.5rem 1rem;
+  border: 2px solid #526a77;
+  background: #eef3f5;
+  color: #243f4b;
+}
+#task-title {
+  scroll-margin-top: 16px;
+}
+
+.storage-warning {
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+body:has(#storage-warning:not([hidden])) #task-title,
+body:has(#storage-warning:not([hidden])) #feedback-title {
+  scroll-margin-top: 110px;
+}

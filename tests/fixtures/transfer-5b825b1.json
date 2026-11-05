@@ -1,0 +1,634 @@
+{
+  "source": "5b825b19a9ef45cbee7d704462535ae59d677e49",
+  "capture": "Actual pre-correction browser submissions; unrelated previous attempts omitted. No real learner data.",
+  "states": [
+    {
+      "version": 1,
+      "view": "task",
+      "sequence": 8,
+      "records": {
+        "s2.ahr.v1": {
+          "index": 7,
+          "attempts": {
+            "demand.transfer": {
+              "identity": {
+                "conceptId": "demand.transfer",
+                "taskId": "demand.transfer",
+                "variantId": "s2.ahr.v1:demand.transfer",
+                "profileId": "ahr",
+                "taskVersion": 1,
+                "modelVersion": "topic.s2.v1",
+                "materialVersion": "simulation.a3be815.v1",
+                "attemptId": "local-8"
+              },
+              "answers": {
+                "enough": "yes",
+                "access": "no"
+              },
+              "process": "submitted",
+              "factual": "correct",
+              "form": "chosen",
+              "failures": 0,
+              "help": 0,
+              "standardScaffold": false,
+              "exampleShown": false,
+              "exampleUsed": false,
+              "adopted": false,
+              "criteriaSeen": false,
+              "revised": false,
+              "oral": false,
+              "submissions": [
+                {
+                  "answers": {
+                    "enough": "yes",
+                    "access": "no"
+                  },
+                  "factual": "correct",
+                  "support": "own"
+                }
+              ],
+              "olderSubmissions": 0
+            }
+          }
+        }
+      },
+      "profile": "ahr",
+      "unit": "s2"
+    },
+    {
+      "version": 1,
+      "view": "task",
+      "sequence": 10,
+      "records": {
+        "s2.esa.v1": {
+          "index": 9,
+          "attempts": {
+            "demand.transfer.enough": {
+              "identity": {
+                "conceptId": "demand.transfer",
+                "taskId": "demand.transfer.enough",
+                "variantId": "s2.esa.v1:demand.transfer.enough",
+                "profileId": "esa",
+                "taskVersion": 1,
+                "modelVersion": "topic.s2.v1",
+                "materialVersion": "simulation.a3be815.v1",
+                "attemptId": "local-10"
+              },
+              "answers": {
+                "enough": "yes"
+              },
+              "process": "submitted",
+              "factual": "correct",
+              "form": "chosen",
+              "failures": 0,
+              "help": 0,
+              "standardScaffold": true,
+              "exampleShown": false,
+              "exampleUsed": false,
+              "adopted": false,
+              "criteriaSeen": false,
+              "revised": false,
+              "oral": false,
+              "submissions": [
+                {
+                  "answers": {
+                    "enough": "yes"
+                  },
+                  "factual": "correct",
+                  "support": "standard"
+                }
+              ],
+              "olderSubmissions": 0
+            }
+          }
+        }
+      },
+      "profile": "esa",
+      "unit": "s2"
+    },
+    {
+      "version": 1,
+      "view": "task",
+      "sequence": 9,
+      "records": {
+        "s2.foerder.v1": {
+          "index": 8,
+          "attempts": {
+            "demand.transfer.enough": {
+              "identity": {
+                "conceptId": "demand.transfer",
+                "taskId": "demand.transfer.enough",
+                "variantId": "s2.foerder.v1:demand.transfer.enough",
+                "profileId": "foerder",
+                "taskVersion": 1,
+                "modelVersion": "topic.s2.v1",
+                "materialVersion": "simulation.a3be815.v1",
+                "attemptId": "local-9"
+              },
+              "answers": {
+                "enough": "yes"
+              },
+              "process": "submitted",
+              "factual": "correct",
+              "form": "chosen",
+              "failures": 0,
+              "help": 0,
+              "standardScaffold": true,
+              "exampleShown": false,
+              "exampleUsed": false,
+              "adopted": false,
+              "criteriaSeen": false,
+              "revised": false,
+              "oral": false,
+              "submissions": [
+                {
+                  "answers": {
+                    "enough": "yes"
+                  },
+                  "factual": "correct",
+                  "support": "standard"
+                }
+              ],
+              "olderSubmissions": 0
+            }
+          }
+        }
+      },
+      "profile": "foerder",
+      "unit": "s2"
+    },
+    {
+      "version": 1,
+      "view": "task",
+      "sequence": 7,
+      "records": {
+        "s2.msa.v1": {
+          "index": 6,
+          "attempts": {
+            "demand.transfer": {
+              "identity": {
+                "conceptId": "demand.transfer",
+                "taskId": "demand.transfer",
+                "variantId": "s2.msa.v1:demand.transfer",
+                "profileId": "msa",
+                "taskVersion": 1,
+                "modelVersion": "topic.s2.v1",
+                "materialVersion": "simulation.a3be815.v1",
+                "attemptId": "local-7"
+              },
+              "answers": {
+                "enough": "yes",
+                "access": "no"
+              },
+              "process": "submitted",
+              "factual": "correct",
+              "form": "chosen",
+              "failures": 0,
+              "help": 0,
+              "standardScaffold": false,
+              "exampleShown": false,
+              "exampleUsed": false,
+              "adopted": false,
+              "criteriaSeen": false,
+              "revised": false,
+              "oral": false,
+              "submissions": [
+                {
+                  "answers": {
+                    "enough": "yes",
+                    "access": "no"
+                  },
+                  "factual": "correct",
+                  "support": "own"
+                }
+              ],
+              "olderSubmissions": 0
+            }
+          }
+        }
+      },
+      "profile": "msa",
+      "unit": "s2"
+    },
+    {
+      "version": 1,
+      "view": "task",
+      "sequence": 8,
+      "records": {
+        "s5.ahr.v1": {
+          "index": 7,
+          "attempts": {
+            "water.transfer": {
+              "identity": {
+                "conceptId": "water.transfer",
+                "taskId": "water.transfer",
+                "variantId": "s5.ahr.v1:water.transfer",
+                "profileId": "ahr",
+                "taskVersion": 1,
+                "modelVersion": "topic.s5.v1",
+                "materialVersion": "simulation.a3be815.v1",
+                "attemptId": "local-8"
+              },
+              "answers": {
+                "rest": "20"
+              },
+              "process": "submitted",
+              "factual": "correct",
+              "form": "calculated",
+              "failures": 0,
+              "help": 0,
+              "standardScaffold": false,
+              "exampleShown": false,
+              "exampleUsed": false,
+              "adopted": false,
+              "criteriaSeen": false,
+              "revised": false,
+              "oral": false,
+              "submissions": [
+                {
+                  "answers": {
+                    "rest": "20"
+                  },
+                  "factual": "correct",
+                  "support": "own"
+                }
+              ],
+              "olderSubmissions": 0,
+              "simulationSelection": "repair"
+            }
+          }
+        }
+      },
+      "profile": "ahr",
+      "unit": "s5"
+    },
+    {
+      "version": 1,
+      "view": "task",
+      "sequence": 11,
+      "records": {
+        "s5.esa.v1": {
+          "index": 10,
+          "attempts": {
+            "water.transfer": {
+              "identity": {
+                "conceptId": "water.transfer",
+                "taskId": "water.transfer",
+                "variantId": "s5.esa.v1:water.transfer",
+                "profileId": "esa",
+                "taskVersion": 1,
+                "modelVersion": "topic.s5.v1",
+                "materialVersion": "simulation.a3be815.v1",
+                "attemptId": "local-11"
+              },
+              "answers": {
+                "rest": "20"
+              },
+              "process": "submitted",
+              "factual": "correct",
+              "form": "calculated",
+              "failures": 0,
+              "help": 0,
+              "standardScaffold": true,
+              "exampleShown": false,
+              "exampleUsed": false,
+              "adopted": false,
+              "criteriaSeen": false,
+              "revised": false,
+              "oral": false,
+              "submissions": [
+                {
+                  "answers": {
+                    "rest": "20"
+                  },
+                  "factual": "correct",
+                  "support": "standard"
+                }
+              ],
+              "olderSubmissions": 0,
+              "simulationSelection": "repair"
+            }
+          }
+        }
+      },
+      "profile": "esa",
+      "unit": "s5"
+    },
+    {
+      "version": 1,
+      "view": "task",
+      "sequence": 11,
+      "records": {
+        "s5.foerder.v1": {
+          "index": 10,
+          "attempts": {
+            "water.transfer": {
+              "identity": {
+                "conceptId": "water.transfer",
+                "taskId": "water.transfer",
+                "variantId": "s5.foerder.v1:water.transfer",
+                "profileId": "foerder",
+                "taskVersion": 1,
+                "modelVersion": "topic.s5.v1",
+                "materialVersion": "simulation.a3be815.v1",
+                "attemptId": "local-11"
+              },
+              "answers": {
+                "rest": "20"
+              },
+              "process": "submitted",
+              "factual": "correct",
+              "form": "chosen",
+              "failures": 0,
+              "help": 0,
+              "standardScaffold": true,
+              "exampleShown": false,
+              "exampleUsed": false,
+              "adopted": false,
+              "criteriaSeen": false,
+              "revised": false,
+              "oral": false,
+              "submissions": [
+                {
+                  "answers": {
+                    "rest": "20"
+                  },
+                  "factual": "correct",
+                  "support": "standard"
+                }
+              ],
+              "olderSubmissions": 0,
+              "simulationSelection": "repair"
+            }
+          }
+        }
+      },
+      "profile": "foerder",
+      "unit": "s5"
+    },
+    {
+      "version": 1,
+      "view": "task",
+      "sequence": 7,
+      "records": {
+        "s5.msa.v1": {
+          "index": 6,
+          "attempts": {
+            "water.transfer": {
+              "identity": {
+                "conceptId": "water.transfer",
+                "taskId": "water.transfer",
+                "variantId": "s5.msa.v1:water.transfer",
+                "profileId": "msa",
+                "taskVersion": 1,
+                "modelVersion": "topic.s5.v1",
+                "materialVersion": "simulation.a3be815.v1",
+                "attemptId": "local-7"
+              },
+              "answers": {
+                "rest": "20"
+              },
+              "process": "submitted",
+              "factual": "correct",
+              "form": "calculated",
+              "failures": 0,
+              "help": 0,
+              "standardScaffold": false,
+              "exampleShown": false,
+              "exampleUsed": false,
+              "adopted": false,
+              "criteriaSeen": false,
+              "revised": false,
+              "oral": false,
+              "submissions": [
+                {
+                  "answers": {
+                    "rest": "20"
+                  },
+                  "factual": "correct",
+                  "support": "own"
+                }
+              ],
+              "olderSubmissions": 0,
+              "simulationSelection": "repair"
+            }
+          }
+        }
+      },
+      "profile": "msa",
+      "unit": "s5"
+    },
+    {
+      "version": 1,
+      "view": "task",
+      "sequence": 8,
+      "records": {
+        "s6.ahr.v1": {
+          "index": 7,
+          "attempts": {
+            "area.transfer": {
+              "identity": {
+                "conceptId": "area.transfer",
+                "taskId": "area.transfer",
+                "variantId": "s6.ahr.v1:area.transfer",
+                "profileId": "ahr",
+                "taskVersion": 1,
+                "modelVersion": "topic.s6.v1",
+                "materialVersion": "simulation.a3be815.v1",
+                "attemptId": "local-8"
+              },
+              "answers": {
+                "total": "55",
+                "less": "yes"
+              },
+              "process": "submitted",
+              "factual": "correct",
+              "form": "calculated",
+              "failures": 0,
+              "help": 0,
+              "standardScaffold": false,
+              "exampleShown": false,
+              "exampleUsed": false,
+              "adopted": false,
+              "criteriaSeen": false,
+              "revised": false,
+              "oral": false,
+              "submissions": [
+                {
+                  "answers": {
+                    "total": "55",
+                    "less": "yes"
+                  },
+                  "factual": "correct",
+                  "support": "own"
+                }
+              ],
+              "olderSubmissions": 0,
+              "simulationSelection": "extra"
+            }
+          }
+        }
+      },
+      "profile": "ahr",
+      "unit": "s6"
+    },
+    {
+      "version": 1,
+      "view": "task",
+      "sequence": 10,
+      "records": {
+        "s6.esa.v1": {
+          "index": 9,
+          "attempts": {
+            "area.transfer.total": {
+              "identity": {
+                "conceptId": "area.transfer",
+                "taskId": "area.transfer.total",
+                "variantId": "s6.esa.v1:area.transfer.total",
+                "profileId": "esa",
+                "taskVersion": 1,
+                "modelVersion": "topic.s6.v1",
+                "materialVersion": "simulation.a3be815.v1",
+                "attemptId": "local-10"
+              },
+              "answers": {
+                "total": "55"
+              },
+              "process": "submitted",
+              "factual": "correct",
+              "form": "calculated",
+              "failures": 0,
+              "help": 0,
+              "standardScaffold": true,
+              "exampleShown": false,
+              "exampleUsed": false,
+              "adopted": false,
+              "criteriaSeen": false,
+              "revised": false,
+              "oral": false,
+              "submissions": [
+                {
+                  "answers": {
+                    "total": "55"
+                  },
+                  "factual": "correct",
+                  "support": "standard"
+                }
+              ],
+              "olderSubmissions": 0,
+              "simulationSelection": "extra"
+            }
+          }
+        }
+      },
+      "profile": "esa",
+      "unit": "s6"
+    },
+    {
+      "version": 1,
+      "view": "task",
+      "sequence": 8,
+      "records": {
+        "s6.foerder.v1": {
+          "index": 7,
+          "attempts": {
+            "area.transfer": {
+              "identity": {
+                "conceptId": "area.transfer",
+                "taskId": "area.transfer",
+                "variantId": "s6.foerder.v1:area.transfer",
+                "profileId": "foerder",
+                "taskVersion": 1,
+                "modelVersion": "topic.s6.v1",
+                "materialVersion": "simulation.a3be815.v1",
+                "attemptId": "local-8"
+              },
+              "answers": {
+                "total": "yes"
+              },
+              "process": "submitted",
+              "factual": "correct",
+              "form": "chosen",
+              "failures": 0,
+              "help": 0,
+              "standardScaffold": true,
+              "exampleShown": false,
+              "exampleUsed": false,
+              "adopted": false,
+              "criteriaSeen": false,
+              "revised": false,
+              "oral": false,
+              "submissions": [
+                {
+                  "answers": {
+                    "total": "yes"
+                  },
+                  "factual": "correct",
+                  "support": "standard"
+                }
+              ],
+              "olderSubmissions": 0,
+              "simulationSelection": "extra"
+            }
+          }
+        }
+      },
+      "profile": "foerder",
+      "unit": "s6"
+    },
+    {
+      "version": 1,
+      "view": "task",
+      "sequence": 7,
+      "records": {
+        "s6.msa.v1": {
+          "index": 6,
+          "attempts": {
+            "area.transfer": {
+              "identity": {
+                "conceptId": "area.transfer",
+                "taskId": "area.transfer",
+                "variantId": "s6.msa.v1:area.transfer",
+                "profileId": "msa",
+                "taskVersion": 1,
+                "modelVersion": "topic.s6.v1",
+                "materialVersion": "simulation.a3be815.v1",
+                "attemptId": "local-7"
+              },
+              "answers": {
+                "total": "55",
+                "less": "yes"
+              },
+              "process": "submitted",
+              "factual": "correct",
+              "form": "calculated",
+              "failures": 0,
+              "help": 0,
+              "standardScaffold": false,
+              "exampleShown": false,
+              "exampleUsed": false,
+              "adopted": false,
+              "criteriaSeen": false,
+              "revised": false,
+              "oral": false,
+              "submissions": [
+                {
+                  "answers": {
+                    "total": "55",
+                    "less": "yes"
+                  },
+                  "factual": "correct",
+                  "support": "own"
+                }
+              ],
+              "olderSubmissions": 0,
+              "simulationSelection": "extra"
+            }
+          }
+        }
+      },
+      "profile": "msa",
+      "unit": "s6"
+    }
+  ]
+}

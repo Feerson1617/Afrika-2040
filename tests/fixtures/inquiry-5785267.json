@@ -1,0 +1,258 @@
+{
+  "screen": "inquiry",
+  "step": 0,
+  "route": "direct",
+  "progress": [
+    {
+      "failures": 0,
+      "help": 0,
+      "complete": false,
+      "transferFailures": 0,
+      "explored": []
+    },
+    {
+      "failures": 0,
+      "help": 0,
+      "complete": false,
+      "transferFailures": 0,
+      "explored": []
+    },
+    {
+      "failures": 0,
+      "help": 0,
+      "complete": false,
+      "transferFailures": 0,
+      "explored": []
+    },
+    {
+      "failures": 0,
+      "help": 0,
+      "complete": false,
+      "transferFailures": 0,
+      "explored": []
+    },
+    {
+      "failures": 0,
+      "help": 0,
+      "complete": false,
+      "transferFailures": 0,
+      "explored": []
+    },
+    {
+      "failures": 0,
+      "help": 0,
+      "complete": false,
+      "transferFailures": 0,
+      "explored": []
+    }
+  ],
+  "explanation": {
+    "text": ""
+  },
+  "decision": {
+    "text": ""
+  },
+  "words": false,
+  "inquiry": {
+    "step": 2,
+    "journal": false,
+    "records": {
+      "image": {
+        "checks": [
+          {
+            "answers": {},
+            "failures": 0,
+            "help": 0,
+            "checked": false,
+            "adopted": false,
+            "exampleUsed": false
+          },
+          {
+            "answers": {},
+            "failures": 0,
+            "help": 0,
+            "checked": false,
+            "adopted": false,
+            "exampleUsed": false
+          }
+        ],
+        "seen": [],
+        "material": "",
+        "initial": "",
+        "initialSaved": false,
+        "product": ["", "", ""],
+        "oral": false,
+        "submitted": false,
+        "productHelp": 0,
+        "productExampleUsed": false,
+        "productAdopted": false
+      },
+      "nature": {
+        "checks": [
+          {
+            "answers": {},
+            "failures": 0,
+            "help": 0,
+            "checked": false,
+            "adopted": false,
+            "exampleUsed": false
+          },
+          {
+            "answers": {},
+            "failures": 0,
+            "help": 0,
+            "checked": false,
+            "adopted": false,
+            "exampleUsed": false
+          }
+        ],
+        "seen": [],
+        "material": "",
+        "initial": "",
+        "initialSaved": false,
+        "product": ["", "", ""],
+        "oral": false,
+        "submitted": false,
+        "productHelp": 0,
+        "productExampleUsed": false,
+        "productAdopted": false
+      },
+      "population": {
+        "checks": [
+          {
+            "answers": {
+              "natural": "30",
+              "migration": "-10",
+              "end": "1020"
+            },
+            "failures": 0,
+            "help": 0,
+            "checked": true,
+            "adopted": false,
+            "exampleUsed": false,
+            "feedback": {
+              "kind": "correct",
+              "title": "Diese Angaben passen",
+              "text": "Die Materialzuordnung beziehungsweise Rechnung stimmt. Erkläre den Zusammenhang danach selbst. Eine passende Auswahl allein ist noch kein selbstständiger Leistungsnachweis.",
+              "complete": true
+            }
+          },
+          {
+            "answers": {
+              "trend": "increase",
+              "status": "estimate",
+              "condition": "conditional"
+            },
+            "failures": 0,
+            "help": 0,
+            "checked": true,
+            "adopted": false,
+            "exampleUsed": false,
+            "feedback": {
+              "kind": "correct",
+              "title": "Diese Angaben passen",
+              "text": "Die Materialzuordnung beziehungsweise Rechnung stimmt. Erkläre den Zusammenhang danach selbst. Eine passende Auswahl allein ist noch kein selbstständiger Leistungsnachweis.",
+              "complete": true
+            }
+          }
+        ],
+        "seen": [],
+        "material": "",
+        "initial": "",
+        "initialSaved": false,
+        "product": ["ich weis nicht", "ich weis nicht", "ich weis nicht"],
+        "oral": false,
+        "submitted": true,
+        "productHelp": 0,
+        "productExampleUsed": false,
+        "productAdopted": false
+      },
+      "economy": {
+        "checks": [
+          {
+            "answers": {},
+            "failures": 0,
+            "help": 0,
+            "checked": false,
+            "adopted": false,
+            "exampleUsed": false
+          },
+          {
+            "answers": {},
+            "failures": 0,
+            "help": 0,
+            "checked": false,
+            "adopted": false,
+            "exampleUsed": false
+          }
+        ],
+        "seen": [],
+        "material": "",
+        "initial": "",
+        "initialSaved": false,
+        "product": ["", "", ""],
+        "oral": false,
+        "submitted": false,
+        "productHelp": 0,
+        "productExampleUsed": false,
+        "productAdopted": false
+      },
+      "future": {
+        "checks": [
+          {
+            "answers": {
+              "reach": "shade",
+              "environment": "energy",
+              "cost": "running"
+            },
+            "failures": 0,
+            "help": 0,
+            "checked": true,
+            "adopted": false,
+            "exampleUsed": false,
+            "feedback": {
+              "kind": "correct",
+              "title": "Diese Angaben passen",
+              "text": "Die Materialzuordnung beziehungsweise Rechnung stimmt. Erkläre den Zusammenhang danach selbst. Eine passende Auswahl allein ist noch kein selbstständiger Leistungsnachweis.",
+              "complete": true
+            }
+          },
+          {
+            "answers": {
+              "plan": "cool",
+              "goal": "loss",
+              "evidence": "cool",
+              "limit": "cool",
+              "unknown": "cool"
+            },
+            "failures": 0,
+            "help": 0,
+            "checked": true,
+            "adopted": false,
+            "exampleUsed": false,
+            "feedback": {
+              "kind": "neutral",
+              "title": "Vorschlag mit Belegen verbunden",
+              "text": "Schon passend: Welcher Beleg stützt deinen Vorschlag?; Welche Grenze betrifft deinen Vorschlag?; Welche offene Frage prüfst du zu deinem Vorschlag?. Dein Ziel passt zur genannten Folge. Die Entscheidung bleibt deine. Geprüft ist die Zuordnung; selbstständige Urteilskompetenz ist damit nicht nachgewiesen.",
+              "complete": true
+            }
+          }
+        ],
+        "seen": ["cool", "shade"],
+        "material": "shade",
+        "initial": "",
+        "initialSaved": false,
+        "product": [
+          "Ich empfehle Gemeinsamer Kühlraum. Kühlung kann Verderb empfindlicher Lebensmittel verringern. Die Grenze bleibt: Nur 30 Stände haben Zugang; Strom und Wartung sind nötig.",
+          "30 Stände erhalten Zugang. Einmalig kostet die Anschaffung 80 GE, laufend 12 GE pro Monat. Energiebedarf sowie spätere Reparatur und Entsorgung bleiben. Mir ist der Schutz empfindlicher Lebensmittel wichtiger als Zugang für alle 60 Stände. Ich nehme in Kauf, dass zunächst nur 30 Stände den Kühlraum nutzen können.",
+          "Ich würde vor der Umsetzung klären: Wer übernimmt Wartung und Stromkosten bei einem Ausfall? Bei ungeklärter Wartung ist meine Empfehlung vorläufig. Ich würde die Umsetzung davon abhängig machen, dass Zuständigkeit und Finanzierung geklärt sind."
+        ],
+        "oral": false,
+        "submitted": true,
+        "productHelp": 3,
+        "productExampleUsed": true,
+        "productAdopted": true
+      }
+    }
+  }
+}

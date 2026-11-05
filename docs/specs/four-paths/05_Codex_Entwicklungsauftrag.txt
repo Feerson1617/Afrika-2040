@@ -1,0 +1,240 @@
+AFRIKA 2040 – VERBINDLICHER UMSETZUNGSAUFTRAG
+Gesamtstruktur und vier echte Lernwege; Stand 28.10.2026
+
+0. AUFTRAG, BASIS UND AUSFÜHRUNGSUMFANG
+
+Repository: Feerson1617/Afrika-2040
+Referenzcommit: a3be815e5557188d5769f3fc70f25a3bdf8de5d6
+Referenzbranch: feat/afrika-vollstaendig-klasse7
+Neuer Branch: feat/afrika-vier-lernwege
+
+Dies ist ein neuer Inhalts- und Differenzierungsauftrag. Die vorherige Regel, nur kleine Releasekorrekturen vorzunehmen, begrenzt diesen ausdrücklich erweiterten Auftrag nicht. Alle unveränderten fachlichen, pädagogischen und Datenschutzregeln bleiben gültig. Passe AGENTS.md entsprechend an, ohne die Schutzregeln zu entfernen.
+
+Lies die beigefügte abgeschlossene Spezifikation:
+01_Gesamtrevision_und_Strukturentscheidung.md
+02_Vier_Niveaus_Matrix.md
+03_Mustersequenzen.md
+04_Pruefmatrix_und_Architektur.md
+06_Quellen_und_Nachweise.md
+
+Das sind konkrete Auftragsdateien, keine behaupteten Dateien im Repository. Dokumentiere, welche davon du tatsächlich lesen konntest. Erfinde keine Zugänglichkeit. Die entscheidenden Anforderungen sind zusätzlich in diesem Auftrag zusammengefasst. Fehlende reale Aufgaben-/Quellengrundlagen nicht durch neue unüberprüfte Inhalte ersetzen.
+
+Prüfe Repository, HEAD und Arbeitsbaum. Nicht blind auf eine andere Basis zurücksetzen und keine neueren oder fremden Änderungen überschreiben. Bei abweichendem Stand zuerst Diff und Bedeutung feststellen. Bewahre den geprüften Ausgangsstand als Vergleich.
+
+Die gesamte Entwicklung ist in zwei Pakete geteilt. In diesem ersten Aufruf wird PAKET A (Gate 0 und Gate 1) implementiert. Danach eine überprüfbare Übergabe und Stopp vor der breiten Ausrollung. Die Spezifikation und der komplette Folgeumfang PAKET B (Gate 2–5) stehen bereits unten; dafür ist keine neue Pro-Konzeption erforderlich. Paket B beginnt erst nach unabhängiger Musterabnahme und ausdrücklicher Freigabe. Interne Codex-Tests ersetzen diese Abnahme nicht.
+
+Kein Push, Merge, Release, Deployment oder administrative Einstellungsänderung durch diesen Auftrag. Lokale Commits und ein vollständiges exportiertes Prüfpaket sind vorgesehen. Keine fertigen Klassenarbeiten, Arbeitsblätter oder Lehrkräftehandreichungen erstellen.
+
+1. VERBINDLICHE STRUKTURENTSCHEIDUNG
+
+Nicht vier getrennte Spiele und nicht lediglich vier Buttons über unveränderten Aufgaben bauen.
+
+Die fünf Afrika-Themen bilden die Hauptnavigation:
+1. Bilder und Orte.
+2. Natur und Wasser.
+3. Menschen und Wege.
+4. Arbeit und Wirtschaft.
+5. Zukunft entscheiden.
+
+Die sechs vorhandenen Simulationen bleiben fachlich erhalten und werden als Untersuchungen in die Kapitel eingebunden:
+- E5/E6 Wasser und Zusatzfläche in Natur und Wasser.
+- E1/E2 Wege und Nachfrage in Menschen und Wege.
+- E3/E4 Kakao und Verteilung in Arbeit und Wirtschaft.
+
+Orientierung ist kurzer Einstieg und wiederkehrender Ortsbezug. Rückblick und Journal sichern Ergebnisse; sie bilden keine zweite konkurrierende Hauptlernstrecke. Direkte Starts aller bisherigen Episoden und Themen erhalten. Die empfohlene Reihenfolge ist keine verpflichtende Freischaltsperre.
+
+Reduziere doppelte Schlussformulare. Ein Kapitelprodukt kann aus klar gekennzeichneten Teilprodukten bestehen. Historische Ergebnisse nicht löschen oder als neu selbstständig erzeugt ausgeben. Keine Pflicht, alle Teiltexte nochmals zu schreiben.
+
+Titel Afrika 2040 erhalten; Zukunftsbezug ausdrücklich als Perspektive, nicht Prognose. Die neuen Lernwege sind für Klasse 7, nicht für ein Abiturkursniveau.
+
+2. VIER LERNWEGE – TATSÄCHLICHE UNTERSCHIEDE
+
+FÖRDER:
+Sehr kurze, konkrete Aufträge. Eine Frage pro Schritt. Bilder/Markierungen und zwei bis drei sinnvolle Antwortmöglichkeiten. Direkt sichtbarer Denkhinweis. Einfache Vergleiche und Ursache-Folge-Verbindungen. Keine verpflichtenden Freitexte. Rechnungen dürfen vorgemacht und Ergebnisse bereitgestellt werden, aber solche Ergebnisse dürfen nicht als selbst gerechnet protokolliert werden. Auch eine eigene Entscheidung mit passendem Vorteil und Grenze bleibt möglich. Keine Beschämung, Rangliste oder Strafpunkte.
+
+ESA:
+Erster Denkhinweis sofort sichtbar, ohne die Lösung vorwegzunehmen. Vorwiegend Auswahl, Zuordnung, Reihenfolge und kurze Rechnungen mit Gerüst. Fachbegriffe am Einsatzort erklären. Keine langen Pflichttexte. Einfache bedingte Erklärungen und begründete Wahl durch Bausteine ermöglichen.
+
+MSA:
+Hilfen zunächst eingeklappt, jederzeit erreichbar. Material zunehmend selbst auswerten. Überwiegend Zuordnung/Vergleich/Rechnung. Nur wenige kurze eigene Erklärungen, als redaktionelles Ziel ungefähr ein kurzer freier Anlass je Kapitelkern. Keine umfangreichen Aufsätze und keine versteckte Pflicht, alle alten Produktfelder schriftlich zu füllen.
+
+AHR/ÜOS:
+Weniger vorformulierte Argumente, mehr kurze eigene Beziehungen, Begründungen und Transfer. Weiterhin einfache Sprache. Zwei oder drei kurze Erklärungsanlässe je Kapitel sind ein Planungsziel, keine harte Zeichen-/Satzgrenze. Materialkritik und Kriterienabwägung statt bloß größerer Zahlen. Hilfen bleiben freiwillig erreichbar, nicht gesperrt.
+
+Förder ist ein Unterstützungsprofil, keine amtliche vierte Abschlussstufe. Der aktuelle Allgemeine Teil 2024 nennt ESA, MSA und AHR; der Geographie-Fachteil 2015 verwendet für die obere Anforderungsebene ÜOS. Die Oberfläche darf AHR verwenden; curriculare Zuordnungen müssen die Fassung benennen. Das ist kein Abituranspruch in Klasse 7. Keine automatische Einstufung und keine Gleichsetzung DaZ = Förder. Individuelle Förderziele/Prüfungsbedingungen bleiben Aufgabe der Lehrkraft.
+
+Alle Profile erhalten den gemeinsamen thematischen Kern, aber nicht denselben behaupteten Leistungsnachweis. Das höhere Profil darf nicht allein durch mehr Text entstehen. Sprach- und Bedienhilfe bleibt grundsätzlich auch bei höherem fachlichem Anspruch zugänglich.
+
+3. UNVERÄNDERLICHE FACHLICHE BASIS
+
+Erhalte die vorhandenen Modelle, geprüften Daten und Quellen. Profile dürfen Informationen schrittweise zeigen, aber reale Werte, Einheit, Zeitraum, Maßstab und Datentyp nicht verändern.
+
+Kenia: Amina direkt/Nord/Süd: 22/10/28, David: 12/18/18, Leila: 22/28/10; nach Straßenereignis Leila: 28/34/10. Korrekte Haltestellen und benutzte Busabschnitte. Nachfrage 16→24, Kapazität 20/30, Fußweg 12/4.
+Ghana: laufende Überschüsse 80/90/75; Investition 20/60 aus getrennten 60 GE. Freie 120 GE nach bereits bezahlten Löhnen/Kosten; alle legitimen Verteilungen; keine garantierten Rückflüsse.
+Marokko: 80 WE Start, Entnahmen 60/50/45, Reste 20/30/35, Ankunft 40. Erstes Feld: 60→45, Zusatz 20, Gesamt 65, Rest 15. Entnahme≠Verbrauch, Tank≠Grundwasser, keine unbewiesene Gesamtökobilanz.
+Bevölkerung: 1000+48−18+30−40=1020, Salden +30/−10. Neuer vorhandener Fall 800+28−12+5−17=804, Salden +16/−12. Personen für denselben Ort/Zeitraum, keine Raten.
+Neue Betriebsrechnung:A200−120=80;B240−180=60;nach gesonderter einmaliger40 GE-Anschaffung: 20.
+Marktfall: Kühlraum80 GE einmalig/12 GE monatlich/30 Stände;Dächer und Kisten: 30/3/60. Alle Angebotszahlen erfunden; Ort Kumasi real. Keine pauschale ökologische Rangfolge aus wenigen Angaben.
+
+Die vier historischen Ghana-Bevölkerungswerte und die Strom-/BIP-Reihen bleiben auf ihren dokumentierten Datenstand bezogen. Keine Umdeutung in aktuelle Werte oder gesicherte Zukunftsprognose2040. Neue klar erfundene Übungsfälle mit anderen Zahlen sind nur im spezifizierten Transferumfang zulässig.
+
+4. FEEDBACK UND HILFEN
+
+Richtig/grün für tatsächlich geprüfte Sachantworten. Falsch/rot für auswertbare falsche Sachbeziehungen. Teilrichtig/gelb mit Benennung des passenden Teils. Hilfe/gelb mit konkretem nächstem Schritt. Neutral für legitime Prioritäten, offene Antworten und ungeprüfte Texte.
+
+Unvollständige oder formatunklare Eingaben verbrauchen keine fachlichen Fehlversuche. Richtige Felder bleiben erhalten. Nach spätestens zwei vollständig auswertbaren Fehlversuchen Erklärung und bedienbaren unterstützten Weiterweg anbieten. Kein erzwungener langer Text als Ausweg.
+
+Keine fachliche Freitextbenotung per Schlüsselwort, Regex, vermeintlichem KI-Urteil oder externem Dienst. Eigene Texte bleiben fachlich ungeprüft. Strukturierte Belege können separat geprüft werden; das bestätigt nicht die gesamte freie Erklärung. Mündliche Selbstauskunft ist kein beobachteter Kompetenznachweis. Selbstkontroll-Checkliste ist keine Lehrkraftfreigabe.
+
+Standardhilfe im Förder-/ESA-Profil, freiwillig geöffnete Hilfe, angezeigtes Lösungsbeispiel und bewusst übernommenes Beispiel getrennt speichern. Eine schon korrekt bestätigte Antwort bleibt als solche erhalten, wenn danach eine Erklärung gelesen wird. Nicht jede Hilfenutzung ist eine Beispielübernahme.
+
+5. PAKET A – GATE 0: GEMEINSAME KORREKTUREN
+
+5.1 Globaler Neustart
+Der bekannte Hinweis in demand-ui.ts nennt nur sechs Episoden, obwohl globale Antworten und Journal gelöscht werden. Zentral eine kurze vollständige Ankündigung verwenden: „Alle Antworten in diesem Tab löschen? Dazu gehören alle Lernwege, Themen, Episoden und dein Lernjournal.“ Falls die vier Profile noch nicht aktiv sind, keine nicht vorhandenen Daten behaupten. Technischer Löschumfang und Text müssen zusammenpassen. Abbrechen erhält alles; Bestätigen löscht den angekündigten Umfang, auch nach Reload. Keine neue Export-/Kontofunktion.
+
+5.2 Wirtschaftsquellen
+Beim eigenen Erklären sowohl GEPA-Kurzbericht als auch Stromtabelle vollständig und getrennt abrufbar machen. Bestehenden geprüften Text samt Quellenkritik wiederverwenden, keine neue reale Aussage. Materialöffnung/Rücksprung verändert keine Antwort und keine Herkunft. Der Lernende soll die Verbindung selbst herstellen, nicht nur auf eine verborgene Quelle verwiesen werden.
+
+5.3 Antwortpositionen
+Die 16 dokumentierten Erstpositionsfälle in cocoa/share/water/area korrigieren. Feste abwechslungsreiche Ordnung je Aufgabenvariante bevorzugen. Kein Neu-Mischen nach Auswahl, Feedback, Render, Rücksprung oder Reload. Bewertung/Speicherung weiterhin nach ID. Positiv- und Negativkontrollen für jede Situation. Nicht behaupten, damit sei eigenständiges Verständnis garantiert.
+
+5.4 Vegetationszeit
+Kleine fachsprachliche Präzisierung: „Vegetationszeit ist die Zeit, in der Pflanzen wachsen können. Für die Aussaat brauchen sie passende Bedingungen, zum Beispiel genug Wasser.“ Keine neuen regionalen Klimawerte ergänzen.
+
+5.5 Rückmeldungen vorbereiten, nicht doppelt umbauen
+Gemeinsame Fachprüfung soll Teilbefunde ausgeben können. Lange falsch/teilrichtig-Meldungen nicht bloß kürzen und wichtige Bedingungen verlieren. Beim zweiten Fehler nach Teilaufgabe gliedern; keine identischen Volltexte zugleich als Rückmeldung und Hilfe 3. Sichere Escapes und zugängliche Statusansage erhalten. Die konkrete Profildarstellung folgt in Gate 1, kein vorheriger separater Großumbau der Schreibseite.
+
+Gate 0 endet mit eigenem Commit und gezielten Tests. Kein grüner Status ohne tatsächlich gelaufenen Test.
+
+6. PAKET A – GATE 1: ARCHITEKTUR UND VOLLSTÄNDIGER PROTOTYP
+
+6.1 Gemeinsame Module
+Bestehendes TypeScript/Vite/DOM/SVG beibehalten. Vorgeschlagene neue Module:
+- src/learning/profiles.ts
+- src/learning/catalog.ts
+- src/learning/task-contract.ts
+- src/learning/variants/
+- src/learning/material-view.ts
+- src/learning/feedback-view.ts
+- src/learning/progress.ts
+- src/learning/storage.ts
+- src/learning/chapter-ui.ts
+Die Aufteilung darf begründet an den Bestand angepasst werden. Kein neuer Spiele-Engine-Stack, keine vier Projektkopien, kein generisches Framework ohne Bedarf.
+
+Die bestehenden Berechnungsfunktionen sind die gemeinsame Fachgrundlage. Darstellungs-/Antwortvarianten darauf aufbauen. Übergangsadapter sind erlaubt; keine vier abweichenden Kopien derselben Rechnung.
+
+6.2 Aufgabenidentität
+Gemeinsame conceptId/taskId, aber eindeutige variantId + profileId + taskVersion + modelVersion + materialVersion + lokale attemptId. Eine Förder-Zuordnung und ein AHR-Text sind nicht derselbe Nachweis. Bestehende semantische Antwort-IDs erhalten; Darstellung kann sich ändern.
+
+Trenne:
+- Prozess: offen / in Arbeit / abgegeben / mit Erklärung fortgesetzt.
+- Fachprüfung: nicht geprüft / teilweise passend / passend / unpassend / nicht anwendbar.
+- Form: gewählt / gerechnet / geschrieben / mündlich selbstgemeldet.
+- Unterstützung: Standardgerüst / Hilfe angesehen / Beispiel angezeigt / Beispiel übernommen.
+Kein einzelnes complete-Flag darf daraus fachliche Beherrschung machen.
+
+6.3 Lernwegwahl und Wechsel
+Vier Lernwege beim Start auswählbar, kurz sachlich beschrieben. Im Spiel diskreter Zugriff, keine Rangfarben. Keine automatische Einstufung. Ein Profilwechsel speichert den bisherigen Entwurf und öffnet den separaten Zielprofilversuch. Alte Produkte bleiben bei Herkunftsprofil und Version. Niemals Abschlussflags in das Zielprofil kopieren. Zurückwechseln stellt den ursprünglichen Versuch wieder her.
+
+Alte a3be815-Stände als „bisheriger Lernweg, ohne Niveaueinstufung“ erhalten. Kein automatisches MSA/AHR-Etikett. Bestehende Speicherwarnung und Löschgrenzen erhalten. Versionierten Umschlag defensiv lesen; gültige Daten nicht wegen beschädigter optionaler Felder verwerfen. Keine neue dauerhafte Browser-/Cloud-/LMS-Speicherung.
+
+6.4 Bevölkerung vollständig in vier Profilen
+Implementiere die vier Musterwege aus 03_Mustersequenzen.md, Abschnitt A, mit M1/M2/M3 und klar erfundener bedingter Folgesituation. Wichtig:
+- Förder: Richtungen und Gesamtwirkung selbst wählen; Rechenergebnisse können erklärt vorliegen. Keine Pflichtfreitexte oder Pflicht zur Eingabe negativer Zahlen.
+- ESA: direkt sichtbares Gerüst; +30/−10/1020 und +16/−12/804; Chance/Bedingung zuordnen.
+- MSA: Operation und Beleg selbst wählen; kurze eigene Erklärung punktuell, nicht drei lange Felder.
+- AHR: Bilanz selbst erklären; reale Reihe von Ursachen trennen; Gegenfall mit Fortzug von 70 führt zu 990 Personen; klare Modellkennzeichnung.
+Alle Profile bearbeiten einen neuen vergleichbaren Fall. Realreihe bleibt Schätzung, keine Prognose. Die hypothetische Chance für mehr junge Menschen darf nicht aus einer Gesamtzahl ohne Altersinformation abgeleitet werden; Zusatzannahme ausdrücklich nennen.
+
+6.5 Zweite technische Aufgabenfamilie
+Zusätzlich einen frühen Kenia-E1-Vergleich in vier Profilen umsetzen, damit die Architektur nicht nur die inquiry-Formulare unterstützt. Amina/David, direkter/Nordweg und passender Nachteil; Modelle unverändert. Noch kein allgemeiner Umbau aller E1-Schritte ohne begründete Notwendigkeit. Im Entwicklungsmenü genau kennzeichnen, welche Bereiche schon vierfach umgesetzt sind; nicht für unveränderte Bereiche „vierfach differenziert“ behaupten.
+
+6.6 Prototyp-Abnahme
+- Vier sicht- und testbar verschiedene Aufgabenformen, nicht nur andere Hilfebuttons.
+- Förder ohne Pflichtschrift abschließbar, ESA hat direkten Denkhinweis, MSA bleibt überwiegend strukturiert, AHR hat tatsächlich eigene kurze Erklärungen.
+- Falsche/teilrichtige/leere/unklare Antworten; H1–H3; Beispiele; freie Texte; neutrale Gewichtungen.
+- Alle 12 gerichteten Profilwechsel mit Rückwechsel, Entwürfen, bestätigten Antworten und Beispielen.
+- Alter Stand, beschädigte optionale Daten, blockierter Speicher, Reload und globaler Neustart.
+- Chromium/WebKit soweit ausführbar, Desktop und iPad quer: 1024×768, Touch/Tastatur, schmaler Frame. Kein Pflicht-Hochformat.
+- Produktionsbuild/Artefaktprüfung; bestehende Zahlennormalisierung30/−10/1.020 bleibt korrekt; unklare Schreibweise ohne sachlichen Fehlversuch.
+
+Nach Gate 1: vollständiger Quellenexport oder Git-Bundle, Commit, Diff, kompakter Bericht, eigene Tests und Screenshots. Kein Push. Danach Stopp für unabhängige Musterabnahme. Keinen noch nicht laufenden AHR-Text als fachlich geprüft ausgeben.
+
+7. PAKET B – GATE 2: DIE FÜNF THEMEN
+
+Erst nach freigegebener Gate 1-Basis. Die freigegebene End-SHA ausdrücklich einsetzen; nicht den aktuellen HEAD ungeprüft verwenden.
+
+Alle fünf Themen nach der 52er-Matrix vierfach ausrollen. Bereits vorhandene Bevölkerungskonzeption wiederverwenden.
+
+Bilder: gemeinsame echte Fotos, unbewertete Anfangsvorstellung, Beobachtung/Behauptung, Schlussrevision. Fotografname nicht zu isoliertem Hauptlernziel machen. Keine erfundenen dokumentarischen Bilder oder echten Stimmen.
+Natur: Saison- und Jahreswertaufgaben räumlich getrennt; vorhandene Naturraumbegriffe in kurzer Tätigkeit anwenden; eine einfache fachlich geprüfte Wirkungskette/Kreislaufdarstellung ergänzen, ohne reale Wasserbilanz vorzutäuschen. Keine neuen ungeprüften Messdaten. Vollständige Klimadiagramme nicht aus Saisonzeichen erfinden; als zusätzlicher Unterrichtsbedarf transparent lassen.
+Wirtschaft: Verarbeitung/Betrieb/Region unterscheiden; neue Betriebsrechnung als Transfer statt doppelte Einführung; GEPA und Stromquelle zugänglich. Stromzugang≠Zuverlässigkeit; BIP≠Überschuss; keine Kausalität aus Korrelation.
+Zukunft: vollständige vier Musterwege aus 03, Abschnitt B. Eine Folge pro Teilschritt; danach Beziehung/Priorität. Alle legitimen Plan-Ziel-Kombinationen und bedingte Revisionen erhalten. Keine künstliche ökologische Siegeroption.
+
+Reale Quellen, Zahlen und Bildlizenzen bewahren. Vereinfachte Materialien bleiben inhaltlich gleichwertige, korrekt bezeichnete Ausschnitte derselben Grundlage. Keine scheinbar aktuellen Neudaten durch stille Aktualisierung.
+
+8. PAKET B – GATE 3: SECHS SIMULATIONEN
+
+Alle sechs vorhandenen Episoden in vier Varianten gemäß Matrix. Geschützte Fachmodelle nicht neu entwickeln.
+
+Kenia: schrittweise Personen/Verbindungen, richtiger Einstieg, Ereignis und Nachfrage/Zugang erhalten.
+Ghana: Produktion und Rechnung, Verteilung unter Budget, offene Ziele. Zahlen/Begründungsoptionen nicht regelmäßig mit richtiger erster Position. Den vorhandenen tatsächlichen Testbestand ermitteln und schützen; keine Testzahlen erfinden.
+Marokko: Messstellen/Bilanz und Einzel-/Gesamtebene getrennt. Eine kleinere Zusatzfläche kann unterhalb früherer Gesamtentnahme bleiben; kein pauschales „Technik spart nie“.
+
+Die empfohlenen Kapitelpfade sollen gleiche Rechnungen/Schlussformulare nicht unnötig wiederholen. Alle geschützten Werkzeuge bleiben direkt erreichbar. Eine Kürzung des empfohlenen Pfads ist keine nachträgliche Löschung alter Produkte und kein automatischer Abschluss nicht bearbeiteter Aufgaben.
+
+9. PAKET B – GATE 4: ORIENTIERUNG, KAPITEL, JOURNAL
+
+Fünf klare Kapitelkarten plus Weiterarbeiten, statt zweier konkurrierender Hauptmenüs. Direkteinstieg/Materialkurzeinführung sichern.
+
+Orientierung und Rückblick vierfach gemäß Matrix; bestehende stabile Antwortpositionen erhalten. Gemeinsames Journal zeigt Kapitelprodukt und ausklappbare Teilbelege mit Profil, Variante, Herkunft, Fachprüfungsumfang und offener Rückmeldung. Lernende bekommen einfache Statuswörter, nicht technische Gutachtertexte. Vollständige Details in interner Sicht/ausklappbarem Nachweis.
+
+Pro Kapitel eine neue vergleichbare Anwendung. Keine Pflicht, für jeden einzelnen Teilbereich einen langen Abschlussabsatz zu schreiben. AHR nicht mit bloß längeren Wiederholungen belasten. Lehrkraft kann offene Antworten besprechen; hier keine neue Benotungs-/Kontenfunktion.
+
+Profilwechsel, globale Löschwarnung, Wiederaufnahme, Fokus/Scroll und Materialöffnung in allen Bereichen konsistent machen. Alle 52 Varianten explizit im Variantenkatalog registrieren. Fehlende Variante nicht stillschweigend auf Einheitsansicht zurückfallen lassen.
+
+10. PAKET B – GATE 5: UNABHÄNGIG PRÜFBARE GESAMTABNAHME
+
+Je der 52 Varianten ein Sollblatt aus der Spezifikation. Automatische Abdeckungsliste: Lernziel, Material, eigener Schritt, Antwortform, Hilfen, richtige / typische falsche / teilweise richtige Antwort, offene Priorität, unbewerteter Text, Produkt und Transfer.
+
+Mindestens ein regulärer und ein unterstützter vollständiger Weg je Variante. Nicht jede mögliche Kombination blind vervielfachen; gemeinsame Fachtests parametrisieren. Freie Antworten haben kein korrekt/falsch-Orakel: dort Speicherung, Status, Kriterienzugriff und Herkunft prüfen. Mindestens beide verfügbaren Browserengines für die relevanten Render-/Fokus-/Eingabewege; fehlende Engine-Prüfung offen benennen.
+
+Bestehende 203 Logiktests sind Ausgangsbestand, keine für immer feste Endzahl. Neue Tests sinnvoll ergänzen; alte Schutzanforderungen nicht löschen oder abschwächen. Zahlenorakel unabhängig von der Berechnung formulieren. Texttests allein sind kein Lernhandlungsnachweis.
+
+Prüfen:
+- alle geschützten Modelle und Teilwege;
+- alle 12 Profilwechsel plus Altstände;
+- bestätigte Antwort vor/nach Hilfe;
+- unterschiedliche Standardhilfe ohne falsche Beispielkennzeichnung;
+- Freitext/Schreibunsicherheit ohne falsche Fachnote;
+- geteilte Materialien, Quellen, Lizenznachweise;
+- stabile Antwortreihenfolge/IDs und negative Kontrollen;
+- keine doppelte Hilfetextwand;
+- Desktop/iPad im Querformat, Touch/Tastatur, schmaler Frame;
+- reale Produktionsausgabe unter /Afrika-2040/;
+- keine privaten Schul-PDFs, Zugangsdaten, Schülerdaten oder Testprotokolle im Build;
+- enge explizite Artefakt-Allowlist, keine pauschale Freigabe eines beliebigen Ordners;
+- keine unerlaubten externen Laufzeitanfragen.
+
+Kein vollständiger Lernwirksamkeits-, Screenreader- oder Schul-iPad-Nachweis behaupten. Browseremulation ist kein Hardwaretest. Ein Abschluss ist keine bestandene Klassenarbeit.
+
+11. DOKUMENTATION UND PRÜFPAKET
+
+Interne Dokumente aktualisieren:
+- docs/afrika-curriculum-coverage.md: fünf Themen mit tatsächlichen Lernhandlungen/Nachweisgrenzen.
+- docs/afrika-four-paths.md:52er-Variantenkatalog, Profile und Standardhilfen.
+- docs/afrika-klassenarbeit-blueprint.md: tatsächlich geübte Verfahren pro Profil, zusätzliche Unterrichtsbedarfe, keine fertigen Prüfaufgaben/Notenregeln.
+- docs/afrika-progress-migration.md: Variantenidentität, Altstände und Profilwechsel.
+- docs/scorm-readiness.md nur soweit veränderte technische Voraussetzungen zu dokumentieren sind; keine API-Implementierung.
+
+Übergabe pro Paket:
+exakte Ausgangs-/End-SHA, vollständiger Quellstand oder überprüfbares Git-Bundle mit Manifest, Diff, konkrete Ergebnisse, wenige aussagekräftige unveränderte Screenshots, offene Einschränkungen. Keine bloßen lokalen Pfade ohne mitgelieferte Dateien voraussetzen. Testzahlen sauber trennen: alte Regression, neue Varianten, vollständige Wege, Browserengines, eigene Prüfbehauptungen. Nicht historische Testläufe als aktuelle ausgeben.
+
+12. STOPP UND FREIGABE
+
+In diesem Aufruf nur PAKET A. Der vollständige Plan PAKET B ist vorbereitet, aber wartet auf unabhängige Musterabnahme. Nach später beauftragtem PAKET B ebenfalls stoppen und Gesamtstand unabhängig prüfen lassen.
+
+Kein eigenmächtiger Push, Merge oder Deployment. Kein neues Geographie-Thema außerhalb Afrika, keine weiteren Länderprogramme, keine generative Freitextbewertung, keine Konten und kein SCORM-Tracking. Begleitmaterial und echte Klassenarbeit folgen gesondert nach fachlich-didaktischer Fertigstellung.
+
+Ziel: fünf zusammenhängende Kapitel mit vier tatsächlich verschiedenen Zugängen zum gemeinsamen fachlichen Kern, sauber getrennten Nachweisen und einer fairen Vorbereitung auf später überprüfbare Leistungen.

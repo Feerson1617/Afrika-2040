@@ -1,0 +1,23 @@
+{
+  "runId": 41897455709,
+  "contrast": {
+    "rule": "color-contrast",
+    "ratio": 3.65,
+    "required": 4.5,
+    "opacityAtFirstFrame": 0.7,
+    "resolution": "Remove fade; frozen-first-frame regression passes."
+  },
+  "n1": {
+    "test": "RC-final N1 image.perspective/ahr",
+    "scrollAfterFocus": 1042,
+    "scrollAtFirstTextInsertion": 503,
+    "existingTolerancePx": 2,
+    "resolution": "First establish and assert a fully visible writing field, then keep the same typing-stability assertions. No application input or persistence code changed."
+  },
+  "runner": {
+    "webkitLibraryInstallSeconds": 479,
+    "formerJobLimitMinutes": 25,
+    "newJobLimitMinutes": 35,
+    "testTimeoutsChanged": false
+  }
+}

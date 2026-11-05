@@ -1,0 +1,3553 @@
+{
+  "baseCommit": "cc9bfe054c0171c953acb080fb11be526e5a033e",
+  "testedSource": {
+    "src/content.ts": "67f344e68991782c8230c2ada8e7d7d46cb83b9219c8c4ff17d5e7bfa9841353",
+    "src/decision.ts": "86283f55cd4761319dc0c769d2ab37f08baf83117daf605e029269ce811fa344",
+    "src/demand-content.ts": "3c61cbd4a7009e9bb15bc000b8fc487e40b47ad78d023ea118b4d44568d897a8",
+    "src/demand-ui.ts": "d164ea6f304ebd2d9f4fa86e19ae1416a5ba711d5138f3c02d17c304ed38b42a",
+    "src/demand.ts": "fdc5b8f300e1c5b0f790a52ab3c1423413f7108cb11f939c6f6c88bff9641b53",
+    "src/event-ui.ts": "7830700419160c105878492b99269a0142635c6e3b8fa2374cae195c10a6fc12",
+    "src/event.ts": "0725253b9bc811b1f54dfbb60228b4ac93fa53aace2dec871f1aeaba44924fbf",
+    "src/feedback.ts": "ed156ca901b59605fac1cdc44be58ae3b5326daa0dd63fb9457a2b4b0e05ac35",
+    "src/geography/context.ts": "a3dcc78f22d99daa3e99f663174ecdb2150bee68c2b74f8ef1ac32b801418411",
+    "src/geography/map-data.ts": "1b631e2995fd673d3a13c33c08a9936a2d509b0a1b7527ae4f1f5db63d014c59",
+    "src/geography/natural-earth-africa.json": "297d01c2ca2ee7ba138aa336dd3e47d00975de6ae66700ebcce6fead7854c015",
+    "src/geography/provenance.json": "2b4c58feed25bb2b80352155f616ad24c9a4667dc3b7f74a149c1bb2c30408ab",
+    "src/geography/real-place-evidence.json": "2128770d0e2936966ee1ccae6026300a9251d77aff442f96c688a5e923506c7e",
+    "src/geography/review-ui.ts": "ae577084b8ae40c2404ec1cda1ba425b3ce9ccc8632a056c2248b5676de67d36",
+    "src/geography/state.ts": "8a0a433789bd286fd1587248232da9d6f3d0f5ef399c0af92ac48b181a11b4ea",
+    "src/geography/transfer.ts": "c3f14eeb0a34ce8a5814270b85cbf25498bd927de09373c9a2a747b1276f0129",
+    "src/geography/ui.ts": "3fd3d6103bde0a7a148ef999b162c7dc1118847e7a3226ddb2876888ceb8a917",
+    "src/inquiry/assets/asafo.jpg": "b764593e666dbeb085a22b175de59b2fa84f7068dcff78446d490e257f524302",
+    "src/inquiry/assets/kakum.jpg": "4447349bea9a1aa522bf1697d66cb8e89ab13807bc9e33bd94c08b49e943a03c",
+    "src/inquiry/assets/manifest.json": "dacf063208f893350a6ec4df06587ac99515a148df530ef7ea46a01fa02995af",
+    "src/inquiry/content.ts": "4f8ec4f34f4da0ca1a6657986f3b6c3dfb80ff2915a144a6cf1c71e4cb38ba0a",
+    "src/inquiry/state.ts": "c22a6c1eb8bba35d6d41e24b3d9094c45a7e66ee6307a55c1761bf0a881773d2",
+    "src/inquiry/style.css": "e10b01ecafeb3357193873ee001433d4a034b457fc19fcd93021586650aa7210",
+    "src/inquiry/ui.ts": "4457d1c69972813730ddc95245c0ef0ce61c08320a5ffcbeaa1f6536335d5080",
+    "src/learning/allocation.ts": "45d09254e9441db830dc9a05349c482a3746fd536ce3b2ff266df07a189a0447",
+    "src/learning/catalog.ts": "508875507c098411f670b374c1e6a6b4b093285134b830994f42445be79a4928",
+    "src/learning/chapter-ui.ts": "485a68cc8f66558e4f1ef99eba65cb33bed0f0c04d31c9df0e3734c0152ca9c9",
+    "src/learning/cross-paths.ts": "679c847faee52300250f5f1193916b5d97d8ae7e3a54c6ccca95405b8829cce8",
+    "src/learning/entry.ts": "44258063a3599032fc9fc014cea228c1f21701ba089a18810517ab1a41039b80",
+    "src/learning/help.ts": "385539750194ddb58d0326b1fe1e3ca63648f8cf50d898174e14c4d3fcb80254",
+    "src/learning/language.ts": "a1e0619ef8a5882cbbbdacb9ad4e5a93abea8586a233f57956577cffe851305e",
+    "src/learning/material-view.ts": "d2dffb8f0fafe81b8d1b6958e814486e71af05ac34acdf6b1b23a2c438e8cb91",
+    "src/learning/profiles.ts": "1e0d6a144a22769ce8bf575e49673ea3bc2bfb89420041fe9972df1d93119c1e",
+    "src/learning/progress.ts": "918db0471bafbd792d438529c7d7e226316ebe924a4e62f17cc2c69ccc700b27",
+    "src/learning/simulation-material.ts": "bf0d16c7d0050b58f0a821449408ea80c5dc2fd5f8efa17e0ee0af90b7efb48f",
+    "src/learning/simulation-variants.ts": "f2eebbf9c5d2042779a7e4126d487a0a330f3a12ff574ccdbf1db291617fa729",
+    "src/learning/storage.ts": "e1a27cd6462379b01f065e7f8824d2bd286a5454cea0da8cccb421886c729975",
+    "src/learning/style.css": "0d652226ffe474d4503ad14b51ef9d01e95b6e4048c0302b497b3f190a4c8a07",
+    "src/learning/tasks.ts": "3eab9a5be3e4e6b95c5f50be00e859fd36dcbd1e2057caf747a4cede77d57c23",
+    "src/learning/topic-material.ts": "af524966e72d07600908e31334b30e6526988adafbdb4a9076f139388063e5ed",
+    "src/learning/topic-variants.ts": "2a4ae3d9647c09e3756d725a945c41554f0f63618aa3d54962969cdafd50f35a",
+    "src/learning/transfer-cases.ts": "6d2d5514c29077171a1534c86c760f97cdcad529a0ab0c9922ceb6d36b275239",
+    "src/learning/update-material.ts": "ffe8ef7bf53d30fb0508ec283b6da62b0a3452e68d79411951158066daf0448d",
+    "src/learning/words.ts": "3e7d75b28c71a4ccbba16ecb39b2010bd660f778e90986da295c8421b8b072e7",
+    "src/main.ts": "98d34a1233f18b74ab3b3620a15a20f9b5523583bd19c62317188a9ef6b53f55",
+    "src/map.ts": "35f5489dd52b71b2da7b90300249000f8e68590c53b3e1b3e06449db3b82e34e",
+    "src/model.ts": "4b3d8554c45e616ba5b5f35152be3922088d6d13e022053cfe7ae74652d5992b",
+    "src/product-ui.ts": "104306b72f74b8d502191a323638c2c33aecca0e9791b95e818d3f56f39a803a",
+    "src/progress.ts": "22e51739ccc9c40e460f42bd72e1831b3280c1287a6d7924ab7d8e65a5d19459",
+    "src/regions/answer-order.ts": "68bed563a4f72df6c1a0b562fe4a06257292ea046204be067eb0ace94bca3293",
+    "src/regions/area.ts": "1e9b2a5fa0bd91e8ab3cb8cb1276d00e58bc04b3f10e4c7a5217851f8c491346",
+    "src/regions/cocoa.ts": "3b2115a3d5b4b76ad63b11a2940195112ff8f5cdbacc204a9a4754b62a1bf06d",
+    "src/regions/decision-ui.ts": "68b9b5b5186ca354172e01325fa627b4eeff538eb1e9da929c1907b6091c666b",
+    "src/regions/registry.ts": "96015d74860984ee4e4a5cc7df230a879a1a1b9655acecf352f6f94afccd208d",
+    "src/regions/share.ts": "0678ad0916c7f52175812dfc17ecbe5716fd9cb44c0a3603cf20ed0777d3ad1d",
+    "src/regions/shared.ts": "9b9f6e377037572cfa0516874f095fb35d77315531003e0a3fed60d6e307ade4",
+    "src/regions/state.ts": "b4ed966fb89bde7de31de0259ae672f408b16a15f0a2dcb916260fe486694b02",
+    "src/regions/storage.ts": "50ddf7444e7889190062ec34373bdcb3222511b27ac722cf8fc08d6753f35d47",
+    "src/regions/types.ts": "d6df5e6a84feb54e34f05615ca99a88d6e4e778200b69ff6c7294c3ea7b05f76",
+    "src/regions/ui.ts": "f8697419c7efba17504f59b72a3d68b22d5a65ba690c037312e0c3a30b51d80d",
+    "src/regions/water-model.ts": "9e1c21e5aeb3fd351e8971696bc4a01f01fe1b596bcd92d285d2ed77ef8cbe6d",
+    "src/regions/water.ts": "e00380832e7a7b15d6972ce05d43a173ecc099b38f834b75d1904c09057bad6e",
+    "src/reset.ts": "ff58039c105d358948aa2eaef4bbf58f014029e2eed59058eabf2f5a0ca74d34",
+    "src/state.ts": "87f88a002e37d346299dbd97157383354515f6009bf75580e502e08ff150192f",
+    "src/storage.ts": "506e724520e4272084455777abf41f1aa7ed920fcbbb988ce4af9e9855398bab",
+    "src/style.css": "eb12047e1ebe293c91364bed6ea99fb76e914c04be4e0585f66323f22e3b4107",
+    "src/vite-env.d.ts": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+  },
+  "protectedFiles": {
+    "src/model.ts": true,
+    "src/content.ts": true,
+    "src/state.ts": true,
+    "src/feedback.ts": true,
+    "src/learning/storage.ts": true,
+    "src/learning/progress.ts": true,
+    "src/learning/tasks.ts": true,
+    "src/learning/simulation-variants.ts": true,
+    "src/learning/topic-variants.ts": true,
+    "src/learning/profiles.ts": true,
+    "src/learning/help.ts": true
+  },
+  "logic": {
+    "pass": 491,
+    "fail": 0,
+    "skip": 0
+  },
+  "typescriptPassed": true,
+  "productionBuildPassed": true,
+  "buildFiles": [
+    {
+      "file": "assets/asafo-CiD1wyHi.jpg",
+      "bytes": 1988168,
+      "sha256": "b764593e666dbeb085a22b175de59b2fa84f7068dcff78446d490e257f524302"
+    },
+    {
+      "file": "assets/index-CH25Qqmu.css",
+      "bytes": 41304,
+      "sha256": "e2d0c230027b23d9e4033e6c168849fe4587dcd337025a1934adead1f2299140"
+    },
+    {
+      "file": "assets/index-DeAPov1F.js",
+      "bytes": 454559,
+      "sha256": "6921cc674b73964ef13a6ffe1164b39de7ab389f274761264cd6a01f6ec4b8dc"
+    },
+    {
+      "file": "assets/kakum-v8Jew1-6.jpg",
+      "bytes": 1534641,
+      "sha256": "4447349bea9a1aa522bf1697d66cb8e89ab13807bc9e33bd94c08b49e943a03c"
+    },
+    {
+      "file": "index.html",
+      "bytes": 1052,
+      "sha256": "92d23e983928fd3e2c9260b07176635185ed69e695f17af746a2e7e6815e7c0e"
+    }
+  ],
+  "baselineN1": {
+    "startTime": "2026-11-03T12:31:19.406Z",
+    "duration": 14061.234,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 10,
+    "flaky": 0
+  },
+  "initialRunT1Reproduction": {
+    "startTime": "2026-11-03T12:33:29.621Z",
+    "duration": 112293.081,
+    "expected": 147,
+    "skipped": 0,
+    "unexpected": 1,
+    "flaky": 0
+  },
+  "repeatedReload": {
+    "stats": {
+      "startTime": "2026-11-03T12:36:09.033Z",
+      "duration": 18390.990999999998,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "reloads": 30
+  },
+  "finalBrowser": {
+    "stats": {
+      "startTime": "2026-11-03T12:36:52.614Z",
+      "duration": 706657.25,
+      "expected": 356,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "file": "four-paths.spec.ts",
+        "title": "Afrika curriculum four paths c/foerder supported=false: actual complete flow and honest journal",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "title": "Afrika curriculum four paths c/foerder supported=true: actual complete flow and honest journal",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "title": "Afrika curriculum four paths c/esa supported=false: actual complete flow and honest journal",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "title": "Afrika curriculum four paths c/esa supported=true: actual complete flow and honest journal",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "title": "Afrika curriculum four paths c/msa supported=false: actual complete flow and honest journal",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "title": "Afrika curriculum four paths c/ahr supported=false: actual complete flow and honest journal",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "title": "Afrika curriculum four paths c/ahr supported=true: actual complete flow and honest journal",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "title": "Afrika curriculum four paths c/foerder supported=false: actual complete flow and honest journal",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "title": "Afrika curriculum four paths c/foerder supported=true: actual complete flow and honest journal",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "title": "Afrika curriculum four paths c/esa supported=false: actual complete flow and honest journal",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "title": "Afrika curriculum four paths c/esa supported=true: actual complete flow and honest journal",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "title": "Afrika curriculum four paths c/msa supported=false: actual complete flow and honest journal",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "title": "Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "title": "Afrika curriculum four paths c/ahr supported=false: actual complete flow and honest journal",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths.spec.ts",
+        "title": "Afrika curriculum four paths c/ahr supported=true: actual complete flow and honest journal",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 derived material: nested open and deliberately closed panels survive necessary result updates",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final S2 ESA migration: negative movement is not total population decline",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final T1 normal cocoa flow: saved feedback really visible on repeated reloads after earlier tasks",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 future.judgment/msa: writing retains sources, nested panels, caret, reading position and history",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 future.judgment/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 economy.source-claim.v1/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 nature.recommend/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language P2-01 ESA context survives both split steps, reload and back",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language P2-02 AHR full help and deliberate adoption retain correct journey meaning",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language cocoa foerder: processing comes first and full money data remain reachable",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language cocoa esa: processing comes first and full money data remain reachable",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language cocoa msa: processing comes first and full money data remain reachable",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language cocoa ahr: processing comes first and full money data remain reachable",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial foerder: visible cocoa hints, honest saved text and no initial failure counter",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial esa: visible cocoa hints, honest saved text and no initial failure counter",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial msa: visible cocoa hints, honest saved text and no initial failure counter",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial ahr: visible cocoa hints, honest saved text and no initial failure counter",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial AHR save button, oral self report, self control, historical text and keyboard",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum barriers ESA s2: calculate without disclosed result, help, reload and retained exploration",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum barriers ESA s4: calculate without disclosed result, help, reload and retained exploration",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum barriers ESA s6: calculate without disclosed result, help, reload and retained exploration",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F1 area view esa: actual distinct cases without answers",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F2 free money esa: help stage two without arithmetic result",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s2/esa: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s4/esa: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s6/esa: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F1 area view msa: actual distinct cases without answers",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F2 free money msa: help stage two without arithmetic result",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s2/msa: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s4/msa: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s6/msa: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F1 area view ahr: actual distinct cases without answers",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F2 free money ahr: help stage two without arithmetic result",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s2/ahr: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s4/ahr: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s6/ahr: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.first.weight/foerder: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.revised.weight/foerder: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s2/demand.final.weight/foerder: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s3/cocoa.final.weight/foerder: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s5/water.final.weight/foerder: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s6/area.final.weight/foerder: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.first.weight/esa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.revised.weight/esa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s2/demand.final.weight/esa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s3/cocoa.final.weight/esa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s5/water.final.weight/esa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s6/area.final.weight/esa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.first.weight/msa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.revised.weight/msa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s2/demand.final.weight/msa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s3/cocoa.final.weight/msa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s5/water.final.weight/msa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s6/area.final.weight/msa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.first.weight/ahr: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.revised.weight/ahr: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s2/demand.final.weight/ahr: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s3/cocoa.final.weight/ahr: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s5/water.final.weight/ahr: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s6/area.final.weight/ahr: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s2/esa: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s4/esa: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s6/esa: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s2/msa: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s4/msa: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s6/msa: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s2/ahr: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s4/ahr: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s6/ahr: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final number hint esa/population.base.migration: no solution hidden in format examples",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final number hint esa/population.base.end: no solution hidden in format examples",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final number hint msa/population.base.balance: no solution hidden in format examples",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final number hint ahr/population.base.balance: no solution hidden in format examples",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 derived material: nested open and deliberately closed panels survive necessary result updates",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final S2 ESA migration: negative movement is not total population decline",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final T1 normal cocoa flow: saved feedback really visible on repeated reloads after earlier tasks",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 future.judgment/msa: writing retains sources, nested panels, caret, reading position and history",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 future.judgment/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 economy.source-claim.v1/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 nature.recommend/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language P2-01 ESA context survives both split steps, reload and back",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language P2-02 AHR full help and deliberate adoption retain correct journey meaning",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language cocoa foerder: processing comes first and full money data remain reachable",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language cocoa esa: processing comes first and full money data remain reachable",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language cocoa msa: processing comes first and full money data remain reachable",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language cocoa ahr: processing comes first and full money data remain reachable",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial foerder: visible cocoa hints, honest saved text and no initial failure counter",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial esa: visible cocoa hints, honest saved text and no initial failure counter",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial msa: visible cocoa hints, honest saved text and no initial failure counter",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial ahr: visible cocoa hints, honest saved text and no initial failure counter",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial AHR save button, oral self report, self control, historical text and keyboard",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum barriers ESA s2: calculate without disclosed result, help, reload and retained exploration",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum barriers ESA s4: calculate without disclosed result, help, reload and retained exploration",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum barriers ESA s6: calculate without disclosed result, help, reload and retained exploration",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F1 area view esa: actual distinct cases without answers",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F2 free money esa: help stage two without arithmetic result",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s2/esa: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s4/esa: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s6/esa: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F1 area view msa: actual distinct cases without answers",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F2 free money msa: help stage two without arithmetic result",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s2/msa: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s4/msa: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s6/msa: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F1 area view ahr: actual distinct cases without answers",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F2 free money ahr: help stage two without arithmetic result",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s2/ahr: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s4/ahr: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s6/ahr: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.first.weight/foerder: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.revised.weight/foerder: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s2/demand.final.weight/foerder: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s3/cocoa.final.weight/foerder: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s5/water.final.weight/foerder: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s6/area.final.weight/foerder: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.first.weight/esa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.revised.weight/esa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s2/demand.final.weight/esa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s3/cocoa.final.weight/esa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s5/water.final.weight/esa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s6/area.final.weight/esa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.first.weight/msa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.revised.weight/msa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s2/demand.final.weight/msa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s3/cocoa.final.weight/msa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s5/water.final.weight/msa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s6/area.final.weight/msa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.first.weight/ahr: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.revised.weight/ahr: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s2/demand.final.weight/ahr: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s3/cocoa.final.weight/ahr: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s5/water.final.weight/ahr: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s6/area.final.weight/ahr: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s2/esa: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s4/esa: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s6/esa: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s2/msa: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s4/msa: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s6/msa: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s2/ahr: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s4/ahr: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s6/ahr: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final number hint esa/population.base.migration: no solution hidden in format examples",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final number hint esa/population.base.end: no solution hidden in format examples",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final number hint msa/population.base.balance: no solution hidden in format examples",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final number hint ahr/population.base.balance: no solution hidden in format examples",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s1/foerder supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s1/foerder supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s1/esa supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s1/esa supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s1/msa supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s1/msa supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s1/ahr supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s1/ahr supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s2/foerder supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s2/foerder supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s2/esa supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s2/esa supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s2/msa supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s2/msa supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s2/ahr supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s2/ahr supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s3/foerder supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s3/foerder supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s3/esa supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s3/esa supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s3/msa supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s3/msa supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s3/ahr supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s3/ahr supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s4/foerder supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s4/foerder supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s4/esa supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s4/esa supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s4/msa supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s4/msa supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s4/ahr supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s4/ahr supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s5/foerder supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s5/foerder supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s5/esa supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s5/esa supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s5/msa supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s5/msa supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s5/ahr supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s5/ahr supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s6/foerder supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s6/foerder supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s6/esa supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s6/esa supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s6/msa supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s6/msa supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s6/ahr supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s6/ahr supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB o/foerder supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB o/foerder supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB o/esa supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB o/esa supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB o/msa supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB o/msa supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB o/ahr supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB o/ahr supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB r/foerder supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB r/foerder supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB r/esa supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB r/esa supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB r/msa supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB r/msa supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB r/ahr supported=false",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB r/ahr supported=true",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s1/foerder supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s1/foerder supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s1/esa supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s1/esa supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s1/msa supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s1/msa supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s1/ahr supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s1/ahr supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s2/foerder supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s2/foerder supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s2/esa supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s2/esa supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s2/msa supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s2/msa supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s2/ahr supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s2/ahr supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s3/foerder supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s3/foerder supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s3/esa supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s3/esa supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s3/msa supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s3/msa supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s3/ahr supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s3/ahr supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s4/foerder supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s4/foerder supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s4/esa supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s4/esa supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s4/msa supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s4/msa supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s4/ahr supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s4/ahr supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s5/foerder supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s5/foerder supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s5/esa supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s5/esa supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s5/msa supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s5/msa supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s5/ahr supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s5/ahr supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s6/foerder supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s6/foerder supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s6/esa supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s6/esa supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s6/msa supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s6/msa supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s6/ahr supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB s6/ahr supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB o/foerder supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB o/foerder supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB o/esa supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB o/esa supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB o/msa supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB o/msa supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB o/ahr supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB o/ahr supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB r/foerder supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB r/foerder supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB r/esa supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB r/esa supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB r/msa supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB r/msa supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB r/ahr supported=false",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "packet-b.spec.ts",
+        "title": "Afrika curriculum PaketB r/ahr supported=true",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 a/foerder supported=false: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 a/foerder supported=true: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 a/esa supported=false: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 a/esa supported=true: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 a/msa supported=false: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 a/msa supported=true: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 a/ahr supported=false: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 a/ahr supported=true: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 n/foerder supported=false: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 n/foerder supported=true: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 n/esa supported=false: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 n/esa supported=true: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 n/msa supported=false: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 n/msa supported=true: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 n/ahr supported=false: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 n/ahr supported=true: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 d/foerder supported=false: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 d/foerder supported=true: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 d/esa supported=false: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 d/esa supported=true: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 d/msa supported=false: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 d/msa supported=true: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 d/ahr supported=false: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 d/ahr supported=true: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 e/foerder supported=false: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 e/foerder supported=true: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 e/esa supported=false: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 e/esa supported=true: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 e/msa supported=false: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 e/msa supported=true: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 e/ahr supported=false: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 e/ahr supported=true: complete actual learning route",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 a/foerder supported=false: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 a/foerder supported=true: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 a/esa supported=false: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 a/esa supported=true: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 a/msa supported=false: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 a/msa supported=true: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 a/ahr supported=false: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 a/ahr supported=true: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 n/foerder supported=false: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 n/foerder supported=true: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 n/esa supported=false: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 n/esa supported=true: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 n/msa supported=false: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 n/msa supported=true: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 n/ahr supported=false: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 n/ahr supported=true: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 d/foerder supported=false: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 d/foerder supported=true: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 d/esa supported=false: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 d/esa supported=true: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 d/msa supported=false: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 d/msa supported=true: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 d/ahr supported=false: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 d/ahr supported=true: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 e/foerder supported=false: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 e/foerder supported=true: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 e/esa supported=false: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 e/esa supported=true: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 e/msa supported=false: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 e/msa supported=true: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 e/ahr supported=false: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "topics-gate2.spec.ts",
+        "title": "Afrika curriculum Gate2 e/ahr supported=true: complete actual learning route",
+        "project": "webkit",
+        "status": "expected"
+      }
+    ],
+    "completeRouteCombinations": [
+      [
+        "a",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "a",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "a",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "a",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "a",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "a",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "a",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "a",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "a",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "a",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "a",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "a",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "a",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "a",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "a",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "a",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "c",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "c",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "c",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "c",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "c",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "c",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "c",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "c",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "c",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "c",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "c",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "c",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "c",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "c",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "c",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "c",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "d",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "d",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "d",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "d",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "d",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "d",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "d",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "d",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "d",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "d",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "d",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "d",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "d",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "d",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "d",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "d",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "e",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "e",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "e",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "e",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "e",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "e",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "e",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "e",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "e",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "e",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "e",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "e",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "e",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "e",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "e",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "e",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "n",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "n",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "n",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "n",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "n",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "n",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "n",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "n",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "n",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "n",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "n",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "n",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "n",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "n",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "n",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "n",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "o",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "o",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "o",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "o",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "o",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "o",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "o",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "o",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "o",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "o",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "o",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "o",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "o",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "o",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "o",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "o",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "r",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "r",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "r",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "r",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "r",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "r",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "r",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "r",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "r",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "r",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "r",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "r",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "r",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "r",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "r",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "r",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s1",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "s1",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "s1",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "s1",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "s1",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s1",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s1",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s1",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s1",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "s1",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "s1",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "s1",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "s1",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s1",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s1",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s1",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s2",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "s2",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "s2",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "s2",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "s2",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s2",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s2",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s2",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s2",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "s2",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "s2",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "s2",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "s2",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s2",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s2",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s2",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s3",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "s3",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "s3",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "s3",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "s3",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s3",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s3",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s3",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s3",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "s3",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "s3",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "s3",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "s3",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s3",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s3",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s3",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s4",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "s4",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "s4",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "s4",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "s4",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s4",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s4",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s4",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s4",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "s4",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "s4",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "s4",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "s4",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s4",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s4",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s4",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s5",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "s5",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "s5",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "s5",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "s5",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s5",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s5",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s5",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s5",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "s5",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "s5",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "s5",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "s5",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s5",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s5",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s5",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s6",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "s6",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "s6",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "s6",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "s6",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s6",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s6",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s6",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s6",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "s6",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "s6",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "s6",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "s6",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s6",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s6",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s6",
+        "msa",
+        "true",
+        "webkit"
+      ]
+    ],
+    "completeRoutes": 208,
+    "targetedCases": 148
+  },
+  "ciDiscoveryNewCases": 16,
+  "limitations": [
+    "No physical iPad/Safari acceptance",
+    "No empirical learner or classroom validation",
+    "No new full content audit; historical cc9bfe audit remains unchanged",
+    "Release requires independent acceptance and explicit later merge/publication approval"
+  ]
+}

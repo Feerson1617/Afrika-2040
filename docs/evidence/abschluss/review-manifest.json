@@ -1,0 +1,1983 @@
+{
+  "baseCommit": "4d6327a75fbd91030b9292ee0cca20bfd6953b4b",
+  "method": "Explizit aufgezeichnete inhaltliche Baustein-/Profilprüfung. Nicht aus Test-Erfolg erzeugt. Bei jeder Änderung an src ungültig; vor Neuaufzeichnung erneut inhaltlich prüfen.",
+  "sourceDigest": "3f7fda91d5f055667ee4f2c481ae85c72527695547efa9f028533cc784c8a63d",
+  "entries": {
+    "a/foerder/image.initial": {
+      "digest": "24f792d65e603a7195112cffdd027f1333ef063d3d1d9d3b5c3c5883d1c911b9",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/foerder/image.observe.built": {
+      "digest": "15aae0cff7d031d1274804810d89909c2f6ac5de0eeabf6ab66a79ed2208b24f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/foerder/image.observe.income": {
+      "digest": "7e07cdbc12c47edc4d2f407133299153978bd2e12ce89af6cc2c8f691fb2307f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/foerder/image.second.built": {
+      "digest": "5753cc393c1c311ff75880e2bfb808ca7d6f8a92f5666bfe3e01c8547c7fbd26",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/foerder/image.second.scope": {
+      "digest": "43acc0c1541e18586b4b20f4bfdf27a7fdca9f8eb797e7d5bfb00a53ebacc395",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/esa/image.initial": {
+      "digest": "6676f3f3c1f786a5218e69e8a14e740ee9f985ae646856ecbb2ca36b8793d6cc",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/esa/image.observe.built": {
+      "digest": "d92561081985238dc15f83a9ea39cb838a731e1d19a9f5272913669e2161befd",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/esa/image.observe.income": {
+      "digest": "506de320de0bc328b8e88a6f7619d74fc05f5bdcaeb0e3c6dc4fbafa0f803cd2",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/esa/image.second.built": {
+      "digest": "f08933e5f3c3a155bd7b96388d561ac595b8dca67f241be9fab935bd820dc415",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/esa/image.second.scope": {
+      "digest": "e27580a4221f516a3e1d797ec277365ee472d55f0a94c54f933aa1649074509e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/esa/image.headline.evidence": {
+      "digest": "828d21ad52eda3bfb174fcfcebb654608c73a3997478cb25ceec42e6a8c4ddcd",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/esa/image.headline.revision": {
+      "digest": "17631533f83907d696e6266a6bdf0fcacaf0be21a390e2158fffd7df9e9e0d6e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/msa/image.initial": {
+      "digest": "d1201175acf3eecac979a34a94878b0e95120cd0987a3e663a6b14a60153c591",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/msa/image.observe": {
+      "digest": "942134e93dbfc6782fa2fe21c66054207dea57c2a5edbed6a3f570be5aea675f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/msa/image.second": {
+      "digest": "036edae65043688491c70f469bcdd94bdc6d4a5af6668605781582fb6240f021",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/msa/image.headline": {
+      "digest": "649604a7fde784bb9304f661fd532d70c678cb96a45949e2d545fed32dca7820",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/msa/image.revision": {
+      "digest": "ad5d0a1ee154ef9f1cbc7e4c7811cad478a3e47a09c9cc85dac4c68cc8191a1d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/ahr/image.initial": {
+      "digest": "e37ecd5639ee10d25fdf9a61bf4c8f6ce33315ab95381ca32bc8fa3fbdf5b6e4",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/ahr/image.observe": {
+      "digest": "cea103093838ffcb59e7c79626f6b769ef0492f2f0713663312ecce0b0fb22f8",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/ahr/image.second": {
+      "digest": "f19db3b364cc48daf9a035b17c193fcb38e42f8410163e54feddafc0ea2b2bc9",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/ahr/image.headline": {
+      "digest": "bde3234a1bbea457f4bcde46a17946afa5ecc457f0d9bacb489656304e7c9685",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "a/ahr/image.perspective": {
+      "digest": "1f4e1af671e8d7444a7590a8a4bf36b1247c836ab95081af63ab30724d260a44",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/foerder/nature.calendar.ghana": {
+      "digest": "7be77e41d7a3b5249d3c66992b319cbf81f7e44ad6fae9c6d317219f8af73b6e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/foerder/nature.use.growth": {
+      "digest": "c896d9b00aea7c25fba4a15a625bd887e768d0d49d50c2fb304824a665a0245c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/foerder/nature.use.limit": {
+      "digest": "e51684496f55118eba40a156c0b7f3bd4fef238d18fecb250e024f24b06c8387",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/foerder/nature.concepts.savanna": {
+      "digest": "0b3aba9625c83247d3a6170b154c59d479687b331581711b716c42386002ff8d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/foerder/nature.concepts.cycle": {
+      "digest": "49e2fc0889ef42e11f3d5f19f8af387d688905a38c235ef719faa80d2805188a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/foerder/nature.transfer": {
+      "digest": "47ac40eef6416cfb0626915a13684df4a8c9e61711af38b94a5c2820e15c89f3",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/esa/nature.calendar.ghana": {
+      "digest": "c5f524a3dd9a13de8181385782e3ca144a82f5f08ef82d75762d5390d98ebf99",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/esa/nature.calendar.morocco": {
+      "digest": "92e2a457e5f7e2c3debf82833dc869a267ca7b4ca83ae14f5c780da9b43ff678",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/esa/nature.use.growth": {
+      "digest": "0eae3533eae690f3b8a038cfa6ec5759a0a626b12b02b74e894aec418521c92e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/esa/nature.use.limit": {
+      "digest": "d2fecad2eb71def16925d2e454c6e7ce6bce431b7898c27e817c8135d27e4f9b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/esa/nature.regions.higher": {
+      "digest": "a1b1b9f4c9d950f27b2a2b02c2f290d61a2f38ccf9d5a1c5a1407c4576a65c86",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/esa/nature.regions.access": {
+      "digest": "b49e80534c23ee78f6ea0a39443570775c6382ad948b96a1bedaf4356a3a713b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/esa/nature.concepts.savanna": {
+      "digest": "b5bb8c946c0914bd2f85afb60adbf1c78018e3cdaea20e91e5756518f9f4d387",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/esa/nature.concepts.cycle": {
+      "digest": "d9e4c052c67c8030f15aa8166427def479b0e79c2598e42727272a21dc40aeb1",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/esa/nature.transfer": {
+      "digest": "51971bf7dbc83cfe452cedb21ffc138d6bf4e974d0bf6a1a8589b1f6a4fe4857",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/msa/nature.calendar.ghana": {
+      "digest": "a825bd07875a4e6b67ecde4a547640a82980e3db2633e62ac81047940fdb4cd0",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/msa/nature.calendar.morocco": {
+      "digest": "51be6ea7df659c04b598de106bd893a1f65f9fef0b845b92e22b885e7d4dab44",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/msa/nature.use": {
+      "digest": "1edff89db1e0babeb7cc17fbcb5b38429d70f2b50d6c235f19eb1389a2b2c86d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/msa/nature.regions": {
+      "digest": "ce2af61a33a5a26be24e13df4d8330e3a9be4e2998b6ba8f4c0a745762ac368e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/msa/nature.concepts": {
+      "digest": "d0852dccf185c0a214f1c6faf277be3c6bed18126ce21135125b1acbeb5da045",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/msa/nature.transfer": {
+      "digest": "ec8ab11086df431c34954051275974f3db9e640a70fc75e60dbc7b41374a2d28",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/msa/nature.equal-total": {
+      "digest": "5949b6231e2ca8927b985afd2f84fbd8a7c6c7a96b68b0c5d3020fdeb7f393f7",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/ahr/nature.calendar.ghana": {
+      "digest": "bd043a3a642402fbcfff77f9281e62ee2fbe4f2d6cb99cc5c64db004e477ddbb",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/ahr/nature.calendar.morocco": {
+      "digest": "493efef39d3a6d6914dbae853ba848c69cb62012e2a0be3fe8de2572b4823bdc",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/ahr/nature.use": {
+      "digest": "bd3a55aa3cf9473bb13bbb0ad928ba9213706c03518cc21612fc1d45990d31fe",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/ahr/nature.regions": {
+      "digest": "577463a24306e4eda2ece8f8e7202fd2231a6168ab2db8d350f035d3f81336d6",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/ahr/nature.concepts": {
+      "digest": "93fab0780a9f5d8cef3acbc6ab7f35e68c4ef2fe02be410dd054a785c31e587a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/ahr/nature.transfer": {
+      "digest": "346678274ecc17d213db376c915cfc662172ae86e2d08dcc4d6de1b680164f10",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/ahr/nature.recommend": {
+      "digest": "8e6610d6aea14f81c7e49f6219ad9f07bae07522957414a08dca6f49a28e2e0f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "n/ahr/nature.equal-total": {
+      "digest": "b9e5b5e81d659a1a93837cea7a61db3b9eff157d044845faa1be845ac95ae1d0",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/foerder/population.event.birth": {
+      "digest": "826d926c01b0d1b8f91c62546750756ecc2d133a9a83b3bbbb6fdfdd2045163e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/foerder/population.event.death": {
+      "digest": "3800f5f0da682702cbda6be01cbf366ed4e2cb94c5a36923827084a09de8d259",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/foerder/population.event.arrival": {
+      "digest": "b0b14e9f1c8827c13ceec244f0e64a7992fee2d1f0af68aa9d8ead9ab6f0c735",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/foerder/population.event.departure": {
+      "digest": "827c0e291014e5dbec9713355cec896b33e23efab2967b1e1d58e5cefa1bd83f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/foerder/population.base.natural-direction": {
+      "digest": "6a48c1c9aa8c4f18601344befd659cea57a86c21a6e91f45c4a1a6167aedc2e0",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/foerder/population.base.migration-direction": {
+      "digest": "665b6f875519515dc72fc0966758c296bb91d99c73ac6fd62041597da72b0792",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/foerder/population.base.total-direction": {
+      "digest": "6d66433495d30d725e6b1c6305c8e4332d12f4c1cf53c1b01e32b52928502540",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/foerder/population.source.read.larger": {
+      "digest": "90242f634cce79ea108900881fdcd4d0a18fb4a3070695cf030f1b9e91054541",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/foerder/population.source.read.status": {
+      "digest": "f99daaea064531b5c4868ed7911676b80530d062318ce449e3fbab68415bd298",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/foerder/population.condition.places": {
+      "digest": "2c39fb1fc18482116d020a0b750fcca2fae796335edd1fe22b34905f0ae3290b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/foerder/population.condition.teachers": {
+      "digest": "4ccd2cc36384dbabbdeb2e893b7a0c50d099134d5b8b68e4f586b06614ca3e0a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/foerder/population.transfer.natural-direction": {
+      "digest": "bd06ef703ee8bf0e1628abeabc41759d8608c36f96af675caa681b29242aefda",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/foerder/population.transfer.migration-direction": {
+      "digest": "f6e57cd2459a97ca2e6776a2cb4fd815af1b92257d66475304f4d576c166482e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/foerder/population.transfer.total-direction": {
+      "digest": "f0186e7a8818016c259d91a901e6fe334fd0be6d64cd0ab2d64fe2890de42d4d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/esa/population.event.birth": {
+      "digest": "bee21e8e804d93cc02dca49b87762a657729e3dd04425381e92454aaf0ff3180",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/esa/population.event.death": {
+      "digest": "1fba209436c97d6150cce791661f557c7acb04ca4150582fd67f6b79b1402689",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/esa/population.event.arrival": {
+      "digest": "b01fa07b52654ff2775d0473d8670d09bdda21e2daef8a05ef83eba98eecbed3",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/esa/population.event.departure": {
+      "digest": "22a7b4b87183adea33751e2c6e23af8078dfd02666f22252290d4b9c81f66eac",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/esa/population.base.natural": {
+      "digest": "2aa132f5f73c7dfeb1f4f96fe8c75037442e05917079a17ef5fdf76bbd197e94",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/esa/population.base.migration": {
+      "digest": "e38a227782156b5cdf59e225c38429969ed7ff541e464c3ef56661e0e0e11ca0",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/esa/population.base.end": {
+      "digest": "901fbc39697ab30d7bc789b27cd6f3c7e997fbc8ae30a7fab40e5c8c76143234",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/esa/population.base.reason": {
+      "digest": "fe0e40533bfef7382d58f87e1775de768eb5a851bde163b95abf00d965c9b965",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/esa/population.source.read": {
+      "digest": "ed9fb24f0536250ea94d8b139e88be0cbb94d3066d3484c9823c9ad860318288",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/esa/population.condition.links": {
+      "digest": "245801a77be1a851cc30e3fc5e5efee5389138255b7838b124b85448c98063e0",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/esa/population.transfer.natural": {
+      "digest": "60e222de2b067fd6b83cfa475dc6f6307c10d797ecadc3ebeabe51424025f723",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/esa/population.transfer.migration": {
+      "digest": "59b72d22f103486d260c977182a1d975725416208d12dbc22eab9a3cc710b67c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/esa/population.transfer.end": {
+      "digest": "29ca61928f17fff358fbdd798db3f7ca719db27c4c3a215f4bf6a56ea2d3569f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/msa/population.operations": {
+      "digest": "b593a24c9dc00053bd75436f630fd5a594ef94a2ce73c7fdbb9b4a7cecd6cd70",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/msa/population.base.balance": {
+      "digest": "eb8aea6ab942e060ded617b98ad1b0a3f84b6402f3385a2ee3c9c60d8017a303",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/msa/population.stock-change": {
+      "digest": "77ffa519b06249bd1101626eeb8c007391cf32438e8153fef89063002834946f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/msa/population.source.read": {
+      "digest": "3e3d66a518881e7c1bb364f7389bff2cfa9e780666fa029a70910c8473b95ee0",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/msa/population.condition.links": {
+      "digest": "9fcc084273ed3cbc9707943b49610cb5a6709b8683fdff0d8be4296b098a0eb2",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/msa/population.condition.own": {
+      "digest": "64d17937a46eb7aa8d12dcd39c385fa28b7a470cc04571396d36968d8cfb9f3a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/msa/population.transfer.balance": {
+      "digest": "e43ef5657f2f6107bae3521403c139225fc0c1dccc3691294e8ef9886294dc37",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/msa/population.bridge": {
+      "digest": "43dd118c010c76d7cc30787bb70bc09d42e62586e588a730c21cf36796a2116a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/ahr/population.base.balance": {
+      "digest": "ca8be35bdac8adef04e00d131dd158d3e73faa32a2b4fe73f9993baa6667431b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/ahr/population.base.explain": {
+      "digest": "a7a3cb809a5f01b5143ec5a2025078f58071ebd2a9b5371d773f5f60277da369",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/ahr/population.source.read": {
+      "digest": "a0a78baec94a6c8589fdcebc88ecce8578148a39633e38bfea136b7fd7780ac5",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/ahr/population.source.explain": {
+      "digest": "1c31aefdf33b74dd1c752fc4f241310739433a5b2f9271be04938420e3a369ae",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/ahr/population.condition.explain": {
+      "digest": "5f32495096629dcec759ca75232e6b651a5f61b8a9fe7aa985fcf326c415c3e5",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/ahr/population.transfer.balance": {
+      "digest": "cd602871935eb55f97176d7621b1b89f238e240bf99f9b33193fbe4e2be8770b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/ahr/population.counter.balance": {
+      "digest": "76299ab305fdaeb9f5980068aa50a88bdce6a9489674d17981f6b48cb5e07a02",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "c/ahr/population.question": {
+      "digest": "0050a1a832dc36a229e57b64ead478237545b1e27d49e4dec86d458ab974beec",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/foerder/economy.balance.surplus": {
+      "digest": "f3c8ddb83774c503187fcc477ff3576104c7f8d4dbb8fa2fddbf7b04a1506787",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/foerder/economy.balance.scope": {
+      "digest": "74fea12c7b2f19c6b60cdc7cc98a68767062ab3995887b787f30753b11dd1ace",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/foerder/economy.data.access": {
+      "digest": "0f3f237349f404aa4f3feebd4a7b89185c0443071e4397dcbe670260d208aa71",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/foerder/economy.conditions.pair": {
+      "digest": "2a13028de606d04be36b05adb7cf5470bb4d560043b280d08e143452aae77990",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/foerder/economy.conditions.proof": {
+      "digest": "cc567a4c7120be2c44ef899258bb28f8b3f31370f76a978cc2ba20e4b62004bc",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/foerder/economy.transfer.cause": {
+      "digest": "b6505e285dc8493988085cdb81f898b95a9e0882bf8692b10b1ce9dbe85b06b0",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/foerder/economy.transfer.distribution": {
+      "digest": "12cdbee423924cfa252afdf301e80040e057075432c8d9da96b0076b40454672",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/esa/economy.balance.surplus-a": {
+      "digest": "be8a1b113baad6b5b68407d900ae5201d8467bb8109f4347612503aa44f1f1f1",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/esa/economy.balance.surplus-b": {
+      "digest": "bdfcc3f3d5c08119084c215f4f9106618997267bdcdd4c7ed3e21bea9aa2c307",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/esa/economy.balance.first": {
+      "digest": "3f8a814e312a051689c477c38fc1544529630742e0980cbc830d29d6aaf7c2f2",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/esa/economy.data.access": {
+      "digest": "033ddc6a9f88e9695d79ea74d197b16d39aea79c17bf426886fa50ebeae9701a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/esa/economy.data.growth": {
+      "digest": "5abba88bf55eb91d1eb6fae8473fcdb8940564d8755dbb336c52ec9f98cd348a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/esa/economy.conditions.pair": {
+      "digest": "046f5ff61e7ec57dcdc2e1b184ad3c1e653df919ec52d13bb84a22d645ca4a4a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/esa/economy.conditions.proof": {
+      "digest": "7980af2b2eb56d73b4b59bbfb5e63a602a0d11247147731a45384880ec8d4b4d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/esa/economy.transfer.cause": {
+      "digest": "deacfc703eada6657a04268a0a6a72e5be33901a5ece27efdb2aef1d0e78d4e9",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/esa/economy.transfer.distribution": {
+      "digest": "787d3efe6a01f315d9cfbb1aaa27a641f57db8319c794731f7fce2acdd979277",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/msa/economy.balance": {
+      "digest": "ea64cda667082541990d062cbe8ac4bbb37bbe8901ebd45509592d793ee66760",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/msa/economy.data": {
+      "digest": "ca7b15cbae6a44ef9cee89293dd6638462a36191212dd25f10e3e4806a7259f7",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/msa/economy.conditions": {
+      "digest": "795b66b780d0f754f2455d45f404adc18eb056884c207c6169418197b0d33c0a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/msa/economy.transfer": {
+      "digest": "8f6654bad74fe705d3ef27dda88d0cb6c192d2590335fe0d7d17a178e74eda1b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/msa/economy.explain": {
+      "digest": "659f641be8cf70318832b0a84d15e2c8a7f07cf6c402c12589641de1249d355a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/ahr/economy.balance": {
+      "digest": "c443789d0ea6b7f920c566725acc3a9efff8514cd60b4e836e93a5cff0b8e4a9",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/ahr/economy.data": {
+      "digest": "93cc29f465e194c4e6d06bb1ecb39032194ace8bd1106c3782e475da62cc982f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/ahr/economy.conditions": {
+      "digest": "970d0eeb24bee753c1de8418958f22c9fd78665bfa4aa3f780d1f96c2784e8b3",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/ahr/economy.transfer": {
+      "digest": "71dddacaae3c67e5bfda24443606d27bd8518be4cfe66f5ba3b5c20d7097dbfd",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/ahr/economy.explain": {
+      "digest": "400d0a2f77ced1bd817496b3c1ee1b033755293a40f3a075a355967cd8575ef8",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "d/ahr/economy.source-claim.v1": {
+      "digest": "3c29f0759a624fc284614a4fd4bce48623a4ea9eea2b6f40aea17a0f745bd0de",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/foerder/future.reach.reach": {
+      "digest": "04ccb94b1cfd23528d9c1e8f84ae44a4721659172929542b3326eec0a52cc524",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/foerder/future.investment.investment": {
+      "digest": "cdd755270f00fd16ef013aece8a28a1f55dc0e4c20a79d388334c7a52da1f531",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/foerder/future.running.running": {
+      "digest": "51cfeaf547dbe21066530994a7e9f2ec801c2030c4131612e40cb7b85883ce2b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/foerder/future.ecology.energy": {
+      "digest": "653de580529002338f353e901015c415b38a1060fe856af22a524a1f6079551c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/foerder/future.ecology.materials": {
+      "digest": "fbb28629ca5e7a9d9b3981e36a0b096005e9aa696372ba4c84bbe28b217067e5",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/foerder/future.goal": {
+      "digest": "d5b3f32b213e30079ee12bc632909b4405d238aa0f5a0f36c6fee1291e2d6646",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/foerder/future.plan": {
+      "digest": "ef0fd94781640200f0f2a7c339a8408b6822496f1e417b2493c4ae217b8c61ed",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/foerder/future.evidence": {
+      "digest": "472f1fab1c800955e4dad291822ed845f203905eef05deba72e41fd6185d4ce2",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/foerder/future.limit": {
+      "digest": "9d6ca04883f0f5738362cd862bebf160bcaf3f75a85ea1cb0c3d8edb6fa7102d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/foerder/future.weight": {
+      "digest": "f3d19d2ceeb5bfdc4925e9689fbd094457e05231648ef3fe0df5c7a8a8a2542f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/foerder/future.uncertainty": {
+      "digest": "f1fc89a89e8fd960df55fee8ad27ba3562ca6119f2ca881673f55def37f8ce91",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/foerder/future.revision": {
+      "digest": "a6a935d18d7e86c5068eaf1bf6b6d2f2d4f5a98872f843d5b0732fecf73d12ba",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/esa/future.reach.reach": {
+      "digest": "8c34e40c38821c4001339d70f4ace84c7a5e9b483b2d3b08371e22b349ff48c8",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/esa/future.investment.investment": {
+      "digest": "a66e23d521f982ed3efabd6b668700986a43c19ce256ce04ec513b26bc95f8cf",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/esa/future.running.running": {
+      "digest": "faf5b04691bf4990d98076ce74af57e42bfaa2db1657fa8861505f1cdf199686",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/esa/future.ecology.energy": {
+      "digest": "479e9441dfa481fba70780736f7288fddd1f00674de7ae44a2f348081d250be9",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/esa/future.ecology.materials": {
+      "digest": "ec3f9438a96782c6d66f7e459569cd30498722a41084cf23627d3eb076f700cb",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/esa/future.goal": {
+      "digest": "a4394ae9df75a753e45929b3802c28c74371931deeb87a538249f78a2236f69c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/esa/future.plan": {
+      "digest": "f28e601dd0da14bf0c596dba848c5e693e5afa3480862c95de38f3fa478ff4e4",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/esa/future.evidence": {
+      "digest": "6c516c50ef93afcd176b2ec68385f46fc19d463d21b0de2a981e6626d94ba0ab",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/esa/future.limit": {
+      "digest": "bac093941c1da67a9ad0fe8f8a47164654cae5d879fad35155facff07d9d5f73",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/esa/future.weight": {
+      "digest": "4b688dc9780aec63cd0a13cbb34d47bae33f1e15969221e4c77cd9d0464bc742",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/esa/future.uncertainty": {
+      "digest": "145b7e8edca05829c2d2ea6c4b5116f70e64feefe1faebebdd1216955680c898",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/esa/future.revision": {
+      "digest": "11f66d0e9bb234fe6792c06668e402c7f44852242bf58d960822df630045a8a9",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/msa/future.reach": {
+      "digest": "6fbf426759eaa7db1478d14cee0b6c9500e9f094a695e051f8f7b5d90508705c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/msa/future.investment": {
+      "digest": "d8c4e1db0b4c2c888e1c9f118b3659fb19e54c3ca7ffc0eb3039480698dac55e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/msa/future.running": {
+      "digest": "9e64fbfc3eed15c6278248261c1e43beeb7398018e7311ce722e685290037c7a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/msa/future.ecology": {
+      "digest": "da0605437e954bc1bfe4efe5ce53354d4a674e93284616fe761140072253c01b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/msa/future.goal": {
+      "digest": "7464c83b277401b92af204e05d70a78cd4752f46b1ab95ef94d2e3d55fcac5e3",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/msa/future.plan": {
+      "digest": "12a347135f782e8d0cfa4c50d65f0cd393da85a55682c01d36fff45e891018c4",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/msa/future.evidence": {
+      "digest": "a0ba065437a22d99ed40c9fd7914d642baf0b04f373f876e1209530960d8bc62",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/msa/future.limit": {
+      "digest": "3fb1a9d51a7410d9336a2411667d9f674395b626c3131dfad2f62390da4a6749",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/msa/future.weight": {
+      "digest": "be6da21854e36aa3e0f7533c72e60d38358212f2c81ce8b3c446820fda87cde0",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/msa/future.judgment": {
+      "digest": "8df9388379ef1a7b2e63cec20c8fbf0139f8ee9fa0f6b485340f9da4b92d3815",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/msa/future.uncertainty": {
+      "digest": "54700bc92b2c233d68bf2b7dec0c77682a26087086d433faa7b81077de818e3f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/msa/future.revision": {
+      "digest": "6b512d781ecb4fdf539c54b988cae6a9b00413be7d432248aada2f267ad222e1",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/ahr/future.reach": {
+      "digest": "e40812bbd40035ae7d921e26b74b0a50aa1f936d1719c7a8eeed85d2864c679d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/ahr/future.investment": {
+      "digest": "4f3641cf2f2d0d0a88caa5b2ef402f4dfaf1c6181dde0f3727d9e131001d6beb",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/ahr/future.running": {
+      "digest": "1276f3e834ace6681778bd79f75d9ea8e1d98346c1ef5ceacbb279f29556b172",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/ahr/future.ecology": {
+      "digest": "26d88c6468bbe7387b7a62defe061e024c1d8bc1103dbad25e95d249019be00b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/ahr/future.goal": {
+      "digest": "482d8bedc3774f3f0c69ecde2fbf9036600b0900034915b08ecd55d365748d14",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/ahr/future.plan": {
+      "digest": "b99477460f87710cb64b37bb7db5ca8039c848cab395da0fd96ca260af89b853",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/ahr/future.evidence": {
+      "digest": "be09e416f0610c3445aff0c8682633398f6e92e140a3446979a75714ae73ac1d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/ahr/future.limit": {
+      "digest": "ba6b24023d0bc198b8a425d7e1de37089498c7b6143a86b12f3c5cd1316db15c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/ahr/future.weight": {
+      "digest": "599e4f998c39ac318c16283615af19c7457073f6b9eb4dc5299a35d5c7864058",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/ahr/future.judgment": {
+      "digest": "7ec389e259acfcf6c97c4507e8e1482f02c9d53567c86b77fe3e965efc30d980",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/ahr/future.uncertainty": {
+      "digest": "79f07930e3d1c307e8da859128ae4f97ea0c9b48c1e5b3dbdab902733cd978cf",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/ahr/future.revision": {
+      "digest": "3520a0a6f5741cb4b9d2529cf80fa8f8e9e29d6453fd83f9bc3bee6e6e06fde1",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "e/ahr/future.relation": {
+      "digest": "4474d1805ad47b47aef970c3603a59ed613a321eece9ee15eabfe0a0f1e94ca4",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.walk": {
+      "digest": "fa481329a77636636331d839078f8e92babf126b7ea2435a22b091044abfca59",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.compare": {
+      "digest": "2aa3db1c61605ed8315383616351b6c5eea3028ca19fda4c0f967d3e04d6aa87",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.benefit": {
+      "digest": "1af84cf3e36ebd2f07031ab6b9b99685ca82b9930c0722179f0f60c4ab5d3214",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.limit": {
+      "digest": "6e74ac8337f04e90a040c8116c2f32a2bea41ae855b65e59b11127fbf57ebb82",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.full.explore": {
+      "digest": "55807f537aae353e79b074fdfb5d489ded7ff2cf1903a9170c811a15055508bd",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.full.leila": {
+      "digest": "e50989e3939a8e3d63681f9a02a636948c99a9cbf18e1262f4c09e8f082fdeba",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.first.choice": {
+      "digest": "31bd2dd011f2589d3a17713edb9ae0c5096605a4634b850f4cf2406f5997c97c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.first.proof.evidence": {
+      "digest": "a1701e10a4286f08a865337992639a585ec6b5f42659a6961a58d32e8e7d42c0",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.first.proof.limit": {
+      "digest": "ae2ea9d28fc606fc26021bfedba5c6cc09d3c24e9ab82898dac72b3ca70caa40",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.first.weight": {
+      "digest": "7cfa6c18d0488f8c2f62ccf1ba9f55d04aa78d854a48653ae5975cc35bba2ece",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.event.path": {
+      "digest": "353f66a3f611a98ca6e153ce45382c549b45707bfbba599a483241f170d567ae",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.event.times": {
+      "digest": "21935b255598b8c52cf70d65851fbd654d20596e78cc80d1dfeadab4e2d5729e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.revised.choice": {
+      "digest": "f72850f6655971bf802d835c1980b3d193d57ab8ecc899356991d3668cf34e59",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.revised.proof.evidence": {
+      "digest": "c42bf3141900e140662cf556baef66fe67ed7847ee1455c636701043bb80899c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.revised.proof.limit": {
+      "digest": "9a5a35fe480f2171f9a2282ecc50a67932d51e19f9c4530bf3c42a1f875a9d4d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.revised.weight": {
+      "digest": "ed3e3ed61ea64e21c18b1cf349454183a2a0d1e637b333db75824276d0e0710b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/foerder/kenia.full.limit": {
+      "digest": "94f8b37be27205e0c70648ebfe745b6429911ac7f8068df01f77bf9658add415",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.times.amina-direct": {
+      "digest": "de16af391d76674e117c669cd83014e8e087f34afafdc28e26435bae879253a9",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.times.amina-north": {
+      "digest": "35fb63f35f01715d4e016702f2f72ddd4825ff31a22902660acb503fbf9ddafd",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.times.david-direct": {
+      "digest": "57073d8398ef4cbbb1445ac9dfa020ff31ee841e7a8e91193aed7b6807cd6322",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.times.david-north": {
+      "digest": "a8eb7dd485643319fe783d20d54bea54187372d687a9309d183c31f4c8d8b39e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.effects": {
+      "digest": "b578156eb8dd0b1179e330e7916b81c70d2e7d209332e685a8481e1c6ca9028f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.recommendation": {
+      "digest": "f123c71365edb09bf8d378464d3858574e82fd97eda999ff51311acdccab9222",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.full.explore": {
+      "digest": "6901e6cdf014e0f436f55b44e19d41331c95924fc0614bcf956adb5b152fcd1c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.full.times.direct": {
+      "digest": "7f3782dc408dcae45d87dadbc446af46960b4f5c39c4f5a112fd2362b8cdd39d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.full.times.north": {
+      "digest": "3366db084639d45eb00df78547ac019269a4744ba059184c7fba8102f7bd250f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.full.times.south": {
+      "digest": "90a718b8e0443fd5aa586684687913c43a009a46611064de0f85a685eb74985f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.first.choice": {
+      "digest": "549a4a0240d738dab6e64b2d1bee13e1d068fb24d40055818a2ca465ec0e3359",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.first.proof.evidence": {
+      "digest": "d45ad9640c07929221b5a51f3398358f57ddbfcd97c334055dd46e1762f18a8e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.first.proof.limit": {
+      "digest": "569ca21ed87c09fc483ddee4e710aaa747cce4057d25b4ecbffbe3d69244ca59",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.first.weight": {
+      "digest": "2b874fd5fda13399abbb219ec085ef171a9d598e4df36c7e099a2e849dfe909f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.event.path": {
+      "digest": "6b14f6501ed3e8f60a0306889634a527df770b8e7d115950c410a04052ebd43c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.event.times.direct": {
+      "digest": "b00e8e4b74ee9a32f0f57c6b20f5db3a7bfc07e028c9051bfc2cb6332bba2059",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.event.times.north": {
+      "digest": "b32b57cd4f617a73a572ef0a6b9ff4ccf5d5f922b9d5d7ebd606ea673349cc1d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.event.times.south": {
+      "digest": "812e49a291a21f55e54134019cb468b94752a1f87afabbed3cfe153e2a80e3d2",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.revised.choice": {
+      "digest": "e6ef1c3ff7c7d061e2a69c6637bffdaff12bad1c3f9a97a759cf3c5ada76586f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.revised.proof.evidence": {
+      "digest": "887bd0a22f15799afa37e30d04979fe2b584e21f1f32e88fa313c125fdeb76cf",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.revised.proof.limit": {
+      "digest": "ecdd44b4c25a3824b78f856cb078d16a3c1a84f48d5628fd8f8fc33fee1637fd",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.revised.weight": {
+      "digest": "df5d4a83784762414099d425180c19025536046c731f7a3a66f29f70eae1663d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/esa/kenia.full.limit": {
+      "digest": "8a40c52441516f0f094d37ddee92ea7f0c2ae47c73b75051931f4f39efcbbace",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/msa/kenia.used-section": {
+      "digest": "1bf820e5bb862e5120b486617ced516c56aa57b593db1e444be5207cfd6e5514",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/msa/kenia.times": {
+      "digest": "7e735c09bce051d6db72942d0c01dc1094b2e7af9b491a8ed8c9d75c49a5db0b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/msa/kenia.effects": {
+      "digest": "cd986fe6e4e7542fa9cb1b114397ecdd2f2270b878960405cb30980d7429677c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/msa/kenia.recommendation": {
+      "digest": "f08f9b5e75e219d0a24e877c550553b2b29af83e764de1eda76e50f79031632a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/msa/kenia.full.explore": {
+      "digest": "70a774f03f5354aa8870f2015a1ebfdb8d399d889b04cd859b0797b2da773606",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/msa/kenia.full.times": {
+      "digest": "7cbc7cc1af4f4ffae979e88fb5297338dc27c2887c35bd64451ba6f984948c10",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/msa/kenia.first.choice": {
+      "digest": "bb1ad707e2744913de063b7dc2e152728f53e610abafb7e3c1e9146d455a2ba1",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/msa/kenia.first.proof": {
+      "digest": "25a1c42f0ff47ad490981564b546339ff734c31774718725cf1839956ad97f66",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/msa/kenia.first.weight": {
+      "digest": "c397a7b327a0a53167e7badeafec725f9b2c46a97ca830ef3b6d8c4f906442ff",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/msa/kenia.event.path": {
+      "digest": "583c0b8ec800c2aec9c11bf69698ce7786c4e5578d49334f80885b8c1dc22653",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/msa/kenia.event.times": {
+      "digest": "803397ae011a74414a0cee1722e2885b01b7d8fd6f993aee92a873d872e93442",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/msa/kenia.revised.choice": {
+      "digest": "c147917644a517f2c5b765a86e16bd1ce7cb939ab10c532fb718d31a0f23f52d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/msa/kenia.revised.proof": {
+      "digest": "3d21fcfb10ea9e4291cce37729e5cc642de5569c9e5112bd4e3d8d25e4093204",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/msa/kenia.revised.weight": {
+      "digest": "0820338bd41f6de92a34219c110ef744689a76c33a47ad46d65fd8c0ac553fb9",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/msa/kenia.full.limit": {
+      "digest": "1f023aa877ad598bfad22f418f9675530e109753ae112bdc889a5f18a7170c72",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.times": {
+      "digest": "24aa5905f291dd32bef0131b7c1473fac5a861022a916f235832ef0727f1693d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.explain": {
+      "digest": "94df821320d0c34ac0f153e04688c5cf001e8bbc198c883ec4326e549748aa3e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.judgment": {
+      "digest": "c5c97fab1a76cab01b7daf5fddcb7d6538cf42fed9df577944a8f7c768004f45",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.transfer": {
+      "digest": "faea032b38e77b53d885052cf1c894cd83c4c135799846e5e5dcc4c11884a8b2",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.full.explore": {
+      "digest": "4730b730735613bb45c8d6cf997a0bd6bb7edeb583f192d258a80d2f85a3b26c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.full.times": {
+      "digest": "4feb9d37f5e16c73ea4de53f96781badfa0a1d29065f25d43f85133d490d780d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.first.choice": {
+      "digest": "11c18e33d8f37946b381cb274da7fbe86cb8fb0dff7b7ede0f2bd982d39d22a5",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.first.proof": {
+      "digest": "68580615ac3a3ba83e14ace30d681aa57f9408b7de071498ff1ccd97c5b18305",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.first.weight": {
+      "digest": "76c7e8f0ce4db816aee10817418a83442e9a97780fc140a26c8a79b1d0ccbb97",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.event.path": {
+      "digest": "f46805ad565249bba873d3861a955ada6ca966f704da66fce012b3657c0d31c6",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.event.times": {
+      "digest": "e2f66b36592d99e02e62ec1effc7293bb3839eff689156a42a6ada2849a0185b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.revised.choice": {
+      "digest": "6f1be17ece981eaeb9b9e12f87af12cf8cbb23b67f65d999aee075d76560f34f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.revised.proof": {
+      "digest": "28c265b07824a674aaa592631c2515845682b5e5b381144bb19491c85ef74af0",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.revised.weight": {
+      "digest": "95bc3a9c8adf158d194b1601e3d9707e2cd6e149fe8e3148d5342a51c180e830",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.revised.own": {
+      "digest": "c9fa8518b604190eeeb9f033c3741b1f3341c5c7542688abb704c458d914c012",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.full.spatial": {
+      "digest": "711c41f30fe52406e90b1c778f0b9f8a666421f2bcdbe2ab62578ac5a7c5be58",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s1/ahr/kenia.full.limit": {
+      "digest": "0ecbca813e103aaa4e38a3aa9be43859750355fb20285b4754c46b0497a85ba2",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/foerder/demand.before": {
+      "digest": "25cb86b9aa61acf960d91135ddd3ee3e7bd8be37a529917f37f531ca75b25e0b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/foerder/demand.now": {
+      "digest": "78795349136c821bfa15b0d8269c59224d6c45e8ce7fcbe417298dc2479515ac",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/foerder/demand.explore.bus": {
+      "digest": "6b73c4b7fa536dc0382a8fe371a89564ee55668e05497b5b4cf00560ef0f9683",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/foerder/demand.explore.path": {
+      "digest": "56fa56cea847632c7cc3b1df7ec880e13a727a3324d23a200d132ca9e1b09cfc",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/foerder/demand.final.choice": {
+      "digest": "c780fe7ead964b14bb68444f60492d80c3ccd8e062f347007fbc5b6d6a4dd3ab",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/foerder/demand.final.proof.evidence": {
+      "digest": "b3b12904781853eb7a483a72dd59dadafcb5e94b2c4f84dc35497b1f39593229",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/foerder/demand.final.proof.limit": {
+      "digest": "24d84aa5a9181261dc9565cc1d594f37698efde09beec4918b03f54645b9ed86",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/foerder/demand.final.weight": {
+      "digest": "c5f3ecd13afe883067c14f893569b95819363a4aa3ef6b6e6bcfde7249b8cd6f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/foerder/demand.transfer.enough": {
+      "digest": "0165a97a15dceeb7e9309fe859fe75af802a797c5b357c2737d13cc9eca83ca0",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/foerder/demand.transfer.access": {
+      "digest": "03e4d9a7b521fec09130f9b23c82367d8338de0d2a75a656b67583c52abf099c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/esa/demand.before": {
+      "digest": "267bd987578cde51693363ac83cfecc7d7d59cd0d0c7b3230c32e48b8fb51e9b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/esa/demand.now.capacity": {
+      "digest": "047a8727b872b437d9520de2ae749d01bb6d98b3848b409d8411f196ba114374",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/esa/demand.now.later": {
+      "digest": "2b86d5d0a139b69494837eff25fd2b13acb0e735cf41e5fef9f3dcc3d2266a58",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/esa/demand.explore.bus": {
+      "digest": "2892a84c4ea8f7f34391e5a9752a5b5c38a5c6e73a169afa0ddd6954ca97cb1b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/esa/demand.explore.path": {
+      "digest": "e1d3c4c1476d811a5e556c38d07d0dbdd7fe5a9a6445040cbccd81f75c084501",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/esa/demand.final.choice": {
+      "digest": "5ef07811217a288951d20c4bba9339b112c1a7617d4aafe985f17eececa676f2",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/esa/demand.final.proof.evidence": {
+      "digest": "f531cfa3d284eedb7303f4e475da538fff3c4717989517839bad8b51cb3f1c0c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/esa/demand.final.proof.limit": {
+      "digest": "1ed9841d9e35540044137b61a9f5167e319b9b19291d7731680d961772f61586",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/esa/demand.final.weight": {
+      "digest": "e11d8195082d5254c4e7f01812f97bc9a278ff432d89849c240a947ad87bee37",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/esa/demand.transfer.enough": {
+      "digest": "afa964d398125d65d22dc9b13d2df27c429b3a66c973208f354ffd69033c7a26",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/esa/demand.transfer.access": {
+      "digest": "5738954b33b6e5eed643120e28840b600d64fae667dc99ee6a0ca003d4f54111",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/msa/demand.before": {
+      "digest": "00c76c256cc59fb9f22600f35c575e628ed74d6a388ec182cef05332a34294d1",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/msa/demand.now": {
+      "digest": "23a19763aafdfd48b747612c333e3262e83396f7769bc40563a477ef51c4e1ca",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/msa/demand.explore": {
+      "digest": "3fe36c584440d625d7c4fef65179a8f762e6d46ca9e355ae11f1eae7b7f6e6ba",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/msa/demand.final.choice": {
+      "digest": "2dfc675825e4cbe5838fc43b53f1893a0e49c1db8d5348f91b5aa50d05803f99",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/msa/demand.final.proof": {
+      "digest": "ac220ac74af49a0ee8190a263027e0db93f2e4486f969b2e1d76a4f6dfc8f74f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/msa/demand.final.weight": {
+      "digest": "350a79d27f71137149699499dd7dad90d1c46ba9f447c55f5f3dc683ae34e011",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/msa/demand.transfer": {
+      "digest": "e0d12e4e2bc79a7af0385e897439627b1af66f4b959b1bad454021f05992ad72",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/ahr/demand.before": {
+      "digest": "b76b5893256d6b8ea2bf3e6c59e8acdabd8f036c20cd17095051058e882e601a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/ahr/demand.now": {
+      "digest": "cfb8c130e8c3a26f153c926692caed2002629469c7932f51ea954dd652c9a7b8",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/ahr/demand.explore": {
+      "digest": "63396a9032f9682fc56cd42a36a46a66f544a1de600ec91e0b5ccc40f3669e88",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/ahr/demand.final.choice": {
+      "digest": "b3b424397fec859380a77672a648213f9817c3eac554a16af094341499d38da2",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/ahr/demand.final.proof": {
+      "digest": "4e438dc796b3ab5b65937a948996a80f9cf9a14bef8ad977b4808a21aff5d828",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/ahr/demand.final.weight": {
+      "digest": "63d495e2c3fa90ae7541690e3db3494287f4d6c62e402b085f6a200e585811d0",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/ahr/demand.final.own": {
+      "digest": "26e49bdb8ced893bc4bce98e92f460c30a50d461afe9417a4da98af6ce1116b8",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/ahr/demand.transfer": {
+      "digest": "de4a36c1f9f725c2dff5f8f2a5be8efe41f69f7bce5c0001649e4708886c741a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s2/ahr/demand.cause": {
+      "digest": "1bf8ff77582d07ec9ecdd0bf27d533b1121028bc8d140ca6fcee0acfd2eb1e40",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/foerder/cocoa.chain.beans": {
+      "digest": "77abf146d04470ef2279a5081e18e0b21571d43e5dfc1bba92c8b75880bd31cc",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/foerder/cocoa.chain.roast": {
+      "digest": "a334f12990ff728ab261296b936ccc46b572c9b17dccf98f4fa3bba061c46899",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/foerder/cocoa.chain.mass": {
+      "digest": "4b24442659c7991c3a54eb87b801d7d5e5cda389e965959e30f5f063d22a6f0c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/foerder/cocoa.chain.press": {
+      "digest": "26bbf37239952506af7d868ade2b657d66caed27149115acc79ffc1d9838d2f1",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/foerder/cocoa.base": {
+      "digest": "33dd85856cfa29d8293759982936b2a24dd535c5e4ff21ebb7507c0e7c67348a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/foerder/cocoa.compare.quality": {
+      "digest": "7bb2b3b77c987b9ac825de5ed170b0f65c72b7785d8e12e78ea22d052a89c1be",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/foerder/cocoa.compare.process": {
+      "digest": "285617d146816f8dbb7a97a4f62f706400f2cd0418898eb5d2c9af2761934b39",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/foerder/cocoa.investment.pot": {
+      "digest": "90e902a19bdfaf270a19fc2355f61b806493d7849004d68780af705c04bfce62",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/foerder/cocoa.investment.cause": {
+      "digest": "d8d552d51005422596049b20303dc9c6dc3f05e0d210268d5b7f035aa0dc3619",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/foerder/cocoa.final.choice": {
+      "digest": "0f0e8253b2de9f0ec872c075b24bd7e354792766d2429786530568599b50c136",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/foerder/cocoa.final.proof.evidence": {
+      "digest": "b8222e74596d875a561e37f184085b40e6a9927353e4e1f1412f66afb4592541",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/foerder/cocoa.final.proof.limit": {
+      "digest": "b4950150af2eddefc5aba63b53045bdfb2d8b84f2f3b6a89b0099d53270fd115",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/foerder/cocoa.final.weight": {
+      "digest": "69b6a74a793fa12861af62e7377ffd802dd8b2edc5b69dde705c9f391636a67c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/foerder/cocoa.transfer": {
+      "digest": "a86517dc044a1c3f985461dbf892032acc1c700233a47ec5972c9e27bc917bc1",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/esa/cocoa.chain.beans": {
+      "digest": "91b0a4966fd4bedc35571cdef78587ce1860552297d95dbe85f450c1dc8750f1",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/esa/cocoa.chain.roast": {
+      "digest": "7db53eb5f0aec7fcf5406b3d0254f43d64e90cfea27c47b9cb6d34d5ebcc031a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/esa/cocoa.chain.mass": {
+      "digest": "19e551073c2c0e6ddab12f7c97f2278fd16475bb103241c2c5b310eeee636bd8",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/esa/cocoa.chain.press": {
+      "digest": "59f4dc33ceb3926b69c4d59cb5252edf1c0388a08f112376828820f02dad76eb",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/esa/cocoa.base": {
+      "digest": "ec5112923213822b186efa7a921b3f2bfeab02b8ed992e3cad76fe166512cf59",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/esa/cocoa.compare.quality": {
+      "digest": "609fb7b3a6200ec8e7f81dacf119aebb2c53ea356aa0182b9837870377ecc4e6",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/esa/cocoa.compare.process": {
+      "digest": "552ccfd3c21aa415ba4e2e44fc32b434e44290ad93037acb62c8477a0bce8d9f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/esa/cocoa.investment.pot": {
+      "digest": "5b9faf948c1817e5d3bb221ddc48735304c7b445d24741bc4cf5633906240d83",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/esa/cocoa.investment.cause": {
+      "digest": "fd64f6027ff53918c30a3d877e98af36e4ef7630042ca55545bb1cd591c4842e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/esa/cocoa.final.choice": {
+      "digest": "f7884ed240dd0b4afd19f5c0d8f8097c8557b469b434aab3ea292973c494a728",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/esa/cocoa.final.proof.evidence": {
+      "digest": "01cd2ce0a7639c7ccb3ead4f4b08e946aa76a603bc8d15a960681e9bff26c70e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/esa/cocoa.final.proof.limit": {
+      "digest": "e32187c79577aa5b0b38f1c7fdb6a521b39ea5af2c99632d003ee73a22cc46b8",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/esa/cocoa.final.weight": {
+      "digest": "d308df54610625154e7eee5e6c11c161a13e4ffb988659cadcd23fb5d5873e14",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/esa/cocoa.transfer": {
+      "digest": "49b6088f17d3a617db0eaccf75d443117eb38ac0d557a25903d3a78507c8729a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/msa/cocoa.chain.beans": {
+      "digest": "0c1df5ee18cbed08b8797afae7745886dd95dc2c209bc1fbcc287ad6bd28ece4",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/msa/cocoa.chain.roast": {
+      "digest": "a0ced5d67d71c403f7b460a4525c68c1a494e588cdf93770d43591c65efe3d0a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/msa/cocoa.chain.mass": {
+      "digest": "4e70622f86794fd0cb96b63846f5f87dd900a3f585b3b8718130f38940266adc",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/msa/cocoa.chain.press": {
+      "digest": "c8b206006f9f92229d701947f184b3215f366da5ab703b9f4db89ce5f3a2adfa",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/msa/cocoa.base": {
+      "digest": "9fcf6c38a0c90b7d45238d7d42d6ff08bfa2eea7ec1d34b95f87b1b66f523a90",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/msa/cocoa.compare": {
+      "digest": "7c0ffcc33c4719989ad85c41c751464d42089f5f1d28dcda1704d582af7b962e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/msa/cocoa.investment": {
+      "digest": "a3ed2059861a52a2e135e427095176b48dceef870fa70d542b150eb24c9b3b8d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/msa/cocoa.final.choice": {
+      "digest": "45a413eafda3d800fb84a92019418ae0ddef8ff10224a81999d48ac48b219881",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/msa/cocoa.final.proof": {
+      "digest": "ef64b29c1af22afee2ad6c77ec4fbbfb0fd6fd680a73069ec86d6c6310baaedd",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/msa/cocoa.final.weight": {
+      "digest": "0f4a9caa52e921713b310a4e2da24357ea6f6c9702e4fe29e1f4ca940d8ec72a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/msa/cocoa.transfer": {
+      "digest": "423397533ac794d4c02f1cb844bcb57f2d64606c2d24aed2578116e87c5e873c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/ahr/cocoa.chain.beans": {
+      "digest": "29b2e4e87d25d0521917b18d70c159ce86c32314778f2d968c78a9edf9fa76b8",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/ahr/cocoa.chain.roast": {
+      "digest": "90d9c2687e55a179f02ac75ad7cbad08767fb61ec144b41ed7b8dd1b5422539f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/ahr/cocoa.chain.mass": {
+      "digest": "9781edfc2f13f4ded20f6d3bab32dfcc8e0bc8e17d7736954f03adc55adf96b6",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/ahr/cocoa.chain.press": {
+      "digest": "56cb38f42c5fcd7a215db9202c7cb03143dcc670f383daa6c95195adf117e3e3",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/ahr/cocoa.base": {
+      "digest": "4bf45d955a096994d3b6e7b6cecc7ce621ccc2efb0784e6fd634e72ce22ae4b7",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/ahr/cocoa.compare": {
+      "digest": "75448b14f21a89205145375509e62a27018b99d90e28e2ed9fdf58b4a2662603",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/ahr/cocoa.investment": {
+      "digest": "4dee982023cfb0ddfdfec8152f35ca8d5dc0c2323b114f07b9aa0bdf9f17d467",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/ahr/cocoa.final.choice": {
+      "digest": "1d6bb711ab335ab6a2ebd8ce2b50609a93f2e84e77337f31e75075aee20eaf46",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/ahr/cocoa.final.proof": {
+      "digest": "fb2d0d9d2375519429e34a39acb404d326bfb42f5d4cd5c0fcb7dc76670c5f02",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/ahr/cocoa.final.weight": {
+      "digest": "a7e7757ff6b38b167d4a19762d41f934f58c84ffc84089917c585b87fc9ea667",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/ahr/cocoa.final.own": {
+      "digest": "193055d6c909be6fc25694652dbb0a4f284b0a425da1225aa4b4f5d5ceb87766",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/ahr/cocoa.transfer": {
+      "digest": "020c8e3eea0ffaf9014915fce08089f4eceaa1d029a30472000ef815f3660fe1",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s3/ahr/cocoa.cause": {
+      "digest": "243f9714bde44369447ff6bcfca6dfed80e202050d24bb7dd5a39a9ab3d02aca",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/foerder/share.paid.wages": {
+      "digest": "cdb09577ebd333905eaf73ac4597addb87acfbf9a592ccefad6f6236c9f1c924",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/foerder/share.paid.free": {
+      "digest": "523f3cb323906c08c86d895602453f119962615b3d5b5154a2da497b510c0533",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/foerder/share.effects.now": {
+      "digest": "071a7796dc2618129d46ec3a6f19f8401bde48e8d088f26dace7742119d9bedd",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/foerder/share.effects.future": {
+      "digest": "dcd2efb7e687334cf026a0fe503083b355e295944b1a9be04e255e47573050ef",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/foerder/share.plan": {
+      "digest": "7dbf17542285c2dcfccf01fd4e6523949991776f19ae667b1a10366c470155ca",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/foerder/share.proof.evidence": {
+      "digest": "54e374019317792beef209a9edc55d57d649cf9937c513fb3ce944c557c02aa5",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/foerder/share.proof.limit": {
+      "digest": "52aa95aef123c65a92b010fe575f73e78e39f9255ec208b924fac65eeee1faf9",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/foerder/share.tradeoff": {
+      "digest": "cda018389309bb6a63f124f380013a44d2d9ae9859d120ee1918218bd869a7e5",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/esa/share.paid.wages": {
+      "digest": "12fbaec5056e9708995ab2e860c1590d0ff9ac9a42d552f76cd370ed33d6b5ab",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/esa/share.paid.free": {
+      "digest": "d183db836cdcf478057fc2d7c77884c5eacb54116a7ca41137d2ab75f74a28ad",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/esa/share.effects.now": {
+      "digest": "7bddea6dc1bbc8ab32d9d3635569b81463c623467921727e359490995fe6d1f2",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/esa/share.effects.future": {
+      "digest": "83823f842c8053d9d85e790cba764aced97171544433a1f63efe8e93977fb936",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/esa/share.plan": {
+      "digest": "26497a9502cfccc52a67e1a57c2f2e577229fc339dbf92f647754127bf24c1b1",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/esa/share.proof.evidence": {
+      "digest": "5749511f768ed34c22ff167dbb55e030c2b35dd11536ff34df9aa3dd4bf31842",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/esa/share.proof.limit": {
+      "digest": "cc13bdd3eedd51ea5d60c3c273e07dad86947e61faa609b1a969e5a99b7ef5a7",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/esa/share.tradeoff": {
+      "digest": "6e80fa5af2c7c1250f66eeb4a035d19a143e7d88d0d1f3ebd8a30f1f7126d838",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/msa/share.paid": {
+      "digest": "ee93dd56562876e5532d048c4ae60ce55b04c413a9fd030b1e2ac7bc289a3f2a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/msa/share.effects": {
+      "digest": "0b518d1985cd0ec8a805fe544e8774886ad4cb93d7aea57fbc35cc974a405518",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/msa/share.plan": {
+      "digest": "2385fb59e8e78214320ca947bb4e558c9bddab7b199e2c9cee507e979c743188",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/msa/share.proof": {
+      "digest": "98821d0baf4a14cc5ade4e597f104195a092474220f5d7665eacdc7e8cc0e46b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/msa/share.tradeoff": {
+      "digest": "8fbada80a3648c01507cabb670da4695bb1aff1da6d2aaceeb7ef8bb060e19d1",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/msa/share.plan.second": {
+      "digest": "b34c3cdc9944df806c727ffe29eebaf018690164fcda1578b20010937f9c894a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/ahr/share.paid": {
+      "digest": "2b9983824cf65455dc6cc0b573967feb409dcd615670233c01940f0808432750",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/ahr/share.effects": {
+      "digest": "9634f8e4af5600dd67216d1ea71bf220d7a54c1e83b90d06eb983b0d6b7f7e7a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/ahr/share.plan": {
+      "digest": "dbf1f28e99669cec0fd1dc8a7d31650cf0d73986be97d366b7a010460c7f62e3",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/ahr/share.proof": {
+      "digest": "35df30109ee342351db74561b3f40c48ecb0c4f7b0aea0cb38ef192ae256afa4",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/ahr/share.tradeoff": {
+      "digest": "b32a80c295f3e7dd0148a870ecd56e962d99ba76ba1e50ee150e435e2b74b621",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/ahr/share.plan.second": {
+      "digest": "c2d62a4f36cbe712ab97963158a294d2788d47813b06539ee06d14cb3c6c9f99",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s4/ahr/share.perspective": {
+      "digest": "ab7300a76739c446454059ee1b8dcbad5d2fb9862b5ce4888773a3679433f293",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/foerder/water.base.withdrawal": {
+      "digest": "6d30bf0455a0cffd6ea89849fc1998fafcc42de33fd90c75d983bd88ee2ad118",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/foerder/water.base.arrival": {
+      "digest": "0c527e6d177901e01c78376119004fc224e4cb168e3c33fc586b938051de4934",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/foerder/water.compare.repair": {
+      "digest": "dc11c789168917f93df29b096226e5e8c5d9e816249553acfa860fecd684d21e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/foerder/water.compare.tech": {
+      "digest": "356354ea8fef0c563ee899abd3af3c559cab909035e01e79e3c08594cc2d9e58",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/foerder/water.scope.same": {
+      "digest": "fdf7553c2de5410acd1804e086d0064ae415863fb09324714d50d542febad5f0",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/foerder/water.scope.consumption": {
+      "digest": "dd216263a1a9cc11e8158025c4130f86ff29a5d6bd17a1e52d9423eadfec1122",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/foerder/water.final.choice": {
+      "digest": "053d15af0be1363c001a824b51abd9693d17aa23543ed2f45c99cefda2053749",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/foerder/water.final.proof.evidence": {
+      "digest": "222fb5e8b52f9533b6fb47214fe77e90c6f47b76fd23a328b5b6e1346df82226",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/foerder/water.final.proof.limit": {
+      "digest": "cde02275e2dd6e8a12ea81b1976bf9c9d4522b130674377ea2257c3135cb216f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/foerder/water.final.weight": {
+      "digest": "dc3f2bb380e9ff116951a00b2edd611437f8ea832db6d73cc2e41e42a245f238",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/foerder/water.transfer": {
+      "digest": "2d75013b1bf6b90f5b6a23e4f41d93286521f633aba03ba713dc035fbb83fd89",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/esa/water.base.withdrawal": {
+      "digest": "fd74f2fbf65833a2cd2a2ce0044a2481f0a015c4e67f70d38862a67042ef61b5",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/esa/water.base.rest": {
+      "digest": "23863228103e374294e4c84141d85aac7c1b1862b0c5e182f2ce50193dbacb6d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/esa/water.compare.repair": {
+      "digest": "9f56292bd6b415bc707045f59d6e3e34649fffc12fdd178ffa7fd53b80723109",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/esa/water.compare.tech": {
+      "digest": "73584772cbc490228cf72007313832866a5fe596c8ff212a8e0ac4d666bbbd53",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/esa/water.scope.same": {
+      "digest": "c8c69a9b03c33be8aea072d9f46c1f225ca4a57a8a1c08bdfa6b33161796af4b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/esa/water.scope.consumption": {
+      "digest": "b4981abb77c6d3d68d22a17094d3b4924d3403468aad626e4681bdd3a97ebc24",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/esa/water.final.choice": {
+      "digest": "d4c94107fca9b029e11d507da27242dae27e432822fc7fd1b1ec9131de012305",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/esa/water.final.proof.evidence": {
+      "digest": "d40291dbb7f27d8105cdfa7493fb6d82d4077cc32cf7894a1912d71cf0b22150",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/esa/water.final.proof.limit": {
+      "digest": "a5678a6bee78ea4e76f5ea398d0ed6a239a84cb454ff5357a5cde1ff2e6e5d8f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/esa/water.final.weight": {
+      "digest": "07317453e3cf9841baa3bf23d767c7c0d9a8ac4cecdc65e316cc028b4d6be22f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/esa/water.transfer": {
+      "digest": "1115e7be51932389939a004e2fa2923c493bd0e663ca8c4ae2168aadfb1e6073",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/msa/water.base": {
+      "digest": "b4bab55d3dd21dc89f3691994c500536f6fc46bb6ff785dc045ab7b2f38e0420",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/msa/water.compare": {
+      "digest": "7746f35813f72e932fe267d1bb147a6d38e94705b0e914bcef31c32a9237befe",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/msa/water.scope": {
+      "digest": "7fd326aa1fbf0dd0e02393d4618dbb41638a1f9583e81ed3567def66d67e5d0f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/msa/water.final.choice": {
+      "digest": "a4bb7970c25dbdc57b4a7eeda4db23489d01e571d18bf553d387ceecefc3dbd9",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/msa/water.final.proof": {
+      "digest": "93259d9105e1fe986127a8353a199c0e9a7db27fa094bf39d45c84fbfdf90ffa",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/msa/water.final.weight": {
+      "digest": "013d870e0452fc1a36cf1d1e0839bb78faffc151c751fa40e6e49d4b5a7c86e0",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/msa/water.transfer": {
+      "digest": "25ed67027d124d612df0f425f14c58ac85c126fc43b987c42ba773c048dbd74b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/ahr/water.base": {
+      "digest": "eef5f8ffe008d0ce506eaa2ac596978cde7ee3bbb766294a0f6edfad9448cc90",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/ahr/water.compare": {
+      "digest": "6472f190f464cf050d24a75c37c59db23b84dab9266ceb57336bf63a41fbe302",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/ahr/water.scope": {
+      "digest": "35245a2e4a4cd905ae946991c592d2a9e9801806b21adf5e640dd5f4b1f887f6",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/ahr/water.final.choice": {
+      "digest": "8c73839392137164db5b5b46323ed60e399cff1749d9f8ec18b93157c928b91d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/ahr/water.final.proof": {
+      "digest": "99c536a652dec58c09f297a82e311fbc6662a8528ac975530a82a7854bb977d2",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/ahr/water.final.weight": {
+      "digest": "6f36206d05e8cb6d5b1a884e0e9198ff31249a498ffb423dc16ee34a2d98e252",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/ahr/water.final.own": {
+      "digest": "c20d28c5a1a6cf3536555742349c50011424b7c5a58b2558d9622854fa0b0220",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/ahr/water.transfer": {
+      "digest": "33cf0216d58eaac793f0ac1d5a1b9734419383cf97c2e0ed1fe6552f2e4e2fb0",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s5/ahr/water.system": {
+      "digest": "4e58c46bbc6d8e87ce76118286ef4ea4e8eef7d3f0135d36b09878524fe1d6f4",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/foerder/area.single": {
+      "digest": "75ab40a9639a051c7848b2c1a29ec58f45a12ec9519c1e8b2f237dcc1b01fa20",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/foerder/area.total": {
+      "digest": "1406e89ec532689a089cecd7541cf3b8a3ef42095e3a15d315206e1a904c12b7",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/foerder/area.cause": {
+      "digest": "8aca8dead9bc1900199c0a6aac6ae7f3d41547f73b295a5a36fba75861bd0fb4",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/foerder/area.final.choice": {
+      "digest": "48f76d08af4a6a052ebf9df2838b1e9e2275bbebd8ae93c3deebd83f884f8128",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/foerder/area.final.proof.evidence": {
+      "digest": "7851d944393d1c773f12c34580895690ae6517bee78cf90f0baa2428c5de857a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/foerder/area.final.proof.limit": {
+      "digest": "5aacfd8222d2d9c058ccf9028d50fc98bae9ceed428ae312f0fdc9c52f4da261",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/foerder/area.final.weight": {
+      "digest": "d816fdec41197332534071275049b35fc55a7a71df0f2743fd64c3cc8a5b16c4",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/foerder/area.transfer": {
+      "digest": "4d1be6a69266f49ade02d26b95a84195b7e2e190af9a19792ad98f5a14fd89b8",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/esa/area.single.single": {
+      "digest": "a403df13f23e8db8d09e1c4bd5ef3c19be8dd79ee5731e1170e59602ab0c5f53",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/esa/area.single.saving": {
+      "digest": "5005c03531e27d087a274eef3c8bf6b7a4326903ee7a72dbed7ee676f89fdd86",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/esa/area.total.total": {
+      "digest": "de608ca62d4d548532cc2f099ea00ed4ade572db9b28ab9e6f5e8ef4c6a45993",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/esa/area.total.rest": {
+      "digest": "26d899c4de98f48e46e932c9c47cdbb6cc980317d80f5e08d43594a36bb9f862",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/esa/area.cause": {
+      "digest": "79eccf0eff9abd8399359bcc2c3a4ed2ff5a55b59977eee54c78a59ed729c46c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/esa/area.final.choice": {
+      "digest": "0e0c55256906d51b3aba604442521f260dacbb9393bf819a463df78fb1f3eb11",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/esa/area.final.proof.evidence": {
+      "digest": "f5d37acc10b7b6d2041e7aac6a4131920b385945bc7877e059635d02ce24e8ef",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/esa/area.final.proof.limit": {
+      "digest": "2fc51f0469a3444b1404c7584d106952fd236999af29d329bf14ee963fcc1acc",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/esa/area.final.weight": {
+      "digest": "62515327add1c320c8b1dadd2df45f022418779d2a60159619094f0c96fae63a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/esa/area.transfer.total": {
+      "digest": "5c0a6a6fddf3729f50fda93e54638ed88cdbf56e42eaab6ec493449d193bbc78",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/esa/area.transfer.less": {
+      "digest": "f16200839a56cc07ed8e5a78e389aaf448856b8aa8c3fdd19c84a3cc384bc9dd",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/msa/area.single": {
+      "digest": "0b60d247db218c70846f55bba4852490a11aa61d662996aa8f53d5bcf197530c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/msa/area.total": {
+      "digest": "976c9c3520e0588eb6f0fc98e9e156757a0b6e9b641d82c2d570f1d61342c685",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/msa/area.cause": {
+      "digest": "0b968add314c7cd49f41183de84f86c2acd1362b7e775a637dda672cb52cadca",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/msa/area.final.choice": {
+      "digest": "e29e036b76da8285499dbc4ac2832886ad924781d7aaa8a0658d6eacbd78b9fa",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/msa/area.final.proof": {
+      "digest": "fc7c45b4bce83e041258df91f035cf9e8585e12f28d852a5565dd01e43db2a40",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/msa/area.final.weight": {
+      "digest": "9837ee4e3ef306721371647caf319df3b8e18ecc6f9eb83115b9e4f49c80cbeb",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/msa/area.transfer": {
+      "digest": "4b16fe93cb152b0eeb99c0a03d90c7bb2f104667e757e4da26c3f72132361d34",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/ahr/area.single": {
+      "digest": "809aee1f17d44e5788855f4e03a5139dca4177fc4a430486805a22819e77e691",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/ahr/area.total": {
+      "digest": "9600623df994fd8f91856ad46933949d90e81df88d5dfd38a899b1a1b9379ae8",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/ahr/area.cause": {
+      "digest": "ad8c0f92b0cfa5455289bd4625c3edf18784a50b1d2dfd4aa9b8383c7cb0b3fc",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/ahr/area.final.choice": {
+      "digest": "d3e55c3e131427f28e4e335ce98dbc76ccbbc4f8af7eb5ad5e19b31dfcf66a17",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/ahr/area.final.proof": {
+      "digest": "78ae203ca93c497784c1a4bf93adc72fe92faeea3d1004a3abdfc56c71b18342",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/ahr/area.final.weight": {
+      "digest": "decc54394ad5565d139edddce899528b8790a34b1a2c62fdac943a005220f684",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/ahr/area.final.own": {
+      "digest": "29c2f86d5a746e98ded92c97cc290665cc5f8ea583b7f7cc7ad6b853ccbb0adb",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/ahr/area.transfer": {
+      "digest": "5ef63a1a1530581ab1705141f34c06acf71d8587c48870bf143f7c73711d11c1",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "s6/ahr/area.condition": {
+      "digest": "9d4f333fc42a965f1ba616af5f6012abee697c08426315f5ad8766d7aef5e07b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/foerder/orientation.country.GHA": {
+      "digest": "679f2a69ec7a3f5f3b8e74a7ce0d9a20f6ad20de7687ee4deb625c7bfc405087",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/foerder/orientation.city.GHA": {
+      "digest": "f70468850f4ea75bc455d0de07241db1051ab799de125ef9115079494848bbaf",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/foerder/orientation.country.KEN": {
+      "digest": "2c9a76901acefdd2c89e760464990c5cdfcc71c2d61bb0394565abc297879930",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/foerder/orientation.city.KEN": {
+      "digest": "47a2e68fe08e51843ae2c6ba6e5a811ded5670e6fc8fa29e18071bf34f09a2a2",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/foerder/orientation.country.MAR": {
+      "digest": "f1d5755ebbeb7752730ce5cc32176da27542a7c31992a7ea294d088466b44e1c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/foerder/orientation.city.MAR": {
+      "digest": "2a672b579e59ce224f9e0c5ece01a6ecf52129ad140b689b33bfb5e2597e2f1f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/foerder/orientation.scope": {
+      "digest": "d4a6643197aab7dc05dfa3d21b39ea55cb1cbd1a6a6517c1333b0a8ac4942370",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/esa/orientation.country.GHA": {
+      "digest": "239558f9a89e02783dd48e1b927c3c9959b72a6336cbd4a0e00b8535e6bacc9c",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/esa/orientation.city.GHA": {
+      "digest": "ac3827c9adcd2b8812760bf1f2cd09799c1e0d138a07529e348342ea9a3c84b4",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/esa/orientation.country.KEN": {
+      "digest": "e8aa4c52b1d5ca08359981c6df2023055c2132c22a1c84f4df87d65ae525c7c4",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/esa/orientation.city.KEN": {
+      "digest": "3d32526361497d62cf108abf23d1abf06f50244fc9885159b4e45a14a7bb1261",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/esa/orientation.country.MAR": {
+      "digest": "fc97824d0ac803e59d938135166942448bcb3fc81305236397159efbe4c24d90",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/esa/orientation.city.MAR": {
+      "digest": "439d908c561aa0985a6d77f761f373f6d2a405452e72622e4a0d393fdc89f6c9",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/esa/orientation.equator.south": {
+      "digest": "f3b64421a9bfb5fea1c3a2737f1817eb7cf86e9a9abe259b475a8b165dd8e505",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/esa/orientation.equator.north": {
+      "digest": "140ed9c08c7df2d03973f2a1feb699bd32e4a14724bf04101b96820352326a09",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/esa/orientation.scope": {
+      "digest": "886605683eec41c606f726bb2c6ebcc786e5494ac3f69412011a7f77ce213e61",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/msa/orientation.country.GHA": {
+      "digest": "d9ad90a740b41d1a4ccb0eb7d692fb087055b40af19609daba36c28d83fc8877",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/msa/orientation.country.KEN": {
+      "digest": "5af5844bf6f9bbbe78640e3aba76083b39c0dad1b867caaf571e9504d9a46dbe",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/msa/orientation.country.MAR": {
+      "digest": "0c44c36f50cdc2347d8ca4303c31be8f42b101954804e7e9a0ce22324c358459",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/msa/orientation.equator": {
+      "digest": "16d33873611b455a37e930c4453a195e973001c952bd4c9ecf25cbb7d3fbb877",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/msa/orientation.scope": {
+      "digest": "6e85d5852b1012612c1f54f60f90242ee812703f53c762efa0070c3eefe1646b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/ahr/orientation.country.GHA": {
+      "digest": "7a55ed8b6e5170c9668cfb48b0abcf6a7ec154109a46a6db2e65955d2326c83d",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/ahr/orientation.country.KEN": {
+      "digest": "eec872a78cff607b9f2857a7d76da31b00e682739975f96aa1f00663bb2e94d8",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/ahr/orientation.country.MAR": {
+      "digest": "661765acfc7602f624198fc35e9eb58ba7879724bfc965de0e7c8855c8f57071",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/ahr/orientation.equator": {
+      "digest": "e2f634b8fe3301d193fd5a3efaf84bc8c71983dcacdd028f83a4a95263aa3acc",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/ahr/orientation.scope": {
+      "digest": "bc7d8028ffd34d9e3bf1f6ab5f452b92e254289f704fb26a55a48cbfca647e93",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "o/ahr/orientation.describe": {
+      "digest": "5de9133fcd93a8c3df6c0eb3e6c4fda1ab0a4f198a584598cbdda42804dfe53b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/foerder/review.KEN.claim": {
+      "digest": "cbcee93f6d5263273d1ba0ae4ce2c7f678894446694c18d88de780bdee0196fd",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/foerder/review.KEN.scope": {
+      "digest": "bf7eeca01a3de9d92ac67a1f11c3e53369822235c4cc068989487c55e3d6bb21",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/foerder/review.GHA.claim": {
+      "digest": "eff4909e437c9e72d6bbd6be0f450edb66daec1ff6aaea188928a75abdffa653",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/foerder/review.GHA.scope": {
+      "digest": "de29ea860aa676c61f36ec54a473e38a39a783521bbb62dc732319a47562ccde",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/foerder/review.MAR.claim": {
+      "digest": "e0efb629e7cc8511369b09e99b8328dd63c0ea61c233e70e9f91cc88fd0e6a78",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/foerder/review.MAR.scope": {
+      "digest": "a8c31ddc54a8878fa218456ded2bb212352a9164c57f12ea38ba76c2123c9bc1",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/foerder/review.common.consequences": {
+      "digest": "8cd3c5fa46fc7bb2814277ff6736e89555eef59be5c54fc9bf5432ed4a7d645b",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/foerder/review.common.weigh": {
+      "digest": "cb86d3d92f115b6db566faf8579b4b2542b175b2e663aea6ce486c97c27c8a0a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/foerder/review.transfer": {
+      "digest": "53d9b580272a70e66504c4daf1bcb8db5425b1be8c4e1db14e85de67bd1c4e7e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/foerder/review.revision": {
+      "digest": "3b4982d6a2bbba5ff9f6b790a50fc7b6419c14600d553e2a60b98b59597f364a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/esa/review.KEN.claim": {
+      "digest": "3c239544d247835994719befa66efddde159a66f3c307ac50e43a5865fc5259e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/esa/review.KEN.scope": {
+      "digest": "8e37bad8466d19428357147ffe496cd6c582e8bd087e8f0ff5636fc9f5acebee",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/esa/review.GHA.claim": {
+      "digest": "26f6de113bcb333bae4ddcb9b36c38dca12e63dffd3f01d9c7a2df3e62245c17",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/esa/review.GHA.scope": {
+      "digest": "aa0388b2a69afc35f6c1da24621561ba642cba643569f457dcccfd639102d04a",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/esa/review.MAR.claim": {
+      "digest": "17b99dce6f2d0302fd1f1b8dbee1e773d77a38cbc330446f6e67491041cdf797",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/esa/review.MAR.scope": {
+      "digest": "fd6f22f0e8d26c20645d982796dc43a20dbaf50ea86f889906cc2e45930403ae",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/esa/review.common.consequences": {
+      "digest": "7b9cc5161adc854ffc4d8ea17d6bb3a3ebbfdb7b22f5a6465e7b41e76fb0709e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/esa/review.common.weigh": {
+      "digest": "153098d17b3fdadb45e416602ee43fd19df2b71c02069407cacbffcdcc985c69",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/esa/review.transfer": {
+      "digest": "70608b68182965f3ed51d5276baeaa173538f74c3ef8f4553c85b2e41aec7f96",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/esa/review.revision": {
+      "digest": "553841b44cbe79328afd318e157f176abdc51300de6f501c1afb19e485c3f0a2",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/msa/review.KEN": {
+      "digest": "1ac7196ed278f52d965da72c8cf81c8c841ab37667a567ac8f8558857d868345",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/msa/review.GHA": {
+      "digest": "485073717b81f1c802da9596677ba5343107fdafdd7645728f0df2fecffe57a6",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/msa/review.MAR": {
+      "digest": "1d55d9cc94e73f1bb728da94e3c8fd4aa2fa1731429323221a37f4089b4f3bc5",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/msa/review.common": {
+      "digest": "01d4fcf20ad8477a10f547fb4d8178a055bac5c4c12f75bd4a52a1fcf2801c9e",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/msa/review.transfer": {
+      "digest": "e3fee2ae55aece5a9839752d8292530eb3ae58a8a6beb68fa06afe73bce46655",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/msa/review.revision": {
+      "digest": "499522b454718afe016d39f7b5baac89d6beecf2e871975754138d58e7b00bff",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/ahr/review.KEN": {
+      "digest": "b866a06b9b66f1af419b348ca6c5bbd25884e6a58a196aa40563bb4eb673abfe",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/ahr/review.GHA": {
+      "digest": "e41a427d1ebdf49c4a4141d702cfcdcf396e79a735299f70ee14484b217bbdb7",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/ahr/review.MAR": {
+      "digest": "4cf43fc5998cbfb76660c70b2655f5483a681770921d59d3b0ba9b880ac19964",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/ahr/review.common": {
+      "digest": "6135a08f3188ee6ddc3e6ba1552f1d5015ab5d82d1b993c7232e93f66ac9007f",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/ahr/review.transfer": {
+      "digest": "f6da15f438eafeceb833f8d86be4179b0a4b4690d13d2966be32be8916fdc9c4",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/ahr/review.revision": {
+      "digest": "44ceaf1e676bf1d24bf714219ddf82f395338c84ea9eecd3f0b45335233bb8cd",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    },
+    "r/ahr/review.cause": {
+      "digest": "9750dab7f948f7d0c4bfce1449ccc5d24dfbf0a95f8e0a70a25d570d76666a19",
+      "status": "Inhaltliche Bausteinprüfung mit gesonderter Profilentscheidung abgeschlossen"
+    }
+  }
+}

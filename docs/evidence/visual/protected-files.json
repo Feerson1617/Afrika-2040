@@ -1,0 +1,262 @@
+[
+  {
+    "file": "src/content.ts",
+    "sha256": "67f344e68991782c8230c2ada8e7d7d46cb83b9219c8c4ff17d5e7bfa9841353"
+  },
+  {
+    "file": "src/decision.ts",
+    "sha256": "86283f55cd4761319dc0c769d2ab37f08baf83117daf605e029269ce811fa344"
+  },
+  {
+    "file": "src/demand-content.ts",
+    "sha256": "3c61cbd4a7009e9bb15bc000b8fc487e40b47ad78d023ea118b4d44568d897a8"
+  },
+  {
+    "file": "src/demand-ui.ts",
+    "sha256": "d164ea6f304ebd2d9f4fa86e19ae1416a5ba711d5138f3c02d17c304ed38b42a"
+  },
+  {
+    "file": "src/demand.ts",
+    "sha256": "fdc5b8f300e1c5b0f790a52ab3c1423413f7108cb11f939c6f6c88bff9641b53"
+  },
+  {
+    "file": "src/event-ui.ts",
+    "sha256": "7830700419160c105878492b99269a0142635c6e3b8fa2374cae195c10a6fc12"
+  },
+  {
+    "file": "src/event.ts",
+    "sha256": "0725253b9bc811b1f54dfbb60228b4ac93fa53aace2dec871f1aeaba44924fbf"
+  },
+  {
+    "file": "src/feedback.ts",
+    "sha256": "ed156ca901b59605fac1cdc44be58ae3b5326daa0dd63fb9457a2b4b0e05ac35"
+  },
+  {
+    "file": "src/geography/context.ts",
+    "sha256": "a3dcc78f22d99daa3e99f663174ecdb2150bee68c2b74f8ef1ac32b801418411"
+  },
+  {
+    "file": "src/geography/map-data.ts",
+    "sha256": "1b631e2995fd673d3a13c33c08a9936a2d509b0a1b7527ae4f1f5db63d014c59"
+  },
+  {
+    "file": "src/geography/natural-earth-africa.json",
+    "sha256": "297d01c2ca2ee7ba138aa336dd3e47d00975de6ae66700ebcce6fead7854c015"
+  },
+  {
+    "file": "src/geography/provenance.json",
+    "sha256": "2b4c58feed25bb2b80352155f616ad24c9a4667dc3b7f74a149c1bb2c30408ab"
+  },
+  {
+    "file": "src/geography/real-place-evidence.json",
+    "sha256": "2128770d0e2936966ee1ccae6026300a9251d77aff442f96c688a5e923506c7e"
+  },
+  {
+    "file": "src/geography/review-ui.ts",
+    "sha256": "ae577084b8ae40c2404ec1cda1ba425b3ce9ccc8632a056c2248b5676de67d36"
+  },
+  {
+    "file": "src/geography/state.ts",
+    "sha256": "8a0a433789bd286fd1587248232da9d6f3d0f5ef399c0af92ac48b181a11b4ea"
+  },
+  {
+    "file": "src/geography/transfer.ts",
+    "sha256": "c3f14eeb0a34ce8a5814270b85cbf25498bd927de09373c9a2a747b1276f0129"
+  },
+  {
+    "file": "src/geography/ui.ts",
+    "sha256": "3fd3d6103bde0a7a148ef999b162c7dc1118847e7a3226ddb2876888ceb8a917"
+  },
+  {
+    "file": "src/inquiry/assets/asafo.jpg",
+    "sha256": "b764593e666dbeb085a22b175de59b2fa84f7068dcff78446d490e257f524302"
+  },
+  {
+    "file": "src/inquiry/assets/kakum.jpg",
+    "sha256": "4447349bea9a1aa522bf1697d66cb8e89ab13807bc9e33bd94c08b49e943a03c"
+  },
+  {
+    "file": "src/inquiry/assets/manifest.json",
+    "sha256": "dacf063208f893350a6ec4df06587ac99515a148df530ef7ea46a01fa02995af"
+  },
+  {
+    "file": "src/inquiry/content.ts",
+    "sha256": "4f8ec4f34f4da0ca1a6657986f3b6c3dfb80ff2915a144a6cf1c71e4cb38ba0a"
+  },
+  {
+    "file": "src/inquiry/state.ts",
+    "sha256": "c22a6c1eb8bba35d6d41e24b3d9094c45a7e66ee6307a55c1761bf0a881773d2"
+  },
+  {
+    "file": "src/inquiry/style.css",
+    "sha256": "e10b01ecafeb3357193873ee001433d4a034b457fc19fcd93021586650aa7210"
+  },
+  {
+    "file": "src/inquiry/ui.ts",
+    "sha256": "4457d1c69972813730ddc95245c0ef0ce61c08320a5ffcbeaa1f6536335d5080"
+  },
+  {
+    "file": "src/learning/allocation.ts",
+    "sha256": "45d09254e9441db830dc9a05349c482a3746fd536ce3b2ff266df07a189a0447"
+  },
+  {
+    "file": "src/learning/catalog.ts",
+    "sha256": "508875507c098411f670b374c1e6a6b4b093285134b830994f42445be79a4928"
+  },
+  {
+    "file": "src/learning/cross-paths.ts",
+    "sha256": "679c847faee52300250f5f1193916b5d97d8ae7e3a54c6ccca95405b8829cce8"
+  },
+  {
+    "file": "src/learning/entry.ts",
+    "sha256": "44258063a3599032fc9fc014cea228c1f21701ba089a18810517ab1a41039b80"
+  },
+  {
+    "file": "src/learning/help.ts",
+    "sha256": "385539750194ddb58d0326b1fe1e3ca63648f8cf50d898174e14c4d3fcb80254"
+  },
+  {
+    "file": "src/learning/language.ts",
+    "sha256": "a1e0619ef8a5882cbbbdacb9ad4e5a93abea8586a233f57956577cffe851305e"
+  },
+  {
+    "file": "src/learning/material-view.ts",
+    "sha256": "dfb4bd857cde8d7a8b769e365aa9f4dc522a8b41c37dd5fb75b75ab95f687a8f"
+  },
+  {
+    "file": "src/learning/profiles.ts",
+    "sha256": "1e0d6a144a22769ce8bf575e49673ea3bc2bfb89420041fe9972df1d93119c1e"
+  },
+  {
+    "file": "src/learning/progress.ts",
+    "sha256": "918db0471bafbd792d438529c7d7e226316ebe924a4e62f17cc2c69ccc700b27"
+  },
+  {
+    "file": "src/learning/simulation-variants.ts",
+    "sha256": "993b594093116cf98c47b95a8d6d4688f5ea9c28027838c786078a7face65e25"
+  },
+  {
+    "file": "src/learning/storage.ts",
+    "sha256": "c9de318575e55348a18493d53fc16f379d1bccd4a9c36da77a095fdf6608f3f8"
+  },
+  {
+    "file": "src/learning/streamline.ts",
+    "sha256": "f64fd781683104fd1481523c38bc79a035f2883679e233506be029e647e57af3"
+  },
+  {
+    "file": "src/learning/tasks.ts",
+    "sha256": "47660e4985a8f5895012a26bf5f4168bf7ecc4ccaace76c4482c59b22fd18be1"
+  },
+  {
+    "file": "src/learning/topic-material.ts",
+    "sha256": "0ce05259123b877be5c45b2231284a0f4cb49ac482a669845f2775ccf7cbebca"
+  },
+  {
+    "file": "src/learning/topic-variants.ts",
+    "sha256": "4f5dc880313212e9206d549b2226e282f7f7596caf42b5ba25526ad784e44506"
+  },
+  {
+    "file": "src/learning/transfer-cases.ts",
+    "sha256": "6d2d5514c29077171a1534c86c760f97cdcad529a0ab0c9922ceb6d36b275239"
+  },
+  {
+    "file": "src/learning/update-material.ts",
+    "sha256": "e181bbaa825d0d276c918117a34cbe009b5b2546f7a223d365658d0396dd68ed"
+  },
+  {
+    "file": "src/learning/words.ts",
+    "sha256": "3e7d75b28c71a4ccbba16ecb39b2010bd660f778e90986da295c8421b8b072e7"
+  },
+  {
+    "file": "src/main.ts",
+    "sha256": "eb2ccc4bb204d045013558061eb7dd35737df030c5943ac8e96f6604c98ad2ad"
+  },
+  {
+    "file": "src/map.ts",
+    "sha256": "35f5489dd52b71b2da7b90300249000f8e68590c53b3e1b3e06449db3b82e34e"
+  },
+  {
+    "file": "src/model.ts",
+    "sha256": "4b3d8554c45e616ba5b5f35152be3922088d6d13e022053cfe7ae74652d5992b"
+  },
+  {
+    "file": "src/product-ui.ts",
+    "sha256": "104306b72f74b8d502191a323638c2c33aecca0e9791b95e818d3f56f39a803a"
+  },
+  {
+    "file": "src/progress.ts",
+    "sha256": "22e51739ccc9c40e460f42bd72e1831b3280c1287a6d7924ab7d8e65a5d19459"
+  },
+  {
+    "file": "src/regions/answer-order.ts",
+    "sha256": "68bed563a4f72df6c1a0b562fe4a06257292ea046204be067eb0ace94bca3293"
+  },
+  {
+    "file": "src/regions/area.ts",
+    "sha256": "1e9b2a5fa0bd91e8ab3cb8cb1276d00e58bc04b3f10e4c7a5217851f8c491346"
+  },
+  {
+    "file": "src/regions/cocoa.ts",
+    "sha256": "736ae400c34e8ef8d997864cc92aac1d213af3c3a0be1877f022d1208ab1906f"
+  },
+  {
+    "file": "src/regions/decision-ui.ts",
+    "sha256": "68b9b5b5186ca354172e01325fa627b4eeff538eb1e9da929c1907b6091c666b"
+  },
+  {
+    "file": "src/regions/registry.ts",
+    "sha256": "96015d74860984ee4e4a5cc7df230a879a1a1b9655acecf352f6f94afccd208d"
+  },
+  {
+    "file": "src/regions/share.ts",
+    "sha256": "0678ad0916c7f52175812dfc17ecbe5716fd9cb44c0a3603cf20ed0777d3ad1d"
+  },
+  {
+    "file": "src/regions/shared.ts",
+    "sha256": "906418fcbb4dbef4f94220dcfa55ec47ab34c989379cadb8433b86c533ffb985"
+  },
+  {
+    "file": "src/regions/state.ts",
+    "sha256": "b4ed966fb89bde7de31de0259ae672f408b16a15f0a2dcb916260fe486694b02"
+  },
+  {
+    "file": "src/regions/storage.ts",
+    "sha256": "50ddf7444e7889190062ec34373bdcb3222511b27ac722cf8fc08d6753f35d47"
+  },
+  {
+    "file": "src/regions/types.ts",
+    "sha256": "37fe22ba5cd579a1d72207bd7841bf33e42d193f3ad2fcdbe522a8f949d0c125"
+  },
+  {
+    "file": "src/regions/ui.ts",
+    "sha256": "f8697419c7efba17504f59b72a3d68b22d5a65ba690c037312e0c3a30b51d80d"
+  },
+  {
+    "file": "src/regions/water-model.ts",
+    "sha256": "9e1c21e5aeb3fd351e8971696bc4a01f01fe1b596bcd92d285d2ed77ef8cbe6d"
+  },
+  {
+    "file": "src/regions/water.ts",
+    "sha256": "93acef8b63132dd9dcad3f9489e1806a059a4ed636b5ad9dc5f9d4237818f982"
+  },
+  {
+    "file": "src/reset.ts",
+    "sha256": "ff58039c105d358948aa2eaef4bbf58f014029e2eed59058eabf2f5a0ca74d34"
+  },
+  {
+    "file": "src/state.ts",
+    "sha256": "87f88a002e37d346299dbd97157383354515f6009bf75580e502e08ff150192f"
+  },
+  {
+    "file": "src/storage.ts",
+    "sha256": "506e724520e4272084455777abf41f1aa7ed920fcbbb988ce4af9e9855398bab"
+  },
+  {
+    "file": "src/style.css",
+    "sha256": "eb12047e1ebe293c91364bed6ea99fb76e914c04be4e0585f66323f22e3b4107"
+  },
+  {
+    "file": "src/vite-env.d.ts",
+    "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+  }
+]

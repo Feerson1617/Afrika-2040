@@ -1,7 +1,14 @@
 import { evidencePath } from './artifacts.ts';
-import { chooseRoute, setGoal, ownTextPanel, panel, selectEvidence, weightSelected } from './phase2a-helpers.ts';
+import {
+  chooseRoute,
+  setGoal,
+  ownTextPanel,
+  panel,
+  selectEvidence,
+  weightSelected,
+} from './phase2a-helpers.ts';
 import { test, expect, type Page, type Locator } from '@playwright/test';
-import AxeBuilder from '@axe-core/playwright';
+import { auditAccessibility } from './accessibility.ts';
 
 import { key, routeChoices as choices, finish2A } from './phase2a-helpers.ts';
 
@@ -10,7 +17,7 @@ async function saved(page: Page) {
 }
 async function solveStart(page: Page, touch = false) {
   const act = (l: Locator) => (touch ? l.tap() : l.click());
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await act(page.getByRole('button', { name: 'Spiel starten' }));
   await act(page.getByRole('radio', { name: /Zum Platz/ }));
   await act(page.getByRole('radio', { name: /Platz → Zentrum/ }));
@@ -130,9 +137,7 @@ for (const route of ['direct', 'north'] as const) {
       path: evidencePath(`review-R2-${route}-explanation.png`),
       fullPage: true,
     });
-    const axe = await new AxeBuilder({ page })
-      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-      .analyze();
+    const axe = await auditAccessibility(page);
     expect(axe.violations).toEqual([]);
     await page
       .getByRole('button', { name: 'Dieses Beispiel übernehmen' })
@@ -206,12 +211,14 @@ test('R2: unclear free text is never counted as a failed evidence check or silen
     await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
     await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
     await expect(page.locator('[data-feedback]')).toContainText(
-      'nicht sicher prüfen',
+      'nicht fachlich prüfen',
     );
     expect((await saved(page)).progress[5].failures).toBe(0);
   }
   await expect(page.locator('#next-step')).toHaveCount(0);
-  await page.getByRole('button', { name: 'Eigenen Text unbewertet abgeben' }).click();
+  await page
+    .getByRole('button', { name: 'Eigenen Text unbewertet abgeben' })
+    .click();
   await page.getByRole('button', { name: 'Zum Abschluss' }).click();
   await expect(page.locator('.recommendation')).toContainText(
     'Diesen Beleg musst du noch prüfen',
@@ -239,7 +246,7 @@ for (const c of [
   test(`R3: incomplete ${c.choice.source} gets accurate yellow feedback without consuming attempts`, async ({
     page,
   }) => {
-    await page.goto('/');
+    await page.goto('/?ansicht=bisher');
     await page.getByRole('button', { name: 'Spiel starten' }).click();
     await page.getByRole('radio', { name: c.choice }).check();
     for (let i = 0; i < 4; i++)
@@ -363,7 +370,7 @@ for (const viewport of [
       for (let i = 0; i < 2; i++) {
         await weightSelected(page);
         await act(page.getByRole('button', { name: 'Empfehlung prüfen' }));
-        }
+      }
       const support = page.getByRole('button', {
         name: 'Dieses Beispiel übernehmen',
       });

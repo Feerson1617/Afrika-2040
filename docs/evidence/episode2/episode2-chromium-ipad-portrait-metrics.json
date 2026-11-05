@@ -1,0 +1,21 @@
+{
+  "width": 768,
+  "height": 1024,
+  "overflow": false,
+  "choiceHeights": [
+    48,
+    48,
+    48,
+    48
+  ],
+  "facts": {
+    "x": 49,
+    "y": 308.25,
+    "width": 670,
+    "height": 54,
+    "top": 308.25,
+    "right": 719,
+    "bottom": 362.25,
+    "left": 49
+  }
+}

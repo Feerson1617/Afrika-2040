@@ -1,0 +1,22 @@
+[WebServer] (node:108158) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:108184) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 4 tests using 2 workers
+
+(node:108196) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:108197) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/4] [chromium] › tests/browser/episode2-accessibility.spec.ts:92:3 › Episode 2 accessible SVG names and all bidirectional state changes on desktop
+[2/4] [chromium] › tests/browser/episode2-accessibility.spec.ts:92:3 › Episode 2 accessible SVG names and all bidirectional state changes on ipad-landscape
+[3/4] [chromium] › tests/browser/episode2-accessibility.spec.ts:92:3 › Episode 2 accessible SVG names and all bidirectional state changes on ipad-portrait
+[4/4] [chromium] › tests/browser/episode2-accessibility.spec.ts:205:1 › Episode 2 regression guard detects a wrong computed name even with a correct aria-label
+  4 passed (29.5s)

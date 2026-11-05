@@ -1,0 +1,87 @@
+import { resetNotice } from '../reset.ts';
+import { productParagraphs } from '../product-ui.ts';
+import { decisionView } from './decision-ui.ts';
+import { studies, studyList } from './registry.ts';
+import { activeStudy } from './state.ts';
+import {
+  control,
+  optionOf,
+  product,
+  productParts,
+  decisionExample,
+} from './shared.ts';
+import type { State } from '../state.ts';
+import type { StudyUI } from './types.ts';
+export function studyMenu(h: Pick<StudyUI, 'button'>) {
+  return ['Ghana', 'Marokko']
+    .map(
+      (country) =>
+        `<section class="study-country"><h2>${country}</h2>${studyList()
+          .filter((s) => s.country === country)
+          .map((spec) =>
+            h.button(
+              `Episode ${spec.number}: ${spec.title}`,
+              'study',
+              'button secondary',
+              `data-op="start" data-episode="${spec.id}" id="episode-${spec.number}"`,
+            ),
+          )
+          .join('')}</section>`,
+    )
+    .join('');
+}
+export function studyHint(s: State) {
+  const r = activeStudy(s)!,
+    spec = studies[s.activeStudy!]!,
+    level = r.progress[Math.min(r.step, 2)].help;
+  if (r.step < 2) return spec.hint(r.step as 0 | 1, r.data, level);
+  const example = decisionExample(spec, r.data, r.decision);
+  const selected = optionOf(spec, r.data, r.decision);
+  if (level === 1)
+    return 'Welche Maßnahme empfiehlst du? Suche die Angaben genau zu dieser Maßnahme.';
+  if (!selected)
+    return 'Wähle zuerst deinen Vorschlag. Dann zeigen wir die dazugehörigen Angaben.';
+  if (level === 2) {
+    const other = spec
+      .options(r.data)
+      .find((o) => o.id === r.decision.benefit && o.id !== selected.id);
+    return `Dein Vorschlag: ${selected.label}. Dazu gehört: ${selected.benefit}${other ? ` Dein gewählter Beleg gehört dagegen zu: ${other.label}.` : ' Vergleiche damit deinen gewählten Beleg.'}`;
+  }
+  return example
+    ? product(spec, r.data, example)
+    : 'Wähle auch dein Ziel. Dann zeigen wir ein passendes vollständiges Beispiel.';
+}
+export const decisionTerms: [string, string][] = [
+  ['Vorschlag', 'Deine Idee, was getan werden soll.'],
+  ['Beleg', 'Eine passende Angabe, die deinen Gedanken stützt.'],
+  [
+    'Grenze',
+    'Was dein Vorschlag nicht löst oder welcher Nachteil bleibt. Hier ist keine Landesgrenze gemeint.',
+  ],
+  [
+    'Gewichten',
+    'Du entscheidest, welche Folge dir wichtiger ist und welchen Nachteil du dafür in Kauf nimmst.',
+  ],
+];
+export function renderStudy(s: State, h: StudyUI) {
+  const r = activeStudy(s)!,
+    spec = studies[s.activeStudy!]!,
+    p = r.progress[Math.min(r.step, 2)],
+    d = r.decision;
+  const selected = optionOf(spec, r.data, d);
+  const model = () =>
+    `<details class="study-model"><summary>Das Modell und seine Grenzen</summary><p>${h.esc(spec.modelNote)}</p></details>`;
+  const footer = () =>
+    `<footer class="game-footer">${control(h, 'Episoden auswählen', 'home')}${h.button('Neu starten', 'ask-restart', 'text-button')}${h.restartPending ? `<span class="restart-confirm">${resetNotice} ${h.button('Ja, neu starten', 'restart', 'text-button')} ${h.button('Abbrechen', 'cancel-restart', 'text-button')}</span>` : ''}</footer>`;
+  if (r.step === 3)
+    return `${h.header}<main id="main" class="end-screen study-screen" tabindex="-1"><p class="eyebrow">Episode ${spec.number} · ${spec.country}</p><h1>Dein begründeter Vorschlag</h1><section class="recommendation" aria-label="Dein Lernprodukt"><h2>${selected?.label ?? 'Dein Vorschlag'}</h2><p><strong>Mein Ziel:</strong> ${d.goal ? h.esc(spec.goals[d.goal]) : 'noch offen'}</p>${spec.id === 'share' ? `<p class="study-allocation-summary">Mein vollständiger Plan: Auszahlung ${r.data.allocations.payout} GE · Rücklage ${r.data.allocations.reserve} GE · Fortbildung ${r.data.allocations.training} GE. Zusammen 120 GE.</p>` : ''}${d.ungraded ? '<p data-ungraded>Eigener Text bewusst unbewertet. Die Bausteine sind damit nicht bestätigt.</p>' : `<div class="study-product">${productParagraphs(productParts(spec, r.data, d), h.esc)}</div><p>Du hast deinen Vorschlag mit Bausteinen begründet.</p>`}${d.text ? `<p class="saved-text">${h.esc(d.text)}</p><p class="small-note">Eigener Text: nicht automatisch geprüft.</p>` : ''}${d.supported ? '<p data-supported>Diese Empfehlung wurde mit einem Beispiel erstellt.</p>' : ''}${r.progress.some((x) => x.supported) ? '<p data-help-history>In dieser Episode hast du erklärte Beispiele übernommen.</p>' : ''}<p>Zeige die passende Angabe. Erkläre, welches Problem bleibt.</p></section>${model()}${control(h, 'Empfehlung bearbeiten', 'back')}${footer()}</main>`;
+  let body = '';
+  if (r.step < 2) body = spec.task(r.data, r.step as 0 | 1, h);
+  else body = decisionView(spec, r, h);
+  const level = p.help,
+    example = r.step === 2 ? decisionExample(spec, r.data, d) : undefined;
+  const hint = studyHint(s);
+  const adoptable =
+    r.step < 2 ? spec.canAdopt(r.step as 0 | 1, r.data) : Boolean(example);
+  return `${h.header}<main id="main" class="game-screen study-screen study-${spec.id}" tabindex="-1"><div class="episode-heading"><div><p class="eyebrow">Episode ${spec.number} · ${r.step + 1} von 3 · ${spec.place}</p><h1>${spec.title}</h1></div>${h.button('Wörter erklären', 'words', 'button quiet', 'id="words-toggle" aria-controls="word-help" aria-expanded="' + s.words + '"')}</div><p class="study-question">${spec.question}</p><p class="model-note">Erfundene Szene und Modellzahlen. Keine Statistik über ${spec.country}.</p>${s.words ? `<aside id="word-help" class="word-help"><h2>Wörter für diesen Schritt</h2><dl>${(r.step === 2 ? decisionTerms : (spec.terms[r.step] ?? [])).map(([term, meaning]) => `<div><dt>${h.esc(term)}</dt><dd>${h.esc(meaning)}</dd></div>`).join('')}</dl>${h.button('Wörter schließen', 'words', 'text-button')}</aside>` : ''}<div class="study-layout ${r.step === 2 ? 'study-decision' : ''}">${r.step < 2 ? `<section class="study-world" aria-label="Zentrale Untersuchungsszene"><p>${h.esc(spec.intro)}</p>${spec.scene(r.data, r.step, h)}</section>` : ''}<section class="task-panel study-task" aria-labelledby="task-title"><h2 id="task-title" tabindex="-1">${r.step === 0 ? 'Schau dir die Situation am Anfang an.' : r.step === 1 ? 'Teste und erkläre die Folgen.' : 'Begründe deinen Vorschlag.'}</h2>${body}${h.feedback(p.feedback)}${level ? `<aside class="help-panel"><h3 id="help-title" tabindex="-1">→ Hilfe ${level} von 3</h3><p>${h.esc(hint)}</p>${level < 3 ? control(h, level === 1 ? 'Genauer zeigen' : 'Erklärung ansehen', 'help', String(level + 1)) : control(h, 'Dieses Beispiel übernehmen', 'adopt', '', '', 'study-adopt', 'button secondary', !adoptable)}</aside>` : ''}<div class="task-actions">${control(h, 'Antwort prüfen', 'check', '', '', 'check-answer', 'button primary')}${p.complete ? control(h, r.step === 2 ? 'Zum Abschluss →' : 'Weiter →', 'next', '', '', 'next-step', 'button primary') : ''}${!level ? control(h, 'Ich brauche einen Hinweis', 'help', '1', '', '', 'text-button') : ''}</div><div class="task-navigation">${control(h, '← Zurück', 'back', '', '', '', 'text-button')}${control(h, 'Schritt neu bearbeiten', 'reset', '', '', '', 'text-button')}</div></section></div>${model()}${footer()}</main>`;
+}

@@ -1,0 +1,27 @@
+{
+  "viewport": {
+    "width": 768,
+    "height": 1024
+  },
+  "quantities": {
+    "x": 49,
+    "y": 218.84375,
+    "width": 670,
+    "height": 209.96875,
+    "top": 218.84375,
+    "right": 719,
+    "bottom": 428.8125,
+    "left": 49
+  },
+  "answer": {
+    "x": 290,
+    "y": 583.8125,
+    "width": 18,
+    "height": 18,
+    "top": 583.8125,
+    "right": 308,
+    "bottom": 601.8125,
+    "left": 290
+  },
+  "overflow": false
+}

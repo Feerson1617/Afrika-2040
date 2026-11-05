@@ -1,11 +1,17 @@
 import { evidencePath } from './artifacts.ts';
-import { chooseRoute, ownTextPanel, panel, selectEvidence, weightSelected } from './phase2a-helpers.ts';
+import {
+  chooseRoute,
+  ownTextPanel,
+  panel,
+  selectEvidence,
+  weightSelected,
+} from './phase2a-helpers.ts';
 import { finish2A } from './phase2a-helpers.ts';
 import { test, expect, type Page } from '@playwright/test';
-import AxeBuilder from '@axe-core/playwright';
+import { auditAccessibility } from './accessibility.ts';
 
 async function start(page: Page) {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.getByRole('button', { name: 'Spiel starten' }).click();
 }
 async function explainAndNext(page: Page) {
@@ -103,7 +109,9 @@ test('complete mouse flow, route changes, all times, all three valid recommendat
     .getByRole('button', { name: 'Empfehlung noch einmal ansehen' })
     .click();
   await panel(page, 'plan');
-  await expect(page.getByRole('radio', { name: 'Über Süd', exact: true })).toBeChecked();
+  await expect(
+    page.getByRole('radio', { name: 'Über Süd', exact: true }),
+  ).toBeChecked();
   await panel(page, 'weigh');
   await page.getByRole('button', { name: 'Zum Abschluss' }).click();
   await page.getByRole('button', { name: 'Neu spielen', exact: true }).click();
@@ -184,12 +192,14 @@ test('free text is stored locally, never keyword-graded, escaped and editable af
   await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
   await expect(page.locator('[data-feedback]')).toHaveClass(/neutral/);
   await expect(page.locator('[data-feedback]')).toContainText(
-    'kann sie nicht sicher prüfen',
+    'kann deinen Text nicht fachlich prüfen',
   );
   await expect(page.locator('[data-feedback]')).toContainText(
     'wurde gespeichert',
   );
-  await page.getByRole('button', { name: 'Eigenen Text unbewertet abgeben' }).click();
+  await page
+    .getByRole('button', { name: 'Eigenen Text unbewertet abgeben' })
+    .click();
   await page.reload();
   await expect(
     page.getByLabel('Ich schlage diesen Busweg vor, weil …'),
@@ -269,9 +279,15 @@ test('rapid clicks cannot skip tasks and restart requires a deliberate confirmat
 test('keyboard can operate start, SVG paths, radio groups, checking and word help', async ({
   page,
 }) => {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   await page.keyboard.press('Tab');
   await expect(page.getByRole('link', { name: 'Zum Inhalt' })).toBeFocused();
+  await page.keyboard.press('Tab');
+  await expect(
+    page.getByRole('link', { name: 'Direkt zu den Episoden' }),
+  ).toBeFocused();
+  await page.keyboard.press('Enter');
+  await expect(page.locator('#episodes-menu')).toBeFocused();
   await page.keyboard.press('Tab');
   await expect(
     page.getByRole('button', { name: 'Spiel starten' }),
@@ -321,8 +337,12 @@ test('blocked session storage does not prevent the full workflow', async ({
     .fill('David ist schneller.');
   await weightSelected(page);
   await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
-  await expect(page.locator('[data-feedback]')).toContainText('erlaubt kein Speichern');
-  await page.getByRole('button', { name: 'Eigenen Text unbewertet abgeben' }).click();
+  await expect(page.locator('[data-feedback]')).toContainText(
+    'erlaubt kein Speichern',
+  );
+  await page
+    .getByRole('button', { name: 'Eigenen Text unbewertet abgeben' })
+    .click();
   await page.getByRole('button', { name: 'Zum Abschluss' }).click();
   await expect(page.locator('.saved-text')).toHaveText('David ist schneller.');
 });
@@ -334,7 +354,7 @@ test('production assets work under the GitHub Pages repository prefix', async ({
   page.on('response', (r) => {
     if (r.status() >= 400) failed.push(`${r.status()} ${r.url()}`);
   });
-  await page.goto('http://127.0.0.1:4174/Afrika-2040/');
+  await page.goto('http://127.0.0.1:4174/Afrika-2040/?ansicht=bisher');
   await page.getByRole('button', { name: 'Spiel starten' }).click();
   await expect(
     page.getByRole('heading', { name: 'Zeige Aminas Weg zur Schule.' }),
@@ -348,7 +368,7 @@ test('production assets work under the GitHub Pages repository prefix', async ({
 test('axe finds no WCAG A/AA issues in start, task, expanded help, decision and ending', async ({
   page,
 }) => {
-  await page.goto('/');
+  await page.goto('/?ansicht=bisher');
   for (const stage of ['start', 'task', 'help', 'decision', 'end']) {
     if (stage === 'task')
       await page.getByRole('button', { name: 'Spiel starten' }).click();
@@ -378,9 +398,7 @@ test('axe finds no WCAG A/AA issues in start, task, expanded help, decision and 
       await page.getByRole('button', { name: 'Empfehlung prüfen' }).click();
       await page.getByRole('button', { name: 'Zum Abschluss' }).click();
     }
-    const results = await new AxeBuilder({ page })
-      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-      .analyze();
+    const results = await auditAccessibility(page);
     expect(results.violations, stage).toEqual([]);
   }
 });
@@ -390,9 +408,7 @@ test('all closed feedback colors and the neutral decision remain accessible', as
 }) => {
   await start(page);
   const scan = async () => {
-    const result = await new AxeBuilder({ page })
-      .withTags(['wcag2a', 'wcag2aa', 'wcag21a', 'wcag21aa'])
-      .analyze();
+    const result = await auditAccessibility(page);
     expect(result.violations).toEqual([]);
   };
   await page.getByRole('radio', { name: /Nach Nord/ }).check();
@@ -436,7 +452,7 @@ for (const viewport of [
       isMobile: viewport.name !== 'desktop',
     });
     const page = await context.newPage();
-    await page.goto('http://127.0.0.1:4173');
+    await page.goto('http://127.0.0.1:4173?ansicht=bisher');
     await noHorizontalOverflow(page);
     if (viewport.name === 'desktop') {
       await page.screenshot({

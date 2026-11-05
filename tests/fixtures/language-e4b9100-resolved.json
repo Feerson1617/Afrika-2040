@@ -1,0 +1,4235 @@
+[
+  {
+    "unit": "e",
+    "profile": "foerder",
+    "id": "future.evidence",
+    "choices": {
+      "cool": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "cool",
+          "options": ["shade", "guarantee", "cool"]
+        }
+      ],
+      "shade": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "shade",
+          "options": ["shade", "guarantee", "cool"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "e",
+    "profile": "foerder",
+    "id": "future.limit",
+    "choices": {
+      "cool": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "cool",
+          "options": ["cool", "shade", "none"]
+        }
+      ],
+      "shade": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "shade",
+          "options": ["cool", "shade", "none"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "e",
+    "profile": "foerder",
+    "id": "future.weight",
+    "choices": {
+      "cool": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["adapt", "tradeoff"]
+        }
+      ],
+      "shade": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["adapt", "tradeoff"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "e",
+    "profile": "esa",
+    "id": "future.evidence",
+    "choices": {
+      "cool": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "cool",
+          "options": ["shade", "guarantee", "cool"]
+        }
+      ],
+      "shade": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "shade",
+          "options": ["shade", "guarantee", "cool"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "e",
+    "profile": "esa",
+    "id": "future.limit",
+    "choices": {
+      "cool": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "cool",
+          "options": ["cool", "shade", "none"]
+        }
+      ],
+      "shade": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "shade",
+          "options": ["cool", "shade", "none"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "e",
+    "profile": "esa",
+    "id": "future.weight",
+    "choices": {
+      "cool": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["adapt", "tradeoff"]
+        }
+      ],
+      "shade": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["adapt", "tradeoff"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "e",
+    "profile": "msa",
+    "id": "future.evidence",
+    "choices": {
+      "cool": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "cool",
+          "options": ["shade", "guarantee", "cool"]
+        }
+      ],
+      "shade": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "shade",
+          "options": ["shade", "guarantee", "cool"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "e",
+    "profile": "msa",
+    "id": "future.limit",
+    "choices": {
+      "cool": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "cool",
+          "options": ["cool", "shade", "none"]
+        }
+      ],
+      "shade": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "shade",
+          "options": ["cool", "shade", "none"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "e",
+    "profile": "msa",
+    "id": "future.weight",
+    "choices": {
+      "cool": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["adapt", "tradeoff"]
+        }
+      ],
+      "shade": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["adapt", "tradeoff"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "e",
+    "profile": "msa",
+    "id": "future.judgment",
+    "choices": {
+      "cool": [
+        {
+          "id": "explanation",
+          "kind": "text"
+        }
+      ],
+      "shade": [
+        {
+          "id": "explanation",
+          "kind": "text"
+        }
+      ]
+    }
+  },
+  {
+    "unit": "e",
+    "profile": "ahr",
+    "id": "future.evidence",
+    "choices": {
+      "cool": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "cool",
+          "options": ["shade", "guarantee", "cool"]
+        }
+      ],
+      "shade": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "shade",
+          "options": ["shade", "guarantee", "cool"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "e",
+    "profile": "ahr",
+    "id": "future.limit",
+    "choices": {
+      "cool": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "cool",
+          "options": ["cool", "shade", "none"]
+        }
+      ],
+      "shade": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "shade",
+          "options": ["cool", "shade", "none"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "e",
+    "profile": "ahr",
+    "id": "future.weight",
+    "choices": {
+      "cool": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["adapt", "tradeoff"]
+        }
+      ],
+      "shade": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["adapt", "tradeoff"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "e",
+    "profile": "ahr",
+    "id": "future.judgment",
+    "choices": {
+      "cool": [
+        {
+          "id": "explanation",
+          "kind": "text"
+        }
+      ],
+      "shade": [
+        {
+          "id": "explanation",
+          "kind": "text"
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "foerder",
+    "id": "kenia.first.proof.evidence",
+    "choices": {
+      "direct": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "amina-direct-south",
+          "accepted": ["amina-direct-south", "david-direct-north"],
+          "options": ["unrelated", "amina-direct-south", "david-direct-north"]
+        }
+      ],
+      "north": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "amina-north-direct",
+          "accepted": ["amina-north-direct", "amina-north-south"],
+          "options": ["unrelated", "amina-north-direct", "amina-north-south"]
+        }
+      ],
+      "south": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "leila-south-direct",
+          "accepted": ["leila-south-direct", "leila-south-north"],
+          "options": ["unrelated", "leila-south-direct", "leila-south-north"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "foerder",
+    "id": "kenia.first.proof.limit",
+    "choices": {
+      "direct": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "amina-direct-north",
+          "accepted": ["amina-direct-north", "leila-direct-south"],
+          "options": ["amina-direct-north", "leila-direct-south", "unrelated"]
+        }
+      ],
+      "north": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "david-north-direct",
+          "accepted": ["david-north-direct", "leila-north-direct"],
+          "options": ["david-north-direct", "leila-north-direct", "unrelated"]
+        }
+      ],
+      "south": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "amina-south-direct",
+          "accepted": ["amina-south-direct", "amina-south-north"],
+          "options": ["amina-south-direct", "amina-south-north", "unrelated"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "foerder",
+    "id": "kenia.first.weight",
+    "choices": {
+      "direct": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "north": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "south": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "foerder",
+    "id": "kenia.revised.proof.evidence",
+    "choices": {
+      "direct": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "amina-direct-south",
+          "accepted": ["amina-direct-south", "david-direct-north"],
+          "options": ["amina-direct-south", "david-direct-north", "unrelated"]
+        }
+      ],
+      "north": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "amina-north-direct",
+          "accepted": ["amina-north-direct", "amina-north-south"],
+          "options": ["amina-north-direct", "amina-north-south", "unrelated"]
+        }
+      ],
+      "south": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "leila-south-direct",
+          "accepted": ["leila-south-direct", "leila-south-north"],
+          "options": ["leila-south-direct", "leila-south-north", "unrelated"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "foerder",
+    "id": "kenia.revised.proof.limit",
+    "choices": {
+      "direct": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "amina-direct-north",
+          "accepted": ["amina-direct-north", "leila-direct-south"],
+          "options": ["leila-direct-south", "unrelated", "amina-direct-north"]
+        }
+      ],
+      "north": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "david-north-direct",
+          "accepted": ["david-north-direct", "leila-north-direct"],
+          "options": ["leila-north-direct", "unrelated", "david-north-direct"]
+        }
+      ],
+      "south": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "amina-south-direct",
+          "accepted": ["amina-south-direct", "amina-south-north"],
+          "options": ["amina-south-north", "unrelated", "amina-south-direct"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "foerder",
+    "id": "kenia.revised.weight",
+    "choices": {
+      "direct": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "north": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "south": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "esa",
+    "id": "kenia.first.proof.evidence",
+    "choices": {
+      "direct": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "amina-direct-south",
+          "accepted": ["amina-direct-south", "david-direct-north"],
+          "options": ["unrelated", "amina-direct-south", "david-direct-north"]
+        }
+      ],
+      "north": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "amina-north-direct",
+          "accepted": ["amina-north-direct", "amina-north-south"],
+          "options": ["unrelated", "amina-north-direct", "amina-north-south"]
+        }
+      ],
+      "south": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "leila-south-direct",
+          "accepted": ["leila-south-direct", "leila-south-north"],
+          "options": ["unrelated", "leila-south-direct", "leila-south-north"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "esa",
+    "id": "kenia.first.proof.limit",
+    "choices": {
+      "direct": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "amina-direct-north",
+          "accepted": ["amina-direct-north", "leila-direct-south"],
+          "options": ["amina-direct-north", "leila-direct-south", "unrelated"]
+        }
+      ],
+      "north": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "david-north-direct",
+          "accepted": ["david-north-direct", "leila-north-direct"],
+          "options": ["david-north-direct", "leila-north-direct", "unrelated"]
+        }
+      ],
+      "south": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "amina-south-direct",
+          "accepted": ["amina-south-direct", "amina-south-north"],
+          "options": ["amina-south-direct", "amina-south-north", "unrelated"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "esa",
+    "id": "kenia.first.weight",
+    "choices": {
+      "direct": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "north": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "south": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "esa",
+    "id": "kenia.revised.proof.evidence",
+    "choices": {
+      "direct": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "amina-direct-south",
+          "accepted": ["amina-direct-south", "david-direct-north"],
+          "options": ["amina-direct-south", "david-direct-north", "unrelated"]
+        }
+      ],
+      "north": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "amina-north-direct",
+          "accepted": ["amina-north-direct", "amina-north-south"],
+          "options": ["amina-north-direct", "amina-north-south", "unrelated"]
+        }
+      ],
+      "south": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "leila-south-direct",
+          "accepted": ["leila-south-direct", "leila-south-north"],
+          "options": ["leila-south-direct", "leila-south-north", "unrelated"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "esa",
+    "id": "kenia.revised.proof.limit",
+    "choices": {
+      "direct": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "amina-direct-north",
+          "accepted": ["amina-direct-north", "leila-direct-south"],
+          "options": ["leila-direct-south", "unrelated", "amina-direct-north"]
+        }
+      ],
+      "north": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "david-north-direct",
+          "accepted": ["david-north-direct", "leila-north-direct"],
+          "options": ["leila-north-direct", "unrelated", "david-north-direct"]
+        }
+      ],
+      "south": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "amina-south-direct",
+          "accepted": ["amina-south-direct", "amina-south-north"],
+          "options": ["amina-south-north", "unrelated", "amina-south-direct"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "esa",
+    "id": "kenia.revised.weight",
+    "choices": {
+      "direct": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "north": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "south": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "msa",
+    "id": "kenia.first.proof",
+    "choices": {
+      "direct": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "amina-direct-south",
+          "accepted": [
+            "amina-direct-south",
+            "david-direct-north",
+            "david-direct-south",
+            "leila-direct-north"
+          ],
+          "options": [
+            "david-direct-south",
+            "leila-direct-north",
+            "unrelated",
+            "amina-direct-south",
+            "david-direct-north"
+          ]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "amina-direct-north",
+          "accepted": ["amina-direct-north", "leila-direct-south"],
+          "options": ["unrelated", "amina-direct-north", "leila-direct-south"]
+        }
+      ],
+      "north": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "amina-north-direct",
+          "accepted": ["amina-north-direct", "amina-north-south"],
+          "options": ["amina-north-direct", "amina-north-south", "unrelated"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "david-north-direct",
+          "accepted": [
+            "david-north-direct",
+            "leila-north-direct",
+            "leila-north-south"
+          ],
+          "options": [
+            "unrelated",
+            "david-north-direct",
+            "leila-north-direct",
+            "leila-north-south"
+          ]
+        }
+      ],
+      "south": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "leila-south-direct",
+          "accepted": ["leila-south-direct", "leila-south-north"],
+          "options": ["leila-south-direct", "leila-south-north", "unrelated"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "amina-south-direct",
+          "accepted": [
+            "amina-south-direct",
+            "amina-south-north",
+            "david-south-direct"
+          ],
+          "options": [
+            "unrelated",
+            "amina-south-direct",
+            "amina-south-north",
+            "david-south-direct"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "msa",
+    "id": "kenia.first.weight",
+    "choices": {
+      "direct": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "north": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "south": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "msa",
+    "id": "kenia.revised.proof",
+    "choices": {
+      "direct": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "amina-direct-south",
+          "accepted": [
+            "amina-direct-south",
+            "david-direct-north",
+            "david-direct-south",
+            "leila-direct-north"
+          ],
+          "options": [
+            "unrelated",
+            "amina-direct-south",
+            "david-direct-north",
+            "david-direct-south",
+            "leila-direct-north"
+          ]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "amina-direct-north",
+          "accepted": ["amina-direct-north", "leila-direct-south"],
+          "options": ["amina-direct-north", "leila-direct-south", "unrelated"]
+        }
+      ],
+      "north": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "amina-north-direct",
+          "accepted": ["amina-north-direct", "amina-north-south"],
+          "options": ["amina-north-south", "unrelated", "amina-north-direct"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "david-north-direct",
+          "accepted": [
+            "david-north-direct",
+            "leila-north-direct",
+            "leila-north-south"
+          ],
+          "options": [
+            "leila-north-direct",
+            "leila-north-south",
+            "unrelated",
+            "david-north-direct"
+          ]
+        }
+      ],
+      "south": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "leila-south-direct",
+          "accepted": ["leila-south-direct", "leila-south-north"],
+          "options": ["leila-south-north", "unrelated", "leila-south-direct"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "amina-south-direct",
+          "accepted": [
+            "amina-south-direct",
+            "amina-south-north",
+            "david-south-direct"
+          ],
+          "options": [
+            "amina-south-north",
+            "david-south-direct",
+            "unrelated",
+            "amina-south-direct"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "msa",
+    "id": "kenia.revised.weight",
+    "choices": {
+      "direct": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "north": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "south": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "ahr",
+    "id": "kenia.first.proof",
+    "choices": {
+      "direct": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "amina-direct-south",
+          "accepted": [
+            "amina-direct-south",
+            "david-direct-north",
+            "david-direct-south",
+            "leila-direct-north"
+          ],
+          "options": [
+            "david-direct-south",
+            "leila-direct-north",
+            "unrelated",
+            "amina-direct-south",
+            "david-direct-north"
+          ]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "amina-direct-north",
+          "accepted": ["amina-direct-north", "leila-direct-south"],
+          "options": ["unrelated", "amina-direct-north", "leila-direct-south"]
+        }
+      ],
+      "north": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "amina-north-direct",
+          "accepted": ["amina-north-direct", "amina-north-south"],
+          "options": ["amina-north-direct", "amina-north-south", "unrelated"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "david-north-direct",
+          "accepted": [
+            "david-north-direct",
+            "leila-north-direct",
+            "leila-north-south"
+          ],
+          "options": [
+            "unrelated",
+            "david-north-direct",
+            "leila-north-direct",
+            "leila-north-south"
+          ]
+        }
+      ],
+      "south": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "leila-south-direct",
+          "accepted": ["leila-south-direct", "leila-south-north"],
+          "options": ["leila-south-direct", "leila-south-north", "unrelated"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "amina-south-direct",
+          "accepted": [
+            "amina-south-direct",
+            "amina-south-north",
+            "david-south-direct"
+          ],
+          "options": [
+            "unrelated",
+            "amina-south-direct",
+            "amina-south-north",
+            "david-south-direct"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "ahr",
+    "id": "kenia.first.weight",
+    "choices": {
+      "direct": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "north": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "south": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "ahr",
+    "id": "kenia.revised.proof",
+    "choices": {
+      "direct": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "amina-direct-south",
+          "accepted": [
+            "amina-direct-south",
+            "david-direct-north",
+            "david-direct-south",
+            "leila-direct-north"
+          ],
+          "options": [
+            "unrelated",
+            "amina-direct-south",
+            "david-direct-north",
+            "david-direct-south",
+            "leila-direct-north"
+          ]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "amina-direct-north",
+          "accepted": ["amina-direct-north", "leila-direct-south"],
+          "options": ["amina-direct-north", "leila-direct-south", "unrelated"]
+        }
+      ],
+      "north": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "amina-north-direct",
+          "accepted": ["amina-north-direct", "amina-north-south"],
+          "options": ["amina-north-south", "unrelated", "amina-north-direct"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "david-north-direct",
+          "accepted": [
+            "david-north-direct",
+            "leila-north-direct",
+            "leila-north-south"
+          ],
+          "options": [
+            "leila-north-direct",
+            "leila-north-south",
+            "unrelated",
+            "david-north-direct"
+          ]
+        }
+      ],
+      "south": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "leila-south-direct",
+          "accepted": ["leila-south-direct", "leila-south-north"],
+          "options": ["leila-south-north", "unrelated", "leila-south-direct"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "amina-south-direct",
+          "accepted": [
+            "amina-south-direct",
+            "amina-south-north",
+            "david-south-direct"
+          ],
+          "options": [
+            "amina-south-north",
+            "david-south-direct",
+            "unrelated",
+            "amina-south-direct"
+          ]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "ahr",
+    "id": "kenia.revised.weight",
+    "choices": {
+      "direct": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "north": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "south": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s1",
+    "profile": "ahr",
+    "id": "kenia.revised.own",
+    "choices": {
+      "direct": [
+        {
+          "id": "explanation",
+          "kind": "text"
+        }
+      ],
+      "north": [
+        {
+          "id": "explanation",
+          "kind": "text"
+        }
+      ],
+      "south": [
+        {
+          "id": "explanation",
+          "kind": "text"
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s2",
+    "profile": "foerder",
+    "id": "demand.final.proof.evidence",
+    "choices": {
+      "bus": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "bus",
+          "options": ["path", "bus"]
+        }
+      ],
+      "path": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "path",
+          "options": ["path", "bus"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s2",
+    "profile": "foerder",
+    "id": "demand.final.proof.limit",
+    "choices": {
+      "bus": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "bus",
+          "options": ["path", "bus"]
+        }
+      ],
+      "path": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "path",
+          "options": ["path", "bus"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s2",
+    "profile": "foerder",
+    "id": "demand.final.weight",
+    "choices": {
+      "bus": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "path": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s2",
+    "profile": "esa",
+    "id": "demand.final.proof.evidence",
+    "choices": {
+      "bus": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "bus",
+          "options": ["path", "bus"]
+        }
+      ],
+      "path": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "path",
+          "options": ["path", "bus"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s2",
+    "profile": "esa",
+    "id": "demand.final.proof.limit",
+    "choices": {
+      "bus": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "bus",
+          "options": ["path", "bus"]
+        }
+      ],
+      "path": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "path",
+          "options": ["path", "bus"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s2",
+    "profile": "esa",
+    "id": "demand.final.weight",
+    "choices": {
+      "bus": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "path": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s2",
+    "profile": "msa",
+    "id": "demand.final.proof",
+    "choices": {
+      "bus": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "bus",
+          "options": ["bus", "path"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "bus",
+          "options": ["bus", "path"]
+        }
+      ],
+      "path": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "path",
+          "options": ["bus", "path"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "path",
+          "options": ["bus", "path"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s2",
+    "profile": "msa",
+    "id": "demand.final.weight",
+    "choices": {
+      "bus": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "path": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s2",
+    "profile": "ahr",
+    "id": "demand.final.proof",
+    "choices": {
+      "bus": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "bus",
+          "options": ["bus", "path"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "bus",
+          "options": ["bus", "path"]
+        }
+      ],
+      "path": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "path",
+          "options": ["bus", "path"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "path",
+          "options": ["bus", "path"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s2",
+    "profile": "ahr",
+    "id": "demand.final.weight",
+    "choices": {
+      "bus": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "path": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s2",
+    "profile": "ahr",
+    "id": "demand.final.own",
+    "choices": {
+      "bus": [
+        {
+          "id": "explanation",
+          "kind": "text"
+        }
+      ],
+      "path": [
+        {
+          "id": "explanation",
+          "kind": "text"
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s3",
+    "profile": "foerder",
+    "id": "cocoa.final.proof.evidence",
+    "choices": {
+      "quality": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "quality",
+          "options": ["quality", "process"]
+        }
+      ],
+      "process": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "process",
+          "options": ["quality", "process"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s3",
+    "profile": "foerder",
+    "id": "cocoa.final.proof.limit",
+    "choices": {
+      "quality": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "quality",
+          "options": ["quality", "process"]
+        }
+      ],
+      "process": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "process",
+          "options": ["quality", "process"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s3",
+    "profile": "foerder",
+    "id": "cocoa.final.weight",
+    "choices": {
+      "quality": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "process": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s3",
+    "profile": "esa",
+    "id": "cocoa.final.proof.evidence",
+    "choices": {
+      "quality": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "quality",
+          "options": ["quality", "process"]
+        }
+      ],
+      "process": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "process",
+          "options": ["quality", "process"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s3",
+    "profile": "esa",
+    "id": "cocoa.final.proof.limit",
+    "choices": {
+      "quality": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "quality",
+          "options": ["quality", "process"]
+        }
+      ],
+      "process": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "process",
+          "options": ["quality", "process"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s3",
+    "profile": "esa",
+    "id": "cocoa.final.weight",
+    "choices": {
+      "quality": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "process": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s3",
+    "profile": "msa",
+    "id": "cocoa.final.proof",
+    "choices": {
+      "quality": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "quality",
+          "options": ["process", "quality"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "quality",
+          "options": ["process", "quality"]
+        }
+      ],
+      "process": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "process",
+          "options": ["process", "quality"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "process",
+          "options": ["process", "quality"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s3",
+    "profile": "msa",
+    "id": "cocoa.final.weight",
+    "choices": {
+      "quality": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "process": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s3",
+    "profile": "ahr",
+    "id": "cocoa.final.proof",
+    "choices": {
+      "quality": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "quality",
+          "options": ["process", "quality"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "quality",
+          "options": ["process", "quality"]
+        }
+      ],
+      "process": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "process",
+          "options": ["process", "quality"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "process",
+          "options": ["process", "quality"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s3",
+    "profile": "ahr",
+    "id": "cocoa.final.weight",
+    "choices": {
+      "quality": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "process": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s3",
+    "profile": "ahr",
+    "id": "cocoa.final.own",
+    "choices": {
+      "quality": [
+        {
+          "id": "explanation",
+          "kind": "text"
+        }
+      ],
+      "process": [
+        {
+          "id": "explanation",
+          "kind": "text"
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s4",
+    "profile": "foerder",
+    "id": "share.proof.evidence",
+    "choices": {
+      "40-40-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-0-120": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-20-100": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-40-80": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-60-60": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-80-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-100-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-120-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-0-100": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-20-80": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-40-60": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-60-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-80-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-100-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "40-0-80": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "40-20-60": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "40-60-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "40-80-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "60-0-60": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "60-20-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "60-40-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "60-60-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "80-0-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "80-20-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "80-40-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "100-0-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "100-20-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "120-0-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0"],
+          "options": ["0", "1", "2"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s4",
+    "profile": "foerder",
+    "id": "share.proof.limit",
+    "choices": {
+      "40-40-40": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "0-0-120": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "0-20-100": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "0-40-80": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "0-60-60": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "0-80-40": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "0-100-20": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "0-120-0": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "20-0-100": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "20-20-80": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "20-40-60": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "20-60-40": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "20-80-20": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "20-100-0": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "40-0-80": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "40-20-60": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "40-60-20": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "40-80-0": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "60-0-60": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "60-20-40": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "60-40-20": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "60-60-0": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "80-0-40": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "80-20-20": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "80-40-0": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "100-0-20": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "100-20-0": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "120-0-0": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0"],
+          "options": ["1", "2", "0"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s4",
+    "profile": "esa",
+    "id": "share.proof.evidence",
+    "choices": {
+      "40-40-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-0-120": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-20-100": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-40-80": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-60-60": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-80-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-100-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-120-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-0-100": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-20-80": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-40-60": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-60-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-80-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-100-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "40-0-80": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "40-20-60": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "40-60-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "40-80-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "60-0-60": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "60-20-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "60-40-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "60-60-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "80-0-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "80-20-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "80-40-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "100-0-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "100-20-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "120-0-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0"],
+          "options": ["0", "1", "2"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s4",
+    "profile": "esa",
+    "id": "share.proof.limit",
+    "choices": {
+      "40-40-40": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "0-0-120": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "0-20-100": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "0-40-80": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "0-60-60": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "0-80-40": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "0-100-20": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "0-120-0": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "20-0-100": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "20-20-80": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "20-40-60": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "20-60-40": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "20-80-20": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "20-100-0": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "40-0-80": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "40-20-60": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "40-60-20": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "40-80-0": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "60-0-60": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "60-20-40": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "60-40-20": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "60-60-0": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "80-0-40": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "80-20-20": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "80-40-0": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "100-0-20": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "100-20-0": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        }
+      ],
+      "120-0-0": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0"],
+          "options": ["1", "2", "0"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s4",
+    "profile": "msa",
+    "id": "share.proof",
+    "choices": {
+      "40-40-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-0-120": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-20-100": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-40-80": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-60-60": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-80-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-100-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-120-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-0-100": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-20-80": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-40-60": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-60-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-80-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-100-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "40-0-80": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "40-20-60": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "40-60-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "40-80-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "60-0-60": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "60-20-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "60-40-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "60-60-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "80-0-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "80-20-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "80-40-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "100-0-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "100-20-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "120-0-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0"],
+          "options": ["0", "1", "2"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s4",
+    "profile": "ahr",
+    "id": "share.proof",
+    "choices": {
+      "40-40-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-0-120": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-20-100": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-40-80": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-60-60": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-80-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-100-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "0-120-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-0-100": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-20-80": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-40-60": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-60-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-80-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "20-100-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "40-0-80": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "40-20-60": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "2",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "40-60-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "40-80-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "1",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "60-0-60": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "60-20-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "60-40-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "60-60-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "80-0-40": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "80-20-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "80-40-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "100-0-20": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "2"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "100-20-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0", "1"],
+          "options": ["0", "1", "2"]
+        }
+      ],
+      "120-0-0": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0"],
+          "options": ["1", "2", "0"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "0",
+          "accepted": ["0"],
+          "options": ["0", "1", "2"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s5",
+    "profile": "foerder",
+    "id": "water.final.proof.evidence",
+    "choices": {
+      "repair": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "repair",
+          "options": ["tech", "repair"]
+        }
+      ],
+      "tech": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "tech",
+          "options": ["tech", "repair"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s5",
+    "profile": "foerder",
+    "id": "water.final.proof.limit",
+    "choices": {
+      "repair": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "repair",
+          "options": ["tech", "repair"]
+        }
+      ],
+      "tech": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "tech",
+          "options": ["tech", "repair"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s5",
+    "profile": "foerder",
+    "id": "water.final.weight",
+    "choices": {
+      "repair": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "tech": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s5",
+    "profile": "esa",
+    "id": "water.final.proof.evidence",
+    "choices": {
+      "repair": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "repair",
+          "options": ["tech", "repair"]
+        }
+      ],
+      "tech": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "tech",
+          "options": ["tech", "repair"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s5",
+    "profile": "esa",
+    "id": "water.final.proof.limit",
+    "choices": {
+      "repair": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "repair",
+          "options": ["tech", "repair"]
+        }
+      ],
+      "tech": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "tech",
+          "options": ["tech", "repair"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s5",
+    "profile": "esa",
+    "id": "water.final.weight",
+    "choices": {
+      "repair": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "tech": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s5",
+    "profile": "msa",
+    "id": "water.final.proof",
+    "choices": {
+      "repair": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "repair",
+          "options": ["repair", "tech"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "repair",
+          "options": ["repair", "tech"]
+        }
+      ],
+      "tech": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "tech",
+          "options": ["repair", "tech"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "tech",
+          "options": ["repair", "tech"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s5",
+    "profile": "msa",
+    "id": "water.final.weight",
+    "choices": {
+      "repair": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "tech": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s5",
+    "profile": "ahr",
+    "id": "water.final.proof",
+    "choices": {
+      "repair": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "repair",
+          "options": ["repair", "tech"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "repair",
+          "options": ["repair", "tech"]
+        }
+      ],
+      "tech": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "tech",
+          "options": ["repair", "tech"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "tech",
+          "options": ["repair", "tech"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s5",
+    "profile": "ahr",
+    "id": "water.final.weight",
+    "choices": {
+      "repair": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "tech": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s5",
+    "profile": "ahr",
+    "id": "water.final.own",
+    "choices": {
+      "repair": [
+        {
+          "id": "explanation",
+          "kind": "text"
+        }
+      ],
+      "tech": [
+        {
+          "id": "explanation",
+          "kind": "text"
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s6",
+    "profile": "foerder",
+    "id": "area.final.proof.evidence",
+    "choices": {
+      "same": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "same",
+          "options": ["same", "extra"]
+        }
+      ],
+      "extra": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "extra",
+          "options": ["same", "extra"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s6",
+    "profile": "foerder",
+    "id": "area.final.proof.limit",
+    "choices": {
+      "same": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "same",
+          "options": ["same", "extra"]
+        }
+      ],
+      "extra": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "extra",
+          "options": ["same", "extra"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s6",
+    "profile": "foerder",
+    "id": "area.final.weight",
+    "choices": {
+      "same": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "extra": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s6",
+    "profile": "esa",
+    "id": "area.final.proof.evidence",
+    "choices": {
+      "same": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "same",
+          "options": ["same", "extra"]
+        }
+      ],
+      "extra": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "extra",
+          "options": ["same", "extra"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s6",
+    "profile": "esa",
+    "id": "area.final.proof.limit",
+    "choices": {
+      "same": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "same",
+          "options": ["same", "extra"]
+        }
+      ],
+      "extra": [
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "extra",
+          "options": ["same", "extra"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s6",
+    "profile": "esa",
+    "id": "area.final.weight",
+    "choices": {
+      "same": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "extra": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s6",
+    "profile": "msa",
+    "id": "area.final.proof",
+    "choices": {
+      "same": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "same",
+          "options": ["extra", "same"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "same",
+          "options": ["extra", "same"]
+        }
+      ],
+      "extra": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "extra",
+          "options": ["extra", "same"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "extra",
+          "options": ["extra", "same"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s6",
+    "profile": "msa",
+    "id": "area.final.weight",
+    "choices": {
+      "same": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "extra": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s6",
+    "profile": "ahr",
+    "id": "area.final.proof",
+    "choices": {
+      "same": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "same",
+          "options": ["extra", "same"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "same",
+          "options": ["extra", "same"]
+        }
+      ],
+      "extra": [
+        {
+          "id": "evidence",
+          "kind": "choice",
+          "expected": "extra",
+          "options": ["extra", "same"]
+        },
+        {
+          "id": "limit",
+          "kind": "choice",
+          "expected": "extra",
+          "options": ["extra", "same"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s6",
+    "profile": "ahr",
+    "id": "area.final.weight",
+    "choices": {
+      "same": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ],
+      "extra": [
+        {
+          "id": "weight",
+          "kind": "choice",
+          "expected": "either",
+          "options": ["benefit", "reconsider"]
+        }
+      ]
+    }
+  },
+  {
+    "unit": "s6",
+    "profile": "ahr",
+    "id": "area.final.own",
+    "choices": {
+      "same": [
+        {
+          "id": "explanation",
+          "kind": "text"
+        }
+      ],
+      "extra": [
+        {
+          "id": "explanation",
+          "kind": "text"
+        }
+      ]
+    }
+  }
+]

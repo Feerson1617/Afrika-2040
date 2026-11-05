@@ -7,21 +7,45 @@ import {
   persons,
   routeNames,
   routes,
+  roadEvent,
 } from './content.ts';
-import type { Person, Route } from './content.ts';
+import type { Foot, Person, Route, Situation } from './content.ts';
 export function lineDuration(route: Route) {
   return lineSegments[route].reduce(
     (sum, segment) => sum + episode.times.bus[segment],
     0,
   );
 }
-export function journeyParts(person: Person, route: Route) {
+export function walkTime(
+  person: Person,
+  stop: Foot,
+  situation: Situation = 'before',
+) {
+  const base = episode.times.walk[person][stop]!;
+  return (
+    base +
+    (situation === 'now' &&
+    person === roadEvent.person &&
+    stop === roadEvent.stop
+      ? roadEvent.extraWalk
+      : 0)
+  );
+}
+export function journeyParts(
+  person: Person,
+  route: Route,
+  situation: Situation = 'before',
+) {
   const board = boarding[person][route];
   const segments = lineSegments[route].slice(lineStops[route].indexOf(board));
-  return { board, segments, walk: episode.times.walk[person][board]! };
+  return { board, segments, walk: walkTime(person, board, situation) };
 }
-export function journey(person: Person, route: Route) {
-  const parts = journeyParts(person, route);
+export function journey(
+  person: Person,
+  route: Route,
+  situation: Situation = 'before',
+) {
+  const parts = journeyParts(person, route, situation);
   const bus = parts.segments.reduce(
     (sum, segment) => sum + episode.times.bus[segment],
     0,
@@ -40,21 +64,22 @@ export function evidenceParts(id: Evidence) {
   const [person, route, other] = id.split('-') as [Person, Route, Route];
   return { person, route, other };
 }
-export function evidenceLabel(id: Evidence) {
+export function evidenceLabel(id: Evidence, situation: Situation = 'before') {
   const { person, route, other } = evidenceParts(id);
-  return `${personNames[person]}: ${routeNames[route]} ${journey(person, route).total} statt ${routeNames[other]} ${journey(person, other).total} Minuten.`;
+  return `${personNames[person]}: ${routeNames[route]} ${journey(person, route, situation).total} statt ${routeNames[other]} ${journey(person, other, situation).total} Minuten.`;
 }
 export function evidenceFits(
   id: Evidence | undefined,
   route: Route,
   kind: 'advantage' | 'disadvantage',
+  situation: Situation = 'before',
 ) {
   if (!id || !evidenceIds.includes(id)) return false;
   const parts = evidenceParts(id);
   if (parts.route !== route) return false;
   const delta =
-    journey(parts.person, route).total -
-    journey(parts.person, parts.other).total;
+    journey(parts.person, route, situation).total -
+    journey(parts.person, parts.other, situation).total;
   return kind === 'advantage' ? delta < 0 : delta > 0;
 }
 export function differentPeople(a?: Evidence, b?: Evidence) {

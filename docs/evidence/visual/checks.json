@@ -1,0 +1,47 @@
+{
+  "fallbackCommit": "e9664a2cf7f689657508c693521ff83b327f10bf",
+  "fallbackCI": {
+    "runId": 41883485054,
+    "status": "success",
+    "browserCasesPerEngine": 470
+  },
+  "firstVisualCommit": "bf527b45b2f1334cc4219885c155ed2d879b6f2d",
+  "firstVisualLocal": {
+    "logicPassed": 511,
+    "browserPassed": 1006,
+    "skipped": 0,
+    "failed": 0
+  },
+  "firstVisualCI": {
+    "runId": 41897455709,
+    "conclusion": "cancelled",
+    "chromiumPassed": 503,
+    "webkit": "job total time limit after slow dependency installation; also two failed cases, corrected in this follow-up"
+  },
+  "currentLocal": {
+    "logicPassed": 511,
+    "failed": 0,
+    "skipped": 0,
+    "targetedBrowserPassed": 108,
+    "stabilityRepetitionsPassed": 40,
+    "includesVisualCases": 68,
+    "typescript": "passed",
+    "build": "passed",
+    "artifactAudit": "passed"
+  },
+  "newContrastTestOnOldProduction": {
+    "chromium": "expected failure: opacity 0.7",
+    "webkit": "expected failure: opacity 0.7"
+  },
+  "currentFullCIGate": {
+    "cases": 1008,
+    "perEngine": 504,
+    "status": "Actual result for the final commit is reported in PR #2 and handover after push."
+  },
+  "byteIdenticalExistingSourceFiles": 65,
+  "variants": 52,
+  "tasks": 472,
+  "physicalIPadTested": false,
+  "learningEffectEmpiricallyTested": false,
+  "screenshots": "Ten after-images and layout re-rendered from corrected production build; byte-identical to committed reduced-motion comparison images."
+}

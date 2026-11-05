@@ -1,0 +1,92 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 50,
+    "total": 5,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.KD.ZG",
+        "value": "GDP growth (annual %)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2023",
+      "value": 3.14009100080186,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.KD.ZG",
+        "value": "GDP growth (annual %)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2022",
+      "value": 3.80484978178042,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.KD.ZG",
+        "value": "GDP growth (annual %)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2021",
+      "value": 5.07646643533542,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.KD.ZG",
+        "value": "GDP growth (annual %)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2020",
+      "value": 0.513941670628171,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "NY.GDP.MKTP.KD.ZG",
+        "value": "GDP growth (annual %)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2019",
+      "value": 6.5077747939152,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

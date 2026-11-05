@@ -1,0 +1,13 @@
+{
+  "required_hosts": [
+    "cdn.playwright.dev",
+    "playwright.download.prss.microsoft.com"
+  ],
+  "draft_saved": true,
+  "requires_publish": true,
+  "runtime_applied": false,
+  "download_http_status": 403,
+  "failure": "Domain forbidden",
+  "network_configured_browser": "WebKit not installed",
+  "runtime_variables_or_secrets_added": false
+}

@@ -1,0 +1,396 @@
+[
+  {
+    "page": 1,
+    "pages": 1,
+    "per_page": 100,
+    "total": 24,
+    "sourceid": "2",
+    "lastupdated": "2026-10-08"
+  },
+  [
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2023",
+      "value": 89.5,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2022",
+      "value": 85.1,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2021",
+      "value": 86.3,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2020",
+      "value": 85.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2019",
+      "value": 83.5,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2018",
+      "value": 80.4,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2017",
+      "value": 79,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2016",
+      "value": 79.3,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2015",
+      "value": 74,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2014",
+      "value": 78.3,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2013",
+      "value": 70.7,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2012",
+      "value": 56.5,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2011",
+      "value": 64.1,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2010",
+      "value": 64.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2009",
+      "value": 61.1,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2008",
+      "value": 60.5,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2007",
+      "value": 56.9,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2006",
+      "value": 55.1,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2005",
+      "value": 41.2,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2004",
+      "value": 50.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2003",
+      "value": 48.3,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2002",
+      "value": 46.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2001",
+      "value": 44.8,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    },
+    {
+      "indicator": {
+        "id": "EG.ELC.ACCS.ZS",
+        "value": "Access to electricity (% of population)"
+      },
+      "country": {
+        "id": "GH",
+        "value": "Ghana"
+      },
+      "countryiso3code": "GHA",
+      "date": "2000",
+      "value": 43.7,
+      "unit": "",
+      "obs_status": "",
+      "decimal": 1
+    }
+  ]
+]

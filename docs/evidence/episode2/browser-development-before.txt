@@ -1,0 +1,523 @@
+[WebServer] (node:87920) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:87945) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 17 tests using 2 workers
+
+(node:87958) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:87957) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/17] [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete path on desktop: direct entry, real model experiments and supported judgment limits
+[2/17] [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete bus on desktop: direct entry, real model experiments and supported judgment limits
+  1) [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete path on desktop: direct entry, real model experiments and supported judgment limits 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Console: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      221 |         true,
+      222 |       );
+    > 223 |       expect(errors).toEqual([]);
+          |                      ^
+      224 |       await context.close();
+      225 |     });
+      226 |   }
+        at /workspace/Afrika-2040/tests/browser/episode2.spec.ts:223:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-complet-18518-d-supported-judgment-limits-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/episode2-Episode-2-complet-18518-d-supported-judgment-limits-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-complet-18518-d-supported-judgment-limits-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/episode2-Episode-2-complet-18518-d-supported-judgment-limits-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  2) [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete bus on desktop: direct entry, real model experiments and supported judgment limits 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Console: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      221 |         true,
+      222 |       );
+    > 223 |       expect(errors).toEqual([]);
+          |                      ^
+      224 |       await context.close();
+      225 |     });
+      226 |   }
+        at /workspace/Afrika-2040/tests/browser/episode2.spec.ts:223:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-complet-df130-d-supported-judgment-limits-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/episode2-Episode-2-complet-df130-d-supported-judgment-limits-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-complet-df130-d-supported-judgment-limits-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/episode2-Episode-2-complet-df130-d-supported-judgment-limits-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:88228) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[3/17] [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete bus on ipad-landscape: direct entry, real model experiments and supported judgment limits
+(node:88236) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[4/17] [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete path on ipad-landscape: direct entry, real model experiments and supported judgment limits
+  3) [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete bus on ipad-landscape: direct entry, real model experiments and supported judgment limits 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Console: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      221 |         true,
+      222 |       );
+    > 223 |       expect(errors).toEqual([]);
+          |                      ^
+      224 |       await context.close();
+      225 |     });
+      226 |   }
+        at /workspace/Afrika-2040/tests/browser/episode2.spec.ts:223:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-complet-0de2e-d-supported-judgment-limits-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/episode2-Episode-2-complet-0de2e-d-supported-judgment-limits-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-complet-0de2e-d-supported-judgment-limits-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/episode2-Episode-2-complet-0de2e-d-supported-judgment-limits-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  4) [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete path on ipad-landscape: direct entry, real model experiments and supported judgment limits 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Console: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      221 |         true,
+      222 |       );
+    > 223 |       expect(errors).toEqual([]);
+          |                      ^
+      224 |       await context.close();
+      225 |     });
+      226 |   }
+        at /workspace/Afrika-2040/tests/browser/episode2.spec.ts:223:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-complet-180da-d-supported-judgment-limits-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/episode2-Episode-2-complet-180da-d-supported-judgment-limits-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-complet-180da-d-supported-judgment-limits-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/episode2-Episode-2-complet-180da-d-supported-judgment-limits-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:88498) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:88504) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[5/17] [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete bus on ipad-portrait: direct entry, real model experiments and supported judgment limits
+[6/17] [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete path on ipad-portrait: direct entry, real model experiments and supported judgment limits
+  5) [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete path on ipad-portrait: direct entry, real model experiments and supported judgment limits 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Console: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      221 |         true,
+      222 |       );
+    > 223 |       expect(errors).toEqual([]);
+          |                      ^
+      224 |       await context.close();
+      225 |     });
+      226 |   }
+        at /workspace/Afrika-2040/tests/browser/episode2.spec.ts:223:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-complet-2ddbc-d-supported-judgment-limits-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/episode2-Episode-2-complet-2ddbc-d-supported-judgment-limits-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-complet-2ddbc-d-supported-judgment-limits-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/episode2-Episode-2-complet-2ddbc-d-supported-judgment-limits-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  6) [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete bus on ipad-portrait: direct entry, real model experiments and supported judgment limits 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Console: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      221 |         true,
+      222 |       );
+    > 223 |       expect(errors).toEqual([]);
+          |                      ^
+      224 |       await context.close();
+      225 |     });
+      226 |   }
+        at /workspace/Afrika-2040/tests/browser/episode2.spec.ts:223:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-complet-c178f-d-supported-judgment-limits-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/episode2-Episode-2-complet-c178f-d-supported-judgment-limits-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-complet-c178f-d-supported-judgment-limits-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/episode2-Episode-2-complet-c178f-d-supported-judgment-limits-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:88767) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:88766) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[7/17] [chromium] › tests/browser/episode2.spec.ts:288:3 › Episode 2 conscious goal conflict bus has two valid revision paths and a concrete weighted product
+[8/17] [chromium] › tests/browser/episode2.spec.ts:227:1 › Episode 2 missing and partial inputs, automatic help after two errors, both trial effects and deliberate adoption
+[9/17] [chromium] › tests/browser/episode2.spec.ts:288:3 › Episode 2 conscious goal conflict path has two valid revision paths and a concrete weighted product
+[10/17] [chromium] › tests/browser/episode2.spec.ts:328:1 › Episode 2 unclear free text remains ungraded, escaped and editable; example adoption keeps own text and honest provenance
+[11/17] [chromium] › tests/browser/episode2.spec.ts:365:1 › Episode 2 uses an existing first recommendation, keeps it through reload/back/menu and opens its saved report
+[12/17] [chromium] › tests/browser/episode2.spec.ts:399:1 › Episode 2 native keyboard alone operates complete direct entry, real map controls, choices and report
+[13/17] [chromium] › tests/browser/episode2.spec.ts:440:1 › Episode 2 blocked storage permits a complete supported flow, word help and confirmed restart
+[14/17] [chromium] › tests/browser/episode2.spec.ts:469:1 › Episode 2 damaged optional storage and explicit step reset have safe continuations
+  7) [chromium] › tests/browser/episode2.spec.ts:469:1 › Episode 2 damaged optional storage and explicit step reset have safe continuations 
+
+    Error: expect(received).toBeUndefined()
+
+    Received: {"basis": "chosen", "check": {"complete": true, "explored": [], "failures": 0, "feedback": {"complete": true, "kind": "correct", "text": "24 Menschen möchten fahren. Es gibt 20 Plätze. 4 Menschen müssen später fahren.", "title": "✓ Nachfrage und Plätze verglichen"}, "help": 0, "transferFailures": 0}, "decide": {"complete": false, "explored": [], "failures": 0, "help": 0, "transferFailures": 0}, "decision": {"text": ""}, "enough": "no", "explore": {"complete": false, "explored": [], "failures": 0, "help": 0, "transferFailures": 0}, "explored": [], "later": 4, "measure": "base", "route": "north", "seenNow": true, "trials": {"bus": {"capacity": "broken"}}, "view": "now"}
+
+      488 |     page.getByRole('button', { name: 'Episode 2 starten', exact: true }),
+      489 |   ).toBeVisible();
+    > 490 |   expect((await saved(page)).demand).toBeUndefined();
+          |                                      ^
+      491 |   await page
+      492 |     .getByRole('button', { name: 'Episode 2 starten', exact: true })
+      493 |     .click();
+        at /workspace/Afrika-2040/tests/browser/episode2.spec.ts:490:38
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-damaged-3e52c-set-have-safe-continuations-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/episode2-Episode-2-damaged-3e52c-set-have-safe-continuations-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-damaged-3e52c-set-have-safe-continuations-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/episode2-Episode-2-damaged-3e52c-set-have-safe-continuations-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:89284) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[15/17] [chromium] › tests/browser/episode2.spec.ts:497:3 › Episode 2 full bus works below the local Pages prefix with clean resources
+  8) [chromium] › tests/browser/episode2.spec.ts:497:3 › Episode 2 full bus works below the local Pages prefix with clean resources 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Console: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      507 |     await page.reload();
+      508 |     await expect(page.locator('.demand-product')).toBeVisible();
+    > 509 |     expect(errors).toEqual([]);
+          |                    ^
+      510 |   });
+      511 | test('Episode 2 start, comparison, trial, open conflict, supported product pass scoped axe rules', async ({
+      512 |   page,
+        at /workspace/Afrika-2040/tests/browser/episode2.spec.ts:509:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-full-bu-731a3-prefix-with-clean-resources-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/episode2-Episode-2-full-bu-731a3-prefix-with-clean-resources-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-full-bu-731a3-prefix-with-clean-resources-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/episode2-Episode-2-full-bu-731a3-prefix-with-clean-resources-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:89484) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[16/17] [chromium] › tests/browser/episode2.spec.ts:497:3 › Episode 2 full path works below the local Pages prefix with clean resources
+  9) [chromium] › tests/browser/episode2.spec.ts:497:3 › Episode 2 full path works below the local Pages prefix with clean resources 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 3
+
+    - Array []
+    + Array [
+    +   "Console: Failed to load resource: the server responded with a status of 404 (Not Found)",
+    + ]
+
+      507 |     await page.reload();
+      508 |     await expect(page.locator('.demand-product')).toBeVisible();
+    > 509 |     expect(errors).toEqual([]);
+          |                    ^
+      510 |   });
+      511 | test('Episode 2 start, comparison, trial, open conflict, supported product pass scoped axe rules', async ({
+      512 |   page,
+        at /workspace/Afrika-2040/tests/browser/episode2.spec.ts:509:20
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-full-pa-2aaa7-prefix-with-clean-resources-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/episode2-Episode-2-full-pa-2aaa7-prefix-with-clean-resources-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-full-pa-2aaa7-prefix-with-clean-resources-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/episode2-Episode-2-full-pa-2aaa7-prefix-with-clean-resources-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+(node:89663) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[17/17] [chromium] › tests/browser/episode2.spec.ts:511:1 › Episode 2 start, comparison, trial, open conflict, supported product pass scoped axe rules
+  10) [chromium] › tests/browser/episode2.spec.ts:511:1 › Episode 2 start, comparison, trial, open conflict, supported product pass scoped axe rules 
+
+    Error: expect(received).toEqual(expected) // deep equality
+
+    - Expected  -  1
+    + Received  + 55
+
+    - Array []
+    + Array [
+    +   Object {
+    +     "description": "Ensure interactive controls are not nested as they are not always announced by screen readers or can cause focus problems for assistive technologies",
+    +     "help": "Interactive controls must not be nested",
+    +     "helpUrl": "https://dequeuniversity.com/rules/axe/4.14/nested-interactive?application=playwright",
+    +     "id": "nested-interactive",
+    +     "impact": "serious",
+    +     "nodes": Array [
+    +       Object {
+    +         "all": Array [],
+    +         "any": Array [
+    +           Object {
+    +             "data": null,
+    +             "id": "no-focusable-content",
+    +             "impact": "serious",
+    +             "message": "Element has focusable descendants. Move them outside of the element, or remove them.",
+    +             "relatedNodes": Array [
+    +               Object {
+    +                 "html": "<g class=\"demand-map-target\" id=\"demand-map-path\" role=\"button\" tabindex=\"0\" data-action=\"demand-measure\" data-value=\"path\" aria-label=\"Fußweg: kürzere Verbindung testen\" aria-pressed=\"false\">",
+    +                 "target": Array [
+    +                   "#demand-map-path",
+    +                 ],
+    +               },
+    +               Object {
+    +                 "html": "<g class=\"demand-map-target\" id=\"demand-map-bus\" role=\"button\" tabindex=\"0\" data-action=\"demand-measure\" data-value=\"bus\" aria-label=\"Bus: zusätzliche Fahrt testen\" aria-pressed=\"true\">",
+    +                 "target": Array [
+    +                   "#demand-map-bus",
+    +                 ],
+    +               },
+    +             ],
+    +           },
+    +         ],
+    +         "failureSummary": "Fix any of the following:
+    +   Element has focusable descendants. Move them outside of the element, or remove them.",
+    +         "html": "<svg class=\"demand-map\" viewBox=\"0 0 760 330\" role=\"img\" aria-labelledby=\"demand-map-title demand-map-desc\">",
+    +         "impact": "serious",
+    +         "none": Array [],
+    +         "target": Array [
+    +           ".demand-map",
+    +         ],
+    +       },
+    +     ],
+    +     "tags": Array [
+    +       "cat.keyboard",
+    +       "wcag2a",
+    +       "wcag412",
+    +       "TTv5",
+    +       "TT6.a",
+    +       "EN-301-549",
+    +       "EN-9.4.1.2",
+    +       "RGAAv4",
+    +       "RGAA-7.1.1",
+    +     ],
+    +   },
+    + ]
+
+      516 |       .withTags(['wcag2a', 'wcag2aa', 'wcag21aa', 'wcag22aa'])
+      517 |       .analyze();
+    > 518 |     expect(r.violations).toEqual([]);
+          |                          ^
+      519 |   };
+      520 |   await page.goto('/');
+      521 |   await audit();
+        at audit (/workspace/Afrika-2040/tests/browser/episode2.spec.ts:518:26)
+        at /workspace/Afrika-2040/tests/browser/episode2.spec.ts:528:3
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-start-c-8ec93-oduct-pass-scoped-axe-rules-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/episode2-Episode-2-start-c-8ec93-oduct-pass-scoped-axe-rules-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-start-c-8ec93-oduct-pass-scoped-axe-rules-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/episode2-Episode-2-start-c-8ec93-oduct-pass-scoped-axe-rules-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  11) [chromium] › tests/browser/episode2.spec.ts:328:1 › Episode 2 unclear free text remains ungraded, escaped and editable; example adoption keeps own text and honest provenance 
+
+    Test timeout of 30000ms exceeded.
+
+    Error: locator.click: Test timeout of 30000ms exceeded.
+    Call log:
+      - waiting for getByRole('button', { name: 'Genauer zeigen', exact: true })
+
+
+      357 |     'Dieses Beispiel übernehmen',
+      358 |   ])
+    > 359 |     await page.getByRole('button', { name, exact: true }).click();
+          |                                                           ^
+      360 |   await page.locator('#next-step').click();
+      361 |   await expect(page.locator('[data-supported]')).toBeVisible();
+      362 |   await expect(page.locator('.saved-text')).toContainText('geändert ???');
+        at /workspace/Afrika-2040/tests/browser/episode2.spec.ts:359:59
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-unclear-2ca8a--text-and-honest-provenance-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/episode2-Episode-2-unclear-2ca8a--text-and-honest-provenance-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/episode2-Episode-2-unclear-2ca8a--text-and-honest-provenance-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/episode2-Episode-2-unclear-2ca8a--text-and-honest-provenance-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+
+  11 failed
+    [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete bus on desktop: direct entry, real model experiments and supported judgment limits 
+    [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete path on desktop: direct entry, real model experiments and supported judgment limits 
+    [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete bus on ipad-landscape: direct entry, real model experiments and supported judgment limits 
+    [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete path on ipad-landscape: direct entry, real model experiments and supported judgment limits 
+    [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete bus on ipad-portrait: direct entry, real model experiments and supported judgment limits 
+    [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete path on ipad-portrait: direct entry, real model experiments and supported judgment limits 
+    [chromium] › tests/browser/episode2.spec.ts:328:1 › Episode 2 unclear free text remains ungraded, escaped and editable; example adoption keeps own text and honest provenance 
+    [chromium] › tests/browser/episode2.spec.ts:469:1 › Episode 2 damaged optional storage and explicit step reset have safe continuations 
+    [chromium] › tests/browser/episode2.spec.ts:497:3 › Episode 2 full bus works below the local Pages prefix with clean resources 
+    [chromium] › tests/browser/episode2.spec.ts:497:3 › Episode 2 full path works below the local Pages prefix with clean resources 
+    [chromium] › tests/browser/episode2.spec.ts:511:1 › Episode 2 start, comparison, trial, open conflict, supported product pass scoped axe rules 
+  6 passed (51.0s)

@@ -1,0 +1,107 @@
+
+> afrika-2040@0.1.0 test:e2e
+> playwright test --project=chromium --reporter=list
+
+[WebServer] (node:45635) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:45660) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 75 tests using 2 workers
+
+(node:45673) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:45672) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓   2 [chromium] › tests/browser/game.spec.ts:117:1 › partial and incorrect feedback, two-attempt explanation, three hints and transfer (2.3s)
+  ✓   3 [chromium] › tests/browser/game.spec.ts:170:1 › free text is stored locally, never keyword-graded, escaped and editable after reload (2.6s)
+  ✓   1 [chromium] › tests/browser/game.spec.ts:30:1 › complete mouse flow, route changes, all times, all three valid recommendations and restart (5.3s)
+  ✓   5 [chromium] › tests/browser/game.spec.ts:238:1 › rapid clicks cannot skip tasks and restart requires a deliberate confirmation (1.1s)
+  ✓   6 [chromium] › tests/browser/game.spec.ts:269:1 › keyboard can operate start, SVG paths, radio groups, checking and word help (823ms)
+  ✓   4 [chromium] › tests/browser/game.spec.ts:212:1 › open decision feedback recognizes a partial argument without rejecting the route (3.4s)
+  ✓   8 [chromium] › tests/browser/game.spec.ts:330:1 › production assets work under the GitHub Pages repository prefix (581ms)
+  ✓   7 [chromium] › tests/browser/game.spec.ts:305:1 › blocked session storage does not prevent the full workflow (2.5s)
+  ✓   9 [chromium] › tests/browser/game.spec.ts:348:1 › axe finds no WCAG A/AA issues in start, task, expanded help, decision and ending (6.0s)
+  ✓  10 [chromium] › tests/browser/game.spec.ts:388:1 › all closed feedback colors and the neutral decision remain accessible (5.6s)
+  ✓  11 [chromium] › tests/browser/game.spec.ts:430:3 › touch layout and complete supported play at desktop (3.4s)
+  ✓  12 [chromium] › tests/browser/game.spec.ts:430:3 › touch layout and complete supported play at ipad-landscape (3.4s)
+  ✓  13 [chromium] › tests/browser/game.spec.ts:430:3 › touch layout and complete supported play at ipad-portrait (3.3s)
+  ✓  14 [chromium] › tests/browser/game.spec.ts:430:3 › touch layout and complete supported play at phone (3.1s)
+  ✓  16 [chromium] › tests/browser/phase2a-corrections.spec.ts:31:5 › B1 all goals direct/market: correct partial facts, conscious weighting, changed goal and reload (2.4s)
+  ✓  15 [chromium] › tests/browser/phase2a-corrections.spec.ts:31:5 › B1 all goals direct/school: correct partial facts, conscious weighting, changed goal and reload (3.4s)
+  ✓  17 [chromium] › tests/browser/phase2a-corrections.spec.ts:31:5 › B1 all goals direct/training: correct partial facts, conscious weighting, changed goal and reload (3.1s)
+  ✓  18 [chromium] › tests/browser/phase2a-corrections.spec.ts:31:5 › B1 all goals north/school: correct partial facts, conscious weighting, changed goal and reload (2.6s)
+  ✓  19 [chromium] › tests/browser/phase2a-corrections.spec.ts:31:5 › B1 all goals north/market: correct partial facts, conscious weighting, changed goal and reload (3.3s)
+  ✓  20 [chromium] › tests/browser/phase2a-corrections.spec.ts:31:5 › B1 all goals north/training: correct partial facts, conscious weighting, changed goal and reload (3.4s)
+  ✓  22 [chromium] › tests/browser/phase2a-corrections.spec.ts:31:5 › B1 all goals south/market: correct partial facts, conscious weighting, changed goal and reload (3.3s)
+  ✓  21 [chromium] › tests/browser/phase2a-corrections.spec.ts:31:5 › B1 all goals south/school: correct partial facts, conscious weighting, changed goal and reload (3.3s)
+  ✓  23 [chromium] › tests/browser/phase2a-corrections.spec.ts:31:5 › B1 all goals south/training: correct partial facts, conscious weighting, changed goal and reload (2.8s)
+  ✓  24 [chromium] › tests/browser/phase2a-corrections.spec.ts:96:3 › B3 ipad-portrait: touch, local comparisons, wrong selection, both conflict paths, provenance and bounded search (7.2s)
+  ✓  25 [chromium] › tests/browser/phase2a-corrections.spec.ts:96:3 › B3 ipad-landscape: touch, local comparisons, wrong selection, both conflict paths, provenance and bounded search (6.8s)
+  ✓  26 [chromium] › tests/browser/phase2a-corrections.spec.ts:232:1 › B1 keyboard: both conflict paths and deliberate ungraded text; Pages prefix; no silent auto-completion (5.0s)
+  ✓  27 [chromium] › tests/browser/phase2a-corrections.spec.ts:319:1 › B1 automatic support keeps the conflicting goal, acknowledges the correct fact and marks any later edit (3.1s)
+{"phase2aReadability":{"device":"desktop","route":"direct","minimumCssPixels":15.522388059701493,"labelsFit":true}}
+{"phase2aReadability":{"device":"desktop","route":"north","minimumCssPixels":15.522388059701493,"labelsFit":true}}
+  ✓  28 [chromium] › tests/browser/phase2a.spec.ts:39:5 › Phase2A full direct flow on desktop: all nine journeys and supported completion (5.7s)
+  ✓  29 [chromium] › tests/browser/phase2a.spec.ts:39:5 › Phase2A full north flow on desktop: all nine journeys and supported completion (5.8s)
+{"phase2aReadability":{"device":"desktop","route":"south","minimumCssPixels":15.522388059701493,"labelsFit":true}}
+{"phase2aReadability":{"device":"ipad-landscape","route":"direct","minimumCssPixels":15.522388059701493,"labelsFit":true}}
+  ✓  30 [chromium] › tests/browser/phase2a.spec.ts:39:5 › Phase2A full south flow on desktop: all nine journeys and supported completion (5.9s)
+  ✓  31 [chromium] › tests/browser/phase2a.spec.ts:39:5 › Phase2A full direct flow on ipad-landscape: all nine journeys and supported completion (6.5s)
+{"phase2aReadability":{"device":"ipad-landscape","route":"north","minimumCssPixels":15.522388059701493,"labelsFit":true}}
+{"phase2aReadability":{"device":"ipad-landscape","route":"south","minimumCssPixels":15.522388059701493,"labelsFit":true}}
+  ✓  32 [chromium] › tests/browser/phase2a.spec.ts:39:5 › Phase2A full north flow on ipad-landscape: all nine journeys and supported completion (6.2s)
+  ✓  33 [chromium] › tests/browser/phase2a.spec.ts:39:5 › Phase2A full south flow on ipad-landscape: all nine journeys and supported completion (6.4s)
+{"phase2aReadability":{"device":"ipad-portrait","route":"direct","minimumCssPixels":15.522388059701493,"labelsFit":true}}
+{"phase2aReadability":{"device":"ipad-portrait","route":"north","minimumCssPixels":15.522388059701493,"labelsFit":true}}
+  ✓  34 [chromium] › tests/browser/phase2a.spec.ts:39:5 › Phase2A full direct flow on ipad-portrait: all nine journeys and supported completion (6.2s)
+  ✓  35 [chromium] › tests/browser/phase2a.spec.ts:39:5 › Phase2A full north flow on ipad-portrait: all nine journeys and supported completion (6.1s)
+{"phase2aReadability":{"device":"ipad-portrait","route":"south","minimumCssPixels":15.522388059701493,"labelsFit":true}}
+  ✓  37 [chromium] › tests/browser/phase2a.spec.ts:218:1 › Phase2A explanation: partial feedback, two errors, accessible support and re-adoption after editing (2.7s)
+  ✓  36 [chromium] › tests/browser/phase2a.spec.ts:39:5 › Phase2A full south flow on ipad-portrait: all nine journeys and supported completion (6.7s)
+  ✓  38 [chromium] › tests/browser/phase2a.spec.ts:262:1 › Phase2A free explanation is preserved, escaped and never graded even with contradictory blocks (3.6s)
+  ✓  39 [chromium] › tests/browser/phase2a.spec.ts:302:1 › Phase2A prediction, Leila errors and repeated visits retain an honest supported record (2.8s)
+  ✓  40 [chromium] › tests/browser/phase2a.spec.ts:337:1 › Phase2A keyboard operates new sentence blocks, the South line, person selection and supported final decision (2.8s)
+  ✓  42 [chromium] › tests/browser/phase2a.spec.ts:409:1 › Phase2A an explicitly named goal is required without guessing it from free text or counting incomplete work as failure (4.2s)
+  ✓  41 [chromium] › tests/browser/phase2a.spec.ts:386:1 › Phase2A new map and recommendation remain accessible with expanded words and named criteria (5.6s)
+  ✓  43 [chromium] › tests/browser/phase2a.spec.ts:449:1 › Phase2A alternative valid evidence and a different weighting are accepted; a changed route alone never completes the task (3.1s)
+  ✓  44 [chromium] › tests/browser/phase2b.spec.ts:100:5 › Phase2B full direct on desktop: eighteen times, same map, unchanged and changed recommendations (8.9s)
+  ✓  45 [chromium] › tests/browser/phase2b.spec.ts:100:5 › Phase2B full north on desktop: eighteen times, same map, unchanged and changed recommendations (8.7s)
+  ✓  46 [chromium] › tests/browser/phase2b.spec.ts:100:5 › Phase2B full south on desktop: eighteen times, same map, unchanged and changed recommendations (6.7s)
+  ✓  47 [chromium] › tests/browser/phase2b.spec.ts:100:5 › Phase2B full direct on ipad-landscape: eighteen times, same map, unchanged and changed recommendations (8.8s)
+  ✓  48 [chromium] › tests/browser/phase2b.spec.ts:100:5 › Phase2B full north on ipad-landscape: eighteen times, same map, unchanged and changed recommendations (9.2s)
+  ✓  49 [chromium] › tests/browser/phase2b.spec.ts:100:5 › Phase2B full south on ipad-landscape: eighteen times, same map, unchanged and changed recommendations (7.7s)
+  ✓  50 [chromium] › tests/browser/phase2b.spec.ts:100:5 › Phase2B full direct on ipad-portrait: eighteen times, same map, unchanged and changed recommendations (8.8s)
+  ✓  51 [chromium] › tests/browser/phase2b.spec.ts:100:5 › Phase2B full north on ipad-portrait: eighteen times, same map, unchanged and changed recommendations (9.0s)
+  ✓  52 [chromium] › tests/browser/phase2b.spec.ts:100:5 › Phase2B full south on ipad-portrait: eighteen times, same map, unchanged and changed recommendations (7.4s)
+  ✓  53 [chromium] › tests/browser/phase2b.spec.ts:246:1 › Phase2B wrong, partial and missing localisation; supported exit after two errors; wrong bus cause and preserved right parts (4.3s)
+  ✓  55 [chromium] › tests/browser/phase2b.spec.ts:337:1 › Phase2B ungraded explanation/revision texts, examples and later edits retain honest provenance and escaped text (5.1s)
+  ✓  54 [chromium] › tests/browser/phase2b.spec.ts:297:1 › Phase2B goal conflict: acknowledges correct facts, keeps open without weighting, allows different priority and conscious goal change (5.6s)
+  ✓  56 [chromium] › tests/browser/phase2b.spec.ts:384:1 › Phase2B native keyboard operates localisation, comparison, actual selected cause, explicit revision and report (3.7s)
+  ✓  57 [chromium] › tests/browser/phase2b.spec.ts:417:1 › Phase2B migration, damaged optional event, return/back/reset and prefix preserve the valid first report (5.2s)
+  ✓  58 [chromium] › tests/browser/phase2b.spec.ts:470:1 › Phase2B blocked storage supports a complete assisted flow, glossary and deliberate restart (4.4s)
+  ✓  60 [chromium] › tests/browser/phase2b.spec.ts:541:1 › P3-A selection context has a named group role; pupil language stays simple (3.1s)
+  ✓  61 [chromium] › tests/browser/review-regressions.spec.ts:56:1 › R1: direct visible times survive back, rework, reload and a legacy saved north state (1.9s)
+  ✓  59 [chromium] › tests/browser/phase2b.spec.ts:509:1 › Phase2B semantic context, new map, comparison, open conflict, support and report pass scoped axe checks (8.2s)
+  ✓  62 [chromium] › tests/browser/review-regressions.spec.ts:93:3 › R2: direct wrong evidence gets neutral support, deliberate adoption and a labeled learning product (4.7s)
+  ✓  63 [chromium] › tests/browser/review-regressions.spec.ts:93:3 › R2: north wrong evidence gets neutral support, deliberate adoption and a labeled learning product (4.6s)
+  ✓  64 [chromium] › tests/browser/review-regressions.spec.ts:160:1 › R2: all voluntary hints and a changed proposal offer the matching example without counting failures (3.8s)
+  ✓  66 [chromium] › tests/browser/review-regressions.spec.ts:239:3 › R3: incomplete Zum Platz gets accurate yellow feedback without consuming attempts (822ms)
+  ✓  65 [chromium] › tests/browser/review-regressions.spec.ts:194:1 › R2: unclear free text is never counted as a failed evidence check or silently confirmed (5.0s)
+  ✓  67 [chromium] › tests/browser/review-regressions.spec.ts:239:3 › R3: incomplete Platz → Zentrum gets accurate yellow feedback without consuming attempts (1.0s)
+  ✓  68 [chromium] › tests/browser/review-regressions.spec.ts:239:3 › R3: incomplete Nach Nord gets accurate yellow feedback without consuming attempts (1.0s)
+  ✓  69 [chromium] › tests/browser/review-regressions.spec.ts:239:3 › R3: incomplete Nord → Zentrum gets accurate yellow feedback without consuming attempts (966ms)
+{"readability":{"viewport":"desktop","route":"direct","minimumCssPixels":16,"labelsFit":true}}
+{"readability":{"viewport":"desktop","route":"north","minimumCssPixels":16,"labelsFit":true}}
+  ✓  70 [chromium] › tests/browser/review-regressions.spec.ts:270:5 › complete direct recommendation on desktop, with measured map readability (4.5s)
+  ✓  71 [chromium] › tests/browser/review-regressions.spec.ts:270:5 › complete north recommendation on desktop, with measured map readability (4.2s)
+{"readability":{"viewport":"ipad-landscape","route":"direct","minimumCssPixels":14.47,"labelsFit":true}}
+{"readability":{"viewport":"ipad-landscape","route":"north","minimumCssPixels":14.47,"labelsFit":true}}
+  ✓  72 [chromium] › tests/browser/review-regressions.spec.ts:270:5 › complete direct recommendation on ipad-landscape, with measured map readability (5.5s)
+  ✓  73 [chromium] › tests/browser/review-regressions.spec.ts:270:5 › complete north recommendation on ipad-landscape, with measured map readability (5.5s)
+{"readability":{"viewport":"ipad-portrait","route":"direct","minimumCssPixels":17.82,"labelsFit":true}}
+{"readability":{"viewport":"ipad-portrait","route":"north","minimumCssPixels":17.82,"labelsFit":true}}
+  ✓  74 [chromium] › tests/browser/review-regressions.spec.ts:270:5 › complete direct recommendation on ipad-portrait, with measured map readability (4.8s)
+  ✓  75 [chromium] › tests/browser/review-regressions.spec.ts:270:5 › complete north recommendation on ipad-portrait, with measured map readability (4.7s)
+
+  75 passed (2.9m)

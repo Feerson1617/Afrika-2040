@@ -1,0 +1,303 @@
+{
+  "base": "4863f64c460f66d00c7d29bdd3835d21cd9ecf19",
+  "logic": {
+    "passed": 408,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browser": {
+    "targetedAndEpisodeRegression": {
+      "startTime": "2026-11-02T15:01:27.599Z",
+      "duration": 663856.311,
+      "expected": 270,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "nativeKeyboard": {
+      "startTime": "2026-11-02T15:12:59.878Z",
+      "duration": 2859.653,
+      "expected": 2,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "totalPassed": 272,
+    "engines": [
+      "chromium",
+      "webkit"
+    ],
+    "countsPerEngine": 136
+  },
+  "dist": [
+    {
+      "file": "assets/asafo-CiD1wyHi.jpg",
+      "bytes": 1988168,
+      "sha256": "b764593e666dbeb085a22b175de59b2fa84f7068dcff78446d490e257f524302"
+    },
+    {
+      "file": "assets/index-DU1sHB7y.css",
+      "bytes": 41304,
+      "sha256": "5fc164dff2afbe7d119c2e6bec11e9603c376fda9666a7afc476f19415abe45d"
+    },
+    {
+      "file": "assets/index-DgYp0Q-B.js",
+      "bytes": 435073,
+      "sha256": "68ebed5cb5eb2f89996e296a7ae71c0af68a22073a17964aadaa62c1150e0778"
+    },
+    {
+      "file": "assets/kakum-v8Jew1-6.jpg",
+      "bytes": 1534641,
+      "sha256": "4447349bea9a1aa522bf1697d66cb8e89ab13807bc9e33bd94c08b49e943a03c"
+    },
+    {
+      "file": "index.html",
+      "bytes": 1052,
+      "sha256": "36417cf61e9ba7958b34345a52f4b8f75d54847a47d14cae36a0b02b4af03e49"
+    }
+  ],
+  "protected": {
+    "base": "4863f64c460f66d00c7d29bdd3835d21cd9ecf19",
+    "protected": [
+      {
+        "file": "src/model.ts",
+        "sha256": "4b3d8554c45e616ba5b5f35152be3922088d6d13e022053cfe7ae74652d5992b",
+        "byteEqual": true
+      },
+      {
+        "file": "src/map.ts",
+        "sha256": "35f5489dd52b71b2da7b90300249000f8e68590c53b3e1b3e06449db3b82e34e",
+        "byteEqual": true
+      },
+      {
+        "file": "src/demand-ui.ts",
+        "sha256": "ce331b9891c5531e0e3a0c007ae4a802c81f4b119c05c633e2f07a0db3bcdc90",
+        "byteEqual": true
+      },
+      {
+        "file": "src/geography/map-data.ts",
+        "sha256": "1b631e2995fd673d3a13c33c08a9936a2d509b0a1b7527ae4f1f5db63d014c59",
+        "byteEqual": true
+      },
+      {
+        "file": "src/regions/answer-order.ts",
+        "sha256": "68bed563a4f72df6c1a0b562fe4a06257292ea046204be067eb0ace94bca3293",
+        "byteEqual": true
+      },
+      {
+        "file": "src/content.ts",
+        "sha256": "67f344e68991782c8230c2ada8e7d7d46cb83b9219c8c4ff17d5e7bfa9841353",
+        "byteEqual": true
+      },
+      {
+        "file": "src/demand.ts",
+        "sha256": "fdc5b8f300e1c5b0f790a52ab3c1423413f7108cb11f939c6f6c88bff9641b53",
+        "byteEqual": true
+      },
+      {
+        "file": "src/demand-content.ts",
+        "sha256": "3c61cbd4a7009e9bb15bc000b8fc487e40b47ad78d023ea118b4d44568d897a8",
+        "byteEqual": true
+      },
+      {
+        "file": "src/event.ts",
+        "sha256": "0725253b9bc811b1f54dfbb60228b4ac93fa53aace2dec871f1aeaba44924fbf",
+        "byteEqual": true
+      },
+      {
+        "file": "src/feedback.ts",
+        "sha256": "75a20e87f4e39989536a03a6590154684c582ffed93920ca544b6469cdddc9ca",
+        "byteEqual": true
+      },
+      {
+        "file": "src/decision.ts",
+        "sha256": "86283f55cd4761319dc0c769d2ab37f08baf83117daf605e029269ce811fa344",
+        "byteEqual": true
+      },
+      {
+        "file": "src/state.ts",
+        "sha256": "87f88a002e37d346299dbd97157383354515f6009bf75580e502e08ff150192f",
+        "byteEqual": true
+      },
+      {
+        "file": "src/inquiry/content.ts",
+        "sha256": "f1aed1f66d2af1e08176099849b167d58256d65e6aa544b4d9e4643aa0531723",
+        "byteEqual": true
+      },
+      {
+        "file": "src/inquiry/state.ts",
+        "sha256": "c22a6c1eb8bba35d6d41e24b3d9094c45a7e66ee6307a55c1761bf0a881773d2",
+        "byteEqual": true
+      },
+      {
+        "file": "src/geography/natural-earth-africa.json",
+        "sha256": "297d01c2ca2ee7ba138aa336dd3e47d00975de6ae66700ebcce6fead7854c015",
+        "byteEqual": true
+      },
+      {
+        "file": "src/geography/provenance.json",
+        "sha256": "2b4c58feed25bb2b80352155f616ad24c9a4667dc3b7f74a149c1bb2c30408ab",
+        "byteEqual": true
+      },
+      {
+        "file": "src/geography/real-place-evidence.json",
+        "sha256": "2128770d0e2936966ee1ccae6026300a9251d77aff442f96c688a5e923506c7e",
+        "byteEqual": true
+      },
+      {
+        "file": "src/geography/state.ts",
+        "sha256": "8a0a433789bd286fd1587248232da9d6f3d0f5ef399c0af92ac48b181a11b4ea",
+        "byteEqual": true
+      },
+      {
+        "file": "src/geography/transfer.ts",
+        "sha256": "c3f14eeb0a34ce8a5814270b85cbf25498bd927de09373c9a2a747b1276f0129",
+        "byteEqual": true
+      },
+      {
+        "file": "src/regions/cocoa.ts",
+        "sha256": "b8324222fd531c8315536af2447fcfd4872796dd668ae45349823ccb8b7ebbfe",
+        "byteEqual": true
+      },
+      {
+        "file": "src/regions/share.ts",
+        "sha256": "e5bf4ec1920e202a84c3c5817463b176f50633c415d9f26425931c18a3899a94",
+        "byteEqual": true
+      },
+      {
+        "file": "src/regions/water.ts",
+        "sha256": "5b80690a52be009371ea52da06e4b1229f86409bbe494e8bbf6ea7975d5b2bc5",
+        "byteEqual": true
+      },
+      {
+        "file": "src/regions/water-model.ts",
+        "sha256": "9e1c21e5aeb3fd351e8971696bc4a01f01fe1b596bcd92d285d2ed77ef8cbe6d",
+        "byteEqual": true
+      },
+      {
+        "file": "src/regions/area.ts",
+        "sha256": "2f861905024f2a5ee48afc1581dbf570258f439f1decf8c5961ad7893267a3bc",
+        "byteEqual": true
+      },
+      {
+        "file": "src/regions/shared.ts",
+        "sha256": "776f43e29db073fee77924f42957c98c27bffb052c96395d7ad203a72a450473",
+        "byteEqual": true
+      },
+      {
+        "file": "package-lock.json",
+        "sha256": "fbcb1ed6afb5dc250da1d683d642702af36b068d9a8fbb1f01f9409728570be8",
+        "byteEqual": true
+      },
+      {
+        "file": "scripts/check-dist.mjs",
+        "sha256": "a5021d783f7e8b31d6f69c8d3a6156649f7457e470474ee9d5e1685fc2130d62",
+        "byteEqual": true
+      },
+      {
+        "file": "src/inquiry/assets/asafo.jpg",
+        "sha256": "b764593e666dbeb085a22b175de59b2fa84f7068dcff78446d490e257f524302",
+        "byteEqual": true
+      },
+      {
+        "file": "src/inquiry/assets/kakum.jpg",
+        "sha256": "4447349bea9a1aa522bf1697d66cb8e89ab13807bc9e33bd94c08b49e943a03c",
+        "byteEqual": true
+      },
+      {
+        "file": "src/inquiry/assets/manifest.json",
+        "sha256": "dacf063208f893350a6ec4df06587ac99515a148df530ef7ea46a01fa02995af",
+        "byteEqual": true
+      },
+      {
+        "file": "src/learning/storage.ts",
+        "sha256": "e1a27cd6462379b01f065e7f8824d2bd286a5454cea0da8cccb421886c729975",
+        "byteEqual": true
+      },
+      {
+        "file": "src/learning/tasks.ts",
+        "sha256": "0042f1ae1381bdbf5609cce17a7ba20de783f0b7aabfc3fa0a83a44d2acc6981",
+        "byteEqual": true
+      },
+      {
+        "file": "src/learning/progress.ts",
+        "sha256": "918db0471bafbd792d438529c7d7e226316ebe924a4e62f17cc2c69ccc700b27",
+        "byteEqual": true
+      },
+      {
+        "file": "src/learning/simulation-variants.ts",
+        "sha256": "650059fa3273f949920615f1f03c1aeef091a65c96c87a7952904c362178e3ae",
+        "byteEqual": true
+      },
+      {
+        "file": "src/learning/transfer-cases.ts",
+        "sha256": "6d2d5514c29077171a1534c86c760f97cdcad529a0ab0c9922ceb6d36b275239",
+        "byteEqual": true
+      },
+      {
+        "file": "src/learning/help.ts",
+        "sha256": "385539750194ddb58d0326b1fe1e3ca63648f8cf50d898174e14c4d3fcb80254",
+        "byteEqual": true
+      },
+      {
+        "file": "src/learning/profiles.ts",
+        "sha256": "25267d4b2bf10eac116a3f7dbd4547cfd81b8a951314e7a252f1b000831022a6",
+        "byteEqual": true
+      },
+      {
+        "file": "src/learning/catalog.ts",
+        "sha256": "508875507c098411f670b374c1e6a6b4b093285134b830994f42445be79a4928",
+        "byteEqual": true
+      },
+      {
+        "file": "src/learning/topic-variants.ts",
+        "sha256": "a698a7388977c7b526e3a39d1140b4aeedaed04dec1c99502dba306c999b0ea6",
+        "byteEqual": true
+      },
+      {
+        "file": ".github/workflows/pages-manual.yml",
+        "sha256": "b9791cf55bd6a714107f622561d2fc4fba16c8b5a1c6005051aa5ec7fbdbfd7f",
+        "byteEqual": true
+      },
+      {
+        "file": ".github/workflows/release-checks.yml",
+        "sha256": "be57c25ca3a1858a6848b732094e1a3253d246884a08a782e2c69f661612283c",
+        "byteEqual": true
+      }
+    ]
+  },
+  "format": {
+    "changedFilesPassed": true,
+    "unchangedBaselineWarnings": [
+      "docs/combined-request.md",
+      "docs/episode2-correction-request.md",
+      "docs/final-pedagogical-request.md",
+      "docs/ghana-marokko-request.md",
+      "docs/phase2a-correction-request.md",
+      "docs/phase2b-correction-request.md",
+      "docs/phase2b-independent-review.md",
+      "docs/phase5-final-request.md",
+      "docs/phase5-request.md",
+      "docs/sources/natural-earth-LICENSE.md",
+      "docs/specs/four-paths/01_Gesamtrevision_aus_HTML.md",
+      "docs/specs/four-paths/02_Vier_Niveaus_Matrix.md",
+      "docs/specs/four-paths/03_Mustersequenzen.md",
+      "docs/specs/four-paths/04_Pruefmatrix_und_Architektur.md",
+      "tests/model.test.ts",
+      "tests/phase2a-corrections.test.ts"
+    ]
+  },
+  "sourceTestContractFingerprint": {
+    "algorithm": "sha256",
+    "value": "a3142d59693d03471cb99ac428a532d50423a5b57c19278045d1a920e89d1737",
+    "count": 127,
+    "recipe": "Sorted relative paths + NUL + file bytes + NUL; src/**/*.ts, src/**/*.css, tests/**/*.ts, package-lock.json, playwright.afrika.config.ts, docs/learning-task-contracts.json"
+  },
+  "commands": [
+    "npm test",
+    "npm run build",
+    "node scripts/check-dist.mjs",
+    "WEBKIT_PATH=/workspace/.cache/afrika-webkit-deps/run-webkit npx playwright test -c playwright.afrika.config.ts tests/browser/transfer-disclosure.spec.ts tests/browser/transfer-rc.spec.ts tests/browser/packet-b.spec.ts tests/browser/packet-b-integration.spec.ts --workers=2 --reporter=list,json",
+    "WEBKIT_PATH=/workspace/.cache/afrika-webkit-deps/run-webkit npx playwright test -c playwright.afrika.config.ts tests/browser/transfer-disclosure.spec.ts --grep \"T1 native\" --reporter=list,json"
+  ]
+}

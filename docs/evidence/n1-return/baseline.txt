@@ -1,0 +1,2234 @@
+[WebServer] (node:104205) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+[WebServer] (node:104230) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 20 tests using 4 workers
+
+(node:104243) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:104244) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:104242) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:104250) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   2 [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/ahr 1024x768: normal path, mixed panels, writing, back and separate reload (13.3s)
+  ✘   3 [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/msa 1024x768: normal path, mixed panels, writing, back and separate reload (13.4s)
+  ✘   1 [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/msa 768x1024: normal path, mixed panels, writing, back and separate reload (14.0s)
+  ✘   4 [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/ahr 768x1024: normal path, mixed panels, writing, back and separate reload (13.5s)
+(node:104837) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:104844) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:104853) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:104861) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   5 [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return image.perspective/ahr 1024x768: normal path, mixed panels, writing, back and separate reload (15.4s)
+(node:105439) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   7 [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return economy.source-claim.v1/ahr 1024x768: normal path, mixed panels, writing, back and separate reload (15.9s)
+  ✘   6 [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return image.perspective/ahr 768x1024: normal path, mixed panels, writing, back and separate reload (16.0s)
+(node:105452) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:105474) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   8 [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return economy.source-claim.v1/ahr 768x1024: normal path, mixed panels, writing, back and separate reload (15.7s)
+(node:105591) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘   9 [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return nature.recommend/ahr 1024x768: normal path, mixed panels, writing, back and separate reload (11.8s)
+  ✘  11 [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/msa 1024x768: normal path, mixed panels, writing, back and separate reload (11.9s)
+(node:105863) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  12 [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/msa 768x1024: normal path, mixed panels, writing, back and separate reload (11.0s)
+(node:105872) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:105883) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  10 [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return nature.recommend/ahr 768x1024: normal path, mixed panels, writing, back and separate reload (12.1s)
+(node:106000) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  14 [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/ahr 768x1024: normal path, mixed panels, writing, back and separate reload (11.0s)
+  ✘  15 [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return image.perspective/ahr 1024x768: normal path, mixed panels, writing, back and separate reload (10.7s)
+  ✘  16 [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return image.perspective/ahr 768x1024: normal path, mixed panels, writing, back and separate reload (9.6s)
+  ✘  13 [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/ahr 1024x768: normal path, mixed panels, writing, back and separate reload (12.1s)
+(node:106161) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:106169) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:106175) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:106185) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  17 [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return economy.source-claim.v1/ahr 1024x768: normal path, mixed panels, writing, back and separate reload (10.9s)
+  ✘  18 [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return economy.source-claim.v1/ahr 768x1024: normal path, mixed panels, writing, back and separate reload (11.2s)
+  ✘  19 [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return nature.recommend/ahr 1024x768: normal path, mixed panels, writing, back and separate reload (15.4s)
+  ✘  20 [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return nature.recommend/ahr 768x1024: normal path, mixed panels, writing, back and separate reload (15.4s)
+
+
+  1) [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/msa 1024x768: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,9 +1,9 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-810a3-ng-back-and-separate-reload-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-810a3-ng-back-and-separate-reload-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-810a3-ng-back-and-separate-reload-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-810a3-ng-back-and-separate-reload-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  2) [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/msa 768x1024: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,9 +1,9 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-7fff0-ng-back-and-separate-reload-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-7fff0-ng-back-and-separate-reload-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-7fff0-ng-back-and-separate-reload-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-7fff0-ng-back-and-separate-reload-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  3) [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/ahr 1024x768: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,9 +1,9 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-f16e8-ng-back-and-separate-reload-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-f16e8-ng-back-and-separate-reload-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-f16e8-ng-back-and-separate-reload-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-f16e8-ng-back-and-separate-reload-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  4) [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/ahr 768x1024: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,9 +1,9 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-66275-ng-back-and-separate-reload-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-66275-ng-back-and-separate-reload-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-66275-ng-back-and-separate-reload-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-66275-ng-back-and-separate-reload-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  5) [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return image.perspective/ahr 1024x768: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,9 +1,9 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-f456e-ng-back-and-separate-reload-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-f456e-ng-back-and-separate-reload-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-f456e-ng-back-and-separate-reload-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-f456e-ng-back-and-separate-reload-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  6) [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return image.perspective/ahr 768x1024: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,9 +1,9 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-47f39-ng-back-and-separate-reload-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-47f39-ng-back-and-separate-reload-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-47f39-ng-back-and-separate-reload-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-47f39-ng-back-and-separate-reload-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  7) [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return economy.source-claim.v1/ahr 1024x768: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,9 +1,9 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-25bcc-ng-back-and-separate-reload-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-25bcc-ng-back-and-separate-reload-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-25bcc-ng-back-and-separate-reload-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-25bcc-ng-back-and-separate-reload-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  8) [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return economy.source-claim.v1/ahr 768x1024: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,9 +1,9 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-b40c0-ng-back-and-separate-reload-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-b40c0-ng-back-and-separate-reload-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-b40c0-ng-back-and-separate-reload-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-b40c0-ng-back-and-separate-reload-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  9) [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return nature.recommend/ahr 1024x768: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+    @@ -1,19 +1,19 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-lagekarte",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Die beiden Räume auf der Karte suchen",
+        },
+        Object {
+          "id": "nature-overview",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+    @@ -4,19 +4,19 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-lagekarte",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Die beiden Räume auf der Karte suchen",
+        },
+        Object {
+          "id": "nature-overview",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+    @@ -4,19 +4,19 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-lagekarte",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Die beiden Räume auf der Karte suchen",
+        },
+        Object {
+          "id": "nature-overview",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-8814b-ng-back-and-separate-reload-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-8814b-ng-back-and-separate-reload-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-8814b-ng-back-and-separate-reload-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-8814b-ng-back-and-separate-reload-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  10) [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return nature.recommend/ahr 768x1024: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+    @@ -1,19 +1,19 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-lagekarte",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Die beiden Räume auf der Karte suchen",
+        },
+        Object {
+          "id": "nature-overview",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+    @@ -4,19 +4,19 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-lagekarte",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Die beiden Räume auf der Karte suchen",
+        },
+        Object {
+          "id": "nature-overview",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+    @@ -4,19 +4,19 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-lagekarte",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Die beiden Räume auf der Karte suchen",
+        },
+        Object {
+          "id": "nature-overview",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-957f8-ng-back-and-separate-reload-chromium/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-957f8-ng-back-and-separate-reload-chromium/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-957f8-ng-back-and-separate-reload-chromium/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-957f8-ng-back-and-separate-reload-chromium/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  11) [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/msa 1024x768: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,9 +1,9 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-810a3-ng-back-and-separate-reload-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-810a3-ng-back-and-separate-reload-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-810a3-ng-back-and-separate-reload-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-810a3-ng-back-and-separate-reload-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  12) [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/msa 768x1024: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,9 +1,9 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-7fff0-ng-back-and-separate-reload-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-7fff0-ng-back-and-separate-reload-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-7fff0-ng-back-and-separate-reload-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-7fff0-ng-back-and-separate-reload-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  13) [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/ahr 1024x768: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,9 +1,9 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-f16e8-ng-back-and-separate-reload-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-f16e8-ng-back-and-separate-reload-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-f16e8-ng-back-and-separate-reload-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-f16e8-ng-back-and-separate-reload-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  14) [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/ahr 768x1024: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,9 +1,9 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-66275-ng-back-and-separate-reload-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-66275-ng-back-and-separate-reload-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-66275-ng-back-and-separate-reload-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-66275-ng-back-and-separate-reload-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  15) [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return image.perspective/ahr 1024x768: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,9 +1,9 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-f456e-ng-back-and-separate-reload-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-f456e-ng-back-and-separate-reload-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-f456e-ng-back-and-separate-reload-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-f456e-ng-back-and-separate-reload-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  16) [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return image.perspective/ahr 768x1024: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,9 +1,9 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-47f39-ng-back-and-separate-reload-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-47f39-ng-back-and-separate-reload-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-47f39-ng-back-and-separate-reload-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-47f39-ng-back-and-separate-reload-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  17) [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return economy.source-claim.v1/ahr 1024x768: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,9 +1,9 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-25bcc-ng-back-and-separate-reload-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-25bcc-ng-back-and-separate-reload-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-25bcc-ng-back-and-separate-reload-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-25bcc-ng-back-and-separate-reload-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  18) [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return economy.source-claim.v1/ahr 768x1024: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -1,9 +1,9 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 1
+    + Received  + 1
+
+    @@ -4,9 +4,9 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-b40c0-ng-back-and-separate-reload-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-b40c0-ng-back-and-separate-reload-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-b40c0-ng-back-and-separate-reload-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-b40c0-ng-back-and-separate-reload-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  19) [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return nature.recommend/ahr 1024x768: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+    @@ -1,19 +1,19 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-lagekarte",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Die beiden Räume auf der Karte suchen",
+        },
+        Object {
+          "id": "nature-overview",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+    @@ -4,19 +4,19 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-lagekarte",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Die beiden Räume auf der Karte suchen",
+        },
+        Object {
+          "id": "nature-overview",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+    @@ -4,19 +4,19 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-lagekarte",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Die beiden Räume auf der Karte suchen",
+        },
+        Object {
+          "id": "nature-overview",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-8814b-ng-back-and-separate-reload-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-8814b-ng-back-and-separate-reload-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-8814b-ng-back-and-separate-reload-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-8814b-ng-back-and-separate-reload-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  20) [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return nature.recommend/ahr 768x1024: normal path, mixed panels, writing, back and separate reload
+
+    Error: return must restore this task, not the intervening task
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+    @@ -1,19 +1,19 @@
+      Array [
+        Object {
+          "id": "learning-topic-full",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-lagekarte",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Die beiden Räume auf der Karte suchen",
+        },
+        Object {
+          "id": "nature-overview",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+        },
+        Object {
+          "id": "inquiry-sources",
+          "open": false,
+
+      133 |           'return must restore this task, not the intervening task',
+      134 |         )
+    > 135 |         .toEqual(before);
+          |          ^
+      136 |       await expect(input).toHaveValue(text);
+      137 |       expect(
+      138 |         (await saved(page)).records[`${unit}.${profile}.v1`].attempts[target]
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:135:10
+
+    Error: reload must restore the independently chosen mixed state
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+    @@ -4,19 +4,19 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-lagekarte",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Die beiden Räume auf der Karte suchen",
+        },
+        Object {
+          "id": "nature-overview",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      154 |           'reload must restore the independently chosen mixed state',
+      155 |         )
+    > 156 |         .toEqual(beforeReload);
+          |          ^
+      157 |       await expect(input).toHaveValue(text);
+      158 |       const restored = (await saved(page)).records[`${unit}.${profile}.v1`]
+      159 |         .attempts[target];
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:156:10
+
+    Error: the other task keeps its own panels
+
+    expect(received).toEqual(expected) // deep equality
+
+    - Expected  - 3
+    + Received  + 3
+
+    @@ -4,19 +4,19 @@
+          "open": false,
+          "summary": "Mehr Angaben und Quellen ansehen",
+        },
+        Object {
+          "id": "inquiry-lagekarte",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Die beiden Räume auf der Karte suchen",
+        },
+        Object {
+          "id": "nature-overview",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+        },
+        Object {
+          "id": "inquiry-sources",
+    -     "open": true,
+    +     "open": false,
+          "summary": "Quellen, Daten und Grenzen",
+        },
+      ]
+
+      168 |       expect
+      169 |         .soft(await snapshot(page), 'the other task keeps its own panels')
+    > 170 |         .toEqual(otherTask);
+          |          ^
+      171 |       expect(errors).toEqual([]);
+      172 |       writeFileSync(
+      173 |         evidencePath(name + '.json'),
+        at /workspace/Afrika-2040/tests/browser/n1-return.spec.ts:170:10
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-957f8-ng-back-and-separate-reload-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: test-results/n1-return-Afrika-curriculu-957f8-ng-back-and-separate-reload-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    test-results/n1-return-Afrika-curriculu-957f8-ng-back-and-separate-reload-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace test-results/n1-return-Afrika-curriculu-957f8-ng-back-and-separate-reload-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  20 failed
+    [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/msa 1024x768: normal path, mixed panels, writing, back and separate reload
+    [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/msa 768x1024: normal path, mixed panels, writing, back and separate reload
+    [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/ahr 1024x768: normal path, mixed panels, writing, back and separate reload
+    [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/ahr 768x1024: normal path, mixed panels, writing, back and separate reload
+    [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return image.perspective/ahr 1024x768: normal path, mixed panels, writing, back and separate reload
+    [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return image.perspective/ahr 768x1024: normal path, mixed panels, writing, back and separate reload
+    [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return economy.source-claim.v1/ahr 1024x768: normal path, mixed panels, writing, back and separate reload
+    [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return economy.source-claim.v1/ahr 768x1024: normal path, mixed panels, writing, back and separate reload
+    [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return nature.recommend/ahr 1024x768: normal path, mixed panels, writing, back and separate reload
+    [chromium] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return nature.recommend/ahr 768x1024: normal path, mixed panels, writing, back and separate reload
+    [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/msa 1024x768: normal path, mixed panels, writing, back and separate reload
+    [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/msa 768x1024: normal path, mixed panels, writing, back and separate reload
+    [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/ahr 1024x768: normal path, mixed panels, writing, back and separate reload
+    [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return future.judgment/ahr 768x1024: normal path, mixed panels, writing, back and separate reload
+    [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return image.perspective/ahr 1024x768: normal path, mixed panels, writing, back and separate reload
+    [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return image.perspective/ahr 768x1024: normal path, mixed panels, writing, back and separate reload
+    [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return economy.source-claim.v1/ahr 1024x768: normal path, mixed panels, writing, back and separate reload
+    [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return economy.source-claim.v1/ahr 768x1024: normal path, mixed panels, writing, back and separate reload
+    [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return nature.recommend/ahr 1024x768: normal path, mixed panels, writing, back and separate reload
+    [webkit] › tests/browser/n1-return.spec.ts:83:5 › Afrika curriculum N1 return nature.recommend/ahr 768x1024: normal path, mixed panels, writing, back and separate reload

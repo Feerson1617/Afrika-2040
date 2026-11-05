@@ -1,0 +1,56 @@
+[WebServer] (node:327686) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+Running 2 tests using 1 worker
+
+(node:327799) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✓  1 [chromium] › tests/browser/feedback-classification.spec.ts:101:7 › desktop › feedback matrix episode 3: visible colors, counters and conscious continuation (38.6s)
+(node:330094) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+  ✘  2 [webkit] › tests/browser/feedback-classification.spec.ts:101:7 › desktop › feedback matrix episode 3: visible colors, counters and conscious continuation (12.1s)
+
+
+  1) [webkit] › tests/browser/feedback-classification.spec.ts:101:7 › desktop › feedback matrix episode 3: visible colors, counters and conscious continuation
+
+    Error: expect(locator).toBeInViewport() failed
+
+    Locator:  locator('[data-feedback]')
+    Expected: in viewport
+    Received: viewport ratio 0
+    Timeout:  5000ms
+
+    Call log:
+      - Expect "toBeInViewport" locator('[data-feedback]') with timeout 5000ms
+      - waiting for locator('[data-feedback]')
+        13 × locator resolved to <div data-feedback="" class="feedback incorrect">…</div>
+           - unexpected value "viewport ratio 0"
+
+
+      67 | async function feedback(page: Page, kind: keyof typeof palette) {
+      68 |   const f = page.locator('[data-feedback]');
+    > 69 |   await expect(f).toBeInViewport();
+         |                   ^
+      70 |   await expect(f).toHaveClass('feedback ' + kind);
+      71 |   for (const [name, value] of Object.entries(palette[kind]))
+      72 |     await expect(f).toHaveCSS(
+        at feedback (/workspace/output/afrika-endredaktion/baseline/tests/browser/feedback-classification.spec.ts:69:19)
+        at /workspace/output/afrika-endredaktion/baseline/tests/browser/feedback-classification.spec.ts:252:17
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ../baseline-results/feedback-classification-de-442f4--and-conscious-continuation-webkit/test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ../baseline-results/feedback-classification-de-442f4--and-conscious-continuation-webkit/error-context.md
+
+    attachment #3: trace (application/zip) ─────────────────────────────────────────────────────────
+    ../baseline-results/feedback-classification-de-442f4--and-conscious-continuation-webkit/trace.zip
+    Usage:
+
+        npx playwright show-trace ../baseline-results/feedback-classification-de-442f4--and-conscious-continuation-webkit/trace.zip
+
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+  1 failed
+    [webkit] › tests/browser/feedback-classification.spec.ts:101:7 › desktop › feedback matrix episode 3: visible colors, counters and conscious continuation
+  1 passed (55.4s)

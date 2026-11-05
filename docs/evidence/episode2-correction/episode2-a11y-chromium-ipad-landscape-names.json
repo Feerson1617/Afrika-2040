@@ -1,0 +1,209 @@
+{
+  "device": {
+    "name": "ipad-landscape",
+    "width": 1024,
+    "height": 768,
+    "touch": true
+  },
+  "browserName": "chromium",
+  "outline": {
+    "style": "solid",
+    "width": 3,
+    "color": "rgb(35, 89, 155)"
+  },
+  "geometry": {
+    "overflow": false,
+    "texts": [
+      {
+        "text": "Neue Verbindung?",
+        "cssPixels": 15.614772727272728
+      },
+      {
+        "text": "Nord",
+        "cssPixels": 15.614772727272728
+      },
+      {
+        "text": "Neuer Wohnbereich",
+        "cssPixels": 15.614772727272728
+      },
+      {
+        "text": "8 weitere Personen",
+        "cssPixels": 15.614772727272728
+      },
+      {
+        "text": "Haltestelle Platz",
+        "cssPixels": 15.614772727272728
+      },
+      {
+        "text": "Zentrum",
+        "cssPixels": 15.614772727272728
+      },
+      {
+        "text": "2 Fahrten / Std.",
+        "cssPixels": 15.614772727272728
+      },
+      {
+        "text": "Bisher: 12 Min.",
+        "cssPixels": 15.614772727272728
+      }
+    ]
+  },
+  "snapshots": [
+    {
+      "measure": "base",
+      "path": "- button \"Neue Verbindung? Kürzere Verbindung testen\": Neue Verbindung?",
+      "bus": "- button \"2 Fahrten / Std. Zusätzliche Fahrt testen\": 2 Fahrten / Std.",
+      "nativeChromiumAXNames": {
+        "path": "Neue Verbindung? Kürzere Verbindung testen",
+        "bus": "2 Fahrten / Std. Zusätzliche Fahrt testen"
+      },
+      "axe": {
+        "violations": 0
+      }
+    },
+    {
+      "measure": "bus",
+      "path": "- button \"Neue Verbindung? Kürzere Verbindung testen\": Neue Verbindung?",
+      "bus": "- button \"3 Fahrten / Std. Zusätzliche Fahrt testen\" [pressed]: 3 Fahrten / Std.",
+      "nativeChromiumAXNames": {
+        "path": "Neue Verbindung? Kürzere Verbindung testen",
+        "bus": "3 Fahrten / Std. Zusätzliche Fahrt testen"
+      },
+      "axe": {
+        "violations": 0
+      }
+    },
+    {
+      "measure": "path",
+      "path": "- button \"4 Min. · neuer Weg Kürzere Verbindung testen\" [pressed]: 4 Min. · neuer Weg",
+      "bus": "- button \"2 Fahrten / Std. Zusätzliche Fahrt testen\": 2 Fahrten / Std.",
+      "nativeChromiumAXNames": {
+        "path": "4 Min. · neuer Weg Kürzere Verbindung testen",
+        "bus": "2 Fahrten / Std. Zusätzliche Fahrt testen"
+      },
+      "axe": {
+        "violations": 0
+      }
+    },
+    {
+      "measure": "bus",
+      "path": "- button \"Neue Verbindung? Kürzere Verbindung testen\": Neue Verbindung?",
+      "bus": "- button \"3 Fahrten / Std. Zusätzliche Fahrt testen\" [pressed]: 3 Fahrten / Std.",
+      "nativeChromiumAXNames": {
+        "path": "Neue Verbindung? Kürzere Verbindung testen",
+        "bus": "3 Fahrten / Std. Zusätzliche Fahrt testen"
+      },
+      "axe": {
+        "violations": 0
+      }
+    },
+    {
+      "measure": "base",
+      "path": "- button \"Neue Verbindung? Kürzere Verbindung testen\": Neue Verbindung?",
+      "bus": "- button \"2 Fahrten / Std. Zusätzliche Fahrt testen\": 2 Fahrten / Std.",
+      "nativeChromiumAXNames": {
+        "path": "Neue Verbindung? Kürzere Verbindung testen",
+        "bus": "2 Fahrten / Std. Zusätzliche Fahrt testen"
+      },
+      "axe": {
+        "violations": 0
+      }
+    },
+    {
+      "measure": "path",
+      "path": "- button \"4 Min. · neuer Weg Kürzere Verbindung testen\" [pressed]: 4 Min. · neuer Weg",
+      "bus": "- button \"2 Fahrten / Std. Zusätzliche Fahrt testen\": 2 Fahrten / Std.",
+      "nativeChromiumAXNames": {
+        "path": "4 Min. · neuer Weg Kürzere Verbindung testen",
+        "bus": "2 Fahrten / Std. Zusätzliche Fahrt testen"
+      },
+      "axe": {
+        "violations": 0
+      }
+    },
+    {
+      "measure": "base",
+      "path": "- button \"Neue Verbindung? Kürzere Verbindung testen\": Neue Verbindung?",
+      "bus": "- button \"2 Fahrten / Std. Zusätzliche Fahrt testen\": 2 Fahrten / Std.",
+      "nativeChromiumAXNames": {
+        "path": "Neue Verbindung? Kürzere Verbindung testen",
+        "bus": "2 Fahrten / Std. Zusätzliche Fahrt testen"
+      },
+      "axe": {
+        "violations": 0
+      }
+    },
+    {
+      "measure": "path",
+      "path": "- button \"4 Min. · neuer Weg Kürzere Verbindung testen\" [pressed]: 4 Min. · neuer Weg",
+      "bus": "- button \"2 Fahrten / Std. Zusätzliche Fahrt testen\": 2 Fahrten / Std.",
+      "nativeChromiumAXNames": {
+        "path": "4 Min. · neuer Weg Kürzere Verbindung testen",
+        "bus": "2 Fahrten / Std. Zusätzliche Fahrt testen"
+      },
+      "axe": {
+        "violations": 0
+      }
+    },
+    {
+      "measure": "bus",
+      "path": "- button \"Neue Verbindung? Kürzere Verbindung testen\": Neue Verbindung?",
+      "bus": "- button \"3 Fahrten / Std. Zusätzliche Fahrt testen\" [pressed]: 3 Fahrten / Std.",
+      "nativeChromiumAXNames": {
+        "path": "Neue Verbindung? Kürzere Verbindung testen",
+        "bus": "3 Fahrten / Std. Zusätzliche Fahrt testen"
+      },
+      "axe": {
+        "violations": 0
+      }
+    },
+    {
+      "measure": "path",
+      "path": "- button \"4 Min. · neuer Weg Kürzere Verbindung testen\" [pressed]: 4 Min. · neuer Weg",
+      "bus": "- button \"2 Fahrten / Std. Zusätzliche Fahrt testen\": 2 Fahrten / Std.",
+      "nativeChromiumAXNames": {
+        "path": "4 Min. · neuer Weg Kürzere Verbindung testen",
+        "bus": "2 Fahrten / Std. Zusätzliche Fahrt testen"
+      },
+      "axe": {
+        "violations": 0
+      }
+    },
+    {
+      "measure": "path",
+      "path": "- button \"4 Min. · neuer Weg Kürzere Verbindung testen\" [pressed]: 4 Min. · neuer Weg",
+      "bus": "- button \"2 Fahrten / Std. Zusätzliche Fahrt testen\": 2 Fahrten / Std.",
+      "nativeChromiumAXNames": {
+        "path": "4 Min. · neuer Weg Kürzere Verbindung testen",
+        "bus": "2 Fahrten / Std. Zusätzliche Fahrt testen"
+      },
+      "axe": {
+        "violations": 0
+      }
+    },
+    {
+      "measure": "bus",
+      "path": "- button \"Neue Verbindung? Kürzere Verbindung testen\": Neue Verbindung?",
+      "bus": "- button \"3 Fahrten / Std. Zusätzliche Fahrt testen\" [pressed]: 3 Fahrten / Std.",
+      "nativeChromiumAXNames": {
+        "path": "Neue Verbindung? Kürzere Verbindung testen",
+        "bus": "3 Fahrten / Std. Zusätzliche Fahrt testen"
+      },
+      "axe": {
+        "violations": 0
+      }
+    },
+    {
+      "measure": "base",
+      "path": "- button \"Neue Verbindung? Kürzere Verbindung testen\": Neue Verbindung?",
+      "bus": "- button \"2 Fahrten / Std. Zusätzliche Fahrt testen\": 2 Fahrten / Std.",
+      "nativeChromiumAXNames": {
+        "path": "Neue Verbindung? Kürzere Verbindung testen",
+        "bus": "2 Fahrten / Std. Zusätzliche Fahrt testen"
+      },
+      "axe": {
+        "violations": 0
+      }
+    }
+  ]
+}

@@ -239,7 +239,7 @@ test('free explanation text is never graded, including contradictory facts, HTML
     assert.equal(s.progress[3].failures, 0);
     assert.equal(s.progress[3].feedback?.kind, 'neutral');
     assert.equal(s.progress[3].complete, true);
-    assert.match(s.progress[3].feedback!.text, /nicht sicher prüfen/);
+    assert.match(s.progress[3].feedback!.text, /nicht fachlich prüfen/);
   }
 });
 test('changing a first idea is not a success signal, and does not alter the final recommendation', () => {

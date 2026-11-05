@@ -1,0 +1,50 @@
+[
+  {
+    "unit": "s2",
+    "target": "demand.now.capacity",
+    "version": "before",
+    "materialWords": 161,
+    "pageWords": 252,
+    "overflow": false
+  },
+  {
+    "unit": "s2",
+    "target": "demand.now.capacity",
+    "version": "after",
+    "materialWords": 68,
+    "pageWords": 169,
+    "overflow": false
+  },
+  {
+    "unit": "s4",
+    "target": "share.paid.free",
+    "version": "before",
+    "materialWords": 54,
+    "pageWords": 146,
+    "overflow": false
+  },
+  {
+    "unit": "s4",
+    "target": "share.paid.free",
+    "version": "after",
+    "materialWords": 60,
+    "pageWords": 156,
+    "overflow": false
+  },
+  {
+    "unit": "s6",
+    "target": "area.total.total",
+    "version": "before",
+    "materialWords": 93,
+    "pageWords": 194,
+    "overflow": false
+  },
+  {
+    "unit": "s6",
+    "target": "area.total.total",
+    "version": "after",
+    "materialWords": 88,
+    "pageWords": 197,
+    "overflow": false
+  }
+]

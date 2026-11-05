@@ -1,0 +1,376 @@
+{
+  "baseline": "5b825b19a9ef45cbee7d704462535ae59d677e49",
+  "beforeBrowserViews": [
+    {
+      "unit": "s2",
+      "profile": "ahr",
+      "engine": "chromium",
+      "task": "demand.transfer",
+      "material": "Nairobi · Plätze und Fußwege\n\nEine unabhängige erfundene Modellstunde. Vorher wollen 16 Menschen fahren, nach Zuzug 24. Acht neue Nachbarn kommen dazu. Die Fußwegzeiten beziehen sich auf diese acht neuen Nachbarn. Ein Bus hat 10 Plätze. Bisher: zwei Fahrten pro Stunde. Beide Maßnahmen sind unabhängig voneinander prüfbar.\n\nVor dem ZuzugJetzt: unverändertZusätzliche FahrtKurzer Fußweg\n\nJetzt: unverändert: 24 Menschen · 20 Plätze · 12 Minuten Fußweg für die neuen Nachbarn.\n\n● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\n24 Menschen; 20 Plätze in einer Stunde. Die Punkte sind Menschen, keine Einwohnerzahl Nairobis.\nErfundenes Modell · Angaben für diese Runde\nGröße\tWert\nFahrten pro Stunde\t2\nPlätze pro Fahrt\t10\nPlätze pro Stunde\t20\nFußweg der neuen Nachbarn (Minuten)\t12\n\nEine zusätzliche Fahrt und ein neuer Fußweg lösen verschiedene Probleme. Die genaue Wartezeit, Kosten und der Fahrpreis fehlen.",
+      "svg": null,
+      "answers": {
+        "enough": "yes",
+        "access": "no"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s2",
+      "profile": "ahr",
+      "engine": "webkit",
+      "task": "demand.transfer",
+      "material": "Nairobi · Plätze und Fußwege\n\nEine unabhängige erfundene Modellstunde. Vorher wollen 16 Menschen fahren, nach Zuzug 24. Acht neue Nachbarn kommen dazu. Die Fußwegzeiten beziehen sich auf diese acht neuen Nachbarn. Ein Bus hat 10 Plätze. Bisher: zwei Fahrten pro Stunde. Beide Maßnahmen sind unabhängig voneinander prüfbar.\n\nVor dem ZuzugJetzt: unverändertZusätzliche FahrtKurzer Fußweg\n\nJetzt: unverändert: 24 Menschen · 20 Plätze · 12 Minuten Fußweg für die neuen Nachbarn.\n\n● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\n24 Menschen; 20 Plätze in einer Stunde. Die Punkte sind Menschen, keine Einwohnerzahl Nairobis.\nErfundenes Modell · Angaben für diese Runde\nGröße\tWert\nFahrten pro Stunde\t2\nPlätze pro Fahrt\t10\nPlätze pro Stunde\t20\nFußweg der neuen Nachbarn (Minuten)\t12\n\nEine zusätzliche Fahrt und ein neuer Fußweg lösen verschiedene Probleme. Die genaue Wartezeit, Kosten und der Fahrpreis fehlen.",
+      "svg": null,
+      "answers": {
+        "enough": "yes",
+        "access": "no"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s2",
+      "profile": "esa",
+      "engine": "chromium",
+      "task": "demand.transfer.enough",
+      "material": "Nairobi · Plätze und Fußwege\n\nEine unabhängige erfundene Modellstunde. Vorher wollen 16 Menschen fahren, nach Zuzug 24. Acht neue Nachbarn kommen dazu. Die Fußwegzeiten beziehen sich auf diese acht neuen Nachbarn. Ein Bus hat 10 Plätze. Bisher: zwei Fahrten pro Stunde. Beide Maßnahmen sind unabhängig voneinander prüfbar.\n\nVor dem ZuzugJetzt: unverändertZusätzliche FahrtKurzer Fußweg\n\nJetzt: unverändert: 24 Menschen · 20 Plätze · 12 Minuten Fußweg für die neuen Nachbarn.\n\n● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\n24 Menschen; 20 Plätze in einer Stunde. Die Punkte sind Menschen, keine Einwohnerzahl Nairobis.\nErfundenes Modell · Angaben für diese Runde\nGröße\tWert\nFahrten pro Stunde\t2\nPlätze pro Fahrt\t10\nPlätze pro Stunde\t20\nFußweg der neuen Nachbarn (Minuten)\t12\n\nEine zusätzliche Fahrt und ein neuer Fußweg lösen verschiedene Probleme. Die genaue Wartezeit, Kosten und der Fahrpreis fehlen.",
+      "svg": null,
+      "answers": {
+        "enough": "yes"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s2",
+      "profile": "esa",
+      "engine": "webkit",
+      "task": "demand.transfer.enough",
+      "material": "Nairobi · Plätze und Fußwege\n\nEine unabhängige erfundene Modellstunde. Vorher wollen 16 Menschen fahren, nach Zuzug 24. Acht neue Nachbarn kommen dazu. Die Fußwegzeiten beziehen sich auf diese acht neuen Nachbarn. Ein Bus hat 10 Plätze. Bisher: zwei Fahrten pro Stunde. Beide Maßnahmen sind unabhängig voneinander prüfbar.\n\nVor dem ZuzugJetzt: unverändertZusätzliche FahrtKurzer Fußweg\n\nJetzt: unverändert: 24 Menschen · 20 Plätze · 12 Minuten Fußweg für die neuen Nachbarn.\n\n● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\n24 Menschen; 20 Plätze in einer Stunde. Die Punkte sind Menschen, keine Einwohnerzahl Nairobis.\nErfundenes Modell · Angaben für diese Runde\nGröße\tWert\nFahrten pro Stunde\t2\nPlätze pro Fahrt\t10\nPlätze pro Stunde\t20\nFußweg der neuen Nachbarn (Minuten)\t12\n\nEine zusätzliche Fahrt und ein neuer Fußweg lösen verschiedene Probleme. Die genaue Wartezeit, Kosten und der Fahrpreis fehlen.",
+      "svg": null,
+      "answers": {
+        "enough": "yes"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s2",
+      "profile": "foerder",
+      "engine": "chromium",
+      "task": "demand.transfer.enough",
+      "material": "Nairobi · Plätze und Fußwege\n\nEine unabhängige erfundene Modellstunde. Vorher wollen 16 Menschen fahren, nach Zuzug 24. Acht neue Nachbarn kommen dazu. Die Fußwegzeiten beziehen sich auf diese acht neuen Nachbarn. Ein Bus hat 10 Plätze. Bisher: zwei Fahrten pro Stunde. Beide Maßnahmen sind unabhängig voneinander prüfbar.\n\nVor dem ZuzugJetzt: unverändertZusätzliche FahrtKurzer Fußweg\n\nJetzt: unverändert: 24 Menschen · 20 Plätze · 12 Minuten Fußweg für die neuen Nachbarn.\n\n● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\n24 Menschen; 20 Plätze in einer Stunde. Die Punkte sind Menschen, keine Einwohnerzahl Nairobis.\nErfundenes Modell · Angaben für diese Runde\nGröße\tWert\nFahrten pro Stunde\t2\nPlätze pro Fahrt\t10\nPlätze pro Stunde\t20\nFußweg der neuen Nachbarn (Minuten)\t12\n\nEine zusätzliche Fahrt und ein neuer Fußweg lösen verschiedene Probleme. Die genaue Wartezeit, Kosten und der Fahrpreis fehlen.",
+      "svg": null,
+      "answers": {
+        "enough": "yes"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s2",
+      "profile": "foerder",
+      "engine": "webkit",
+      "task": "demand.transfer.enough",
+      "material": "Nairobi · Plätze und Fußwege\n\nEine unabhängige erfundene Modellstunde. Vorher wollen 16 Menschen fahren, nach Zuzug 24. Acht neue Nachbarn kommen dazu. Die Fußwegzeiten beziehen sich auf diese acht neuen Nachbarn. Ein Bus hat 10 Plätze. Bisher: zwei Fahrten pro Stunde. Beide Maßnahmen sind unabhängig voneinander prüfbar.\n\nVor dem ZuzugJetzt: unverändertZusätzliche FahrtKurzer Fußweg\n\nJetzt: unverändert: 24 Menschen · 20 Plätze · 12 Minuten Fußweg für die neuen Nachbarn.\n\n● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\n24 Menschen; 20 Plätze in einer Stunde. Die Punkte sind Menschen, keine Einwohnerzahl Nairobis.\nErfundenes Modell · Angaben für diese Runde\nGröße\tWert\nFahrten pro Stunde\t2\nPlätze pro Fahrt\t10\nPlätze pro Stunde\t20\nFußweg der neuen Nachbarn (Minuten)\t12\n\nEine zusätzliche Fahrt und ein neuer Fußweg lösen verschiedene Probleme. Die genaue Wartezeit, Kosten und der Fahrpreis fehlen.",
+      "svg": null,
+      "answers": {
+        "enough": "yes"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s2",
+      "profile": "msa",
+      "engine": "chromium",
+      "task": "demand.transfer",
+      "material": "Nairobi · Plätze und Fußwege\n\nEine unabhängige erfundene Modellstunde. Vorher wollen 16 Menschen fahren, nach Zuzug 24. Acht neue Nachbarn kommen dazu. Die Fußwegzeiten beziehen sich auf diese acht neuen Nachbarn. Ein Bus hat 10 Plätze. Bisher: zwei Fahrten pro Stunde. Beide Maßnahmen sind unabhängig voneinander prüfbar.\n\nVor dem ZuzugJetzt: unverändertZusätzliche FahrtKurzer Fußweg\n\nJetzt: unverändert: 24 Menschen · 20 Plätze · 12 Minuten Fußweg für die neuen Nachbarn.\n\n● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\n24 Menschen; 20 Plätze in einer Stunde. Die Punkte sind Menschen, keine Einwohnerzahl Nairobis.\nErfundenes Modell · Angaben für diese Runde\nGröße\tWert\nFahrten pro Stunde\t2\nPlätze pro Fahrt\t10\nPlätze pro Stunde\t20\nFußweg der neuen Nachbarn (Minuten)\t12\n\nEine zusätzliche Fahrt und ein neuer Fußweg lösen verschiedene Probleme. Die genaue Wartezeit, Kosten und der Fahrpreis fehlen.",
+      "svg": null,
+      "answers": {
+        "enough": "yes",
+        "access": "no"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s2",
+      "profile": "msa",
+      "engine": "webkit",
+      "task": "demand.transfer",
+      "material": "Nairobi · Plätze und Fußwege\n\nEine unabhängige erfundene Modellstunde. Vorher wollen 16 Menschen fahren, nach Zuzug 24. Acht neue Nachbarn kommen dazu. Die Fußwegzeiten beziehen sich auf diese acht neuen Nachbarn. Ein Bus hat 10 Plätze. Bisher: zwei Fahrten pro Stunde. Beide Maßnahmen sind unabhängig voneinander prüfbar.\n\nVor dem ZuzugJetzt: unverändertZusätzliche FahrtKurzer Fußweg\n\nJetzt: unverändert: 24 Menschen · 20 Plätze · 12 Minuten Fußweg für die neuen Nachbarn.\n\n● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ● ●\n24 Menschen; 20 Plätze in einer Stunde. Die Punkte sind Menschen, keine Einwohnerzahl Nairobis.\nErfundenes Modell · Angaben für diese Runde\nGröße\tWert\nFahrten pro Stunde\t2\nPlätze pro Fahrt\t10\nPlätze pro Stunde\t20\nFußweg der neuen Nachbarn (Minuten)\t12\n\nEine zusätzliche Fahrt und ein neuer Fußweg lösen verschiedene Probleme. Die genaue Wartezeit, Kosten und der Fahrpreis fehlen.",
+      "svg": null,
+      "answers": {
+        "enough": "yes",
+        "access": "no"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s5",
+      "profile": "ahr",
+      "engine": "chromium",
+      "task": "water.transfer",
+      "material": "Ein Betrieb bei Agadir · Marokko\n\nUnabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.\n\nBisherReparaturNeue Verteilung\n\nAktuelle Modellansicht: Reparatur. Prüfe, auf welche Maßnahme sich die Frage bezieht.\n\nTank: Start 80 WE\nRest selbst bestimmen\nEntnahme\n50 WE\nAm Feld\n40 WE\nEntnahme aus dem Tank ist nicht gleich Ankunft am Feld. Der Verbleib des übrigen Wassers wird nicht berechnet.\nErfundenes Modell · Angaben für diese Runde\nMessstelle\tWE\nTank am Anfang\t80\nEntnahme\t50\nAnkunft am selben Feld\t40\nGrenzen und Annahmen des Modells",
+      "svg": "Tank: Start 80 WERest selbst bestimmenEntnahme50 WEAm Feld40 WE",
+      "answers": {
+        "rest": "20"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s5",
+      "profile": "ahr",
+      "engine": "webkit",
+      "task": "water.transfer",
+      "material": "Ein Betrieb bei Agadir · Marokko\n\nUnabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.\n\nBisherReparaturNeue Verteilung\n\nAktuelle Modellansicht: Reparatur. Prüfe, auf welche Maßnahme sich die Frage bezieht.\n\nTank: Start 80 WE\nRest selbst bestimmen\nEntnahme\n50 WE\nAm Feld\n40 WE\nEntnahme aus dem Tank ist nicht gleich Ankunft am Feld. Der Verbleib des übrigen Wassers wird nicht berechnet.\nErfundenes Modell · Angaben für diese Runde\nMessstelle\tWE\nTank am Anfang\t80\nEntnahme\t50\nAnkunft am selben Feld\t40\nGrenzen und Annahmen des Modells",
+      "svg": "Tank: Start 80 WERest selbst bestimmenEntnahme50 WEAm Feld40 WE",
+      "answers": {
+        "rest": "20"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s5",
+      "profile": "esa",
+      "engine": "chromium",
+      "task": "water.transfer",
+      "material": "Ein Betrieb bei Agadir · Marokko\n\nUnabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.\n\nBisherReparaturNeue Verteilung\n\nAktuelle Modellansicht: Reparatur. Prüfe, auf welche Maßnahme sich die Frage bezieht.\n\nTank: Start 80 WE\nRest selbst bestimmen\nEntnahme\n50 WE\nAm Feld\n40 WE\nEntnahme aus dem Tank ist nicht gleich Ankunft am Feld. Der Verbleib des übrigen Wassers wird nicht berechnet.\nErfundenes Modell · Angaben für diese Runde\nMessstelle\tWE\nTank am Anfang\t80\nEntnahme\t50\nAnkunft am selben Feld\t40\nGrenzen und Annahmen des Modells",
+      "svg": "Tank: Start 80 WERest selbst bestimmenEntnahme50 WEAm Feld40 WE",
+      "answers": {
+        "rest": "20"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s5",
+      "profile": "esa",
+      "engine": "webkit",
+      "task": "water.transfer",
+      "material": "Ein Betrieb bei Agadir · Marokko\n\nUnabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.\n\nBisherReparaturNeue Verteilung\n\nAktuelle Modellansicht: Reparatur. Prüfe, auf welche Maßnahme sich die Frage bezieht.\n\nTank: Start 80 WE\nRest selbst bestimmen\nEntnahme\n50 WE\nAm Feld\n40 WE\nEntnahme aus dem Tank ist nicht gleich Ankunft am Feld. Der Verbleib des übrigen Wassers wird nicht berechnet.\nErfundenes Modell · Angaben für diese Runde\nMessstelle\tWE\nTank am Anfang\t80\nEntnahme\t50\nAnkunft am selben Feld\t40\nGrenzen und Annahmen des Modells",
+      "svg": "Tank: Start 80 WERest selbst bestimmenEntnahme50 WEAm Feld40 WE",
+      "answers": {
+        "rest": "20"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s5",
+      "profile": "foerder",
+      "engine": "chromium",
+      "task": "water.transfer",
+      "material": "Ein Betrieb bei Agadir · Marokko\n\nUnabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.\n\nBisherReparaturNeue Verteilung\n\nAktuelle Modellansicht: Reparatur. Prüfe, auf welche Maßnahme sich die Frage bezieht.\n\nTank: Start 80 WE\nRest 30 WE\nEntnahme\n50 WE\nAm Feld\n40 WE\nEntnahme aus dem Tank ist nicht gleich Ankunft am Feld. Der Verbleib des übrigen Wassers wird nicht berechnet.\nErfundenes Modell · Angaben für diese Runde\nMessstelle\tWE\nTank am Anfang\t80\nEntnahme\t50\nAnkunft am selben Feld\t40\nErklärter Tankrest\t30\nGrenzen und Annahmen des Modells",
+      "svg": "Tank: Start 80 WERest 30 WEEntnahme50 WEAm Feld40 WE",
+      "answers": {
+        "rest": "20"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s5",
+      "profile": "foerder",
+      "engine": "webkit",
+      "task": "water.transfer",
+      "material": "Ein Betrieb bei Agadir · Marokko\n\nUnabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.\n\nBisherReparaturNeue Verteilung\n\nAktuelle Modellansicht: Reparatur. Prüfe, auf welche Maßnahme sich die Frage bezieht.\n\nTank: Start 80 WE\nRest 30 WE\nEntnahme\n50 WE\nAm Feld\n40 WE\nEntnahme aus dem Tank ist nicht gleich Ankunft am Feld. Der Verbleib des übrigen Wassers wird nicht berechnet.\nErfundenes Modell · Angaben für diese Runde\nMessstelle\tWE\nTank am Anfang\t80\nEntnahme\t50\nAnkunft am selben Feld\t40\nErklärter Tankrest\t30\nGrenzen und Annahmen des Modells",
+      "svg": "Tank: Start 80 WERest 30 WEEntnahme50 WEAm Feld40 WE",
+      "answers": {
+        "rest": "20"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s5",
+      "profile": "msa",
+      "engine": "chromium",
+      "task": "water.transfer",
+      "material": "Ein Betrieb bei Agadir · Marokko\n\nUnabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.\n\nBisherReparaturNeue Verteilung\n\nAktuelle Modellansicht: Reparatur. Prüfe, auf welche Maßnahme sich die Frage bezieht.\n\nTank: Start 80 WE\nRest selbst bestimmen\nEntnahme\n50 WE\nAm Feld\n40 WE\nEntnahme aus dem Tank ist nicht gleich Ankunft am Feld. Der Verbleib des übrigen Wassers wird nicht berechnet.\nErfundenes Modell · Angaben für diese Runde\nMessstelle\tWE\nTank am Anfang\t80\nEntnahme\t50\nAnkunft am selben Feld\t40\nGrenzen und Annahmen des Modells",
+      "svg": "Tank: Start 80 WERest selbst bestimmenEntnahme50 WEAm Feld40 WE",
+      "answers": {
+        "rest": "20"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s5",
+      "profile": "msa",
+      "engine": "webkit",
+      "task": "water.transfer",
+      "material": "Ein Betrieb bei Agadir · Marokko\n\nUnabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.\n\nBisherReparaturNeue Verteilung\n\nAktuelle Modellansicht: Reparatur. Prüfe, auf welche Maßnahme sich die Frage bezieht.\n\nTank: Start 80 WE\nRest selbst bestimmen\nEntnahme\n50 WE\nAm Feld\n40 WE\nEntnahme aus dem Tank ist nicht gleich Ankunft am Feld. Der Verbleib des übrigen Wassers wird nicht berechnet.\nErfundenes Modell · Angaben für diese Runde\nMessstelle\tWE\nTank am Anfang\t80\nEntnahme\t50\nAnkunft am selben Feld\t40\nGrenzen und Annahmen des Modells",
+      "svg": "Tank: Start 80 WERest selbst bestimmenEntnahme50 WEAm Feld40 WE",
+      "answers": {
+        "rest": "20"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s6",
+      "profile": "ahr",
+      "engine": "chromium",
+      "task": "area.transfer",
+      "material": "Ein Betrieb bei Agadir · Marokko\n\nUnabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.\n\nFrüher: ein FeldNeue Technik: gleiches FeldMit Zusatzfeld\n\nAktuelle Modellansicht: Mit Zusatzfeld. Prüfe, auf welche Maßnahme sich die Frage bezieht.\n\nTank: Start 80 WE\nRest selbst bestimmen\nEntnahme\n65 WE\nErstes Feld\n45 WE\nZusatz: 20 WE\nFeldsymbole sind schematisch, ohne Hektarmaßstab. Die Zusatzfläche ist kleiner.\nErfundenes Modell · Angaben für diese Runde\nFläche\tEntnahme (WE)\nErstes Feld\t45\nZusatzfeld\t20\nGrenzen und Annahmen des Modells",
+      "svg": "Tank: Start 80 WERest selbst bestimmenEntnahme65 WEErstes Feld45 WEZusatz: 20 WE",
+      "answers": {
+        "total": "55",
+        "less": "yes"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s6",
+      "profile": "ahr",
+      "engine": "webkit",
+      "task": "area.transfer",
+      "material": "Ein Betrieb bei Agadir · Marokko\n\nUnabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.\n\nFrüher: ein FeldNeue Technik: gleiches FeldMit Zusatzfeld\n\nAktuelle Modellansicht: Mit Zusatzfeld. Prüfe, auf welche Maßnahme sich die Frage bezieht.\n\nTank: Start 80 WE\nRest selbst bestimmen\nEntnahme\n65 WE\nErstes Feld\n45 WE\nZusatz: 20 WE\nFeldsymbole sind schematisch, ohne Hektarmaßstab. Die Zusatzfläche ist kleiner.\nErfundenes Modell · Angaben für diese Runde\nFläche\tEntnahme (WE)\nErstes Feld\t45\nZusatzfeld\t20\nGrenzen und Annahmen des Modells",
+      "svg": "Tank: Start 80 WERest selbst bestimmenEntnahme65 WEErstes Feld45 WEZusatz: 20 WE",
+      "answers": {
+        "total": "55",
+        "less": "yes"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s6",
+      "profile": "esa",
+      "engine": "chromium",
+      "task": "area.transfer.total",
+      "material": "Ein Betrieb bei Agadir · Marokko\n\nUnabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.\n\nFrüher: ein FeldNeue Technik: gleiches FeldMit Zusatzfeld\n\nAktuelle Modellansicht: Mit Zusatzfeld. Prüfe, auf welche Maßnahme sich die Frage bezieht.\n\nTank: Start 80 WE\nRest selbst bestimmen\nEntnahme\n65 WE\nErstes Feld\n45 WE\nZusatz: 20 WE\nFeldsymbole sind schematisch, ohne Hektarmaßstab. Die Zusatzfläche ist kleiner.\nErfundenes Modell · Angaben für diese Runde\nFläche\tEntnahme (WE)\nErstes Feld\t45\nZusatzfeld\t20\nGrenzen und Annahmen des Modells",
+      "svg": "Tank: Start 80 WERest selbst bestimmenEntnahme65 WEErstes Feld45 WEZusatz: 20 WE",
+      "answers": {
+        "total": "55"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s6",
+      "profile": "esa",
+      "engine": "webkit",
+      "task": "area.transfer.total",
+      "material": "Ein Betrieb bei Agadir · Marokko\n\nUnabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.\n\nFrüher: ein FeldNeue Technik: gleiches FeldMit Zusatzfeld\n\nAktuelle Modellansicht: Mit Zusatzfeld. Prüfe, auf welche Maßnahme sich die Frage bezieht.\n\nTank: Start 80 WE\nRest selbst bestimmen\nEntnahme\n65 WE\nErstes Feld\n45 WE\nZusatz: 20 WE\nFeldsymbole sind schematisch, ohne Hektarmaßstab. Die Zusatzfläche ist kleiner.\nErfundenes Modell · Angaben für diese Runde\nFläche\tEntnahme (WE)\nErstes Feld\t45\nZusatzfeld\t20\nGrenzen und Annahmen des Modells",
+      "svg": "Tank: Start 80 WERest selbst bestimmenEntnahme65 WEErstes Feld45 WEZusatz: 20 WE",
+      "answers": {
+        "total": "55"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s6",
+      "profile": "foerder",
+      "engine": "chromium",
+      "task": "area.transfer",
+      "material": "Ein Betrieb bei Agadir · Marokko\n\nUnabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.\n\nFrüher: ein FeldNeue Technik: gleiches FeldMit Zusatzfeld\n\nAktuelle Modellansicht: Mit Zusatzfeld. Prüfe, auf welche Maßnahme sich die Frage bezieht.\n\nTank: Start 80 WE\nRest 15 WE\nEntnahme\n65 WE\nErstes Feld\n45 WE\nZusatz: 20 WE\nFeldsymbole sind schematisch, ohne Hektarmaßstab. Die Zusatzfläche ist kleiner.\nErfundenes Modell · Angaben für diese Runde\nFläche\tEntnahme (WE)\nErstes Feld\t45\nZusatzfeld\t20\nErklärte Gesamtentnahme\t65\nErklärter Tankrest\t15\nGrenzen und Annahmen des Modells",
+      "svg": "Tank: Start 80 WERest 15 WEEntnahme65 WEErstes Feld45 WEZusatz: 20 WE",
+      "answers": {
+        "total": "yes"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s6",
+      "profile": "foerder",
+      "engine": "webkit",
+      "task": "area.transfer",
+      "material": "Ein Betrieb bei Agadir · Marokko\n\nUnabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.\n\nFrüher: ein FeldNeue Technik: gleiches FeldMit Zusatzfeld\n\nAktuelle Modellansicht: Mit Zusatzfeld. Prüfe, auf welche Maßnahme sich die Frage bezieht.\n\nTank: Start 80 WE\nRest 15 WE\nEntnahme\n65 WE\nErstes Feld\n45 WE\nZusatz: 20 WE\nFeldsymbole sind schematisch, ohne Hektarmaßstab. Die Zusatzfläche ist kleiner.\nErfundenes Modell · Angaben für diese Runde\nFläche\tEntnahme (WE)\nErstes Feld\t45\nZusatzfeld\t20\nErklärte Gesamtentnahme\t65\nErklärter Tankrest\t15\nGrenzen und Annahmen des Modells",
+      "svg": "Tank: Start 80 WERest 15 WEEntnahme65 WEErstes Feld45 WEZusatz: 20 WE",
+      "answers": {
+        "total": "yes"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s6",
+      "profile": "msa",
+      "engine": "chromium",
+      "task": "area.transfer",
+      "material": "Ein Betrieb bei Agadir · Marokko\n\nUnabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.\n\nFrüher: ein FeldNeue Technik: gleiches FeldMit Zusatzfeld\n\nAktuelle Modellansicht: Mit Zusatzfeld. Prüfe, auf welche Maßnahme sich die Frage bezieht.\n\nTank: Start 80 WE\nRest selbst bestimmen\nEntnahme\n65 WE\nErstes Feld\n45 WE\nZusatz: 20 WE\nFeldsymbole sind schematisch, ohne Hektarmaßstab. Die Zusatzfläche ist kleiner.\nErfundenes Modell · Angaben für diese Runde\nFläche\tEntnahme (WE)\nErstes Feld\t45\nZusatzfeld\t20\nGrenzen und Annahmen des Modells",
+      "svg": "Tank: Start 80 WERest selbst bestimmenEntnahme65 WEErstes Feld45 WEZusatz: 20 WE",
+      "answers": {
+        "total": "55",
+        "less": "yes"
+      },
+      "status": "correct"
+    },
+    {
+      "unit": "s6",
+      "profile": "msa",
+      "engine": "webkit",
+      "task": "area.transfer",
+      "material": "Ein Betrieb bei Agadir · Marokko\n\nUnabhängige erfundene Runde. 80 Wassereinheiten (WE) im Tank, kein Zufluss. WE sind keine echten Messwerte. Der Tank ist kein Grundwasser.\n\nFrüher: ein FeldNeue Technik: gleiches FeldMit Zusatzfeld\n\nAktuelle Modellansicht: Mit Zusatzfeld. Prüfe, auf welche Maßnahme sich die Frage bezieht.\n\nTank: Start 80 WE\nRest selbst bestimmen\nEntnahme\n65 WE\nErstes Feld\n45 WE\nZusatz: 20 WE\nFeldsymbole sind schematisch, ohne Hektarmaßstab. Die Zusatzfläche ist kleiner.\nErfundenes Modell · Angaben für diese Runde\nFläche\tEntnahme (WE)\nErstes Feld\t45\nZusatzfeld\t20\nGrenzen und Annahmen des Modells",
+      "svg": "Tank: Start 80 WERest selbst bestimmenEntnahme65 WEErstes Feld45 WEZusatz: 20 WE",
+      "answers": {
+        "total": "55",
+        "less": "yes"
+      },
+      "status": "correct"
+    }
+  ],
+  "screenshots": [
+    {
+      "file": "s2-before.png",
+      "unit": "s2",
+      "view": "before",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "synthetic": true,
+      "sha256": "23105d61df49f90f848459e1760b232da5602e395eac70a23a8ba808b5bf6004"
+    },
+    {
+      "file": "s2-after.png",
+      "unit": "s2",
+      "view": "after",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "synthetic": true,
+      "sha256": "674cf91a7295cdbc86a7f2be4cf963c00955b6c126c4346b059b673b721fd0f1"
+    },
+    {
+      "file": "s5-before.png",
+      "unit": "s5",
+      "view": "before",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "synthetic": true,
+      "sha256": "acea19c6a0060444a2627b0e642c5e9adb5e254b6542939ce95c7c1a435fbdd5"
+    },
+    {
+      "file": "s5-after.png",
+      "unit": "s5",
+      "view": "after",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "synthetic": true,
+      "sha256": "93c4e180d289d9243b246c379ea281392212156d4c8776ed0bd12d858e1df6e4"
+    },
+    {
+      "file": "s6-before.png",
+      "unit": "s6",
+      "view": "before",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1366,
+        "height": 900
+      },
+      "synthetic": true,
+      "sha256": "0698e156c0afb3c4c83f8197dc3315fdc8e0337b8d7321aa1a0eb080b1ecd397"
+    },
+    {
+      "file": "s6-after.png",
+      "unit": "s6",
+      "view": "after",
+      "engine": "webkit",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "synthetic": true,
+      "sha256": "76e1641d888e0461271bd1c78589cf529373fa91cc5899285552e8f3c0230b23"
+    }
+  ],
+  "note": "Before captures use the old production build; after captures use the corrected build. Different declared viewport sizes; no pixel difference claim. All answers are synthetic. Final full browser results are in checks.json."
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "file": "Fachanforderungen Geographie Sekundarstufe (2015).pdf",
+    "sha256": "68a06c168ac13ac3f4915cb2c77293927b821d93bc91fbceb9896893b696f6fb",
+    "pages": 60,
+    "pages_text_opened": 60,
+    "missing_access": false,
+    "render_audit": "docs/source-access.json (earlier full render, no new full-render claim)"
+  },
+  {
+    "file": "Leitfaden_zu_den_Fachanforderungen_Geographie-2.pdf",
+    "sha256": "eaf6aece327198fa2c1d1fb6c7b615b3f0881fa6b1e55f298ff044f8da4fe326",
+    "pages": 92,
+    "pages_text_opened": 92,
+    "missing_access": false,
+    "render_audit": "docs/source-access.json (earlier full render, no new full-render claim)"
+  },
+  {
+    "file": "Fachinternes Curriculum Geographie.pdf",
+    "sha256": "0ea706083d438aee052d79a1be8675c642509ad9097c0e9eea0d031e942a7b0f",
+    "pages": 7,
+    "pages_text_opened": 7,
+    "missing_access": false,
+    "render_audit": "docs/source-access.json (earlier full render, no new full-render claim)"
+  }
+]

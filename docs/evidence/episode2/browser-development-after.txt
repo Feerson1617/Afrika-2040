@@ -1,0 +1,35 @@
+[WebServer] (node:90002) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:90027) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 17 tests using 2 workers
+
+(node:90040) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:90039) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/17] [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete path on desktop: direct entry, real model experiments and supported judgment limits
+[2/17] [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete bus on desktop: direct entry, real model experiments and supported judgment limits
+[3/17] [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete bus on ipad-landscape: direct entry, real model experiments and supported judgment limits
+[4/17] [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete path on ipad-landscape: direct entry, real model experiments and supported judgment limits
+[5/17] [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete bus on ipad-portrait: direct entry, real model experiments and supported judgment limits
+[6/17] [chromium] › tests/browser/episode2.spec.ts:146:5 › Episode 2 complete path on ipad-portrait: direct entry, real model experiments and supported judgment limits
+[7/17] [chromium] › tests/browser/episode2.spec.ts:227:1 › Episode 2 missing and partial inputs, automatic help after two errors, both trial effects and deliberate adoption
+[8/17] [chromium] › tests/browser/episode2.spec.ts:288:3 › Episode 2 conscious goal conflict bus has two valid revision paths and a concrete weighted product
+[9/17] [chromium] › tests/browser/episode2.spec.ts:288:3 › Episode 2 conscious goal conflict path has two valid revision paths and a concrete weighted product
+[10/17] [chromium] › tests/browser/episode2.spec.ts:328:1 › Episode 2 unclear free text remains ungraded, escaped and editable; example adoption keeps own text and honest provenance
+[11/17] [chromium] › tests/browser/episode2.spec.ts:365:1 › Episode 2 uses an existing first recommendation, keeps it through reload/back/menu and opens its saved report
+[12/17] [chromium] › tests/browser/episode2.spec.ts:399:1 › Episode 2 native keyboard alone operates complete direct entry, real map controls, choices and report
+[13/17] [chromium] › tests/browser/episode2.spec.ts:440:1 › Episode 2 blocked storage permits a complete supported flow, word help and confirmed restart
+[14/17] [chromium] › tests/browser/episode2.spec.ts:469:1 › Episode 2 damaged optional storage and explicit step reset have safe continuations
+[15/17] [chromium] › tests/browser/episode2.spec.ts:499:3 › Episode 2 full bus works below the local Pages prefix with clean resources
+[16/17] [chromium] › tests/browser/episode2.spec.ts:499:3 › Episode 2 full path works below the local Pages prefix with clean resources
+[17/17] [chromium] › tests/browser/episode2.spec.ts:513:1 › Episode 2 start, comparison, trial, open conflict, supported product pass scoped axe rules
+  17 passed (31.3s)

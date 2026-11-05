@@ -1,0 +1,4885 @@
+{
+  "baseCommit": "542eab3176d79a509ab29cdf648c3f5a1fb9faf4",
+  "didacticAuditComplete": false,
+  "logic": {
+    "passed": 488,
+    "failed": 0,
+    "skipped": 0
+  },
+  "browsers": {
+    "runs": [
+      {
+        "file": "browser-routes.json",
+        "stats": {
+          "startTime": "2026-11-02T20:15:29.942Z",
+          "duration": 747910.266,
+          "expected": 390,
+          "skipped": 0,
+          "unexpected": 12,
+          "flaky": 0
+        },
+        "cases": [
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths c/foerder supported=false: actual complete flow and honest journal",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths c/foerder supported=true: actual complete flow and honest journal",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths s1/foerder supported=false: actual complete flow and honest journal",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths s1/foerder supported=true: actual complete flow and honest journal",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths c/esa supported=false: actual complete flow and honest journal",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths c/esa supported=true: actual complete flow and honest journal",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths s1/esa supported=false: actual complete flow and honest journal",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths s1/esa supported=true: actual complete flow and honest journal",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths c/msa supported=false: actual complete flow and honest journal",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths s1/msa supported=false: actual complete flow and honest journal",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths s1/msa supported=true: actual complete flow and honest journal",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths c/ahr supported=false: actual complete flow and honest journal",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths c/ahr supported=true: actual complete flow and honest journal",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths s1/ahr supported=false: actual complete flow and honest journal",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths s1/ahr supported=true: actual complete flow and honest journal",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths all twelve switches preserve drafts and restore the actual attempt",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths numeric feedback colors, format, explicit example and editing stay distinct",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths legacy, narrow Pages content, blocked storage and global restart",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths actual narrow content iframe supports material keyboard and arithmetic",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths c/foerder supported=false: actual complete flow and honest journal",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths c/foerder supported=true: actual complete flow and honest journal",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths s1/foerder supported=false: actual complete flow and honest journal",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths s1/foerder supported=true: actual complete flow and honest journal",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths c/esa supported=false: actual complete flow and honest journal",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths c/esa supported=true: actual complete flow and honest journal",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths s1/esa supported=false: actual complete flow and honest journal",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths s1/esa supported=true: actual complete flow and honest journal",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths c/msa supported=false: actual complete flow and honest journal",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths c/msa supported=true: actual complete flow and honest journal",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths s1/msa supported=false: actual complete flow and honest journal",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths s1/msa supported=true: actual complete flow and honest journal",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths c/ahr supported=false: actual complete flow and honest journal",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths c/ahr supported=true: actual complete flow and honest journal",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths s1/ahr supported=false: actual complete flow and honest journal",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths s1/ahr supported=true: actual complete flow and honest journal",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths all twelve switches preserve drafts and restore the actual attempt",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths numeric feedback colors, format, explicit example and editing stay distinct",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths legacy, narrow Pages content, blocked storage and global restart",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "four-paths.spec.ts",
+            "title": "four-paths.spec.ts / Afrika curriculum four paths actual narrow content iframe supports material keyboard and arithmetic",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality a/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality a/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality a/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality a/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality n/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality n/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality n/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality n/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality c/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality c/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality c/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality c/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality d/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality d/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality d/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality d/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality e/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality e/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality e/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality e/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s1/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s1/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s1/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s1/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s2/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s2/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s2/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s2/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s3/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s3/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s3/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s3/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s4/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s4/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s4/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s4/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s5/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s5/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s5/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s5/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s6/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s6/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s6/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s6/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality o/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality o/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality o/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality o/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality r/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality r/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality r/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality r/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality a/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality a/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality a/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality a/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality n/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality n/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality n/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality n/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality c/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality c/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality c/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality c/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality d/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality d/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality d/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality d/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality e/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality e/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality e/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality e/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s1/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s1/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s1/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s1/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s2/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s2/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s2/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s2/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s3/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s3/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s3/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s3/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s4/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s4/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s4/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s4/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s5/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s5/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s5/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s5/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s6/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s6/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s6/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality s6/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality o/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality o/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality o/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality o/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality r/foerder: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality r/esa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality r/msa: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b-quality.spec.ts",
+            "title": "packet-b-quality.spec.ts / Afrika curriculum PaketB quality r/ahr: actual feedback, counters, help, retained right parts and rework",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s1/foerder supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s1/foerder supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s1/esa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s1/esa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s1/msa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s1/msa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s1/ahr supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s1/ahr supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/foerder supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/foerder supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/esa supported=false",
+            "project": "chromium",
+            "status": "unexpected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/esa supported=true",
+            "project": "chromium",
+            "status": "unexpected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/msa supported=false",
+            "project": "chromium",
+            "status": "unexpected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/msa supported=true",
+            "project": "chromium",
+            "status": "unexpected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/ahr supported=false",
+            "project": "chromium",
+            "status": "unexpected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/ahr supported=true",
+            "project": "chromium",
+            "status": "unexpected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s3/foerder supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s3/foerder supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s3/esa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s3/esa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s3/msa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s3/msa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s3/ahr supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s3/ahr supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/foerder supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/foerder supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/esa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/esa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/msa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/msa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/ahr supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/ahr supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/foerder supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/foerder supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/esa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/esa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/msa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/msa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/ahr supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/ahr supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/foerder supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/foerder supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/esa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/esa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/msa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/msa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/ahr supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/ahr supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB o/foerder supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB o/foerder supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB o/esa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB o/esa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB o/msa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB o/msa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB o/ahr supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB o/ahr supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB r/foerder supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB r/foerder supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB r/esa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB r/esa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB r/msa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB r/msa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB r/ahr supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB r/ahr supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s1/foerder supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s1/foerder supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s1/esa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s1/esa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s1/msa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s1/msa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s1/ahr supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s1/ahr supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/foerder supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/foerder supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/esa supported=false",
+            "project": "webkit",
+            "status": "unexpected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/esa supported=true",
+            "project": "webkit",
+            "status": "unexpected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/msa supported=false",
+            "project": "webkit",
+            "status": "unexpected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/msa supported=true",
+            "project": "webkit",
+            "status": "unexpected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/ahr supported=false",
+            "project": "webkit",
+            "status": "unexpected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/ahr supported=true",
+            "project": "webkit",
+            "status": "unexpected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s3/foerder supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s3/foerder supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s3/esa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s3/esa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s3/msa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s3/msa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s3/ahr supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s3/ahr supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/foerder supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/foerder supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/esa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/esa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/msa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/msa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/ahr supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/ahr supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/foerder supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/foerder supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/esa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/esa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/msa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/msa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/ahr supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/ahr supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/foerder supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/foerder supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/esa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/esa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/msa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/msa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/ahr supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/ahr supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB o/foerder supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB o/foerder supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB o/esa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB o/esa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB o/msa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB o/msa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB o/ahr supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB o/ahr supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB r/foerder supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB r/foerder supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB r/esa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB r/esa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB r/msa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB r/msa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB r/ahr supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB r/ahr supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 a/foerder supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 a/foerder supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 a/esa supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 a/esa supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 a/msa supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 a/msa supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 a/ahr supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 a/ahr supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/foerder supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/foerder supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/esa supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/esa supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/msa supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/msa supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/ahr supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/ahr supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 d/foerder supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 d/foerder supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 d/esa supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 d/esa supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 d/msa supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 d/msa supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 d/ahr supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 d/ahr supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 e/foerder supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 e/foerder supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 e/esa supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 e/esa supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 e/msa supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 e/msa supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 e/ahr supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 e/ahr supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 future wrong parts, goal conflict, full sources, plan change and historical wording",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 explicit revision requires a new plan and new evidence; long statements stay visible with keyboard",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 a/foerder supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 a/foerder supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 a/esa supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 a/esa supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 a/msa supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 a/msa supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 a/ahr supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 a/ahr supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/foerder supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/foerder supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/esa supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/esa supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/msa supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/msa supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/ahr supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/ahr supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 d/foerder supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 d/foerder supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 d/esa supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 d/esa supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 d/msa supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 d/msa supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 d/ahr supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 d/ahr supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 e/foerder supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 e/foerder supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 e/esa supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 e/esa supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 e/msa supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 e/msa supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 e/ahr supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 e/ahr supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 future wrong parts, goal conflict, full sources, plan change and historical wording",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 explicit revision requires a new plan and new evidence; long statements stay visible with keyboard",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/foerder/demand.transfer.enough supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/foerder/demand.transfer.enough supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/foerder/demand.transfer.access supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/foerder/demand.transfer.access supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/esa/demand.transfer.enough supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/esa/demand.transfer.enough supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/esa/demand.transfer.access supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/esa/demand.transfer.access supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/msa/demand.transfer supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/msa/demand.transfer supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/ahr/demand.transfer supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/ahr/demand.transfer supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s5/foerder/water.transfer supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s5/foerder/water.transfer supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s5/esa/water.transfer supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s5/esa/water.transfer supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s5/msa/water.transfer supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s5/msa/water.transfer supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s5/ahr/water.transfer supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s5/ahr/water.transfer supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/foerder/area.transfer supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/foerder/area.transfer supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/esa/area.transfer.total supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/esa/area.transfer.total supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/esa/area.transfer.less supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/esa/area.transfer.less supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/msa/area.transfer supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/msa/area.transfer supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/ahr/area.transfer supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/ahr/area.transfer supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum T1 native select uses keyboard and retains semantic answer",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/foerder/demand.transfer.enough supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/foerder/demand.transfer.enough supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/foerder/demand.transfer.access supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/foerder/demand.transfer.access supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/esa/demand.transfer.enough supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/esa/demand.transfer.enough supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/esa/demand.transfer.access supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/esa/demand.transfer.access supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/msa/demand.transfer supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/msa/demand.transfer supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/ahr/demand.transfer supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s2/ahr/demand.transfer supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s5/foerder/water.transfer supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s5/foerder/water.transfer supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s5/esa/water.transfer supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s5/esa/water.transfer supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s5/msa/water.transfer supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s5/msa/water.transfer supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s5/ahr/water.transfer supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s5/ahr/water.transfer supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/foerder/area.transfer supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/foerder/area.transfer supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/esa/area.transfer.total supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/esa/area.transfer.total supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/esa/area.transfer.less supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/esa/area.transfer.less supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/msa/area.transfer supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/msa/area.transfer supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/ahr/area.transfer supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum D1 s6/ahr/area.transfer supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "transfer-disclosure.spec.ts",
+            "title": "transfer-disclosure.spec.ts / Afrika curriculum T1 native select uses keyboard and retains semantic answer",
+            "project": "webkit",
+            "status": "expected"
+          }
+        ]
+      },
+      {
+        "file": "browser-target.json",
+        "stats": {
+          "startTime": "2026-11-02T20:14:37.762Z",
+          "duration": 27484.521,
+          "expected": 28,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "cases": [
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language P2-01 ESA context survives both split steps, reload and back",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language P2-02 AHR full help and deliberate adoption retain correct journey meaning",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language cocoa foerder: processing comes first and full money data remain reachable",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language cocoa esa: processing comes first and full money data remain reachable",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language cocoa msa: processing comes first and full money data remain reachable",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language cocoa ahr: processing comes first and full money data remain reachable",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial foerder: visible cocoa hints, honest saved text and no initial failure counter",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial esa: visible cocoa hints, honest saved text and no initial failure counter",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial msa: visible cocoa hints, honest saved text and no initial failure counter",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial ahr: visible cocoa hints, honest saved text and no initial failure counter",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial AHR save button, oral self report, self control, historical text and keyboard",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s2: calculate without disclosed result, help, reload and retained exploration",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s4: calculate without disclosed result, help, reload and retained exploration",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s6: calculate without disclosed result, help, reload and retained exploration",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language P2-01 ESA context survives both split steps, reload and back",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language P2-02 AHR full help and deliberate adoption retain correct journey meaning",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language cocoa foerder: processing comes first and full money data remain reachable",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language cocoa esa: processing comes first and full money data remain reachable",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language cocoa msa: processing comes first and full money data remain reachable",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language cocoa ahr: processing comes first and full money data remain reachable",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial foerder: visible cocoa hints, honest saved text and no initial failure counter",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial esa: visible cocoa hints, honest saved text and no initial failure counter",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial msa: visible cocoa hints, honest saved text and no initial failure counter",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial ahr: visible cocoa hints, honest saved text and no initial failure counter",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial AHR save button, oral self report, self control, historical text and keyboard",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s2: calculate without disclosed result, help, reload and retained exploration",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s4: calculate without disclosed result, help, reload and retained exploration",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s6: calculate without disclosed result, help, reload and retained exploration",
+            "project": "webkit",
+            "status": "expected"
+          }
+        ]
+      },
+      {
+        "file": "browser-final.json",
+        "stats": {
+          "startTime": "2026-11-02T20:28:49.219Z",
+          "duration": 210825.29,
+          "expected": 108,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "cases": [
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language P2-01 ESA context survives both split steps, reload and back",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language P2-02 AHR full help and deliberate adoption retain correct journey meaning",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language cocoa foerder: processing comes first and full money data remain reachable",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language cocoa esa: processing comes first and full money data remain reachable",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language cocoa msa: processing comes first and full money data remain reachable",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language cocoa ahr: processing comes first and full money data remain reachable",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial foerder: visible cocoa hints, honest saved text and no initial failure counter",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial esa: visible cocoa hints, honest saved text and no initial failure counter",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial msa: visible cocoa hints, honest saved text and no initial failure counter",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial ahr: visible cocoa hints, honest saved text and no initial failure counter",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial AHR save button, oral self report, self control, historical text and keyboard",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s2: calculate without disclosed result, help, reload and retained exploration",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s4: calculate without disclosed result, help, reload and retained exploration",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s6: calculate without disclosed result, help, reload and retained exploration",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language P2-01 ESA context survives both split steps, reload and back",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language P2-02 AHR full help and deliberate adoption retain correct journey meaning",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language cocoa foerder: processing comes first and full money data remain reachable",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language cocoa esa: processing comes first and full money data remain reachable",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language cocoa msa: processing comes first and full money data remain reachable",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum language cocoa ahr: processing comes first and full money data remain reachable",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial foerder: visible cocoa hints, honest saved text and no initial failure counter",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial esa: visible cocoa hints, honest saved text and no initial failure counter",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial msa: visible cocoa hints, honest saved text and no initial failure counter",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial ahr: visible cocoa hints, honest saved text and no initial failure counter",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum editorial AHR save button, oral self report, self control, historical text and keyboard",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s2: calculate without disclosed result, help, reload and retained exploration",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s4: calculate without disclosed result, help, reload and retained exploration",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s6: calculate without disclosed result, help, reload and retained exploration",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/foerder supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/foerder supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/esa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/esa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/msa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/msa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/ahr supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/ahr supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/foerder supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/foerder supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/esa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/esa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/msa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/msa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/ahr supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/ahr supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/foerder supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/foerder supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/esa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/esa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/msa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/msa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/ahr supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/ahr supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/foerder supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/foerder supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/esa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/esa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/msa supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/msa supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/ahr supported=false",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/ahr supported=true",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/foerder supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/foerder supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/esa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/esa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/msa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/msa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/ahr supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s2/ahr supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/foerder supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/foerder supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/esa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/esa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/msa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/msa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/ahr supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s4/ahr supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/foerder supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/foerder supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/esa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/esa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/msa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/msa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/ahr supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s5/ahr supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/foerder supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/foerder supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/esa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/esa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/msa supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/msa supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/ahr supported=false",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "packet-b.spec.ts",
+            "title": "packet-b.spec.ts / Afrika curriculum PaketB s6/ahr supported=true",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/foerder supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/foerder supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/esa supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/esa supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/msa supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/msa supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/ahr supported=false: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/ahr supported=true: complete actual learning route",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/foerder supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/foerder supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/esa supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/esa supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/msa supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/msa supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/ahr supported=false: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "topics-gate2.spec.ts",
+            "title": "topics-gate2.spec.ts / Afrika curriculum Gate2 n/ahr supported=true: complete actual learning route",
+            "project": "webkit",
+            "status": "expected"
+          }
+        ]
+      },
+      {
+        "file": "browser-last.json",
+        "stats": {
+          "startTime": "2026-11-02T20:35:04.766Z",
+          "duration": 6599.4929999999995,
+          "expected": 6,
+          "skipped": 0,
+          "unexpected": 0,
+          "flaky": 0
+        },
+        "cases": [
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s2: calculate without disclosed result, help, reload and retained exploration",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s4: calculate without disclosed result, help, reload and retained exploration",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s6: calculate without disclosed result, help, reload and retained exploration",
+            "project": "chromium",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s2: calculate without disclosed result, help, reload and retained exploration",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s4: calculate without disclosed result, help, reload and retained exploration",
+            "project": "webkit",
+            "status": "expected"
+          },
+          {
+            "file": "language-revision.spec.ts",
+            "title": "language-revision.spec.ts / Afrika curriculum barriers ESA s6: calculate without disclosed result, help, reload and retained exploration",
+            "project": "webkit",
+            "status": "expected"
+          }
+        ]
+      }
+    ],
+    "distinctPassed": 430,
+    "completeRouteCount": 208,
+    "completeRoutes": [
+      [
+        "a",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "a",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "a",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "a",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "a",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "a",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "a",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "a",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "a",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "a",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "a",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "a",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "a",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "a",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "a",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "a",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "c",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "c",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "c",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "c",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "c",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "c",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "c",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "c",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "c",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "c",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "c",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "c",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "c",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "c",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "c",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "c",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "d",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "d",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "d",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "d",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "d",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "d",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "d",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "d",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "d",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "d",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "d",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "d",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "d",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "d",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "d",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "d",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "e",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "e",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "e",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "e",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "e",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "e",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "e",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "e",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "e",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "e",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "e",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "e",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "e",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "e",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "e",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "e",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "n",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "n",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "n",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "n",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "n",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "n",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "n",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "n",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "n",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "n",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "n",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "n",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "n",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "n",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "n",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "n",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "o",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "o",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "o",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "o",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "o",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "o",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "o",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "o",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "o",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "o",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "o",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "o",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "o",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "o",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "o",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "o",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "r",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "r",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "r",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "r",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "r",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "r",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "r",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "r",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "r",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "r",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "r",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "r",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "r",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "r",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "r",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "r",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s1",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "s1",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "s1",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "s1",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "s1",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s1",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s1",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s1",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s1",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "s1",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "s1",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "s1",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "s1",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s1",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s1",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s1",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s2",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "s2",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "s2",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "s2",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "s2",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s2",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s2",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s2",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s2",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "s2",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "s2",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "s2",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "s2",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s2",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s2",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s2",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s3",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "s3",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "s3",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "s3",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "s3",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s3",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s3",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s3",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s3",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "s3",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "s3",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "s3",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "s3",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s3",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s3",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s3",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s4",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "s4",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "s4",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "s4",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "s4",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s4",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s4",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s4",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s4",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "s4",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "s4",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "s4",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "s4",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s4",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s4",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s4",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s5",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "s5",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "s5",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "s5",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "s5",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s5",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s5",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s5",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s5",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "s5",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "s5",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "s5",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "s5",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s5",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s5",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s5",
+        "msa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s6",
+        "ahr",
+        "false",
+        "chromium"
+      ],
+      [
+        "s6",
+        "ahr",
+        "false",
+        "webkit"
+      ],
+      [
+        "s6",
+        "ahr",
+        "true",
+        "chromium"
+      ],
+      [
+        "s6",
+        "ahr",
+        "true",
+        "webkit"
+      ],
+      [
+        "s6",
+        "esa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s6",
+        "esa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s6",
+        "esa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s6",
+        "esa",
+        "true",
+        "webkit"
+      ],
+      [
+        "s6",
+        "foerder",
+        "false",
+        "chromium"
+      ],
+      [
+        "s6",
+        "foerder",
+        "false",
+        "webkit"
+      ],
+      [
+        "s6",
+        "foerder",
+        "true",
+        "chromium"
+      ],
+      [
+        "s6",
+        "foerder",
+        "true",
+        "webkit"
+      ],
+      [
+        "s6",
+        "msa",
+        "false",
+        "chromium"
+      ],
+      [
+        "s6",
+        "msa",
+        "false",
+        "webkit"
+      ],
+      [
+        "s6",
+        "msa",
+        "true",
+        "chromium"
+      ],
+      [
+        "s6",
+        "msa",
+        "true",
+        "webkit"
+      ]
+    ]
+  },
+  "gradingIdsAndDependenciesUnchanged": true,
+  "testedSource": [
+    {
+      "path": "src/content.ts",
+      "sha256": "67f344e68991782c8230c2ada8e7d7d46cb83b9219c8c4ff17d5e7bfa9841353"
+    },
+    {
+      "path": "src/decision.ts",
+      "sha256": "86283f55cd4761319dc0c769d2ab37f08baf83117daf605e029269ce811fa344"
+    },
+    {
+      "path": "src/demand-content.ts",
+      "sha256": "3c61cbd4a7009e9bb15bc000b8fc487e40b47ad78d023ea118b4d44568d897a8"
+    },
+    {
+      "path": "src/demand-ui.ts",
+      "sha256": "d164ea6f304ebd2d9f4fa86e19ae1416a5ba711d5138f3c02d17c304ed38b42a"
+    },
+    {
+      "path": "src/demand.ts",
+      "sha256": "fdc5b8f300e1c5b0f790a52ab3c1423413f7108cb11f939c6f6c88bff9641b53"
+    },
+    {
+      "path": "src/event-ui.ts",
+      "sha256": "7830700419160c105878492b99269a0142635c6e3b8fa2374cae195c10a6fc12"
+    },
+    {
+      "path": "src/event.ts",
+      "sha256": "0725253b9bc811b1f54dfbb60228b4ac93fa53aace2dec871f1aeaba44924fbf"
+    },
+    {
+      "path": "src/feedback.ts",
+      "sha256": "ed156ca901b59605fac1cdc44be58ae3b5326daa0dd63fb9457a2b4b0e05ac35"
+    },
+    {
+      "path": "src/geography/context.ts",
+      "sha256": "a3dcc78f22d99daa3e99f663174ecdb2150bee68c2b74f8ef1ac32b801418411"
+    },
+    {
+      "path": "src/geography/map-data.ts",
+      "sha256": "1b631e2995fd673d3a13c33c08a9936a2d509b0a1b7527ae4f1f5db63d014c59"
+    },
+    {
+      "path": "src/geography/natural-earth-africa.json",
+      "sha256": "297d01c2ca2ee7ba138aa336dd3e47d00975de6ae66700ebcce6fead7854c015"
+    },
+    {
+      "path": "src/geography/provenance.json",
+      "sha256": "2b4c58feed25bb2b80352155f616ad24c9a4667dc3b7f74a149c1bb2c30408ab"
+    },
+    {
+      "path": "src/geography/real-place-evidence.json",
+      "sha256": "2128770d0e2936966ee1ccae6026300a9251d77aff442f96c688a5e923506c7e"
+    },
+    {
+      "path": "src/geography/review-ui.ts",
+      "sha256": "ae577084b8ae40c2404ec1cda1ba425b3ce9ccc8632a056c2248b5676de67d36"
+    },
+    {
+      "path": "src/geography/state.ts",
+      "sha256": "8a0a433789bd286fd1587248232da9d6f3d0f5ef399c0af92ac48b181a11b4ea"
+    },
+    {
+      "path": "src/geography/transfer.ts",
+      "sha256": "c3f14eeb0a34ce8a5814270b85cbf25498bd927de09373c9a2a747b1276f0129"
+    },
+    {
+      "path": "src/geography/ui.ts",
+      "sha256": "3fd3d6103bde0a7a148ef999b162c7dc1118847e7a3226ddb2876888ceb8a917"
+    },
+    {
+      "path": "src/inquiry/assets/asafo.jpg",
+      "sha256": "b764593e666dbeb085a22b175de59b2fa84f7068dcff78446d490e257f524302"
+    },
+    {
+      "path": "src/inquiry/assets/kakum.jpg",
+      "sha256": "4447349bea9a1aa522bf1697d66cb8e89ab13807bc9e33bd94c08b49e943a03c"
+    },
+    {
+      "path": "src/inquiry/assets/manifest.json",
+      "sha256": "dacf063208f893350a6ec4df06587ac99515a148df530ef7ea46a01fa02995af"
+    },
+    {
+      "path": "src/inquiry/content.ts",
+      "sha256": "4f8ec4f34f4da0ca1a6657986f3b6c3dfb80ff2915a144a6cf1c71e4cb38ba0a"
+    },
+    {
+      "path": "src/inquiry/state.ts",
+      "sha256": "c22a6c1eb8bba35d6d41e24b3d9094c45a7e66ee6307a55c1761bf0a881773d2"
+    },
+    {
+      "path": "src/inquiry/style.css",
+      "sha256": "e10b01ecafeb3357193873ee001433d4a034b457fc19fcd93021586650aa7210"
+    },
+    {
+      "path": "src/inquiry/ui.ts",
+      "sha256": "4457d1c69972813730ddc95245c0ef0ce61c08320a5ffcbeaa1f6536335d5080"
+    },
+    {
+      "path": "src/learning/allocation.ts",
+      "sha256": "45d09254e9441db830dc9a05349c482a3746fd536ce3b2ff266df07a189a0447"
+    },
+    {
+      "path": "src/learning/catalog.ts",
+      "sha256": "508875507c098411f670b374c1e6a6b4b093285134b830994f42445be79a4928"
+    },
+    {
+      "path": "src/learning/chapter-ui.ts",
+      "sha256": "1b152670756ac518da7638369827118ec6cc52ecae2c19da035acb7823216a61"
+    },
+    {
+      "path": "src/learning/cross-paths.ts",
+      "sha256": "679c847faee52300250f5f1193916b5d97d8ae7e3a54c6ccca95405b8829cce8"
+    },
+    {
+      "path": "src/learning/entry.ts",
+      "sha256": "44258063a3599032fc9fc014cea228c1f21701ba089a18810517ab1a41039b80"
+    },
+    {
+      "path": "src/learning/help.ts",
+      "sha256": "385539750194ddb58d0326b1fe1e3ca63648f8cf50d898174e14c4d3fcb80254"
+    },
+    {
+      "path": "src/learning/language.ts",
+      "sha256": "708a83584802c6ce154c01fb6bafb88bcf0971db343af9ff2fef105318c3a425"
+    },
+    {
+      "path": "src/learning/material-view.ts",
+      "sha256": "2e36553c89c17d4deae0fe72182eb93879fad25ec2670155c22004e9ab746ade"
+    },
+    {
+      "path": "src/learning/profiles.ts",
+      "sha256": "1e0d6a144a22769ce8bf575e49673ea3bc2bfb89420041fe9972df1d93119c1e"
+    },
+    {
+      "path": "src/learning/progress.ts",
+      "sha256": "918db0471bafbd792d438529c7d7e226316ebe924a4e62f17cc2c69ccc700b27"
+    },
+    {
+      "path": "src/learning/simulation-material.ts",
+      "sha256": "5c88d517d9988cb3be550a38be02bc2c32d29dbba8c2032bb920b43cc71f965a"
+    },
+    {
+      "path": "src/learning/simulation-variants.ts",
+      "sha256": "6c321a98ba7c9f4eb6f833d2bffc424fe6605453d910564e6fde44879e6281de"
+    },
+    {
+      "path": "src/learning/storage.ts",
+      "sha256": "e1a27cd6462379b01f065e7f8824d2bd286a5454cea0da8cccb421886c729975"
+    },
+    {
+      "path": "src/learning/style.css",
+      "sha256": "0d652226ffe474d4503ad14b51ef9d01e95b6e4048c0302b497b3f190a4c8a07"
+    },
+    {
+      "path": "src/learning/tasks.ts",
+      "sha256": "3eab9a5be3e4e6b95c5f50be00e859fd36dcbd1e2057caf747a4cede77d57c23"
+    },
+    {
+      "path": "src/learning/topic-material.ts",
+      "sha256": "af524966e72d07600908e31334b30e6526988adafbdb4a9076f139388063e5ed"
+    },
+    {
+      "path": "src/learning/topic-variants.ts",
+      "sha256": "567d4bf8f4570d2d880b37f01182bdf341ca473077b64bc93366d4a4cb6272e1"
+    },
+    {
+      "path": "src/learning/transfer-cases.ts",
+      "sha256": "6d2d5514c29077171a1534c86c760f97cdcad529a0ab0c9922ceb6d36b275239"
+    },
+    {
+      "path": "src/learning/words.ts",
+      "sha256": "3e7d75b28c71a4ccbba16ecb39b2010bd660f778e90986da295c8421b8b072e7"
+    },
+    {
+      "path": "src/main.ts",
+      "sha256": "9b330e957943977e0b0bda2b026f3b5457cd382b0794a729e0106178ca9b22c4"
+    },
+    {
+      "path": "src/map.ts",
+      "sha256": "35f5489dd52b71b2da7b90300249000f8e68590c53b3e1b3e06449db3b82e34e"
+    },
+    {
+      "path": "src/model.ts",
+      "sha256": "4b3d8554c45e616ba5b5f35152be3922088d6d13e022053cfe7ae74652d5992b"
+    },
+    {
+      "path": "src/product-ui.ts",
+      "sha256": "104306b72f74b8d502191a323638c2c33aecca0e9791b95e818d3f56f39a803a"
+    },
+    {
+      "path": "src/progress.ts",
+      "sha256": "22e51739ccc9c40e460f42bd72e1831b3280c1287a6d7924ab7d8e65a5d19459"
+    },
+    {
+      "path": "src/regions/answer-order.ts",
+      "sha256": "68bed563a4f72df6c1a0b562fe4a06257292ea046204be067eb0ace94bca3293"
+    },
+    {
+      "path": "src/regions/area.ts",
+      "sha256": "1e9b2a5fa0bd91e8ab3cb8cb1276d00e58bc04b3f10e4c7a5217851f8c491346"
+    },
+    {
+      "path": "src/regions/cocoa.ts",
+      "sha256": "3b2115a3d5b4b76ad63b11a2940195112ff8f5cdbacc204a9a4754b62a1bf06d"
+    },
+    {
+      "path": "src/regions/decision-ui.ts",
+      "sha256": "68b9b5b5186ca354172e01325fa627b4eeff538eb1e9da929c1907b6091c666b"
+    },
+    {
+      "path": "src/regions/registry.ts",
+      "sha256": "96015d74860984ee4e4a5cc7df230a879a1a1b9655acecf352f6f94afccd208d"
+    },
+    {
+      "path": "src/regions/share.ts",
+      "sha256": "0678ad0916c7f52175812dfc17ecbe5716fd9cb44c0a3603cf20ed0777d3ad1d"
+    },
+    {
+      "path": "src/regions/shared.ts",
+      "sha256": "9b9f6e377037572cfa0516874f095fb35d77315531003e0a3fed60d6e307ade4"
+    },
+    {
+      "path": "src/regions/state.ts",
+      "sha256": "b4ed966fb89bde7de31de0259ae672f408b16a15f0a2dcb916260fe486694b02"
+    },
+    {
+      "path": "src/regions/storage.ts",
+      "sha256": "50ddf7444e7889190062ec34373bdcb3222511b27ac722cf8fc08d6753f35d47"
+    },
+    {
+      "path": "src/regions/types.ts",
+      "sha256": "d6df5e6a84feb54e34f05615ca99a88d6e4e778200b69ff6c7294c3ea7b05f76"
+    },
+    {
+      "path": "src/regions/ui.ts",
+      "sha256": "f8697419c7efba17504f59b72a3d68b22d5a65ba690c037312e0c3a30b51d80d"
+    },
+    {
+      "path": "src/regions/water-model.ts",
+      "sha256": "9e1c21e5aeb3fd351e8971696bc4a01f01fe1b596bcd92d285d2ed77ef8cbe6d"
+    },
+    {
+      "path": "src/regions/water.ts",
+      "sha256": "e00380832e7a7b15d6972ce05d43a173ecc099b38f834b75d1904c09057bad6e"
+    },
+    {
+      "path": "src/reset.ts",
+      "sha256": "ff58039c105d358948aa2eaef4bbf58f014029e2eed59058eabf2f5a0ca74d34"
+    },
+    {
+      "path": "src/state.ts",
+      "sha256": "87f88a002e37d346299dbd97157383354515f6009bf75580e502e08ff150192f"
+    },
+    {
+      "path": "src/storage.ts",
+      "sha256": "506e724520e4272084455777abf41f1aa7ed920fcbbb988ce4af9e9855398bab"
+    },
+    {
+      "path": "src/style.css",
+      "sha256": "eb12047e1ebe293c91364bed6ea99fb76e914c04be4e0585f66323f22e3b4107"
+    },
+    {
+      "path": "src/vite-env.d.ts",
+      "sha256": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+    }
+  ],
+  "build": {
+    "passed": true,
+    "files": [
+      {
+        "file": "assets/asafo-CiD1wyHi.jpg",
+        "bytes": 1988168,
+        "sha256": "b764593e666dbeb085a22b175de59b2fa84f7068dcff78446d490e257f524302"
+      },
+      {
+        "file": "assets/index-CihySCmH.js",
+        "bytes": 450709,
+        "sha256": "5998ab9da9e35e3e598ad1aab92c6e47a2f261b6ee5df7bb22d5b9733c0091a1"
+      },
+      {
+        "file": "assets/index-DU1sHB7y.css",
+        "bytes": 41304,
+        "sha256": "5fc164dff2afbe7d119c2e6bec11e9603c376fda9666a7afc476f19415abe45d"
+      },
+      {
+        "file": "assets/kakum-v8Jew1-6.jpg",
+        "bytes": 1534641,
+        "sha256": "4447349bea9a1aa522bf1697d66cb8e89ab13807bc9e33bd94c08b49e943a03c"
+      },
+      {
+        "file": "index.html",
+        "bytes": 1052,
+        "sha256": "b92eddafc5893b6851913daa735a9716909c9cd8d2e065a80a20b79c4b9f385c"
+      }
+    ]
+  },
+  "limits": [
+    "Individual didactic review of all 494 tasks is not complete",
+    "Earlier reachable screens have not been comprehensively reaudited",
+    "No real learners, physical iPad or complete screenreader acceptance",
+    "Synthetic initial-view measurements use supplied CSS and synthetic previous example answers",
+    "Full historical browser suite was not rerun; route and targeted regression scope is explicit"
+  ]
+}

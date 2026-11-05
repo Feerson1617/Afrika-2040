@@ -1,0 +1,4045 @@
+{
+  "baseCommit": "4bcee44415b670a27eec991dd047e9937c04eb1c",
+  "sourceHashes": {
+    "src/content.ts": "67f344e68991782c8230c2ada8e7d7d46cb83b9219c8c4ff17d5e7bfa9841353",
+    "src/decision.ts": "86283f55cd4761319dc0c769d2ab37f08baf83117daf605e029269ce811fa344",
+    "src/demand-content.ts": "3c61cbd4a7009e9bb15bc000b8fc487e40b47ad78d023ea118b4d44568d897a8",
+    "src/demand-ui.ts": "d164ea6f304ebd2d9f4fa86e19ae1416a5ba711d5138f3c02d17c304ed38b42a",
+    "src/demand.ts": "fdc5b8f300e1c5b0f790a52ab3c1423413f7108cb11f939c6f6c88bff9641b53",
+    "src/event-ui.ts": "7830700419160c105878492b99269a0142635c6e3b8fa2374cae195c10a6fc12",
+    "src/event.ts": "0725253b9bc811b1f54dfbb60228b4ac93fa53aace2dec871f1aeaba44924fbf",
+    "src/feedback.ts": "ed156ca901b59605fac1cdc44be58ae3b5326daa0dd63fb9457a2b4b0e05ac35",
+    "src/geography/context.ts": "a3dcc78f22d99daa3e99f663174ecdb2150bee68c2b74f8ef1ac32b801418411",
+    "src/geography/map-data.ts": "1b631e2995fd673d3a13c33c08a9936a2d509b0a1b7527ae4f1f5db63d014c59",
+    "src/geography/natural-earth-africa.json": "297d01c2ca2ee7ba138aa336dd3e47d00975de6ae66700ebcce6fead7854c015",
+    "src/geography/provenance.json": "2b4c58feed25bb2b80352155f616ad24c9a4667dc3b7f74a149c1bb2c30408ab",
+    "src/geography/real-place-evidence.json": "2128770d0e2936966ee1ccae6026300a9251d77aff442f96c688a5e923506c7e",
+    "src/geography/review-ui.ts": "ae577084b8ae40c2404ec1cda1ba425b3ce9ccc8632a056c2248b5676de67d36",
+    "src/geography/state.ts": "8a0a433789bd286fd1587248232da9d6f3d0f5ef399c0af92ac48b181a11b4ea",
+    "src/geography/transfer.ts": "c3f14eeb0a34ce8a5814270b85cbf25498bd927de09373c9a2a747b1276f0129",
+    "src/geography/ui.ts": "3fd3d6103bde0a7a148ef999b162c7dc1118847e7a3226ddb2876888ceb8a917",
+    "src/inquiry/assets/asafo.jpg": "b764593e666dbeb085a22b175de59b2fa84f7068dcff78446d490e257f524302",
+    "src/inquiry/assets/kakum.jpg": "4447349bea9a1aa522bf1697d66cb8e89ab13807bc9e33bd94c08b49e943a03c",
+    "src/inquiry/assets/manifest.json": "dacf063208f893350a6ec4df06587ac99515a148df530ef7ea46a01fa02995af",
+    "src/inquiry/content.ts": "4f8ec4f34f4da0ca1a6657986f3b6c3dfb80ff2915a144a6cf1c71e4cb38ba0a",
+    "src/inquiry/state.ts": "c22a6c1eb8bba35d6d41e24b3d9094c45a7e66ee6307a55c1761bf0a881773d2",
+    "src/inquiry/style.css": "e10b01ecafeb3357193873ee001433d4a034b457fc19fcd93021586650aa7210",
+    "src/inquiry/ui.ts": "4457d1c69972813730ddc95245c0ef0ce61c08320a5ffcbeaa1f6536335d5080",
+    "src/learning/allocation.ts": "45d09254e9441db830dc9a05349c482a3746fd536ce3b2ff266df07a189a0447",
+    "src/learning/catalog.ts": "508875507c098411f670b374c1e6a6b4b093285134b830994f42445be79a4928",
+    "src/learning/chapter-ui.ts": "485a68cc8f66558e4f1ef99eba65cb33bed0f0c04d31c9df0e3734c0152ca9c9",
+    "src/learning/cross-paths.ts": "679c847faee52300250f5f1193916b5d97d8ae7e3a54c6ccca95405b8829cce8",
+    "src/learning/entry.ts": "44258063a3599032fc9fc014cea228c1f21701ba089a18810517ab1a41039b80",
+    "src/learning/help.ts": "385539750194ddb58d0326b1fe1e3ca63648f8cf50d898174e14c4d3fcb80254",
+    "src/learning/language.ts": "a1e0619ef8a5882cbbbdacb9ad4e5a93abea8586a233f57956577cffe851305e",
+    "src/learning/material-view.ts": "d2dffb8f0fafe81b8d1b6958e814486e71af05ac34acdf6b1b23a2c438e8cb91",
+    "src/learning/profiles.ts": "1e0d6a144a22769ce8bf575e49673ea3bc2bfb89420041fe9972df1d93119c1e",
+    "src/learning/progress.ts": "918db0471bafbd792d438529c7d7e226316ebe924a4e62f17cc2c69ccc700b27",
+    "src/learning/simulation-material.ts": "bf0d16c7d0050b58f0a821449408ea80c5dc2fd5f8efa17e0ee0af90b7efb48f",
+    "src/learning/simulation-variants.ts": "f2eebbf9c5d2042779a7e4126d487a0a330f3a12ff574ccdbf1db291617fa729",
+    "src/learning/storage.ts": "e3ed06f5e1fb4f1aebbb3caab340632f2515a992d777ea684f21638cc84205bc",
+    "src/learning/style.css": "0d652226ffe474d4503ad14b51ef9d01e95b6e4048c0302b497b3f190a4c8a07",
+    "src/learning/tasks.ts": "3eab9a5be3e4e6b95c5f50be00e859fd36dcbd1e2057caf747a4cede77d57c23",
+    "src/learning/topic-material.ts": "af524966e72d07600908e31334b30e6526988adafbdb4a9076f139388063e5ed",
+    "src/learning/topic-variants.ts": "2a4ae3d9647c09e3756d725a945c41554f0f63618aa3d54962969cdafd50f35a",
+    "src/learning/transfer-cases.ts": "6d2d5514c29077171a1534c86c760f97cdcad529a0ab0c9922ceb6d36b275239",
+    "src/learning/update-material.ts": "e181bbaa825d0d276c918117a34cbe009b5b2546f7a223d365658d0396dd68ed",
+    "src/learning/words.ts": "3e7d75b28c71a4ccbba16ecb39b2010bd660f778e90986da295c8421b8b072e7",
+    "src/main.ts": "f1cfb5c53602987df6230a00fcdb7a22c799e0d9ea5daace7941b48671b9a637",
+    "src/map.ts": "35f5489dd52b71b2da7b90300249000f8e68590c53b3e1b3e06449db3b82e34e",
+    "src/model.ts": "4b3d8554c45e616ba5b5f35152be3922088d6d13e022053cfe7ae74652d5992b",
+    "src/product-ui.ts": "104306b72f74b8d502191a323638c2c33aecca0e9791b95e818d3f56f39a803a",
+    "src/progress.ts": "22e51739ccc9c40e460f42bd72e1831b3280c1287a6d7924ab7d8e65a5d19459",
+    "src/regions/answer-order.ts": "68bed563a4f72df6c1a0b562fe4a06257292ea046204be067eb0ace94bca3293",
+    "src/regions/area.ts": "1e9b2a5fa0bd91e8ab3cb8cb1276d00e58bc04b3f10e4c7a5217851f8c491346",
+    "src/regions/cocoa.ts": "3b2115a3d5b4b76ad63b11a2940195112ff8f5cdbacc204a9a4754b62a1bf06d",
+    "src/regions/decision-ui.ts": "68b9b5b5186ca354172e01325fa627b4eeff538eb1e9da929c1907b6091c666b",
+    "src/regions/registry.ts": "96015d74860984ee4e4a5cc7df230a879a1a1b9655acecf352f6f94afccd208d",
+    "src/regions/share.ts": "0678ad0916c7f52175812dfc17ecbe5716fd9cb44c0a3603cf20ed0777d3ad1d",
+    "src/regions/shared.ts": "9b9f6e377037572cfa0516874f095fb35d77315531003e0a3fed60d6e307ade4",
+    "src/regions/state.ts": "b4ed966fb89bde7de31de0259ae672f408b16a15f0a2dcb916260fe486694b02",
+    "src/regions/storage.ts": "50ddf7444e7889190062ec34373bdcb3222511b27ac722cf8fc08d6753f35d47",
+    "src/regions/types.ts": "d6df5e6a84feb54e34f05615ca99a88d6e4e778200b69ff6c7294c3ea7b05f76",
+    "src/regions/ui.ts": "f8697419c7efba17504f59b72a3d68b22d5a65ba690c037312e0c3a30b51d80d",
+    "src/regions/water-model.ts": "9e1c21e5aeb3fd351e8971696bc4a01f01fe1b596bcd92d285d2ed77ef8cbe6d",
+    "src/regions/water.ts": "e00380832e7a7b15d6972ce05d43a173ecc099b38f834b75d1904c09057bad6e",
+    "src/reset.ts": "ff58039c105d358948aa2eaef4bbf58f014029e2eed59058eabf2f5a0ca74d34",
+    "src/state.ts": "87f88a002e37d346299dbd97157383354515f6009bf75580e502e08ff150192f",
+    "src/storage.ts": "506e724520e4272084455777abf41f1aa7ed920fcbbb988ce4af9e9855398bab",
+    "src/style.css": "eb12047e1ebe293c91364bed6ea99fb76e914c04be4e0585f66323f22e3b4107",
+    "src/vite-env.d.ts": "65996936fbb042915f7b74a200fcdde7e410f32a669b1ab9597cfaa4b0faddb5"
+  },
+  "changedApplicationFiles": [
+    "src/learning/storage.ts",
+    "src/learning/update-material.ts",
+    "src/main.ts"
+  ],
+  "unchangedApplicationFiles": {
+    "src/content.ts": true,
+    "src/decision.ts": true,
+    "src/demand-content.ts": true,
+    "src/demand-ui.ts": true,
+    "src/demand.ts": true,
+    "src/event-ui.ts": true,
+    "src/event.ts": true,
+    "src/feedback.ts": true,
+    "src/geography/context.ts": true,
+    "src/geography/map-data.ts": true,
+    "src/geography/natural-earth-africa.json": true,
+    "src/geography/provenance.json": true,
+    "src/geography/real-place-evidence.json": true,
+    "src/geography/review-ui.ts": true,
+    "src/geography/state.ts": true,
+    "src/geography/transfer.ts": true,
+    "src/geography/ui.ts": true,
+    "src/inquiry/assets/asafo.jpg": true,
+    "src/inquiry/assets/kakum.jpg": true,
+    "src/inquiry/assets/manifest.json": true,
+    "src/inquiry/content.ts": true,
+    "src/inquiry/state.ts": true,
+    "src/inquiry/style.css": true,
+    "src/inquiry/ui.ts": true,
+    "src/learning/allocation.ts": true,
+    "src/learning/catalog.ts": true,
+    "src/learning/chapter-ui.ts": true,
+    "src/learning/cross-paths.ts": true,
+    "src/learning/entry.ts": true,
+    "src/learning/help.ts": true,
+    "src/learning/language.ts": true,
+    "src/learning/material-view.ts": true,
+    "src/learning/profiles.ts": true,
+    "src/learning/progress.ts": true,
+    "src/learning/simulation-material.ts": true,
+    "src/learning/simulation-variants.ts": true,
+    "src/learning/style.css": true,
+    "src/learning/tasks.ts": true,
+    "src/learning/topic-material.ts": true,
+    "src/learning/topic-variants.ts": true,
+    "src/learning/transfer-cases.ts": true,
+    "src/learning/words.ts": true,
+    "src/map.ts": true,
+    "src/model.ts": true,
+    "src/product-ui.ts": true,
+    "src/progress.ts": true,
+    "src/regions/answer-order.ts": true,
+    "src/regions/area.ts": true,
+    "src/regions/cocoa.ts": true,
+    "src/regions/decision-ui.ts": true,
+    "src/regions/registry.ts": true,
+    "src/regions/share.ts": true,
+    "src/regions/shared.ts": true,
+    "src/regions/state.ts": true,
+    "src/regions/storage.ts": true,
+    "src/regions/types.ts": true,
+    "src/regions/ui.ts": true,
+    "src/regions/water-model.ts": true,
+    "src/regions/water.ts": true,
+    "src/reset.ts": true,
+    "src/state.ts": true,
+    "src/storage.ts": true,
+    "src/style.css": true,
+    "src/vite-env.d.ts": true
+  },
+  "answerAndAssessmentReducerByteIdentical": true,
+  "T1RestorationByteIdentical": true,
+  "logic": {
+    "passed": 494,
+    "existingRetained": 491,
+    "newPersistenceCases": 3,
+    "failed": 0,
+    "skipped": 0
+  },
+  "typeScriptPassed": true,
+  "productionBuildPassed": true,
+  "build": [
+    {
+      "file": "assets/asafo-CiD1wyHi.jpg",
+      "bytes": 1988168,
+      "sha256": "b764593e666dbeb085a22b175de59b2fa84f7068dcff78446d490e257f524302"
+    },
+    {
+      "file": "assets/index-C1yXUXDm.js",
+      "bytes": 455762,
+      "sha256": "801c7084f1333138c1300a70c3ddebf58d2b50a71975caed1778ffc2500f4e95"
+    },
+    {
+      "file": "assets/index-CH25Qqmu.css",
+      "bytes": 41304,
+      "sha256": "e2d0c230027b23d9e4033e6c168849fe4587dcd337025a1934adead1f2299140"
+    },
+    {
+      "file": "assets/kakum-v8Jew1-6.jpg",
+      "bytes": 1534641,
+      "sha256": "4447349bea9a1aa522bf1697d66cb8e89ab13807bc9e33bd94c08b49e943a03c"
+    },
+    {
+      "file": "index.html",
+      "bytes": 1052,
+      "sha256": "f14ae7f7c45d3dcbee9c84183b1384b3ea8c1a32324b0e0dddba840a1cd9be40"
+    }
+  ],
+  "baseline": {
+    "startTime": "2026-11-04T04:28:35.385Z",
+    "duration": 81492.829,
+    "expected": 0,
+    "skipped": 0,
+    "unexpected": 20,
+    "flaky": 0
+  },
+  "initialRegressionBeforeTestSetupCorrection": {
+    "startTime": "2026-11-04T04:34:06.797Z",
+    "duration": 325302.464,
+    "expected": 200,
+    "skipped": 0,
+    "unexpected": 10,
+    "flaky": 0
+  },
+  "finalBrowser": {
+    "stats": {
+      "startTime": "2026-11-04T04:40:17.029Z",
+      "duration": 275369.39,
+      "expected": 210,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "cases": [
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch foerder to esa: visible reload, cancellation and separate provenance",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch foerder to msa: visible reload, cancellation and separate provenance",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch foerder to ahr: visible reload, cancellation and separate provenance",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch esa to foerder: visible reload, cancellation and separate provenance",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch esa to msa: visible reload, cancellation and separate provenance",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch esa to ahr: visible reload, cancellation and separate provenance",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch msa to foerder: visible reload, cancellation and separate provenance",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch msa to esa: visible reload, cancellation and separate provenance",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch msa to ahr: visible reload, cancellation and separate provenance",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch ahr to foerder: visible reload, cancellation and separate provenance",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch ahr to esa: visible reload, cancellation and separate provenance",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch ahr to msa: visible reload, cancellation and separate provenance",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction recommendation links: fresh tab, conflict cancel/confirm, reload and real history",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction same-document back/forward recommendations are explicit and keep the current task",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction simple materials, relevant words and honest journal on iPad and narrow frame",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction AHR applies source criticism without a prefilled conclusion and keeps text ungraded",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction oral history has 40 newest plus older count in visible journal before and after reload",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction all 16 rendered region positions survive wrong/right feedback, back and reload",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch foerder to esa: visible reload, cancellation and separate provenance",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch foerder to msa: visible reload, cancellation and separate provenance",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch foerder to ahr: visible reload, cancellation and separate provenance",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch esa to foerder: visible reload, cancellation and separate provenance",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch esa to msa: visible reload, cancellation and separate provenance",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch esa to ahr: visible reload, cancellation and separate provenance",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch msa to foerder: visible reload, cancellation and separate provenance",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch msa to esa: visible reload, cancellation and separate provenance",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch msa to ahr: visible reload, cancellation and separate provenance",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch ahr to foerder: visible reload, cancellation and separate provenance",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch ahr to esa: visible reload, cancellation and separate provenance",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction switch ahr to msa: visible reload, cancellation and separate provenance",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction recommendation links: fresh tab, conflict cancel/confirm, reload and real history",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction same-document back/forward recommendations are explicit and keep the current task",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction simple materials, relevant words and honest journal on iPad and narrow frame",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction AHR applies source criticism without a prefilled conclusion and keeps text ungraded",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction oral history has 40 newest plus older count in visible journal before and after reload",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "four-paths-correction.spec.ts",
+        "title": "Afrika curriculum correction all 16 rendered region positions survive wrong/right feedback, back and reload",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 derived material: nested open and deliberately closed panels survive necessary result updates",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final S2 ESA migration: negative movement is not total population decline",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final T1 normal cocoa flow: saved feedback really visible on repeated reloads after earlier tasks",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 future.judgment/msa: writing retains sources, nested panels, caret, reading position and history",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 future.judgment/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 economy.source-claim.v1/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 nature.recommend/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language P2-01 ESA context survives both split steps, reload and back",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language P2-02 AHR full help and deliberate adoption retain correct journey meaning",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language cocoa foerder: processing comes first and full money data remain reachable",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language cocoa esa: processing comes first and full money data remain reachable",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language cocoa msa: processing comes first and full money data remain reachable",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language cocoa ahr: processing comes first and full money data remain reachable",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial foerder: visible cocoa hints, honest saved text and no initial failure counter",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial esa: visible cocoa hints, honest saved text and no initial failure counter",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial msa: visible cocoa hints, honest saved text and no initial failure counter",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial ahr: visible cocoa hints, honest saved text and no initial failure counter",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial AHR save button, oral self report, self control, historical text and keyboard",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum barriers ESA s2: calculate without disclosed result, help, reload and retained exploration",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum barriers ESA s4: calculate without disclosed result, help, reload and retained exploration",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum barriers ESA s6: calculate without disclosed result, help, reload and retained exploration",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F1 area view esa: actual distinct cases without answers",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F2 free money esa: help stage two without arithmetic result",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s2/esa: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s4/esa: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s6/esa: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F1 area view msa: actual distinct cases without answers",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F2 free money msa: help stage two without arithmetic result",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s2/msa: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s4/msa: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s6/msa: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F1 area view ahr: actual distinct cases without answers",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F2 free money ahr: help stage two without arithmetic result",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s2/ahr: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s4/ahr: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s6/ahr: edit invalidates visible proof without replacing input",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.first.weight/foerder: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.revised.weight/foerder: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s2/demand.final.weight/foerder: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s3/cocoa.final.weight/foerder: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s5/water.final.weight/foerder: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s6/area.final.weight/foerder: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.first.weight/esa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.revised.weight/esa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s2/demand.final.weight/esa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s3/cocoa.final.weight/esa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s5/water.final.weight/esa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s6/area.final.weight/esa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.first.weight/msa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.revised.weight/msa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s2/demand.final.weight/msa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s3/cocoa.final.weight/msa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s5/water.final.weight/msa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s6/area.final.weight/msa: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.first.weight/ahr: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.revised.weight/ahr: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s2/demand.final.weight/ahr: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s3/cocoa.final.weight/ahr: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s5/water.final.weight/ahr: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s6/area.final.weight/ahr: one option links priority and accepted drawback",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s2/esa: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s4/esa: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s6/esa: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s2/msa: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s4/msa: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s6/msa: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s2/ahr: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s4/ahr: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s6/ahr: conscious explanation remains identified after editing",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final number hint esa/population.base.migration: no solution hidden in format examples",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final number hint esa/population.base.end: no solution hidden in format examples",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final number hint msa/population.base.balance: no solution hidden in format examples",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final number hint ahr/population.base.balance: no solution hidden in format examples",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 derived material: nested open and deliberately closed panels survive necessary result updates",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final S2 ESA migration: negative movement is not total population decline",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final T1 normal cocoa flow: saved feedback really visible on repeated reloads after earlier tasks",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 future.judgment/msa: writing retains sources, nested panels, caret, reading position and history",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 future.judgment/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 image.perspective/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 economy.source-claim.v1/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final N1 nature.recommend/ahr: writing retains sources, nested panels, caret, reading position and history",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language P2-01 ESA context survives both split steps, reload and back",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language P2-02 AHR full help and deliberate adoption retain correct journey meaning",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language cocoa foerder: processing comes first and full money data remain reachable",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language cocoa esa: processing comes first and full money data remain reachable",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language cocoa msa: processing comes first and full money data remain reachable",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum language cocoa ahr: processing comes first and full money data remain reachable",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial foerder: visible cocoa hints, honest saved text and no initial failure counter",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial esa: visible cocoa hints, honest saved text and no initial failure counter",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial msa: visible cocoa hints, honest saved text and no initial failure counter",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial ahr: visible cocoa hints, honest saved text and no initial failure counter",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum editorial AHR save button, oral self report, self control, historical text and keyboard",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum barriers ESA s2: calculate without disclosed result, help, reload and retained exploration",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum barriers ESA s4: calculate without disclosed result, help, reload and retained exploration",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "Afrika curriculum barriers ESA s6: calculate without disclosed result, help, reload and retained exploration",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F1 area view esa: actual distinct cases without answers",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F2 free money esa: help stage two without arithmetic result",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s2/esa: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s4/esa: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s6/esa: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F1 area view msa: actual distinct cases without answers",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F2 free money msa: help stage two without arithmetic result",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s2/msa: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s4/msa: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s6/msa: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F1 area view ahr: actual distinct cases without answers",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F2 free money ahr: help stage two without arithmetic result",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s2/ahr: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s4/ahr: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3 s6/ahr: edit invalidates visible proof without replacing input",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.first.weight/foerder: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.revised.weight/foerder: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s2/demand.final.weight/foerder: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s3/cocoa.final.weight/foerder: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s5/water.final.weight/foerder: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s6/area.final.weight/foerder: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.first.weight/esa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.revised.weight/esa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s2/demand.final.weight/esa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s3/cocoa.final.weight/esa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s5/water.final.weight/esa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s6/area.final.weight/esa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.first.weight/msa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.revised.weight/msa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s2/demand.final.weight/msa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s3/cocoa.final.weight/msa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s5/water.final.weight/msa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s6/area.final.weight/msa: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.first.weight/ahr: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s1/kenia.revised.weight/ahr: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s2/demand.final.weight/ahr: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s3/cocoa.final.weight/ahr: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s5/water.final.weight/ahr: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final weight s6/area.final.weight/ahr: one option links priority and accepted drawback",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s2/esa: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s4/esa: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s6/esa: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s2/msa: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s4/msa: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s6/msa: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s2/ahr: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s4/ahr: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final F3-help3 s6/ahr: conscious explanation remains identified after editing",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final number hint esa/population.base.migration: no solution hidden in format examples",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final number hint esa/population.base.end: no solution hidden in format examples",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final number hint msa/population.base.balance: no solution hidden in format examples",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "language-revision.spec.ts",
+        "title": "RC-final number hint ahr/population.base.balance: no solution hidden in format examples",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 anonymous live material panel keeps both choices across independent reloads",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 profile isolation, reset cancellation and confirmed session reset",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 blocked storage: in-memory panels, answers, back and warning stay usable",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return future.judgment/msa 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return future.judgment/msa 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return future.judgment/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return future.judgment/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return image.perspective/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return image.perspective/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return economy.source-claim.v1/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return economy.source-claim.v1/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return nature.recommend/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return nature.recommend/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "project": "chromium",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 anonymous live material panel keeps both choices across independent reloads",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 profile isolation, reset cancellation and confirmed session reset",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 blocked storage: in-memory panels, answers, back and warning stay usable",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return future.judgment/msa 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return future.judgment/msa 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return future.judgment/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return future.judgment/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return image.perspective/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return image.perspective/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return economy.source-claim.v1/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return economy.source-claim.v1/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return nature.recommend/ahr 1024x768: normal path, mixed panels, writing, back and separate reload",
+        "project": "webkit",
+        "status": "expected"
+      },
+      {
+        "file": "n1-return.spec.ts",
+        "title": "Afrika curriculum N1 return nature.recommend/ahr 768x1024: normal path, mixed panels, writing, back and separate reload",
+        "project": "webkit",
+        "status": "expected"
+      }
+    ],
+    "normalReturnReloadCombinations": 20,
+    "uiStateIsolationAndStorageCases": 6,
+    "existingLanguageAndRegressionCases": 148,
+    "existingProfileAndStorageCases": 36
+  },
+  "additionalT1Repeat": {
+    "stats": {
+      "startTime": "2026-11-04T04:45:13.601Z",
+      "duration": 21844.452999999998,
+      "expected": 6,
+      "skipped": 0,
+      "unexpected": 0,
+      "flaky": 0
+    },
+    "reloads": 30
+  },
+  "ci": "Prior base CI green; new local commit not pushed or run on GitHub",
+  "normalPathMatrix": [
+    {
+      "target": "economy.source-claim.v1",
+      "profile": "ahr",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "browserName": "chromium",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "economy.balance",
+        "economy.data",
+        "economy.conditions",
+        "economy.transfer",
+        "economy.explain",
+        "economy.source-claim.v1"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "economy.source-claim.v1",
+      "profile": "ahr",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "browserName": "webkit",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "economy.balance",
+        "economy.data",
+        "economy.conditions",
+        "economy.transfer",
+        "economy.explain",
+        "economy.source-claim.v1"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "economy.source-claim.v1",
+      "profile": "ahr",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "browserName": "chromium",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "economy.balance",
+        "economy.data",
+        "economy.conditions",
+        "economy.transfer",
+        "economy.explain",
+        "economy.source-claim.v1"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "economy.source-claim.v1",
+      "profile": "ahr",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "browserName": "webkit",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "economy.balance",
+        "economy.data",
+        "economy.conditions",
+        "economy.transfer",
+        "economy.explain",
+        "economy.source-claim.v1"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "future.judgment",
+      "profile": "ahr",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "browserName": "chromium",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "future.reach",
+        "future.investment",
+        "future.running",
+        "future.ecology",
+        "future.goal",
+        "future.plan",
+        "future.evidence",
+        "future.limit",
+        "future.weight",
+        "future.judgment"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "contextGoal": "access",
+          "contextPlan": "cool",
+          "labels": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "contextGoal": "access",
+          "contextPlan": "cool",
+          "labels": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "future.judgment",
+      "profile": "ahr",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "browserName": "webkit",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "future.reach",
+        "future.investment",
+        "future.running",
+        "future.ecology",
+        "future.goal",
+        "future.plan",
+        "future.evidence",
+        "future.limit",
+        "future.weight",
+        "future.judgment"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "contextGoal": "access",
+          "contextPlan": "cool",
+          "labels": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "contextGoal": "access",
+          "contextPlan": "cool",
+          "labels": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "future.judgment",
+      "profile": "ahr",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "browserName": "chromium",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "future.reach",
+        "future.investment",
+        "future.running",
+        "future.ecology",
+        "future.goal",
+        "future.plan",
+        "future.evidence",
+        "future.limit",
+        "future.weight",
+        "future.judgment"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "contextGoal": "access",
+          "contextPlan": "cool",
+          "labels": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "contextGoal": "access",
+          "contextPlan": "cool",
+          "labels": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "future.judgment",
+      "profile": "ahr",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "browserName": "webkit",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "future.reach",
+        "future.investment",
+        "future.running",
+        "future.ecology",
+        "future.goal",
+        "future.plan",
+        "future.evidence",
+        "future.limit",
+        "future.weight",
+        "future.judgment"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "contextGoal": "access",
+          "contextPlan": "cool",
+          "labels": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "contextGoal": "access",
+          "contextPlan": "cool",
+          "labels": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "future.judgment",
+      "profile": "msa",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "browserName": "chromium",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "future.reach",
+        "future.investment",
+        "future.running",
+        "future.ecology",
+        "future.goal",
+        "future.plan",
+        "future.evidence",
+        "future.limit",
+        "future.weight",
+        "future.judgment"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "contextGoal": "access",
+          "contextPlan": "cool",
+          "labels": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "contextGoal": "access",
+          "contextPlan": "cool",
+          "labels": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "future.judgment",
+      "profile": "msa",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "browserName": "webkit",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "future.reach",
+        "future.investment",
+        "future.running",
+        "future.ecology",
+        "future.goal",
+        "future.plan",
+        "future.evidence",
+        "future.limit",
+        "future.weight",
+        "future.judgment"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "contextGoal": "access",
+          "contextPlan": "cool",
+          "labels": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "contextGoal": "access",
+          "contextPlan": "cool",
+          "labels": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "future.judgment",
+      "profile": "msa",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "browserName": "chromium",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "future.reach",
+        "future.investment",
+        "future.running",
+        "future.ecology",
+        "future.goal",
+        "future.plan",
+        "future.evidence",
+        "future.limit",
+        "future.weight",
+        "future.judgment"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "contextGoal": "access",
+          "contextPlan": "cool",
+          "labels": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "contextGoal": "access",
+          "contextPlan": "cool",
+          "labels": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "future.judgment",
+      "profile": "msa",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "browserName": "webkit",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "future.reach",
+        "future.investment",
+        "future.running",
+        "future.ecology",
+        "future.goal",
+        "future.plan",
+        "future.evidence",
+        "future.limit",
+        "future.weight",
+        "future.judgment"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "contextGoal": "access",
+          "contextPlan": "cool",
+          "labels": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "contextGoal": "access",
+          "contextPlan": "cool",
+          "labels": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "image.perspective",
+      "profile": "ahr",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "browserName": "chromium",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "image.initial",
+        "image.observe",
+        "image.second",
+        "image.headline",
+        "image.perspective"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "image.perspective",
+      "profile": "ahr",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "browserName": "webkit",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "image.initial",
+        "image.observe",
+        "image.second",
+        "image.headline",
+        "image.perspective"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "image.perspective",
+      "profile": "ahr",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "browserName": "chromium",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "image.initial",
+        "image.observe",
+        "image.second",
+        "image.headline",
+        "image.perspective"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "image.perspective",
+      "profile": "ahr",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "browserName": "webkit",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "image.initial",
+        "image.observe",
+        "image.second",
+        "image.headline",
+        "image.perspective"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "nature.recommend",
+      "profile": "ahr",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "browserName": "chromium",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "nature.calendar.ghana",
+        "nature.calendar.morocco",
+        "nature.use",
+        "nature.regions",
+        "nature.concepts",
+        "nature.transfer",
+        "nature.recommend"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "nature.recommend",
+      "profile": "ahr",
+      "viewport": {
+        "width": 1024,
+        "height": 768
+      },
+      "browserName": "webkit",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "nature.calendar.ghana",
+        "nature.calendar.morocco",
+        "nature.use",
+        "nature.regions",
+        "nature.concepts",
+        "nature.transfer",
+        "nature.recommend"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "nature.recommend",
+      "profile": "ahr",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "browserName": "chromium",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "nature.calendar.ghana",
+        "nature.calendar.morocco",
+        "nature.use",
+        "nature.regions",
+        "nature.concepts",
+        "nature.transfer",
+        "nature.recommend"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "target": "nature.recommend",
+      "profile": "ahr",
+      "viewport": {
+        "width": 768,
+        "height": 1024
+      },
+      "browserName": "webkit",
+      "path": "http://127.0.0.1:4174/Afrika-2040/",
+      "visited": [
+        "nature.calendar.ghana",
+        "nature.calendar.morocco",
+        "nature.use",
+        "nature.regions",
+        "nature.concepts",
+        "nature.transfer",
+        "nature.recommend"
+      ],
+      "before": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "afterBack": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": true
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": false
+        }
+      ],
+      "otherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterOtherTask": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "beforeReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "afterReload": [
+        {
+          "id": "learning-topic-full",
+          "summary": "Mehr Angaben und Quellen ansehen",
+          "open": false
+        },
+        {
+          "id": "inquiry-lagekarte",
+          "summary": "Die beiden Räume auf der Karte suchen",
+          "open": true
+        },
+        {
+          "id": "nature-overview",
+          "summary": "Regenwald, Savanne, Übergang und Wüste",
+          "open": true
+        },
+        {
+          "id": "inquiry-sources",
+          "summary": "Quellen, Daten und Grenzen",
+          "open": true
+        }
+      ],
+      "text": "Meine er Hier denke ich weiterste Überlegung.",
+      "history": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "restoredSubmissions": [
+        {
+          "answers": {
+            "explanation": "Meine erste Überlegung."
+          },
+          "factual": "ungraded",
+          "support": "own"
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "limitations": [
+    "No physical iPad/classroom validation",
+    "P3 language and portrait scrolling unchanged",
+    "Independent acceptance pending",
+    "No new full 208-route regression claimed"
+  ]
+}

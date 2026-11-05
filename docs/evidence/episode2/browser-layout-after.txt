@@ -1,0 +1,20 @@
+[WebServer] (node:96132) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+[WebServer] (node:96157) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+[WebServer] (Use `node --trace-warnings ...` to show where the warning was created)
+
+
+Running 2 tests using 2 workers
+
+(node:96169) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+(node:96170) Warning: The 'NO_COLOR' env is ignored due to the 'FORCE_COLOR' env being set.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+
+[1/2] [chromium] › tests/browser/episode2.spec.ts:172:5 › Episode 2 complete bus on ipad-portrait: direct entry, real model experiments and supported judgment limits
+[2/2] [chromium] › tests/browser/episode2.spec.ts:172:5 › Episode 2 complete path on ipad-portrait: direct entry, real model experiments and supported judgment limits
+  2 passed (4.5s)

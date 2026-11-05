@@ -1,3 +1,20 @@
+import { restoreLearning } from './learning/storage.ts';
+import { restoreInquiry } from './inquiry/state.ts';
+import { restoreGeography } from './geography/state.ts';
+import { settleEarlyExplanation } from './feedback.ts';
+import { restoreStudies } from './regions/storage.ts';
+import { demandScreens, demandGoals, measures } from './demand-content.ts';
+import { trialMatches, demandFactLabels } from './demand.ts';
+import { evaluateDemandCheck, evaluateDemandDecision } from './feedback.ts';
+import {
+  connections,
+  effectsMatch,
+  eventCauses,
+  eventPaths,
+  eventScreens,
+  evaluateRevision,
+} from './event.ts';
+import { evaluateEventEffects } from './feedback.ts';
 import { decisionPanels } from './decision.ts';
 import { evaluateDecision } from './feedback.ts';
 import { initialState, normalizeView } from './state.ts';
@@ -43,7 +60,17 @@ export function readSession(storage?: Store): State {
         typeof f.complete === 'boolean');
     if (
       !s ||
-      !oneOf(s.screen, ['start', 'game', 'end']) ||
+      !oneOf(s.screen, [
+        'learning',
+        'inquiry',
+        'review',
+        'start',
+        'study',
+        'game',
+        'end',
+        ...eventScreens,
+        ...demandScreens,
+      ]) ||
       !oneOf(s.step, [0, 1, 2, 3, 4, 5]) ||
       !oneOf(s.route, routes) ||
       typeof s.words !== 'boolean' ||
@@ -51,32 +78,33 @@ export function readSession(storage?: Store): State {
       !optional(s.firstRoute, ['direct', 'north'])
     )
       return initialState();
+    const progress = (p: any) =>
+      p &&
+      oneOf(p.failures, [0, 1, 2]) &&
+      oneOf(p.help, [0, 1, 2, 3]) &&
+      typeof p.complete === 'boolean' &&
+      optional(p.supported, [true, false]) &&
+      optional(p.foot, ['platz', 'nord', 'sued']) &&
+      optional(p.bus, routes) &&
+      optional(p.person, persons) &&
+      optional(p.prediction, routes) &&
+      optional(p.routeAnswer, routes) &&
+      Array.isArray(p.explored) &&
+      p.explored.length <= routes.length &&
+      new Set(p.explored).size === p.explored.length &&
+      p.explored.every((r: unknown) => oneOf(r, routes)) &&
+      optional(p.transfer, ['yes', 'no']) &&
+      oneOf(p.transferFailures, [0, 1, 2]) &&
+      feedback(p.feedback) &&
+      feedback(p.transferFeedback);
     if (
       !Array.isArray(s.progress) ||
       s.progress.length !== tasks.length ||
-      !s.progress.every(
-        (p: any) =>
-          p &&
-          oneOf(p.failures, [0, 1, 2]) &&
-          oneOf(p.help, [0, 1, 2, 3]) &&
-          typeof p.complete === 'boolean' &&
-          optional(p.supported, [true, false]) &&
-          optional(p.foot, ['platz', 'nord', 'sued']) &&
-          optional(p.bus, routes) &&
-          optional(p.person, persons) &&
-          optional(p.prediction, routes) &&
-          optional(p.routeAnswer, routes) &&
-          Array.isArray(p.explored) &&
-          p.explored.length <= routes.length &&
-          new Set(p.explored).size === p.explored.length &&
-          p.explored.every((r: unknown) => oneOf(r, routes)) &&
-          optional(p.transfer, ['yes', 'no']) &&
-          oneOf(p.transferFailures, [0, 1, 2]) &&
-          feedback(p.feedback) &&
-          feedback(p.transferFeedback),
-      )
+      !s.progress.every(progress)
     )
       return initialState();
+    for (const step of [0, 1, 2] as const)
+      settleEarlyExplanation(step, s.progress[step]);
     const e = s.explanation,
       d = s.decision;
     if (
@@ -87,32 +115,200 @@ export function readSession(storage?: Store): State {
       !optional(e.supported, [true, false])
     )
       return initialState();
-    if (
-      !d ||
-      !optional(d.route, routes) ||
-      !optional(d.criterion, Object.keys(criteria)) ||
-      !optional(d.advantage, evidenceIds) ||
-      !optional(d.disadvantage, evidenceIds) ||
-      !optional(d.supported, [true, false]) ||
-      !optional(d.panel, [...decisionPanels]) ||
-      !optional(d.advantageOther, routes) ||
-      !optional(d.disadvantageOther, routes) ||
-      !optional(d.weighting, evidenceIds) ||
-      !optional(d.acceptConflict, [true, false]) ||
-      !optional(d.ungraded, [true, false]) ||
-      !text(d.text)
-    )
-      return initialState();
+    const decision = (d: any) =>
+      !(
+        !d ||
+        !optional(d.route, routes) ||
+        !optional(d.criterion, Object.keys(criteria)) ||
+        !optional(d.advantage, evidenceIds) ||
+        !optional(d.disadvantage, evidenceIds) ||
+        !optional(d.supported, [true, false]) ||
+        !optional(d.panel, [...decisionPanels]) ||
+        !optional(d.advantageOther, routes) ||
+        !optional(d.disadvantageOther, routes) ||
+        !optional(d.weighting, evidenceIds) ||
+        !optional(d.acceptConflict, [true, false]) ||
+        !optional(d.ungraded, [true, false]) ||
+        !text(d.text)
+      );
+    if (!decision(d)) return initialState();
     // Recheck old or edited completion flags; preserve the actual draft and history.
     if (s.progress[5].complete || s.screen === 'end') {
       const checked = evaluateDecision(d, true);
       s.progress[5].complete = checked.complete;
       s.progress[5].feedback = checked;
       if (!checked.complete) {
-        if (s.screen === 'end') { s.screen = 'game'; s.step = 5; }
+        if (s.screen === 'end') {
+          s.screen = 'game';
+          s.step = 5;
+        }
         d.panel = 'weigh';
       }
     }
+    const r = s.road;
+    if (r !== undefined) {
+      const valid =
+        r &&
+        decision(r.original) &&
+        optional(r.originalSupported, [true, false]) &&
+        evaluateDecision(r.original, true).complete &&
+        decision(r.review) &&
+        oneOf(r.view, ['before', 'now']) &&
+        optional(r.path, [...eventPaths]) &&
+        progress(r.find) &&
+        progress(r.effects) &&
+        progress(r.revision) &&
+        r.answers &&
+        typeof r.answers === 'object' &&
+        !Array.isArray(r.answers) &&
+        Object.entries(r.answers).every(
+          ([route, answer]) =>
+            oneOf(route, routes) && oneOf(answer, ['longer', 'same']),
+        ) &&
+        typeof r.compared === 'boolean' &&
+        optional(r.connection, Object.keys(connections)) &&
+        optional(r.cause, Object.keys(eventCauses)) &&
+        text(r.explanationText) &&
+        optional(r.explanationUngraded, [true, false]) &&
+        optional(r.explanationSupported, [true, false]) &&
+        optional(r.changeEvidence, routes) &&
+        optional(r.reason, ['goal', 'priority']);
+      if (!valid) {
+        delete s.road;
+        if (oneOf(s.screen, [...eventScreens])) {
+          s.screen = s.progress[5].complete ? 'end' : 'game';
+          s.step = 5;
+        }
+      } else {
+        r.find.complete = r.find.complete && r.path === 'leila-platz';
+        r.compared = r.compared && effectsMatch(r);
+        if (r.effects.complete) {
+          r.effects.feedback = evaluateEventEffects(r, true).feedback;
+          r.effects.complete = r.effects.feedback.complete;
+        }
+        if (r.revision.complete) {
+          r.revision.feedback = evaluateRevision(r, true);
+          r.revision.complete = r.revision.feedback.complete;
+        }
+        if (oneOf(s.screen, [...eventScreens])) {
+          s.step = 5;
+          if (!r.find.complete && s.screen !== 'event-find')
+            s.screen = 'event-find';
+          else if (
+            !r.effects.complete &&
+            (s.screen === 'event-review' || s.screen === 'event-end')
+          )
+            s.screen = 'event-effects';
+          else if (!r.revision.complete && s.screen === 'event-end')
+            s.screen = 'event-review';
+          if (s.screen === 'event-review') r.view = 'now';
+          if (
+            s.screen === 'event-find' &&
+            !r.find.complete &&
+            r.find.help !== 3
+          )
+            r.view = 'before';
+        }
+      }
+    } else if (oneOf(s.screen, [...eventScreens])) {
+      s.screen = s.progress[5].complete ? 'end' : 'game';
+      s.step = 5;
+    }
+    const demand = s.demand;
+    if (demand !== undefined) {
+      const a = demand?.decision,
+        labels = demandFactLabels();
+      const valid =
+        demand &&
+        typeof demand === 'object' &&
+        optional(demand.route, routes) &&
+        oneOf(demand.basis, ['first', 'revision', 'chosen']) &&
+        oneOf(demand.view, ['before', 'now']) &&
+        typeof demand.seenNow === 'boolean' &&
+        optional(demand.enough, ['yes', 'no']) &&
+        (demand.later === undefined ||
+          (Number.isInteger(demand.later) &&
+            demand.later >= 0 &&
+            demand.later <= 100)) &&
+        oneOf(demand.measure, ['base', ...measures]) &&
+        Array.isArray(demand.explored) &&
+        demand.explored.length <= 2 &&
+        new Set(demand.explored).size === demand.explored.length &&
+        demand.explored.every((m: unknown) => oneOf(m, [...measures])) &&
+        demand.trials &&
+        typeof demand.trials === 'object' &&
+        !Array.isArray(demand.trials) &&
+        Object.entries(demand.trials).every(
+          ([m, t]: [string, any]) =>
+            oneOf(m, [...measures]) &&
+            t &&
+            optional(t.capacity, ['more', 'same']) &&
+            optional(t.walk, ['shorter', 'same']) &&
+            optional(t.checked, [true, false]) &&
+            optional(t.supported, [true, false]),
+        ) &&
+        progress(demand.check) &&
+        progress(demand.explore) &&
+        progress(demand.decide) &&
+        a &&
+        optional(a.measure, [...measures]) &&
+        optional(a.goal, Object.keys(demandGoals)) &&
+        optional(a.advantage, Object.keys(labels.advantage)) &&
+        optional(a.disadvantage, Object.keys(labels.disadvantage)) &&
+        optional(a.weighting, Object.keys(demandGoals)) &&
+        optional(a.supported, [true, false]) &&
+        optional(a.ungraded, [true, false]) &&
+        text(a.text);
+      if (!valid) {
+        delete s.demand;
+        if (oneOf(s.screen, [...demandScreens])) s.screen = 'start';
+      } else {
+        demand.check.complete =
+          demand.check.complete &&
+          evaluateDemandCheck(demand).feedback.complete;
+        demand.explore.complete =
+          demand.explore.complete &&
+          measures.every(
+            (m) =>
+              demand.explored.includes(m) &&
+              demand.trials[m]?.checked &&
+              trialMatches(m, demand.trials[m]),
+          );
+        if (demand.decide.complete) {
+          demand.decide.feedback = evaluateDemandDecision(
+            a,
+            demand.decide.failures,
+            true,
+          ).feedback;
+          demand.decide.complete = demand.decide.feedback.complete;
+        }
+        if (oneOf(s.screen, [...demandScreens])) {
+          if (!demand.check.complete && s.screen !== 'demand-check')
+            s.screen = 'demand-check';
+          else if (
+            !demand.explore.complete &&
+            (s.screen === 'demand-decide' || s.screen === 'demand-end')
+          )
+            s.screen = 'demand-explore';
+          else if (!demand.decide.complete && s.screen === 'demand-end')
+            s.screen = 'demand-decide';
+        }
+      }
+    } else if (oneOf(s.screen, [...demandScreens])) s.screen = 'start';
+    if (s.inquiry !== undefined) {
+      const inquiry = restoreInquiry(s.inquiry);
+      if (inquiry) s.inquiry = inquiry;
+      else delete s.inquiry;
+    }
+    if (s.screen === 'inquiry' && !s.inquiry) s.screen = 'start';
+    if (s.learning !== undefined) {
+      const learning = restoreLearning(s.learning);
+      if (learning) s.learning = learning;
+      else delete s.learning;
+    }
+    if (s.screen === 'learning' && !s.learning) s.screen = 'start';
+    restoreStudies(s as State, progress);
+    restoreGeography(s as State, progress);
     return normalizeView(s as State);
   } catch {
     return initialState();
